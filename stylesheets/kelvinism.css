@@ -216,7 +216,14 @@ iframe {border: 1px solid black;}
     background-repeat: no-repeat;
 }
 
-#redbar {width: 100%; height: 5px; background-color: #96513c;}
+/* #redbar {width: 100%; height: 5px; background-color: #96513c;}
+ */
+#redbar {
+    width: 100%;
+    height: 5px;
+    top: 0px;
+    background-color: #b3c49d;
+}
 
 .yui-b {padding-bottom: 60px;}
 .yui-b p { font-family: Arial,sans-serif; line-height: 150%}
