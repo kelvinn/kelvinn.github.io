@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Installing Debian 5.0 on Vortex86DX</h2><div class="post-list" itemprop="articleBody">
+    <p>After writing about <a href="http://kelvinism.com/tech-blog/compiling-kernel-vortex86dx/">compiling a new kernel</a> for the Vortex86DX, I've had quite a few people email me asking how I installed Debian in the first place.  The installation is actually quite straightforward, but it involved several quirky techniques.  After doing another install I decided to keep track of the process of installing Debian 5.0 on my eBox-3300.</p><p>The following guide assumes a few things.  First, you are currently using Linux and a debian variety (although instructions could be altered if using Windows).  Second, your USB shows up as /dev/sdb.  Third, your eBox-3300 has the HDD set in Native mode.  Forth, you are patient.</p><p>1) Download the custom vmlinuz and initrd.gz files from my site.  Also, download the custom deb files we'll use near the end of installation:</p><pre class="brush: shell; light: true; ">http://cdn.kelvinism.com/ebox/vmlinuz
+http://cdn.kelvinism.com/ebox/initrd.gz
+http://cdn.kelvinism.com/ebox/linux-headers-2.6.29.3-vortex86dx.deb
+http://cdn.kelvinism.com/ebox/linux-image-2.6.29.3-vortex86dx.deb
+</pre><br />
+<br />
+<p>2) Download an i386 netinst iso:</p><pre class="brush: shell; light: true; ">http://www.debian.org/CD/netinst/
+</pre><br />
+<br />
+<p>3) Make sure the USB has an MBR installed:</p><pre class="brush: shell; light: true; ">apt-get install syslinux mtools mbr
+install-mbr /dev/sdb
+</pre><br />
+<p>4) Format the device as FAT32 with whatever tool you like.</p><p>5) Run syslinux on it:</p><pre class="brush: shell; light: true; ">syslinux /dev/sdb1
+</pre><br />
+<br />
+<p>6) Mount the USB (or pull it out and plug it in again so it shows up on your desktop), and copy the downloaded vmlinuz, initrd, netinst.iso and deb files onto the USB.  There should be a file called ldlinux.sys already; create a file called syslinux.cfg and put the following in it:</p><pre class="brush: shell; light: true; ">default vmlinuz
+append initrd=initrd.gz root=/dev/rd/0 devfs=mount,dall rw DEBCONF_PRIORITY=medium
+</pre><br />
+<br />
+<p>It should look like this:</p><img src="http://cdn.kelvinism.com/images/ebox3300files.png" alt="Ebox files" /><br />
+<br />
+<br />
+<p>7) Unmount the USB, and put it in your eBox-3300.  When the system boots up initially, hit F11.  Select your USB device.  Depending how you created the MBR it might come up as saying "MBR FA:".  Press "A".  When 1234F comes up, press "1".  Press enter at the SYSLINUX "boot:" screen.</p><p>8) Proceed as normal through the menu.  It will search for an ISO image, and should detect the netinst image you inserted earlier.  When you get to the "Load installer components" section, it will complain about no kernel modules found.  Select YES.  On the next screen you shouldn't need to load any components, so hit continue.  Proceed as normal.</p><p>9) If you are ever asked about starting PC card services, hit NO.  Proceed as normal.</p><p>10) Eventually you will hit a screen that says LVM is not available, hit CONTINUE.  Proceed as normal.</p><p>11) Near the end it will toss up a list of available kernels.  Select either, it shouldn't matter.  When you are allowed to select drivers to include in the initrd, select TARGETED.  Proceed as normal.</p><p>12) You might get to a point where it says Install GRUB boot loader on a hard disk.  This will fail.  That's ok, just skip it and select "continue without boot loader".  </p><p>13) You will end up on the "Finish the installation" menu.  <b>DO NOT</b> finish!  We now need to swap out the current kernel with one that works.  Scroll down and select "Execute a shell".  Press CONTINUE. Try these steps when the shell prompt appears:</p><pre class="brush: shell; light: true; ">cd hd-media
+cp *.deb /target/usr/src/
+cp vmlinuz /target/boot/vmlinuz-2.6.26-2.486
+cp initrd.gz /target/boot/
+cd /target/boot
+gunzip initrd.gz
+mv initrd initrd.img-2.6.26-2-486
+reboot
+</pre><br />
+<br />
+<p>Your system will now reboot, and it should actually boot correctly.  However, you're using a kernel that doesn't have any headers or modules, which means you can't activate anything.  Once the box boots up, login and install the included custom kernels:</p><pre class="brush: shell; light: true; ">cd /usr/src
+dpkg -i linux-image-2.6.29.3-vortex86dx.deb
+dpkg -i linux-headers-2.6.29.3-vortex86dx.deb
+reboot
+</pre><br />
+<br />
+<p>Once the system comes back up, you should be running a spiffy 2.6.29 kernel, with the ability to add modules.</p><p>You may want to follow the tuning section from the <a href="http://groups.google.com/group/microclient/web/ubuntu-on-microclient-sr">MicroClient page</a> on Google Groups.  I also modified my fstab file to help reduce wear on the CF card:</p><pre class="brush: shell; light: true; ">tmpfs /var/run tmpfs defaults,noatime 0 0
+tmpfs /var/lock tmpfs defaults,noatime 0 0
+tmpfs /var/tmp tmpfs defaults,noatime 0 0 
+</pre><br />
+<p><b>Contribution 1:</b> <a href="http://www.idiap.ch/~fleuret/">Francois Fleuret</a> emailed through a kind reminder that the qemu-onto-SD card method is a viable option.  So, if you want to go the SD route, and have an SD reader, this might be what you're after!</p><pre class="brush: shell; light: true; ">Basically, install Debian on a SD card with qemu (start qemu with the
+install disk iso as cdrom and the SD card as hda), while you are still
+in qemu, download and install the kernel deb file
+
+ftp://ftp.icop.com.tw/upload/Shawn/linux-image-2.6.27.9-vortex86dx_2.6.27.9-vortex86dx_i386.deb
+
+then quit qemu, put the SD card in the box and reboot. You are done!
+
+</pre><br />
+<br />
+<p>If you want the source file for the above kernels, you can get it from here: <a href="http://cdn.kelvinism.com/ebox/linux-source-2.6.29.3-vortex86dx.deb">2.6.29-3 source</a>.  I recently recompiled the kernel with some extra modules enabled (e.g. ecryptfs), so if you would like to try a newer kernel, you can download my updated kernels too:</p><pre class="brush: plain; light: true; ">http://cdn.kelvinism.com/ebox/linux-headers-2.6.30.4-vortex86dx.deb
+http://cdn.kelvinism.com/ebox/linux-image-2.6.30.4-vortex86dx_2.6.30.4.deb
+</pre><br />
+<br />
+<p><b>Contribution 2</b>: Trent L has also recompiled a 2.6.28 kernel with wireless extensions built into it, which is what was needed for his wireless card.  He has kindly allowed me to distribute them; you can find them here:</p><pre class="brush: plain; light: true; ">http://cdn.kelvinism.com/ebox/linux-source-2.6.28.10_vortex86dx.deb
+http://cdn.kelvinism.com/ebox/linux-image-2.6.28.10_vortex86dx.deb
+http://cdn.kelvinism.com/ebox/linux-headers-2.6.28.10_vortex86dx.deb
+http://cdn.kelvinism.com/ebox/2.6.28.config
+</pre><br />
+<p><b>Contribution 3</b>: If you have the ebox-3310, you can still read through this, but you may also want to see a <a href="http://kelvinism.com/howtos/lenny-ebox-3310a/">suggested installation method and kernels</a> from Stefan.</p><p><b>Contribution 4</b>: Alexandru T. sent through some instructions directly received from ICOP.  I've added <a href="http://www.kelvinism.com/howtos/vortex86dx-instructions-icop/">another page</a> with the details.  Thanks Alex!</p><p><b>Contribution 5:</b>: Rainbow sent through the solution if your kernel panics with:<br />
+<br />
+<pre class="plain: shell; light: true; ">it report "kernel bug at fs/buffer.c 1864" and system go mad, even
+> "halt" "reboot" take no effect.
+</pre><br />
+<br />
+<br />
+<p>Rainbow reported that:</p><pre class="plain: shell; light: true; ">this issue cause by an error Vcore, 0.90v refered by datasheet, and it should be above 0.97.
+</pre><br />
+<br />
+<br />
+<p><b>Contribution 6:</b>: Bob's also sent through his <a href="http://cdn.kelvinism.com/ebox/config-2.6.29.3-ziti.3">config</a> file.</p><p><b>Contribution 7</b>: Bob A. has sent through some resources about a special ISO specific for the ebox. It has been added to <a href="http://www.kelvinism.com/howtos/vortex86dx-instructions-icop/">another page</a>.<br />
+<br />
+<p><b>Update</b>: I've needed to recompile a new Lenny vortex86dx-enabled kernel for 2.6.31.5: <a href="http://cdn.kelvinism.com/ebox/linux-image-2.6.31.5-vortex86dx.deb">image</a>, <a href="http://cdn.kelvinism.com/ebox/linux-headers-2.6.31.5-vortex86dx.deb">headers</a>, <a href="http://cdn.kelvinism.com/ebox/linux-source-2.6.31.5-vortex86dx.deb">source</a> and <a href="http://cdn.kelvinism.com/ebox/config-2.6.31.5">config</a>.  
+  </div><span>[
+    
+      
+      <a href="/tag/kernel"><code class="highligher-rouge"><nobr>kernel</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/vortex86dx"><code class="highligher-rouge"><nobr>vortex86dx</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/debian"><code class="highligher-rouge"><nobr>debian</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/compiling"><code class="highligher-rouge"><nobr>compiling</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/ebox"><code class="highligher-rouge"><nobr>ebox</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2009/06/14/installing-debian-50-on-vortex86dx_3246.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

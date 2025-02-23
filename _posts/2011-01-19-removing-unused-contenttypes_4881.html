@@ -1,0 +1,38 @@
+---
+layout: post
+title: Removing Unused ContentTypes
+date: '2011-01-19T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- django
+- howtos
+modified_time: '2013-01-09T20:57:10.263+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-827248842963837748
+blogger_orig_url: https://www.kelvinism.com/2011/01/removing-unused-contenttypes_4881.html
+---
+
+I've been cleaning up my personal blog a bit, and I noticed that my tagging system recently broke.  I've investigated the cause, and it appears to be because I removed some apps but the contenttypes remained.  This meant that whenever I tried calling a tag with a TaggedItem that had been deleted, I was getting this error:<br />
+<pre class="brush: bash; light: true; ">'NoneType' object has no attribute '_meta'
+</pre><br />
+<br />
+The solution is to first list all app_labels for contenttypes, and then delete any not in use.<br />
+<pre class="brush: python; light: true; ">In [61]: from django.contrib.contenttypes.models import ContentType
+
+In [62]: for ct in ContentType.objects.all(): print ct.app_label
+   ....: 
+picasaweb
+lifestream
+readernaut
+delicious
+mapfeed
+comments
+...</pre><br />
+I could then delete the unused contenttypes.<br />
+<pre class="brush: python; light: true; ">ct_list = ["delicious", "flickr", "photologue", "twitter"]
+
+for ct_label in ct_list:
+    for ct in ContentType.objects.filter(app_label=ct_label):
+        ct.delete()
+    </pre><br />
+<br />
+And no more errors! For more details take a look at David's <a href="http://fragmentsofcode.wordpress.com/2010/09/21/cleanly-removing-a-django-app/">article.</a>

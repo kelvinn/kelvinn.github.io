@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/08/05/sydney-commute-times-mapped-part-2.html">
+            Sydney Commute Times Mapped Part 2
+          </a>
+        </h3>
+        <span class="post-meta">Published on Aug 5, 2013</span>
+        In <a href="http://www.kelvinism.com/2013/07/sydney-commute-times-mapped-part-1.html">Sydney Commute Times Mapped Part 1</a>&nbsp;I took a small step to a bigger goal of mashing together public transport in Sydney, and the&nbsp;<a href="http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf">Metropolitan Strategy for Sydney to 2031</a>. The question I wanted to answer is this: how aligned is Sydney's public transport infrastructure and the Metropolitan Strategy's of a "city of cities"?<br />
+<br />
+I decided to find out.<br />
+<br />
+Thanks to the release of GTFS data by 131500 it is possible to visualise how long it takes via public transport to commute to the nearest "centre".<br />
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDc0IriO971A2BQ7F9Nu1zYVZ_uO5OEwv8n0Z9vpPB1IElGYMI0r5bzCah9UCv5fqNzthkaHnPFBN6Pd5PD32GL_xXUJDAYKvXdx3OK8DwtotghU_PDA_Mc_qWYa8gUEKiJxj8Uos4mYbk/s1600/CItyOfCities.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDc0IriO971A2BQ7F9Nu1zYVZ_uO5OEwv8n0Z9vpPB1IElGYMI0r5bzCah9UCv5fqNzthkaHnPFBN6Pd5PD32GL_xXUJDAYKvXdx3OK8DwtotghU_PDA_Mc_qWYa8gUEKiJxj8Uos4mYbk/s1600/CItyOfCities.png" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Cities and Corridors -&nbsp;<a href="http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf" style="font-size: medium; text-align: start;">Metropolitan Strategy for Sydney to 2031</a></td></tr>
+</tbody></table>
+<br />
+The Australian Bureau of Statistics collects data based on "mesh blocks", or roughly an area containing roughly 50 dwellings. Last week I had some fun <a href="http://www.kelvinism.com/2013/07/mapping-mesh-blocks-with-tilemill.html">mapping the mesh blocks</a>, as well as looking at Sydney's <a href="http://www.kelvinism.com/2013/07/mapping-urban-density-in-sydney.html">urban densities</a>. These mesh blocks are a good size to look at for calculating commute times.<br />
+<br />
+The simplified process I used was this, for the technical minded:<br />
+<br />
+<ol>
+<li>Calculate the centre of each mesh block</li>
+<li>Calculate the commute time via public transport from each block to every "centre" (using 131500's GTFS and OpenTripPlanner's Analyst tool)</li>
+<li>Import times in a database, calculate lowest commute time to each centre</li>
+<li>Visualise in TileMill</li>
+<li>Serve tiles in TileStache and visualise with Leaflet</li>
+</ol>
+<br />
+The first map I created was simply to indicate how long it would take to the nearest centre. There appears to be rapidly poorer accessibility on the fringe of Sydney. I was also surprised of what appears to be a belt of higher times between&nbsp;Wetherill Park and all the way to Marrickville. There also appears to be poorer accessibility in <i>parts</i>&nbsp;of Western Sydney. It is worth noting that I offer not guarantee of the integrity of the data in these maps, and I have seen a few spots where the commute times increase significantly in adjacent mesh blocks. This tells me the street data (from OpenStreetMap) might not be connected correctly.<br />
+<br />
+<br />
+<iframe height="600px" src="http://maps.kelvinism.com/syd_city_cities.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/syd_city_cities.html" target="_blank">View Full Screen</a><br />
+<br />
+My next map shows what areas are within 30 minutes.<br />
+<br />
+<iframe height="600px" src="http://maps.kelvinism.com/syd_city_cities_2.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/syd_city_cities_2.html" target="_blank">View Full Screen</a><br />
+<br />
+These maps were both created using open data and open source tools, which I find quite neat. In that spirit, I have exported the database (probably a bit hard for most to work with) to a Shapefile. You can open this in TileMill and experiment, if you wish. Download it from <a href="http://cdn.kelvinism.com/mb_2011_nsw_transport.zip">here</a>&nbsp;(note: 250MB zip file):<br />
+<br />
+I have been interested in mapping traffic for a number of years, maybe ever since arriving in Sydney. It is sort of a hobby; I find making maps relaxing. My first little map was way back in 2008, where I&nbsp;<a href="http://www.kelvinism.com/2008/04/baby-steps-at-graphing-traffic_522.html">visualised speed</a>&nbsp;from a GPS unit. A little later I added&nbsp;<a href="http://www.kelvinism.com/2008/04/another-baby-step_1340.html">some colour to the visualisations</a>, and then used this as an excuse to create a little&nbsp;<a href="http://www.kelvinism.com/2008/05/gui-to-plot-driving-speed_6997.html">GUI for driving speed</a>. My interest in visualising individual vehicles has decreased recently, as it has now shifted to the mapping wider systems. Have an idea you would like to see mapped? Leave a note in the comments.</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/07/27/quantified-self-interview.html">
+            Quantified Self Interview
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jul 27, 2013</span>
+        YS and I were recently interviewed about self-tracking and Quantified Self by one of the major news channels in Australia. I will reflect on the experience after the show has aired, but it was an overall great experience. We have a new respect for filming what may ultimately be just a two minute segment. Depending on how the editing is done it will either provoke the hosts to contemplate the value of a data-centric macroscopic view of the world, or give them lots of fodder.<br />
+<br />That said, as you would expect, I had to track my heart rate during the interview - see below. My interpretation is that my heart rate jumped at the start of every questions, and went down as I answered the question. It also dropped when the interview finished. I wish I had a more expensive heart rate monitor (e.g. Zephyr BioHarness or Scanadu) that tracked skin temperature and breathing. My hands felt cold by the end.<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC9Rqg935yk28KMHOmsVtoQ6CL6UtLubOVrYphTiS1P09_9rGdtv3LSUmjE2TYOUWuhKNCITwG5ktH1R45mUXUYlUgaIVwPXHvdu29-uZF9lsD3y8Sb5dt6i9t7-a5CDg3esOtfkEINwLJ/s1600/HeartRateInterview.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiC9Rqg935yk28KMHOmsVtoQ6CL6UtLubOVrYphTiS1P09_9rGdtv3LSUmjE2TYOUWuhKNCITwG5ktH1R45mUXUYlUgaIVwPXHvdu29-uZF9lsD3y8Sb5dt6i9t7-a5CDg3esOtfkEINwLJ/s1600/HeartRateInterview.png" /></a></div>
+.</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/07/27/coffee-beer-wine-and-time-of-day.html">
+            Coffee, Beer, Wine and Time of Day
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jul 27, 2013</span>
+        One of the things I like Tableau, a piece of software to visualise data, is that it aggregates on dates really well. Below is a spread of beer / wine / coffee over 18 months, but grouped by what hour is fell in. You can see some trends, like I usually consume coffee in the morning, and that I usually drink after 17:00. There are exceptions, of course, like that beer I had at 10AM, and that coffee I had at 1AM.<br />
+<br />
+<br />
+<a href="http://goo.gl/photos/3vl06vRYnl" imageanchor="1" style="clear: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhF5CqYUKn1vo3qhGMkQ8UI-wLz6oYR4qLlazTmMESFyfplzT5cRPzhirjMFvlDdK7s_nh03v8x25E7S0ATH5-hB4lshN4DAYgK0vTTX7PH31hyqstUfqndZKwZyjDH5cNpY8tG98hJMAVy/s512/beerwinecoffee.png" /></a></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/07/25/some-qs-numbers.html">
+            Some QS Numbers
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jul 25, 2013</span>
+        There is the possibility I will be giving an interview on the <a href="http://en.wikipedia.org/wiki/Quantified_Self">Quantified Self</a> "movement". What follows is a brief summary of QS, the things I track, and some pretty charts.<br />
+<br />
+<b>What is Quantified Self</b><br />
+<br />
+I suppose it depends on who you talk to. Wikipedia states that it is "a movement to incorporate technology into data acquisition on aspects of a person's daily life in terms of inputs", but I side more on the idea that the movement is "a collaboration of users and tool makers who share an interest in self knowledge through self-tracking." It is at this point that it is probably important to interject that most people are self-trackers: weight, height, reps at the gym, hours worked, and so forth. If you have ever made a goal, you probably tracked how you could reach it. What makes us QS folk a bit different is that we tend to track <i>lots</i> of things, correlate between them, and share our results. So, with this theme, let me share what I track.<br />
+<br />
+<b>What I Track, and How</b><br />
+<br />
+This is a list of some of the things I track, and the tools I use to do so.<br />
+<br />
+<ul>
+<li>Weight / Body Fat / Temperature / Measurements -&gt; scales, callipers, ear thermometer</li>
+<li>Resting Heart Rate&nbsp;-&gt;&nbsp;oximeter</li>
+<li>Drinks (wine, beer, coffee – and previously water)&nbsp;-&gt;&nbsp;Android app (bespoke)</li>
+<li>Drugs and vitamins&nbsp;-&gt;&nbsp;Android app (bespoke)</li>
+<li>Various conditions (headaches, “colds”, itchiness, nausea, sore throats, “the runs”)&nbsp;-&gt; Android app (bespoke)</li>
+<li>Finances (family)&nbsp;-&gt;&nbsp;Android app (TOSHL)</li>
+<li>Start/Stop times of work&nbsp;-&gt;&nbsp;Excel…</li>
+<li>Mood (Terrible to Great)&nbsp;-&gt;&nbsp;Android app (How Are You Feeling)</li>
+<li>Indoor air quality (not really QS)&nbsp;-&gt;&nbsp;various sensors</li>
+<li>Computer activity (Keystrokes / mouse clicks / mouse movement)&nbsp;-&gt;&nbsp;WorkRave</li>
+<li>Location&nbsp;-&gt;&nbsp;Google Latitude</li>
+<li>Steps &amp; sleep&nbsp;-&gt;&nbsp;Fitbit</li>
+<li>Fitness --&gt;&nbsp;Android app (Sports Tracker) and a Zephyr Bluetooth Heart Rate Monitor</li>
+<li>Health History&nbsp;-&gt;&nbsp;Microsoft HealthVault</li>
+<li>Photo every day -&gt; Android app (PhotoChron)</li>
+</ul>
+<div>
+You can see that this list seems <i>utterly normal</i>, but still gives me enough to work with to start forming a <a href="http://aether.com/themacroscope" target="_blank">macroscopic</a> view of life.</div>
+<div>
+<br /></div>
+<div>
+<b>A Few Charts</b></div>
+<div>
+<b><br />
+</b></div>
+<div>
+I created these using Tableau, a fabulous piece of software for putting meaning behind numbers. These are not good examples of what the software is capable of, but it is the quickest way for me to visualise them.</div>
+<div>
+<br /></div>
+<div>
+I like coffee. It is, in all honesty, a drug. There have been times (I could probably find the date!) when I went from two cups a day to none, and I had withdrawals (headaches and nausea). I track the amount of coffee I consume to remind myself to not get into the habit of having two cups/day for too long. It is also bad for my stomach.</div>
+<div>
+<br /></div>
+<div>
+If I chart the days of the week I like to drink coffee over the last 18 months, it turns out I drink the most amount of coffee on <i>Saturday</i>.&nbsp;</div>
+<div>
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizhWBMSzyyjd6pBQIO6Xl_HxHDrs0FL1BrTR0cCaiA5m13VPD6aA9Z5jtnAcnd_InEad5Hc2ea3RL5-jJFfONPXXi4LeYSRRX1q0ImuM-d4zgEUJ4kR9_mcNr1a0FD3TDH8x-1zT0NL8w9/s1600/Coffees+Consumed.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="400" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizhWBMSzyyjd6pBQIO6Xl_HxHDrs0FL1BrTR0cCaiA5m13VPD6aA9Z5jtnAcnd_InEad5Hc2ea3RL5-jJFfONPXXi4LeYSRRX1q0ImuM-d4zgEUJ4kR9_mcNr1a0FD3TDH8x-1zT0NL8w9/s400/Coffees+Consumed.png" width="362" /></a></div>
+<div>
+<br /></div>
+<br />
+<br />
+<div class="clear">
+</div>
+<div>
+<br /></div>
+<div>
+&nbsp;I also enjoy an alcoholic drink from time to time, but was told in January to cut back (for my stomach's sake).</div>
+<div>
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjR5ykT5bhy_ad8S8JoI6EUQ0RCzM2gZ5s5tW5un-KLyHDmgN36wHpK6jMpnp48Xivsr6A419_mGIalt3JH0f765uTe1tPNwf4dwFFy4eR0F0cI5hc5KwKrqRiuVb5IzWfvvSTa-5JeCW60/s1600/DrinksPerMonth.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjR5ykT5bhy_ad8S8JoI6EUQ0RCzM2gZ5s5tW5un-KLyHDmgN36wHpK6jMpnp48Xivsr6A419_mGIalt3JH0f765uTe1tPNwf4dwFFy4eR0F0cI5hc5KwKrqRiuVb5IzWfvvSTa-5JeCW60/s640/DrinksPerMonth.png" width="640" /></a></div>
+<div>
+<br /></div>
+<br />
+<div class="clear">
+</div>
+I track both beer and wine consumption. I have managed to cut back on wine, but not so much on beer.<br />
+<br />
+<div>
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYLivknCrrbpipLuzJ3PzD2PQ0ybjrYtauWcccp-n84eW7EkRVQ1NEMrjKBK5z1Fn_7cObH7jrw8EKENoMLiGjYQGXfLfMM2ExURZvOIOnMoolGExYLmgG5uvck6YM5q0mZYGh6JJfRf__/s1600/WineVsBeer.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="332" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYLivknCrrbpipLuzJ3PzD2PQ0ybjrYtauWcccp-n84eW7EkRVQ1NEMrjKBK5z1Fn_7cObH7jrw8EKENoMLiGjYQGXfLfMM2ExURZvOIOnMoolGExYLmgG5uvck6YM5q0mZYGh6JJfRf__/s400/WineVsBeer.png" width="400" /></a></div>
+<div>
+<br />
+<div class="clear">
+</div>
+<br /></div>
+This can be explained because I tend to have beer when I go out with work colleagues or friends, but wine at home. It appears to have been easier to stop drinking with dinner than when out.<br />
+<div>
+<br /></div>
+<div>
+For the last two years I have been wearing a <a href="http://www.fitbit.com/" target="_blank">FitBit</a>, usually, and using it to "track" my sleep.</div>
+<div>
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhS2LBzZFHnIDgkYNEP_eRfl1Bbsh5Hs3TiSenJzRIAvWPDnGRW6wc3dpS38XK7FFCGvlFAqyW5dVGiBsuFHlWXdShzo-g3MxpGnShMWr80QXnkyXTcmK9GXL9I0a3l4iT2SRAvgdHL7i-/s1600/StepsPerWeek.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="265" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhS2LBzZFHnIDgkYNEP_eRfl1Bbsh5Hs3TiSenJzRIAvWPDnGRW6wc3dpS38XK7FFCGvlFAqyW5dVGiBsuFHlWXdShzo-g3MxpGnShMWr80QXnkyXTcmK9GXL9I0a3l4iT2SRAvgdHL7i-/s400/StepsPerWeek.png" width="400" /></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br /></div>
+<br />
+<div class="clear">
+</div>
+It looks like I averaged about 7500 steps/day, yet started walking more in January of this year. Walking more was not a New Year's Resolution. In May I broke the clip to my FitBit, but a friend was kind enough to give me their's as a replacement. I should walk more.<br />
+<div class="separator" style="clear: both; text-align: left;">
+<br /></div>
+<div class="separator" style="clear: both; text-align: left;">
+I should also sleep more. It appears as though maybe, just maybe, I am starting to sleep more. My average is about 7.5hr/night. This is one area I would like to experiment more with.</div>
+<div class="separator" style="clear: both; text-align: left;">
+<br /></div>
+<div class="separator" style="clear: both; text-align: left;">
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcuFmtvrfu2PrU7u50G8mZiI5BQKlBwrxH4VZW2gxRKKshnF8hG73r4x_OPrlDT9IjmSuzbsYbxaN8gNlTcHBU56Gt0v2qdb9ggvqmfUdaAjdx6XR_ZmzmX2uw0zvGo5khqZpaEpKT8fBQ/s1600/MinutesAsleep.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="345" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcuFmtvrfu2PrU7u50G8mZiI5BQKlBwrxH4VZW2gxRKKshnF8hG73r4x_OPrlDT9IjmSuzbsYbxaN8gNlTcHBU56Gt0v2qdb9ggvqmfUdaAjdx6XR_ZmzmX2uw0zvGo5khqZpaEpKT8fBQ/s400/MinutesAsleep.png" width="400" /></a></div>
+<div class="separator" style="clear: both; text-align: left;">
+<br /></div>
+I have also started tracking happiness on a simple Terrible -&gt; Great! scale.<br />
+<div>
+<br /></div>
+<div>
+This graph shows my average happiness on a weekly basis for the last ~8 months. We could conclude that I'm getting more happy, and was really unhappy around Christmas.</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaPNyvwROBXvcUDbvmWjXQNkdoUtbIS1d5WNiYe4gY_k89yQ7TD_zX24Xx6IRQ3tauBiScGxlCl_Pl7HueBsj5vHCKMdBBG6c_JxvNDa_AhNn_WoAtlstQPjqpPOF5wEHg-2lj4Jg7g9lt/s1600/HappinessLevels.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaPNyvwROBXvcUDbvmWjXQNkdoUtbIS1d5WNiYe4gY_k89yQ7TD_zX24Xx6IRQ3tauBiScGxlCl_Pl7HueBsj5vHCKMdBBG6c_JxvNDa_AhNn_WoAtlstQPjqpPOF5wEHg-2lj4Jg7g9lt/s400/HappinessLevels.png" width="400" /></a></div>
+<br />
+<div class="clear">
+</div>
+<br />
+And here we have my happiness levels when grouped by day of the week. We could conclude that I am, on average, the most content on a Sunday. I would like to believe it is just a coincidence that I am most content on a Sunday, and drink the least amount of coffee.<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZSPSAIcShizGYihxqq8sUEBuym3QKmjW5MzqLG2UDYhTNq4dPnnULLbnNk6XN66CoxRQKDCbpe-R5C2Ei6ZYW3sXvpUweHLIqLkUEJ9copLPBYMVsWSWDjUKKbqGERORa6vIFRvYClUpi/s1600/HappinessLevelsByWeekday.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="375" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZSPSAIcShizGYihxqq8sUEBuym3QKmjW5MzqLG2UDYhTNq4dPnnULLbnNk6XN66CoxRQKDCbpe-R5C2Ei6ZYW3sXvpUweHLIqLkUEJ9copLPBYMVsWSWDjUKKbqGERORa6vIFRvYClUpi/s400/HappinessLevelsByWeekday.png" width="400" /></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br /></div>
+<br />
+<div class="clear">
+</div>
+<br />
+<div class="separator" style="clear: both; text-align: left;">
+This is the standard deviation of my happiness tracking on a monthly basis. It looks like I am also getting less moody.</div>
+<div class="separator" style="clear: both; text-align: center;">
+<br /></div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH1tHZVTIM1VKrYUelpM8MuNwxtVirH2sSetHMvo_ZeBrU3hX-Hxy8m5Pr5W87HRmdmbGWv9ltCn4YwN_haNDRCVz7DZT6ZAwbq9IkqkiBaLG4N2L1KQgRu2bK7txg2aeRtN1m7DsDjUTC/s1600/StdDevHappiness.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="335" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH1tHZVTIM1VKrYUelpM8MuNwxtVirH2sSetHMvo_ZeBrU3hX-Hxy8m5Pr5W87HRmdmbGWv9ltCn4YwN_haNDRCVz7DZT6ZAwbq9IkqkiBaLG4N2L1KQgRu2bK7txg2aeRtN1m7DsDjUTC/s400/StdDevHappiness.png" width="400" /></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br /></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br /></div>
+<div>
+And finally, weight. Nothing interesting here. I need to get back down to 77KG, which is a more natural weight for me. I use a normal scale so only record every few months - if I had a wi-fi scale, I would be able to record much more frequently.&nbsp;</div>
+<div>
+<br /></div>
+<br />
+<div class="clear">
+</div>
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjc37Tdd2wc3vLwfhPtKvYtY8mtVN0tV2pbbq7sjaqqBEOS9UGr0VzLC1fGY_PyI1SA8g3Y3TQOcqOAIyIUsByoNzsL_9pBDEdyjlk7n48RVZd-P3tdVWNZ_7h2M2gwZVcsESRkPj-YdAM1/s1600/Weight.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="313" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjc37Tdd2wc3vLwfhPtKvYtY8mtVN0tV2pbbq7sjaqqBEOS9UGr0VzLC1fGY_PyI1SA8g3Y3TQOcqOAIyIUsByoNzsL_9pBDEdyjlk7n48RVZd-P3tdVWNZ_7h2M2gwZVcsESRkPj-YdAM1/s640/Weight.png" width="640" /></a></div>
+<br />
+<div>
+<br /></div>
+<div>
+<br /></div>
+<br />
+<div class="clear">
+</div>
+<br />
+<br />
+<div>
+<b>Final Thoughts</b></div>
+<div>
+<br />
+In the last ~18 months I have become more happy and less moody, with Sunday being my happiest day, and Monday and Wednesday being my least content. I have put on three KG. I drink the most amount of coffee on Saturday, the least amount on Sunday, and have been able to drink less wine, but keep drinking the same amount of beer.</div>
+<div>
+<br /></div>
+<div>
+By looking at this evaluation I know I should probably start to incorporate a lunchtime walk into my daily routine, and stop drinking coffee on one day of the weekend. I should also drink my beer at a slower pace when I'm out, as this will prevent me from buying more than one, or, even harder to resist, friends and colleagues buying it for me.<br />
+<br />
+Finally: I know none of the charts have a title. Read the text.</div>
+<div>
+<br /></div>
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/07/21/sydney-commute-times-mapped-part-1.html">
+            Sydney Commute Times Mapped Part 1
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jul 21, 2013</span>
+        I quite like open data. I like data based on open standards (or mostly open standards) even better. Many transport operators around the world have started releasing their timetable data using (mostly) open standards, e.g.&nbsp;<a href="http://en.wikipedia.org/wiki/General_Transit_Feed_Specification" target="_blank">GTFS</a>. One of the nice things about using a standard is that clever people have created tools to work with the timetable data, and those tools can now be used to manipulate timetable data from hundreds of agencies. The magnificent OpenTripPlanner is one such tool, and it works well with <a href="http://131500.info/" target="_blank">131500</a>'s GTFS data.<div><br />
+</div><div>New South Wales Planning &amp; Infrastructure have released a draft <a href="http://strategies.planning.nsw.gov.au/MetropolitanStrategyforSydney.aspx" target="_blank">plan</a> for how they hope to shape Sydney's growth, which is where they detail the idea of a "city of cities". I thought it would be interesting to mash these smaller "cities" with 131500's transport data, and then display a map with the shortest commute to the nearest city. Various cities, I believe including Melbourne, have goals of re-achieving a "20-minute" city, or something similar (i.e. X% of the population can reach X% of the city within X minutes).</div><div><br />
+</div><div>This map is the first stage. It only displays the commute time to St Leonards from every Mesh Block in the greater Sydney area. I used the open source tool OpenTripPlanner to computer the commute times, with OpenStreetMaps to support walking distances. The next map I release will probably have all the regional cities, and a similar styled map depicting time to nearest "centre".</div><div><br />
+</div><div><br />
+<iframe height="600px" src="http://maps.kelvinism.com/st_leonards_commute.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/st_leonards_commute.html" target="_blank">View Full Screen</a><br />
+<br />
+<br />
+</div><div><br />
+</div></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page4" class="previous-page">4</a></li>
+          <li><div class="current-page">5</div></li>
+          <li><a href="/page6" class="next-page">6</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

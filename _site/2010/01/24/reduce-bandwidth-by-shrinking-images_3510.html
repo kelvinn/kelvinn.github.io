@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Reduce Bandwidth By Shrinking Images</h2><div class="post-list" itemprop="articleBody">
+    <p>My girlfriend's brother has a simple WordPress-based website that I set up for him a few year ago - and he likes to post a lot of images.  For various reasons I have it hosted on my VPS in Australia, which only comes with 15GB of bandwidth, most likely because I got a crazy good deal on it.</p><p>The problem is, that isn't much bandwidth.  Each page of his site was previously using almost 10MB of bandwidth per view - which meant the 15GB was running out.  I deduced the high usage in Firebug and noticed it was *gasp* from large images, some almost 1MB large.  The images on the server are contained in subdirectories under a gallery folder - and I wanted to resize them.  What I actually wanted to do was:</p><br />
+<br />
+1) If the image was over 1024x900, resize it.<br />
+<br />
+2) If the image size (bytes) was over X, lower the quality.<br />
+<br />
+<br />
+<p>I ended up using ImageMagick, which is what first obviously came to mind for image manipulation.  While there is likely a better way to resize all the images, this is what I came up with.  Maybe somebody else will find it useful too.</p><pre class="brush: bash; light: true; ">
+for dir in /home/vhosts/website.com/html/wp-content/gallery/*
+do
+cd $dir
+for filename in *.jpg
+do
+echo Filename: "$filename"
+width=`identify -ping -format %w "$filename"`
+height=`identify -ping -format %h "$filename"`
+if [ $width -ge 1024 -a $height -ge 900 ]; then
+convert "$filename" -resize "%80>" "$filename"
+echo New Dimensions: $width x $height 
+fi
+filesize=`stat -c%s "$filename"`
+if [ $filesize -ge 414981 ]; then
+convert "$filename" -quality 90 "$filename"
+echo Old Filesize: $filesize
+echo New Filesize: `stat -c%s "$filename"`
+fi
+done
+done
+</pre><br />
+<br />
+<p>Save it as "resize.sh" and run it with "bash resize.sh".  The output:</p><pre class="brush: plain; light: true; ">Filename: img_5364.jpg
+Old Filesize: 950748
+New Filesize: 331426
+Filename: img_5366.jpg
+Filename: img_5367.jpg
+Filename: 1c10_1.jpg
+Filename: 1.jpg
+Filename: 2752_1.jpg
+Filename: 42920014.jpg
+New Dimensions: 1544 x 1024
+Filename: 42920017.jpg
+New Dimensions: 1544 x 1024
+</pre>
+  </div><span>[
+    
+      
+      <a href="/tag/imagemagick"><code class="highligher-rouge"><nobr>imagemagick</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/traffic"><code class="highligher-rouge"><nobr>traffic</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/bash"><code class="highligher-rouge"><nobr>bash</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2010/01/24/reduce-bandwidth-by-shrinking-images_3510.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

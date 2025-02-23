@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">PNG Transparency and IE</h2><div class="post-list" itemprop="articleBody">
+    <img align="right" alt="I Hate IE!" class="blogimages" src="http://media.kelvinism.com/images/freakingannoying.png" /><br />
+I've vowed to not use transparent PNGs until almost everybody has switched to IE7, where they are actually supported (despite being supported by every other major browser).  I've done the hacks, and have had good results.  I like using PNGs, I'll admit it.  <a href="http://www.inkscape.org/">Inkscape</a> exports them directly, however one slight problem: transparency still exists.  This isn't really a problem since I'm not layering images, or is it?<br />
+My initial assumption is that IE would simple pull the white background and everything would be dandy.  Well, we all know what they say about assumptions.<br />
+<br />
+<br />
+A few options exist:<br />
+<ul><br />
+<li><s>Convert them to GIFs</s></li>
+<br />
+<li><s>Try some sneaky PNG IE hack</s></li>
+<br />
+<li>Do a rewrite and send all IE6 traffic to download firefox.  Err... <s>Do a rewrite and send all IE6 traffic to download firefox</s></li>
+<br />
+<li><s>Open each in GIMP and add a white background</s></li>
+<br />
+<li>Use <a href="http://www.imagemagick.org/">ImageMagick</a> and convert the background to white.</li>
+</ul>
+<br />
+<br />
+We have a winner! The problem is, for the life of me, I couldn't figure out a simple convert command to do this.  The quick bash script would suffice:<br />
+<pre class="brush: bash; light: true; ">
+#/bin/bash
+CONVERT=/usr/bin/convert
+for image in *.png; do
+ $CONVERT -background white $image $image
+ echo "Finished converting: $image"
+done</pre>
+<br />
+<br />
+<b>Note:</b>This is gonna convert all PNGs.<br />
+<br /><br />
+So, no the transparent GIFs have a "white" base layer, IE renders them fine, normal browswers render the images fine, and I'm allowed a cup of coffee.  I hope this helps somebody, if so, leave a note!<br />
+<br />
+
+  </div><span>[
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2007/05/07/png-transparency-and-ie_2740.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

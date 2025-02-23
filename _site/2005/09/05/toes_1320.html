@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">TOES</h2><div class="post-list" itemprop="articleBody">
+    Status: <i class="fas fa-check-circle"></i><br />
+
+<br />
+<p>Toes, aka the Temporary Order Entry System, is a, get this, a temporary ordering system to buy some more time while the full ERP is designed and implemented.  Because we grew so quickly, orders needed to be put in a temporary zone, then moved somewhere else (apologies for being vague, you can understand why).  Myself and a co-worker hacked up a temporary holding zone for the orders.  It allows New Invoices, to View Invoices, whatever is In Queue, Voided and Search.  The order entry page is auto-loads prices and things from the database, so totals are pulled out of the database and added up automatically.  We ultimately entered well over 1500 invoices into TOES before the ERP was implemented, and besides a few odd hiccups, it was pretty stable.  The UI doesn't look all web2.0-like, but for an intranet project, it didn't need to.</p><br />
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><a href="http://picasaweb.google.com/lh/photo/9w7SJluUqaeqs2D-5DxhOw?feat=embedwebsite" style="margin-left: auto; margin-right: auto;"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEicgh2j9EM-1zkhrQnsFMWXCrpvJLOasQH3f1Du9t8u2xoPe_7XzcLw5liRaQZT5K8buUT67Q3fxGjFLdxYhg6CWdRxx8JBcCCBwd3VB_r3N0GWtCtx9crg5gQ84opreTAXzTEeqg61-a7B/s800/TOES_1.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><b style="text-align: left;">Adding a new invoice</b></td></tr></tbody></table><a href="http://picasaweb.google.com/lh/photo/YjlNXktJ6f1ICMat4R7NWg?feat=embedwebsite"></a><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFvIgaZCQe8JscQW14G9oEcdyIp-uINlmRsEBuOsZsPRWpe7OeVUY_UQwNdHlHXBi9eYBZMRi3d45pLbcbil2EkZ4v1k3VvnJMUySa70QYEB-EA0cL-NdE4HxJ3rxgdqkIxUl-Jo6Felp5/s800/TOES_2.jpg" style="margin-left: auto; margin-right: auto;" /></td></tr><tr><td class="tr-caption" style="text-align: center;"><b style="text-align: left;">Auto-fill out feature</b></td></tr></tbody></table><br /><br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><a href="http://picasaweb.google.com/lh/photo/oTcqxLH9D78cZJKjqlrnKQ?feat=embedwebsite" style="margin-left: auto; margin-right: auto;"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjscGshgJz_-Qnku8dDnZRwc-QN_CfjNF-YpPvX0Yff3HkAZKW7pdqQBA4EfGzLfnn7zwpHO50V0ftnKW1q-7rOLbE7Ip-OEtOnAdsURpJRvopoLoJQzkb-DJjpLKAzmhMmSBY34-791ZiI/s800/TOES_3.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><b style="text-align: left;">Order in-queue, ready to be transferred</b></td></tr></tbody></table><a href="http://picasaweb.google.com/lh/photo/owaBGB8_obl-m08qvsQ6ow?feat=embedwebsite"></a><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwJeozaxxgT60UrxhXyAYYEcTIYC3okFtsFIyCKsT53diRoF2xY5aXNvSCjEUU8PKPsMmSCFpBviFu7VaYkcfV_3gukD0GKT1CRz_x0NkXcJDJQBtu-eW__IsfTWSR_hDheGlKDG_fwCKQ/s800/TOES_4.jpg" style="margin-left: auto; margin-right: auto;" /></td></tr><tr><td class="tr-caption" style="text-align: center;"><b style="text-align: left;">Viewing an invoice</b><br /></td></tr></tbody></table><br />
+<br />
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><a href="http://picasaweb.google.com/lh/photo/y-iCAruk7eDC7N6lWZfDLw?feat=embedwebsite" style="margin-left: auto; margin-right: auto;"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdh7zoMRlpMypBiwDhEYH6ZIaZsuAY1_zrfdF5EOngXWFI-UKXSTC1P-Zu_Qv3RaJD7XmkMPkJ6_KAU6G1ofBsZHEMDgrxVm24HoNSFX8ub3uWkHZiBcCzS9Vq0I5oUwUW0j3VNK4BKIkQ/s800/TOES_5.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><b style="text-align: left;">Orders Taken (already moved)</b></td></tr></tbody></table><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><a href="http://picasaweb.google.com/lh/photo/HAVhBkl4qXnx7RNrFkKzOA?feat=embedwebsite" style="margin-left: auto; margin-right: auto;"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiipfLxIg64W3oWNCSoXILQ3mDvZlgw9iX0haP3s7ViMn7GPy-CviF_dV0LQqtIfEDnrhbNEJ6Z1fo9byll5L_Rfnk6YBFLfBRlGxIx4U6FOd-Zuw9GhyAMb2jMUiPsnWc5MmkkSHd-xAYs/s800/TOES_7.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;"><b style="text-align: left;">Must have search</b><br /></td></tr></tbody></table><p><br /></p>
+
+  </div><span>[
+    
+      
+      <a href="/tag/projects"><code class="highligher-rouge"><nobr>projects</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2005/09/05/toes_1320.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,26 @@
+---
+layout: post
+title: 'Solved: NO PUBKEY'
+date: '2007-05-25T20:30:00.005+10:00'
+author: Kelvin Nicholson
+tags:
+- howtos
+modified_time: '2013-01-09T21:33:03.633+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-1379052932426608735
+blogger_orig_url: https://www.kelvinism.com/2007/05/solved-no-pubkey_625.html
+---
+
+I've received this error more than once, so I'm finally writing my notes how I solve it.<br />
+<h4>
+Error message:</h4>
+<br />
+W: GPG error: http://security.debian.org stable/updates Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A70DAF536070D3A1<br />
+<br />
+This really is just your standard don't-have-the-gpg-keys error.  So, get'em -- take the last eight digits from the long NO_PUBKEY string <b>that is displayed on your computer</b>.  If you are using Debian 4.0, the above key is likely correct; if you are using Ubuntu or another version of Debian, it will be wrong.  (The last eight digits are used as an identifier at the keyservers). Then:<br />
+<pre class="brush: plain; light: true; ">
+gpg --keyserver subkeys.pgp.net --recv-keys 6070D3A1
+gpg --export 6070D3A1 | apt-key add -</pre>
+<br />
+<br />
+Repeat if necessary. All done, just do an apt-get update and no more warning!<br />
+<br />

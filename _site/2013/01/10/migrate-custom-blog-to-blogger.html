@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Migrate Custom Blog to Blogger</h2><div class="post-list" itemprop="articleBody">
+    For the last ten years I have run this website from various systems. First it was on Wordpress, then Mambo, then Joomla, and since early 2006 it has been running on custom code written using Django. I used this site as a learning tool for Django, re-wrote it after gaining more knowledge of Django, and then re-wrote it again when Google released App Engine. However, I recently realised that for the last few years I have spent more time writing little features than actually writing. I have entire trips that I never wrote because I was too busy writing code.<br />
+<br />
+This week it all changed. I did the unthinkable. I moved this website to Blogger.<br />
+<br />
+After evaluating some of the features of blogger, i.e. custom domains, location storing, ability to filter on labels, custom HTML/CSS, great integration with Picasa, and their mobile app, I realised I could virtually replace everything I had previously custom made.<br />
+<br />
+This post gives a technical description how to migrate a site running Django, but readily applies to any blog running on custom code. I initially spent a fair bit of time trying to figure out how to convert my existing RSS feed into something Blogger could accept, but every solution required troubleshooting. I soon remembered why I love Django so much, and that it would be trivial to generate the correct XML for import.<br />
+<br />
+1) <b>Create Blogger Template</b><br />
+I wanted to keep my design, so I hacked it to support Blogger. Take one of the existing templates, edit the HTML, and adjust it for your design. If you've worked with templates before this shouldn't be too difficult.<br />
+<br />
+2) <b>Generate Sample XML</b><br />
+The first step was to generate a sample XML file from Blogger to see what would be needed for import. Create a sample post with a unique name and a few labels, and location. In Blogger, go to Settings-&gt;Other and click Export Blog. The first 90% of the file will be for your template and other settings, but eventually you will find a section with &lt;entry&gt; elements in it. Copy this sample element out - this will become your template.<br />
+<br />
+3) <b>Format Template</b><br />
+Using the sample section from the blog export, format it so the view you will create populates it correctly. A note of caution: the t<span style="font-family: inherit;">emplate nee</span>ds ti<span style="font-family: inherit;"><span style="font-family: inherit;">me in&nbsp;<span style="background-color: white; line-height: 16.78333282470703px;">ISO 8601</span>&nbsp;for</span>m</span>at, you need the &lt;id&gt; element, and the location element needs coordinates if there is a name. It won't import later if there is a name with no coordinates. My template looks like this:<br />
+<h4>
+feeds/rss.html</h4>
+<pre class="brush: html; light: true; ">{%  load blog_extras %}
+{% for entry in entries %}
+    <entry>
+        <id>tag:blogger.com,1999:blog-1700991654357243752.post-{% generate_id %}</id>
+        <published>{{ entry.publish_date|date:"Y-m-d" }}T10:30:00.000123</published>
+        <updated>{{ entry.publish_date|date:"Y-m-d" }}T10:30:00.000123</updated>
+        <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#post">
+        {% for tag in entry.tags %}
+            <category scheme="http://www.blogger.com/atom/ns#" term="{{ tag.name }}">
+        {% endfor %}
+
+        <title type="text">{{ entry.title }}</title>
+        <content type="html">{{ entry.content }}</content>
+
+        <link href="http://www.example.com/{{ entry.publish_date|date:&quot;Y/m&quot; }}/{{ entry.slug }}.html" rel="alternate" title="{{ entry.title }}" type="text/html"></link>
+
+        <author><name>Joe Bloggs</name>
+            <uri>https://plus.google.com/12345689843655881853</uri>
+            <email>kelvin@example.com</email>
+            <gd:image height="32" rel="http://schemas.google.com/g/2005#thumbnail" src="//lh4.googleusercontent.com/-6Y_WU91234c/AAAAAAAAAAI/AAAAAAAAIo8/123456rpqA/s512-c/photo.jpg" width="32">
+        </gd:image></author>
+    </category></category></entry>
+{% endfor %}
+</pre>
+<br />
+This isn't really RSS, so if you are pedantic you can name it something else. You will notice I loaded some template tags in there ("blog_extras"). This is for generating the random number, as this is needed for the ID element.. Here's the template tag.<br />
+<h4>
+blog_extras.py</h4>
+<pre class="brush: python; light: true; "># 'import random' at beginning of file
+def generate_id():
+    id = ""
+    for x in xrange(1, 7):
+        id = id + str(int(random.uniform(400, 900)))
+    id = id + "8"
+    return {'obj': id}
+register.inclusion_tag('blog/generate_id.html')(generate_id)
+</pre>
+<br />
+<h4>
+/blog/generate_id.html</h4>
+<pre class="brush: plain; light: true; ">{{ obj }}
+</pre>
+<br />
+4) <b>Create Code To Populate View</b><br />
+This section should be easy if you have written your blog in Django. Simply populate the template, what I have shown as "rss.html" above<br />
+<h4>
+blog/views.py</h4>
+<pre class="brush: python; light: true; ">def show_rss(self):
+    q = Entry.all()
+    q = q.filter("genre !=", "blog")
+    entries = q.fetch(500)
+    return render_to_response("feeds/rss.html", {
+        'entries': entries,
+        }, mimetype='text/plain')
+</pre>
+<br />
+I did a filter on the model to not include "blog" entries - these are my travel stories, and I exported them separately. Remember that this is all happening on App Engine, so you will need to adjust if using Django's normal ORM.<br />
+<br />
+5) <b>Download Entries</b><br />
+Visit the URL you mapped to the "show_rss" function in urls.py, it should generate your list of entries. Copy and paste those entries into the exported XML from Blogger where you took out the original &lt;entry&gt; element.<br />
+<br />
+6) <b>Import Entries</b><br />
+Now go to Blogger and import your blog. With any luck you will have imported all your entries. You will probably need to do this a few times as you tweak the text. I had to remove some newlines from my original posts.<br />
+<br />
+<b>Optional Steps</b><br />
+<br />
+7) <b>Create Redirect URLS</b><br />
+Links in Blogger appear to only end in .html, which is a problem for links coming from Django. Luckily, Blogger includes the ability to add redirects. Go to Settings-&gt;Other-Search Preferences. You can then edit redirects there. I generated a list of my old URLs and combined that with a list of the new URLs. Hint: you can use Yahoo Pipes to extract a list of URLS from a RSS feed. If you open any of the links in Excel and split on forward slashes, remember that it will cut off leading zeros. Set that field to TEXT during import.<br />
+<br />
+I decided not to create redirects for every entry, as I didn't really have time, and it only probably matters if somebody links directly to that page. I opened Google Analytics and looked at the Search Engine Optimisation page and sorted it by the most used inbound links. After getting down to entries that only had 1 inbound request per month I stopped creating redirects.<br />
+<br />
+8) <b>Host Stylesheets and Images Externally</b><br />
+Blogger won't host host files, so you need to work around this problem. All my images are generally from Picasa, except very specific website related ones. I moved those to Amazon's S3 and updated the links. I did the same with my CSS. You could probably store them in Google Storage, too.<br />
+<br />
+9) <b>Create Filters on Labels</b><br />
+If you had any previous groupings you can still link to them using label searches (in my case I actually added the "genre" as a label). The syntax is "/search/label/<i>labelname</i>/", as you can see in my&nbsp;<a href="http://www.kelvinism.com/search/label/howtos/">howtos section</a>&nbsp;link.<br />
+<br />
+10) <b>Update Webmaster Tools</b><br />
+If your site is part of Google's Webmaster Tools, you will want to login and take a look that things are OK. You will also probably want to update your sitemap (send Google your atom.xml feed).
+  </div><span>[
+    
+      
+      <a href="/tag/django"><code class="highligher-rouge"><nobr>django</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/python"><code class="highligher-rouge"><nobr>python</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/google"><code class="highligher-rouge"><nobr>google</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2013/01/10/migrate-custom-blog-to-blogger.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

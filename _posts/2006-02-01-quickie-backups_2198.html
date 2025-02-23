@@ -1,0 +1,16 @@
+---
+layout: post
+title: Quickie Backups
+date: '2006-02-01T21:30:00.003+11:00'
+author: Kelvin Nicholson
+tags:
+- projects
+modified_time: '2020-06-24T22:27:13.376+10:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-7455933785488252571
+blogger_orig_url: https://www.kelvinism.com/2006/02/quickie-backups_2198.html
+---
+
+Status: <i class="fas fa-check-circle"></i><br />
+
+<br />
+<p>All is well for some disasters, but what happens if our entire office burns down?  SSH+rsync to the rescue, again.</p><p>I first setup the PDC and webapp server to backup to the file server on a regular basis (PDC: incremental every day, full on Saturday).  Then the file server takes those backups (including the files stored on the file server) every night and syncs them with another server across the States.  In case something drastic happens, these off-site backups should be a savior.</p><br />

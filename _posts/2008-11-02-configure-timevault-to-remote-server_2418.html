@@ -1,0 +1,30 @@
+---
+layout: post
+title: Configure Timevault to Remote Server
+date: '2008-11-02T21:30:00.011+11:00'
+author: Kelvin Nicholson
+tags:
+- ubuntu
+- linux
+- howtos
+modified_time: '2013-01-09T21:12:35.521+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-3546745219108244640
+blogger_orig_url: https://www.kelvinism.com/2008/11/configure-timevault-to-remote-server_2418.html
+---
+
+<p>Using TimeVault with a shared drive as a backend is actually quite easy, but it does require a few special things setup. Note: this is gonna be a brief summary.</p><br />
+<p>Install samba-tools, smbfs...</p><br />
+<pre class="brush: plain; light: true; ">sudo apt-get install samba-tools smbfs
+</pre><br />
+<p>A lot more other stuff may install as well.</p><br />
+<p>Create a script that mounts your samba share.  You could also do this in fstab, but I tend to suspend my laptop when I come home, and I like clicking buttons.</p><br />
+<pre class="brush: bash; light: true; ">#!/bin/bash
+
+mount -t cifs //192.168.44.2/kelvin /mnt/backups -o netbiosname=KELVIN-PC,iocharset=utf8,credentials=/home/kelvin/Apps/.smb-details.txt
+</pre><br />
+<br />
+<p>smb-details.txt includes:</p><pre class="brush: plain; light: true; ">username=DOMAIN\kelvin
+password=mypassword
+</pre><br />
+<br />
+<p>Finally, create a folder called 'timevault' or something inside your mapped share, then launch TimeVault and configure it to use the above mentioned /mnt/backups/timevault folder. Configure Timevault as normal.</p><br />

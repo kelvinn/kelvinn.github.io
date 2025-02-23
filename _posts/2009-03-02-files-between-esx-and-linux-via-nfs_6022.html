@@ -1,0 +1,34 @@
+---
+layout: post
+title: Files between ESX and Linux via NFS
+date: '2009-03-02T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- esxi
+- nfs
+- vmware
+- linux
+- howtos
+modified_time: '2013-01-09T21:08:38.627+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-1327690225575355413
+blogger_orig_url: https://www.kelvinism.com/2009/03/files-between-esx-and-linux-via-nfs_6022.html
+---
+
+<p>I like ESX.  I like Linux.  It is absurdly easy to configure Linux as an NFS server and mount it in ESXIi).</p><p><b>Installed NFS</b></p><p>I currently use Ubuntu Server for my home lab, but the process is basically the same for Red Hat and derivatives.</p><pre class="brush: plain; light: true; ">sudo apt-get install nfs-common
+sudo apt-get install nfs-kernel-server
+</pre><br />
+<p>Next, configure NFS so it can server your local LAN.  Normally you would list only specific servers, but, well, we're being cheap and dirty today. Open /etc/exports in VI or your editor of choice.</p><b>/etc/exports</b><br />
+<pre class="brush: plain; light: true; ">/media/disk/Images 192.168.0.0/24(rw,no_root_squash,async
+</pre><br />
+<p>Restart NFS.</p><pre class="brush: plain; light: true; ">sudo /etc/init.d/nfs-common
+</pre><br />
+Go to Configuration -> Storage -> Add Storage.<br />
+<br />
+Select NFS<br />
+<br />
+Fill in the info, see screenshot.<br />
+<br />
+Wait a minute.  Voila! New datastore.<br />
+<br />
+<br />
+<b>Images to come shortly.</b>

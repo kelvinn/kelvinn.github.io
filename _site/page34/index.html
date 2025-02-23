@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/11/08/resize-xen-image_3704.html">
+            Resize a Xen Image
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 8, 2006</span>
+        <p>So, you've got a few Xen images around, and they are starting to fill up.  How do you add a few more gigs to 'em?</p> <pre class="brush: plain; light: true; "> root@tpe:/# xm shutdown vm01<br /> root@tpe:/# cd /xenimages<br /> root@tpe:/xenimages# dd if=/dev/zero bs=1024 count=1000000 >> vm01.img<br /> root@tpe:/path/to/images# resize2fs -f vm01.img<br /> </pre>  That's it, you just added a gig to your image called 'vm01.img'.<br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/11/08/mcse-security_5711.html">
+            MCSE: Security
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 8, 2006</span>
+        Status: <i class="fas fa-check-circle"></i><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/11/03/katapult-screencast_788.html">
+            Katapult Screencast
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 3, 2006</span>
+        <p><a href="http://www.ianfitzpatrick.com/">Ian</a> keeps bugging me at how great Quicksilver is.  Knowning that there <i>must</i> be an alternative built for linux, I accidently stumbled across Katapult.</p>  <p>While it still has a little room to grow, Katapult makes a great tool in any KDE toolchest.  Press ALT+SPACE, and your widget fires up, ready to take your orders.  Since words don't really do this justice, I created a screencast.</p> <br /><br /><object width="600" height="450"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=10316527&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=10316527&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="450"></embed></object><p><a href="http://vimeo.com/10316527">Katapult Screencast</a> from <a href="http://vimeo.com/user3417633">Kelvin Nicholson</a> on <a href="http://vimeo.com">Vimeo</a>.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/11/02/xen-nvidia_5527.html">
+            Xen + nVidia
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 2, 2006</span>
+        Status: <i class="fas fa-check-circle"></i><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/10/15/three-little-commands-and-pen-test_9.html">
+            Three Little Commands and a Pen-Test
+          </a>
+        </h3>
+        <span class="post-meta">Published on Oct 15, 2006</span>
+        <p>Yea, you read that right.  Three commands and you can run a pen-test on your website/webserver.  So, how?</p> <div class="code"> kelvin@home:~$ sudo apt-get install nikto<br /> kelvin@home:~$ sudo nikto -update<br /> kelvin@home:~$ nikto -h www.thoughtdeposit.net</div> <p>As you can see, Nikto is a web server scanner, apparently for over 3200 dangerous files/vulnerabilities.  Additional features can be seen at the <a href="http://www.cirt.net/code/nikto.shtml">Nikto</a> website, yet you will certainly want to add this old gem to your webserver toolbelt as soon as possible.</p><br /></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page33" class="previous-page">33</a></li>
+          <li><div class="current-page">34</div></li>
+          <li><a href="/page35" class="next-page">35</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

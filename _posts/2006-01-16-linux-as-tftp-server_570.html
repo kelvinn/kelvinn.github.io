@@ -1,0 +1,41 @@
+---
+layout: post
+title: Linux as a TFTP Server
+date: '2006-01-16T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- howtos
+modified_time: '2013-01-09T21:59:24.296+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-4034472958129423310
+blogger_orig_url: https://www.kelvinism.com/2006/01/linux-as-tftp-server_570.html
+---
+
+So, you need a TFTP server for something? Cool, you must be doing something fun.  I need a TFTP server to copy Cisco IOS images onto the routers; hopefully you are doing something cooler. <br />
+1) Enable TFTP in inetd.conf<br />
+Open up /etc/inetd.conf and look for the following line:<br />
+<pre class="brush: plain; light: true; ">
+kelvin@pluto:~$ vi /etc/inetd.conf
+
+#tftp  dgram   udp     wait    root    /usr/sbin/in.tftpd  in.tftpd -s /tftpboot -r blksize</pre>
+This is on line 72 for me (hint: in vi press ctrl+c, then :set number).  Uncomment it.  If you don't have this line, bummer.  Search for in.tftpd and use that as a substitute.<br />
+<br />
+<pre class="brush: plain; light: true; ">kelvin@pluto:~$ which in.tftpd
+/usr/sbin/in.tftpd
+kelvin@pluto:~$</pre>
+<br />
+2) Create the TFTP directory<br />
+As you can see, we need the directory tftpbood.  Create it.<br />
+<br />
+<pre class="brush: plain; light: true; "> kelvin@pluto:~$ sudo mkdir /tftpboot </pre>
+<br />
+3) Restart inetd<br />
+<br />
+<pre class="brush: plain; light: true; ">kelvin@pluto:~$ sudo kill -1 [inetd pid]</pre>
+<br />
+You can get the inetd pid by typing: <br />
+<pre class="brush: plain; light: true; ">kelvin@pluto:~$ ps -aux | grep inetd </pre>
+Cheers.<br />
+<br />
+<b>Edit</b>: A colleague in New Zealand was searching for something and stumbled upon this page.  I gave him the tip that if you need to find the tftp server (or any service), you can do it based on port:<br />
+<pre class="brush: plain; light: true; ">lsof -i :69</pre>
+<br />

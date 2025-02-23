@@ -1,0 +1,75 @@
+---
+layout: post
+title: Integrate imified into Django
+date: '2011-01-18T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- django
+- python
+- howtos
+- xmpp
+modified_time: '2013-01-09T20:57:58.284+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-4558894192624699147
+blogger_orig_url: https://www.kelvinism.com/2011/01/integrate-imified-into-django_2631.html
+---
+
+I recently had the desire to send small updates to my so called <a href="http://www.blogger.com/about-me/">lifestream</a> page via XMPP/GTalk.  I played around with Twisted Words and several other Python XMPP clients, but I didn't really want to keep a daemon running if unnecessary.  It turns out imified took a lot of the pain out of it.  The steps for me were as follows:<br />
+Create an account with imified, and create a URL, e.g. /app/api/<br />
+We then configure the <b>urls.conf</b><br />
+<pre class="brush: python; light: true; ">urlpatterns = patterns('',   
+(r'^app/api/$', bot_stream),
+)
+</pre>
+<br />
+<br />
+We then create the necessary views. So, in <b>views.py</b>:<br />
+<pre class="brush: python; light: true; ">from django.shortcuts import render_to_response
+from django.http import HttpResponse
+from lifestream.forms import *
+from datetime import datetime
+from time import time
+
+def bot_stream(request):
+if request.method == 'POST':
+botkey = request.POST.get('botkey')
+username = request.POST.get('user')
+msg = request.POST.get('msg')
+network = request.POST.get('network')
+
+if username == "username@gmail.com" or network == "debugger":
+blob_obj = Blob(id=time(), body=msg, service_name="Mobile",
+link="http://www.kelvinism.com/about-me/", published=datetime.now())
+blob_obj.save()
+resp = "OK"
+else:
+resp = "Wrong username %s" % username
+else:
+resp = "No POST data"
+return HttpResponse(resp)
+
+</pre>
+<br />
+<br />
+To complete this little example, you can see what I used for my <b>models.py</b><br />
+<pre class="brush: python; light: true; ">class Blob(models.Model):
+id = models.CharField(max_length=255, primary_key=True)
+body = models.TextField(max_length = 1024, null = True, blank = True)
+service_name = models.CharField(max_length=50, null=True, blank=True)
+link = models.URLField(max_length=255, verify_exists=False, null=True, blank=True)
+published = models.DateTimeField(null=True, blank=True)
+
+def __unicode__(self):
+return self.id
+
+class Meta:
+ordering = ['-published']
+verbose_name = 'Blob'
+verbose_name_plural = 'Blobs'
+
+def get_absolute_url(self):
+return "/about-me/"
+
+</pre>
+<br />
+<br />
+It maybe isn't super elegant, but it works just fine, and maybe can provide a hint if somebody else is contemplating using a homebuilt xmpp solution, or just pawning it off on IMified.

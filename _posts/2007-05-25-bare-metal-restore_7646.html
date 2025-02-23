@@ -1,0 +1,14 @@
+---
+layout: post
+title: Bare-metal Restore
+date: '2007-05-25T20:30:00.004+10:00'
+author: Kelvin Nicholson
+tags:
+- disaster recovery
+- articles
+modified_time: '2013-01-09T20:49:37.798+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-2331765905453649111
+blogger_orig_url: https://www.kelvinism.com/2007/05/bare-metal-restore_7646.html
+---
+
+<p>As you can see by my previous post, my question to squeeze more req/sec from the server, I decided to try out Gentoo (again, last time was four years ago).  Now, I like Gentoo, there is no doubt about that.  However, I realized things took just <b>too</b> long to get set up.  I guess that is the disadvantage of a source based package management tool.  Back to Debian I go.</p><p>Two hours later everything was up and running -- and I guess I can't complain about a two hour bare-metal restore from one distro to another.  And let me iterate, this isn't just a typical LAMP boxen.  It's got:</p><ul><br /><li>apache/mod_php/ssl with ~10 domains</li><br /><li>apache/mod_python/ssl with ~4 domains</li><br /><li>lighttpd with ~5 domains (static files)</li><br /><li>about 8 gigs of web data/images</li><br /><li>svn repos + web_dav access</li><br /><li>mysql restored</li><br /><li>postfix(chroot)/dovecot/sasl + mysql auth</li><br /><li>home dirs restored</li><br /><li>chrooted users again</li><br /></ul><br /><br /><p>I'm sure I missed something on this list, I was typing pretty quick.  Well, that's the update.  I'm gonna go tinker with mod_cache some.</p><br /><br />

@@ -1,0 +1,36 @@
+---
+layout: post
+title: Lightweight Detection
+date: '2007-01-23T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- articles
+- IDS
+- hacking
+modified_time: '2013-01-09T21:36:09.614+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-7527416271679443386
+blogger_orig_url: https://www.kelvinism.com/2007/01/lightweight-detection_8013.html
+---
+
+I love my Snort, I really do.&nbsp; But sometimes, I just don't need all the extra overhead -- sometimes the resources on a server are somewhat, limited.&nbsp; Looking for a solution I stumbled upon <a href="http://www.cipherdyne.com/psad/">PSAD</a> , a way to detect port scans.&nbsp; Since port scans are often one of the first tactics used to find vulnerabilities on a server, it is a pretty good idea to detect them.&nbsp;&nbsp; Depending on the attack, I receive a nice little email telling me what is going on.&nbsp; To test it out I first fired up nmap, and received a few emails.&nbsp; Next I fired up nessus with updated plugins -- you can be the judge.&nbsp; I now have 50 emails from myself telling me somebody is doing something naughty:<br />
+<pre class="brush: plain; light: true; ">
+=-=-=-=-=-=-=-=-=-=-=-= Tue Jan 23 10:30:04 2007 =-=-=-=-=-=-=-=-=-=-=-=
+
+
+         Danger level: [5] (out of 5) Multi-Protocol
+
+    Scanned tcp ports: [11-41111: 337 packets]
+            tcp flags: [SYN: 337 packets, Nmap: -sT or -sS]
+       iptables chain: INPUT, 337 packets
+
+               Source: 218.167.75.27
+                  DNS: 218-167-75-27.dynamic.hinet.net
+
+          Destination: 64.79.194.165
+                  DNS: kelvinism.com
+
+      Syslog hostname: kelvinism
+
+     Current interval: Tue Jan 23 10:29:54 2007 (start)
+                       Tue Jan 23 10:30:04 2007 (end)</pre>
+<br />

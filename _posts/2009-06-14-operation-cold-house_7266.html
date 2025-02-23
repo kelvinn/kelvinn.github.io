@@ -1,0 +1,23 @@
+---
+layout: post
+title: Operation Cold House
+date: '2009-06-14T20:30:00.009+10:00'
+author: Kelvin Nicholson
+tags:
+- home
+- mysql
+- google charts
+- temperature
+- pachube
+- projects
+- arduino
+modified_time: '2020-06-24T22:23:05.745+10:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-4963535805005974797
+blogger_orig_url: https://www.kelvinism.com/2009/06/operation-cold-house_7266.html
+---
+
+Status: <i class="fas fa-check-circle"></i><br />
+<br />
+<br />
+<br />
+<p>My house is cold.  I want to start playing with simple electronics before starting <a href="http://www.kelvinism.com/projects/operation-field/">Operation Field</a>, so have created Operation Cold House.</p><p>This is just simply sticking a temperature sensor onto an Arduino, linking that up to my little home "<a href="http://www.kelvinism.com/tech-blog/true-consolidation/">server</a>", and uploading that to my website.  I'll display some nifty graphs, too, and link it to <a href="http://www.pachube.com/">Pachube</a>.  Stay tuned.</p><p><b>Update</b>: Complete!  The proof is <a href="http://www.kelvinism.com/howtos/simple-arduino-led-tutorial/">in the</a> <a href="http://www.kelvinism.com/tech-blog/arduino-101/">pudding</a>.  I now have a personal website from home (sorry, not public) that displays the daily and weekly temperature at home.  The process is basically like this: my little Arduino gathers the temperature, and is polled every minute with a python script via cron.  This script then sticks the time and temperature into MySQL.  It also exports the temperature to Pachube.  Every 30m I have a script that queries MySQL and uses Google's Chart's API to graph the temperature.  Looks great, I'll post a graph soon.</p>

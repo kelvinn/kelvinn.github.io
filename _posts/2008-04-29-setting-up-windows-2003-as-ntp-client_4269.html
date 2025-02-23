@@ -1,0 +1,28 @@
+---
+layout: post
+title: Setting up Windows 2003 as an NTP Client
+date: '2008-04-29T20:30:00.008+10:00'
+author: Kelvin Nicholson
+tags:
+- windows
+- ntp
+- howtos
+modified_time: '2013-01-09T21:17:38.615+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-4875524023463105315
+blogger_orig_url: https://www.kelvinism.com/2008/04/setting-up-windows-2003-as-ntp-client_4269.html
+---
+
+<p>I have had to search for the commands to setup a Windows 2003 box as an ntp client a few times now, so have decided to finally write them down here for my own good measure.  Funny thing is, I'm pretty sure there are three ways to setup a 2003 box as an ntp client.</p><h4>1) Via the CLI</h4><br />
+<br />
+<p>Open up the cmd prompt and type in:</p><pre class="brush: plain; light: true; ">w32tm /config /manualpeerlist:"0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org" 
+/syncfromflags:MANUAL /reliable:YES /update
+</pre><br />
+<br />
+<h4>2) Via the CLI, option 2</h4><br />
+<br />
+<pre class="brush: plain; light: true; ">net time setsntp: "0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org"
+</pre><br />
+<br />
+<h4>3) Via GUI</h4><br />
+<br />
+<p>Type in <b>gpedit.msc</b> and your local GPO editor will pop up.  Go to the folder as indicated in the below screenshot and Enable the "Enable Windows NTP Client" option.  Next set the "Configure Windows NTP Client" option to whatever time servers you so choose.  As always, make sure to keep the 0x1 at the end.</p>

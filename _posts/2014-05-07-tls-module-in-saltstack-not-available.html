@@ -1,0 +1,42 @@
+---
+layout: post
+title: TLS Module In SaltStack Not Available (Fixed)
+date: '2014-05-07T12:50:00.003+10:00'
+author: Kelvin Nicholson
+tags:
+- linux
+- python
+- howtos
+- saltstack
+modified_time: '2014-05-07T12:51:31.949+10:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-1975315378769730970
+blogger_orig_url: https://www.kelvinism.com/2014/05/tls-module-in-saltstack-not-available.html
+---
+
+I was trying to install <a href="https://github.com/saltstack/halite">HALite</a>, the WebUI for <a href="http://www.saltstack.com/">SaltStack</a>, using the provided instructions. However, I kept getting the following errors when trying to create the certificates using Salt:<br />
+<code><br />
+'tls.create_ca_signed_cert' is not available.<br />
+'tls.create_ca' is not available.</code><br />
+<code><br /></code>
+Basically, the 'tls' module in Salt simply didn't appear to work. The reason for this is detailed on <a href="http://intothesaltmine.org/install_and_configure_halite_alpha_on_arch_linux.html">intothesaltmind.org</a>:<br />
+<br />
+<i>Note: Use of the tls module within Salt requires the pyopenssl python extension.</i><br />
+<br />
+That makes sense. We can fix this with something like:<br />
+<code><br />
+apt-get install libffi-dev<br />
+pip install -U pyOpenSSL<br />
+/etc/init.d/salt-minion restart</code><br />
+<code><br /></code>
+Or, better yet, with Salt alone:<br />
+<br />
+<code>
+salt '*' cmd.run 'apt-get install libffi-dev'<br />
+salt '*' pip.install pyOpenSSL<br />
+salt '*' cmd.run "service salt-minion restart"</code><br />
+<code><br /></code>
+The commands to create the PKI key should work now:<br />
+<br />
+<code>
+Created Private Key: "/etc/pki/salt/salt_ca_cert.key." Created CA "salt": "/etc/pki/salt/salt_ca_cert.crt."<br />
+</code>

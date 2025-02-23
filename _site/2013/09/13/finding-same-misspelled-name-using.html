@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Finding The Same (Misspelled) Name Using Python/NLTK</h2><div class="post-list" itemprop="articleBody">
+    I have been meaning to play around with the <a href="http://nltk.org/">Natural Language Toolkit</a>&nbsp;for quite some time, but I had been waiting for a time when I could experiment with it and actually create some value (as opposed to just play with it). A suitable use case appeared this week: matching strings. In particular, matching two different lists of many, many thousands of names. <br />
+<br />
+To give you an example, let's say you had two lists of names, but with the name spelled incorrectly in one list:<br />
+<br />
+List 1: <br />
+Leonard Hofstadter<br />
+Sheldon Cooper<br />
+Penny<br />
+Howard Wolowitz<br />
+Raj Koothrappali<br />
+Leslie Winkle<br />
+Bernadette Rostenkowski<br />
+Amy Farrah Fowler<br />
+Stuart Bloom<br />
+Alex Jensen<br />
+Barry Kripke<br />
+<br />
+List 2:<br />
+Leonard Hofstadter<br />
+Sheldon Coopers<br />
+Howie Wolowits<br />
+Rav Toothrapaly<br />
+Ami Sarah Fowler<br />
+Stu Broom<br />
+Alexander Jensen<br />
+<br />
+This could easily occur if somebody was manually typing in the lists, dictating names over the phone, or spell their name differently (e.g. Phil vs. Phillip) at different times.<br />
+<br />
+If we wanted to match people on List 1 to List 2, how could we go about that? For a small list like this you can just look and see, but with many thousands of people, something more sophisticated would be useful. One tool could be NLTK's edit_distance function. The following Python script displays how easy this is:<br />
+<br />
+<pre class="brush: python; light: true; ">import nltk
+
+list_1 = ['Leonard Hofstadter', 'Sheldon Cooper', 'Penny', 'Howard Wolowitz', 'Raj Koothrappali', 'Leslie Winkle', 'Bernadette Rostenkowski', 'Amy Farrah Fowler', 'Stuart Bloom', 'Alex Jensen', 'Barry Kripke']
+
+list_2 = ['Leonard Hofstadter', 'Sheldon Coopers', 'Howie Wolowits', 'Rav Toothrapaly', 'Ami Sarah Fowler', 'Stu Broom', 'Alexander Jensen']
+
+for person_1 in list_1:
+    for person_2 in list_2:
+        print nltk.metrics.edit_distance(person_1, person_2), person_1, person_2
+</pre>
+<br />
+0 Leonard Hofstadter Leonard Hofstadter<br />
+15 Leonard Hofstadter Sheldon Coopers<br />
+14 Leonard Hofstadter Howie Wolowits<br />
+15 Leonard Hofstadter Rav Toothrapaly<br />
+14 Leonard Hofstadter Ami Sarah Fowler<br />
+16 Leonard Hofstadter Stu Broom<br />
+15 Leonard Hofstadter Alexander Jensen<br />
+14 Sheldon Cooper Leonard Hofstadter<br />
+1 Sheldon Cooper Sheldon Coopers<br />
+13 Sheldon Cooper Howie Wolowits<br />
+13 Sheldon Cooper Rav Toothrapaly<br />
+12 Sheldon Cooper Ami Sarah Fowler<br />
+11 Sheldon Cooper Stu Broom<br />
+12 Sheldon Cooper Alexander Jensen<br />
+16 Penny Leonard Hofstadter<br />
+13 Penny Sheldon Coopers<br />
+13 Penny Howie Wolowits<br />
+14 Penny Rav Toothrapaly<br />
+16 Penny Ami Sarah Fowler<br />
+9 Penny Stu Broom<br />
+13 Penny Alexander Jensen<br />
+11 Howard Wolowitz Leonard Hofstadter<br />
+13 Howard Wolowitz Sheldon Coopers<br />
+4 Howard Wolowitz Howie Wolowits<br />
+15 Howard Wolowitz Rav Toothrapaly<br />
+13 Howard Wolowitz Ami Sarah Fowler<br />
+13 Howard Wolowitz Stu Broom<br />
+14 Howard Wolowitz Alexander Jensen<br />
+16 Raj Koothrappali Leonard Hofstadter<br />
+14 Raj Koothrappali Sheldon Coopers<br />
+16 Raj Koothrappali Howie Wolowits<br />
+4 Raj Koothrappali Rav Toothrapaly<br />
+14 Raj Koothrappali Ami Sarah Fowler<br />
+14 Raj Koothrappali Stu Broom<br />
+16 Raj Koothrappali Alexander Jensen<br />
+14 Leslie Winkle Leonard Hofstadter<br />
+13 Leslie Winkle Sheldon Coopers<br />
+11 Leslie Winkle Howie Wolowits<br />
+14 Leslie Winkle Rav Toothrapaly<br />
+14 Leslie Winkle Ami Sarah Fowler<br />
+12 Leslie Winkle Stu Broom<br />
+12 Leslie Winkle Alexander Jensen<br />
+17 Bernadette Rostenkowski Leonard Hofstadter<br />
+18 Bernadette Rostenkowski Sheldon Coopers<br />
+18 Bernadette Rostenkowski Howie Wolowits<br />
+19 Bernadette Rostenkowski Rav Toothrapaly<br />
+20 Bernadette Rostenkowski Ami Sarah Fowler<br />
+20 Bernadette Rostenkowski Stu Broom<br />
+17 Bernadette Rostenkowski Alexander Jensen<br />
+15 Amy Farrah Fowler Leonard Hofstadter<br />
+14 Amy Farrah Fowler Sheldon Coopers<br />
+15 Amy Farrah Fowler Howie Wolowits<br />
+14 Amy Farrah Fowler Rav Toothrapaly<br />
+3 Amy Farrah Fowler Ami Sarah Fowler<br />
+14 Amy Farrah Fowler Stu Broom<br />
+13 Amy Farrah Fowler Alexander Jensen<br />
+15 Stuart Bloom Leonard Hofstadter<br />
+12 Stuart Bloom Sheldon Coopers<br />
+12 Stuart Bloom Howie Wolowits<br />
+14 Stuart Bloom Rav Toothrapaly<br />
+13 Stuart Bloom Ami Sarah Fowler<br />
+4 Stuart Bloom Stu Broom<br />
+14 Stuart Bloom Alexander Jensen<br />
+15 Alex Jensen Leonard Hofstadter<br />
+12 Alex Jensen Sheldon Coopers<br />
+13 Alex Jensen Howie Wolowits<br />
+15 Alex Jensen Rav Toothrapaly<br />
+13 Alex Jensen Ami Sarah Fowler<br />
+10 Alex Jensen Stu Broom<br />
+5 Alex Jensen Alexander Jensen<br />
+15 Barry Kripke Leonard Hofstadter<br />
+13 Barry Kripke Sheldon Coopers<br />
+13 Barry Kripke Howie Wolowits<br />
+12 Barry Kripke Rav Toothrapaly<br />
+13 Barry Kripke Ami Sarah Fowler<br />
+10 Barry Kripke Stu Broom<br />
+14 Barry Kripke Alexander Jensen<br />
+<br />
+As you can see, this displays the&nbsp;<a href="http://en.wikipedia.org/wiki/Levenshtein_distance">Levenstein distance</a>&nbsp;of the two sequences. Another option we have is to look at the ratio.<br />
+<br />
+<pre class="brush: python; light: true; ">len1 = len(list_1)
+len2 = len(list_2)
+lensum = len1 + len2
+for person_1 in list_1:
+    for person_2 in list_2:
+        levdist = nltk.metrics.edit_distance(person_1, person_2)
+        nltkratio = (float(lensum) - float(levdist)) / float(lensum)
+        if nltkratio &gt; 0.70:
+            print nltkratio, person_1, person_2
+</pre>
+<br />
+1.0 Leonard Hofstadter Leonard Hofstadter<br />
+0.944444444444 Sheldon Cooper Sheldon Coopers<br />
+0.777777777778 Howard Wolowitz Howie Wolowits<br />
+0.777777777778 Raj Koothrappali Rav Toothrapaly<br />
+0.833333333333 Amy Farrah Fowler Ami Sarah Fowler<br />
+0.777777777778 Stuart Bloom Stu Broom<br />
+0.722222222222 Alex Jensen Alexander Jensen
+  </div><span>[
+    
+      
+      <a href="/tag/python"><code class="highligher-rouge"><nobr>python</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2013/09/13/finding-same-misspelled-name-using.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Adding Search to Django</h2><div class="post-list" itemprop="articleBody">
+    This is fairly well documented in the Django docs, so I'll be brief. This is the the bit of search code I use in almost all of my Django sites, and it works great:<br />
+<pre class="brush: python; light: true ">
+
+def search(request):
+    from django.db.models import Q
+    q = request.GET.get("q", "")
+    if q and len(q) &gt;= 3:
+        clause = Q(dirtword__icontains=q)               \
+               | Q(description__icontains=q)       \
+               | Q(tags__name__icontains=q)        
+        site_search = Dirt.objects.filter(clause).distinct()
+    else:
+        site_search = Dirt.objects.order_by('?')[:100]
+    return list_detail.object_list(
+        request              = request,
+        queryset             = site_search,
+        template_name        = "dirty/search.html",
+        template_object_name = "dirty",
+        paginate_by          = 20,
+        extra_context        = {"q" : q},
+    )  
+</pre>
+<br />
+<br />
+While this should be pretty self-explanatory, the process goes like this: q is taken from the GET request and if it is over three characters long, it is searched for in the dirtword column, through the description and also through the m2m relationship of tags__name.  Yup, it is pretty nifty to be able to access relationship in this way (tags__name).  You will notice that at the end of each search it says "__icontains" -- this simply does a fuzzy search for the word.  Once the queryset is created (the filter) I've added a .distinct() on the end --this prevents multiple rows from being returned to the template.  If there isn't a search, or it isn't long enough, a random list will be returned.<br />
+One thing I like to do is include the search as extra_context -- this allows you to say something like "you've searched for..." at the top of your search.  I couldn't imagine implementing a search feature as being any easier.
+  </div><span>[
+    
+      
+      <a href="/tag/search"><code class="highligher-rouge"><nobr>search</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/django"><code class="highligher-rouge"><nobr>django</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/articles"><code class="highligher-rouge"><nobr>articles</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2007/06/03/adding-search-to-django_6300.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

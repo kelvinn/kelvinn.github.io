@@ -1,0 +1,33 @@
+---
+layout: post
+title: Generating a Self-Signed SSL Cert
+date: '2007-05-11T20:30:00.002+10:00'
+author: Kelvin Nicholson
+tags:
+- howtos
+modified_time: '2013-01-09T21:33:44.135+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-3573737185210661563
+blogger_orig_url: https://www.kelvinism.com/2007/05/generating-self-signed-ssl-cert_2490.html
+---
+
+I have the need to generate an SSL cert (Apache2) about once every 3 months.  And since I'm cheap, I don't ever actually *buy* one, I just self-sign it.  And every time I forget the commands needed.  So, here they are, for my reference only.<br />
+<b>1) Generate Private Key</b><br />
+<br />
+<pre class="brush: plain; light: true; ">
+openssl genrsa -des3 -out server.key 1024</pre>
+<br />
+<b>2) Generate a CSR</b><br />
+<br />
+<pre class="brush: plain; light: true; ">
+openssl req -new -key server.key -out server.csr</pre>
+<br />
+<b>3) Remove passphrase</b><br />
+<br />
+<pre class="brush: plain; light: true; ">
+cp server.key server.key.org
+openssl rsa -in server.key.org -out server.key</pre>
+<br />
+<b>4) Generate Self-Signed Cert</b><br />
+<br />
+<pre class="brush: plain; light: true; ">
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</pre>

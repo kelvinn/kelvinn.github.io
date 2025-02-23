@@ -1,0 +1,13 @@
+---
+layout: post
+title: Resize a VMWare Image of Windows XP
+date: '2007-01-27T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- howtos
+modified_time: '2013-01-09T20:49:37.793+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-1531036805046401612
+blogger_orig_url: https://www.kelvinism.com/2007/01/resize-vmware-image-of-windows-xp_4908.html
+---
+
+<p>&nbsp;</p>Over the years I have been shrinking the number of computers I own.&nbsp; At one point my dorm was littered with old P100s, running whatever OS I felt like playing with at the time. &nbsp;<br /><br />VMWare comes to help.&nbsp; In this recent oops, an image I made (for Windows XP), was slightly too small.&nbsp; I didn&#39;t feel like reinstalling XP + cruft, so just resized the image.&nbsp; This is the process:<br /><br /><br />1) Make Clone or just backup your VMWare image.<br /><br />2) Note: if your disk is a Dynamic Disk, you won&#39;t be able use GParted.&nbsp; There is a chance you can use Disk Management inside Computer Managemen inside XP.<br /><br />3) Turn off VMWare image.<br /><br />4) Grow the image. &nbsp;<br /><br /><br /><br /><pre class="brush: plain; light: true; "> vmware-vdiskmanager -x sizeGB yourimagename.vmdk </pre><br /><br /><br />5) Download the <a href="http://gparted.sourceforge.net/download.php">GParted LiveCD</a> <br /><br />5) Change the CD-ROM drive of your&nbsp; VMWare image to boot from the ISO you just downloaded.<br /><br />6) Boot VMWare image.&nbsp; Make sure to press ESC right when it starts.<br /><br />7) Follow the instructions for GParted. I had to select the Xvesa option, then Done.&nbsp; Choose your language and keyboard and resolution.<br /><br />8) GParted will come up.&nbsp; First delete the partition (the empty one!), and make sure it says unallocated.&nbsp; Then go up to Edit and hit Apply.&nbsp; Then select the partition and say Resize.&nbsp; Hit apply again. <br /><br />9) Reboot image.&nbsp; Windows XP will come up, and go through checking the disk.&nbsp; It will reboot again, and you should then be able to log in.<br />

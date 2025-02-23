@@ -1,0 +1,34 @@
+---
+layout: post
+title: Fixing mysql warning message
+date: '2009-05-03T20:30:00.004+10:00'
+author: Kelvin Nicholson
+tags:
+- mysql
+- ubuntu
+- articles
+- tips
+- debian
+modified_time: '2013-01-09T21:07:59.061+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-1607761870671925734
+blogger_orig_url: https://www.kelvinism.com/2009/05/fixing-mysql-warning-message_4782.html
+---
+
+<p>After restoring databases from one server to another I sometimes get this error on Ubuntu or Debian:</p><pre class="brush: plain; light: true; ">error: 'Access denied for user 'debian-sys-maint'@'localhost' (using password: YES)'
+</pre><br />
+<p>This makes a lot of sense, and the solution is pretty simple.  If you look in:</p><pre class="brush: plain; light: true; ">cat /etc/mysql/debian.cnf
+</pre><br />
+<p>You'll see the defaults for your system.  Copy the password listed there, and open a connection to MySQL as root (or some other user).  Next, enter this (lets say your password specified in debian.cnf was 'abracadabra':</p><pre class="brush: plain; light: true; ">mysql> select PASSWORD('abracadabra');
++-------------------------------------------+
+| PASSWORD('abracadabra')                   |
++-------------------------------------------+
+| *38794E19D534EBA4F0F78903FA00F1DA2989DCA2 | 
++-------------------------------------------+
+1 row in set (0.00 sec)
+
+</pre><br />
+<p>Next, since we already have the prompt open, do this command:</p><pre class="brush: plain; light: true; ">mysql> USE mysql;
+mysql> UPDATE user SET password='*38794E19D534EBA4F0F78903FA00F1DA2989DCA2' where user='debian-sys-maint';
+mysql> FLUSH privileges;
+</pre><br />
+<p>Restart MySQL, and the error should have gone away.</p>

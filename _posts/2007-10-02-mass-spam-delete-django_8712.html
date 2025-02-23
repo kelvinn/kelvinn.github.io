@@ -1,0 +1,18 @@
+---
+layout: post
+title: Mass Spam Delete Django
+date: '2007-10-02T20:30:00.002+10:00'
+author: Kelvin Nicholson
+tags:
+- django
+- articles
+- spam
+- travel
+modified_time: '2013-01-09T21:21:44.678+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-7987237147602207706
+blogger_orig_url: https://www.kelvinism.com/2007/10/mass-spam-delete-django_8712.html
+---
+
+<p>As you can read, I've been traveling around quite a bit lately.  This means I haven't been checking the comments on my blog, which means quite a bit of spam has been entered.  I am blocking the spam via akismet, however, it is still recorded in the database.  Being somebody who hates cluttered desktops, you can imagine how I feel about having a lot (447) of spam.  Well, since akismet flips the is_public switch True for good comments and False for bad comments, that makes a <b>really</b> easy query in mysql.</p><pre class="brush: plain; light: true; ">mysql> delete from comments_freecomment where is_public = False
+</pre><br />
+<p>Of course, make sure you have backed up your database first.</p>

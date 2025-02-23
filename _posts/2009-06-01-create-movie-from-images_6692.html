@@ -1,0 +1,31 @@
+---
+layout: post
+title: Create a Movie from Images
+date: '2009-06-01T20:30:00.002+10:00'
+author: Kelvin Nicholson
+tags:
+- trash
+- linux
+- monitoring
+- howtos
+modified_time: '2013-01-09T21:07:02.530+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-630186538401144688
+blogger_orig_url: https://www.kelvinism.com/2009/06/create-movie-from-images_6692.html
+---
+
+<p>I've started leaving my webcam on as a motion detector to find out who is leaving the shopping cards on our lawn, and ultimately have found it useful to stitch the images together into a movie.  There are several ways to do this - and my way maybe isn't the best - but it works for me.<p><br />
+<br />
+<p>I first installed and configured <a href="http://www.lavrsen.dk/twiki/bin/view/Motion/WebHome">motion</a>, which I've used for years.  I then created a file in ~/.motion called motion.com:</p><p>$ cat ~/.motion/motion.conf</p><pre class="brush: plain; light: true; ">height 480
+width 640
+framerate 2
+</pre><br />
+<br />
+<p>By creating this file, it allows me to start motion without modifying the global motion.conf file permissions, or *gasp* running it under sudo.  There are <a href="http://www.lavrsen.dk/foswiki/bin/view/Motion/ConfigFileOptions">lots of options</a> you can put in your motion.com file.</p><p>With motion installed, and configured, now install mencoder.</p><p>I prefer to generate a seed file based on the creation date for each image.  If you try to use mencoder with just a *.jpg, it works, but my video jumped around.</p><pre class="brush: plain; light: true; ">$ pwd
+/home/path/Desktop/motion
+$ ls -rt *.jpg > list.txt
+</pre><br />
+<br />
+<p>This list.txt file now has the filenames, in chronological order, ready for consumption.  I create the video like so:</p><pre class="brush: shell; light: true; ">mencoder mf://@list.txt -o `date +%G%m%d`.avi -ovc lavc -lavcopts vcodec=mjpeg
+</pre><br />
+<br />
+<p>This will output a file with today's date in a few seconds.  Remember, the `'s are the key by the #1, not quotes.</p>

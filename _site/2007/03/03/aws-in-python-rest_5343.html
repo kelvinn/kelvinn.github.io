@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">AWS in Python (REST)</h2><div class="post-list" itemprop="articleBody">
+    As some of you may know, I have some projects cooked up.  I don't expect to make a million bucks (wish me luck!), but a few extra bills in the pocket wouldn't hurt.  Plus, I'm highly considering further education, which will set me back a few-thirty grand.  That said, one of my projects will rely heavily on <a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.com%2FAWS-home-page-Money%2Fb%3Fie%3DUTF8%26node%3D3435361&amp;tag=kelvinismcom-20&amp;linkCode=ur2&amp;camp=1789&amp;creative=9325">Amazon Web Services</a><img alt="" border="0" height="1" src="http://www.assoc-amazon.com/e/ir?t=kelvinismcom-20&amp;l=ur2&amp;o=1" style="border: none !important; margin: 0px !important;" width="1" />.  Amazon has, for quite some time now, opened up their information via REST and SOAP.  I've been trying (virtually the entire day) to get SOAP to work, but seem to get snagged on a few issues.  Stay tuned.<br />
+However, in my quest to read every RTFM I stumbled upon a post regarding Python+REST to access <a href="http://www.amazon.com/gp/redirect.html?ie=UTF8&amp;location=http%3A%2F%2Fwww.amazon.com%2Fb%3Fie%3DUTF8%26node%3D269962011%26no%3D239513011%26me%3DA36L942TSJ2AJA&amp;tag=kelvinismcom-20&amp;linkCode=ur2&amp;camp=1789&amp;creative=9325">Alexa Web Search</a><img alt="" border="0" height="1" src="http://www.assoc-amazon.com/e/ir?t=kelvinismcom-20&amp;l=ur2&amp;o=1" style="border: none !important; margin: 0px !important;" width="1" />.  After staring at Python code, especially trying to grapple why SOAP isn't working, updating the outdated REST code was a 5 minute hack.  So, if you are interested in using Alexa Web Search with Python via Rest, look below:<br />
+<br />
+<br />
+<h4>
+websearch.py</h4>
+<br />
+<pre class="brush: python; light: true ">
+
+#!/usr/bin/python
+
+"""
+Test script to run a WebSearch query on AWS via the REST interface.  Written
+ originally by Walter Korman (shaper@wgks.org), based on urlinfo.pl script from 
+  AWIS-provided sample code, updated to the new API by  
+Kelvin Nicholson (kelvin@kelvinism.com). Assumes Python 2.4 or greater.
+"""
+
+import base64
+import datetime
+import hmac
+import sha
+import sys
+import urllib
+import urllib2
+
+AWS_ACCESS_KEY_ID = 'your-access-key'
+AWS_SECRET_ACCESS_KEY = 'your-super-secret-key'
+
+def get_websearch(searchterm):
+    def generate_timestamp(dtime):
+        return dtime.strftime("%Y-%m-%dT%H:%M:%SZ")
+    
+    def generate_signature(operation, timestamp, secret_access_key):
+        my_sha_hmac = hmac.new(secret_access_key, operation + timestamp, sha)
+        my_b64_hmac_digest = base64.encodestring(my_sha_hmac.digest()).strip()
+        return my_b64_hmac_digest
+    
+    timestamp_datetime = datetime.datetime.utcnow()
+    timestamp_list = list(timestamp_datetime.timetuple())
+    timestamp_list[6] = 0
+    timestamp_tuple = tuple(timestamp_list)
+    timestamp = generate_timestamp(timestamp_datetime)
+    
+    signature = generate_signature('WebSearch', timestamp, AWS_SECRET_ACCESS_KEY)
+    
+    def generate_rest_url (access_key, secret_key, query):
+        """Returns the AWS REST URL to run a web search query on the specified
+        query string."""
+    
+        params = urllib.urlencode(
+            { 'AWSAccessKeyId':access_key,
+              'Timestamp':timestamp,
+              'Signature':signature,
+              'Action':'WebSearch',
+              'ResponseGroup':'Results',
+              'Query':searchterm, })
+        return "http://websearch.amazonaws.com/?%s" % (params)
+    
+    # print "Querying '%s'..." % (query)
+    url = generate_rest_url(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, searchterm)
+    # print "url =&gt; %s" % (url)
+    print urllib2.urlopen(url).read()
+
+</pre>
+<br />
+<br />
+You run it like this:<br />
+<pre class="brush: python; light: true ">
+&gt;&gt;&gt; from websearch import get_websearch
+&gt;&gt;&gt; get_websearch('python')</pre>
+
+  </div><span>[
+    
+      
+      <a href="/tag/articles"><code class="highligher-rouge"><nobr>articles</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/amazon"><code class="highligher-rouge"><nobr>amazon</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/python"><code class="highligher-rouge"><nobr>python</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/rest"><code class="highligher-rouge"><nobr>rest</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/api"><code class="highligher-rouge"><nobr>api</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2007/03/03/aws-in-python-rest_5343.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

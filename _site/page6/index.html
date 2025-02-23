@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/07/20/mapping-mesh-blocks-with-tilemill.html">
+            Mapping Mesh Blocks with TileMill
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jul 20, 2013</span>
+        This quick tutorial will detail how to prepair the ABS Mesh Blocks to be used with MapBox's TileMill. Beyond scope is how to install postgresql, postgis and TileMill. There is a lot of documentation how to do these tasks.<br />
+<br />
+First, we create a database to import the <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument">shapefile</a> and <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument">population data</a> into:<br />
+<br />
+<br />
+Using 'psql' or 'SQL Query', create a new database:<br />
+<br />
+<pre>CREATE DATABASE transport WITH TEMPLATE postgis20 OWNER postgres;
+# Query returned successfully with no result in 5527 ms.</pre>
+<br />
+It is necessary to first import the Mesh Block spatial file using something like PostGIS Loader.<br />
+<br />
+<img height="603" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8zpIUCky4eqQcl82ds0um_KZvlqepw11Svcc5SnyMT24IBX8O9ZTIurIyzM0nNivejDs3uiPyoejPNuxpuVcMgf45IY7xYb6FmtcCUG9TbTxCDiq2feCnileNBwms5M8PrEDjhP7DRtvG/s640/PostGISLoader2.png" width="640" /><br />
+<br />
+We then create a table to import the Mesh Block population data:<br />
+<br />
+<pre>CREATE TABLE tmp_x (id character varying(11), Dwellings numeric, Persons_Usually_Resident numeric);</pre>
+<br />
+And then load the data:<br />
+<br />
+<pre>COPY tmp_x FROM '/home/kelvinn/censuscounts_mb_2011_aust_good.csv' DELIMITERS ',' CSV HEADER;</pre>
+<br />
+It is possible to import the GIS information and view it in QGIS:<br />
+<br />
+<img height="448" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir_OlfVmY_FZjQGoh_UdIr2wVe1xsNQLDzYH6M5gX5V5a-lknehk_lDEuhaZUC9tqwcoKHoKCv9KLLSSmlcqU5sX89jkJzne-FHgQYQUML9KwGoCoAQEa8DEOHuI3KA4qDq7n4kWtUbvC3/s640/qgis.png" width="640" /><br />
+<br />
+Now that we know the shapefile was imported correctly we can merge the population with spatial data. The following query is used to merge the datasets:<br />
+<br />
+<pre>UPDATE mb_2011_nsw
+SET    dwellings = tmp_x.dwellings FROM tmp_x
+WHERE  mb_2011_nsw.mb_code11 = tmp_x.id;</pre>
+<br />
+<pre>UPDATE mb_2011_nsw
+SET    pop = tmp_x.persons_usually_resident FROM tmp_x
+WHERE  mb_2011_nsw.mb_code11 = tmp_x.id;</pre>
+<br />
+We can do a rough validation by using this query:<br />
+<br />
+<pre>SELECT sum(pop) FROM mb_2011_nsw;</pre>
+<br />
+And we get 6916971, which is about right (ABS has the 2011 official NSW population of 7.21 million).<br />
+<br />
+Finally, using TileMill, we can connect to the PostgGIS database and apply some themes to the map.<br />
+<br />
+<pre>host=127.0.0.1 user=MyUsername password=MyPassword dbname=transport
+(SELECT * from mb_2011_nsw JOIN westmead_health on mb_2011_nsw.mb_code11 = westmead_health.label) as mb</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/07/20/mapping-urban-density-in-sydney.html">
+            Mapping Urban Density in Sydney
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jul 20, 2013</span>
+        Five years ago I started exploring different mapping technologies by detailing instructions on&nbsp;<a href="http://www.kelvinism.com/2008/04/setting-up-mapnik-server-on-ubuntu_118.html">installing Mapnik</a>&nbsp;and&nbsp;<a href="http://www.kelvinism.com/2008/11/revised-modtile-install-howto_1369.html">mod_tile</a>. Times have changed significantly in the last five years, and thanks a lot to the products offered by <a href="http://www.mapbox.com/" target="_blank">MapBox</a>. After playing with TileMill, MBTiles, Leaflet and UTFGrids, it is great how many annoyances have been fixed by MapBox. I find it enjoyable making maps now, as I no longer need to worry about patching code just to get it to run, or mucking about with oddities in web browser.<br />
+<br />
+Each night this week I have created a new map using Mesh Block spatial data from the Australian Bureau of Statistics (Mesh Blocks are the smallest area used when conducting surveys). I am thankful to live in a country that provides a certain amount of open data, and the ABS should be applauded for the amount of data they provide. They provide <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument" target="_blank">spatial data</a> about Mesh Blocks, as well as <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument" target="_blank">population counts</a> for this spatial data. It is relatively easy to merge the two and then visualise them using TileMill.<br />
+<br />
+First up - population density of Sydney, i.e. persons reported to be living in each mesh block. Darker red indicates a higher population count.<br />
+<br />
+<iframe height="500px" src="http://maps.kelvinism.com/syd_pop_density.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/syd_pop_density.html" target="_blank">View Full Screen</a><br />
+<br />
+I find it interesting to see how many people live in certain Mesh Blocks. You will notice that Mesh Blocks with high population levels tend to be nearer public transport - either major roads with frequent bus service, or train stations.<br />
+<br />
+We can look at the urban densities by determining dwellings per hectare, and do this per Mesh Block. The definition I used for urban densities comes from <a href="http://annforsyth.net/" target="_blank">Ann Forsyth</a>&nbsp;in "Measuring Density: Working Definitions for Residential Density and Building Intensity" (<a href="http://www.corridordevelopment.org/pdfs/from_MDC_Website/db9.pdf" target="_blank">pdf</a>). Ann discusses the need to consider net or gross densities, depending on the type of land use. At the Mesh Block level the land use type appears to be singular: Industrial, Parkland, Commercial, Residential, and Transport. Because the land use type was generally singular I have not adjusted to gross/net, but still used Ann's definitions of certain density bands:<br />
+<ul><li>Very low density: 11 dw/ha</li>
+<li>Low density: 11-22 dw/ha</li>
+<li>Medium density: 23-45 dw/ha</li>
+<li>High density: 45 dw/ha</li>
+</ul>"dw/ha" is dwellings per hectare. I decided to map the four density levels, which can be relatively easily achieved using TileMill. See below for an example.<br />
+<br />
+<iframe height="600px" src="http://maps.kelvinism.com/syd_urban_density.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/syd_urban_density.html" target="_blank">View Full Screen</a><br />
+<br />
+<p>You can zoom in and scroll over any Mesh Block in Sydney to find out more. Additional installation information on how I did this can be found on this special page: <a href="http://www.kelvinism.com/2013/07/mapping-mesh-blocks-with-tilemill.html">Mapping Mesh Block Data</a>.<br />
+<br />
+<br />
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/06/29/hiking-w-circuit-torres-del-paine.html">
+            Hiking the W Circuit (Torres del Paine)
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 29, 2013</span>
+        <div dir="ltr">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmKGA0j5Z25NkCby3nEWwQeIyj5RZwDF-CmNKR3asVKlojpdpPc2TtR8ISaevfODn3BwaRpEB60SbTegfb7-VDUMq2pIOWhMPRLKRFfzoKy8XjJ3oghEt0mSLeHQL8t80G3QmkDCGOdFFV/s1600/IMG_2686.JPG" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmKGA0j5Z25NkCby3nEWwQeIyj5RZwDF-CmNKR3asVKlojpdpPc2TtR8ISaevfODn3BwaRpEB60SbTegfb7-VDUMq2pIOWhMPRLKRFfzoKy8XjJ3oghEt0mSLeHQL8t80G3QmkDCGOdFFV/s320/IMG_2686.JPG" height="240" width="320" /></a>We have just returned from hiking the "W", a famous circuit through the Torres del Paine, in Patagonia. Although we did some research before doing the trek, it turns out we made a number of assumptions that turned out to be incorrect. I will detail in this entry what we learned, a few things that worked well, and a few things that did not work so well.<br />
+<br />
+I will try to avoid posting spoilers of the major sites, and instead focus on logistics of doing the trek. First things first: much of this content is from what we learned at a talk given at the <a href="http://www.erraticrock.com/" target="_blank">Erratic Rock</a> hostel, at 3PM the day before entering the park. The single biggest suggestion I would give you is to go to this talk.</div>
+<div dir="ltr">
+<br /></div>
+<div dir="ltr">
+Next, I should clear the two biggest assumptions I had before arriving, so you can plan accordingly.</div>
+<div dir="ltr">
+<br /></div>
+<div dir="ltr">
+1) "Pirate" camping is frowned upon - probably even illegal in the park. You must stay at a designated camp-site.</div>
+<div dir="ltr">
+2) You can only cook at designated areas, which means you need to plan lunch meals that do not need to be cooked.</div>
+<div dir="ltr">
+3) Water from streams is apparently safe to drink. Nobody uses filters. Just fill up at a place with flowing water, which comes straight from glaciers, and not where there is a horse crossing.</div>
+<div dir="ltr">
+4) There are paid refugios and free refugios.</div>
+<div dir="ltr">
+5) The paid refugios (shelters) have showers.</div>
+<div dir="ltr">
+6) The transportation to and from the park is timed perfectly for all the trekkers, but it is crucial you plan for what bus you want to take.</div>
+<div dir="ltr">
+7)&nbsp; It gets really cold at night, at least it did in March. If you bring your own sleeping bag, then make sure it is rated at least down to -5C, maybe -10C, otherwise you won't be getting much sleep.</div>
+<div dir="ltr">
+<br /></div>
+<div dir="ltr">
+How do you get to the Torres del Paine?</div>
+<div dir="ltr">
+<br /></div>
+<div dir="ltr">
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+This naturally depends where you are coming from. We were in Santiago, so flew to Punta Arenas and took a bus to Puerto Nateles. One thing&nbsp;that was a little unclear was if the bus would stop at the airport in Punta Arenas or not. We decided not to risk it, so caught a mini-bus from the airport to the bus terminal (3000CLP), and caught a bus to Puerto Nateles almost immediately. It turns out the bus did stop at the airport and picked on person up - there were no other seats left. I would suggest you email or call the bus company (<a href="http://www.busesfernandez.com/" target="_blank">Bus Ferdnandez</a>) and make sure they pick you up.</div>
+<div dir="ltr">
+<br /></div>
+<div dir="ltr">
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsmxhnusOi1UD3OiYOIyKj6DegRZHov_YopVNjmTKY9onKiVGGM9YWRGn8ejebqILTbg_v8i8paf6Tz9nlvwT5cQ1ynY7Y9cHSZ4t0ljXGROrDxTzXLi4VA5ntRU7Y39pF36ZMs3QetwCv/s1600/IMG_2754.JPG" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsmxhnusOi1UD3OiYOIyKj6DegRZHov_YopVNjmTKY9onKiVGGM9YWRGn8ejebqILTbg_v8i8paf6Tz9nlvwT5cQ1ynY7Y9cHSZ4t0ljXGROrDxTzXLi4VA5ntRU7Y39pF36ZMs3QetwCv/s320/IMG_2754.JPG" height="320" width="240" /></a></div>
+One of the first decisions you will need to make is if you should camp, or just stay in a refugio? It was obvious the people who were staying in refugios, as their packs were usually quite small, and they smelled really clean. It was obvious the people doing the full trek, as they usually looked tired, and not terribly clean. We were in the later group. Base Camp, right next to Erratic Rock, where the 3PM talk is held, offers gear rental. The <a href="http://www.erraticrock.com/equipment/" target="_blank">prices</a> are reasonable. Equipment needs to be reserved before you arrive during high season.</div>
+<div dir="ltr">
+<br /></div>
+<div dir="ltr">
+What are these refugios? Do they need to be booked in advance? The refugios are little shelters at different camp-sites strewn throughout the park. We camped, but I believe there are nice shelters (more similar to cabins), and some that are more like dormitories. Take note that you <i>must</i>&nbsp;camp at one of these designated campsites, and they aren't all free - more details below in the day-to-day breakdown.&nbsp;The two companies running the refugios are: <a href="http://www.fantasticosur.com/en/" target="_blank">Fantasticosur</a> and <a href="http://www.verticepatagonia.com/" target="_blank">Vertice</a>. I think you should book in advance, but maybe research this.&nbsp;</div>
+<div dir="ltr">
+<br /></div>
+<div dir="ltr">
+What route to take? The route you take will depend strictly on how far you want to trek each day, or are capable, as you must stay at a camp-site. At the Erratic Rock talk they will give you a suggested route, from west to east, which is one we and a group of others followed. A map of the hiking area will be provided at check in.<br />
+<br />
+I brought my GPS logger with me on the trip, as I do on <a href="https://www.google.com/fusiontables/embedviz?viz=MAP&amp;q=select+col2+from+768469+&amp;h=false&amp;lat=-32.4&amp;lng=148&amp;z=7&amp;t=4&amp;l=col2" target="_blank">all my trips</a>, so was able to make a record of where we walked. See below for the map, or you can <a href="http://cdn.kelvinism.com/files/Trekking+TDP.kmz" target="_blank">download the KML file</a>.</div>
+<div dir="ltr">
+<br /></div>
+<div dir="ltr">
+<br />
+<iframe frameborder="no" height="600" scrolling="no" src="https://www.google.com/fusiontables/embedviz?q=select+col2+from+1Xy-f46Pg7c1mfaRXSLQs_QajAsy0RStYtyABRhs&amp;viz=MAP&amp;h=false&amp;lat=-51.00095896160556&amp;lng=-72.90675563171146&amp;t=3&amp;z=11&amp;l=col2&amp;y=2&amp;tmplt=2" width="650"></iframe><br />
+<br />
+<br />
+The "Erratic Rock Route" goes like this:<br />
+<br /></div>
+<div dir="ltr">
+<div style="text-align: center;">
+<b>Day 1</b></div>
+<br />
+Catch 7:30 bus into Torres del Paine - your hostel/hotel can surely organise. Our bus cost 15000CLP return. You will enter park at about 10:00 and pay the park entrance fee. The fee is 18000CLP. You will also listen to a short talk telling you not to "pirate" camp, and don't burn down the forest. The bus will wait for you. Continue taking the bus to the second stop, which is right next to Lago Pehoe. Disembark the bus and walk to the catamaran. The boat goes between this second stop and refugio Paine Grande. The boat costs 8000CLP.<br />
+<br />
+You will arrive Paine Grande at about 13:00 and need to start hiking immediately. This day you will hike 11KM to Refugio Grey where you will set-up tent and put down your bags. The stay is 4000CLP. After setting down your bags you will keep going along the trail to the Mirador overlooking the glacier - this hike is about 4KM. Arrive as early as possible, as the sun will set behind the glacier and taking photos will become difficult.<br />
+<br /></div>
+<div dir="ltr">
+<div style="text-align: center;">
+<b>Day 2</b></div>
+<br />
+Wake up rather early, cook breakfast, and hike from Refugio Grey back to Refugio Paine Grande (11KM, ~3.5hr). Have a quick lunch, and continue hiking to Campamento Italiano (7.6KM, ~2.5hr). This is a free camp-site, so set-up tent, cook dinner, and get ready for bed. There is a water sprout near the top of the camp, so you don't need to walk to the river for water.<br />
+<br /></div>
+<div dir="ltr">
+<div style="text-align: center;">
+<b>Day 3</b></div>
+<br />
+Wake up and hike the French Valley (7.5KM each way,&nbsp; ~3hr each way). Return to camp, collect your gear, and walk to Los Cuernos (5.5KM, ~1.5hr). This stay is 8000CLP, but the showers were really hot. The camp-site fills up pretty early, as people are coming from both directions, so try to arrive earlier rather than later.<br />
+<br /></div>
+<div dir="ltr">
+<div style="text-align: center;">
+<b>Day 4</b></div>
+<br />
+Hike from Los Cuernos to Campamento Torres. About 9KM out of Los Cuernos you will encounter a big sign that says "SHORTCUT" - take it. This will take you around the backside of one mountain, by a lake, and cut some time off an already pretty long day. It is maybe 3.5hr from the shortcut to Campamento Torres, but it is all uphill. The trail gets very well used after merging with the trail from Los Torres hotel. Campamento Torres is a free camp-site. Consider camping uphill from the bathroom.</div>
+<div dir="ltr">
+<br />
+<div style="text-align: center;">
+<b>Day 5</b></div>
+<br />
+Wake up quit early and depart for the Base de las Torres for sunrise. Most people leave Campamento Torres by about 6:15am, but when we went it was overcast, and the sun didn't actually hit the mountain until almost 7:50. The walk takes about 45 minutes. Take your photos, hike back down to camp, pack up, and get back to Hotel Los Torres by 14:00. We ate breakfast at sunrise at the Base de las Torres (trail mix), but had a hot lunch at Campamento Chileno. A mini bus will pick you up by Hotel Los Torres at 14:00 and take you back to Laguna Amarga. This mini bus costs 2500CLP. Your bus will depart back to Puerto Natales at 14:30. Please shower and do laundry as soon as you get back - you probably smell like you're homeless.<br />
+<br /></div>
+<div dir="ltr">
+So, what are some things that worked really well for us?<br />
+<br />
+One of the best things we did was keep our packs light. Our packs were both under 10KG, including five days food, sleeping bags, pads, and tent. My pack was probably about 7KG. Probably the biggest regret we heard on the trail was that everyone's pack was too heavy. I would say most were above 20KG, even for females. A lot of this was due to the food choices made. I read a book on ultralight hiking in university, so knew some basic rules for keeping pack weight down:</div>
+<div dir="ltr">
+<div class="separator" style="clear: both; text-align: center;">
+</div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghTzCYUBEO6YCmbA_IaXsadCSSvSWir9qx1K0VeE_FILscI-cvn2KoEn9lgV45OkynQmG3OMqyTvxl7c3xTC7jMn6gd3JrYUg2uTFGmCDm9dnldiuipVOpyVwd2kGeop9b7XV04MQ7Htfl/s1600/IMG_2791.JPG" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghTzCYUBEO6YCmbA_IaXsadCSSvSWir9qx1K0VeE_FILscI-cvn2KoEn9lgV45OkynQmG3OMqyTvxl7c3xTC7jMn6gd3JrYUg2uTFGmCDm9dnldiuipVOpyVwd2kGeop9b7XV04MQ7Htfl/s320/IMG_2791.JPG" height="320" width="240" /></a></div>
+<ol>
+<li>Don't buy food in tin cans or water (e.g. tuna)</li>
+<li>Don't bring fresh fruits or vegetables</li>
+<li>Bring plastic or titanium/aluminum cutlery</li>
+<li>Don't bring "it" if you won't have to use "it" every day</li>
+<li>No knives or leatherman (you don't have tins to open now...)</li>
+<li>1x pants, 2x shirts, 2x socks, 2x underwear (or none), 1x long sleeve, 1x fleece, 1x down vest (maybe if cold), and 1x windbreaker/raincoat. That's it. You don't need three jumpers or five pairs of underwear. You probably don't even need the shirts as a base.</li>
+<li>Put duct tape on random things (e.g. trekking poles) instead of bringing a roll of duct tape.</li>
+<li>Buy food that cooks quickly, not types of pasta that take 20 minutes. Risotto is pretty efficient (boil, heat it some, take off flame and cover), as are some thing types of pasta in soup.</li>
+<li>You can eat out of the bowls you are cooking in - you don't need pots and plates.</li>
+<li>Bottles for only enough for 5 days. A full tube of toothpaste, big bottle of shampoo, and tube of sun screen all ads up the weight. The same is true for pills - you don't need a full pack of multivitamins, five will do.</li>
+</ol>
+</div>
+<div dir="ltr">
+We heard stories of people cooking pancakes and french fries somehow, which would taste amazing, but I would rather eat risotto and have a pack 1/3 the weight. We both made it through with not a single blister, whereas the person next to us right now has seven.<br />
+<br /></div>
+<div dir="ltr">
+Other suggestions of things that&nbsp; worked well for us include:</div>
+<div dir="ltr">
+<br />
+<ol>
+<li>Wool or wool blends of everything. It dries fast, keeps you warm, and doesn't keep odour. Get some wool blend underwear for travelling if you don't already have some.</li>
+<li>Bring a super light day pack (like one of these) that you can toss water and food into for hikes that don't require the full pack. If your full pack is comfortable enough, then just use that.</li>
+<li>Polarized UV protection glasses are a must, as is a hat. There were some seriously sun burned people returning from the trip, despite putting on "two layers of sunscreen". Wear a hat.</li>
+<li>I brought my MSR "dragonfly" stove with me, and the normal cup to cook with. Erratic Rock / Base Camp have a container with half empty gas canisters. If you don't mind risking running out of gas, grab one from here. Otherwise gas is about 8 bucks.</li>
+<li>Find additional people to share food with. Oatmeal is only sold by 1KG packages, which is a lot. Most people were throwing away leftover oatmeal at the end of the trip.</li>
+</ol>
+</div>
+<div dir="ltr">
+However, there were a few things that did not work that well, or not work as well as expected. The worst thing was a growing pain in my right knee. I've always had some pain in my knee after hiking, but by day two I was starting to have severe pain. The trails have quite steep ascends/descends. This destroyed my knee. On day four another walker who knew about my knee passed by and said "I have some trekking poles - I tried them, tripped over myself, and haven't used them since. Wanna try?" I had never used poles before, thinking they were only for old people with bad knees... Needless to say, I'll be buying a pair when I get back to Sydney, and I finished the day 4 hike without any pain. If you ever, even once, have had pain in your knees, then rent trekking poles. We had to skip the French Valley because my knees were hurting too much (I guess technically we hiked the "U", not the "W"). If my pack was not so light, I do not think I would have been able to go up to the Torres.<br />
+<br />
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMc375uOJ094b_h83P9Go4DYiU8ZMGIwnRIQj_DJp2e3Nssln2c5nOKB4bBqz6OMifVawpGgCyzWvCH0WOG8UaBm79SCuw3LElLFhiaQv20vqajj-KiF4hB6eqFRH9klIwB1VtEP4dVzHS/s1600/IMG_2835.JPG" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMc375uOJ094b_h83P9Go4DYiU8ZMGIwnRIQj_DJp2e3Nssln2c5nOKB4bBqz6OMifVawpGgCyzWvCH0WOG8UaBm79SCuw3LElLFhiaQv20vqajj-KiF4hB6eqFRH9klIwB1VtEP4dVzHS/s320/IMG_2835.JPG" height="240" width="320" /></a></div>
+The second mistake I made was not bringing a flashlight. My logic was we would just go to bed when it got dark, and rise when it got light. This is what I have always done before when trekking. Unfortunately, this does not work that well when you want to be up before the sun rises, e.g. to see the Base de las Torres. We followed (closely) some people with torches, so made it, but came close to tripping quite a few times, and it generally wasn't that enjoyable. Most people had those LED lights that go on your forehead - that would be advisable.<br />
+<br /></div>
+<div dir="ltr">
+Finally, I brought a Platypus for water. Hiking back in Oregon there would be some stretches with no water - maybe 4-5 hours of hiking without easy access to water. In the Torres del Paine, there was water nearly every two kilometers, so a Nalgene would have worked well. My better half just used her Nalgene, and it worked fine. It is also easier to fill up, and has measuring lines for how much water is needed for risotto.<br />
+<br /></div>
+<div dir="ltr">
+That's all the advice and information I can give about hiking the "W" in the Torres del Paine. The hike is a bit more expensive than I had expected, but there was some great camaraderie with other hikers, and it leaves you with a feeling of accomplishment when finished. <br />
+<br />
+There are a few more sites that detail this trek, including:<br />
+<a href="http://www.stephandben.com/2012/04/map-how-to-hike-w-in-torres-del-paine.html" target="_blank">How to hike the "W" in Torres del Paine</a><br />
+<a href="http://www.worldtravelforcouples.com/the-definitive-guide-to-hiking-torres-del-paine/" target="_blank">THE Definitive Guide to Hiking Torres del Paine</a></div>
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/02/22/february-sydney-python-presentation.html">
+            February Sydney Python Presentation
+          </a>
+        </h3>
+        <span class="post-meta">Published on Feb 22, 2013</span>
+        In February I gave a presentation to about 80 people at the Sydney Python group hosted by Atlassian. Firstly, Atlassian's office was beautiful, feeling a little like Google's Sydney office, but with beer on tap instead of cereal dispensers. Secondly, the talk before me on Cython by&nbsp;<a href="https://plus.google.com/113985890803565448326/posts" target="_blank">Aaron Defazio</a>&nbsp;was exceptionally interesting, garnering lots of questions from the audience. My presentation, more of a show and tell on piping location data to Google's Latitude through App Engine, was also meant to&nbsp;subtly&nbsp;share my views on the need for innovation in the public sector (all sectors, really).<br />
+<br />
+My slides are below. I used very little text in the slides, but you can probably catch what is going on. The response from the audience was favourable, and I thank&nbsp;<a href="https://twitter.com/djay75" target="_blank">Dylan Jay</a>&nbsp;for giving me the opportunity to speak.<br />
+<br />
+<br />
+<iframe allowfullscreen="true" frameborder="0" height="389" mozallowfullscreen="true" src="https://docs.google.com/presentation/d/1_X17S-OPc4yik5c4396suvBUQNQpz5AyF9htCK9M2js/embed?start=false&amp;loop=false&amp;delayms=3000" webkitallowfullscreen="true" width="480"></iframe></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/01/14/lessons-learned-from-kathmandu.html">
+            Lessons Learned from Kathmandu
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jan 14, 2013</span>
+        Our first trip to Kathmandu is now over, so there are some lessons learned I should scribe. Some of these are obvious, and which we abide by whenever travelling, and some we simply forgot in our (very) impromptu trip to Nepal.<br />
+<br />
+1) When agreeing on a price, make 100% sure the other person states the price back to you. I thought a price had been agreed to when the other person responded "ok ok, you are a lucky man", but this does not count. As they say, reconfirm, reconfirm, reconfirm.<br />
+<br />
+2) When arriving at the airport, make sure you have small bills, too. We had 3x 100RS, 1x 10RS, and then a few 500RS. The price we negotiated was 440RS, and it would have been nice to have paid the exact amount.<br />
+<br />
+3) Kathmandu is polluted and dirty. I cannot emphasise this enough. It is dirtier than probably any other city we have been to. If we come back, we will be bringing masks. I know this sounds silly, to wear a mask, but any local on a motorbike or in a taxi wears a mask, and many just walking around. Instead of the normal cloth masks that many people use, I would probably bring a make with finer grained material (maybe not <a href="http://www.amazon.com/gp/product/B001FA0XMO/ref=as_li_ss_tl?ie=UTF8&amp;tag=kelvinismcom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B001FA0XMO">N95</a><img alt="" border="0" height="1" src="http://www.assoc-amazon.com/e/ir?t=kelvinismcom-20&amp;l=as2&amp;o=1&amp;a=B001FA0XMO" style="border: none; margin: 0px;" width="1" />&nbsp;quality), and something with activated carbon. I'd probably get a mask like <a href="http://www.amazon.com/gp/product/B00A9UKMRW/ref=as_li_ss_tl?ie=UTF8&amp;tag=kelvinismcom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B00A9UKMRW">one of these</a><img alt="" border="0" height="1" src="http://www.assoc-amazon.com/e/ir?t=kelvinismcom-20&amp;l=as2&amp;o=1&amp;a=B00A9UKMRW" style="border: none; margin: 0px;" width="1" />. We ultimately tried to avoid walking on main roads, but having some activated carbon absorb something would have made it a little less unpleasant.<br />
+<br />
+4) My traveling companion's tip: bring dirty cloths, and throw them away after the trip. Or just bring black. Her beautiful blue jacket is now pretty filthy, with grease covering parts of it.<br />
+<br />
+5) Bring some toilet paper. Similar to other parts of Asia, the bathrooms don't have any.<br />
+<br />
+6) Bring a flashlight. The load shedding makes the city dark, and if you go out, you will want a flashlight. There aren't any lights. We only used it a few times, but I am really glad we brought two flashlights with us.<br />
+<br />
+7) Bring vitamin C and lots of hand sanitizer. We did, like we always do when we travel, and I'm really glad we did. Everybody is coughing or sick, and everybody spits. It is similar to the situation in China, i.e. everyone spits. Then everybody gets sick. Bring hand sanitizer.<br />
+<br />
+8) If you take a bus somewhere, try to ask when you buy tickets to sit on the left side in the middle. The front is a no-go for me. We typically had seats in the rear right, but on the&nbsp;curvy&nbsp;roads I think the left middle would be safer, as oncoming buses won't hit you. One bus on the way back had the left side decimated. If you do a search on "nepal bus crashes" in images.google.com, you will quickly see why you don't want to be in the front row.<br />
+<br />
+9) Our hotel rooms all typically had just one power outlet. If you bring multiple&nbsp;electronic&nbsp;devices, bring some way to &nbsp;charge&nbsp;more&nbsp;than one at a time. Something like <a href="http://www.amazon.com/gp/product/B005AF0C2G/ref=as_li_ss_tl?ie=UTF8&amp;tag=kelvinismcom-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B005AF0C2G">like this travel charger</a><img alt="" border="0" height="1" src="http://www.assoc-amazon.com/e/ir?t=kelvinismcom-20&amp;l=as2&amp;o=1&amp;a=B005AF0C2G" style="border: none; margin: 0px;" width="1" />&nbsp;would work well.<br />
+<br />
+10) Bring clothing to stay warm at night. We travelled to Nepal in winter, and all our rooms got pretty cold at &nbsp;night.<br />
+<br />
+Enjoy!<br />
+<br />
+<iframe frameborder="no" height="300" scrolling="no" src="https://www.google.com/fusiontables/embedviz?viz=MAP&amp;q=select+col2+from+1RFDybcyTiZ_M_VoDJdx9sjuqeMKU1cx-RnRxMg&amp;h=false&amp;lat=27.8261456587275&amp;lng=84.92039544339092&amp;z=10&amp;t=1&amp;l=col2&amp;y=2&amp;tmplt=2" width="650"></iframe></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page5" class="previous-page">5</a></li>
+          <li><div class="current-page">6</div></li>
+          <li><a href="/page7" class="next-page">7</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

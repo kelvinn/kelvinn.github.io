@@ -1,0 +1,104 @@
+---
+layout: post
+title: Python, AST and SOAP
+date: '2007-03-07T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- soap
+- articles
+- amazon
+- python
+- api
+modified_time: '2013-01-09T21:35:30.795+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-4788212831272670987
+blogger_orig_url: https://www.kelvinism.com/2007/03/python-ast-and-soap_3058.html
+---
+
+For one of my projects I need to generate thumbnails for a page.  And lots and lots and lots of them.  Even though I can generate them via a python script and a very light "gtk browser", I would prefer to mitigate the server load.  To do this I've decided to tap into the Alexa Thumbnail Service.  They allow two methods: REST and SOAP.  After several hours of testing things out, I've decided to toss in the towel and settle on REST.  If you can spot the error with my SOAP setup, I owe you a beer.<br />
+I'm using the ZSI module for python.<br />
+<h4>
+1. wsdl2py</h4>
+<br />
+I pull in the needed classes by using wsdl2py.<br />
+<pre class="brush: shell; light: true; ">
+wsdl2py -b http://ast.amazonaws.com/doc/2006-05-15/AlexaSiteThumbnail.wsdl</pre>
+<br />
+<br />
+<h4>
+2. Look at the code generated.</h4>
+<br />
+See <a href="http://www.kelvinism.com/media/types.html">AlexaSiteThumbnail_types.py</a> and <a href="http://www.kelvinism.com/media/client.html">AlexaSiteThumbnail_client.py</a>.<br /><br />
+<h4>
+3. Write python code to access AST over SOAP.</h4>
+<br /><br /><pre class="brush: python; light: true ">
+
+#!/usr/bin/env python
+import sys
+import datetime
+import hmac
+import sha
+import base64
+from AlexaSiteThumbnail_client import *
+
+print 'Starting...'
+
+AWS_ACCESS_KEY_ID = 'super-duper-access-key'
+AWS_SECRET_ACCESS_KEY = 'super-secret-key'
+
+print 'Generating signature...'
+
+def generate_timestamp(dtime):
+    return dtime.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+def generate_signature(operation, timestamp, secret_access_key):
+    my_sha_hmac = hmac.new(secret_access_key, operation + timestamp, sha)
+    my_b64_hmac_digest = base64.encodestring(my_sha_hmac.digest()).strip()
+    return my_b64_hmac_digest
+
+timestamp_datetime = datetime.datetime.utcnow()
+timestamp_list = list(timestamp_datetime.timetuple())
+timestamp_list[6] = 0
+timestamp_tuple = tuple(timestamp_list)
+timestamp_str = generate_timestamp(timestamp_datetime)
+
+signature = generate_signature('Thumbnail', timestamp_str, AWS_SECRET_ACCESS_KEY)
+
+print 'Initializing Locator...'
+
+locator = AlexaSiteThumbnailLocator()
+port = locator.getAlexaSiteThumbnailPort(tracefile=sys.stdout)
+
+print 'Requesting thumbnails...'
+
+request = ThumbnailRequestMsg()
+request.Url = "alexa.com"
+request.Signature = signature
+request.Timestamp = timestamp_tuple
+request.AWSAccessKeyId = AWS_ACCESS_KEY_ID
+request.Request = [request.new_Request()]
+
+resp = port.Thumbnail(request)
+</pre>
+<br /><br /><br /><br /><h4>
+4. Run, and see error.</h4>
+<br /><pre class="brush: python; light: true ">
+ZSI.EvaluateException: Got None for nillable(False), minOccurs(1) element 
+(http://ast.amazonaws.com/doc/2006-05-15/,Url), 
+
+<ns1:request>
+
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
+xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
+xmlns:ZSI="http://www.zolera.com/schemas/ZSI/" 
+xmlns:ns1="http://ast.amazonaws.com/doc/2006-05-15/" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;</ns1:request>
+
+[Element trace: /SOAP-ENV:Body/ns1:ThumbnailRequest]</pre>
+<br /><br /><h4>
+5. Conclusion</h4>
+<br /><br />I'm not entirely certain what I'm doing wrong.  I've also written another version but actually with NPBinding connecting to the wsdl file.  It seems to work much better, as it fully connects, and I get a 200, but it doesn't return the thumbnail location in the response, and I get a:<br />
+<pre class="brush: python; light: true ">
+TypeError: Response is "text/plain", not "text/xml"</pre>
+<br /><br />So, while I have things working fine with REST, I would like to get the SOAP calls working.  One beer reward.<br />
+<br />

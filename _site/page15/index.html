@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2009/05/10/compiling-kernel-for-vortex86dx_5058.html">
+            Compiling kernel for Vortex86dx
+          </a>
+        </h3>
+        <span class="post-meta">Published on May 10, 2009</span>
+        <p><b>Update</b>: I've written up a <a href="http://kelvinism.com/howtos/installing-debian-50-vortex86dx/">short tutorial</a> on the method I used to install Debian 5.0 on this device.</p><p>A few months ago I purchased the eBox-3300 from WDL Systems.  The system was promptly shipped, and there were no "gotchas" from WDL.  The little box fit my exact needs - it is small, and built very, very well.  I flew back to Australia and, after some trial and error, installed Debian 5.0 on it.  For quite some time I was just using the vmlinuz file provided by WDL, which was provided by ICOP (DMP).  This worked well, but there were two issues:</p><br />
+<br />
+1) I couldn't load any modules (e.g. NFS).<br />
+<br />
+2) I received an annoying email from OSSEC every few hours telling me it couldn't find modules.dep.<br />
+<br />
+<br />
+<br />
+<p>At the end of last week I finally decided to do something about it, and considering this little box is "x86 compliant", I figured it wouldn't be too hard to create a new package.  It has been several years since I last created a self-compiled Debian-packaged kernel, so I decided to document the process for the next time I do it.  These steps are really just a summary - but if you have much Linux experience, they should be enough to guide you.  If I'm unclear, just send me an email.</p><p>Because the eBox-3300 is embedded, I logically decided to create the package on another system.  However, I wanted to maximize the chances of it working, so I installed Debian 5.0 in VirtualBox, updated it, and proceeded.</p><p>As a prep, you may need to install ncurses-dev and kernel-package in your build environment.</p><pre class="brush: plain; light: true; ">apt-get install ncurses-dev kernel-package
+</pre><br />
+<br />
+<p>1) Download latest kernel from: <a href="http://www.kernel.org/pub/linux/kernel/v2.6/">http://www.kernel.org/pub/linux/kernel/v2.6/</a></p><p>2) Download the DMP provided patch/config file for 2.6.27.3, copy it to /usr/src.  Alternatively, you can borrow my <a href="http://cdn.kelvinism.com/ebox/config-2.6.29.3-vortex86dx">2.6.29.3 config</a>  Make a backup.</p><p>3) Untar kernel, cd into the kernel directory.  Issue:</p><pre class="brush: plain; light: true; ">make menuconfig
+</pre><br />
+<br />
+<p>4) Configure kernel.  If you used my config file, a lot of these should already be ticked.</p><br />
+a) Load alternative config file, I selected mine as /usr/src/config-2.6.27.9-vortex86dx, or if you downloaded the one from me, use config-2.6.29.3-vortex86dx<br />
+<br />
+b) Enable generic x86 support<br />
+<br />
+c) Enable Kernel .config support<br />
+<br />
+d) Device drivers -> Network -> 10 or 100Mbit -> RDC R6040, set at built in<br />
+<br />
+e) Turn off generic IDE support<br />
+<br />
+f) Exit, make sure to save the kernel<br />
+<br />
+g) Verify .config exists.  If it doesn't, copy the config-2.6.x.x-vortex86dx file to .config<br />
+<br />
+<br />
+<br />
+<p>5) Create the kernel debs.  In the kernel directory, issue these commands.  This will build the kernel image, the headers, and the modules.</p><pre class="brush: plain; light: true; ">make-kpkg --initrd kernel_image kernel_source kernel_headers modules_image
+</pre><br />
+<p>6) Make coffee</p><p>7) Copy the debs to your running ebox by sftp (or usb, or whatever is available)</p><p>8) Install kernel in eBox-3300</p><pre class="brush: plain; light: true; ">dpkg -i linux-source-2.6.29.3-vortex86dx.deb
+dpkg -i linux-headers-2.6.29.3-vortex86dx.deb
+dpkg -i linux-image-2.6.29.3-vortex86dx.deb
+</pre><br />
+<br />
+<p>9) Reboot.  If you want my compiled kernel/sources/header .DEBs, just shoot me an email and I'll make them available.</p><p><b>Summary:</b> My only gripe about this little box was the lack of an easily customizable kernel, but no more.  I'm still very happy with this $150 purchase.</p><br />
+<br />
+<br />
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2009/05/03/fixing-mysql-warning-message_4782.html">
+            Fixing mysql warning message
+          </a>
+        </h3>
+        <span class="post-meta">Published on May 3, 2009</span>
+        <p>After restoring databases from one server to another I sometimes get this error on Ubuntu or Debian:</p><pre class="brush: plain; light: true; ">error: 'Access denied for user 'debian-sys-maint'@'localhost' (using password: YES)'
+</pre><br />
+<p>This makes a lot of sense, and the solution is pretty simple.  If you look in:</p><pre class="brush: plain; light: true; ">cat /etc/mysql/debian.cnf
+</pre><br />
+<p>You'll see the defaults for your system.  Copy the password listed there, and open a connection to MySQL as root (or some other user).  Next, enter this (lets say your password specified in debian.cnf was 'abracadabra':</p><pre class="brush: plain; light: true; ">mysql> select PASSWORD('abracadabra');
++-------------------------------------------+
+| PASSWORD('abracadabra')                   |
++-------------------------------------------+
+| *38794E19D534EBA4F0F78903FA00F1DA2989DCA2 | 
++-------------------------------------------+
+1 row in set (0.00 sec)</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2009/05/03/fixing-locale-errors-in-ubuntu-804_7736.html">
+            Fixing locale errors in Ubuntu 8.04
+          </a>
+        </h3>
+        <span class="post-meta">Published on May 3, 2009</span>
+        <p>I've hit this problem a few times, and figured I'd leave a note for myself how to fix it.  Ubuntu 8.04 seems to hiccup sometimes (on a VPS) for generating the correct locales.  In particular, I get this error, a lot:</p><pre class="brush: plain; light: true; ">perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+LANGUAGE = (unset),
+LC_ALL = (unset),
+LANG = "en_US.UTF-8"
+are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+</pre><br />
+<br />
+<p>Normally I just do 'dpkg-reconfigure locales', but with 8.04, this doesn't seem to do squat.  The solution is to edit the <b>/var/lib/locales/supported.d/local</b> file, and insert the correct locales (it will normally not exist, so create it):</p><pre class="brush: plain; light: true; "># cat /var/lib/locales/supported.d/local
+zh_TW.UTF-8 UTF-8
+zh_TW BIG5
+zh_TW.EUC-TW EUC-TW
+en_US.UTF-8 UTF-8
+en_US ISO-8859-1
+en_US.ISO-8859-15 ISO-8859-15
+</pre><br />
+<p>You can then do a 'dpkg-reconfigure locales' and they will be generated correctly.  For a list of supported locales, try this:</p><pre>cat /usr/share/i18n/SUPPORTED | grep US
+</pre><br />
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2009/04/13/true-consolidation_6503.html">
+            True Consolidation
+          </a>
+        </h3>
+        <span class="post-meta">Published on Apr 13, 2009</span>
+        <p>Back in 2000 I managed to acquire several retired systems to bring to Uni: this included 4-5 cheap P120 machines.  At the time, I thought this was great; I had an OpenBSD box as my gateway, a FreeBSD box, a few Linux boxes, and likely something else that doesn't even exist now.  The school has a superfast connection, unlimited bandwidth, and I was curious.  Although I didn't really have <i>time</i>, I still managed to install and have all these servers running from my room.</p><div class="quoteboxleft">I realized I was doing at home what I was being paid to do at work.</div><br /><p>Fast forward to 2007, and my mindset has changed.  In 2007 I didn't want to have 6 servers running at once, I wanted to have one server running 12 servers at once!  Thanks to Xen and VMware this was easily obtained.  Initially using Xen, and then ESXi, I had the freedom to setup Domains, tear them down, and start over.  Eventually, however, I realized I was doing at home what I was being paid to do at work.  That doesn't sound like fun.  I also realized that, despite picking a motherboard and processor that could shift into low power usage, I was still using more watts than I needed to.  I was also spending way too much time mucking around with things - I want to focus on just one or two projects at a time, and I <i>really</i> want to start programming more.</p><a href="http://picasaweb.google.com/lh/photo/NUJH80rJPtKH0NsD_ZTLxA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcfWyN502_EgPg12BajqcMJbJhr9iaYe1SWLaZDGUIFaOJmPC7QXngeZtr5qlESw3l2QB7DINsCjjskut4PYYKwkOYz6N68bc3TxILX1cjiReHA5FOiK5yM2B8UTddfoOY4Yk6GxuB738/s400/ebox3300.jpg" /></a><br /><br /><p>Last month I finally finished the ultimate 'consolidation': I moved everything to a tiny embedded Linux box.  While back in the U.S. I contacted <a href="http://www.wdlsystems.com/">WDL Systems</a> and requested for shipping costs on a tiny embedded box.  I bought the eBox-3300, with an embedded board from ICOP, and it was promptly shipped out.  After returning home to Sydney I migrated all my apps from the various virtual servers to my little box running Debian 5.0: OSSEC, Samba, Lighttpd, Asterisk and flow-tools.  The little box is just perfect for what I need - a tiny home server.  I still get around 8MB/sec transferring files, which indicates the network is still the bottleneck, and VOIP calls with Asterisk are still clear.</p><p>Overall, I've been happy with this little box.  My 'playing time' with IT has gone down significantly, my energy usage has gone down, and I now have a server I can take with me wherever I go.</p><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2009/04/13/operation-field_8222.html">
+            Operation Field
+          </a>
+        </h3>
+        <span class="post-meta">Published on Apr 13, 2009</span>
+        Status: <i class="fas fa-skull-crossbones"></i><br /></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page14" class="previous-page">14</a></li>
+          <li><div class="current-page">15</div></li>
+          <li><a href="/page16" class="next-page">16</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,21 @@
+---
+layout: post
+title: Upgrading Cisco Wireless Firmware
+date: '2008-11-03T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- tftp
+- articles
+- wireless
+- cisco
+modified_time: '2013-01-09T21:11:37.595+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-5341679929704371007
+blogger_orig_url: https://www.kelvinism.com/2008/11/upgrading-cisco-wireless-firmware_3066.html
+---
+
+<p>I'm always forgetting the exact string to enter at the CLI for updating the IOS on a wireless Cisco AP, so I'll just put it here to end my future searches:</p><pre class="brush: plain; light: true; ">Chimp# archive download-sw /force-reload /overwrite tftp://192.168.83.150/c1100-k9w7-tar.123-8.JEC1.tar
+</pre><br />
+<br />
+<p>192.168.83.150 obviously being your tftp server, and the .tar file sitting in the root of the tftp server.</p><p>I suppose if you wanted to backup your IOS you could do something along the lines of:</p><pre class="brush: plain; light: true; ">Chimp# archive upload-sw tftp://192.168.83.150/someimage.tar
+</pre><br />
+<p>But I haven't tried it...</p>

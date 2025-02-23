@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">My Portable Travel Stick</h2><div class="post-list" itemprop="articleBody">
+    This will be my last post from Taiwan, and I'm placing it in my tech section.  Shortly I will be flying to Hong Kong, and then traveling into China.  I'm not bringing my laptop with me.  I'm always a little wary of using public computers, especially in many of the poorly run internet cafes.  Often the logged in user is the administrator, and we all know the computers are obviously crawling with worms and keyloggers.  What can I do?<br />
+<br />
+My partner kindly gave me a 128MB flash disk, which is perfect for what I want to do.  I've installed the following applications to run directly from it:<br />
+<ul><br />
+<li><b><a href="http://portableapps.com/apps/utilities/clamwin_portable">Portable Clamwin</a></b> - I plan to fire it up and do a memory scan before I start typing any passwords.</li>
+<br />
+<li><b><a href="http://portableapps.com/apps/internet/putty_portable">Portable Putty</a></b> - This is useful for two reasons.  Firstly, in case my server (or any server with SSH) needs help, I'm on it.  Secondly, and more importantly, for security.  Putty can easily be used as a SOCKS5 proxy over SSH, so I can tunnel Firefox and IM securely.  Password sniffers, be gone!  A side benefit is the ability to bypass the "Great Firewall", if needed (e.g. the block my Google account).</li>
+<br />
+<li><b><a href="http://portableapps.com/apps/internet/miranda_portable">Portable Miranda</a></b> - In case I'm feeling home sick, or have some crazy desire to talk on IRC.  Don't count on it.</li>
+<br />
+<li><b>Firefox</b> - I tried the Portable Apps package, yet it didn't work.</li>
+</ul>
+<br />
+I noticed in the "known issues" that it doesn't work if loaded on a drive with a non-asci path, which this machine (and those in China) usually have.  The "resolution" is to run it in Win98 compat mode, but this didn't work for me.  To get around this, I downloaded the normal Firefox, installed it, copied the contents of "Mozilla Firefox" and dumped it in /Firefox.  Then I created a profile directory called /FFProfile, and created a bat file called "firefox.bat":<br />
+<pre class="brush: plain; light: true; ">start \Firefox\firefox.exe -profile \FFProfile</pre>
+<br />
+<br />
+Double click the bat file, and you have FF running on your usb drive.<br />
+I'm in a search for a better keylogger detector, as I don't know how complete ClamAV will be.  If you know of one, let me know.  Until then, I'm going to pretend I have the perfect traveling USB companion.
+  </div><span>[
+    
+      
+      <a href="/tag/articles"><code class="highligher-rouge"><nobr>articles</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/taiwan"><code class="highligher-rouge"><nobr>taiwan</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/tips and tricks"><code class="highligher-rouge"><nobr>tips and tricks</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/travel"><code class="highligher-rouge"><nobr>travel</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2007/06/29/my-portable-travel-stick_1543.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

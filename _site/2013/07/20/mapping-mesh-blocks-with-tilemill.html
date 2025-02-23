@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Mapping Mesh Blocks with TileMill</h2><div class="post-list" itemprop="articleBody">
+    This quick tutorial will detail how to prepair the ABS Mesh Blocks to be used with MapBox's TileMill. Beyond scope is how to install postgresql, postgis and TileMill. There is a lot of documentation how to do these tasks.<br />
+<br />
+First, we create a database to import the <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument">shapefile</a> and <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument">population data</a> into:<br />
+<br />
+<br />
+Using 'psql' or 'SQL Query', create a new database:<br />
+<br />
+<pre>CREATE DATABASE transport WITH TEMPLATE postgis20 OWNER postgres;
+# Query returned successfully with no result in 5527 ms.</pre>
+<br />
+It is necessary to first import the Mesh Block spatial file using something like PostGIS Loader.<br />
+<br />
+<img height="603" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8zpIUCky4eqQcl82ds0um_KZvlqepw11Svcc5SnyMT24IBX8O9ZTIurIyzM0nNivejDs3uiPyoejPNuxpuVcMgf45IY7xYb6FmtcCUG9TbTxCDiq2feCnileNBwms5M8PrEDjhP7DRtvG/s640/PostGISLoader2.png" width="640" /><br />
+<br />
+We then create a table to import the Mesh Block population data:<br />
+<br />
+<pre>CREATE TABLE tmp_x (id character varying(11), Dwellings numeric, Persons_Usually_Resident numeric);</pre>
+<br />
+And then load the data:<br />
+<br />
+<pre>COPY tmp_x FROM '/home/kelvinn/censuscounts_mb_2011_aust_good.csv' DELIMITERS ',' CSV HEADER;</pre>
+<br />
+It is possible to import the GIS information and view it in QGIS:<br />
+<br />
+<img height="448" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir_OlfVmY_FZjQGoh_UdIr2wVe1xsNQLDzYH6M5gX5V5a-lknehk_lDEuhaZUC9tqwcoKHoKCv9KLLSSmlcqU5sX89jkJzne-FHgQYQUML9KwGoCoAQEa8DEOHuI3KA4qDq7n4kWtUbvC3/s640/qgis.png" width="640" /><br />
+<br />
+Now that we know the shapefile was imported correctly we can merge the population with spatial data. The following query is used to merge the datasets:<br />
+<br />
+<pre>UPDATE mb_2011_nsw
+SET    dwellings = tmp_x.dwellings FROM tmp_x
+WHERE  mb_2011_nsw.mb_code11 = tmp_x.id;</pre>
+<br />
+<pre>UPDATE mb_2011_nsw
+SET    pop = tmp_x.persons_usually_resident FROM tmp_x
+WHERE  mb_2011_nsw.mb_code11 = tmp_x.id;</pre>
+<br />
+We can do a rough validation by using this query:<br />
+<br />
+<pre>SELECT sum(pop) FROM mb_2011_nsw;</pre>
+<br />
+And we get 6916971, which is about right (ABS has the 2011 official NSW population of 7.21 million).<br />
+<br />
+Finally, using TileMill, we can connect to the PostgGIS database and apply some themes to the map.<br />
+<br />
+<pre>host=127.0.0.1 user=MyUsername password=MyPassword dbname=transport
+(SELECT * from mb_2011_nsw JOIN westmead_health on mb_2011_nsw.mb_code11 = westmead_health.label) as mb
+
+</pre>
+<br />
+<img height="386" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheoXfae5qm5A8jKuBJg99a2zR_idp0NTWM3I40Belyi1GIwvM-kzHSOBbYd1rHEouJon19thdULDYo_GVKdZDMCF2JJ51iR6xc9JNdOw-K5dubGsvK32IXrLMGe2WUlxBWnALGhsV4ZlOK/s640/tilemill_1.png" width="640" /><br />
+<br />
+<img height="530" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMEZ7vsutC7RO2T4jT78IIxxKpW4wVrk3Mokfgb9SqTXWQ7dt4Gysc5C03y6IZC7_IPRbzx0wjSBxgRrR5yapT-H3AGJL7a4jY3nsXeMeR8aVdR0o39Gkobs361WOckKzzK4_56_5j-9M7/s640/tilemill_2.png" width="640" /><br />
+<br />
+After generating the MBTiles file I pushed it to my little $15/year VPS and used <a href="http://tilestache.org/">TileStache</a> to serve the tiles and UTFGrids. The TileStache configuration I am using looks something like this:<br />
+<br />
+<pre>{
+  "cache": {
+    "class": "TileStache.Goodies.Caches.LimitedDisk.Cache",
+    "kwargs": {
+        "path": "/tmp/limited-cache",
+        "limit": 16777216
+    }
+  },
+  "layers": 
+  {
+    "NSWUrbanDensity":
+    {
+        "provider": {
+            "name": "mbtiles",
+            "tileset": "/home/user/mbtiles/NSWUrbanDensity.mbtiles"
+        }
+    },
+    "NSWPopDensity":
+    {
+        "provider": {
+            "name": "mbtiles",
+            "tileset": "/home/user/mbtiles/NSWPopDensity.mbtiles"
+        }
+    }
+  }
+}
+</pre>
+<br />
+
+  </div><span>[
+    
+      
+      <a href="/tag/postgis"><code class="highligher-rouge"><nobr>postgis</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/gis"><code class="highligher-rouge"><nobr>gis</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/tilemill"><code class="highligher-rouge"><nobr>tilemill</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2013/07/20/mapping-mesh-blocks-with-tilemill.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

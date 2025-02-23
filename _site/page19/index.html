@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/11/02/pygtk-py2exe-for-windows_8282.html">
+            PyGTK + py2exe for Windows
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 2, 2008</span>
+        <p>I'm writing down these quick notes so I can remember the steps for getting py2exe to work with GTK.</p><ul><li>Download the GTK+ runtime</li></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/11/02/configure-timevault-to-remote-server_2418.html">
+            Configure Timevault to Remote Server
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 2, 2008</span>
+        <p>Using TimeVault with a shared drive as a backend is actually quite easy, but it does require a few special things setup. Note: this is gonna be a brief summary.</p><br />
+<p>Install samba-tools, smbfs...</p><br />
+<pre class="brush: plain; light: true; ">sudo apt-get install samba-tools smbfs
+</pre><br />
+<p>A lot more other stuff may install as well.</p><br />
+<p>Create a script that mounts your samba share.  You could also do this in fstab, but I tend to suspend my laptop when I come home, and I like clicking buttons.</p><br />
+<pre class="brush: bash; light: true; ">#!/bin/bash</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/11/02/backup-openfiler-to-s3_9140.html">
+            Backup OpenFiler to S3
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 2, 2008</span>
+        Backing up your Openfiler box to S3<br /><br /><p>While I don't think most pople would expect to backup their entire NAS/SAN to Amazon's S3, there might be a few very crucial things you need to backup.  For instance, my girlfriend's PhD papers and data.</p><p>I've seen an implementation using Ruby and s3sync -- something that I do on my server -- but I'm trying to migrate everything to Python.  Although there are a lot of great tools out there for S3, many of them Python-based,  I wanted to do one thing and do it well: have one complete full backup available, and using as little bandwidth as possible.  In these regards Duplicity would work well, except I wanted the ability to browse the S3 store using any other tool.</p><p>I've digged deeper into <a href="http://s3tools.logix.cz/s3cmd">s3cmd</a>, which I had noticed a long time ago, but I failed to notice it has a sync option.  I have tested it out, and it appears to work very, very well.  Here's how to use it with OF.</p><p>First, download <a href="http://s3tools.logix.cz/download">s3cmd</a>.  You'll need to use subversion, so I first checked it out to my laptop, then uploaded it via SSH to OF. I put my s3cmd folder in /opt.</p><pre class="brush: plain; light: true; "><br />[root@files opt]# ls<br />openfiler  s3cmd<br />[root@files opt]# <br /></pre><br /><br /><p>If you don't have elementtree installed, now is a good time to install it.</p><pre class="brush: plain; light: true; "><br />conary update elementtree:python<br /></pre><br /><br /><p>We need to next configure s3cmd with our AWS creds.</p><pre class="brush: plain; light: true; "><br />[root@files s3cmd]# ./s3cmd --configure<br /></pre><br /><br /><p>In the end I didn't configure encryption for my files (so just hit enter), but you may choose to do so.  I have configured the transfer to use HTTPS, however.</p><pre class="brush: plain; light: true; "><br />Save settings? [y/N] y<br />Configuration saved to '/root/.s3cfg'<br /></pre><br /><br /><p>Cool. Now create a bucket on S3 for your NAS, e.g. blah2134accesskey.openfiler, using whatever method you choose (I typically use Cockpit). Now that you have a bucket, configure a *really* simple script to drop in cron:</p><pre class="brush: bash; light: true; "><br />#!/bin/bash<br /><br />/opt/s3cmd/s3cmd sync /mnt/openfiler/data/profiles/bunny s3://blah2134accesskey.openfiler/mnt/openfiler/data/profiles/bunny<br />/opt/s3cmd/s3cmd sync /mnt/openfiler/data/profiles/kelvin-pc s3://blah2134accesskey.openfiler/mnt/openfiler/data/profiles/knicholson/kelvin-pc<br /></pre><br /><br /><p>Sweet! I like this approach quite a bit: I get file-level access to anything on the NAS, you don't have to actually install anything, and it 'just works.'</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/11/01/revised-modtile-install-howto_1369.html">
+            Revised mod_tile Install HOWTO
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 1, 2008</span>
+        <p>This is the laundry list of things I did while creating a mod_tile VMware appliance based on Ubuntu Server 8.04.  I've kept descriptions limited but left all the commands in.  Let's start installing things...</p><br />
+<b>Useful goodies for compiling source</b><br />
+<br />
+<pre class="brush: plain; light: true; ">sudo apt-get build-essential
+</pre><br />
+<p><b>More goodies for Mapnik + Friends</b></p><pre class="brush: plain; light: true; ">sudo apt-get install libboost-dev libboost-filesystem-dev libboost-filesystem1.34.1 libboost-iostreams-dev libboost-iostreams1.34.1 libboost-program-options-dev libboost-program-options1.34.1 libboost-python-dev libboost-python1.34.1 libboost-regex-dev libboost-regex1.34.1 libboost-serialization-dev libboost-serialization1.34.1 libboost-thread-dev libboost-thread1.34.1 libicu-dev libicu38 libstdc++5 libstdc++5-3.3-dev python2.5-dev
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install libfreetype6 libfreetype6-dev libjpeg62 libjpeg62-dev libltdl3 libltdl3-dev libpng12-0 libpng12-dev libtiff4 libtiff4-dev libtiffxx0c2 python-imaging python-imaging-dbg proj
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install libcairo2 libcairo2-dev python-cairo python-cairo-dev libcairomm-1.0-1 libcairomm-1.0-dev libglib2.0-0 libpixman-1-0 libpixman-1-dev libpthread-stubs0 libpthread-stubs0-dev ttf-dejavu ttf-dejavu-core ttf-dejavu-extra
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install libgdal-dev python2.5-gdal postgresql-8.3-postgis postgresql-8.3 postgresql-server-dev-8.3 postgresql-contrib-8.3
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install libxslt1.1 libxslt1-dev libxml2-dev libxml2 gdal-bin libgeos-dev libbz2-dev
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install apache2 apache2-threaded-dev apache2-mpm-prefork apache2-utils
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install subversion
+</pre><br />
+<p>This checks out the mapnik source:</p><pre class="brush: plain; light: true; ">svn co svn://svn.mapnik.org/trunk mapnik-src
+</pre><br />
+<p>Let's build mapnik with several specific locations included.</p><pre class="brush: plain; light: true; ">cd mapnik-src
+python scons/scons.py PYTHON=/usr/bin/python PGSQL_INCLUDES=/usr/include/postgresql PGSQL_LIBS=/usr/lib/postgresql BOOST_INCLUDES=/usr/include/boost BOOST_LIBS=/usr/lib
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo python scons/scons.py install PYTHON=/usr/bin/python PGSQL_INCLUDES=/usr/include/postgresql PGSQL_LIBS=/usr/lib/postgresql BOOST_INCLUDES=/usr/include/boost BOOST_LIBS=/usr/lib
+</pre><br />
+<p>And prepare a few things for the mapnik rendering...</p><pre class="brush: plain; light: true; ">svn co http://svn.openstreetmap.org/applications/rendering/mapnik/
+</pre><br />
+<pre class="brush: plain; light: true; ">cd ~/mapnik
+wget http://tile.openstreetmap.org/world_boundaries-spherical.tgz 
+tar -xpjf world_boundaries-spherical.tgz
+unzip processed_p.zip 
+cp coastlines/* world_boundaries/ 
+rmdir coastlines 
+</pre><br />
+<p>Time to setup postgres.  I have the intentions of running renderd (the mod_tile rendering engine) under whatever user Apache is running as, so I'll setup postgres to allow the OSM user to authenticate via password.  I'm not a postgres expert, so if you see me doing something totally foolish, let me know.</p><br />
+<pre class="brush: plain; light: true; ">sudo vi /etc/postgresql/8.3/main/pg_hba.conf
+</pre><br />
+<p>And edit the authentication part as so:</p><pre class="brush: plain; light: true; "># Database administrative login by UNIX sockets
+local   all         postgres                          ident sameuser
+local   all         osm                               password sameuser
+</pre><br />
+<p>And now to actually configure postgres for the OSM data</p><pre class="brush: plain; light: true; ">sudo su postgres
+createuser osm
+createdb -E UTF8 -O osm gis
+createlang plpgsql gis
+psql -d gis -f /usr/share/postgresql-8.3-postgis/lwpostgis.sql
+echo "ALTER TABLE geometry_columns OWNER TO osm; ALTER TABLE spatial_ref_sys OWNER TO osm;"  | psql -d gis
+echo "alter user osm with password 'columbia';" | psql
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo /etc/init.d/postgresql-8.3 restart
+</pre><br />
+<p>Now, let's render a sample image.  Edit set-mapnik-env by changing the DB to 'gis', the username to 'osm', and the password to 'columbia'</p><pre class="brush: plain; light: true; ">cd mapnik
+source ./set-mapnik-env
+./customize-mapnik-map >osm.xml
+./generate_image.py
+</pre><br />
+<p>If you get an error about it not finding a lib, make sure to do a...</p><pre class="brush: plain; light: true; ">sudo ldconfig
+</pre><br />
+<p>You should have an image called 'image.png' in the mapnik directory, and it should look distinctly like the UK.</p><br />
+<pre class="brush: plain; light: true; ">svn co http://svn.openstreetmap.org/applications/utils/export/osm2pgsql
+cd osm2pgsql
+make
+</pre><br />
+<p>Ok, that was easy.  Let's load some data. I've used a sample snippit from Sydney in /home/osm to illustrate this.</p><pre class="brush: plain; light: true; ">./osm2pgsql -W -d gis ../sydney.osm
+</pre><br />
+<p>Type in the password used for postgres ('columbia')</p><br />
+<p>I'll now check that the data is accessible by editing generate_image.py with the correct coords for Sydney.</p><br />
+<pre class="brush: plain; light: true; ">ll = (150.29, -34.04, 151.25, -33.36)
+</pre><br />
+<p>Time to get mod_tile up and running.</p><br />
+<pre class="brush: plain; light: true; ">sudo apt-get install libagg-dev
+</pre><br />
+<pre class="brush: plain; light: true; ">svn co http://svn.openstreetmap.org/applications/utils/mod_tile
+cd mod_tile
+</pre><br />
+<p>Depending on the revision of mod_tile you are using, you are going to have to edit the source before compiling.  The two files you need to read through are the Makefile and render_config.h.  I change the apxs and apachectl locations to the correct place (lines 2, 13 and 14). Since I did it on a x86 image, I took out any references to lib54 (line 33). In render_config.h, I made the following changes:</p><br />
+<p>Line 8</p><br />
+<pre class="brush: plain; light: true; ">#define WWW_ROOT "/var/www"
+</pre><br />
+<p>Line 23</p><br />
+<pre class="brush: plain; light: true; ">#define OSM_XML "/home/osm/mapnik/osm.xml"
+</pre><br />
+<p>Removed references to lib64 on lines 26 and 29.</p><br />
+<pre class="brush: plain; light: true; ">make && make install
+</pre><br />
+<p>Set it up as a module for apache by creating a file in /etc/apache/conf.d called 'mod_tile' and putting in there:</p><br />
+<pre class="brush: plain; light: true; ">LoadModule tile_module /usr/lib/apache2/modules/mod_tile.so
+</pre><br />
+<p>Created a folder called 'osm_tiles2' and 'direct' in /var/www, and make sure they are writable by whatever apache runs as (likely www-data). Restart apache.</p><p>From here, I created a file that automatically zooms in on the map I just created -- you can check it out here. Start the renderd process as www-data, and browse to the sample file.</p><pre class="brush: plain; light: true; ">cd ~/mod_tile
+sudo su www-data
+./renderd
+</pre><br />
+<p>By now you should have a working mod_tile/OSM setup.  After a change and tune a few things on the Ubuntu image I'll make the VMware image available for download.  I can't wait to do some OSM projects!</p><br />
+<br />
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/11/01/capped-internet_4903.html">
+            Capped Internet
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 1, 2008</span>
+        <p>I've lived in several different parts of the world, and they all do internet differently.  Back in the US I had 8Mb/sec cable (leaving just before Fios was really an option, darn!) In New Zealand, for instance, I was paying for "high speed ADSL" rated at 1.5Mb/256k.  Vrooom.  Up in Taiwan I was paying 1/2 what I paid in New Zealand, but for 12Mb/1Mb.  Down to Sydney and we have a rated 24Mb/1Mb.</p><p>But there's a catch with the plans in New Zealand and Australia: they are 'capped'.  This means you only get XGB/month -- and it isn't like Comcast capping at 250GB/month, I'm talking about 1GB/5GB/10GB and so forth.  And there's more -- just like mobile phones, you get on-peak and off-peak times.</p><p>This all does make a bit of sense to me -- there are only X amount of tubes going in and out of NZ and AU, and I would imagine they get pretty clogged.</p><p>Either way, last month was pretty painful.  Two weeks into our plan I checked out usage: 14GB of 18GB!  We had only 4GB left to use for 15 days.  This sounds like a lot, but for the two of us, and my 10 virtual servers, it isn't.  The first thing I did was looking at a way to do WSUS with Linux -- I ended up using apt-cacher (I'm using only Ubuntu at home).  BitTorrent, out; downloading any new ISOs, out; streaming music, totally out.  For a while I has to VPN to home, and then VPN to a client, as our router at work didn't seem to like letting us access one of our clients.  I even disconnected from the VPN if I wouldn't be doing work for 20m!</p><p>We eventually made it, and used only 2GB in two weeks.  What an accomplishment!</p></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page18" class="previous-page">18</a></li>
+          <li><div class="current-page">19</div></li>
+          <li><a href="/page20" class="next-page">20</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

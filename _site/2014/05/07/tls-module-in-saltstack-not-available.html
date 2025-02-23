@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">TLS Module In SaltStack Not Available (Fixed)</h2><div class="post-list" itemprop="articleBody">
+    I was trying to install <a href="https://github.com/saltstack/halite">HALite</a>, the WebUI for <a href="http://www.saltstack.com/">SaltStack</a>, using the provided instructions. However, I kept getting the following errors when trying to create the certificates using Salt:<br />
+<code><br />
+'tls.create_ca_signed_cert' is not available.<br />
+'tls.create_ca' is not available.</code><br />
+<code><br /></code>
+Basically, the 'tls' module in Salt simply didn't appear to work. The reason for this is detailed on <a href="http://intothesaltmine.org/install_and_configure_halite_alpha_on_arch_linux.html">intothesaltmind.org</a>:<br />
+<br />
+<i>Note: Use of the tls module within Salt requires the pyopenssl python extension.</i><br />
+<br />
+That makes sense. We can fix this with something like:<br />
+<code><br />
+apt-get install libffi-dev<br />
+pip install -U pyOpenSSL<br />
+/etc/init.d/salt-minion restart</code><br />
+<code><br /></code>
+Or, better yet, with Salt alone:<br />
+<br />
+<code>
+salt '*' cmd.run 'apt-get install libffi-dev'<br />
+salt '*' pip.install pyOpenSSL<br />
+salt '*' cmd.run "service salt-minion restart"</code><br />
+<code><br /></code>
+The commands to create the PKI key should work now:<br />
+<br />
+<code>
+Created Private Key: "/etc/pki/salt/salt_ca_cert.key." Created CA "salt": "/etc/pki/salt/salt_ca_cert.crt."<br />
+</code>
+  </div><span>[
+    
+      
+      <a href="/tag/linux"><code class="highligher-rouge"><nobr>linux</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/python"><code class="highligher-rouge"><nobr>python</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/saltstack"><code class="highligher-rouge"><nobr>saltstack</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2014/05/07/tls-module-in-saltstack-not-available.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

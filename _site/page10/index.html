@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2010/09/21/enable-icmp-through-ufw_461.html">
+            Enable ICMP through UFW
+          </a>
+        </h3>
+        <span class="post-meta">Published on Sep 21, 2010</span>
+        <p>I like using Ubuntu's UFW command, but today I needed to allow outgoing ICMP.  I received results as so:</p><pre><br />$ ping 4.2.2.2<br />PING 4.2.2.2 (4.2.2.2) 56(84) bytes of data.<br />ping: sendmsg: Operation not permitted<br />ping: sendmsg: Operation not permitted<br />ping: sendmsg: Operation not permitted<br /></pre><br /><br /><br /><br /><br /><p>To allow outbound icmp I edited 'before.rules' and added the following lines.</p><pre>$ sudo vi /etc/ufw/before.rules</pre><br /><br /><br /><pre><br /># allow outbound icmp<br />-A ufw-before-output -p icmp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT<br />-A ufw-before-output -p icmp -m state --state ESTABLISHED,RELATED -j ACCEPT<br /></pre></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2010/07/11/using-html-in-django-form-label_2240.html">
+            Using HTML in a Django form label
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jul 11, 2010</span>
+        I recently had the need to add some HTML to the label for a form field using Django.  The solution is pretty easy, except I didn't see it written explicitly anywhere, and I missed the memo of the function I should be using.<br />
+My form first just had the HTML in the form label as so:<br />
+<pre class="brush: python; light: true; "></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2010/06/12/ubuntu-1004-django-and-gae-part-2_6130.html">
+            Ubuntu 10.04, Django and GAE - Part 2
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 12, 2010</span>
+        All my Django sites are running 1.2, which poses a conflict with writing apps for Google's App Engine, as use_library currently only supports &lt; Django 1.1.  There are two solutions that I found: a) use virtualenv, or b) chroot, which <a href="http://www.kelvinism.com/howtos/ubuntu-1004-django-and-gae-part-1/">I've already detailed</a>.  This document will hopefully show you how to create a virtual environment to use a secondary django version, especially for GAE.  Of the two options, I think this one is a bit quicker, but there will likely be tradeoffs that a chroot environment can deal with better, e.g. python imaging (I don't use it for GAE).<br />
+First, install PIP and virtualenv:<br />
+<pre class="brush: bash; light: true; ">
+kelvinn@kelvinn-laptop:~/workspace$ sudo easy_install -U pip
+kelvinn@kelvinn-laptop:~/workspace$ sudo pip install -U virtualenv</pre>
+<br />
+<br />
+Second, configure an environment for any app that will use Django 1.1:<br />
+<pre class="brush: bash; light: true; ">
+kelvinn@kelvinn-laptop:~/workspace$ virtualenv --python=python2.5 --no-site-packages django-1.1
+New python executable in django-1.1/bin/python
+Installing setuptools............done.
+kelvinn@kelvinn-laptop:~/workspace$ pip install -E django-1.1 yolk
+kelvinn@kelvinn-laptop:~/workspace$ pip install -E django-1.1 Django==1.1</pre>
+<br />
+<br />
+Now, download the <a href="http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Python">python GAE sdk</a> and put it in the django-1.1 folder.  I also just dump any project directory requiring Django 1.1 into this django-1.1 folder, although I guess you could create a virtualenv for each project.  The last thing to do is start the virtual environment, and run the GAE app.<br />
+<pre class="brush: bash; light: true; ">
+kelvinn@kelvinn-laptop:~/workspace$ source django-1.1/bin/activate
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace$ yolk -l
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace$ cd django-1.1
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace/django-1.1$ ls
+bin  google_appengine  include  lib  myproject1 myproject2
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace/django-1.1$ google_appengine/dev_appserver.py myproject1</pre>
+<br />
+<br />
+When you're all finished, you can jump out of virtualenv:<br />
+<pre class="brush: bash; light: true; ">
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace/django-1.1$ deactivate</pre>
+<br />
+<br />
+<b>Update</b>: You'll find this article especially interesting if you get an error such as the following:<br />
+<pre class="brush: python; light: true; ">
+UnacceptableVersionError: django 1.1 was requested, but 1.2.0.beta.1 is already in use</pre>
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2010/06/12/ubuntu-1004-django-and-gae-part-1_8750.html">
+            Ubuntu 10.04, Django and GAE - Part 1
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 12, 2010</span>
+        I've started to get into Google's App Engine again, and have started developing a simple product that I had a use for.  The initial first draft was a quick 200 lines in webapp, and it worked great.  However, I'm starting to find certain things quite cumbersome.  I'm a huge fan of Django, and but also about keeping things as simple as possible, which is why I picked webapp to begin with.<br />
+I'm now considering making a swap to Django, but there are some development issues; namely, I'm using Ubuntu 10.04, Python 2.6, and Django 1.2.  This setup presents several setbacks, as GAE has the requirement of Django 1.1 and Python 2.5.  There are two solutions that I found: a) use virtualenv, which <a href="http://www.blogger.com/blogger.g?blogID=3439832858234004835#">I've detailed</a>, or b) chroot. This document will hopefully show how to configure a chroot environment of Ubuntu 9.10 and prepare it for Django on GAE.  Using a jailed environment should allow you to edit your code with your normal IDE and VCS, but use Django 1.1 and Python 2.5.<br />
+First, I installed schroot and debootstrap.<br />
+<pre class="brush: bash; light: true; ">
+$ sudo apt-get install schroot debootstrap</pre>
+<br />
+<br />
+Second, I edited /etc/schroot/schroot.conf and added the following section to the end.<br />
+<pre class="brush: bash; light: true; ">
+[karmic]
+description=karmic
+type=directory
+location=/var/chroot/karmic
+priority=3
+users=kelvinn #your username goes here
+groups=admin
+root-groups=root
+run-setup-scripts=true
+run-exec-scripts=true</pre>
+<br />
+<br />
+Third, I created the directories needed for the jailed environment and installed karmic.<br />
+<pre class="brush: bash; light: true; ">
+$ sudo mkdir -p /var/chroot/karmic
+$ sudo debootstrap --arch i386 karmic /var/chroot/karmic </pre>
+<br />
+<br />
+Forth, I logged into the jailed environment and updated packages, installed Python 2.5 / Django 1.1. Make sure to note that I don't call 'python', I call 'python2.5'.<br />
+<pre class="brush: bash; light: true; ">
+$ sudo schroot -c karmic
+(karmic)root@kelvinn-laptop:~# apt-get update
+(karmic)root@kelvinn-laptop:~# apt-get install python2.5
+(karmic)root@kelvinn-laptop:~# cd /usr/src
+(karmic)root@kelvinn-laptop:~# apt-get install wget
+(karmic)root@kelvinn-laptop:/usr/src# wget http://www.djangoproject.com/download/1.1.2/tarball/
+(karmic)root@kelvinn-laptop:/usr/src# tar -xpzf Django-1.1.2.tar.gz
+(karmic)root@kelvinn-laptop:/usr/src/Django-1.1.2# python2.5 setup install
+(karmic)root@kelvinn-laptop:/usr/src/Django-1.1.2# exit</pre>
+<br />
+<br />
+Lastly, I log in as my normal user, and start the app. Let's say I have a folder called '~/gaeapps' for my GAE stuff, and that's where I put the SDK.<br />
+<pre class="brush: bash; light: true; ">
+$ scroot -c karmic
+(karmic)kelvinn@kelvinn-laptop:~/gaeapps$ ls
+google_appengine  myproject
+(karmic)kelvinn@kelvinn-laptop:~/gaeapps$ google_appengine/dev_appserver.py myproject</pre>
+<br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2010/05/20/debug-postfix-tip_7051.html">
+            Debug Postfix Tip
+          </a>
+        </h3>
+        <span class="post-meta">Published on May 20, 2010</span>
+        <p>One thing I love about open source stuff is that the developers usually take great care to allow awesome debug messages.  There's a catch-22, however: how much logging to enable? Today I was creating a Postfix/Dovecot/Postgresql install and I kept getting an error message in mail.log, but it wasn't very helpful.</p><p>Luckily you can turn up the verbosity in Postfix for error messages.  You'll need to find out what component is in error, e.g. "postfix/virtual[4467]: warning:", and then open master.cf.  Add a -v to the end of the daemon that's faulting, and you'll get more logging than you know what to do with.</p><pre class="brush: bash; light: true; ">virtual   unix  -       n       n       -       -       virtual -v
+</pre><br />
+<br />
+<p>I hope this helps somebody.  You can read more debugging tips on the Postfix <a href="http://www.postfix.org/DEBUG_README.html">DEBUG readme</a>.</p></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page9" class="previous-page">9</a></li>
+          <li><div class="current-page">10</div></li>
+          <li><a href="/page11" class="next-page">11</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

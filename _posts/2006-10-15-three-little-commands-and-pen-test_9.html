@@ -1,0 +1,14 @@
+---
+layout: post
+title: Three Little Commands and a Pen-Test
+date: '2006-10-15T20:30:00.005+10:00'
+author: Kelvin Nicholson
+tags:
+- articles
+- hacking
+modified_time: '2013-01-09T20:49:37.839+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-8125959018198582544
+blogger_orig_url: https://www.kelvinism.com/2006/10/three-little-commands-and-pen-test_9.html
+---
+
+<p>Yea, you read that right.  Three commands and you can run a pen-test on your website/webserver.  So, how?</p> <div class="code"> kelvin@home:~$ sudo apt-get install nikto<br /> kelvin@home:~$ sudo nikto -update<br /> kelvin@home:~$ nikto -h www.thoughtdeposit.net</div> <p>As you can see, Nikto is a web server scanner, apparently for over 3200 dangerous files/vulnerabilities.  Additional features can be seen at the <a href="http://www.cirt.net/code/nikto.shtml">Nikto</a> website, yet you will certainly want to add this old gem to your webserver toolbelt as soon as possible.</p><br />

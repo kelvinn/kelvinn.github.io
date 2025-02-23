@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Using HTML in a Django form label</h2><div class="post-list" itemprop="articleBody">
+    I recently had the need to add some HTML to the label for a form field using Django.  The solution is pretty easy, except I didn't see it written explicitly anywhere, and I missed the memo of the function I should be using.<br />
+My form first just had the HTML in the form label as so:<br />
+<pre class="brush: python; light: true; ">
+
+from django import forms
+
+class AccountForm(forms.Form):
+    name = forms.CharField(widget=forms.TextInput(), max_length=15, label='Your Name (<a href="http://www.blogger.com/questions/whyname/" target="_blank">why</a>?')
+</pre>
+<br />
+<br />
+However, when I displayed it, the form was autoescaped.<br />
+<a href="http://picasaweb.google.com/lh/photo/PyGNXDrpXtrgBNnoOLlfLA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvsLvb6I4SDBB3NKptLZzGLGnwUZK0KmYlx7X9UC2_fzyQCNTkeFiKz5-4_3BmKArYZhRwU8TNEIhrGAMsb039N47hxcY8BIMEJjfK1UafYCRvAPzY18c8ceq3QFOOsp_oGO6SavZ1LmGR/s800/accountsform.jpg" /></a><br />
+<br />
+This is generally a good thing, except my form obviously didn't display correctly.  I tried autoescaping it in the template, but that didn't work.  To resolve this you'll need to mark that <i>individual label</i> as safe. Thus:<br />
+<pre class="brush: python; light: true; ">
+
+from django.utils.safestring import mark_safe
+from django import forms
+
+class AccountForm(forms.Form):
+    name = forms.CharField(widget=forms.TextInput(), max_length=15, label=mark_safe('Your Name (<a href="http://www.blogger.com/questions/whyname/" target="_blank">why</a>?)'))
+    </pre>
+<br />
+<br />
+It will now display correctly:<br />
+<pre class="brush: plain; light: true; ">
+In [1]: from myproject.forms import *
+
+In [2]: form = AccountForm()
+
+In [3]: form.as_ul()
+Out[3]: u'
+<li><label for="id_name">Your Name (<a href="http://www.blogger.com/questions/whyname/" target="_blank">why</a>?):</label> <input id="id_name" maxlength="15" name="name" type="text" /></li>
+'</pre>
+<br />
+<br />
+There's maybe another easier way to do this, but this worked for me.
+  </div><span>[
+    
+      
+      <a href="/tag/django"><code class="highligher-rouge"><nobr>django</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/python"><code class="highligher-rouge"><nobr>python</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/web"><code class="highligher-rouge"><nobr>web</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2010/07/11/using-html-in-django-form-label_2240.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

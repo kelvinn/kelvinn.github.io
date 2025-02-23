@@ -1,0 +1,188 @@
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Constant values */
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-areas: "header header" "main sidebar";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  gap: 10px;
+  max-width: 1200px; /* Prevents content from getting too wide */
+  margin: 0 auto; /* Centers the layout */
+}
+
+.header {
+  grid-area: header;
+  color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+#logo {
+  width: 209px;
+  height: 47px;
+  margin-top: -15px;
+  background-image: url("https://kelvinn.github.io/kelvinism/img/logo.png");
+  float: left;
+}
+
+.header ul li {
+  margin-left: 10px;
+  margin-top: 0px;
+  list-style: none;
+  display: inline;
+}
+
+header a {
+  text-decoration: none;
+  color: #cccccc;
+  font-size: large;
+  font-weight: bolder;
+}
+
+header a:hover {
+  text-decoration: none;
+  color: #96513c;
+}
+
+.main {
+  grid-area: main;
+  background: white;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+}
+
+.sidebar a {
+  color: #96513c;
+}
+
+.sidebar a:hover {
+  text-decoration: none;
+  color: #96513c;
+}
+
+.sidebar h4 {
+  font-weight: bold;
+  font-size: 90%;
+  color: #aaaaaa;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer {
+  width: 100%;
+  margin-top: -52px;
+  height: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas: "header" "main" "sidebar" "footer";
+    grid-template-columns: 1fr;
+  }
+}
+.main .post-meta {
+  color: #777;
+  list-style-type: none;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.post-list .post-link {
+  text-decoration: none;
+  font-size: 110%;
+  font-weight: bold;
+  color: #555555;
+}
+
+.post-list a {
+  color: #96513c;
+}
+
+.post-list a:hover {
+  text-decoration: none;
+  color: #96513c;
+}
+
+.post-list li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.post-list p, h1, h2, h3 {
+  font-size: 1.1em;
+  line-height: 125%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.post-list li ul, li ol {
+  margin-left: 40px;
+  list-style-position: inside;
+}
+
+.post-list ol, .post-list ul li {
+  margin-left: 40px;
+  list-style-position: inside;
+}
+
+#copyright {
+  position: relative;
+  padding-top: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 47;
+}
+
+#copyright a {
+  color: #96513c;
+}
+
+#copyright a:hover {
+  text-decoration: none;
+}
+
+#redbar {
+  width: 100%;
+  height: 5px;
+  top: 0px;
+  margin-right: 0px;
+  background-color: #96513c;
+}
+
+#greenbar {
+  width: 100%;
+  height: 5px;
+  top: 5px;
+  margin-right: 0px;
+  background-color: #b3c49d;
+}
+
+#greenbarbottom {
+  width: 100%;
+  height: 5px;
+  bottom: 0px;
+  margin-right: 0px;
+  background-color: #b3c49d;
+}
+
+/*# sourceMappingURL=styles.css.map */

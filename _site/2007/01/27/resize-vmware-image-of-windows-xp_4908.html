@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Resize a VMWare Image of Windows XP</h2><div class="post-list" itemprop="articleBody">
+    <p>&nbsp;</p>Over the years I have been shrinking the number of computers I own.&nbsp; At one point my dorm was littered with old P100s, running whatever OS I felt like playing with at the time. &nbsp;<br /><br />VMWare comes to help.&nbsp; In this recent oops, an image I made (for Windows XP), was slightly too small.&nbsp; I didn&#39;t feel like reinstalling XP + cruft, so just resized the image.&nbsp; This is the process:<br /><br /><br />1) Make Clone or just backup your VMWare image.<br /><br />2) Note: if your disk is a Dynamic Disk, you won&#39;t be able use GParted.&nbsp; There is a chance you can use Disk Management inside Computer Managemen inside XP.<br /><br />3) Turn off VMWare image.<br /><br />4) Grow the image. &nbsp;<br /><br /><br /><br /><pre class="brush: plain; light: true; "> vmware-vdiskmanager -x sizeGB yourimagename.vmdk </pre><br /><br /><br />5) Download the <a href="http://gparted.sourceforge.net/download.php">GParted LiveCD</a> <br /><br />5) Change the CD-ROM drive of your&nbsp; VMWare image to boot from the ISO you just downloaded.<br /><br />6) Boot VMWare image.&nbsp; Make sure to press ESC right when it starts.<br /><br />7) Follow the instructions for GParted. I had to select the Xvesa option, then Done.&nbsp; Choose your language and keyboard and resolution.<br /><br />8) GParted will come up.&nbsp; First delete the partition (the empty one!), and make sure it says unallocated.&nbsp; Then go up to Edit and hit Apply.&nbsp; Then select the partition and say Resize.&nbsp; Hit apply again. <br /><br />9) Reboot image.&nbsp; Windows XP will come up, and go through checking the disk.&nbsp; It will reboot again, and you should then be able to log in.<br />
+  </div><span>[
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2007/01/27/resize-vmware-image-of-windows-xp_4908.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

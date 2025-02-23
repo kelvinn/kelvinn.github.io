@@ -1,0 +1,16 @@
+---
+layout: post
+title: LDAP Backend
+date: '2006-07-07T20:30:00.003+10:00'
+author: Kelvin Nicholson
+tags:
+- projects
+modified_time: '2020-06-24T22:26:31.753+10:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-1327548010363194197
+blogger_orig_url: https://www.kelvinism.com/2006/07/ldap-backend_5061.html
+---
+
+Status: <i class="fas fa-check-circle"></i><br />
+
+<br />
+<p>Users don't like to remember passwords, heck, I don't like to remember to use passwords.  I decided to upgrade all the webapps to authenticate off the domain, welcome a start to SSO.  To do this I implemented the <a href="http://adldap.sourceforge.net/">adldap php class</a> to control authentication to each webapp.  Thus, a simple GPO can control who has access to the app or not.  A simple solution to a rather simple problem.</p><br />

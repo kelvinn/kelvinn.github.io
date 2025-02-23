@@ -1,0 +1,69 @@
+---
+layout: post
+title: Simple Ajax with Django
+date: '2007-06-01T20:30:00.005+10:00'
+author: Kelvin Nicholson
+tags:
+- ajax
+- django
+- json
+- articles
+- colddirt
+modified_time: '2013-01-09T21:32:02.235+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-2189987452628973236
+blogger_orig_url: https://www.kelvinism.com/2007/06/simple-ajax-with-django_1754.html
+---
+
+So, the Django developers, in my opinion, are freaking smart.  Instead of bundling Django with a particular library, they have added XML and JSON serialization; us humble users can choose whatever AJAX library we want.  <a href="http://www.prototypejs.org/">Prototype 1.5.1</a> has been pretty fun to work with, so I'll kick off this demo with a really simple example.<br />
+How simple? The intended goal is to have the total number of 'dirts' update without user intervention.  <i>Laaaammmeee</i>.  If you are a visual type of person, <a href="http://www.colddirt.com/huh/">take a look</a> on the Colddirt <a href="http://www.colddirt.com/huh/">huh</a> page.  That number automatically increases without user intervention. And this is how.<br />
+The process (some pseudocode) will go like this:<br />
+<br />
+check /dirt_count/ for an update<br />
+<br />
+if update:<br />
+<br />
+make number bigger<br />
+<br />
+else:<br />
+<br />
+check less frequently<br />
+<br />
+<br />
+Pretty simple, eh?<br />
+<h4>
+urls.py</h4>
+<br />
+<pre class="brush: python; light: true ">
+    (r'^dirt_count/$', views.dirt_count),</pre>
+<br />
+As you can see, it just sends the request to the view.<br />
+<h4>
+views.py</h4>
+<br />
+<pre class="brush: python; light: true ">
+def dirt_count(request):
+    from django.http import HttpResponse
+    countd = str(Dirt.objects.all().count())
+    return HttpResponse(countd, mimetype='text/plain')
+</pre>
+<br />
+<br />
+Pretty simple -- count the dirts.  That makes sense. <br />
+<h4>
+dirty.js</h4>
+<br />
+<pre class="brush: js; light: true ">
+new Ajax.PeriodicalUpdater('dirtcount', '/dirt_count/', {
+  method: 'get',
+  frequency: 3,
+  decay: 2,
+});</pre>
+<br />
+<br />
+Yea, Prototype makes that <i>real</i> easy.  Just make sure to have a element in your template somewhere with an id of 'dirtcount'.<br />
+<h4>
+templates/huh.html</h4>
+<br />
+<pre class="brush: xml; light: true; ">
+<span class="bigblue" id="dirtcount">0</span></pre>
+<br />

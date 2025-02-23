@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/03/29/simple-chrooted-ssh_6907.html">
+            Simple Chrooted SSH
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 29, 2007</span>
+        You might be asking: why would you want to chroot ssh? Why use ssh anyways?  Here are the quick answers:<br />
+<ul><br />
+<li><b>FTP usually sucks</b>.  Unless sent over SSL, all information is sent <i>cleartext</i>.</li>
+<br />
+<li><b>SSH usually rules</b>. SSH sends all data over an encrypted channel -- the main drawback is: you can often browse around the system, and if permissions aren't set right, read things you shouldn't be able to.</li>
+<br />
+<li><b>Chroot'd SSH rocks</b>. The solution to both the above problems</li>
+</ul>
+.<br />
+<br />
+<br />
+So, let me tell a quick story.<br />
+When I started uni in 2001 I was a nerd. Still a nerd, I guess.  I was cramped in my apartment on campus with like 5 boxes, most of them crappy p100s running Linux or OpenBSD.  Life was good.<br />
+I started a CS degree (shifted into Business with a focus on IT), and we were told to use the school's main servers to compile our programs.  The other interesting thing is that <i>all</i> user accounts were visible when logged in via ssh -- but hey, that is just the nature of Linux.  I knew this, but asked the head I.T. person "why don't you jail the connections?"  He responded quickly telling me to go away.<br />
+Well, shortly after making the comment (although solutions existed at the time being), pam-chroot was released.  This is right about the time students figured they could spam everybody in the school, some 25,000 emails, quickly and easily -- 'cause all the accounts were displayed.  Sweet -- now we can chroot individual ssh connections.<br />
+This quick demo will be on Debian, we'll create a pretend user named "karl." (I'll assume you've already added the user before beginning these steps).  Also, the jails will be in /var/chroot/{username}<br />
+<h4>
+First: Install libpam-chroot and makejail</h4>
+session required pam_chroot.so<br />
+<br />
+<pre class="brush: plain; light: true; ">
+kelvin@server ~$ sudo apt-get install libpam-chroot makejail</pre>
+<br />
+<br />
+<h4>
+Second: makejail config file</h4>
+<br />
+<br />
+Put the following in /etc/makejail/create-user.py:<br />
+<pre class="brush: plain; light: true; ">
+#Clean the jail</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/03/22/layer-images-using-imagemagick_25.html">
+            Layer Images Using ImageMagick
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 22, 2007</span>
+        For one of my <a href="http://www.brokebutnot.com/">webapp projects</a> I'm needing to layer two images.  This isn't a problem on my laptop -- I just fire up GIMP, do some copy 'n pasting, and I'm done.  However, since everything needs to be automated (scripted), and on a server -- well, you get the point.<br />
+The great <a href="http://www.imagemagick.org/">ImageMagick</a> toolkit comes to the rescue.  This is highly documented elsewhere, so I'm going to be brief.<br />
+<h4>
+Take this:</h4>
+<br />
+<br />
+<a href="http://picasaweb.google.com/lh/photo/qQpq_rmGDyoXcID-MUKJRA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9DtidDx_8lHusK9vq-3mkIcKg0JVjCMnyYy4DjZjap556Hb8z2kl3eVTnK-Mz-yBv0D_AG-DYTg2IhIy6Zxluvhe1iv7bbB6JbhmcQKwOL8bDQNqheRmrUN3WMdPjv_s_WgOW3XvCunUQ/s400/world.jpg" /></a><br />
+<br />
+<h4>
+And add it to this:</h4>
+<br />
+<br />
+<a href="http://picasaweb.google.com/lh/photo/FHDY48lASCafTiMXXbYbtA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfXQwFtbAJUa7qcRPpCBny5h188YpMglxSc-uUZPQcp4iCyKZRJddY3MUkmzRNTbE4rd0ueQzxJJyAevjiVOVar7mQPhoExM4E-z_OxXWxEnd5AoyUkWKqaAvDjqm4tjmh76oroizz4UFH/s400/bg.jpg" /></a><br />
+<br />
+I first tried to use the following technique:<br />
+<pre class="brush: plain; light: true; ">
+convert bg.jpg -gravity center world.png -composite test.png</pre>
+<br />
+This generated a pretty picture, what I wanted.  What I didn't want was the fact that the picture was freaking 1.5 megs large, not to mention the resources were a little high:<br />
+<pre class="brush: plain; light: true; ">
+real    0m7.405s
+user    0m7.064s
+sys     0m0.112s</pre>
+<br />
+<br />
+Next, I tried to just use composite.<br />
+<pre class="brush: plain; light: true; ">
+composite -gravity center world.png bg.png output.png</pre>
+<br />
+Same results, although the resource usage was just a tad lower.  So, what was I doing wrong?  I explored a little and realized I was slightly being a muppet.  I was using a bng background that was 1.2 megs large (long story).  I further changed the compose type to "atop," as that is what appeared to have the lowest resource usage.  I modified things appropriately:<br />
+<pre class="brush: plain; light: true; ">
+ composite -compose atop -gravity center world.png bg.jpg output.jpg</pre>
+<br />
+<br />
+This also yielded an acceptable resource usage.<br />
+<h4>
+The result:</h4>
+<br />
+<br />
+<a href="http://picasaweb.google.com/lh/photo/UCqOBQ2ohdqcBCZXrkHZzg?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgZdMmBEvPgAYTaDp7y4Lh-wEoTDZafQCGDo6cfh2vPmtpr714ioNsddZViGiIhfydnqbtXEfjYP8nDoq_bK_1SZQQxvsHYlGpo5FSfPnJwuDw7M7rW3rDA__jUOFtZ-Ijghda78yaiyX1/s400/output.jpg" /></a></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/03/20/a-dying-laptop_8677.html">
+            A Dying Laptop
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 20, 2007</span>
+        <a href="http://picasaweb.google.com/lh/photo/pGNVNaArTEVlfi8xjhsPYA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPyeU1z0m7gaaj64mfwy7XuGBUjkaYy3JG97vvrPx3Y2WjByfT5jz4quQqRw4-YCKFmEAhD2giX4VuwWgR2fx4Ok7hkDj1yvS2h_T5GoVreUWT6y-An287kxWhRGQXy8zaRumLvb1egW9k/s400/DSC01613.jpg" /></a><br /><br /><p>I have the <s>pleasure</s> of owning an old T23 laptop.  To show you how old this puppy is, the current T series is at <i>T60</i>, and those have been out for over a year.  This laptop was made in 2012, and I picked it up somewhat discounted late in 2003.  It is now March 2007, and this puppy is still rock solid.</p><p>You heard me, it is almost six years old and still working fine -- that is testimony to how well this laptop was built.  There are several small cracks around the case, but nothing you would notice by just walking by.  This laptop has been to more countries than many people.</p><p>I had the first problem this weekend, and it isn't even related to the laptop.  The hard drive, a 30G I put in at some point, started to crap out on me.  Bad sectors were everywhere, so some of the programs were slightly unhappy (e.g. I couldn't boot into X).</p><p>I'm going to buy a new laptop soon, I promise, about the time my <a href="http://www.kelvinism.com/projects/mba-funding/">MBA goals</a> are reached.  Until then, I'll continue to be frugal, and deal with the bad sectors.  Being a good IT nerd, everything is backed up to an external hard drive (and most stuff backed up remotely).</p><p>Luckily I'm using Linux -- so was able to runs fsck/smartmontools a few times in recovery mode, make the bad blocks happy, and continue as "normal."  Phew, disaster averted.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/03/15/the-risk-in-risk-mitigation_5540.html">
+            The Risk in Risk Mitigation
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 15, 2007</span>
+        <p><i>Back in the day</i> the barrier to entry for the Internet was quite high.  The technology used required a steep learning curve, the equipment extremely expensive, and sometimes even hard to acquire.  Fast forward to 2007 and things have certainly changed.  If you know any tech people you can likely get free hosting for a small website, and even more demanding websites can be hosted <a href="http://www.vpslink.com/vps-hosting/">for not much</a>.  The cost of dedicated servers has dropped even more.  And the final kicker: web services.  I've started to think of some web services not as a service, but more like outsourcing requirements.</p><div class="quoteboxright">This very dependency adds risk for a multitude of reasons, and when your entire web application platform revolves around a third party, such as is the case with mashups, you incur great risk.</div><br /><br /><p>One of the nice things when requirements are outsourced is the fact that risk is mitigated.  I'll use <a href="http://www.smugmug.com/">SmugMug</a> as an <a href="http://blogs.smugmug.com/onethumb/2006/08/12/amazon-s3-the-holy-grail/">example</a>.  In summary, they moved their storage to Amason's S3 network, which is something I will be utilizing as well.  Amazon's S3 (and other web services) continue to drive down the barrier of entry -- now you don't even need to purchase hugely expensive servers for the sole purchase of storage!  If you don't need to purchase them, you also don't need to manage them.  Risk mitigated.</p><p>However, continuing the slight allusion from The Other Blog's article on <a href="http://www.theotherblog.com/Articles/2007/03/14/what-are-mashups-for-anyway/">mashups</a>, I see a slight problem with the outsourcing of requirements.  While the following thought isn't particularly innovative: mitigating risk and outsourcing requirements creates a dependency on the third-party.  This very dependency adds risk for a multitude of reasons, and when your entire web application platform revolves around a third party, such as is the case with mashups, you incur great risk.</p><p>But, as is evident by the fact that I've had stitches nine different times, I'm still going to do some <a href="http://www.kelvinism.com/projects/mba-funding/">cool mashups</a> anyways, so stay tuned.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/03/15/one-more-point-linux_9010.html">
+            One More Point Linux
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 15, 2007</span>
+        <p>It should come as a surprise that I enjoy using Linux.  For the record, the first time I booted into Linux on my own was 1997, this was just before entering high school.  So, while some of my tech friends played with NT, I was rumbling with the Penguin.  Starting in 2000 I was using Linux as my main operating system, sometimes supplemented by OS X, and only using Windows when the gaming urge surfaced.  In 2004 I mostly dropped playing any games, which resulted in dropping Windows -- and besides for work, I haven't used it since.</p><p>For me, I'll admit, there are three things that Linux still lacks:</p><ul><br /><li>Simplistic video conferencing support</li><br /><li>Video editing support</li><br /><li>Gaming</li><br /></ul><br /><br /><p>I know that all of these are <i>supported</i>, but, in my opinion, not particularly well.  Well, I don't care about any of these enough to actually need windows, but it would be nice to see them improve.</p><p>So, I'm set.  I'm 100% legal (don't steal a single piece of software).  And don't have to be too afraid of virus'.  What prompted me to write this little excerpt? A recent article at the Washington Post scared the beejeepers out of me, and makes me wish even more for Vista to either cure security problems, or everybody move over to Linux.  The <a href="http://www.washingtonpost.com/wp-dyn/content/article/2007/03/13/AR2007031301522.html">article</a> details the aftermath a virus can cause, not on damaging one's computer, but on capturing information.  The author further <a href="http://blog.washingtonpost.com/securityfix/2007/03/tracking_the_password_thieves_1.html">details</a> his experience hunting down the data.  This was one of the better articles I've read, and I thoroughly enjoyed the further details.  If you want a little more motivation to move to Linux (or just tighten your machine), then I suggest you take a few moments to read the articles as well.</p></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page29" class="previous-page">29</a></li>
+          <li><div class="current-page">30</div></li>
+          <li><a href="/page31" class="next-page">31</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

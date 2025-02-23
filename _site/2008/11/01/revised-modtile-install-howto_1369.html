@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Revised mod_tile Install HOWTO</h2><div class="post-list" itemprop="articleBody">
+    <p>This is the laundry list of things I did while creating a mod_tile VMware appliance based on Ubuntu Server 8.04.  I've kept descriptions limited but left all the commands in.  Let's start installing things...</p><br />
+<b>Useful goodies for compiling source</b><br />
+<br />
+<pre class="brush: plain; light: true; ">sudo apt-get build-essential
+</pre><br />
+<p><b>More goodies for Mapnik + Friends</b></p><pre class="brush: plain; light: true; ">sudo apt-get install libboost-dev libboost-filesystem-dev libboost-filesystem1.34.1 libboost-iostreams-dev libboost-iostreams1.34.1 libboost-program-options-dev libboost-program-options1.34.1 libboost-python-dev libboost-python1.34.1 libboost-regex-dev libboost-regex1.34.1 libboost-serialization-dev libboost-serialization1.34.1 libboost-thread-dev libboost-thread1.34.1 libicu-dev libicu38 libstdc++5 libstdc++5-3.3-dev python2.5-dev
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install libfreetype6 libfreetype6-dev libjpeg62 libjpeg62-dev libltdl3 libltdl3-dev libpng12-0 libpng12-dev libtiff4 libtiff4-dev libtiffxx0c2 python-imaging python-imaging-dbg proj
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install libcairo2 libcairo2-dev python-cairo python-cairo-dev libcairomm-1.0-1 libcairomm-1.0-dev libglib2.0-0 libpixman-1-0 libpixman-1-dev libpthread-stubs0 libpthread-stubs0-dev ttf-dejavu ttf-dejavu-core ttf-dejavu-extra
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install libgdal-dev python2.5-gdal postgresql-8.3-postgis postgresql-8.3 postgresql-server-dev-8.3 postgresql-contrib-8.3
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install libxslt1.1 libxslt1-dev libxml2-dev libxml2 gdal-bin libgeos-dev libbz2-dev
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install apache2 apache2-threaded-dev apache2-mpm-prefork apache2-utils
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo aptitude install subversion
+</pre><br />
+<p>This checks out the mapnik source:</p><pre class="brush: plain; light: true; ">svn co svn://svn.mapnik.org/trunk mapnik-src
+</pre><br />
+<p>Let's build mapnik with several specific locations included.</p><pre class="brush: plain; light: true; ">cd mapnik-src
+python scons/scons.py PYTHON=/usr/bin/python PGSQL_INCLUDES=/usr/include/postgresql PGSQL_LIBS=/usr/lib/postgresql BOOST_INCLUDES=/usr/include/boost BOOST_LIBS=/usr/lib
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo python scons/scons.py install PYTHON=/usr/bin/python PGSQL_INCLUDES=/usr/include/postgresql PGSQL_LIBS=/usr/lib/postgresql BOOST_INCLUDES=/usr/include/boost BOOST_LIBS=/usr/lib
+</pre><br />
+<p>And prepare a few things for the mapnik rendering...</p><pre class="brush: plain; light: true; ">svn co http://svn.openstreetmap.org/applications/rendering/mapnik/
+</pre><br />
+<pre class="brush: plain; light: true; ">cd ~/mapnik
+wget http://tile.openstreetmap.org/world_boundaries-spherical.tgz 
+tar -xpjf world_boundaries-spherical.tgz
+unzip processed_p.zip 
+cp coastlines/* world_boundaries/ 
+rmdir coastlines 
+</pre><br />
+<p>Time to setup postgres.  I have the intentions of running renderd (the mod_tile rendering engine) under whatever user Apache is running as, so I'll setup postgres to allow the OSM user to authenticate via password.  I'm not a postgres expert, so if you see me doing something totally foolish, let me know.</p><br />
+<pre class="brush: plain; light: true; ">sudo vi /etc/postgresql/8.3/main/pg_hba.conf
+</pre><br />
+<p>And edit the authentication part as so:</p><pre class="brush: plain; light: true; "># Database administrative login by UNIX sockets
+local   all         postgres                          ident sameuser
+local   all         osm                               password sameuser
+</pre><br />
+<p>And now to actually configure postgres for the OSM data</p><pre class="brush: plain; light: true; ">sudo su postgres
+createuser osm
+createdb -E UTF8 -O osm gis
+createlang plpgsql gis
+psql -d gis -f /usr/share/postgresql-8.3-postgis/lwpostgis.sql
+echo "ALTER TABLE geometry_columns OWNER TO osm; ALTER TABLE spatial_ref_sys OWNER TO osm;"  | psql -d gis
+echo "alter user osm with password 'columbia';" | psql
+</pre><br />
+<pre class="brush: plain; light: true; ">sudo /etc/init.d/postgresql-8.3 restart
+</pre><br />
+<p>Now, let's render a sample image.  Edit set-mapnik-env by changing the DB to 'gis', the username to 'osm', and the password to 'columbia'</p><pre class="brush: plain; light: true; ">cd mapnik
+source ./set-mapnik-env
+./customize-mapnik-map >osm.xml
+./generate_image.py
+</pre><br />
+<p>If you get an error about it not finding a lib, make sure to do a...</p><pre class="brush: plain; light: true; ">sudo ldconfig
+</pre><br />
+<p>You should have an image called 'image.png' in the mapnik directory, and it should look distinctly like the UK.</p><br />
+<pre class="brush: plain; light: true; ">svn co http://svn.openstreetmap.org/applications/utils/export/osm2pgsql
+cd osm2pgsql
+make
+</pre><br />
+<p>Ok, that was easy.  Let's load some data. I've used a sample snippit from Sydney in /home/osm to illustrate this.</p><pre class="brush: plain; light: true; ">./osm2pgsql -W -d gis ../sydney.osm
+</pre><br />
+<p>Type in the password used for postgres ('columbia')</p><br />
+<p>I'll now check that the data is accessible by editing generate_image.py with the correct coords for Sydney.</p><br />
+<pre class="brush: plain; light: true; ">ll = (150.29, -34.04, 151.25, -33.36)
+</pre><br />
+<p>Time to get mod_tile up and running.</p><br />
+<pre class="brush: plain; light: true; ">sudo apt-get install libagg-dev
+</pre><br />
+<pre class="brush: plain; light: true; ">svn co http://svn.openstreetmap.org/applications/utils/mod_tile
+cd mod_tile
+</pre><br />
+<p>Depending on the revision of mod_tile you are using, you are going to have to edit the source before compiling.  The two files you need to read through are the Makefile and render_config.h.  I change the apxs and apachectl locations to the correct place (lines 2, 13 and 14). Since I did it on a x86 image, I took out any references to lib54 (line 33). In render_config.h, I made the following changes:</p><br />
+<p>Line 8</p><br />
+<pre class="brush: plain; light: true; ">#define WWW_ROOT "/var/www"
+</pre><br />
+<p>Line 23</p><br />
+<pre class="brush: plain; light: true; ">#define OSM_XML "/home/osm/mapnik/osm.xml"
+</pre><br />
+<p>Removed references to lib64 on lines 26 and 29.</p><br />
+<pre class="brush: plain; light: true; ">make && make install
+</pre><br />
+<p>Set it up as a module for apache by creating a file in /etc/apache/conf.d called 'mod_tile' and putting in there:</p><br />
+<pre class="brush: plain; light: true; ">LoadModule tile_module /usr/lib/apache2/modules/mod_tile.so
+</pre><br />
+<p>Created a folder called 'osm_tiles2' and 'direct' in /var/www, and make sure they are writable by whatever apache runs as (likely www-data). Restart apache.</p><p>From here, I created a file that automatically zooms in on the map I just created -- you can check it out here. Start the renderd process as www-data, and browse to the sample file.</p><pre class="brush: plain; light: true; ">cd ~/mod_tile
+sudo su www-data
+./renderd
+</pre><br />
+<p>By now you should have a working mod_tile/OSM setup.  After a change and tune a few things on the Ubuntu image I'll make the VMware image available for download.  I can't wait to do some OSM projects!</p><br />
+<br />
+
+  </div><span>[
+    
+      
+      <a href="/tag/OSM"><code class="highligher-rouge"><nobr>OSM</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/apache"><code class="highligher-rouge"><nobr>apache</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2008/11/01/revised-modtile-install-howto_1369.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

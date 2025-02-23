@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2014/03/01/error-opening-devsda-no-medium-found.html">
+            Error opening /dev/sda: No medium found
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 1, 2014</span>
+        I have had this issue before, solved it, and had it again.<br />
+<br />
+Let's say you plug in a USB drive into a Linux machine, and try to access it (mount it, partition it with fdisk/parted, or format it), and you get the error<br />
+<code><br />
+Error opening /dev/sda: No medium found<br />
+</code><br />
+<br />
+Naturally the first thing you will do is ensure that it appeared when you plugged it in, so you run 'dmesg' and get:<br />
+<code><br />
+sd 2:0:0:0: [sda] 125045424 512-byte logical blocks: (64.0 GB/59.6 GiB)<br />
+</code><br />
+<br />
+And it appears in /dev<br />
+<code><br />
+Computer:~ $ ls /dev/sd*<br />
+/dev/sda<br />
+Computer:~ $<br />
+</code><br />
+<br />
+Now what? Here's what has bitten me twice: make sure the drive has enough power. Let's say you mounted a 2.5" USB drive into a Raspberry Pi. The Pi probably doesn't have enough current to power the drive, but it <i>does</i>&nbsp;have enough to make the drive recognisable. Or, if you are like me, the USB charger powering the drive is faulty, so even though it has power, it doesn't have enough.<br />
+<br />
+The next troubleshooting step should be obvious: give the drive enough power to completely spin up.<br />
+<br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2014/01/05/continuous-flow-through-worm-bin.html">
+            Continuous Flow Through Worm Bin
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jan 5, 2014</span>
+        Status: <i class="fas fa-check-circle"></i><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/11/28/free-splunk-hosting.html">
+            Free Splunk Hosting
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 28, 2013</span>
+        <div class="separator" style="clear: both; text-align: center;">
+<a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhidCIsvAamk9SjeJxqIcMmNA_hjCUOzREgxQ3hJuSXhU4RIHXuQO6WXMZZ1Eu34jI3exx0F8JwVX4Fu2iO_jBIazNkArv21u4OSbo3GFY_YcTScbA_kC0u5p0iiE_YyhAOl85Ze-742pB6/s1600/SplunkOpenShift.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhidCIsvAamk9SjeJxqIcMmNA_hjCUOzREgxQ3hJuSXhU4RIHXuQO6WXMZZ1Eu34jI3exx0F8JwVX4Fu2iO_jBIazNkArv21u4OSbo3GFY_YcTScbA_kC0u5p0iiE_YyhAOl85Ze-742pB6/s1600/SplunkOpenShift.png" height="200" width="400" /></a></div>
+I first used Splunk about 10 years ago after an old colleague&nbsp;installed it on a computer in the corner, and ever since then I have preached about it. If you have log data, of any kind, I'd recommend you give it a go.<br />
+<div>
+<br /></div>
+<div>
+The Splunk people have a a few pretty good options for trying Splunk out, as you can either use <a href="https://www.splunkstorm.com/" target="_blank">Splunk Storm</a>&nbsp;or Splunk Free. The first option is obviously hosted, and has a generous storage option, but also does not allow long term storage of data. I send system log data to Splunk Storm.</div>
+<div>
+<br /></div>
+<div>
+However, what if you don't have a lot of data, but you want to keep that data forever? After reading <span id="goog_1253560755"></span><a href="https://twitter.com/edrabbit" target="_blank">Ed Hunsinger<span id="goog_1253560756"></span>'s</a>&nbsp;<a href="http://blogs.splunk.com/2013/10/22/go-splunk-yourself/" target="_blank">Go Splunk Yourself</a>&nbsp;entry about using it for Quantified Self data, I knew I had to do the same.</div>
+<div>
+<br /></div>
+<div>
+From personal experience, Splunk requires <i>at least</i>&nbsp;1GB to even start. You can probably get it to run on less, but I haven't had much success. This leaves two options: look at <a href="http://lowendbox.com/" target="_blank">Low End Box</a>&nbsp;for a VPS with enough memory (as cheap as $5/month), of use <a href="https://www.openshift.com/" target="_blank">OpenShift</a>. Red Hat generously provides three "gears" to host applications, for free, and each with 1GB of memory. I have sort of a love-hate relationship with OpenShift, maybe a bit like using OAuth. Red Hat calls OpenShift the "Open Hybrid Cloud Application Platform", and I can attest that it is really this. They have provided a method to bundle an application stack and push it into production without needing to fuss about infrastructure, or even provisioning and management of the application. It feels like what would happen if Google App Engine and Amazon's EC2 had a child. Heroku or dotCloud might be its closest alternatives.</div>
+<div>
+<br /></div>
+<div>
+Anyways, this isn't a review of OpenShift, although it would be a positive review, but instead on how to use OpenShift to host Splunk. I first installed Splunk in a gear using Nginx as a proxy, and it worked. However, this felt overly complex, and after one of <a href="https://twitter.com/aeriadesign" target="_blank">my colleagues</a>&nbsp;started working on installing Splunk in a cartridge, I eventually agreed this would be the way to go. The result was a Splunk cartridge that can be installed inside any existing gear. Here are the instructions; you need an OpenShift account, obviously. The install should take less than ten clicks of your mouse, and one copy/paste.</div>
+<div>
+<br /></div>
+<div>
+From the <a href="https://github.com/kelvinn/openshift-splunk-cartridge" target="_blank">cartridge</a>'s GitHub README:</div>
+<div>
+<br /></div>
+<div>
+<ol>
+<li>Create an Application based on existing web framework. If in doubt, just pick "Do-It-Yourself 0.1" or "Python 2.7"</li>
+<li>Click on "Continue to the application overview page."</li>
+<li>On the Application page, click on "Or, see the entire list of cartridges you can add".</li>
+<li>Under "Install your own cartridge" enter the following URL: https://raw.github.com/kelvinn/openshift-splunk-cartridge/master/metadata/manifest.yml</li>
+<li>Next and Add Cartrdige. Wait a few minutes for Splunk to download and install.</li>
+<li>Logon to Splunk at: https://your-app.rhcloud.com/ui</li>
+</ol>
+<div>
+<br /></div>
+<div>
+More details can be read on the cartridge's&nbsp;GitHub page, and I would especially direct you to the <a href="https://github.com/kelvinn/openshift-splunk-cartridge#limitations" target="_blank">limitations</a> of this configuration. This will all stop working if Splunk makes the installer file unavailable, but I will deal with that when the time comes. Feel free to alert me if this happens.</div>
+</div>
+<div>
+<br /></div>
+<div>
+<br /></div>
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/09/13/finding-same-misspelled-name-using.html">
+            Finding The Same (Misspelled) Name Using Python/NLTK
+          </a>
+        </h3>
+        <span class="post-meta">Published on Sep 13, 2013</span>
+        I have been meaning to play around with the <a href="http://nltk.org/">Natural Language Toolkit</a>&nbsp;for quite some time, but I had been waiting for a time when I could experiment with it and actually create some value (as opposed to just play with it). A suitable use case appeared this week: matching strings. In particular, matching two different lists of many, many thousands of names. <br />
+<br />
+To give you an example, let's say you had two lists of names, but with the name spelled incorrectly in one list:<br />
+<br />
+List 1: <br />
+Leonard Hofstadter<br />
+Sheldon Cooper<br />
+Penny<br />
+Howard Wolowitz<br />
+Raj Koothrappali<br />
+Leslie Winkle<br />
+Bernadette Rostenkowski<br />
+Amy Farrah Fowler<br />
+Stuart Bloom<br />
+Alex Jensen<br />
+Barry Kripke<br />
+<br />
+List 2:<br />
+Leonard Hofstadter<br />
+Sheldon Coopers<br />
+Howie Wolowits<br />
+Rav Toothrapaly<br />
+Ami Sarah Fowler<br />
+Stu Broom<br />
+Alexander Jensen<br />
+<br />
+This could easily occur if somebody was manually typing in the lists, dictating names over the phone, or spell their name differently (e.g. Phil vs. Phillip) at different times.<br />
+<br />
+If we wanted to match people on List 1 to List 2, how could we go about that? For a small list like this you can just look and see, but with many thousands of people, something more sophisticated would be useful. One tool could be NLTK's edit_distance function. The following Python script displays how easy this is:<br />
+<br />
+<pre class="brush: python; light: true; ">import nltk</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/09/08/sydneys-education-levels-mapped.html">
+            Sydney&#39;s Education Levels Mapped
+          </a>
+        </h3>
+        <span class="post-meta">Published on Sep 8, 2013</span>
+        I was talking to a friend about what education levels might look like across Sydney, and a friend challenged me to map it. The below map is my first draft.<br />
+<br />
+The map was derived by combining three datasets from the Australian Bureau of Statistics (<a href="http://www.abs.gov.au/">ABS</a>&nbsp;- a department releasing some great datasets). The first dataset was the spatial data for "SA2" level boundaries, the second the population data for various geographic areas, and the third from the 2011 Census on Non-School Qualification Level of Education (e.g. Certificates, Diplomas, Masters, Doctorates). I aggregated all people with bachelors or higher in an SA2 region, and then divided that number by the total number of people in that region. A different methodology could have been used.<br />
+<br />
+<b>EDIT</b>: I should have paid more attention to mapping education levels. I mapped the percentage of overall population, but should have mapped the percentage of 25 to 34 year olds, as this would have aligned to various government metrics.<br />
+<br />
+Reported education levels differ vastly by region, e.g. "North Sydney - Lavender Bay" (40%) vs. "Bidwell - Hebersham - Emerton" (3%). It is interesting to look at the different <a href="http://www.kelvinism.com/2013/07/mapping-urban-density-in-sydney.html">urban density levels</a> of the areas, as well as the <a href="http://www.kelvinism.com/2013/08/sydney-commute-times-mapped-part-2.html">commute times to the nearest centre</a>.<br />
+<br />
+Without trying to sound too elitist, I was hoping to use this map to guide me where to consider buying our next property (i.e. looking for a well educated, clean area with decent schools and frequent public transport). It was interesting to discover that the SA2 region we currently live in has the second highest percentage in NSW.<br />
+<br />
+Feel free to take a <a href="https://docs.google.com/spreadsheet/pub?key=0Ak3XfQfX87ELdEJRYVhIYlFRUGRZaDhQel9sbXlHY0E&amp;output=html">look at the aggregated data</a> yourself or <a href="https://docs.google.com/spreadsheet/pub?key=0Ak3XfQfX87ELdEJRYVhIYlFRUGRZaDhQel9sbXlHY0E&amp;single=true&amp;gid=0&amp;output=csv">download it</a>&nbsp;(attribution to ABS for source datasets).<br />
+<br />
+<iframe height="600px" src="http://maps.kelvinism.com/sydney_educated.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/sydney_educated.html" target="_blank">View Full Screen</a></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page3" class="previous-page">3</a></li>
+          <li><div class="current-page">4</div></li>
+          <li><a href="/page5" class="next-page">5</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

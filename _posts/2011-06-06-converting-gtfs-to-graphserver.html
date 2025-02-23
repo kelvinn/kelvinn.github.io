@@ -1,0 +1,50 @@
+---
+layout: post
+title: Converting GTFS to GraphServer
+date: '2011-06-06T14:07:00.000+10:00'
+author: Kelvin Nicholson
+tags:
+- howtos
+- gtfs
+modified_time: '2013-01-20T14:08:22.888+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-3999220423433916315
+blogger_orig_url: https://www.kelvinism.com/2011/06/converting-gtfs-to-graphserver.html
+---
+
+If you want to use Graphserver to do some analysis with GTFS, you will need to convert GTFS into the database. This is how I did it.<br />
+<h4>
+Get an appropriate AMI from Amazon's EC2</h4>
+I used the following AMI. If you have enough memory, you don't need to do this.<br />
+<br />
+<pre>ami-7000f019
+</pre>
+<br />
+Lookup and read the GTFSDB <a href="http://code.google.com/p/gtfsdb/downloads/detail?name=GTFSDB%20INSTALL.txt" rel="nofollow" target="_blank">INSTALL.txt</a> document<br />
+<h4>
+Prepare system</h4>
+<pre>sudo apt-get install mercurial
+hg clone https://gtfsdb.googlecode.com/hg/ gtfsdb
+sudo apt-get install python-setuptools
+sudo easy_install psycopg2
+sudo apt-get install build-essential</pre>
+<h4>
+Download GTFS database</h4>
+<pre>ubuntu@domU-12-31-39-00-5D-B8:/mnt/gtfsdb$ pwd
+/mnt/gtfsdb
+sudo python setup.py install
+sudo wget http://cdn.kelvinism.com/google_transit.zip
+sudo apt-get install python-psycopg2</pre>
+<h4>
+Prepare configuration file</h4>
+<pre>#default.cfg
+[options]
+create = True
+database = postgresql://nsw:131500@10.128.49.175:5432/nsw
+filename = /mnt/google_transit.zip
+geospatial = True
+#schema = None</pre>
+<h4>
+Perform import</h4>
+<pre>screen
+python gtfsdb/scripts/load.py
+</pre>

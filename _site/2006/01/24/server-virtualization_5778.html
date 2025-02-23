@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Server Virtualization</h2><div class="post-list" itemprop="articleBody">
+    <p>We don't want to have a billion servers each doing their own task -- so what can we use as a solution? Server virtualization (or semi-virtualization or para-virtualization). This involves cutting down a server into mini servers that each have full customization. Our VPS at hostmysite is like this. So why would you want to do this? A few reasons actually.</p> <p> -Localize exploits. Let's say DNS gets exploited -- the access gained would only be for DNS, and not for mail and web and everything else.</p> <p>  -Easy "upgrades," backups and redundancy. Let's say we start to use MySQL more and more, but the server can't handle it. To upgrade (ignoring replication for this example) we could just turn off the virtual server (in essense lock files), move it to other server, drop it into another server that is setup to do virtualization, and turn it it on. Nearly no downtime, and you know it will work.</p> <p>  Anyhow, worth looking at. Here are some of the most mature linux virtualization packages out there:</p> <p>  http://openvz.org/ -- This is the open source version of hostmysites VPS. The main difference is it isn't setup for doing mass hosting (like, 1000 VPSs on a huge mainframe).</p> <p>  http://www.openvps.org/</p> <p>  http://linux-vserver.org/ -- Very plain website, but there is news that the authors are pushing for this code to be included in the Linux kernal natively.</p> <p>  http://www.cl.cam.ac.uk/Research/SRG/netos/xen/ -- I've heard rumors also about this being one of the most advanced.</p> <p>  http://www.vmware.com/ -- The one and only. This is full virtualization so will contain the most overhead (some of the previous packages have almost no overhead, not even 1%). Oh yea, and this "costs" money.</p> <br />
+  </div><span>[
+    
+      
+      <a href="/tag/articles"><code class="highligher-rouge"><nobr>articles</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/virtualization"><code class="highligher-rouge"><nobr>virtualization</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2006/01/24/server-virtualization_5778.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

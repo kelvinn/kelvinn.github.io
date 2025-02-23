@@ -1,0 +1,24 @@
+---
+layout: post
+title: S3&#39;s Super Backups
+date: '2007-01-22T21:30:00.004+11:00'
+author: Kelvin Nicholson
+tags:
+- backup
+- articles
+- amazon
+modified_time: '2013-01-09T21:36:28.163+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-7963368597497532377
+blogger_orig_url: https://www.kelvinism.com/2007/01/s3-super-backups_8294.html
+---
+
+My buddy <a href="http://www.ianfitzpatrick.com/">Ian</a>&nbsp; mentioned Amazon's S3 service, and the potential for using it for fun webapps.&nbsp; While utilizing it for webapps will have to wait a few months, I was able to use it as a cheap backup for my home server (pictures, documents, etc,.) -- and my server that houses my email and websites.&nbsp; The setup is pretty quick, and most of it can be detailed <a href="http://blog.eberly.org/2006/10/09/how-automate-your-backup-to-amazon-s3-using-s3sync/">here</a>.&nbsp; The ruby package is <a href="http://s3sync.net/">here </a>&nbsp; I'll toss in my recommendation to use the <a href="https://jets3t.dev.java.net/">jets3t Cockpit</a>  application for viewing the buckets, especially considering the Firefox extension didn't work as advertised.&nbsp; My only two comments will be this:<br />
+<br />
+1) Making sure SSL is working.&nbsp; The site mentioned above just has you hunt down some random bash file, that isn't even hosted anymore.&nbsp; On my Debian system I simply added this to my upload.sh:<br />
+<br />
+<pre class="brush: bash; light: true; ">
+export SSL_CERT_DIR=/etc/ssl/certs/</pre>
+<br />
+2) The second suggestion is another example of the s2sync layout.&nbsp; Let's say you created the bucket "kelvinism" -- the following would move the documents inside a test folder from /home/kelvin named test to a folder named test in the kelvinism bucket.&nbsp; Sweet.<br /> <br />
+<pre class="brush: plain; light: true; ">
+ s3sync.rb -r --ssl --delete /home/kelvin/test kelvinism:/test&nbsp;&nbsp;</pre>

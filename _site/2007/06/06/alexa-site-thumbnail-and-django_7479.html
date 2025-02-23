@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Alexa Site Thumbnail And Django</h2><div class="post-list" itemprop="articleBody">
+    <p>So, you've seen how to look up thumbnails <a href="/howtos/alexa-site-thumbnail-python/">via python</a>, but wonder how to integrate this with Django?  I created a <a href="/webthumbs/">sample app to demonstrate</a>.  One thing to note about this app is it is slightly more complex than just using the <a href="/howtos/alexa-site-thumbnail-python/">previously mentioned</a> ThumbnailUtility.  For starters, the thumbnail is downloaded from Alexa onto the server.  Another part is first searching if the thumbnail exists already, and if it does, serving that instead of querying Alexa.  Let's just start with some code.</p><h4>getAST.py</h4><br /><br /><pre class="brush: python; light: true "><br /><br />#!/usr/bin/python<br />import base64<br />import datetime<br />import hmac<br />import sha<br />import sys<br />import re<br />import urllib<br />import xml.dom.minidom<br />import os<br />from urlparse import urlsplit<br /><br />AWS_ACCESS_KEY_ID = 'your-access-key-id'<br />AWS_SECRET_ACCESS_KEY = 'your-secret-key'<br />STORELOC = "/path/to/store/webthumbs/"<br /><br />def create_thumbnail(site_url):<br />    image_name = re.sub("\.|\/", "_", '.'.join(urlsplit(site_url)[1].rsplit('.', 2)[-2:])) + ".jpg"<br />    if not os.path.isfile(STORELOC+image_name):<br />        def generate_timestamp(dtime):<br />            return dtime.strftime("%Y-%m-%dT%H:%M:%SZ")<br />        def generate_signature(operation, timestamp, secret_access_key):<br />            my_sha_hmac = hmac.new(secret_access_key, operation + timestamp, sha)<br />            my_b64_hmac_digest = base64.encodestring(my_sha_hmac.digest()).strip()<br />            return my_b64_hmac_digest<br />        timestamp_datetime = datetime.datetime.utcnow()<br />        timestamp_list = list(timestamp_datetime.timetuple())<br />        timestamp_list[6] = 0<br />        timestamp_tuple = tuple(timestamp_list)<br />        timestamp = generate_timestamp(timestamp_datetime)<br />        signature = generate_signature('Thumbnail', timestamp, AWS_SECRET_ACCESS_KEY)<br />        parameters = {<br />            'AWSAccessKeyId': AWS_ACCESS_KEY_ID,<br />            'Timestamp': timestamp,<br />            'Signature': signature,<br />            'Url': site_url,<br />            'Action': 'Thumbnail',<br />            }<br />        url = 'http://ast.amazonaws.com/?'<br />        result_xmlstr = urllib.urlopen(url, urllib.urlencode(parameters)).read()<br />        result_xml = xml.dom.minidom.parseString(result_xmlstr)<br />        image_urls = result_xml.childNodes[0].getElementsByTagName('aws:Thumbnail')[0].firstChild.data<br />        store_name = STORELOC + image_name<br />        urllib.urlretrieve(image_urls, store_name)<br />    return image_name<br />    <br /><br />    <br /></pre><br /><br /><p>Not too much to mention here, basically just an extended version of the ThumbnailUtility.  The only difference is the test at the beginning, and actually downloading the thumbnail.</p><h4>views.py</h4><br /><pre class="brush: python; light: true "><br /># Create your views here.<br />from django.shortcuts import render_to_response, get_object_or_404<br />from django.http import HttpResponseRedirect, HttpResponse<br />from webthumbs.models import *<br />from django import newforms as forms<br />from getAST import create_thumbnail<br /><br />attrs_dict = { 'class': 'form-highlight' }<br /><br />class imageForm(forms.Form):<br />    url = forms.URLField(max_length=100, verify_exists=True, widget=forms.TextInput(attrs=attrs_dict), initial='http://', label='Site URL')<br />    <br />def index(request):<br />    disp_img = ''<br />    # generate default form<br />    f = imageForm()<br />    # handle add events<br />    if request.method == 'POST':<br />        if request.POST['submit_action'] == 'Submit':<br />            # attempt to do add<br />            add_f = imageForm(request.POST)<br />            if add_f.is_valid():<br />                site_url = request.POST['url']<br />                disp_img = create_thumbnail(site_url)<br />        else:<br />            f = add_f<br />    return render_to_response(<br />        'webthumbs/index.html', <br />        {'printform': f, <br />        'disp_img': disp_img<br />        }<br />    )<br /><br /><br /></pre><br /><br /><p>The key thing to look at here is how getAST is called:</p><pre class="brush: python; light: true "><br /><br />site_url = request.POST['url']<br />disp_img = create_thumbnail(site_url)<br /><br /><br /></pre><br /><h4>index.html</h4><br /><pre class="brush: xml; light: true; "><br />{% extends "base.html" %}<br /><br />{% block title %}Kelvinism.com - Blog{% endblock %}<br /><br />{% block content %}<br /><div class="contentpaneopen"><br /><span class="contentheading">What thumbnail do you want?</span><br /><br /><form action="/webthumbs/" method="post"><br />    {{ printform }}<br /><input type=submit name='submit_action' value='Submit'><br /></form><br /><br /><img src="http://media.kelvinism.com/webthumbs/{{ disp_img }}"/><br /></div><br /><br /><br />{% endblock %}<br /><br /></pre><br /><p>So, there you have it, the code to take a url via form and display it right away.</p>
+  </div><span>[
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2007/06/06/alexa-site-thumbnail-and-django_7479.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,14 @@
+---
+layout: post
+title: Server Virtualization
+date: '2006-01-24T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- articles
+- virtualization
+modified_time: '2013-01-09T20:52:45.141+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-270729685628318216
+blogger_orig_url: https://www.kelvinism.com/2006/01/server-virtualization_5778.html
+---
+
+<p>We don't want to have a billion servers each doing their own task -- so what can we use as a solution? Server virtualization (or semi-virtualization or para-virtualization). This involves cutting down a server into mini servers that each have full customization. Our VPS at hostmysite is like this. So why would you want to do this? A few reasons actually.</p> <p> -Localize exploits. Let's say DNS gets exploited -- the access gained would only be for DNS, and not for mail and web and everything else.</p> <p>  -Easy "upgrades," backups and redundancy. Let's say we start to use MySQL more and more, but the server can't handle it. To upgrade (ignoring replication for this example) we could just turn off the virtual server (in essense lock files), move it to other server, drop it into another server that is setup to do virtualization, and turn it it on. Nearly no downtime, and you know it will work.</p> <p>  Anyhow, worth looking at. Here are some of the most mature linux virtualization packages out there:</p> <p>  http://openvz.org/ -- This is the open source version of hostmysites VPS. The main difference is it isn't setup for doing mass hosting (like, 1000 VPSs on a huge mainframe).</p> <p>  http://www.openvps.org/</p> <p>  http://linux-vserver.org/ -- Very plain website, but there is news that the authors are pushing for this code to be included in the Linux kernal natively.</p> <p>  http://www.cl.cam.ac.uk/Research/SRG/netos/xen/ -- I've heard rumors also about this being one of the most advanced.</p> <p>  http://www.vmware.com/ -- The one and only. This is full virtualization so will contain the most overhead (some of the previous packages have almost no overhead, not even 1%). Oh yea, and this "costs" money.</p> <br />

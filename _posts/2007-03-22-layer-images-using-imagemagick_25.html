@@ -1,0 +1,55 @@
+---
+layout: post
+title: Layer Images Using ImageMagick
+date: '2007-03-22T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- imagemagick
+- howtos
+- gimp
+modified_time: '2013-01-09T21:35:02.193+11:00'
+thumbnail: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9DtidDx_8lHusK9vq-3mkIcKg0JVjCMnyYy4DjZjap556Hb8z2kl3eVTnK-Mz-yBv0D_AG-DYTg2IhIy6Zxluvhe1iv7bbB6JbhmcQKwOL8bDQNqheRmrUN3WMdPjv_s_WgOW3XvCunUQ/s72-c/world.jpg
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-505460098810121514
+blogger_orig_url: https://www.kelvinism.com/2007/03/layer-images-using-imagemagick_25.html
+---
+
+For one of my <a href="http://www.brokebutnot.com/">webapp projects</a> I'm needing to layer two images.  This isn't a problem on my laptop -- I just fire up GIMP, do some copy 'n pasting, and I'm done.  However, since everything needs to be automated (scripted), and on a server -- well, you get the point.<br />
+The great <a href="http://www.imagemagick.org/">ImageMagick</a> toolkit comes to the rescue.  This is highly documented elsewhere, so I'm going to be brief.<br />
+<h4>
+Take this:</h4>
+<br />
+<br />
+<a href="http://picasaweb.google.com/lh/photo/qQpq_rmGDyoXcID-MUKJRA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9DtidDx_8lHusK9vq-3mkIcKg0JVjCMnyYy4DjZjap556Hb8z2kl3eVTnK-Mz-yBv0D_AG-DYTg2IhIy6Zxluvhe1iv7bbB6JbhmcQKwOL8bDQNqheRmrUN3WMdPjv_s_WgOW3XvCunUQ/s400/world.jpg" /></a><br />
+<br />
+<h4>
+And add it to this:</h4>
+<br />
+<br />
+<a href="http://picasaweb.google.com/lh/photo/FHDY48lASCafTiMXXbYbtA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfXQwFtbAJUa7qcRPpCBny5h188YpMglxSc-uUZPQcp4iCyKZRJddY3MUkmzRNTbE4rd0ueQzxJJyAevjiVOVar7mQPhoExM4E-z_OxXWxEnd5AoyUkWKqaAvDjqm4tjmh76oroizz4UFH/s400/bg.jpg" /></a><br />
+<br />
+I first tried to use the following technique:<br />
+<pre class="brush: plain; light: true; ">
+convert bg.jpg -gravity center world.png -composite test.png</pre>
+<br />
+This generated a pretty picture, what I wanted.  What I didn't want was the fact that the picture was freaking 1.5 megs large, not to mention the resources were a little high:<br />
+<pre class="brush: plain; light: true; ">
+real    0m7.405s
+user    0m7.064s
+sys     0m0.112s</pre>
+<br />
+<br />
+Next, I tried to just use composite.<br />
+<pre class="brush: plain; light: true; ">
+composite -gravity center world.png bg.png output.png</pre>
+<br />
+Same results, although the resource usage was just a tad lower.  So, what was I doing wrong?  I explored a little and realized I was slightly being a muppet.  I was using a bng background that was 1.2 megs large (long story).  I further changed the compose type to "atop," as that is what appeared to have the lowest resource usage.  I modified things appropriately:<br />
+<pre class="brush: plain; light: true; ">
+ composite -compose atop -gravity center world.png bg.jpg output.jpg</pre>
+<br />
+<br />
+This also yielded an acceptable resource usage.<br />
+<h4>
+The result:</h4>
+<br />
+<br />
+<a href="http://picasaweb.google.com/lh/photo/UCqOBQ2ohdqcBCZXrkHZzg?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgZdMmBEvPgAYTaDp7y4Lh-wEoTDZafQCGDo6cfh2vPmtpr714ioNsddZViGiIhfydnqbtXEfjYP8nDoq_bK_1SZQQxvsHYlGpo5FSfPnJwuDw7M7rW3rDA__jUOFtZ-Ijghda78yaiyX1/s400/output.jpg" /></a>

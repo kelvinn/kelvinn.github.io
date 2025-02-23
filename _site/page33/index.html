@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/01/22/s3-super-backups_8294.html">
+            S3&amp;#39;s Super Backups
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jan 22, 2007</span>
+        My buddy <a href="http://www.ianfitzpatrick.com/">Ian</a>&nbsp; mentioned Amazon's S3 service, and the potential for using it for fun webapps.&nbsp; While utilizing it for webapps will have to wait a few months, I was able to use it as a cheap backup for my home server (pictures, documents, etc,.) -- and my server that houses my email and websites.&nbsp; The setup is pretty quick, and most of it can be detailed <a href="http://blog.eberly.org/2006/10/09/how-automate-your-backup-to-amazon-s3-using-s3sync/">here</a>.&nbsp; The ruby package is <a href="http://s3sync.net/">here </a>&nbsp; I'll toss in my recommendation to use the <a href="https://jets3t.dev.java.net/">jets3t Cockpit</a>  application for viewing the buckets, especially considering the Firefox extension didn't work as advertised.&nbsp; My only two comments will be this:<br />
+<br />
+1) Making sure SSL is working.&nbsp; The site mentioned above just has you hunt down some random bash file, that isn't even hosted anymore.&nbsp; On my Debian system I simply added this to my upload.sh:<br />
+<br />
+<pre class="brush: bash; light: true; ">
+export SSL_CERT_DIR=/etc/ssl/certs/</pre>
+<br />
+2) The second suggestion is another example of the s2sync layout.&nbsp; Let's say you created the bucket "kelvinism" -- the following would move the documents inside a test folder from /home/kelvin named test to a folder named test in the kelvinism bucket.&nbsp; Sweet.<br /> <br />
+<pre class="brush: plain; light: true; ">
+ s3sync.rb -r --ssl --delete /home/kelvin/test kelvinism:/test&nbsp;&nbsp;</pre>
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/01/22/automated-mysql-backups_7112.html">
+            Automated MySQL Backups
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jan 22, 2007</span>
+        <p>Historically I&#39;ve used the ever-so-popular AutoMySQLBackup script.&nbsp; While it seems to work just fine, I&#39;ve decided to give another solution a whirl.&nbsp; This solution, provided through <a href="http://www.zmanda.com/">Zmanda</a>, seems to be less hackery and more enterprise.&nbsp; The instructions are very clear, and the backup test went as planned.&nbsp; Looks&nbsp; like this is another gem for the toolchest.</p><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/12/12/lighttpd-as-apache-sidekick_4400.html">
+            Lighttpd As Apache&amp;#39;s Sidekick
+          </a>
+        </h3>
+        <span class="post-meta">Published on Dec 12, 2006</span>
+        So, you have a web server.  So, you have PHP.  So, you want to make it a little quicker? The following are a few ideas to let you do that.  First, let me share my experiences.<br />
+I have always been wondering "what would a digg do to my site."  I mean, I don't run a commenting system, so I'm refering to just some article.  Because I prefer to manage my own server, I have decided to use a VPS (Virtual Private Server) from <a href="http://www.vpslink.com/">VPSLink</a>.  Before purchasing I searched around, read reviews, and finally tested it out.  Liking what I tested, I stayed.  However, since I just host a few 'play' sites (http/email/ftp), and a few sites for friends, I am not going to spend much money on a high-end plan.  That leaves me with a little problem: how can I maximize what I've got?<br />
+I've tried quite a few things.  I finally ended up using Apache to handle php and <a href="http://www.lighttpd.net/">Lighttpd</a> to serve all static crap.  So, how?<br />
+<h4>
+Staticzerize A Page</h4>
+One of the first things you will need to do is pull down a static copy of your page.<br />
+<br />
+<br />
+<pre class="brush: plain; light: true; ">
+ user@vps:~$ wget http://www.kelvinism.com/howtos/notes/quick-n-dirty-firewall.html </pre>
+That was easy enough.  Next, let's create a directory for static pages.<br />
+<pre class="brush: plain; light: true; ">
+user@vps:~$ sudo mkdir /var/www/html/kelvinism/static
+user@vps:~$ sudo mv quick-n-dirty-firewall.html /var/www/html/kelvinism/static/ </pre>
+Sweet.  (This is assuming of course that the site's DirectoryRoot is /var/www/html/kelvinism).  Next, Lighttpd.<br />
+<h4>
+Lighttpd Configuration</h4>
+<br />
+<br />
+Install Lighttpd however you <a href="http://trac.lighttpd.net/trac/wiki/TutorialInstallation">choose</a>.  There are a few key changes to make in the configuration.<br />
+First, change the directory for your base DocumentRoot. Next, change what ports the server will listen on.<br />
+<br />
+<br />
+<pre class="brush: plain; light: true; ">
+server.document-root = \"/var/www/html\"
+## bind to port (default: 80)
+server.port = 81
+## bind to localhost (default: all interfaces)
+server.bind = \"127.0.0.1\"</pre>
+<br />
+<br />
+Ok, Lighttpd is all done. Now just start her up, and move onto Apache.<br />
+<br />
+<br />
+<pre class="brush: plain; light: true; "> user@vps:/etc/lighttpd$ sudo /etc/init.d/lighttpd start </pre>
+<br />
+<br />
+<h4>
+Master Configuration</h4>
+Depending on your distro and what apache you installed, you might need to do this a little different.  I will illustrate how to do it with the Apache package from the Debian repository.  Let's activate the mod_proxy module.<br />
+<br />
+<br />
+<pre class="brush: plain; light: true; ">
+ user@vps:~$ sudo a2enmod
+Password:
+ Which module would you like to enable?
+ Your choices are: actions alias asis auth_basic auth_digest authn_alias authn_anon authn_dbd authn_dbm authn_default authn_file authnz_ldap authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cern_meta cgi cgid charset_lite dav dav_fs dav_lock dbd deflate dir disk_cache dump_io env expires ext_filter file_cache filter headers ident imagemap include info ldap log_forensic mem_cache mime mime_magic negotiation php5 proxy proxy_ajp proxy_balancer proxy_connect proxy_ftp proxy_http rewrite setenvif speling ssl status suexec unique_id userdir usertrack version vhost_alias</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/12/07/make-dynamic-crap-static_7513.html">
+            Make Dynamic Crap Static
+          </a>
+        </h3>
+        <span class="post-meta">Published on Dec 7, 2006</span>
+        Let's say one page on  your site is getting hit hard.  And I mean, it was digg'd or something.  If the page resides on some CMS or blog, and each request is being processed by PHP and resulting in requests to your database, crap is gonna hit the fan.  Well, at least if you're cheap like me, you'll try to squeeze every penny out of what you've got.<br />
+That said, mod_rewrite comes to the rescue.<br />
+There are only a few modifications that you need to do.  The first is to ensure that mod_rewrite is enabled. If you have apache installed on debian, this might do: <br /><br />
+<pre class="brush: plain; light: true; ">
+user@vps:~$ sudo a2enmod
+Password:
+Which module would you like to enable?
+Your choices are: actions alias asis auth_basic auth_digest authn_alias authn_anon authn_dbd authn_dbm authn_default authn_file authnz_ldap authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cern_meta cgi cgid charset_lite dav dav_fs dav_lock dbd deflate dir disk_cache dump_io env expires ext_filter file_cache filter headers ident imagemap include info ldap log_forensic mem_cache mime mime_magic negotiation php5 proxy proxy_ajp proxy_balancer proxy_connect proxy_ftp proxy_http rewrite setenvif speling ssl status suexec unique_id userdir usertrack version vhost_alias
+Module name? rewrite </pre>
+<br /><br /> Otherwise, you'll need to drop the following in your apache2.conf (or httpd.conf). <br /> <br />
+<pre class="brush: plain; light: true; ">
+LoadModule rewrite_module /usr/lib/apache2/modules/mod_rewrite.so</pre>
+<br />  Next, grab the page that is getting hit hard from your site.<br />
+ <br /><br /> <pre class="brush: plain; light: true; ">
+user@vps:~$ wget http://www.kelvinism.com/stuff/hit-hard.html</pre>
+<br /> Next, let's create a static directory and move that page into it.<br />
+ <br /><br /><pre class="brush: plain; light: true; ">
+user@vps:~$ sudo mkdir /var/www/html/kelvinism/static
+user@vps:~$ sudo mv hit-hard.html /var/www/html/kelvinism/static/</pre>
+<br /><br /> Coolio.  Now we'll rewrite the normal URL (the one being hit hard) to the static URL.<br />
+  If you have full access to the server, just mimic the following to a VirtualHost:<br />
+  <br /><br /><pre class="brush: xml; light: true; ">
+&lt;VirtualHost *&gt;
+    DocumentRoot /var/www/html/kelvinism
+    ServerName www.kelvinism.com
+    ServerAlias kelvinism.com www.kelvinism.com
+&lt;Directory \"/var/www/html/kelvinism\"&gt;
+    Options Indexes -FollowSymLinks +SymLinksIfOwnerMatch
+    allow from all
+    AllowOverride None
+    RewriteEngine On
+    RewriteRule ^stuff/hit-hard\\.html$ /static/hit-hard.html [L]
+&lt;/Directory&gt;
+&lt;/VirtualHost&gt;</pre>
+<br /><br />If you don't have access to the server, you can just add the following to a .htaccess file:<br />
+  <br /><br /><pre class="brush: xml; light: true; ">
+RewriteEngine On
+RewriteRule ^stuff/hit-hard\.html$ /static/hit-hard.html [L]</pre>
+Sweet.<br />
+ <br />
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/11/15/mysql-compat_1690.html">
+            MySQL Compat
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 15, 2006</span>
+        I've run into this error quite a few times, might as well toss blog entry about it:<br />
+<span class="code"> ERROR 1064 at line 17: You have an error in your SQL syntax near 'ENGINE=MyISAM DEFAULT CHARSET=latin1' at line 7</span>  <br />
+One likely reason this comes about is because the data being imported/exported is not compatible with the database version.  For instance, at home you export the information from a mysql5 database.  Then you try to import it on a mysql3.23 database somewhere else -- and it craps out on you. Bummer.<br />
+The solution is quite simple:<br />
+<br />
+<br />
+<pre class="brush: shell; light: true; ">
+ mysqldump --compatible=mysql323 -u root -p database &gt; exportName.sql</pre>
+<br /></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page32" class="previous-page">32</a></li>
+          <li><div class="current-page">33</div></li>
+          <li><a href="/page34" class="next-page">34</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,53 @@
+---
+layout: post
+title: Geocoding Photos (Mac)
+date: '2014-12-13T10:00:00.000+11:00'
+author: Kelvin Nicholson
+tags:
+- photography
+- howtos
+- mac
+modified_time: '2016-04-11T04:13:25.547+10:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-9065059816020586797
+blogger_orig_url: https://www.kelvinism.com/2014/12/geocoding-photos-mac.html
+---
+
+I've recently started using OSX (again), and am really enjoying it (again). One Windows-only tool that I found really useful is&nbsp;<a href="http://www.geosetter.de/en/" target="_blank">Geosetter</a>, which allows you to add geo coordinates into photos. There don't appear to be any free geocoding tools that work to my satisfaction to do this, so the next best thing was geocode like you would using Linux. Here's how.<br />
+<br />
+We're going to use the command line program <a href="http://www.sno.phy.queensu.ca/~phil/exiftool/" target="_blank">ExifTool</a> (by Phil Harvey) to extract coordinates from a gpx file and embed them in a directory of images.<br />
+<br />
+Firstly, install exiftool using <a href="http://brew.sh/" target="_blank">brew</a>. Here's the command:<br />
+<br />
+<pre class="brush: plain; light: true; ">brew install exiftool
+</pre>
+<br />
+Copy the gpx files into your image directory and initiate the sync with the geotag flag:<br />
+<br />
+<pre class="brush: plain; light: true; ">exiftool -geotag=gpslog2014-12-10_212401.gpx ./
+</pre>
+<br />
+It is possible to also specify multiple gpx files (e.g. multiple day trip):<br />
+<br />
+<pre class="brush: plain; light: true; ">exiftool -geotag=gpslog2014-12-10_212401.gpx -geotag=gpslog2014-12-07_132315.gpx -geotag=gpslog2014-12-08_181318.gpx -geotag=gpslog2014-12-10_073811.gpx ./
+</pre>
+<br />
+And finally, you can include a time offset with the geosync flag. For instance, I had an 11-hour (39600 seconds) difference due to a timezone hiccup with my new camera, so we can get rid of that:<br />
+<br />
+<pre class="brush: plain; light: true; ">exiftool -geotag=gpslog2014-12-10_212401.gpx -geotag=gpslog2014-12-07_132315.gpx -geotag=gpslog2014-12-08_181318.gpx -geotag=gpslog2014-12-10_073811.gpx -geosync=39600 ./
+</pre>
+<br />
+It will process the images, renaming the original with an ".original" extension, and give you a report at the end:<br />
+<br />
+<pre class="brush: plain; light: true; ">1 directories scanned
+193 image files updated
+83 image files unchanged
+</pre>
+<br />
+If your camera is set to GMT, then put all the GPX files in the same directory as the photos to geocode, and do this:<br />
+<br />
+<pre class="brush: plain; light: true; ">TZ=GMT exiftool -geotag "*.gpx" *.jpg
+</pre>
+<br />
+For any additional manual geocoding I fallback on <strike>Picasa's Places</strike>&nbsp;<a data-jsbanchorprepared="DbMHD3VqBP0TPju" href="http://www.snafu.org/GeoTag/" target="_blank">GeoTag</a>&nbsp;to add the coordinates.<br />
+<br />
+If you have Lightroom, then try doing a search for a suitable ExifTool Lightroom plugin, as there seem to be a few.

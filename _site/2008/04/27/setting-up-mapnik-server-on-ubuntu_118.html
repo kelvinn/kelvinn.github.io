@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Setting up a Mapnik Server on Ubuntu</h2><div class="post-list" itemprop="articleBody">
+    <p>First, we go ahead and install the needed packages.  I've tried to include "my" list of packages that were needed to get a vanilla 7.10 image up to steam.</p><pre class="brush: plain; light: true; ">apt-get install build-essential libltdl3-dev autoconf libtool automake \
+postgresql postgresql-8.2-postgis postgresql-server-dev-8.2 \
+wget subversion libboost-python1.34.1 libboost-thread-dev \
+libboost-program-options-dev libboost-regex-dev \
+libboost-python-dev libboost-serialization-dev \
+libboost-filesystem-dev libpng12-dev libjpeg62-dev \
+libtiff4-dev zlib1g-dev libfreetype6-dev libgeos-dev \
+unzip apache2-prefork-dev
+</pre><br />
+<br />
+<p>Next we start to download a few components.  I did this in my home directory, /home/kelvin</p><p><b>mod_tile</b> - this is the apache module and rendering daemon that uses mapnik to render the maps.</p><pre class="brush: plain; light: true; ">svn co http://svn.openstreetmap.org/applications/utils/mod_tile
+</pre><br />
+<p><b>Mapnik</b> - this will help us create the maps.</p><pre class="brush: plain; light: true; ">wget http://download.berlios.de/mapnik/mapnik_src-0.5.1.tar.gz
+</pre><br />
+<br />
+<p>Now we start to install things.</p><pre class="brush: plain; light: true; ">tar -xpzf mapnik_src-0.5.1.tar.gz
+cd mapnik-0.5.1
+</pre><br />
+<br />
+<p>Build mapnik as per: http://wiki.openstreetmap.org/index.php/Mapnik -- make sure to use scons as follows:</p><pre class="brush: plain; light: true; ">python scons/scons.py PYTHON=/usr/bin/python \
+PGSQL_INCLUDES=/usr/include/postgresql \
+PGSQL_LIBS=/usr/lib/postgresql BOOST_INCLUDES=/usr/include/boost BOOST_LIBS=/usr/lib
+</pre><br />
+<br />
+<p>Now, I'm temporarily serving/rendering my tiles from an old Thinkpad "server" (PIII with 512MB RAM, of which only 128MB goes to the Xen instance that hosts all of this). So, I am using osm2pgsql on my laptop (a new Thinkpad), and pushing it into the postgres database on my "server".  So, I built osm2pgsql on my new Thinkpad, and setup postgres on the "server" to accept connections from my new Thinkpad.</p><p><b>pg_hba.conf</b> -- Set these lines should be added, assuming your computer is 192.168.10.100:</p><pre class="brush: plain; light: true; ">host    all     all     192.168.10.100/32  trust
+</pre><br />
+<p>Then I do the actual import, assuming my "server" has an IP of 192.168.10.10:</p><pre class="brush: plain; light: true; ">./osm2pgsql -H 192.168.10.10 -U username -l -m -d gis -W /home/location/to/osm/australia.osm
+</pre><br />
+<br />
+<p>Make sure generate_image works before installing mod_tile!</p><p>Install mod_tile as per the modifications needed: http://www.kelvinism.com/howtos/notes-installing-mod_tile-mapnik/</p><p>And the end result? <a href="http://tiles.kelvinism.com">http://tiles.kelvinism.com</a> (remember, on a seven year old Thinkpad!)</p>
+  </div><span>[
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2008/04/27/setting-up-mapnik-server-on-ubuntu_118.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,29 @@
+---
+layout: post
+title: Database Woopsie
+date: '2008-02-13T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- database
+- articles
+modified_time: '2013-01-09T21:20:29.941+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-4918358863672835903
+blogger_orig_url: https://www.kelvinism.com/2008/02/database-woopsie_863.html
+---
+
+<p>I returned to my computer today to notice I had the following error:</p><pre class="brush: bash; light: true; ">(145, "Table './databasename/comments_freecomment' is marked as crashed and should be repaired")
+</pre><br />
+<br />
+<p>Well, crap.  The solution is quite easy, however:</p><pre class="brush: bash; light: true; ">mysqlcheck -uUsername -pPassword databasename comments_freecomment
+</pre><br />
+<br />
+<p>Now you know what you already know, you can fix it:</p><pre class="brush: bash; light: true; ">mysqlcheck -r -uUsername -pPassword databasename comments_freecomment
+</pre><br />
+<br />
+<p>If that doesn't work, you can try a slightly different method.  First, go to the location where your databases are stored on the disk (most likely something like /var/lib/mysql/databasename).  Next, stop the database -- and try to free up as much memory as possible.  Then run:</p><pre class="brush: shell; light: true; ">myisamchk -r comments_freecomment
+</pre><br />
+<br />
+<p>If that doesn't work, try to force it:</p><pre class="brush: bash; light: true; ">myisamchk -r comments_freecomment -f
+</pre><br />
+<br />
+<p>Hope that helps!</p><br />

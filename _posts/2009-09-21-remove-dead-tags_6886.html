@@ -1,0 +1,28 @@
+---
+layout: post
+title: Remove Dead Tags
+date: '2009-09-21T20:30:00.002+10:00'
+author: Kelvin Nicholson
+tags:
+- django
+- howtos
+modified_time: '2013-01-09T21:03:42.094+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-9188225510676644452
+blogger_orig_url: https://www.kelvinism.com/2009/09/remove-dead-tags_6886.html
+---
+
+<p>I've noticed my django-tagging install has been giving a lot of empty entries when doing a lookup on a tag.  Tonight I finally got around to looking at what was causing this.  This is surely not the best way to do this, but at 12:00am on a weekday, well, I shouldn't be doing it in the first place... I first wanted to see what type of content was generating the error:</p><pre class="brush: python; light: true ">for item in TaggedItem.objects.all():
+try:
+print item.object
+except:
+print item.content_type_id
+</pre><br />
+<br />
+<p>Now that I could see what was causing it (I had removed an app that used django-tagging, but it left the tags with empty pointers).  Removing the empty tags was easy enough:</p><pre class="brush: python; light: true ">for item in TaggedItem.objects.all():
+try:
+print item.object
+except:
+item.delete()
+</pre><br />
+<br />
+<p>No more hanging TaggedItems.</p>

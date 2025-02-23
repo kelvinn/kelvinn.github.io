@@ -1,0 +1,82 @@
+---
+layout: post
+title: Event vs. DOM Driven Parsing of XML
+date: '2008-04-29T20:30:00.007+10:00'
+author: Kelvin Nicholson
+tags:
+- graphing
+- articles
+- xml
+- gpx
+modified_time: '2013-01-09T21:17:53.333+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-9116579806402791403
+blogger_orig_url: https://www.kelvinism.com/2008/04/event-vs-dom-driven-parsing-of-xml_6678.html
+---
+
+<p>I recently have been <a href="http://www.kelvinism.com/tech-blog/baby-steps-graphing-traffic/">playing</a> with parsing GPX files and spitting out the results into a special KML file.  I initially wrote a parser using minidom, yet after running this the first time -- and my Core2Duo laptop reaching 100% utilization for 10 seconds -- I realized I needed to re-write it using something else.</p><p>I spent a little time reading the different parsers for XML and eventually read more about <a href="http://effbot.org/zone/celementtree.htm">cElementTree</a>.  And it is included with Python2.5, sweet.</p><p>I quickly rewrote the code and did some tests. First, the two bits of code for parsing my GPX file:</p><p><b>minidom-speed.py</b></p><pre class="brush: python; light: true ">#!/usr/bin/python
+
+from xml.dom import minidom
+from genshi.template import TemplateLoader
+
+def collect_info():
+dom = minidom.parse('airport.gpx')
+for node in dom.getElementsByTagName('trkpt'):
+lat = node.getAttribute('lat')
+lon = node.getAttribute('lon')
+speed = node.getElementsByTagName('speed')[0].firstChild.data
+speed = float(speed) * 10
+coords = '%s,%s' % (lon, lat)
+coords_speed = '%s,%s' % (coords, speed)
+yield {
+'coordinates': coords_speed
+}
+
+loader = TemplateLoader(['.'])
+template = loader.load('template-speed.kml')
+stream = template.generate(collection=collect_info())
+
+f = open('minidom.kml', 'w')
+f.write(stream.render())
+</pre><br />
+<br />
+<p><b>cet-speed.py</b></p><pre class="brush: python; light: true ">#!/usr/bin/python
+
+import sys,os
+import xml.etree.cElementTree as ET
+import string
+from genshi.template import TemplateLoader
+
+def collect_info():
+mainNS=string.Template("{http://www.topografix.com/GPX/1/0}$tag")
+
+wptTag=mainNS.substitute(tag="trkpt")
+nameTag=mainNS.substitute(tag="speed")
+
+et=ET.parse(open("airport.gpx"))
+for wpt in et.findall("//"+wptTag):
+wptinfo=[]
+wptinfo.append(wpt.get("lon"))
+wptinfo.append(wpt.get("lat"))
+wptinfo.append(str(float(wpt.findtext(nameTag)) * 10))
+coords_speed = ",".join(wptinfo)
+yield {
+'coordinates': coords_speed,
+}
+
+loader = TemplateLoader(['.'])
+template = loader.load('template-speed.kml')
+stream = template.generate(collection=collect_info())
+
+f = open('cet.kml', 'w')
+f.write(stream.render())
+</pre><br />
+<br />
+<p>The speed difference is not just noticeable, but <b>very</b> noticeable.</p><p><b>minidom-speed.py</b></p><pre class="brush: plain; light: true; ">$ python -m cProfile minidom-speed.py
+4405376 function calls (3787047 primitive calls) in 32.142 CPU seconds
+</pre><br />
+<br />
+<p><b>cet-speed.py</b></p><pre class="brush: plain; light: true; ">$ python -m cProfile cet-speed.py
+1082061 function calls (904167 primitive calls) in 6.736 CPU seconds
+</pre><br />
+<br />
+<p>A quarter as many calls and almost 5x faster -- at least that's how I interpret the results. Much better!</p>

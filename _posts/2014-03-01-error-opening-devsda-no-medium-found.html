@@ -1,0 +1,37 @@
+---
+layout: post
+title: 'Error opening /dev/sda: No medium found'
+date: '2014-03-01T10:02:00.000+11:00'
+author: Kelvin Nicholson
+tags:
+- linux
+- tips and tricks
+- howtos
+modified_time: '2014-03-01T10:02:46.766+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-2036998391910619125
+blogger_orig_url: https://www.kelvinism.com/2014/03/error-opening-devsda-no-medium-found.html
+---
+
+I have had this issue before, solved it, and had it again.<br />
+<br />
+Let's say you plug in a USB drive into a Linux machine, and try to access it (mount it, partition it with fdisk/parted, or format it), and you get the error<br />
+<code><br />
+Error opening /dev/sda: No medium found<br />
+</code><br />
+<br />
+Naturally the first thing you will do is ensure that it appeared when you plugged it in, so you run 'dmesg' and get:<br />
+<code><br />
+sd 2:0:0:0: [sda] 125045424 512-byte logical blocks: (64.0 GB/59.6 GiB)<br />
+</code><br />
+<br />
+And it appears in /dev<br />
+<code><br />
+Computer:~ $ ls /dev/sd*<br />
+/dev/sda<br />
+Computer:~ $<br />
+</code><br />
+<br />
+Now what? Here's what has bitten me twice: make sure the drive has enough power. Let's say you mounted a 2.5" USB drive into a Raspberry Pi. The Pi probably doesn't have enough current to power the drive, but it <i>does</i>&nbsp;have enough to make the drive recognisable. Or, if you are like me, the USB charger powering the drive is faulty, so even though it has power, it doesn't have enough.<br />
+<br />
+The next troubleshooting step should be obvious: give the drive enough power to completely spin up.<br />
+<br />

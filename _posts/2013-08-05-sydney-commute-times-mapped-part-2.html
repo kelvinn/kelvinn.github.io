@@ -1,0 +1,54 @@
+---
+layout: post
+title: Sydney Commute Times Mapped Part 2
+date: '2013-08-05T07:55:00.000+10:00'
+author: Kelvin Nicholson
+tags:
+- open source
+- openstreetmap
+- articles
+- transport
+- gtfs
+modified_time: '2013-08-09T19:54:41.418+10:00'
+thumbnail: https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDc0IriO971A2BQ7F9Nu1zYVZ_uO5OEwv8n0Z9vpPB1IElGYMI0r5bzCah9UCv5fqNzthkaHnPFBN6Pd5PD32GL_xXUJDAYKvXdx3OK8DwtotghU_PDA_Mc_qWYa8gUEKiJxj8Uos4mYbk/s72-c/CItyOfCities.png
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-5391830754007459695
+blogger_orig_url: https://www.kelvinism.com/2013/08/sydney-commute-times-mapped-part-2.html
+---
+
+In <a href="http://www.kelvinism.com/2013/07/sydney-commute-times-mapped-part-1.html">Sydney Commute Times Mapped Part 1</a>&nbsp;I took a small step to a bigger goal of mashing together public transport in Sydney, and the&nbsp;<a href="http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf">Metropolitan Strategy for Sydney to 2031</a>. The question I wanted to answer is this: how aligned is Sydney's public transport infrastructure and the Metropolitan Strategy's of a "city of cities"?<br />
+<br />
+I decided to find out.<br />
+<br />
+Thanks to the release of GTFS data by 131500 it is possible to visualise how long it takes via public transport to commute to the nearest "centre".<br />
+<br />
+<table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody>
+<tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDc0IriO971A2BQ7F9Nu1zYVZ_uO5OEwv8n0Z9vpPB1IElGYMI0r5bzCah9UCv5fqNzthkaHnPFBN6Pd5PD32GL_xXUJDAYKvXdx3OK8DwtotghU_PDA_Mc_qWYa8gUEKiJxj8Uos4mYbk/s1600/CItyOfCities.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDc0IriO971A2BQ7F9Nu1zYVZ_uO5OEwv8n0Z9vpPB1IElGYMI0r5bzCah9UCv5fqNzthkaHnPFBN6Pd5PD32GL_xXUJDAYKvXdx3OK8DwtotghU_PDA_Mc_qWYa8gUEKiJxj8Uos4mYbk/s1600/CItyOfCities.png" /></a></td></tr>
+<tr><td class="tr-caption" style="text-align: center;">Cities and Corridors -&nbsp;<a href="http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf" style="font-size: medium; text-align: start;">Metropolitan Strategy for Sydney to 2031</a></td></tr>
+</tbody></table>
+<br />
+The Australian Bureau of Statistics collects data based on "mesh blocks", or roughly an area containing roughly 50 dwellings. Last week I had some fun <a href="http://www.kelvinism.com/2013/07/mapping-mesh-blocks-with-tilemill.html">mapping the mesh blocks</a>, as well as looking at Sydney's <a href="http://www.kelvinism.com/2013/07/mapping-urban-density-in-sydney.html">urban densities</a>. These mesh blocks are a good size to look at for calculating commute times.<br />
+<br />
+The simplified process I used was this, for the technical minded:<br />
+<br />
+<ol>
+<li>Calculate the centre of each mesh block</li>
+<li>Calculate the commute time via public transport from each block to every "centre" (using 131500's GTFS and OpenTripPlanner's Analyst tool)</li>
+<li>Import times in a database, calculate lowest commute time to each centre</li>
+<li>Visualise in TileMill</li>
+<li>Serve tiles in TileStache and visualise with Leaflet</li>
+</ol>
+<br />
+The first map I created was simply to indicate how long it would take to the nearest centre. There appears to be rapidly poorer accessibility on the fringe of Sydney. I was also surprised of what appears to be a belt of higher times between&nbsp;Wetherill Park and all the way to Marrickville. There also appears to be poorer accessibility in <i>parts</i>&nbsp;of Western Sydney. It is worth noting that I offer not guarantee of the integrity of the data in these maps, and I have seen a few spots where the commute times increase significantly in adjacent mesh blocks. This tells me the street data (from OpenStreetMap) might not be connected correctly.<br />
+<br />
+<br />
+<iframe height="600px" src="http://maps.kelvinism.com/syd_city_cities.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/syd_city_cities.html" target="_blank">View Full Screen</a><br />
+<br />
+My next map shows what areas are within 30 minutes.<br />
+<br />
+<iframe height="600px" src="http://maps.kelvinism.com/syd_city_cities_2.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/syd_city_cities_2.html" target="_blank">View Full Screen</a><br />
+<br />
+These maps were both created using open data and open source tools, which I find quite neat. In that spirit, I have exported the database (probably a bit hard for most to work with) to a Shapefile. You can open this in TileMill and experiment, if you wish. Download it from <a href="http://cdn.kelvinism.com/mb_2011_nsw_transport.zip">here</a>&nbsp;(note: 250MB zip file):<br />
+<br />
+I have been interested in mapping traffic for a number of years, maybe ever since arriving in Sydney. It is sort of a hobby; I find making maps relaxing. My first little map was way back in 2008, where I&nbsp;<a href="http://www.kelvinism.com/2008/04/baby-steps-at-graphing-traffic_522.html">visualised speed</a>&nbsp;from a GPS unit. A little later I added&nbsp;<a href="http://www.kelvinism.com/2008/04/another-baby-step_1340.html">some colour to the visualisations</a>, and then used this as an excuse to create a little&nbsp;<a href="http://www.kelvinism.com/2008/05/gui-to-plot-driving-speed_6997.html">GUI for driving speed</a>. My interest in visualising individual vehicles has decreased recently, as it has now shifted to the mapping wider systems. Have an idea you would like to see mapped? Leave a note in the comments.

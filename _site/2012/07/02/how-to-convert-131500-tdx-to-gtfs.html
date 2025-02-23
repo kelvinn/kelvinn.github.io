@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">How to convert 131500 TDX to GTFS</h2><div class="post-list" itemprop="articleBody">
+    TDX data has been available for a number of years on 131500.info, but many tools are GTFS specific. I also find GTFS easier to work with.<br />
+<br />
+Luckily, converting from TDX to GTFS is not overly difficult, and below are some instructions. This howto is a bit old, as I am only now copying it from my "Notes" folder to put online to help others.<br />
+<br />
+<b>Note:</b>&nbsp;You can now directly download GTFS from the TransportInfo website:&nbsp;<a href="https://tdx.131500.com.au/" rel="nofollow" target="_blank">https://tdx.131500.com.au</a><br />
+<br />
+1) Signup for an account with EC2 (AWS), unless you have 16GB of memory available on a machine.<br />
+2) Upload <a href="http://code.google.com/p/googletransitdatafeed/" target="_blank">TransXChange2GTFS</a> to a place you can download from.<br />
+3) Upload the latest TDX data dump from 131500.info to a place you can download from.<br />
+4) Login to AWS and start an EC2 instance. &nbsp;I picked a large instance and used 64-bit Ubuntu 10.04, us-east-1 ami-f8f40591<br />
+5) Download the Data and transxchange to /mnt<br />
+<br />
+<pre>wget http://ec2-175-41-139-176.ap-southeast-1.compute.amazonaws.com/Data20110127.zip
+wget http://cdn.kelvinism.com/transxchange2GoogleTransit.jar
+</pre>
+<br />
+6) Install Sun JRE.<br />
+<pre>apt-get install python-software-properties
+add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+apt-get update
+apt-get install sun-java6-jre
+
+</pre>
+7) Check how much memory is available<br />
+<pre>root@domU-12-31-39-10-31-B1:/mnt# free -m
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;total &nbsp; &nbsp; &nbsp; used &nbsp; &nbsp; &nbsp; free &nbsp; &nbsp; shared &nbsp; &nbsp;buffers &nbsp; &nbsp; cached
+Mem: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7680 &nbsp; &nbsp; &nbsp; &nbsp;626 &nbsp; &nbsp; &nbsp; 7053 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 11 &nbsp; &nbsp; &nbsp; &nbsp;329
+-/+ buffers/cache: &nbsp; &nbsp; &nbsp; &nbsp;285 &nbsp; &nbsp; &nbsp; 7394
+Swap: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0
+
+</pre>
+<br />
+8) Create a configuration file <b>sydney.conf</b><br />
+<br />
+<pre>url=http://131500.info
+timezone=Australia/Sydney
+default-route-type=2
+output-directory=output
+useagencyshortname=true
+skipemptyservice=true
+skiporhpanstops=true
+</pre>
+<br />
+9) If you're on the train like me, start screen, and start converting. The number you pick for "-Xmx" obviously needs to fit in the amount of free memory you have.<br />
+<br />
+<pre>java -Xmx104000m -jar dist\transxchange2GoogleTransit.jar Data20120524.zip -c sydney.conf
+</pre>
+
+  </div><span>[
+    
+      
+      <a href="/tag/tdx"><code class="highligher-rouge"><nobr>tdx</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/howtos"><code class="highligher-rouge"><nobr>howtos</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/gtfs"><code class="highligher-rouge"><nobr>gtfs</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2012/07/02/how-to-convert-131500-tdx-to-gtfs.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

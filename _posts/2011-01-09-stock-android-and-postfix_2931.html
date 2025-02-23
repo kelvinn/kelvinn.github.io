@@ -1,0 +1,48 @@
+---
+layout: post
+title: Stock Android and Postfix
+date: '2011-01-09T21:30:00.002+11:00'
+author: Kelvin Nicholson
+tags:
+- articles
+- android
+- postfix
+modified_time: '2013-01-09T20:55:46.343+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-1259707215247307519
+blogger_orig_url: https://www.kelvinism.com/2011/01/stock-android-and-postfix_2931.html
+---
+
+I was having some issues with my personal mail server (Postfix) and my phone (Android).  The logs depicted the below issue:<br />
+<br />
+<br />
+<br />
+<pre class="brush: bash; light: true; ">Jan  9 09:19:53 ip-11-222-23-223 postfix/smtpd[12345]: NOQUEUE: reject: RCPT from 12-13-14-15.abc.com.au[12.13.14.15]: 504 5.5.2 <localhost>: Helo command rejected: need fully-qualified hostname; from=<emailaddr kelvinism.com="kelvinism.com"> to=<emailaddr gmail.com="gmail.com"> proto=ESMTP helo=<localhost>
+</localhost></emailaddr></emailaddr></localhost></pre>
+<br />
+<br />
+We can see here that the stock Android email client is doing a 'helo localhost'.  One part of my main.cf file specifies this:<br />
+<br />
+<pre class="brush: bash; light: true; ">smtpd_helo_required = yes
+smtpd_helo_restrictions =
+    permit_mynetworks,
+    reject_non_fqdn_helo_hostname,
+    reject_invalid_helo_hostname,
+    permit_sasl_authenticated,
+    permit</pre>
+<br />
+<br />
+To resolve, unfortunately, just change the order to authenticated clients are permitted earlier:<br />
+<br />
+<pre class="brush: bash; light: true; ">smtpd_helo_required = yes
+smtpd_helo_restrictions =
+    permit_mynetworks,
+    permit_sasl_authenticated,
+    reject_non_fqdn_helo_hostname,
+    reject_invalid_helo_hostname,
+    permit</pre>
+<br />
+<br />
+You also may need to do the same for smtpd_recipient_restrictions and/or smtpd_sender_restrictions (i.e. put permit_sasl_authenticated above the reject lines).<br />
+<br />
+<br />
+<br />

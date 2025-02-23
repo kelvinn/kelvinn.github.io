@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/06/29/my-portable-travel-stick_1543.html">
+            My Portable Travel Stick
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 29, 2007</span>
+        This will be my last post from Taiwan, and I'm placing it in my tech section.  Shortly I will be flying to Hong Kong, and then traveling into China.  I'm not bringing my laptop with me.  I'm always a little wary of using public computers, especially in many of the poorly run internet cafes.  Often the logged in user is the administrator, and we all know the computers are obviously crawling with worms and keyloggers.  What can I do?<br />
+<br />
+My partner kindly gave me a 128MB flash disk, which is perfect for what I want to do.  I've installed the following applications to run directly from it:<br />
+<ul><br />
+<li><b><a href="http://portableapps.com/apps/utilities/clamwin_portable">Portable Clamwin</a></b> - I plan to fire it up and do a memory scan before I start typing any passwords.</li>
+<br />
+<li><b><a href="http://portableapps.com/apps/internet/putty_portable">Portable Putty</a></b> - This is useful for two reasons.  Firstly, in case my server (or any server with SSH) needs help, I'm on it.  Secondly, and more importantly, for security.  Putty can easily be used as a SOCKS5 proxy over SSH, so I can tunnel Firefox and IM securely.  Password sniffers, be gone!  A side benefit is the ability to bypass the "Great Firewall", if needed (e.g. the block my Google account).</li>
+<br />
+<li><b><a href="http://portableapps.com/apps/internet/miranda_portable">Portable Miranda</a></b> - In case I'm feeling home sick, or have some crazy desire to talk on IRC.  Don't count on it.</li>
+<br />
+<li><b>Firefox</b> - I tried the Portable Apps package, yet it didn't work.</li>
+</ul>
+<br />
+I noticed in the "known issues" that it doesn't work if loaded on a drive with a non-asci path, which this machine (and those in China) usually have.  The "resolution" is to run it in Win98 compat mode, but this didn't work for me.  To get around this, I downloaded the normal Firefox, installed it, copied the contents of "Mozilla Firefox" and dumped it in /Firefox.  Then I created a profile directory called /FFProfile, and created a bat file called "firefox.bat":<br />
+<pre class="brush: plain; light: true; ">start \Firefox\firefox.exe -profile \FFProfile</pre>
+<br />
+<br />
+Double click the bat file, and you have FF running on your usb drive.<br />
+I'm in a search for a better keylogger detector, as I don't know how complete ClamAV will be.  If you know of one, let me know.  Until then, I'm going to pretend I have the perfect traveling USB companion.</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/06/29/last-xenful-comments_2649.html">
+            Last Xenful Comments
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 29, 2007</span>
+        <p>One of the biggest things I regret is not utilizing Xen more.  I've finally been admitted to Amazon's EC2 Limited Beta, just two days before I leave, so not enough time to actually do anything fun.  However, I think Xen is an ideal infrastructure aid for SMEs in particular.  The cost of technology is continuing to decrease, which means bigger servers cost less.  This is great for the small/branch office.  Let me explain.</p><p>One of the themes I noticed while studying and taking the MCSE was that the solution to the majority of the problems was to just buy more servers.  Even for simple things like DHCP, buy another server.  I've always operated on a limited budget, and anyways, I don't think money should be wasted on resources when it isn't needed.  With a VT chipset, you aren't tied to any OS in particular.</p><p>My friend Ian and I were talking and he illustrated a great usage of Xen through his work.  What he's ended up doing is installing the Small Business Edition of Server 2003 in a Xen node.  The reasoning is that SBE is, apparently extremely difficult to create backups of -- mainly due to odd file locking behavior.  I've had similar thoughts, but mainly taking advantage of Xen's migration feature.  The idea of taking a small branch office and putting everything on a Xen server is quite appealing to me, especially considering a second server could be used to create virtual hot spare.</p><p>As you can see, I like Xen.  I've found it relatively easy to install, and the fact that it is starting to come bundled with recent distributions is pretty darn, sweet.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/06/18/iis7-golive-program_3958.html">
+            IIS7 GoLive Program
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 18, 2007</span>
+        <p>You can easily see that I am a big Linux fan, I've mentioned this over and over.  I've also mentioned that I'm finishing up my MCSE, which started as a dare with my buddy, Ian.  In the process of studying for my MCSE I've developed a certain amount of respect for Windows Server 2003, yet I'll comment more on this later.</p><p>What I really wanted to write two paragraphs about was an interesting discovery I made today.  I happened to stumble over to Microsoft's hardware site, and noticed in my little Server Spy monitor that it was running IIS/7 -- the first time I have seen this anywhere.  Upon further investigation I perused their <a href="http://www.iis.net/default.aspx?tabid=7&subtabid=79">GoLive program</a>, which details several ways to test drive IIS7.  There are some details about Microsoft's setup, which one would expect to be impressive.  And it is.  So, if you are a Microsoft person, you may want to grab a test drive of Beta3 while you still can.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/06/14/liferea-rss-in-liferea_7495.html">
+            Liferea RSS in Liferea
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 14, 2007</span>
+        <p>Today on <a href="http://community.linux.com/article.pl?sid=07/06/07/1458229">Linux.com, Liferea was mentioned</a>  I find this particularly because I've been using Liferea for quite a few months, and haven't been able to find anything that better suits my needs.  It sits quietly in the corner until a new RSS is available, and slightly changes color.  Plus, it integrates wonderfully into GNOME.</p><p>Well, the Linux.com article does a great job summarizing the reader, so if you are in the market, I'd take a look.  For posterities sake, I took a screenshot of the Linux.com feed of Liferea, in Liferea.</p><a href="http://picasaweb.google.com/lh/photo/GiTUvj2FlLe0cVvbZV3Deg?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvsniPdfJxZMp6paqoK1axzlYJ7o-YKnrQkJvY466s5PsPQ2AU0g5o2P8EOgHH2o6iLBTGbAEOx69aRRDX34_ShNen-YjAYkI42bWeoGPktPnw73uP13s3j3keWgFrvB9PZPN4tUiWHpFp/s400/screenshot-liferea.jpg" /></a></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/06/14/computex-2007-review_8211.html">
+            Computex 2007 Review
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 14, 2007</span>
+        <p>The buzz of Computex is finally wearing off, so I'll finally scribe my account of the event.  YS was kind enough to go with me, we actually called it a date.  The scene was quite similar to the trade shows we saw last year, however there seemed to be fewer people.  This might be because we went on the final day, although we suspect there weren't that many people because there aren't "sweet" deals to be had.  Regardless, there were several main "halls" filled full of stuff.  The first three (two were in one building) weren't particularly interesting.  I mean, there were some cool displays and lots of technology, but nothing that left me thinking "oh, that's cool" or "oh, me wanna."  Until we hit the last hall.</p><p>The first place we stumbled upon was the SunComm booth, which seemed to have more "traffic" than any of the other VoIP booths.  Let me say this: I think VoIP stuff is awesome, that it is going to be the future, and I dig looking at demos.  Even though the SunComm website pretty much looks like crap, their products are way cool.  I was lucky enough to purchase a phone directly from them, and have it mailed directly to my house in Taipei (which was just around the corner from their office).  They don't normally do this.</p><a href="https://picasaweb.google.com/lh/photo/zWWqYcI6ucDjsN57uWBu9XFosnpG-QyKUY-ggIhHUmY?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2Dc87RdBsGDWdfaydsHI79ifgGZa3btakdl7Nb4tB-rAhQ09OtL2fZEOY2eJph79_Htj1XIiXz2jPeDfRuzUohV1TqqzB0blG3Xo8EsuE6QH2alZHn1QrSJP_s7ij1wfbtH3MFqoDVq6V/s288/DSC01676.jpg" /></a><br /><br /><a href="https://picasaweb.google.com/lh/photo/aOLGuew9dfnnudzuJ0UOtnFosnpG-QyKUY-ggIhHUmY?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPNsHRRqhFU8Nwq_H2kkS6ItvWIpCgFduCmkPKed9hqD7RS7FAA7Sg-BnTSLjk9mf9dbEj9zvGZ5fmBUXRJkpQFhjfqnGou3xfU86jg9nwpc9CibQn51p9Gq7MFV_bCgir-19lrDg-B48s/s288/DSC01679.jpg" /></a><br /><p>Next up was one of the main reasons I even wanted to go to Computex: to see the OpenMoko phone.  To be honest with you, if I had a million dollars, this would be one of the first things I would buy.  The other would be a new ThinkPad X61s.  So why is this phone so cool? First off, it is based on Linux, which if you haven't gathered, I like.  The <i>entire stack</i> is open, or nearly open.  I've always purchased pretty crap phones, or been given them for free.  The reason I do this is because my requirements have never been met: I want a SIP/IAX client on a wifi tri (or preferably quad) band phone.  GPS is a plus, but not necessarily required.  So far, I haven't been able to fine anything that has suited my needs -- the HTC Universal <i>almost</i> would work, apparently.  The slogan is "Free Your Phone", but I think of this project more to "make your phone never become obsolete."  Indeed, the hardware may become obsolete, but the software never will.  I keep being reminded that this project could *really* put a dent in the future iPhone sales.  I can't wait to get one with WiFi and start hacking on it -- in the meantime, I'll need to refresh my C.</p><a href="https://picasaweb.google.com/lh/photo/wn10bYzvrwILerTEGXEBbXFosnpG-QyKUY-ggIhHUmY?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhXCq06KY7NF_XX6LuhNgo4zsuRnQ5B5ODl8nTMaafRGqhpY9CrvBipmSMHAyVPubW0kMFNRsgqe_cu7KuOueFkyo7tDq4CBzycmGJhLWtyrj261EEKGjc3N1OvdrlIURpA0gPP1-2W6BsG/s288/DSC01680.jpg" /></a><br /><br /><a href="https://picasaweb.google.com/lh/photo/sf9ZmnA3zDL2hcuyvBrtv3FosnpG-QyKUY-ggIhHUmY?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg96UwAkvRqZCPBaTcEf_0IwzyfP0CEk6sInORHwjWnmrbVsXlzKYewJmb2Bwf1ImY08H5OKq3r6Y1fR1UYz1ProbR89oDSZWiChVmGZZB4_FanA2j1OEOaDBFj-DWubdYQ6PYXM2-ktIq1/s288/DSC01684.jpg" /></a><br /><br /><br /><br /><p>Up next, directly across the aisle, was Via's new line of motherboards.  At Computex there were quite a few small sets of motherboards, but nothing quite like this.  Smaller than mini-itx.  Smaller than nano-itx.  We have pico.</p><p>This thing is freaking small.  Seeing this little board made me realize my desire to minimize how much (and the size) of the technology I own.  Currently I'm selling my AMD Athlong64 3000 (it has two gigs of RAM), and will at some point attempt to switch to a single laptop solution (with Xen, of course).  At the same time, I'm considering how useful one of these little boards could be.  Many have two NICs, which would make perfect routers.  I've seen some boards for as inexpensive as $65usd.</p></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page24" class="previous-page">24</a></li>
+          <li><div class="current-page">25</div></li>
+          <li><a href="/page26" class="next-page">26</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

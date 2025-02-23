@@ -1,0 +1,50 @@
+---
+layout: post
+title: Ubuntu 10.04, Django and GAE - Part 2
+date: '2010-06-12T20:30:00.005+10:00'
+author: Kelvin Nicholson
+tags:
+- ubuntu
+- django
+- gae
+- python
+- howtos
+modified_time: '2013-01-09T20:59:38.412+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-2828583504369198362
+blogger_orig_url: https://www.kelvinism.com/2010/06/ubuntu-1004-django-and-gae-part-2_6130.html
+---
+
+All my Django sites are running 1.2, which poses a conflict with writing apps for Google's App Engine, as use_library currently only supports &lt; Django 1.1.  There are two solutions that I found: a) use virtualenv, or b) chroot, which <a href="http://www.kelvinism.com/howtos/ubuntu-1004-django-and-gae-part-1/">I've already detailed</a>.  This document will hopefully show you how to create a virtual environment to use a secondary django version, especially for GAE.  Of the two options, I think this one is a bit quicker, but there will likely be tradeoffs that a chroot environment can deal with better, e.g. python imaging (I don't use it for GAE).<br />
+First, install PIP and virtualenv:<br />
+<pre class="brush: bash; light: true; ">
+kelvinn@kelvinn-laptop:~/workspace$ sudo easy_install -U pip
+kelvinn@kelvinn-laptop:~/workspace$ sudo pip install -U virtualenv</pre>
+<br />
+<br />
+Second, configure an environment for any app that will use Django 1.1:<br />
+<pre class="brush: bash; light: true; ">
+kelvinn@kelvinn-laptop:~/workspace$ virtualenv --python=python2.5 --no-site-packages django-1.1
+New python executable in django-1.1/bin/python
+Installing setuptools............done.
+kelvinn@kelvinn-laptop:~/workspace$ pip install -E django-1.1 yolk
+kelvinn@kelvinn-laptop:~/workspace$ pip install -E django-1.1 Django==1.1</pre>
+<br />
+<br />
+Now, download the <a href="http://code.google.com/appengine/downloads.html#Google_App_Engine_SDK_for_Python">python GAE sdk</a> and put it in the django-1.1 folder.  I also just dump any project directory requiring Django 1.1 into this django-1.1 folder, although I guess you could create a virtualenv for each project.  The last thing to do is start the virtual environment, and run the GAE app.<br />
+<pre class="brush: bash; light: true; ">
+kelvinn@kelvinn-laptop:~/workspace$ source django-1.1/bin/activate
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace$ yolk -l
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace$ cd django-1.1
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace/django-1.1$ ls
+bin  google_appengine  include  lib  myproject1 myproject2
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace/django-1.1$ google_appengine/dev_appserver.py myproject1</pre>
+<br />
+<br />
+When you're all finished, you can jump out of virtualenv:<br />
+<pre class="brush: bash; light: true; ">
+(django-1.1)kelvinn@kelvinn-laptop:~/workspace/django-1.1$ deactivate</pre>
+<br />
+<br />
+<b>Update</b>: You'll find this article especially interesting if you get an error such as the following:<br />
+<pre class="brush: python; light: true; ">
+UnacceptableVersionError: django 1.1 was requested, but 1.2.0.beta.1 is already in use</pre>

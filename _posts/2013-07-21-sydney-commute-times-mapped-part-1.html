@@ -1,0 +1,26 @@
+---
+layout: post
+title: Sydney Commute Times Mapped Part 1
+date: '2013-07-21T10:06:00.002+10:00'
+author: Kelvin Nicholson
+tags:
+- postgis
+- gis
+- articles
+- transport
+- gtfs
+modified_time: '2013-07-21T10:08:09.763+10:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-3497317826003329426
+blogger_orig_url: https://www.kelvinism.com/2013/07/sydney-commute-times-mapped-part-1.html
+---
+
+I quite like open data. I like data based on open standards (or mostly open standards) even better. Many transport operators around the world have started releasing their timetable data using (mostly) open standards, e.g.&nbsp;<a href="http://en.wikipedia.org/wiki/General_Transit_Feed_Specification" target="_blank">GTFS</a>. One of the nice things about using a standard is that clever people have created tools to work with the timetable data, and those tools can now be used to manipulate timetable data from hundreds of agencies. The magnificent OpenTripPlanner is one such tool, and it works well with <a href="http://131500.info/" target="_blank">131500</a>'s GTFS data.<div><br />
+</div><div>New South Wales Planning &amp; Infrastructure have released a draft <a href="http://strategies.planning.nsw.gov.au/MetropolitanStrategyforSydney.aspx" target="_blank">plan</a> for how they hope to shape Sydney's growth, which is where they detail the idea of a "city of cities". I thought it would be interesting to mash these smaller "cities" with 131500's transport data, and then display a map with the shortest commute to the nearest city. Various cities, I believe including Melbourne, have goals of re-achieving a "20-minute" city, or something similar (i.e. X% of the population can reach X% of the city within X minutes).</div><div><br />
+</div><div>This map is the first stage. It only displays the commute time to St Leonards from every Mesh Block in the greater Sydney area. I used the open source tool OpenTripPlanner to computer the commute times, with OpenStreetMaps to support walking distances. The next map I release will probably have all the regional cities, and a similar styled map depicting time to nearest "centre".</div><div><br />
+</div><div><br />
+<iframe height="600px" src="http://maps.kelvinism.com/st_leonards_commute.html" width="650px"></iframe><br />
+<a href="http://maps.kelvinism.com/st_leonards_commute.html" target="_blank">View Full Screen</a><br />
+<br />
+<br />
+</div><div><br />
+</div>

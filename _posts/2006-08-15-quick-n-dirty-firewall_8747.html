@@ -1,0 +1,146 @@
+---
+layout: post
+title: Quick n&#39; Dirty Firewall
+date: '2006-08-15T20:30:00.002+10:00'
+author: Kelvin Nicholson
+tags:
+- howtos
+modified_time: '2013-01-09T21:57:34.875+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-7125125895394888930
+blogger_orig_url: https://www.kelvinism.com/2006/08/quick-n-dirty-firewall_8747.html
+---
+
+<h4>
+Abstract</h4>
+The following is a Quick n' Dirty method at implementing a very simple firewall.<br />
+<h4>
+Locate IPTables</h4>
+Depending on your server, first locate iptables:<br />
+<br />
+<br />
+<br />
+<pre class="brush: plain; light: true; "> [root@vps /]# which iptables </pre>
+<br />
+<br />
+<h4>
+Create IP Based Accept/Deny</h4>
+<br />
+<br />
+Create a whitelist (ignored by firewall) or blacklist (packet dropped) if you wish:<br />
+<br />
+<br />
+<br />
+<pre class="brush: plain; light: true; "> [root@vps /]# vi /usr/local/etc/whitelist.txt </pre>
+<br />
+<br />
+<br />
+And/Or...<br />
+<br />
+<br />
+<br />
+<pre class="brush: plain; light: true; ">[root@vps /]# vi /usr/local/etc/blacklist.txt </pre>
+<br />
+<br />
+<br />
+In each file, add each IP per line, for instance:<br />
+<br />
+<br />
+<br />
+<pre class="brush: plain; light: true; "> 4.2.2.2 66.35.15.20 </pre>
+<br />
+<h4>
+firewall.sh Script</h4>
+<br />
+<br />
+Then put the following in /etc/init.d/firewall.sh, and edit to fit your needs:<br />
+<br />
+<br />
+<pre class="brush: bash; light: true; ">
+
+#!/bin/sh
+#
+## Quick n Dirty Firewall
+#
+## List Locations
+#
+
+WHITELIST=/usr/local/etc/whitelist.txt
+BLACKLIST=/usr/local/etc/blacklist.txt
+
+#
+## Specify ports you wish to use.
+#
+
+ALLOWED="22 25 53 80 443 465 587 993"
+
+#
+## Specify where IP Tables is located
+#
+
+IPTABLES=/sbin/iptables
+
+#
+## Clear current rules
+#
+
+$IPTABLES -F
+echo 'Clearing Tables F'
+$IPTABLES -X
+echo 'Clearing Tables X'
+$IPTABLES -Z
+echo 'Clearing Tables Z'
+echo 'Allowing Localhost'
+
+#Allow localhost.
+$IPTABLES -A INPUT -t filter -s 127.0.0.1 -j ACCEPT
+
+#
+## Whitelist
+#
+
+for x in `grep -v ^# $WHITELIST | awk \'{print $1}\'`; do
+        echo "Permitting $x..."
+        $IPTABLES -A INPUT -t filter -s $x -j ACCEPT
+done
+
+#
+## Blacklist
+#
+
+for x in `grep -v ^# $BLACKLIST | awk \'{print $1}\'`; do
+        echo "Denying $x..."
+        $IPTABLES -A INPUT -t filter -s $x -j DROP
+done
+
+#
+## Permitted Ports
+#
+
+for port in $ALLOWED; do
+        echo "Accepting port TCP $port..."
+        $IPTABLES -A INPUT -t filter -p tcp --dport $port -j ACCEPT
+done
+
+for port in $ALLOWED; do
+        echo "Accepting port UDP $port..."
+        $IPTABLES -A INPUT -t filter -p udp --dport $port -j ACCEPT
+done
+
+#
+## Drop anything else
+#
+
+$IPTABLES -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+$IPTABLES -A INPUT -p udp -j DROP
+$IPTABLES -A INPUT -p tcp --syn -j DROP
+
+</pre>
+<br />
+<br />
+<h4>
+Start Firewall</h4>
+<br />
+<br />
+<pre class="brush: plain; light: true; "> [root@vps /]# chmod 700 /etc/init.d/firewall.sh
+  [root@vps /]# /etc/init.d/firewall.sh </pre>
+<br />

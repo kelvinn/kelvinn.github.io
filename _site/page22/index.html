@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <div class="home">
+
+
+  <ul class="post-list"><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/04/23/redirecting-fun-with-lightty_330.html">
+            Redirecting Fun with Lightty
+          </a>
+        </h3>
+        <span class="post-meta">Published on Apr 23, 2008</span>
+        <p>Two of my colleagues were having just a little bit <a href="http://www.kelvinism.com/blog/Australia/i-caught-fish/#c1926">too much fun</a> with my blog, so I decided to have some fun back.  Over a period of 10 minutes, they managed to leave 10+ comments.  Luckily I have full control over my server, and was able to quickly create my practical joke.</p><pre class="brush: plain; light: true; ">$HTTP["remoteip"] == "123.45.678.910" {
+url.redirect = (
+"^/(.*)" => "http://www.urbandictionary.com/define.php?term=annoying+fuck",
+"" => "http://www.urbandictionary.com/define.php?term=annoying+fuck",
+"/" => "http://www.urbandictionary.com/define.php?term=annoying+fuck"
+)
+}
+</pre><br />
+</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/04/22/notes-on-installing-modtile-for-mapnik_168.html">
+            Notes on Installing mod_tile for Mapnik
+          </a>
+        </h3>
+        <span class="post-meta">Published on Apr 22, 2008</span>
+        <p>I have no idea if these notes on how to install mod_tile will be useful for anybody.  The current readme states that you need to edit the source code, but never actually where.  Well, this is where, at least until the code can either take switches or can auto-configure itself.  This is quite brief, so if you need more details, shoot me an email or leave a comment.  I have repeated this process on two Ubuntu 7.10 machines.</p><p>1) Install mapnik as per normal -- you may also need to do a...</p><pre class="brush: plain; light: true; ">$ ./bootstrap
+$ ./autogen.sh
+$ ./configure
+$ make
+# make install
+</pre><br />
+<br />
+<p>2) Install libagg (apt-get install libagg-dev)</p><p>3) Make sure the mapnik library files are /usr/local/lib (libmapnik.*)</p><p>4) Make sure to copy/install fonts and input folders into /usr/local/lib/mapnik</p><p>5) Edit Makefile, change line 27 to where your include files are located</p><pre class="brush: plain; light: true; ">RENDER_CPPFLAGS += -I/usr/local/include/mapnik
+</pre><br />
+<br />
+<p>6) Edit Makefile, change line 33 to where your mapnik libraries are (libmapnik.*)</p><pre class="brush: plain; light: true; ">RENDER_LDFLAGS += -lmapnik -L/usr/local/lib
+</pre><br />
+<br />
+<p>7) Edit Line 40 of gen_tile.cpp to point to your osm.xml file (that you can verify works with generate_image.py)</p><pre class="brush: plain; light: true; ">static const char *mapfile = "/home/kelvin/mapnik-osm/osm.xml";
+</pre><br />
+<br />
+<p>8) Edit line 219 of gen_tile.cpp to point to the correct location of the datasource input.</p><pre class="brush: plain; light: true; ">datasource_cache::instance()->register_datasources("/usr/local/lib/mapnik/input");
+</pre><br />
+<br />
+<p>9) Edit line 221 of gen_tile.cpp to point to the correct location of your fonts directory.</p><pre class="brush: plain; light: true; ">load_fonts("/usr/local/lib/mapnik/fonts", 0);
+</pre><br />
+<p>10) The module will install in /usr/lib/apache2/modules, so mod_tile.conf should read:</p><pre class="brush: plain; light: true; ">LoadModule tile_module /usr/lib/apache2/modules/mod_tile.so
+</pre><br />
+<p><b>Final note:</b> I think it would be possible to just symlink the lib directory to lib64, although I would expect that could have some undesirable outcomes down the road.  However, despite being pretty new code, how do I find mod_tile? Pretty good, actually.  I expected more difficulties setting it up, but overall the procedure hasn't been too bad.  I like the approach of creating a module vs. using several middle-layers.  So once again, hats off to the OSM crew.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/04/20/ethx-issues-with-xen-and-ubuntu_2003.html">
+            ethX Issues with Xen and Ubuntu
+          </a>
+        </h3>
+        <span class="post-meta">Published on Apr 20, 2008</span>
+        <p>My new guest VMs under Xen seem to be having issues where upon each reboot, the network interface gets incremented by 1.  For instance, it starts at eth0, then goes to eth1, then eth2, and eventually ethX.  There are two issues to fix: 1) get the count back to 0, and 2) stop it from counting again.</p><p>I was able to get them to decrease by looking in the /etc/udev/rules.d/70-persistent-net.rules file and removing all entries.</p><p>Next, I was able to prevent this by simply inserting a MAC address to the interface in the configuration.  For instance, one of my domU's has this entry:</p><pre class="brush: bash; light: true; ">vif         = [ 'mac=00:D0:59:83:DC:B5,bridge=xenbr0' ]
+</pre><br />
+<br />
+<p>Lastly, I made sure (as I would with any server) to create an entry in the /etc/network/interfaces file.</p><pre class="brush: bash; light: true; ">auto eth0
+iface eth0 inet static
+address 192.168.1.16
+gateway 192.168.1.1
+netmask 255.255.255.0
+</pre><br />
+<br />
+<p>Works like a charm.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/04/19/installing-mapnik-on-ubuntu-710_6688.html">
+            Installing Mapnik on Ubuntu 7.10
+          </a>
+        </h3>
+        <span class="post-meta">Published on Apr 19, 2008</span>
+        <p>I have managed to install mapnik 0.4, 0.5, 0.5.1 and various SVN releases in-between on Ubuntu.  While this isn't in itself exciting, I think I manage to stumble at every installation.  I typically forget to add the flags when building, so, to prevent myself from stumbling again, I'm going to write them out here.</p><b>Build mapnik</b><br />
+<br />
+<pre class="brush: bash; light: true; ">$ python scons/scons.py PYTHON=/usr/bin/python \ </li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/03/19/and-yet-another-remodel_7848.html">
+            And Yet Another Remodel
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 19, 2008</span>
+        <p>I have finally decided to do another remodel of this site.  I had a few goals before starting:</p><ul><br /><li>Use one image</li><br /><li>Use the YUI-CSS framework</li><br /><li>Use Django</li><br /><li>Make it easily extendable</li><br /></ul><br /><br /><p>So far, I think I've accomplished these goals.  The site is easier to read, easy to modify, and has a few new features.  More entries to come!</p></li></ul>
+
+    
+      <div class="pager">
+        <ul class="pagination">
+          <li><a href="/page21" class="previous-page">21</a></li>
+          <li><div class="current-page">22</div></li>
+          <li><a href="/page23" class="next-page">23</a></li>
+        </ul>
+      </div></div> 
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

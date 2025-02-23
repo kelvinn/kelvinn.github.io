@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
+
+</head>
+<body>
+    <div id='redbar'></div>
+    <div id='greenbar'></div>
+    <div class="container">
+        <header class="header">
+            <a href='/'><span id='logo'></span></a>
+            <ul>
+                <li><a href='https://blog.kelvinism.com'>Blog</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/articles/'>Articles</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/projects/'>Projects</a></li>
+                <li><a href='https://www.kelvinism.com/search/label/howtos/'>Tutorials</a></li>
+                <li><a href='https://www.kelvinism.com/about-me/'>Who</a></li>
+            </ul>
+
+
+        </header>
+        <main class="main">
+            <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting"><h2 class="post-list-heading">Lightweight Detection</h2><div class="post-list" itemprop="articleBody">
+    I love my Snort, I really do.&nbsp; But sometimes, I just don't need all the extra overhead -- sometimes the resources on a server are somewhat, limited.&nbsp; Looking for a solution I stumbled upon <a href="http://www.cipherdyne.com/psad/">PSAD</a> , a way to detect port scans.&nbsp; Since port scans are often one of the first tactics used to find vulnerabilities on a server, it is a pretty good idea to detect them.&nbsp;&nbsp; Depending on the attack, I receive a nice little email telling me what is going on.&nbsp; To test it out I first fired up nmap, and received a few emails.&nbsp; Next I fired up nessus with updated plugins -- you can be the judge.&nbsp; I now have 50 emails from myself telling me somebody is doing something naughty:<br />
+<pre class="brush: plain; light: true; ">
+=-=-=-=-=-=-=-=-=-=-=-= Tue Jan 23 10:30:04 2007 =-=-=-=-=-=-=-=-=-=-=-=
+
+
+         Danger level: [5] (out of 5) Multi-Protocol
+
+    Scanned tcp ports: [11-41111: 337 packets]
+            tcp flags: [SYN: 337 packets, Nmap: -sT or -sS]
+       iptables chain: INPUT, 337 packets
+
+               Source: 218.167.75.27
+                  DNS: 218-167-75-27.dynamic.hinet.net
+
+          Destination: 64.79.194.165
+                  DNS: kelvinism.com
+
+      Syslog hostname: kelvinism
+
+     Current interval: Tue Jan 23 10:29:54 2007 (start)
+                       Tue Jan 23 10:30:04 2007 (end)</pre>
+<br />
+  </div><span>[
+    
+      
+      <a href="/tag/articles"><code class="highligher-rouge"><nobr>articles</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/IDS"><code class="highligher-rouge"><nobr>IDS</nobr></code>&nbsp;</a>
+    
+      
+      <a href="/tag/hacking"><code class="highligher-rouge"><nobr>hacking</nobr></code>&nbsp;</a>
+    
+  ]</span>
+
+  <a class="u-url" href="/2007/01/23/lightweight-detection_8013.html" hidden></a>
+</article>
+        </main>
+        <aside class="sidebar">
+            <h4 class='title'>Contact Me</h4>
+            <div class='widget-content'>
+            <a href="http://au.linkedin.com/in/kelvinism"><i class="fab fa-linkedin fa-3x"></i></a> <a href="http://twitter.com/zephell"><i class="fab fa-twitter-square fa-3x"></i></a> <a href="https://github.com/kelvinn"><i class="fab fa-github-square fa-3x"></i></a> <a href="https://www.goodreads.com/zephell"><i class="fab fa-goodreads fa-3x"></i></a> <a href="
+            https://www.strava.com/athletes/nicholson_kelvin"><i class="fab fa-strava fa-3x"></i></a>
+            </div>
+
+
+        </aside>
+        <footer class="footer">
+            <div id='copyright'>
+                <a href='http://creativecommons.org/licenses/by-nc/2.5/' rel='license'>Some Rights Reserved</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"> <Work rdf:about=""> <license rdf:resource="http://creativecommons.org/licenses/by-nc/2.5/" /> </Work> <License rdf:about="http://creativecommons.org/licenses/by-nc/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+                    Opinions on this site do not represent my employer.<br/>
+            </div>
+    
+        </footer>
+    </div>
+
+</body>
+</html>
+
+

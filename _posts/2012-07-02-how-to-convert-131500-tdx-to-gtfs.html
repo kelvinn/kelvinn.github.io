@@ -1,0 +1,61 @@
+---
+layout: post
+title: How to convert 131500 TDX to GTFS
+date: '2012-07-02T13:59:00.000+10:00'
+author: Kelvin Nicholson
+tags:
+- tdx
+- howtos
+- gtfs
+modified_time: '2013-01-20T14:00:45.930+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-6844742976709084679
+blogger_orig_url: https://www.kelvinism.com/2012/07/how-to-convert-131500-tdx-to-gtfs.html
+---
+
+TDX data has been available for a number of years on 131500.info, but many tools are GTFS specific. I also find GTFS easier to work with.<br />
+<br />
+Luckily, converting from TDX to GTFS is not overly difficult, and below are some instructions. This howto is a bit old, as I am only now copying it from my "Notes" folder to put online to help others.<br />
+<br />
+<b>Note:</b>&nbsp;You can now directly download GTFS from the TransportInfo website:&nbsp;<a href="https://tdx.131500.com.au/" rel="nofollow" target="_blank">https://tdx.131500.com.au</a><br />
+<br />
+1) Signup for an account with EC2 (AWS), unless you have 16GB of memory available on a machine.<br />
+2) Upload <a href="http://code.google.com/p/googletransitdatafeed/" target="_blank">TransXChange2GTFS</a> to a place you can download from.<br />
+3) Upload the latest TDX data dump from 131500.info to a place you can download from.<br />
+4) Login to AWS and start an EC2 instance. &nbsp;I picked a large instance and used 64-bit Ubuntu 10.04, us-east-1 ami-f8f40591<br />
+5) Download the Data and transxchange to /mnt<br />
+<br />
+<pre>wget http://ec2-175-41-139-176.ap-southeast-1.compute.amazonaws.com/Data20110127.zip
+wget http://cdn.kelvinism.com/transxchange2GoogleTransit.jar
+</pre>
+<br />
+6) Install Sun JRE.<br />
+<pre>apt-get install python-software-properties
+add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+apt-get update
+apt-get install sun-java6-jre
+
+</pre>
+7) Check how much memory is available<br />
+<pre>root@domU-12-31-39-10-31-B1:/mnt# free -m
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;total &nbsp; &nbsp; &nbsp; used &nbsp; &nbsp; &nbsp; free &nbsp; &nbsp; shared &nbsp; &nbsp;buffers &nbsp; &nbsp; cached
+Mem: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;7680 &nbsp; &nbsp; &nbsp; &nbsp;626 &nbsp; &nbsp; &nbsp; 7053 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; 11 &nbsp; &nbsp; &nbsp; &nbsp;329
+-/+ buffers/cache: &nbsp; &nbsp; &nbsp; &nbsp;285 &nbsp; &nbsp; &nbsp; 7394
+Swap: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0
+
+</pre>
+<br />
+8) Create a configuration file <b>sydney.conf</b><br />
+<br />
+<pre>url=http://131500.info
+timezone=Australia/Sydney
+default-route-type=2
+output-directory=output
+useagencyshortname=true
+skipemptyservice=true
+skiporhpanstops=true
+</pre>
+<br />
+9) If you're on the train like me, start screen, and start converting. The number you pick for "-Xmx" obviously needs to fit in the amount of free memory you have.<br />
+<br />
+<pre>java -Xmx104000m -jar dist\transxchange2GoogleTransit.jar Data20120524.zip -c sydney.conf
+</pre>

@@ -1,0 +1,17 @@
+---
+layout: post
+title: OpenFiler Permission Issue
+date: '2008-12-07T21:30:00.010+11:00'
+author: Kelvin Nicholson
+tags:
+- articles
+- openfiler
+modified_time: '2013-01-09T21:10:34.065+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-2997876593192808161
+blogger_orig_url: https://www.kelvinism.com/2008/12/openfiler-permission-issue_2907.html
+---
+
+<p>I've had issues before with OpenFiler where doesn't update the permissions, although they appear correct in the UI.  To rectify that, I stumbled upon a one liner that fixed it.  Let's say you have a group called "Trusted" that you want to have full access to your music folder.  Here's the one-liner:</p><pre class="brush: plain; light: true; ">[root@files data]# pwd
+/mnt/openfiler/data
+root@files data]# setfacl --recursive -m u:nobody:rwx,g:Trusted:rwx music
+</pre>

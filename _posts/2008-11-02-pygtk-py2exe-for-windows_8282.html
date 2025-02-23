@@ -1,0 +1,55 @@
+---
+layout: post
+title: PyGTK + py2exe for Windows
+date: '2008-11-02T21:30:00.009+11:00'
+author: Kelvin Nicholson
+tags:
+- windows
+- python
+- howtos
+modified_time: '2013-01-09T21:13:00.016+11:00'
+blogger_id: tag:blogger.com,1999:blog-3439832858234004835.post-6537903866681297747
+blogger_orig_url: https://www.kelvinism.com/2008/11/pygtk-py2exe-for-windows_8282.html
+---
+
+<p>I'm writing down these quick notes so I can remember the steps for getting py2exe to work with GTK.</p><ul><li>Download the GTK+ runtime</li>
+
+<li>Download py2exe</li>
+
+<li>Copy over your project into the windows box</li>
+
+<li>Create a setup.py file (see below)</li>
+
+<li>Run "c:\Python25\python.exe setup.py py2exe"</li>
+
+<li>Copy over the lib, etc, and share folder from C:\Program Files\GTK2-Runtime into the dist folder</li>
+
+<li>Run app!</li>
+
+</ul><br />
+<p>setup.py:</p><pre class="brush: python; light: true ">from distutils.core import setup
+import py2exe
+
+setup(
+name = 'ploteq',
+description = 'Bunnys Plotting Tool',
+version = '1.0',
+
+windows = [
+{
+'script': 'ploteq.py',
+}
+],
+
+options = {
+'py2exe': {
+'packages':'encodings',
+'includes': 'cairo, pango, pangocairo, atk, gobject', 
+}
+},
+
+data_files=[
+'ploteq.glade',
+]
+)
+</pre>
