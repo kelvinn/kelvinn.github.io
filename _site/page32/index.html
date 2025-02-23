@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kelvin Nicholson's Website</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/kelvinism/assets/css/styles.css">
     <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
 
 </head>
@@ -31,7 +31,7 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2007/01/27/resize-vmware-image-of-windows-xp_4908.html">
+          <a class="post-link" href="/kelvinism/2007/01/27/resize-vmware-image-of-windows-xp_4908.html">
             Resize a VMWare Image of Windows XP
           </a>
         </h3>
@@ -39,7 +39,7 @@
         <p>&nbsp;</p>Over the years I have been shrinking the number of computers I own.&nbsp; At one point my dorm was littered with old P100s, running whatever OS I felt like playing with at the time. &nbsp;<br /><br />VMWare comes to help.&nbsp; In this recent oops, an image I made (for Windows XP), was slightly too small.&nbsp; I didn&#39;t feel like reinstalling XP + cruft, so just resized the image.&nbsp; This is the process:<br /><br /><br />1) Make Clone or just backup your VMWare image.<br /><br />2) Note: if your disk is a Dynamic Disk, you won&#39;t be able use GParted.&nbsp; There is a chance you can use Disk Management inside Computer Managemen inside XP.<br /><br />3) Turn off VMWare image.<br /><br />4) Grow the image. &nbsp;<br /><br /><br /><br /><pre class="brush: plain; light: true; "> vmware-vdiskmanager -x sizeGB yourimagename.vmdk </pre><br /><br /><br />5) Download the <a href="http://gparted.sourceforge.net/download.php">GParted LiveCD</a> <br /><br />5) Change the CD-ROM drive of your&nbsp; VMWare image to boot from the ISO you just downloaded.<br /><br />6) Boot VMWare image.&nbsp; Make sure to press ESC right when it starts.<br /><br />7) Follow the instructions for GParted. I had to select the Xvesa option, then Done.&nbsp; Choose your language and keyboard and resolution.<br /><br />8) GParted will come up.&nbsp; First delete the partition (the empty one!), and make sure it says unallocated.&nbsp; Then go up to Edit and hit Apply.&nbsp; Then select the partition and say Resize.&nbsp; Hit apply again. <br /><br />9) Reboot image.&nbsp; Windows XP will come up, and go through checking the disk.&nbsp; It will reboot again, and you should then be able to log in.<br /></li><li>
         
         <h3>
-          <a class="post-link" href="/2007/01/26/version-30_1604.html">
+          <a class="post-link" href="/kelvinism/2007/01/26/version-30_1604.html">
             Version 3.0
           </a>
         </h3>
@@ -47,7 +47,7 @@
         <p>To all my loyal (but most likely few, and mainly with the same last name as me):</p><p>I think I&#39;m going to redo the structure of my site, yes, it is about time.&nbsp; I&#39;ve been using a CMS (Content Management System) to categorize everything, but it is time to ditch that and write something.&nbsp; Time to stop being lazy.&nbsp; Time to stop procrastinating.&nbsp; Time to learn something new.</p><p>Let me make this clear: version 3.0 surely won&#39;t be based off PHP. </p></li><li>
         
         <h3>
-          <a class="post-link" href="/2007/01/24/darn-you-hinet_4291.html">
+          <a class="post-link" href="/kelvinism/2007/01/24/darn-you-hinet_4291.html">
             Darn You HiNet
           </a>
         </h3>
@@ -55,7 +55,7 @@
         <p>As you may know by now, I&#39;m in Taiwan.&nbsp; Live is pretty good here, especially the internet -- I&#39;m sitting on a pretty decent 12M/1M connection.&nbsp; But the company I have my internet through seems pretty laid back about <a href="http://www.spamhaus.org/statistics/networks.lasso">network usage</a> <br />-- which for me isn&#39;t good.&nbsp; Their entire IP subnet appears banned from IRC, which means I have to be a little sneaky when I want to talk to my I.T. friends in New Zealand.&nbsp; Worse, some websites even banned the entire subnet:  </p><span class="code"> Your access to this site has been denied because of the large amount of abuse produced by the users from your country. The access will be enabled once we perform the investigation of the abuse issues. Thank you for your patience and understanding. </span><p>&nbsp;</p><p>Luckily, Tor+Privoxy+<a href="https://addons.mozilla.org/firefox/2464/">FoxyProxy</a> provides a quick way around any blocks that might be setup.&nbsp; So, to the developers of these solutions, my kindest thanks. </p><br /></li><li>
         
         <h3>
-          <a class="post-link" href="/2007/01/23/lightweight-detection_8013.html">
+          <a class="post-link" href="/kelvinism/2007/01/23/lightweight-detection_8013.html">
             Lightweight Detection
           </a>
         </h3>
@@ -65,7 +65,7 @@
 =-=-=-=-=-=-=-=-=-=-=-= Tue Jan 23 10:30:04 2007 =-=-=-=-=-=-=-=-=-=-=-=</li><li>
         
         <h3>
-          <a class="post-link" href="/2007/01/22/s3-super-backups_8294.html">
+          <a class="post-link" href="/kelvinism/2007/01/22/s3-super-backups_8294.html">
             S3&amp;#39;s Super Backups
           </a>
         </h3>
@@ -85,9 +85,9 @@ export SSL_CERT_DIR=/etc/ssl/certs/</pre>
     
       <div class="pager">
         <ul class="pagination">
-          <li><a href="/page31" class="previous-page">31</a></li>
+          <li><a href="/kelvinism/page31" class="previous-page">31</a></li>
           <li><div class="current-page">32</div></li>
-          <li><a href="/page33" class="next-page">33</a></li>
+          <li><a href="/kelvinism/page33" class="next-page">33</a></li>
         </ul>
       </div></div> 
         </main>

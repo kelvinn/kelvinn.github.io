@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kelvin Nicholson's Website</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/kelvinism/assets/css/styles.css">
     <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
 
 </head>
@@ -31,7 +31,7 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2008/11/02/configure-timevault-to-remote-server_2418.html">
+          <a class="post-link" href="/kelvinism/2008/11/02/configure-timevault-to-remote-server_2418.html">
             Configure Timevault to Remote Server
           </a>
         </h3>
@@ -45,7 +45,7 @@
 <pre class="brush: bash; light: true; ">#!/bin/bash</li><li>
         
         <h3>
-          <a class="post-link" href="/2008/11/02/backup-openfiler-to-s3_9140.html">
+          <a class="post-link" href="/kelvinism/2008/11/02/backup-openfiler-to-s3_9140.html">
             Backup OpenFiler to S3
           </a>
         </h3>
@@ -53,7 +53,7 @@
         Backing up your Openfiler box to S3<br /><br /><p>While I don't think most pople would expect to backup their entire NAS/SAN to Amazon's S3, there might be a few very crucial things you need to backup.  For instance, my girlfriend's PhD papers and data.</p><p>I've seen an implementation using Ruby and s3sync -- something that I do on my server -- but I'm trying to migrate everything to Python.  Although there are a lot of great tools out there for S3, many of them Python-based,  I wanted to do one thing and do it well: have one complete full backup available, and using as little bandwidth as possible.  In these regards Duplicity would work well, except I wanted the ability to browse the S3 store using any other tool.</p><p>I've digged deeper into <a href="http://s3tools.logix.cz/s3cmd">s3cmd</a>, which I had noticed a long time ago, but I failed to notice it has a sync option.  I have tested it out, and it appears to work very, very well.  Here's how to use it with OF.</p><p>First, download <a href="http://s3tools.logix.cz/download">s3cmd</a>.  You'll need to use subversion, so I first checked it out to my laptop, then uploaded it via SSH to OF. I put my s3cmd folder in /opt.</p><pre class="brush: plain; light: true; "><br />[root@files opt]# ls<br />openfiler  s3cmd<br />[root@files opt]# <br /></pre><br /><br /><p>If you don't have elementtree installed, now is a good time to install it.</p><pre class="brush: plain; light: true; "><br />conary update elementtree:python<br /></pre><br /><br /><p>We need to next configure s3cmd with our AWS creds.</p><pre class="brush: plain; light: true; "><br />[root@files s3cmd]# ./s3cmd --configure<br /></pre><br /><br /><p>In the end I didn't configure encryption for my files (so just hit enter), but you may choose to do so.  I have configured the transfer to use HTTPS, however.</p><pre class="brush: plain; light: true; "><br />Save settings? [y/N] y<br />Configuration saved to '/root/.s3cfg'<br /></pre><br /><br /><p>Cool. Now create a bucket on S3 for your NAS, e.g. blah2134accesskey.openfiler, using whatever method you choose (I typically use Cockpit). Now that you have a bucket, configure a *really* simple script to drop in cron:</p><pre class="brush: bash; light: true; "><br />#!/bin/bash<br /><br />/opt/s3cmd/s3cmd sync /mnt/openfiler/data/profiles/bunny s3://blah2134accesskey.openfiler/mnt/openfiler/data/profiles/bunny<br />/opt/s3cmd/s3cmd sync /mnt/openfiler/data/profiles/kelvin-pc s3://blah2134accesskey.openfiler/mnt/openfiler/data/profiles/knicholson/kelvin-pc<br /></pre><br /><br /><p>Sweet! I like this approach quite a bit: I get file-level access to anything on the NAS, you don't have to actually install anything, and it 'just works.'</p></li><li>
         
         <h3>
-          <a class="post-link" href="/2008/11/01/revised-modtile-install-howto_1369.html">
+          <a class="post-link" href="/kelvinism/2008/11/01/revised-modtile-install-howto_1369.html">
             Revised mod_tile Install HOWTO
           </a>
         </h3>
@@ -156,7 +156,7 @@ sudo su www-data
 </li><li>
         
         <h3>
-          <a class="post-link" href="/2008/11/01/capped-internet_4903.html">
+          <a class="post-link" href="/kelvinism/2008/11/01/capped-internet_4903.html">
             Capped Internet
           </a>
         </h3>
@@ -164,7 +164,7 @@ sudo su www-data
         <p>I've lived in several different parts of the world, and they all do internet differently.  Back in the US I had 8Mb/sec cable (leaving just before Fios was really an option, darn!) In New Zealand, for instance, I was paying for "high speed ADSL" rated at 1.5Mb/256k.  Vrooom.  Up in Taiwan I was paying 1/2 what I paid in New Zealand, but for 12Mb/1Mb.  Down to Sydney and we have a rated 24Mb/1Mb.</p><p>But there's a catch with the plans in New Zealand and Australia: they are 'capped'.  This means you only get XGB/month -- and it isn't like Comcast capping at 250GB/month, I'm talking about 1GB/5GB/10GB and so forth.  And there's more -- just like mobile phones, you get on-peak and off-peak times.</p><p>This all does make a bit of sense to me -- there are only X amount of tubes going in and out of NZ and AU, and I would imagine they get pretty clogged.</p><p>Either way, last month was pretty painful.  Two weeks into our plan I checked out usage: 14GB of 18GB!  We had only 4GB left to use for 15 days.  This sounds like a lot, but for the two of us, and my 10 virtual servers, it isn't.  The first thing I did was looking at a way to do WSUS with Linux -- I ended up using apt-cacher (I'm using only Ubuntu at home).  BitTorrent, out; downloading any new ISOs, out; streaming music, totally out.  For a while I has to VPN to home, and then VPN to a client, as our router at work didn't seem to like letting us access one of our clients.  I even disconnected from the VPN if I wouldn't be doing work for 20m!</p><p>We eventually made it, and used only 2GB in two weeks.  What an accomplishment!</p></li><li>
         
         <h3>
-          <a class="post-link" href="/2008/08/11/using-raw-disks-with-vmware-server-2_3562.html">
+          <a class="post-link" href="/kelvinism/2008/08/11/using-raw-disks-with-vmware-server-2_3562.html">
             Using Raw Disks with VMware Server 2
           </a>
         </h3>
@@ -196,9 +196,9 @@ createType="fullDevice"</li></ul>
     
       <div class="pager">
         <ul class="pagination">
-          <li><a href="/page18" class="previous-page">18</a></li>
+          <li><a href="/kelvinism/page18" class="previous-page">18</a></li>
           <li><div class="current-page">19</div></li>
-          <li><a href="/page20" class="next-page">20</a></li>
+          <li><a href="/kelvinism/page20" class="next-page">20</a></li>
         </ul>
       </div></div> 
         </main>

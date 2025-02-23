@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kelvin Nicholson's Website</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/kelvinism/assets/css/styles.css">
     <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css' integrity='sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=' rel='stylesheet'/>
 
 </head>
@@ -31,7 +31,7 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2007/05/26/ubuntu-upgrade_2905.html">
+          <a class="post-link" href="/kelvinism/2007/05/26/ubuntu-upgrade_2905.html">
             Ubuntu Upgrade
           </a>
         </h3>
@@ -39,7 +39,7 @@
         <p>Having been in I.T. for quite a few years, upgrading can sometimes be quite a hassle.  Having switched to Linux for many years, the crazy upgrade madness of windows is gone.  So, how easy is upgrading in Linux?</p><a href="http://picasaweb.google.com/lh/photo/gfJ0rsA5-yezsSSBzH5fSQ?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgdy7UBLsk4QTB1cYb0IXBmWjq5f4F5CcjYlthEQcPG8lPwKy0aYqu5Gsy30wZhOatB_KxYU0RJPubZVjO78EgQcpBmRi0zakN7fHOek4DmgG9bRj1F-FxP4vpWLmEaJvxLYRq6Qel-W2l/s288/Screenshot-feisty.jpg" /></a><br /><br /><a href="http://picasaweb.google.com/lh/photo/husChXOCHJJ3h1FCRePdlA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiT3OQw0WwVxKnf0vp4xuaf2ClyLihyphenhyphenk2GH1Tgm3OunZWyXb_Gydptfm0ID2qBZezLkbELq6IbJgJ_jAc8LKhGJ9aLZf4ktlFS8h_e2gGVldydYnb87WLTNeUWbtc9z5fFcCAmfXQSdPj9b/s288/Screenshot-distupgrade.jpg" /></a><br /><br /><p>Yea, pretty darn easy, I must admit.  And my system certainly isn't normal!  It has been an upgrade from Debian Sarge(ish) -> Ubuntu LTS(ish) -> 6.10 -> 7.04... The only hiccup was at some point when the fonts were reinstalling (I totally ignored the "close all programs" warning:<br /><br /><br /><br /><a href="http://picasaweb.google.com/lh/photo/ATQPq4IyXPOUsKgykXO3Yg?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9PwKUX6cn2rBmo8DMWoDYU_p4GC6SOD9a7CT2Pho-vTKNpPnHaTMicN1BlhQjMN8hgA7cNePA0aYggj_esDIwmbxNINsukdVEZL2nQi9p_ppzIuC4lfGtvX9Sc7kiMqSWguaJcQg6pQkD/s800/Screenshot-gaim.jpg" /></a><br /><br /></li><li>
         
         <h3>
-          <a class="post-link" href="/2007/05/25/solved-no-pubkey_625.html">
+          <a class="post-link" href="/kelvinism/2007/05/25/solved-no-pubkey_625.html">
             Solved: NO PUBKEY
           </a>
         </h3>
@@ -60,7 +60,7 @@ Repeat if necessary. All done, just do an apt-get update and no more warning!<br
 <br /></li><li>
         
         <h3>
-          <a class="post-link" href="/2007/05/25/bare-metal-restore_7646.html">
+          <a class="post-link" href="/kelvinism/2007/05/25/bare-metal-restore_7646.html">
             Bare-metal Restore
           </a>
         </h3>
@@ -68,7 +68,7 @@ Repeat if necessary. All done, just do an apt-get update and no more warning!<br
         <p>As you can see by my previous post, my question to squeeze more req/sec from the server, I decided to try out Gentoo (again, last time was four years ago).  Now, I like Gentoo, there is no doubt about that.  However, I realized things took just <b>too</b> long to get set up.  I guess that is the disadvantage of a source based package management tool.  Back to Debian I go.</p><p>Two hours later everything was up and running -- and I guess I can't complain about a two hour bare-metal restore from one distro to another.  And let me iterate, this isn't just a typical LAMP boxen.  It's got:</p><ul><br /><li>apache/mod_php/ssl with ~10 domains</li><br /><li>apache/mod_python/ssl with ~4 domains</li><br /><li>lighttpd with ~5 domains (static files)</li><br /><li>about 8 gigs of web data/images</li><br /><li>svn repos + web_dav access</li><br /><li>mysql restored</li><br /><li>postfix(chroot)/dovecot/sasl + mysql auth</li><br /><li>home dirs restored</li><br /><li>chrooted users again</li><br /></ul><br /><br /><p>I'm sure I missed something on this list, I was typing pretty quick.  Well, that's the update.  I'm gonna go tinker with mod_cache some.</p><br /><br /></li><li>
         
         <h3>
-          <a class="post-link" href="/2007/05/24/the-gentoo-test_1297.html">
+          <a class="post-link" href="/kelvinism/2007/05/24/the-gentoo-test_1297.html">
             The Gentoo test
           </a>
         </h3>
@@ -76,7 +76,7 @@ Repeat if necessary. All done, just do an apt-get update and no more warning!<br
         <p>I have a love-hate relationship with Linux.  I love it because if there is a problem, I can actually tinker and find the problem and fix it.  But I hate it because I like to tinker.</p><p>Recently I've been doing a fair amount of Django programming -- enjoying every minute of it.  After completing several of my projects I decided to do some benchmarks, and the results are in!  Generally I can server cached/semi-cached pages at about 200req/sec.  200req!  Considering this is 5,000,000 or so requests a day, and a number I am never going to reach, I still began to wonder: why isn't it higher?  I mean, serving a static html page is at like 1000+ req/sec, so why would a cached page be significantly different?  I started exploring and noticed that Apache would spike the CPU.  Ok, time to be thorough, and as I said, I like to tinker.</p><p>I tried lighttpd as a fastcgi to python -- not a significant different, basically the same.  Next I tried several versions of python -- one from 2.4 and one from 2.5, one as a package and one from source -- same results.  High cpu usage.  Thinking it could be something related to my VPS (or some odd limit within Debian) I decided, ok, I'll reinstall.</p><p>I reinstalled and got things working pretty quickly.  The only slight hiccup was postfix/dovecot, cause postfix insists on being in a jail (and my configs are all setup for that).  Also, Chinese support in Apache isn't working.  Regardless, I re-ran the benchmarks and the results were the same -- so, it isn't related to my previous install after all.  Doh.</p><p>I'll evaluate Gentoo as a server setup for a little while, but I'm thinking I'll do a quick reinstall of Debian.</p><br /></li><li>
         
         <h3>
-          <a class="post-link" href="/2007/05/24/postfixdovecot-mysql_1687.html">
+          <a class="post-link" href="/kelvinism/2007/05/24/postfixdovecot-mysql_1687.html">
             Postfix/Dovecot + MySQL
           </a>
         </h3>
@@ -127,9 +127,9 @@ I searched google for these answers, to a certain degree at least, but couldn't 
     
       <div class="pager">
         <ul class="pagination">
-          <li><a href="/page27" class="previous-page">27</a></li>
+          <li><a href="/kelvinism/page27" class="previous-page">27</a></li>
           <li><div class="current-page">28</div></li>
-          <li><a href="/page29" class="next-page">29</a></li>
+          <li><a href="/kelvinism/page29" class="next-page">29</a></li>
         </ul>
       </div></div> 
         </main>
