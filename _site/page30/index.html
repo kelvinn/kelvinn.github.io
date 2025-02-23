@@ -31,44 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2007/03/29/simple-chrooted-ssh_6907.html">
-            Simple Chrooted SSH
-          </a>
-        </h3>
-        <span class="post-meta">Published on Mar 29, 2007</span>
-        You might be asking: why would you want to chroot ssh? Why use ssh anyways?  Here are the quick answers:<br />
-<ul><br />
-<li><b>FTP usually sucks</b>.  Unless sent over SSL, all information is sent <i>cleartext</i>.</li>
-<br />
-<li><b>SSH usually rules</b>. SSH sends all data over an encrypted channel -- the main drawback is: you can often browse around the system, and if permissions aren't set right, read things you shouldn't be able to.</li>
-<br />
-<li><b>Chroot'd SSH rocks</b>. The solution to both the above problems</li>
-</ul>
-.<br />
-<br />
-<br />
-So, let me tell a quick story.<br />
-When I started uni in 2001 I was a nerd. Still a nerd, I guess.  I was cramped in my apartment on campus with like 5 boxes, most of them crappy p100s running Linux or OpenBSD.  Life was good.<br />
-I started a CS degree (shifted into Business with a focus on IT), and we were told to use the school's main servers to compile our programs.  The other interesting thing is that <i>all</i> user accounts were visible when logged in via ssh -- but hey, that is just the nature of Linux.  I knew this, but asked the head I.T. person "why don't you jail the connections?"  He responded quickly telling me to go away.<br />
-Well, shortly after making the comment (although solutions existed at the time being), pam-chroot was released.  This is right about the time students figured they could spam everybody in the school, some 25,000 emails, quickly and easily -- 'cause all the accounts were displayed.  Sweet -- now we can chroot individual ssh connections.<br />
-This quick demo will be on Debian, we'll create a pretend user named "karl." (I'll assume you've already added the user before beginning these steps).  Also, the jails will be in /var/chroot/{username}<br />
-<h4>
-First: Install libpam-chroot and makejail</h4>
-session required pam_chroot.so<br />
-<br />
-<pre class="brush: plain; light: true; ">
-kelvin@server ~$ sudo apt-get install libpam-chroot makejail</pre>
-<br />
-<br />
-<h4>
-Second: makejail config file</h4>
-<br />
-<br />
-Put the following in /etc/makejail/create-user.py:<br />
-<pre class="brush: plain; light: true; ">
-#Clean the jail</li><li>
-        
-        <h3>
           <a class="post-link" href="/2007/03/22/layer-images-using-imagemagick_25.html">
             Layer Images Using ImageMagick
           </a>
@@ -137,7 +99,15 @@ The result:</h4>
           </a>
         </h3>
         <span class="post-meta">Published on Mar 15, 2007</span>
-        <p>It should come as a surprise that I enjoy using Linux.  For the record, the first time I booted into Linux on my own was 1997, this was just before entering high school.  So, while some of my tech friends played with NT, I was rumbling with the Penguin.  Starting in 2000 I was using Linux as my main operating system, sometimes supplemented by OS X, and only using Windows when the gaming urge surfaced.  In 2004 I mostly dropped playing any games, which resulted in dropping Windows -- and besides for work, I haven't used it since.</p><p>For me, I'll admit, there are three things that Linux still lacks:</p><ul><br /><li>Simplistic video conferencing support</li><br /><li>Video editing support</li><br /><li>Gaming</li><br /></ul><br /><br /><p>I know that all of these are <i>supported</i>, but, in my opinion, not particularly well.  Well, I don't care about any of these enough to actually need windows, but it would be nice to see them improve.</p><p>So, I'm set.  I'm 100% legal (don't steal a single piece of software).  And don't have to be too afraid of virus'.  What prompted me to write this little excerpt? A recent article at the Washington Post scared the beejeepers out of me, and makes me wish even more for Vista to either cure security problems, or everybody move over to Linux.  The <a href="http://www.washingtonpost.com/wp-dyn/content/article/2007/03/13/AR2007031301522.html">article</a> details the aftermath a virus can cause, not on damaging one's computer, but on capturing information.  The author further <a href="http://blog.washingtonpost.com/securityfix/2007/03/tracking_the_password_thieves_1.html">details</a> his experience hunting down the data.  This was one of the better articles I've read, and I thoroughly enjoyed the further details.  If you want a little more motivation to move to Linux (or just tighten your machine), then I suggest you take a few moments to read the articles as well.</p></li></ul>
+        <p>It should come as a surprise that I enjoy using Linux.  For the record, the first time I booted into Linux on my own was 1997, this was just before entering high school.  So, while some of my tech friends played with NT, I was rumbling with the Penguin.  Starting in 2000 I was using Linux as my main operating system, sometimes supplemented by OS X, and only using Windows when the gaming urge surfaced.  In 2004 I mostly dropped playing any games, which resulted in dropping Windows -- and besides for work, I haven't used it since.</p><p>For me, I'll admit, there are three things that Linux still lacks:</p><ul><br /><li>Simplistic video conferencing support</li><br /><li>Video editing support</li><br /><li>Gaming</li><br /></ul><br /><br /><p>I know that all of these are <i>supported</i>, but, in my opinion, not particularly well.  Well, I don't care about any of these enough to actually need windows, but it would be nice to see them improve.</p><p>So, I'm set.  I'm 100% legal (don't steal a single piece of software).  And don't have to be too afraid of virus'.  What prompted me to write this little excerpt? A recent article at the Washington Post scared the beejeepers out of me, and makes me wish even more for Vista to either cure security problems, or everybody move over to Linux.  The <a href="http://www.washingtonpost.com/wp-dyn/content/article/2007/03/13/AR2007031301522.html">article</a> details the aftermath a virus can cause, not on damaging one's computer, but on capturing information.  The author further <a href="http://blog.washingtonpost.com/securityfix/2007/03/tracking_the_password_thieves_1.html">details</a> his experience hunting down the data.  This was one of the better articles I've read, and I thoroughly enjoyed the further details.  If you want a little more motivation to move to Linux (or just tighten your machine), then I suggest you take a few moments to read the articles as well.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/03/15/i-hate-geoip-advertising_6728.html">
+            I Hate GeoIP Advertising
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 15, 2007</span>
+        <a href="http://picasaweb.google.com/lh/photo/WRMH3mQauVVNRBo9Jr-mdQ?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUCe5P3KESIXOcTikN8dyhNqIGGwP9liL62sQXgx7FeGNf2oQjwyHSbe8UJxuveH6RlUmFs8_120nmV_9XNj3aShEdCP_nH9j8lPYXkgEGTyzaztQOH0PxR8ClpM4MYqJP2I4hmV3RGfwS/s400/geoiphell1.jpg" /></a><br /><br /><div class="quoteboxleft">Remember, I'm in a coffee shop? GeoIPized Girls = have to sit with back to wall.</div><p><a href="http://en.wikipedia.org/wiki/Country_IP_database">GeoIP</a> is the concept that allows you to map a user's IP to the country it came from (I hacked up my commenting system just so you can see an example, if you are a visual type of person).  Advertisers have long since picked up on this as a way to make their ads "better," hopefully becoming more appealing to their clientele.  Sometimes the adaptation doesn't quite work as expected.  This morning I was searching for an eBook on Embedded Linux (it is really hard to find English tech books here) -- and just had to snap a few screenshots.  The advertisers picked up my IP, from Taiwan, and "customized" the advertisement.  Needless to say, I've seen a total of five white females here over the entire last year.</p><p>This reminded me just how much crap people know about me; since I'm in a coffeeshop, I don't <i>really</i> care, but still.  So, why do I hate GeoIP advertising?</p><ul><br /><li>It reminds me how much crap people know about me</li><br /><li>It reminds me that I should be using the Tor network</li><br /><li>Instead of displaying contextual ads that I even <i>might be a little</i> inclined to click, it reminds me how much I hate advertising</li><br /><li>Remember, I'm in a coffee shop? GeoIPized Girls = have to sit with back to wall.</li><br /></ul><br /><p>Being curious, I decided to see if I could teleport the girls to other parts of the world.  Enter <a href="http://tor.eff.org/">Tor</a>, <a href="http://www.privoxy.org/">Privoxy</a> and <a href="http://foxyproxy.mozdev.org/">FoxyProxy</a>.  I turned them all on, went back and remembered just how cool these tools really are. </p><br /></li></ul>
 
     
       <div class="pager">

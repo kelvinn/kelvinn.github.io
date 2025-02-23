@@ -31,55 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2009/05/10/compiling-kernel-for-vortex86dx_5058.html">
-            Compiling kernel for Vortex86dx
-          </a>
-        </h3>
-        <span class="post-meta">Published on May 10, 2009</span>
-        <p><b>Update</b>: I've written up a <a href="http://kelvinism.com/howtos/installing-debian-50-vortex86dx/">short tutorial</a> on the method I used to install Debian 5.0 on this device.</p><p>A few months ago I purchased the eBox-3300 from WDL Systems.  The system was promptly shipped, and there were no "gotchas" from WDL.  The little box fit my exact needs - it is small, and built very, very well.  I flew back to Australia and, after some trial and error, installed Debian 5.0 on it.  For quite some time I was just using the vmlinuz file provided by WDL, which was provided by ICOP (DMP).  This worked well, but there were two issues:</p><br />
-<br />
-1) I couldn't load any modules (e.g. NFS).<br />
-<br />
-2) I received an annoying email from OSSEC every few hours telling me it couldn't find modules.dep.<br />
-<br />
-<br />
-<br />
-<p>At the end of last week I finally decided to do something about it, and considering this little box is "x86 compliant", I figured it wouldn't be too hard to create a new package.  It has been several years since I last created a self-compiled Debian-packaged kernel, so I decided to document the process for the next time I do it.  These steps are really just a summary - but if you have much Linux experience, they should be enough to guide you.  If I'm unclear, just send me an email.</p><p>Because the eBox-3300 is embedded, I logically decided to create the package on another system.  However, I wanted to maximize the chances of it working, so I installed Debian 5.0 in VirtualBox, updated it, and proceeded.</p><p>As a prep, you may need to install ncurses-dev and kernel-package in your build environment.</p><pre class="brush: plain; light: true; ">apt-get install ncurses-dev kernel-package
-</pre><br />
-<br />
-<p>1) Download latest kernel from: <a href="http://www.kernel.org/pub/linux/kernel/v2.6/">http://www.kernel.org/pub/linux/kernel/v2.6/</a></p><p>2) Download the DMP provided patch/config file for 2.6.27.3, copy it to /usr/src.  Alternatively, you can borrow my <a href="http://cdn.kelvinism.com/ebox/config-2.6.29.3-vortex86dx">2.6.29.3 config</a>  Make a backup.</p><p>3) Untar kernel, cd into the kernel directory.  Issue:</p><pre class="brush: plain; light: true; ">make menuconfig
-</pre><br />
-<br />
-<p>4) Configure kernel.  If you used my config file, a lot of these should already be ticked.</p><br />
-a) Load alternative config file, I selected mine as /usr/src/config-2.6.27.9-vortex86dx, or if you downloaded the one from me, use config-2.6.29.3-vortex86dx<br />
-<br />
-b) Enable generic x86 support<br />
-<br />
-c) Enable Kernel .config support<br />
-<br />
-d) Device drivers -> Network -> 10 or 100Mbit -> RDC R6040, set at built in<br />
-<br />
-e) Turn off generic IDE support<br />
-<br />
-f) Exit, make sure to save the kernel<br />
-<br />
-g) Verify .config exists.  If it doesn't, copy the config-2.6.x.x-vortex86dx file to .config<br />
-<br />
-<br />
-<br />
-<p>5) Create the kernel debs.  In the kernel directory, issue these commands.  This will build the kernel image, the headers, and the modules.</p><pre class="brush: plain; light: true; ">make-kpkg --initrd kernel_image kernel_source kernel_headers modules_image
-</pre><br />
-<p>6) Make coffee</p><p>7) Copy the debs to your running ebox by sftp (or usb, or whatever is available)</p><p>8) Install kernel in eBox-3300</p><pre class="brush: plain; light: true; ">dpkg -i linux-source-2.6.29.3-vortex86dx.deb
-dpkg -i linux-headers-2.6.29.3-vortex86dx.deb
-dpkg -i linux-image-2.6.29.3-vortex86dx.deb
-</pre><br />
-<br />
-<p>9) Reboot.  If you want my compiled kernel/sources/header .DEBs, just shoot me an email and I'll make them available.</p><p><b>Summary:</b> My only gripe about this little box was the lack of an easily customizable kernel, but no more.  I'm still very happy with this $150 purchase.</p><br />
-<br />
-<br />
-</li><li>
-        
-        <h3>
           <a class="post-link" href="/2009/05/03/fixing-mysql-warning-message_4782.html">
             Fixing mysql warning message
           </a>
@@ -138,7 +89,32 @@ en_US.ISO-8859-15 ISO-8859-15
           </a>
         </h3>
         <span class="post-meta">Published on Apr 13, 2009</span>
-        Status: <i class="fas fa-skull-crossbones"></i><br /></li></ul>
+        Status: <i class="fas fa-skull-crossbones"></i><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2009/03/02/files-between-esx-and-linux-via-nfs_6022.html">
+            Files between ESX and Linux via NFS
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 2, 2009</span>
+        <p>I like ESX.  I like Linux.  It is absurdly easy to configure Linux as an NFS server and mount it in ESXIi).</p><p><b>Installed NFS</b></p><p>I currently use Ubuntu Server for my home lab, but the process is basically the same for Red Hat and derivatives.</p><pre class="brush: plain; light: true; ">sudo apt-get install nfs-common
+sudo apt-get install nfs-kernel-server
+</pre><br />
+<p>Next, configure NFS so it can server your local LAN.  Normally you would list only specific servers, but, well, we're being cheap and dirty today. Open /etc/exports in VI or your editor of choice.</p><b>/etc/exports</b><br />
+<pre class="brush: plain; light: true; ">/media/disk/Images 192.168.0.0/24(rw,no_root_squash,async
+</pre><br />
+<p>Restart NFS.</p><pre class="brush: plain; light: true; ">sudo /etc/init.d/nfs-common
+</pre><br />
+Go to Configuration -> Storage -> Add Storage.<br />
+<br />
+Select NFS<br />
+<br />
+Fill in the info, see screenshot.<br />
+<br />
+Wait a minute.  Voila! New datastore.<br />
+<br />
+<br />
+<b>Images to come shortly.</b></li></ul>
 
     
       <div class="pager">

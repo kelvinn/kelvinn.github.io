@@ -31,32 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2008/12/07/install-esx-from-usb-no-cdrom_3723.html">
-            Install ESX from a USB (no CDROM)
-          </a>
-        </h3>
-        <span class="post-meta">Published on Dec 7, 2008</span>
-        <p>My little server doesn't have a cdrom, but I didn't want to actually run ESX from a USB (i.e. esx-on-a-stick).  Here are my notes of configuring a flash disk to boot the ESX installer (so you can install it onto a local disk). For this demo, my USB is /dev/sdb</p><br />
-<br />
-1) Install the syslinux utils to your computer (apt-get install syslinux mboot)<br />
-<br />
-2) Install the MBR<br />
-<br />
-<pre class="brush: plain; light: true; ">sudo install-mbr /dev/sdb
-</pre><br />
-3) Copy all the files from the ISO to your fat32 formated partition<br />
-<br />
-4) Install syslinux<br />
-<br />
-<pre class="brush: plain; light: true; ">sudo syslinux /dev/sdb1
-</pre><br />
-5) Move isolinux.cfg to syslinux.cfg, and try booting.  If it doesn't work, edit syslinux.cfg says something like:<br />
-<br />
-<pre class="brush: plain; light: true; ">default menu.c32
-menu title ESXi Boot
-timeout 100</li><li>
-        
-        <h3>
           <a class="post-link" href="/2008/11/15/integrating-ossec-with-cisco-ios_7061.html">
             Integrating OSSEC with Cisco IOS
           </a>
@@ -160,7 +134,15 @@ DATABASE_PORT = ''             # Set to empty string for default. Not used with 
           </a>
         </h3>
         <span class="post-meta">Published on Nov 2, 2008</span>
-        <p>Since I do sysadminy stuff all day, I don't really get a chance to do much coding (or not as much of a chance as I would like).  You can imagine my joy when my girlfriend expressed a problem she needed solved: "I'm going to need to solve 100s of slope equations, i.e. where two lines intersect.  Can you write a program to do it?"  Sure!</p><p>I asked if she wanted to do a batch input or just a one-off type of deal, she decided on the latter.  Although I've done a fair bit of PyGTK stuff, I had never actually needed to convert it to Windows.  I debated using IronPython -- but needed to use a special library to help solve the equations (I'm lazy).</p><p>So, where is the power in Python?  After about 15-20m I had a console based app that could solve the slopes.  I added the Linux GUI part in maybe 45m, and then the Windows part in, well, not 45m!</p><p>Either way, screenshot is below.  Thanks girlfriend, I had fun!</p><a href="http://picasaweb.google.com/lh/photo/z7c7K2SAI4DQi84sBKkiGA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEAxIIJW4HIfuL3VFBYCY8aQM8pVChFP5qcxi3_Daaay5oN2OEJ4XstDByk-fOFICyJUfkp3Beerf12V4n3HmWFn_4WNd36bvDOFd0y5Grx6cgo5WpICpgFU5exuS0zwHrCNTaSHeuzMOt/s800/slopefinder.jpg" /></a><br /><br /><br /><br /> </li></ul>
+        <p>Since I do sysadminy stuff all day, I don't really get a chance to do much coding (or not as much of a chance as I would like).  You can imagine my joy when my girlfriend expressed a problem she needed solved: "I'm going to need to solve 100s of slope equations, i.e. where two lines intersect.  Can you write a program to do it?"  Sure!</p><p>I asked if she wanted to do a batch input or just a one-off type of deal, she decided on the latter.  Although I've done a fair bit of PyGTK stuff, I had never actually needed to convert it to Windows.  I debated using IronPython -- but needed to use a special library to help solve the equations (I'm lazy).</p><p>So, where is the power in Python?  After about 15-20m I had a console based app that could solve the slopes.  I added the Linux GUI part in maybe 45m, and then the Windows part in, well, not 45m!</p><p>Either way, screenshot is below.  Thanks girlfriend, I had fun!</p><a href="http://picasaweb.google.com/lh/photo/z7c7K2SAI4DQi84sBKkiGA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEAxIIJW4HIfuL3VFBYCY8aQM8pVChFP5qcxi3_Daaay5oN2OEJ4XstDByk-fOFICyJUfkp3Beerf12V4n3HmWFn_4WNd36bvDOFd0y5Grx6cgo5WpICpgFU5exuS0zwHrCNTaSHeuzMOt/s800/slopefinder.jpg" /></a><br /><br /><br /><br /> </li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/11/02/pygtk-py2exe-for-windows_8282.html">
+            PyGTK + py2exe for Windows
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 2, 2008</span>
+        <p>I'm writing down these quick notes so I can remember the steps for getting py2exe to work with GTK.</p><ul><li>Download the GTK+ runtime</li></li></ul>
 
     
       <div class="pager">

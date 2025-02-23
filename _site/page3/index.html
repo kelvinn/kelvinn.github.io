@@ -31,52 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2014/12/13/geocoding-photos-mac.html">
-            Geocoding Photos (Mac)
-          </a>
-        </h3>
-        <span class="post-meta">Published on Dec 13, 2014</span>
-        I've recently started using OSX (again), and am really enjoying it (again). One Windows-only tool that I found really useful is&nbsp;<a href="http://www.geosetter.de/en/" target="_blank">Geosetter</a>, which allows you to add geo coordinates into photos. There don't appear to be any free geocoding tools that work to my satisfaction to do this, so the next best thing was geocode like you would using Linux. Here's how.<br />
-<br />
-We're going to use the command line program <a href="http://www.sno.phy.queensu.ca/~phil/exiftool/" target="_blank">ExifTool</a> (by Phil Harvey) to extract coordinates from a gpx file and embed them in a directory of images.<br />
-<br />
-Firstly, install exiftool using <a href="http://brew.sh/" target="_blank">brew</a>. Here's the command:<br />
-<br />
-<pre class="brush: plain; light: true; ">brew install exiftool
-</pre>
-<br />
-Copy the gpx files into your image directory and initiate the sync with the geotag flag:<br />
-<br />
-<pre class="brush: plain; light: true; ">exiftool -geotag=gpslog2014-12-10_212401.gpx ./
-</pre>
-<br />
-It is possible to also specify multiple gpx files (e.g. multiple day trip):<br />
-<br />
-<pre class="brush: plain; light: true; ">exiftool -geotag=gpslog2014-12-10_212401.gpx -geotag=gpslog2014-12-07_132315.gpx -geotag=gpslog2014-12-08_181318.gpx -geotag=gpslog2014-12-10_073811.gpx ./
-</pre>
-<br />
-And finally, you can include a time offset with the geosync flag. For instance, I had an 11-hour (39600 seconds) difference due to a timezone hiccup with my new camera, so we can get rid of that:<br />
-<br />
-<pre class="brush: plain; light: true; ">exiftool -geotag=gpslog2014-12-10_212401.gpx -geotag=gpslog2014-12-07_132315.gpx -geotag=gpslog2014-12-08_181318.gpx -geotag=gpslog2014-12-10_073811.gpx -geosync=39600 ./
-</pre>
-<br />
-It will process the images, renaming the original with an ".original" extension, and give you a report at the end:<br />
-<br />
-<pre class="brush: plain; light: true; ">1 directories scanned
-193 image files updated
-83 image files unchanged
-</pre>
-<br />
-If your camera is set to GMT, then put all the GPX files in the same directory as the photos to geocode, and do this:<br />
-<br />
-<pre class="brush: plain; light: true; ">TZ=GMT exiftool -geotag "*.gpx" *.jpg
-</pre>
-<br />
-For any additional manual geocoding I fallback on <strike>Picasa's Places</strike>&nbsp;<a data-jsbanchorprepared="DbMHD3VqBP0TPju" href="http://www.snafu.org/GeoTag/" target="_blank">GeoTag</a>&nbsp;to add the coordinates.<br />
-<br />
-If you have Lightroom, then try doing a search for a suitable ExifTool Lightroom plugin, as there seem to be a few.</li><li>
-        
-        <h3>
           <a class="post-link" href="/2014/11/01/snap-ci-deploy-to-openshift.html">
             Snap-CI Deploy to OpenShift
           </a>
@@ -195,7 +149,37 @@ While in Myanmar on a recent trip I did a brief taste comparison of the three ma
 <b><br /></b>
 <b>Myanmar</b>&nbsp;- Quite refreshing, a bit like similar beers in the region, e.g. Chang, Tiger, or Laos Beer.<br />
 <br />
-<b>ABC</b>&nbsp;- An extra stout (and 8%!) in such a hot country? That's a surprise.</li></ul>
+<b>ABC</b>&nbsp;- An extra stout (and 8%!) in such a hot country? That's a surprise.</li><li>
+        
+        <h3>
+          <a class="post-link" href="/2014/03/01/error-opening-devsda-no-medium-found.html">
+            Error opening /dev/sda: No medium found
+          </a>
+        </h3>
+        <span class="post-meta">Published on Mar 1, 2014</span>
+        I have had this issue before, solved it, and had it again.<br />
+<br />
+Let's say you plug in a USB drive into a Linux machine, and try to access it (mount it, partition it with fdisk/parted, or format it), and you get the error<br />
+<code><br />
+Error opening /dev/sda: No medium found<br />
+</code><br />
+<br />
+Naturally the first thing you will do is ensure that it appeared when you plugged it in, so you run 'dmesg' and get:<br />
+<code><br />
+sd 2:0:0:0: [sda] 125045424 512-byte logical blocks: (64.0 GB/59.6 GiB)<br />
+</code><br />
+<br />
+And it appears in /dev<br />
+<code><br />
+Computer:~ $ ls /dev/sd*<br />
+/dev/sda<br />
+Computer:~ $<br />
+</code><br />
+<br />
+Now what? Here's what has bitten me twice: make sure the drive has enough power. Let's say you mounted a 2.5" USB drive into a Raspberry Pi. The Pi probably doesn't have enough current to power the drive, but it <i>does</i>&nbsp;have enough to make the drive recognisable. Or, if you are like me, the USB charger powering the drive is faulty, so even though it has power, it doesn't have enough.<br />
+<br />
+The next troubleshooting step should be obvious: give the drive enough power to completely spin up.<br />
+<br /></li></ul>
 
     
       <div class="pager">

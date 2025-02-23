@@ -31,36 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2008/08/11/using-raw-disks-with-vmware-server-2_3562.html">
-            Using Raw Disks with VMware Server 2
-          </a>
-        </h3>
-        <span class="post-meta">Published on Aug 11, 2008</span>
-        <p>For various reasons I had the need to open a raw disk inside VMware Server 2.  The reports from the field say that this just isn't supported. Although I don't need to actually run a raw disk, I needed to get some data off it -- 400GB worth.  It turns out 'not supported' really means 'not in the UI.'  I don't know the reason why it isn't in the UI, maybe marketing wants people to use ESX, or maybe the UI guys fell behind with their workload.</p><p>Alas, it is possible.  And here's how.</p><br />
-<br />
-1) Take out your 'raw disk' and put it into another machine.<br />
-<br />
-2) Fire up Server 1.0.x or Workstation and open a virtual machine (or create a new one).  Edit the preferences and add a new hard disk.  Select 'use a physical disk', and select the disk you put in above.  Select use entire disk.  You may want to change the SCSI LUN to SCSI1:0 (depending how many disks are in your 'proper' server).<br />
-<br />
-3) Save it as something like 500GB.vmdk<br />
-<br />
-5) Copy out the relevant bit from the vmx file, e.g.<br />
-<br />
-<pre class="brush: plain; light: true; "># Test VM.vmx
-scsi1.present = "TRUE"
-scsi1:0.present = "TRUE"
-scsi1:0.fileName = "500GB.vmdk"
-scsi1:0.deviceType = "rawDisk"
-</pre><br />
-<br />
-<p>And of course, the entire 500GB.vmdk file</p><pre class="brush: plain; light: true; "># 500GB.vmdk
-# Disk DescriptorFile
-version=1
-CID=7e245252
-parentCID=ffffffff
-createType="fullDevice"</li><li>
-        
-        <h3>
           <a class="post-link" href="/2008/08/02/vm-automatic-startup-in-server-2_6579.html">
             VM Automatic Startup in Server 2
           </a>
@@ -104,7 +74,28 @@ createType="fullDevice"</li><li>
           </a>
         </h3>
         <span class="post-meta">Published on May 27, 2008</span>
-        <p>I needed another Python fix, and I need one pretty badly.  I spent the weekend wondering why it appears to be impossible to edit the GUIDs inside an Exchange mailbox store (read: NOT the GUIDs stored in AD for Exchange).  Anyways, I digress.</p><p>My goals were simple.  I wanted to use Python, wanted something to do with traffic, and wanted to play around with Glade/PyGTK and graphing stuff.  My end result was a little app that allows you to specify a GPX file, and it plots the waypoints (and calculates the moving average!).  Pretty simple, pretty useless, but pretty fun.  I really do like pretty pictures.</p><a href="http://picasaweb.google.com/lh/photo/qv9V1YGpNjeYA0oywW8BGA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbsbQ8Cni_yPDyZ4MPoq2GXKP-XOFmq9aEpdc3acy9aMR5QemSj4UXMS1rGJ0IUSF3yc3unogl13DXYQM9z3wD_PmGreclmzDvmaqzJlSEuHJnq-sysd-r34mpNlI1gLOFwuWuyIWfRFp8/s400/SpeedPlotrX.jpg" /></a><br /><br /><p>I ended up using matplotlab for the graphing part, but I don't really like how the graphs look.  I will likely use Pycha (which dips into Cairo) for my future projects -- but we'll see when that point comes.  (If data sensitivity wasn't an issue, I would totally use Google Charts, since I'm a sucker for APIs).</p></li></ul>
+        <p>I needed another Python fix, and I need one pretty badly.  I spent the weekend wondering why it appears to be impossible to edit the GUIDs inside an Exchange mailbox store (read: NOT the GUIDs stored in AD for Exchange).  Anyways, I digress.</p><p>My goals were simple.  I wanted to use Python, wanted something to do with traffic, and wanted to play around with Glade/PyGTK and graphing stuff.  My end result was a little app that allows you to specify a GPX file, and it plots the waypoints (and calculates the moving average!).  Pretty simple, pretty useless, but pretty fun.  I really do like pretty pictures.</p><a href="http://picasaweb.google.com/lh/photo/qv9V1YGpNjeYA0oywW8BGA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbsbQ8Cni_yPDyZ4MPoq2GXKP-XOFmq9aEpdc3acy9aMR5QemSj4UXMS1rGJ0IUSF3yc3unogl13DXYQM9z3wD_PmGreclmzDvmaqzJlSEuHJnq-sysd-r34mpNlI1gLOFwuWuyIWfRFp8/s400/SpeedPlotrX.jpg" /></a><br /><br /><p>I ended up using matplotlab for the graphing part, but I don't really like how the graphs look.  I will likely use Pycha (which dips into Cairo) for my future projects -- but we'll see when that point comes.  (If data sensitivity wasn't an issue, I would totally use Google Charts, since I'm a sucker for APIs).</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/04/29/setting-up-windows-2003-as-ntp-client_4269.html">
+            Setting up Windows 2003 as an NTP Client
+          </a>
+        </h3>
+        <span class="post-meta">Published on Apr 29, 2008</span>
+        <p>I have had to search for the commands to setup a Windows 2003 box as an ntp client a few times now, so have decided to finally write them down here for my own good measure.  Funny thing is, I'm pretty sure there are three ways to setup a 2003 box as an ntp client.</p><h4>1) Via the CLI</h4><br />
+<br />
+<p>Open up the cmd prompt and type in:</p><pre class="brush: plain; light: true; ">w32tm /config /manualpeerlist:"0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org" 
+/syncfromflags:MANUAL /reliable:YES /update
+</pre><br />
+<br />
+<h4>2) Via the CLI, option 2</h4><br />
+<br />
+<pre class="brush: plain; light: true; ">net time setsntp: "0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org"
+</pre><br />
+<br />
+<h4>3) Via GUI</h4><br />
+<br />
+<p>Type in <b>gpedit.msc</b> and your local GPO editor will pop up.  Go to the folder as indicated in the below screenshot and Enable the "Enable Windows NTP Client" option.  Next set the "Configure Windows NTP Client" option to whatever time servers you so choose.  As always, make sure to keep the 0x1 at the end.</p></li></ul>
 
     
       <div class="pager">

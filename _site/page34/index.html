@@ -31,14 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2006/11/08/resize-xen-image_3704.html">
-            Resize a Xen Image
-          </a>
-        </h3>
-        <span class="post-meta">Published on Nov 8, 2006</span>
-        <p>So, you've got a few Xen images around, and they are starting to fill up.  How do you add a few more gigs to 'em?</p> <pre class="brush: plain; light: true; "> root@tpe:/# xm shutdown vm01<br /> root@tpe:/# cd /xenimages<br /> root@tpe:/xenimages# dd if=/dev/zero bs=1024 count=1000000 >> vm01.img<br /> root@tpe:/path/to/images# resize2fs -f vm01.img<br /> </pre>  That's it, you just added a gig to your image called 'vm01.img'.<br /></li><li>
-        
-        <h3>
           <a class="post-link" href="/2006/11/08/mcse-security_5711.html">
             MCSE: Security
           </a>
@@ -68,7 +60,15 @@
           </a>
         </h3>
         <span class="post-meta">Published on Oct 15, 2006</span>
-        <p>Yea, you read that right.  Three commands and you can run a pen-test on your website/webserver.  So, how?</p> <div class="code"> kelvin@home:~$ sudo apt-get install nikto<br /> kelvin@home:~$ sudo nikto -update<br /> kelvin@home:~$ nikto -h www.thoughtdeposit.net</div> <p>As you can see, Nikto is a web server scanner, apparently for over 3200 dangerous files/vulnerabilities.  Additional features can be seen at the <a href="http://www.cirt.net/code/nikto.shtml">Nikto</a> website, yet you will certainly want to add this old gem to your webserver toolbelt as soon as possible.</p><br /></li></ul>
+        <p>Yea, you read that right.  Three commands and you can run a pen-test on your website/webserver.  So, how?</p> <div class="code"> kelvin@home:~$ sudo apt-get install nikto<br /> kelvin@home:~$ sudo nikto -update<br /> kelvin@home:~$ nikto -h www.thoughtdeposit.net</div> <p>As you can see, Nikto is a web server scanner, apparently for over 3200 dangerous files/vulnerabilities.  Additional features can be seen at the <a href="http://www.cirt.net/code/nikto.shtml">Nikto</a> website, yet you will certainly want to add this old gem to your webserver toolbelt as soon as possible.</p><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/10/15/open-source-video-editing_7656.html">
+            Open Source Video Editing
+          </a>
+        </h3>
+        <span class="post-meta">Published on Oct 15, 2006</span>
+        <p>In the next year I plan to make a little video, nothing fancy likely, but something that will require an editor.  However, I don't own a mac (which rules our Final Cut Pro + After Effect and iMovie, which Ian and I both have had too much fun with.  Inside joke.) I'm also a die-hard Linux fan, trying to hold out buying a mac for as long as possible.</p> <p>  SF to the rescure.  There are four editors listed, and in the next year I'll try them all.  Overalll, they look quite promising.</p>   <a href="http://sourceforge.net/projects/jahshakafx">Jahshaka</a> -- Beta. Good reviews from what I've seen.<br /> <a href="http://sourceforge.net/projects/kdenlive">Kdenlive</a> -- Alpha/Beta. Looks a lot less mature than Jahshaka, especially since I'm going to have to check it out via svn.  But, the screenshots look quite impressive.<br /> <a href="http://sourceforge.net/projects/lives">LiVES</a> -- Beta.<br /><br /></li></ul>
 
     
       <div class="pager">

@@ -31,14 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2007/12/11/small-business-server-2003_4192.html">
-            Small Business Server 2003
-          </a>
-        </h3>
-        <span class="post-meta">Published on Dec 11, 2007</span>
-        Status: <i class="fas fa-check-circle"></i><br /></li><li>
-        
-        <h3>
           <a class="post-link" href="/2007/10/21/zenity-gui-to-shell-script_5432.html">
             Zenity GUI to a Shell Script
           </a>
@@ -74,7 +66,33 @@
           </a>
         </h3>
         <span class="post-meta">Published on Jun 29, 2007</span>
-        <p>Two weeks ago I had the privilege of meeting up with some of the <a href="http://www.openmoko.org">OpenMoko</a> guys.  You've seen me write a little bit about this project, but meeting them and actually getting to play with a device was quite enlightening.</p><p>Most foreigners in Taipei take taxis, but not I.  My girlfriend gave me a rough estimate how to go to FIC headquarters, yet it was -- rough.  I jumped on the right bus, going the right direction, yet didn't really know where to get off.  In my broken Chinese I started talking to a group of high school kids, who somewhat pointed me in the right direction.  At one point we were coming up to a light and a lady just said: "get off, go down that road."  I grabbed my bag and jumped off the bus.  The street signs started to resemble the characters I had written down, but I didn't know which direction to go in.  I asked a travel agency, and they pointed me in the right direction -- and then it started to rain.  I luckily found FIC without getting too wet, and quickly met Sean, the project leader for OpenMoko.</p><p>Sean, myself, and several other OpenMoko developers went out to lunch and talked shop.  Mickey pulled out a Neo, the hardware platform OpenMoko is going to be based off of.  I'll admit, when I saw photos I wasn't really impressed -- but in person, it is pretty sexy.  Not too big, but big enough to be functional.  In one of my previous posts I mentioned learning C++ back in university, and having basically not touched it since.  In a way, I haven't had to, and I've recently found Python, which is just <i>fun</i>.  However, I'm so excited about the OpenMoko, I've picked up the K & R bible to read while we are traveling.  Not the ideal way to learn a language, but the concepts are somewhat a refresher.  I can't wait to play with SIP/IAX on this thing, it will then be my dream phone.</p><p>Well, I have one more post to make to get some thoughts off my chest.  If you want a postcard, send me an email.</p></li></ul>
+        <p>Two weeks ago I had the privilege of meeting up with some of the <a href="http://www.openmoko.org">OpenMoko</a> guys.  You've seen me write a little bit about this project, but meeting them and actually getting to play with a device was quite enlightening.</p><p>Most foreigners in Taipei take taxis, but not I.  My girlfriend gave me a rough estimate how to go to FIC headquarters, yet it was -- rough.  I jumped on the right bus, going the right direction, yet didn't really know where to get off.  In my broken Chinese I started talking to a group of high school kids, who somewhat pointed me in the right direction.  At one point we were coming up to a light and a lady just said: "get off, go down that road."  I grabbed my bag and jumped off the bus.  The street signs started to resemble the characters I had written down, but I didn't know which direction to go in.  I asked a travel agency, and they pointed me in the right direction -- and then it started to rain.  I luckily found FIC without getting too wet, and quickly met Sean, the project leader for OpenMoko.</p><p>Sean, myself, and several other OpenMoko developers went out to lunch and talked shop.  Mickey pulled out a Neo, the hardware platform OpenMoko is going to be based off of.  I'll admit, when I saw photos I wasn't really impressed -- but in person, it is pretty sexy.  Not too big, but big enough to be functional.  In one of my previous posts I mentioned learning C++ back in university, and having basically not touched it since.  In a way, I haven't had to, and I've recently found Python, which is just <i>fun</i>.  However, I'm so excited about the OpenMoko, I've picked up the K & R bible to read while we are traveling.  Not the ideal way to learn a language, but the concepts are somewhat a refresher.  I can't wait to play with SIP/IAX on this thing, it will then be my dream phone.</p><p>Well, I have one more post to make to get some thoughts off my chest.  If you want a postcard, send me an email.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/06/29/my-portable-travel-stick_1543.html">
+            My Portable Travel Stick
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jun 29, 2007</span>
+        This will be my last post from Taiwan, and I'm placing it in my tech section.  Shortly I will be flying to Hong Kong, and then traveling into China.  I'm not bringing my laptop with me.  I'm always a little wary of using public computers, especially in many of the poorly run internet cafes.  Often the logged in user is the administrator, and we all know the computers are obviously crawling with worms and keyloggers.  What can I do?<br />
+<br />
+My partner kindly gave me a 128MB flash disk, which is perfect for what I want to do.  I've installed the following applications to run directly from it:<br />
+<ul><br />
+<li><b><a href="http://portableapps.com/apps/utilities/clamwin_portable">Portable Clamwin</a></b> - I plan to fire it up and do a memory scan before I start typing any passwords.</li>
+<br />
+<li><b><a href="http://portableapps.com/apps/internet/putty_portable">Portable Putty</a></b> - This is useful for two reasons.  Firstly, in case my server (or any server with SSH) needs help, I'm on it.  Secondly, and more importantly, for security.  Putty can easily be used as a SOCKS5 proxy over SSH, so I can tunnel Firefox and IM securely.  Password sniffers, be gone!  A side benefit is the ability to bypass the "Great Firewall", if needed (e.g. the block my Google account).</li>
+<br />
+<li><b><a href="http://portableapps.com/apps/internet/miranda_portable">Portable Miranda</a></b> - In case I'm feeling home sick, or have some crazy desire to talk on IRC.  Don't count on it.</li>
+<br />
+<li><b>Firefox</b> - I tried the Portable Apps package, yet it didn't work.</li>
+</ul>
+<br />
+I noticed in the "known issues" that it doesn't work if loaded on a drive with a non-asci path, which this machine (and those in China) usually have.  The "resolution" is to run it in Win98 compat mode, but this didn't work for me.  To get around this, I downloaded the normal Firefox, installed it, copied the contents of "Mozilla Firefox" and dumped it in /Firefox.  Then I created a profile directory called /FFProfile, and created a bat file called "firefox.bat":<br />
+<pre class="brush: plain; light: true; ">start \Firefox\firefox.exe -profile \FFProfile</pre>
+<br />
+<br />
+Double click the bat file, and you have FF running on your usb drive.<br />
+I'm in a search for a better keylogger detector, as I don't know how complete ClamAV will be.  If you know of one, let me know.  Until then, I'm going to pretend I have the perfect traveling USB companion.</li></ul>
 
     
       <div class="pager">

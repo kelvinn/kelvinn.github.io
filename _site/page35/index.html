@@ -31,14 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2006/10/15/open-source-video-editing_7656.html">
-            Open Source Video Editing
-          </a>
-        </h3>
-        <span class="post-meta">Published on Oct 15, 2006</span>
-        <p>In the next year I plan to make a little video, nothing fancy likely, but something that will require an editor.  However, I don't own a mac (which rules our Final Cut Pro + After Effect and iMovie, which Ian and I both have had too much fun with.  Inside joke.) I'm also a die-hard Linux fan, trying to hold out buying a mac for as long as possible.</p> <p>  SF to the rescure.  There are four editors listed, and in the next year I'll try them all.  Overalll, they look quite promising.</p>   <a href="http://sourceforge.net/projects/jahshakafx">Jahshaka</a> -- Beta. Good reviews from what I've seen.<br /> <a href="http://sourceforge.net/projects/kdenlive">Kdenlive</a> -- Alpha/Beta. Looks a lot less mature than Jahshaka, especially since I'm going to have to check it out via svn.  But, the screenshots look quite impressive.<br /> <a href="http://sourceforge.net/projects/lives">LiVES</a> -- Beta.<br /><br /></li><li>
-        
-        <h3>
           <a class="post-link" href="/2006/10/14/lighttpdrewriteopensefjoomla_4861.html">
             Lighttpd+Rewrite+OpenSEF+Joomla
           </a>
@@ -89,7 +81,15 @@ Clear your browser cache, and check it out.  If it doesn't work, you can try to 
           </a>
         </h3>
         <span class="post-meta">Published on Sep 30, 2006</span>
-        This little process, a total of two lines, took way to long to figure out.  <p>First, we convert the VMware avi (VMnc format) to the Microsoft avi format.</p>  <br /><br /><pre class="brush: plain; light: true; "> mencoder -of avi -ovc lavc movie.avi -o movie2.avi </pre>  <br /><br /><p>Next, we convert the Microsoft avi format to FLV format.</p>  <br /><br /><pre class="brush: plain; light: true; "> ffmpeg -i movie2.avi -r 12  -b 100 movie.flv </pre><br /><br /> <p>You can play around with the -r switch (rate per second) and the -b switch (bitrate).  But, if those get larger, so does your FLV file.</p><br /></li></ul>
+        This little process, a total of two lines, took way to long to figure out.  <p>First, we convert the VMware avi (VMnc format) to the Microsoft avi format.</p>  <br /><br /><pre class="brush: plain; light: true; "> mencoder -of avi -ovc lavc movie.avi -o movie2.avi </pre>  <br /><br /><p>Next, we convert the Microsoft avi format to FLV format.</p>  <br /><br /><pre class="brush: plain; light: true; "> ffmpeg -i movie2.avi -r 12  -b 100 movie.flv </pre><br /><br /> <p>You can play around with the -r switch (rate per second) and the -b switch (bitrate).  But, if those get larger, so does your FLV file.</p><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/09/08/another-vpn-node_6602.html">
+            Another VPN Node
+          </a>
+        </h3>
+        <span class="post-meta">Published on Sep 8, 2006</span>
+        Status: <i class="fas fa-check-circle"></i><br /></li></ul>
 
     
       <div class="pager">

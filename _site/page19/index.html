@@ -31,14 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2008/11/02/pygtk-py2exe-for-windows_8282.html">
-            PyGTK + py2exe for Windows
-          </a>
-        </h3>
-        <span class="post-meta">Published on Nov 2, 2008</span>
-        <p>I'm writing down these quick notes so I can remember the steps for getting py2exe to work with GTK.</p><ul><li>Download the GTK+ runtime</li></li><li>
-        
-        <h3>
           <a class="post-link" href="/2008/11/02/configure-timevault-to-remote-server_2418.html">
             Configure Timevault to Remote Server
           </a>
@@ -169,7 +161,37 @@ sudo su www-data
           </a>
         </h3>
         <span class="post-meta">Published on Nov 1, 2008</span>
-        <p>I've lived in several different parts of the world, and they all do internet differently.  Back in the US I had 8Mb/sec cable (leaving just before Fios was really an option, darn!) In New Zealand, for instance, I was paying for "high speed ADSL" rated at 1.5Mb/256k.  Vrooom.  Up in Taiwan I was paying 1/2 what I paid in New Zealand, but for 12Mb/1Mb.  Down to Sydney and we have a rated 24Mb/1Mb.</p><p>But there's a catch with the plans in New Zealand and Australia: they are 'capped'.  This means you only get XGB/month -- and it isn't like Comcast capping at 250GB/month, I'm talking about 1GB/5GB/10GB and so forth.  And there's more -- just like mobile phones, you get on-peak and off-peak times.</p><p>This all does make a bit of sense to me -- there are only X amount of tubes going in and out of NZ and AU, and I would imagine they get pretty clogged.</p><p>Either way, last month was pretty painful.  Two weeks into our plan I checked out usage: 14GB of 18GB!  We had only 4GB left to use for 15 days.  This sounds like a lot, but for the two of us, and my 10 virtual servers, it isn't.  The first thing I did was looking at a way to do WSUS with Linux -- I ended up using apt-cacher (I'm using only Ubuntu at home).  BitTorrent, out; downloading any new ISOs, out; streaming music, totally out.  For a while I has to VPN to home, and then VPN to a client, as our router at work didn't seem to like letting us access one of our clients.  I even disconnected from the VPN if I wouldn't be doing work for 20m!</p><p>We eventually made it, and used only 2GB in two weeks.  What an accomplishment!</p></li></ul>
+        <p>I've lived in several different parts of the world, and they all do internet differently.  Back in the US I had 8Mb/sec cable (leaving just before Fios was really an option, darn!) In New Zealand, for instance, I was paying for "high speed ADSL" rated at 1.5Mb/256k.  Vrooom.  Up in Taiwan I was paying 1/2 what I paid in New Zealand, but for 12Mb/1Mb.  Down to Sydney and we have a rated 24Mb/1Mb.</p><p>But there's a catch with the plans in New Zealand and Australia: they are 'capped'.  This means you only get XGB/month -- and it isn't like Comcast capping at 250GB/month, I'm talking about 1GB/5GB/10GB and so forth.  And there's more -- just like mobile phones, you get on-peak and off-peak times.</p><p>This all does make a bit of sense to me -- there are only X amount of tubes going in and out of NZ and AU, and I would imagine they get pretty clogged.</p><p>Either way, last month was pretty painful.  Two weeks into our plan I checked out usage: 14GB of 18GB!  We had only 4GB left to use for 15 days.  This sounds like a lot, but for the two of us, and my 10 virtual servers, it isn't.  The first thing I did was looking at a way to do WSUS with Linux -- I ended up using apt-cacher (I'm using only Ubuntu at home).  BitTorrent, out; downloading any new ISOs, out; streaming music, totally out.  For a while I has to VPN to home, and then VPN to a client, as our router at work didn't seem to like letting us access one of our clients.  I even disconnected from the VPN if I wouldn't be doing work for 20m!</p><p>We eventually made it, and used only 2GB in two weeks.  What an accomplishment!</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2008/08/11/using-raw-disks-with-vmware-server-2_3562.html">
+            Using Raw Disks with VMware Server 2
+          </a>
+        </h3>
+        <span class="post-meta">Published on Aug 11, 2008</span>
+        <p>For various reasons I had the need to open a raw disk inside VMware Server 2.  The reports from the field say that this just isn't supported. Although I don't need to actually run a raw disk, I needed to get some data off it -- 400GB worth.  It turns out 'not supported' really means 'not in the UI.'  I don't know the reason why it isn't in the UI, maybe marketing wants people to use ESX, or maybe the UI guys fell behind with their workload.</p><p>Alas, it is possible.  And here's how.</p><br />
+<br />
+1) Take out your 'raw disk' and put it into another machine.<br />
+<br />
+2) Fire up Server 1.0.x or Workstation and open a virtual machine (or create a new one).  Edit the preferences and add a new hard disk.  Select 'use a physical disk', and select the disk you put in above.  Select use entire disk.  You may want to change the SCSI LUN to SCSI1:0 (depending how many disks are in your 'proper' server).<br />
+<br />
+3) Save it as something like 500GB.vmdk<br />
+<br />
+5) Copy out the relevant bit from the vmx file, e.g.<br />
+<br />
+<pre class="brush: plain; light: true; "># Test VM.vmx
+scsi1.present = "TRUE"
+scsi1:0.present = "TRUE"
+scsi1:0.fileName = "500GB.vmdk"
+scsi1:0.deviceType = "rawDisk"
+</pre><br />
+<br />
+<p>And of course, the entire 500GB.vmdk file</p><pre class="brush: plain; light: true; "># 500GB.vmdk
+# Disk DescriptorFile
+version=1
+CID=7e245252
+parentCID=ffffffff
+createType="fullDevice"</li></ul>
 
     
       <div class="pager">

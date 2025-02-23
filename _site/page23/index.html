@@ -31,30 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2008/02/13/database-woopsie_863.html">
-            Database Woopsie
-          </a>
-        </h3>
-        <span class="post-meta">Published on Feb 13, 2008</span>
-        <p>I returned to my computer today to notice I had the following error:</p><pre class="brush: bash; light: true; ">(145, "Table './databasename/comments_freecomment' is marked as crashed and should be repaired")
-</pre><br />
-<br />
-<p>Well, crap.  The solution is quite easy, however:</p><pre class="brush: bash; light: true; ">mysqlcheck -uUsername -pPassword databasename comments_freecomment
-</pre><br />
-<br />
-<p>Now you know what you already know, you can fix it:</p><pre class="brush: bash; light: true; ">mysqlcheck -r -uUsername -pPassword databasename comments_freecomment
-</pre><br />
-<br />
-<p>If that doesn't work, you can try a slightly different method.  First, go to the location where your databases are stored on the disk (most likely something like /var/lib/mysql/databasename).  Next, stop the database -- and try to free up as much memory as possible.  Then run:</p><pre class="brush: shell; light: true; ">myisamchk -r comments_freecomment
-</pre><br />
-<br />
-<p>If that doesn't work, try to force it:</p><pre class="brush: bash; light: true; ">myisamchk -r comments_freecomment -f
-</pre><br />
-<br />
-<p>Hope that helps!</p><br />
-</li><li>
-        
-        <h3>
           <a class="post-link" href="/2008/02/03/gps-on-skypephone_9589.html">
             GPS on the SkypePhone
           </a>
@@ -88,7 +64,15 @@ make CC=distcc CXX=distcc</pre><br />
           </a>
         </h3>
         <span class="post-meta">Published on Dec 30, 2007</span>
-        Status: <i class="fas fa-skull-crossbones"></i><br /><br /></li></ul>
+        Status: <i class="fas fa-skull-crossbones"></i><br /><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/12/11/small-business-server-2003_4192.html">
+            Small Business Server 2003
+          </a>
+        </h3>
+        <span class="post-meta">Published on Dec 11, 2007</span>
+        Status: <i class="fas fa-check-circle"></i><br /></li></ul>
 
     
       <div class="pager">

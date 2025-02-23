@@ -31,14 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2010/09/21/enable-icmp-through-ufw_461.html">
-            Enable ICMP through UFW
-          </a>
-        </h3>
-        <span class="post-meta">Published on Sep 21, 2010</span>
-        <p>I like using Ubuntu's UFW command, but today I needed to allow outgoing ICMP.  I received results as so:</p><pre><br />$ ping 4.2.2.2<br />PING 4.2.2.2 (4.2.2.2) 56(84) bytes of data.<br />ping: sendmsg: Operation not permitted<br />ping: sendmsg: Operation not permitted<br />ping: sendmsg: Operation not permitted<br /></pre><br /><br /><br /><br /><br /><p>To allow outbound icmp I edited 'before.rules' and added the following lines.</p><pre>$ sudo vi /etc/ufw/before.rules</pre><br /><br /><br /><pre><br /># allow outbound icmp<br />-A ufw-before-output -p icmp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT<br />-A ufw-before-output -p icmp -m state --state ESTABLISHED,RELATED -j ACCEPT<br /></pre></li><li>
-        
-        <h3>
           <a class="post-link" href="/2010/07/11/using-html-in-django-form-label_2240.html">
             Using HTML in a Django form label
           </a>
@@ -153,7 +145,15 @@ google_appengine  myproject
         <p>One thing I love about open source stuff is that the developers usually take great care to allow awesome debug messages.  There's a catch-22, however: how much logging to enable? Today I was creating a Postfix/Dovecot/Postgresql install and I kept getting an error message in mail.log, but it wasn't very helpful.</p><p>Luckily you can turn up the verbosity in Postfix for error messages.  You'll need to find out what component is in error, e.g. "postfix/virtual[4467]: warning:", and then open master.cf.  Add a -v to the end of the daemon that's faulting, and you'll get more logging than you know what to do with.</p><pre class="brush: bash; light: true; ">virtual   unix  -       n       n       -       -       virtual -v
 </pre><br />
 <br />
-<p>I hope this helps somebody.  You can read more debugging tips on the Postfix <a href="http://www.postfix.org/DEBUG_README.html">DEBUG readme</a>.</p></li></ul>
+<p>I hope this helps somebody.  You can read more debugging tips on the Postfix <a href="http://www.postfix.org/DEBUG_README.html">DEBUG readme</a>.</p></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2010/05/16/rip-old-sites_7527.html">
+            RIP Old Sites
+          </a>
+        </h3>
+        <span class="post-meta">Published on May 16, 2010</span>
+        <p>Over the years I've created several websites, some with the hope of becoming big and popular.  Naturally, I'm still waiting to create a site that becomes big and popular.  In the meantime, it seems appropriate to retire some of the older sites and ideas.  The truth is, I'm moving all my little sites from MySQL on a mediocre VPS to Postgresql on EC2.</p><p>Because I put some sweat and blood into these sites, I thought it would be only appropriate to record how the sites looked for future sentimental value.  I downloaded a small plug-in for Firefox to take full-length pictures, and I thus post them here.</p><p>Back in Taiwan I created a site to demo blogs.  The idea certainly wasn't revolutionary, but I thought that somebody would find it useful.  Nope.</p><p>The second idea was to send a bunch of little ducks around the world and track their progress.  My friend Jamie took one to Europe, but besides that, I don't think most people really understood that they were supposed to hand the duck off to somebody else.  The main reason I created the site was because my partner was out of town.  I'll re-brand and launch it again if I can find a little twitter logo to send around, because hopefully people on twitter will understand to pass the duck onwards.</p><p>So photos for nostalgic sake.</p><div class="clear"></div><br /><br /><a href="http://picasaweb.google.com/lh/photo/LYDLBv2SkTJV-5barb0UzA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXp_m4SvvN8PbAymlRJs2ZvT7KrZzCbqf4WAVWs-lt0Y41x9VUbhOjxEtvezbZAqKtmna3GW5g-uVXpkBa95u1uMV5yShzQZ6x0qalpOM8zmMqQ9WWl5g6wSAhqkCIVAdThIKDH9ozpYLM/s288/blogmozaic_front.jpg" /></a><br /><br /><a href="http://picasaweb.google.com/lh/photo/ueEvQfTqKLwCSvK9CsQAqA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjUt2b5shCscp12lVUUBXnlC3GcWfaU83m2Ew4V7RRSq530tgGcUoiCT0sdA8C-3596klcwP2tedeshlYmdtizgPiVcv5HxNTmpYilEJ3mMxS3Vtol9mDBF23TlSN_YhbP4MQBXP9r06Um/s400/blogmozaic_list.jpg" /></a><br /><br /><br /><br /><br /><br /><br /><a href="http://picasaweb.google.com/lh/photo/PcPXbQv6iUwLlDcw8w6CxA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYGMzQAzewL7jfYamv0CrDPIk97PyzteH0asEOqtODMpFiU_AiaU0TIgnc3uO1vlFFkv3OOGNH0GdiYqy-5kEgIr2rQVN-b5ka6WSyXMoIIBh0_jsj9zLDGq11cqs7RTMFHbL4CE7EfaZ_/s400/ducktracker_front.jpg" /></a><br /><br /><a href="http://picasaweb.google.com/lh/photo/n4aEWCTxpy02ZN529pLKnw?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3EzUKR873JiXy3kXp4Ic4u4T4vSzc3KJz9XXhq4V5HN5mVA1cx8uvQCbgRO7JejPEDB18731_c_BltqOkWoD7-si6q-ELuT3xEjoP20nD7R-RCcCM7nDKJsKKpL6-5Dre3ESBuznzjO5F/s400/ducktracker_details.jpg" /></a><br /><div class="clear"></div><br /><br /><p>It is always a bit rough retiring old sites, but looking back I learned a little, had some hope, and that's all I can ask for.</p></li></ul>
 
     
       <div class="pager">

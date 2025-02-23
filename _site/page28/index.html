@@ -31,23 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2007/05/29/colddirt-information_1890.html">
-            Colddirt Information
-          </a>
-        </h3>
-        <span class="post-meta">Published on May 29, 2007</span>
-        <br />
-<i>Note</i>: Colddirt's source code is run from Django SVN, check out on May 10th-ish.  If you are using a newer branch, some things have changed.  i.e. clean_data has been renamed cleaned_data.  Remember to check the <a href="http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges">BackwardsIncompatible</a> page in the wiki.<br />
-<br />
-<b>Part 1</b>: <a href="http://www.kelvinism.com/2007/06/simple-ajax-with-django_1754.html">Simple AJAX with Django</a><br />
-<b>Part 2</b>: <a href="http://www.kelvinism.com/2007/06/django-newforms-usage-in-colddirt_1103.html">Django Newforms Usage</a><br />
-<b>Part 3</b>: <a href="http://www.kelvinism.com/2007/06/adding-search-to-django_6300.html">Search with Django</a><br />
-<b>Part 4</b>: <a href="http://www.kelvinism.com/2007/06/django-syndication-with-colddirt_5107.html">Django's Syndication Framework (simple)</a><br />
-<b>Part 5</b>: <a href="http://www.kelvinism.com/2007/06/django-syndication-with-colddirt-ii_3665.html">Django's Syndication Framework (little more complex)</a><br />
-<br />
-Feel free to see the <a href="https://github.com/kelvinn/colddirt">source code</a> from Github.</li><li>
-        
-        <h3>
           <a class="post-link" href="/2007/05/26/ubuntu-upgrade_2905.html">
             Ubuntu Upgrade
           </a>
@@ -90,7 +73,56 @@ Repeat if necessary. All done, just do an apt-get update and no more warning!<br
           </a>
         </h3>
         <span class="post-meta">Published on May 24, 2007</span>
-        <p>I have a love-hate relationship with Linux.  I love it because if there is a problem, I can actually tinker and find the problem and fix it.  But I hate it because I like to tinker.</p><p>Recently I've been doing a fair amount of Django programming -- enjoying every minute of it.  After completing several of my projects I decided to do some benchmarks, and the results are in!  Generally I can server cached/semi-cached pages at about 200req/sec.  200req!  Considering this is 5,000,000 or so requests a day, and a number I am never going to reach, I still began to wonder: why isn't it higher?  I mean, serving a static html page is at like 1000+ req/sec, so why would a cached page be significantly different?  I started exploring and noticed that Apache would spike the CPU.  Ok, time to be thorough, and as I said, I like to tinker.</p><p>I tried lighttpd as a fastcgi to python -- not a significant different, basically the same.  Next I tried several versions of python -- one from 2.4 and one from 2.5, one as a package and one from source -- same results.  High cpu usage.  Thinking it could be something related to my VPS (or some odd limit within Debian) I decided, ok, I'll reinstall.</p><p>I reinstalled and got things working pretty quickly.  The only slight hiccup was postfix/dovecot, cause postfix insists on being in a jail (and my configs are all setup for that).  Also, Chinese support in Apache isn't working.  Regardless, I re-ran the benchmarks and the results were the same -- so, it isn't related to my previous install after all.  Doh.</p><p>I'll evaluate Gentoo as a server setup for a little while, but I'm thinking I'll do a quick reinstall of Debian.</p><br /></li></ul>
+        <p>I have a love-hate relationship with Linux.  I love it because if there is a problem, I can actually tinker and find the problem and fix it.  But I hate it because I like to tinker.</p><p>Recently I've been doing a fair amount of Django programming -- enjoying every minute of it.  After completing several of my projects I decided to do some benchmarks, and the results are in!  Generally I can server cached/semi-cached pages at about 200req/sec.  200req!  Considering this is 5,000,000 or so requests a day, and a number I am never going to reach, I still began to wonder: why isn't it higher?  I mean, serving a static html page is at like 1000+ req/sec, so why would a cached page be significantly different?  I started exploring and noticed that Apache would spike the CPU.  Ok, time to be thorough, and as I said, I like to tinker.</p><p>I tried lighttpd as a fastcgi to python -- not a significant different, basically the same.  Next I tried several versions of python -- one from 2.4 and one from 2.5, one as a package and one from source -- same results.  High cpu usage.  Thinking it could be something related to my VPS (or some odd limit within Debian) I decided, ok, I'll reinstall.</p><p>I reinstalled and got things working pretty quickly.  The only slight hiccup was postfix/dovecot, cause postfix insists on being in a jail (and my configs are all setup for that).  Also, Chinese support in Apache isn't working.  Regardless, I re-ran the benchmarks and the results were the same -- so, it isn't related to my previous install after all.  Doh.</p><p>I'll evaluate Gentoo as a server setup for a little while, but I'm thinking I'll do a quick reinstall of Debian.</p><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2007/05/24/postfixdovecot-mysql_1687.html">
+            Postfix/Dovecot + MySQL
+          </a>
+        </h3>
+        <span class="post-meta">Published on May 24, 2007</span>
+        As you can see by <a href="http://www.blogger.com/tech-blog/gentoo-test/">another post</a>, I decided to reinstall the server.  This isn't really a problem, I have pretty good backups.  I've installed apache and friends a bagillion times.  However, Postfix(chroot)+Dovecot authenticating from MySQl, that doesn't install quite so smoothly.<br />
+Just for my future reference, and maybe helpful for somebody, someday.  Clearly not a tutorial. The postfix chroot = /var/spool/postfix<br />
+<h4>
+cannot connect to saslauthd server: No such file or directory</h4>
+<br />
+<br />
+First, get the saslauthd files into the postfix chroot. Edit /etc/conf.d/saslauthd (or /etc/default/saslauthd), and add this:<br />
+<pre class="brush: plain; light: true; ">
+SASLAUTHD_OPTS="-m /var/spool/postfix/var/run/saslauthd"</pre>
+<br />
+<br />
+Second, add it to the init script.<br />
+<pre class="brush: plain; light: true; ">
+stop() {
+        ebegin "Stopping saslauthd"
+        start-stop-daemon --stop --quiet /
+--pidfile /var/spool/postfix/var/run/saslauthd/saslauthd.pid
+        eend $?
+}</pre>
+<br />
+<br />
+Third, maybe, change /etc/sasl2/smtpd.conf (or /etc/postfix/sasl/smtpd.conf) and add this:<br />
+<pre class="brush: plain; light: true; ">
+saslauthd_path: /var/run/saslauthd/mux</pre>
+<br />
+<br />
+Ok, that error should go away now.<br />
+<h4>
+Recipient address rejected: Domain not found;</h4>
+<br />
+<h4>
+(Host or domain name not found. Name service error for name=<i>domain.com</i></h4>
+<br />
+<br />
+These are actually the same type of error.  Copy /etc/resolv.conf into the chroot.<br />
+<h4>
+fatal: unknown service: smtp/tcp</h4>
+<br />
+<br />
+Copy /etc/services into the chroot.<br />
+I searched google for these answers, to a certain degree at least, but couldn't really find much.  Then I remembered "crap, this is a chroot, it needs things" -- and fixed stuff.  If you came here from google, and these super quick notes were helpful, feel free to leave a comment, or contact me directly if you have any questions.<br />
+<br /></li></ul>
 
     
       <div class="pager">

@@ -31,59 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2013/07/20/mapping-mesh-blocks-with-tilemill.html">
-            Mapping Mesh Blocks with TileMill
-          </a>
-        </h3>
-        <span class="post-meta">Published on Jul 20, 2013</span>
-        This quick tutorial will detail how to prepair the ABS Mesh Blocks to be used with MapBox's TileMill. Beyond scope is how to install postgresql, postgis and TileMill. There is a lot of documentation how to do these tasks.<br />
-<br />
-First, we create a database to import the <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument">shapefile</a> and <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument">population data</a> into:<br />
-<br />
-<br />
-Using 'psql' or 'SQL Query', create a new database:<br />
-<br />
-<pre>CREATE DATABASE transport WITH TEMPLATE postgis20 OWNER postgres;
-# Query returned successfully with no result in 5527 ms.</pre>
-<br />
-It is necessary to first import the Mesh Block spatial file using something like PostGIS Loader.<br />
-<br />
-<img height="603" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8zpIUCky4eqQcl82ds0um_KZvlqepw11Svcc5SnyMT24IBX8O9ZTIurIyzM0nNivejDs3uiPyoejPNuxpuVcMgf45IY7xYb6FmtcCUG9TbTxCDiq2feCnileNBwms5M8PrEDjhP7DRtvG/s640/PostGISLoader2.png" width="640" /><br />
-<br />
-We then create a table to import the Mesh Block population data:<br />
-<br />
-<pre>CREATE TABLE tmp_x (id character varying(11), Dwellings numeric, Persons_Usually_Resident numeric);</pre>
-<br />
-And then load the data:<br />
-<br />
-<pre>COPY tmp_x FROM '/home/kelvinn/censuscounts_mb_2011_aust_good.csv' DELIMITERS ',' CSV HEADER;</pre>
-<br />
-It is possible to import the GIS information and view it in QGIS:<br />
-<br />
-<img height="448" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir_OlfVmY_FZjQGoh_UdIr2wVe1xsNQLDzYH6M5gX5V5a-lknehk_lDEuhaZUC9tqwcoKHoKCv9KLLSSmlcqU5sX89jkJzne-FHgQYQUML9KwGoCoAQEa8DEOHuI3KA4qDq7n4kWtUbvC3/s640/qgis.png" width="640" /><br />
-<br />
-Now that we know the shapefile was imported correctly we can merge the population with spatial data. The following query is used to merge the datasets:<br />
-<br />
-<pre>UPDATE mb_2011_nsw
-SET    dwellings = tmp_x.dwellings FROM tmp_x
-WHERE  mb_2011_nsw.mb_code11 = tmp_x.id;</pre>
-<br />
-<pre>UPDATE mb_2011_nsw
-SET    pop = tmp_x.persons_usually_resident FROM tmp_x
-WHERE  mb_2011_nsw.mb_code11 = tmp_x.id;</pre>
-<br />
-We can do a rough validation by using this query:<br />
-<br />
-<pre>SELECT sum(pop) FROM mb_2011_nsw;</pre>
-<br />
-And we get 6916971, which is about right (ABS has the 2011 official NSW population of 7.21 million).<br />
-<br />
-Finally, using TileMill, we can connect to the PostgGIS database and apply some themes to the map.<br />
-<br />
-<pre>host=127.0.0.1 user=MyUsername password=MyPassword dbname=transport
-(SELECT * from mb_2011_nsw JOIN westmead_health on mb_2011_nsw.mb_code11 = westmead_health.label) as mb</li><li>
-        
-        <h3>
           <a class="post-link" href="/2013/07/20/mapping-urban-density-in-sydney.html">
             Mapping Urban Density in Sydney
           </a>
@@ -310,7 +257,42 @@ My slides are below. I used very little text in the slides, but you can probably
 <br />
 Enjoy!<br />
 <br />
-<iframe frameborder="no" height="300" scrolling="no" src="https://www.google.com/fusiontables/embedviz?viz=MAP&amp;q=select+col2+from+1RFDybcyTiZ_M_VoDJdx9sjuqeMKU1cx-RnRxMg&amp;h=false&amp;lat=27.8261456587275&amp;lng=84.92039544339092&amp;z=10&amp;t=1&amp;l=col2&amp;y=2&amp;tmplt=2" width="650"></iframe></li></ul>
+<iframe frameborder="no" height="300" scrolling="no" src="https://www.google.com/fusiontables/embedviz?viz=MAP&amp;q=select+col2+from+1RFDybcyTiZ_M_VoDJdx9sjuqeMKU1cx-RnRxMg&amp;h=false&amp;lat=27.8261456587275&amp;lng=84.92039544339092&amp;z=10&amp;t=1&amp;l=col2&amp;y=2&amp;tmplt=2" width="650"></iframe></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2013/01/10/migrate-custom-blog-to-blogger.html">
+            Migrate Custom Blog to Blogger
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jan 10, 2013</span>
+        For the last ten years I have run this website from various systems. First it was on Wordpress, then Mambo, then Joomla, and since early 2006 it has been running on custom code written using Django. I used this site as a learning tool for Django, re-wrote it after gaining more knowledge of Django, and then re-wrote it again when Google released App Engine. However, I recently realised that for the last few years I have spent more time writing little features than actually writing. I have entire trips that I never wrote because I was too busy writing code.<br />
+<br />
+This week it all changed. I did the unthinkable. I moved this website to Blogger.<br />
+<br />
+After evaluating some of the features of blogger, i.e. custom domains, location storing, ability to filter on labels, custom HTML/CSS, great integration with Picasa, and their mobile app, I realised I could virtually replace everything I had previously custom made.<br />
+<br />
+This post gives a technical description how to migrate a site running Django, but readily applies to any blog running on custom code. I initially spent a fair bit of time trying to figure out how to convert my existing RSS feed into something Blogger could accept, but every solution required troubleshooting. I soon remembered why I love Django so much, and that it would be trivial to generate the correct XML for import.<br />
+<br />
+1) <b>Create Blogger Template</b><br />
+I wanted to keep my design, so I hacked it to support Blogger. Take one of the existing templates, edit the HTML, and adjust it for your design. If you've worked with templates before this shouldn't be too difficult.<br />
+<br />
+2) <b>Generate Sample XML</b><br />
+The first step was to generate a sample XML file from Blogger to see what would be needed for import. Create a sample post with a unique name and a few labels, and location. In Blogger, go to Settings-&gt;Other and click Export Blog. The first 90% of the file will be for your template and other settings, but eventually you will find a section with &lt;entry&gt; elements in it. Copy this sample element out - this will become your template.<br />
+<br />
+3) <b>Format Template</b><br />
+Using the sample section from the blog export, format it so the view you will create populates it correctly. A note of caution: the t<span style="font-family: inherit;">emplate nee</span>ds ti<span style="font-family: inherit;"><span style="font-family: inherit;">me in&nbsp;<span style="background-color: white; line-height: 16.78333282470703px;">ISO 8601</span>&nbsp;for</span>m</span>at, you need the &lt;id&gt; element, and the location element needs coordinates if there is a name. It won't import later if there is a name with no coordinates. My template looks like this:<br />
+<h4>
+feeds/rss.html</h4>
+<pre class="brush: html; light: true; ">{%  load blog_extras %}
+{% for entry in entries %}
+    <entry>
+        <id>tag:blogger.com,1999:blog-1700991654357243752.post-{% generate_id %}</id>
+        <published>{{ entry.publish_date|date:"Y-m-d" }}T10:30:00.000123</published>
+        <updated>{{ entry.publish_date|date:"Y-m-d" }}T10:30:00.000123</updated>
+        <category scheme="http://schemas.google.com/g/2005#kind" term="http://schemas.google.com/blogger/2008/kind#post">
+        {% for tag in entry.tags %}
+            <category scheme="http://www.blogger.com/atom/ns#" term="{{ tag.name }}">
+        {% endfor %}</li></ul>
 
     
       <div class="pager">

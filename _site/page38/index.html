@@ -31,14 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2006/04/05/cisco-ipsec-tutorial_5224.html">
-            Cisco IPSec Tutorial
-          </a>
-        </h3>
-        <span class="post-meta">Published on Apr 5, 2006</span>
-        <p>The following sites might be helpful to configure IPSec again, or on a more complex basis:</p> <p>  http://www.cisco.com/univercd/cc/td/doc/product/iaabu/pix/pix_60/ipsec/conipsec.htm</p> <p>  http://www.cisco.com/warp/public/707/overload_private.shtml</p><br /></li><li>
-        
-        <h3>
           <a class="post-link" href="/2006/02/09/firefox-bugmenot_9551.html">
             Firefox + BugMeNot
           </a>
@@ -68,7 +60,15 @@
           </a>
         </h3>
         <span class="post-meta">Published on Jan 25, 2006</span>
-        <p>A developer just showed me an interesting framework to produce python-backed sites VERY quickly.  This is mainly for you Ian, it natively supports AJAX as well.  Here's the link:</p>  <p>http://www.turbogears.org/</p>  <p>I watched the demo, pretty interesting.</p><br /></li></ul>
+        <p>A developer just showed me an interesting framework to produce python-backed sites VERY quickly.  This is mainly for you Ian, it natively supports AJAX as well.  Here's the link:</p>  <p>http://www.turbogears.org/</p>  <p>I watched the demo, pretty interesting.</p><br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/01/24/server-virtualization_5778.html">
+            Server Virtualization
+          </a>
+        </h3>
+        <span class="post-meta">Published on Jan 24, 2006</span>
+        <p>We don't want to have a billion servers each doing their own task -- so what can we use as a solution? Server virtualization (or semi-virtualization or para-virtualization). This involves cutting down a server into mini servers that each have full customization. Our VPS at hostmysite is like this. So why would you want to do this? A few reasons actually.</p> <p> -Localize exploits. Let's say DNS gets exploited -- the access gained would only be for DNS, and not for mail and web and everything else.</p> <p>  -Easy "upgrades," backups and redundancy. Let's say we start to use MySQL more and more, but the server can't handle it. To upgrade (ignoring replication for this example) we could just turn off the virtual server (in essense lock files), move it to other server, drop it into another server that is setup to do virtualization, and turn it it on. Nearly no downtime, and you know it will work.</p> <p>  Anyhow, worth looking at. Here are some of the most mature linux virtualization packages out there:</p> <p>  http://openvz.org/ -- This is the open source version of hostmysites VPS. The main difference is it isn't setup for doing mass hosting (like, 1000 VPSs on a huge mainframe).</p> <p>  http://www.openvps.org/</p> <p>  http://linux-vserver.org/ -- Very plain website, but there is news that the authors are pushing for this code to be included in the Linux kernal natively.</p> <p>  http://www.cl.cam.ac.uk/Research/SRG/netos/xen/ -- I've heard rumors also about this being one of the most advanced.</p> <p>  http://www.vmware.com/ -- The one and only. This is full virtualization so will contain the most overhead (some of the previous packages have almost no overhead, not even 1%). Oh yea, and this "costs" money.</p> <br /></li></ul>
 
     
       <div class="pager">

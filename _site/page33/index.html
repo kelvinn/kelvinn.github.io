@@ -31,24 +31,6 @@
   <ul class="post-list"><li>
         
         <h3>
-          <a class="post-link" href="/2007/01/22/s3-super-backups_8294.html">
-            S3&amp;#39;s Super Backups
-          </a>
-        </h3>
-        <span class="post-meta">Published on Jan 22, 2007</span>
-        My buddy <a href="http://www.ianfitzpatrick.com/">Ian</a>&nbsp; mentioned Amazon's S3 service, and the potential for using it for fun webapps.&nbsp; While utilizing it for webapps will have to wait a few months, I was able to use it as a cheap backup for my home server (pictures, documents, etc,.) -- and my server that houses my email and websites.&nbsp; The setup is pretty quick, and most of it can be detailed <a href="http://blog.eberly.org/2006/10/09/how-automate-your-backup-to-amazon-s3-using-s3sync/">here</a>.&nbsp; The ruby package is <a href="http://s3sync.net/">here </a>&nbsp; I'll toss in my recommendation to use the <a href="https://jets3t.dev.java.net/">jets3t Cockpit</a>  application for viewing the buckets, especially considering the Firefox extension didn't work as advertised.&nbsp; My only two comments will be this:<br />
-<br />
-1) Making sure SSL is working.&nbsp; The site mentioned above just has you hunt down some random bash file, that isn't even hosted anymore.&nbsp; On my Debian system I simply added this to my upload.sh:<br />
-<br />
-<pre class="brush: bash; light: true; ">
-export SSL_CERT_DIR=/etc/ssl/certs/</pre>
-<br />
-2) The second suggestion is another example of the s2sync layout.&nbsp; Let's say you created the bucket "kelvinism" -- the following would move the documents inside a test folder from /home/kelvin named test to a folder named test in the kelvinism bucket.&nbsp; Sweet.<br /> <br />
-<pre class="brush: plain; light: true; ">
- s3sync.rb -r --ssl --delete /home/kelvin/test kelvinism:/test&nbsp;&nbsp;</pre>
-</li><li>
-        
-        <h3>
           <a class="post-link" href="/2007/01/22/automated-mysql-backups_7112.html">
             Automated MySQL Backups
           </a>
@@ -172,7 +154,15 @@ The solution is quite simple:<br />
 <br />
 <pre class="brush: shell; light: true; ">
  mysqldump --compatible=mysql323 -u root -p database &gt; exportName.sql</pre>
-<br /></li></ul>
+<br /></li><li>
+        
+        <h3>
+          <a class="post-link" href="/2006/11/08/resize-xen-image_3704.html">
+            Resize a Xen Image
+          </a>
+        </h3>
+        <span class="post-meta">Published on Nov 8, 2006</span>
+        <p>So, you've got a few Xen images around, and they are starting to fill up.  How do you add a few more gigs to 'em?</p> <pre class="brush: plain; light: true; "> root@tpe:/# xm shutdown vm01<br /> root@tpe:/# cd /xenimages<br /> root@tpe:/xenimages# dd if=/dev/zero bs=1024 count=1000000 >> vm01.img<br /> root@tpe:/path/to/images# resize2fs -f vm01.img<br /> </pre>  That's it, you just added a gig to your image called 'vm01.img'.<br /></li></ul>
 
     
       <div class="pager">
