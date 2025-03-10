@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ci / Cd on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/ci-/-cd/</link>
+    <description>Recent content in Ci / Cd on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Nov 2014 23:37:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ci-/-cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Snap-CI Deploy to OpenShift</title>
+      <link>http://localhost:1313/2014/11/snap-ci-deploy-to-openshift.html</link>
+      <pubDate>Sat, 01 Nov 2014 23:37:00 +1100</pubDate>
+      <guid>http://localhost:1313/2014/11/snap-ci-deploy-to-openshift.html</guid>
+      <description>&lt;p&gt;There are some wonderful &lt;a href=&#34;http://www.thoughtworks.com/continuous-integration&#34;&gt;CI&lt;/a&gt; / &lt;a href=&#34;http://www.thoughtworks.com/continuous-delivery&#34;&gt;CD&lt;/a&gt; tools out there right now, and some of them have very usable free tiers. A few good examples include &lt;a href=&#34;https://www.shippable.com/&#34;&gt;Shippable&lt;/a&gt;, &lt;a href=&#34;http://wercker.com/&#34;&gt;Wercker&lt;/a&gt;, &lt;a href=&#34;http://www.cloudbees.com/products/dev&#34;&gt;CloudBees,&lt;/a&gt; and &lt;a href=&#34;https://www.snap-ci.com/&#34;&gt;Snap-CI&lt;/a&gt;. There are others, of course, but these all allow at least one private project to get started.&lt;/p&gt;
+&lt;p&gt;I have recently moved my projects to Snap, and my hack for the day needed to be deployed to OpenShift. Although Snap has built in integrations for some providers, no such integration currently exists for OpenShift (yet!). However, it takes less than 10 minutes to configure a Deploy step to OpenShift, and here&amp;rsquo;s how.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Bash | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/bash/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/bash/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/bash/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Reduce Bandwidth By Shrinking Images" href="http://localhost:1313/2010/01/reduce-bandwidth-by-shrinking-images_3510.html">Reduce Bandwidth By Shrinking Images </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2010-01-24 21:30:00.002 +1100 AEDT'>Published on January 24, 2010</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>My girlfriend&rsquo;s brother has a simple WordPress-based website that I set up for him a few year ago - and he likes to post a lot of images. For various reasons I have it hosted on my VPS in Australia, which only comes with 15GB of bandwidth, most likely because I got a crazy good deal on it.</p>
+<p>The problem is, that isn&rsquo;t much bandwidth. Each page of his site was previously using almost 10MB of bandwidth per view - which meant the 15GB was running out. I deduced the high usage in Firebug and noticed it was *gasp* from large images, some almost 1MB large. The images on the server are contained in subdirectories under a gallery folder - and I wanted to resize them. What I actually wanted to do was:</p>
+<ol>
+<li>
+<p>If the image was over 1024x900, resize it.</p>
+</li>
+<li>
+<p>If the image size (bytes) was over X, lower the quality.</p>
+</li>
+</ol>
+<p>I ended up using ImageMagick, which is what first obviously came to mind for image manipulation. While there is likely a better way to resize all the images, this is what I came up with. Maybe somebody else will find it useful too.</p>
+<pre tabindex="0"><code>for dir in /home/vhosts/website.com/html/wp-content/gallery/\*
+do
+cd $dir
+for filename in \*.jpg
+do
+echo Filename: &#34;$filename&#34;
+width=\`identify -ping -format %w &#34;$filename&#34;\`
+height=\`identify -ping -format %h &#34;$filename&#34;\`
+if \[ $width -ge 1024 -a $height -ge 900 \]; then
+convert &#34;$filename&#34; -resize &#34;%80&gt;&#34; &#34;$filename&#34;
+echo New Dimensions: $width x $height 
+fi
+filesize=\`stat -c%s &#34;$filename&#34;\`
+if \[ $filesize -ge 414981 \]; then
+convert &#34;$filename&#34; -quality 90 &#34;$filename&#34;
+echo Old Filesize: $filesize
+echo New Filesize: \`stat -c%s &#34;$filename&#34;\`
+fi
+done
+done
+</code></pre><p>Save it as &ldquo;resize.sh&rdquo; and run it with &ldquo;bash resize.sh&rdquo;. The output:</p>
+<pre tabindex="0"><code>Filename: img\_5364.jpg
+Old Filesize: 950748
+New Filesize: 331426
+Filename: img\_5366.jpg
+Filename: img\_5367.jpg
+Filename: 1c10\_1.jpg
+Filename: 1.jpg
+Filename: 2752\_1.jpg
+Filename: 42920014.jpg
+New Dimensions: 1544 x 1024
+Filename: 42920017.jpg
+New Dimensions: 1544 x 1024
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Renaming Apache Log Locations" href="http://localhost:1313/2009/01/renaming-apache-log-locations_1724.html">Renaming Apache Log Locations </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-01-25 21:30:00.002 +1100 AEDT'>Published on January 25, 2009</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I realized a few of my log files were growing unusually large, and even worse, logrotate was skipping them. I took a look in logrotate.d and straight away realized why: I had created silly names for the log file. logrotate look for .log files, but I had specified mine as .log &ndash; e.g. kelvinism_access_log. I was as familiar with logrotate when I set up the domains, so set forth to get them in the rotation.</p>
+<p>Firstly, I had to rename the actual log files. So, to rename kelvinism_access_log to kelvinism_access.log, a one-liner:</p>
+<pre tabindex="0"><code>for x in \*\_log; do mv $x \`basename $x \_log\`.log; done;
+</code></pre><p>Next, I needed to rename the log location inside each of the Apache config files. While a one-liner might be possible, I used the following tiny script:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+for x in \*
+do
+sed &#39;s/\\\_log/\\.log/&#39; $x &gt; /tmp/tmpfile.tmp
+mv /tmp/tmpfile.tmp $x
+done
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Beginning Scripting ESXi" href="http://localhost:1313/2009/01/beginning-scripting-esxi_6126.html">Beginning Scripting ESXi </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-01-06 21:30:00.002 +1100 AEDT'>Published on January 6, 2009</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;m not impressed too often with much software, especially the closed source kind. I find a leaning preference to all things FOSS. If I had a million dollars, I&rsquo;d likely spend all day contributing to all the projects I wish I had time to contribute to. Regardless, there are a select few closed-source products that I believe are truly excellent. I mean, the type of software where you aren&rsquo;t asking &ldquo;I wish this could do this&rdquo; and start asking &ldquo;I wonder what else this can do.&rdquo;</p>
+<p>While I&rsquo;ve played around with most types of virtualization out there (OpenVZ, Xen, V-Server, qemu&hellip;), I&rsquo;ve really found a soft spot for VMWare.</p>
+<p>Don&rsquo;t get me wrong, if I was going to host a heap of Linux web servers I would absolutely use Xen, but for a heterogeneous environment, I haven&rsquo;t used anything as easy as VMWare&rsquo;s products. Not that I judge a product by how easy it is to use, not by a long shot, but ease of use sure makes judging other factors easier.</p>
+<p>Regardless, this isn&rsquo;t a post trumpeting VMWare. I just realized tonight that some of the VMs I have running don&rsquo;t need to be except for certain hours of the day, or if condition A is true. The first example is my backup mail server; I really don&rsquo;t need it even powered on unless my main server is down. The second example is my Server 2003 instance, which has VI3 on it; I don&rsquo;t need this running unless I&rsquo;m asleep. One of the most useful resources I&rsquo;ve seen for the vmrun command is over at <a href="http://www.virtuatopia.com/index.php/Controlling_VMware_Virtual_Machines_from_the_Command_Line_with_vmrun">VirtualTopia</a> &ndash; loaded with examples.</p>
+<h4 id="turn-off-via-time">Turn off via time</h4>
+<p>On my &ldquo;monitoring&rdquo; instance, which is always up, I&rsquo;ve decided to install the script that controls my VM. I&rsquo;ve opted to use a soft shutdown.</p>
+<p>192.168.0.10 = ESXi box</p>
+<p>datastore1 = name of datastore that hosts VMs</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password stop &#34;\[datastore1\] Server 2003 R2/Server 2003 R2.vmx&#34; soft
+</code></pre><p>I have that saved in a file called <strong>stop_2003.sh</strong> in /opt/vmware/bin; make sure it isn&rsquo;t world readable. I also have a <strong>start_2003.sh</strong>:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start &#34;\[datastore1\] Server 2003 R2/Server 2003 R2.vmx&#34;
+</code></pre><p>Next, edit root&rsquo;s crontab (crontab -e):</p>
+<pre tabindex="0"><code>\# m h  dom mon dow   command
+0 8 \* \* \* /opt/vmware/bin/start\_2003.sh
+0 23 \* \* \* /opt/vmware/bin/stop\_2003.sh
+</code></pre><p>The conditional task is a tad bit more tricky, but just a tad. Ping won&rsquo;t do, since the mailserver could go down itself, so install nmap. Create a script:</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+if nmap -p25 -PN -sT -oG - mail.kelvinism.com | grep &#39;Ports:.\*/open/&#39; &gt;/dev/null ; then
+echo \`time\` &gt;&gt; mailserver.log
+else
+/opt/vmware/bin/start\_mail.sh
+fi
+</code></pre><p>And sticking with our theme, <strong>start_mail.sh</strong>:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start &#34;\[datastore1\] Mail Server/Mail Server.vmx&#34;
+</code></pre><p>This of course changes the crontab entry to:</p>
+<pre tabindex="0"><code>\# m h  dom mon dow   command
+0 8 \* \* \* /opt/vmware/bin/start\_2003.sh
+0 23 \* \* \* /opt/vmware/bin/stop\_2003.sh
+\*/5 \* \* \* \* /opt/vmware/bin/detect\_port.sh
+</code></pre><p>So, that&rsquo;s it. detect_port.sh is lacking any type of error detection or redundancy - if one packet/scan is dropped, the mail server will turn on. I&rsquo;ll re-work this at some point, but it works for now.</p>
+<p><strong>Update</strong>: Vmware has also released a decent blog entry about using vmrun: <a href="http://blogs.vmware.com/vix/2008/12/managing-vm-guests-using-vmrun.html">on their blog</a>.</p>
+
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Arduino 101 | Kelvin Nicholson</title>
+<meta name="keywords" content="articles, arduino">
+<meta name="description" content="Tonight, I&rsquo;m proud to say, I&rsquo;ve returned to childhood. Let me explain.
+OK, fun over, back to work.
+For the last year I&rsquo;ve been wanting to purchase an Arduino, for no other reason than to play with. Like a kid. My Arduino arrived two days ago. This is a story of problems, but not the pull-your-hair-out type, more the&hellip; like when you run out of gas in the middle of Sydney. Going to your Christmas dinner. In your friend&rsquo;s car. Long story.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2009/07/arduino-101_3715.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2009/07/arduino-101_3715.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to Arduino 101" href="http://localhost:1313/2009/07/arduino-101_3715.html">Arduino 101 </a>
+    </h2>
+
+    <div class="post-meta"><span title='2009-07-01 20:30:00.004 +1000 AEST'>Published on July 1, 2009</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>Tonight, I&rsquo;m proud to say, I&rsquo;ve returned to childhood. Let me explain.</p>
+<p>OK, fun over, back to work.</p>
+<p>For the last year I&rsquo;ve been wanting to purchase an <a href="http://www.arduino.cc/">Arduino</a>, for no other reason than to play with. Like a kid. My Arduino arrived two days ago. This is a story of problems, but not the pull-your-hair-out type, more the&hellip; like when you run out of gas in the middle of Sydney. Going to your Christmas dinner. In your friend&rsquo;s car. Long story.</p>
+<p>As a kid I never really learned about electronics. I took apart anything broken my parents set downstairs (and put back together the microwave I dismantled that my parent were going to give to my sister as a gift). But no electronics. I had a computer of some sort from when I was a wee kid, but not a single electronics kit, or not one I can remember.</p>
+<p>I soon realised I forgot to order a few resistors needed for the various sensors I purchased. This morning before work I stopped by the local electronics store, and like a kid in a candy shop, ordered $1.60 worth of resistors and LEDs.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/bQknpoVRSuBRuA6fRpHGqQ?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9aGnpVsYFCvX_eDS2xdoGrwAqxlHjxESlPKtgiWtsPkXLnPNZ5awjyj-evmbnad6D1Q5VibWNtCwyRviSJip4uKDos8YM_uJybO_rvKtj6q4Amggs7xJ27DZ6lyTynzn3Da5f6uTLp9PA/s400/tempcode.jpg"></a></p>
+<p>Just after coming home and eating insanely good Indian with YS, I set out to get an LED blinking. Without too many troubles, <a href="http://www.kelvinism.com/howtos/simple-arduino-led-tutorial/">success</a>! I graduated myself to the next grade and pulled out the temperature sensor. I looked at the &lsquo;special&rsquo; wires I bought to connect to the sensor and the breadboard, and I soon realised I actually purchased the M-&gt;F wires instead of the assorted pack. I started looking around for cables I could cut.</p>
+<p>Spare USB cable, no. Telephone cable, maybe. My partner&rsquo;s iPod cable&hellip; and I realised I could just slice up one of the cables and see if it worked. The cables were braided instead of solid coper, which sort of made my hopes sink, but it was too late now.</p>
+<p>I soon wired everything together as the various forum posts suggest, plugged it in to my laptop, started the Arduino software, and loaded the <a href="http://milesburton.com/wiki/index.php?title=Dallas_Temperature_Control_Library">Dallas Temperature Library</a>, and - &ldquo;Invalid CRC&rdquo;. I pulled the wires off, stripped a little more cabling off, plugged it back in, and tried again. It worked! I don&rsquo;t really know if the temperature is correct or not - we don&rsquo;t have any other way to measure it - but at this point, until I put in some more robust wires, I don&rsquo;t really even care.<br>
+<a href="http://picasaweb.google.com/lh/photo/l1LM6Vq2tOQdvCD7HErEew?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcGg4UbKOnexsGAxg-zxeSWpiF6o8z7oo2BGMcwzkQQ5ymggVqZhZWsXw2dlsWu_0jlCqVUfW3hncFswy8dHmRbqmlwobEGAjy1ffbs5Gn8AH6oSAYC7rEw9XIe-ITBIs1RLBNsxcoDACy/s400/arduino.jpg"></a></p>
+<p>Overall, I&rsquo;m happy. I&rsquo;ve created two simple physical computing missions, and wrote two blog entries, in well under two hours. This has been quite a relaxing break from the other duties in life. I plan to make the little system &lsquo;proper&rsquo; (more robust), and link it to my <a href="http://www.kelvinism.com/tech-blog/true-consolidation">mini server</a>. I&rsquo;ll then create a simple chart (via Google&rsquo;s API) to display on this website.<br>
+OK, fun over, back to work.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/articles/">Articles</a></li>
+      <li><a href="http://localhost:1313/tags/arduino/">Arduino</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

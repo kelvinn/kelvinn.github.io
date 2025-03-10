@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Microsoft on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/microsoft/</link>
+    <description>Recent content in Microsoft on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Dec 2007 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Small Business Server 2003</title>
+      <link>http://localhost:1313/2007/12/small-business-server-2003_4192.html</link>
+      <pubDate>Tue, 11 Dec 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/12/small-business-server-2003_4192.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve recently been hired for a company that does consulting for small businesses. Naturally, I haven&amp;rsquo;t had a huge exposure to SBS. My employer asked me to take the SBS MCP Certification, and this afternoon, I passed. The exam was pretty easy &amp;ndash; I think Microsoft basically took the easy questions spread out across the MCSE and dumped them into the SBS exam (some of the questions were very similar). My tips to anybody taking the exam:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIS7 GoLive Program</title>
+      <link>http://localhost:1313/2007/06/iis7-golive-program_3958.html</link>
+      <pubDate>Mon, 18 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/iis7-golive-program_3958.html</guid>
+      <description>&lt;p&gt;You can easily see that I am a big Linux fan, I&amp;rsquo;ve mentioned this over and over. I&amp;rsquo;ve also mentioned that I&amp;rsquo;m finishing up my MCSE, which started as a dare with my buddy, Ian. In the process of studying for my MCSE I&amp;rsquo;ve developed a certain amount of respect for Windows Server 2003, yet I&amp;rsquo;ll comment more on this later.&lt;/p&gt;
+&lt;p&gt;What I really wanted to write two paragraphs about was an interesting discovery I made today. I happened to stumble over to Microsoft&amp;rsquo;s hardware site, and noticed in my little Server Spy monitor that it was running IIS/7 &amp;ndash; the first time I have seen this anywhere. Upon further investigation I perused their &lt;a href=&#34;http://www.iis.net/default.aspx?tabid=7&amp;amp;subtabid=79&#34;&gt;GoLive program&lt;/a&gt;, which details several ways to test drive IIS7. There are some details about Microsoft&amp;rsquo;s setup, which one would expect to be impressive. And it is. So, if you are a Microsoft person, you may want to grab a test drive of Beta3 while you still can.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MCSE: Security</title>
+      <link>http://localhost:1313/2006/11/mcse-security_5711.html</link>
+      <pubDate>Wed, 08 Nov 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/11/mcse-security_5711.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;My buddy &lt;a href=&#34;http://www.ianfitzpatrick.com/&#34;&gt;Ian&lt;/a&gt; and myself have decided to get our MCSEs. However, Ian is a Mac lover, and I can&amp;rsquo;t seem to stay away from Linux (and I&amp;rsquo;m too cheap right now to buy a MacBook). The irony might be subtle, yet we are still studying and making progress. For the most part, I have decided to take the tests in the following order:&lt;/p&gt;
+&lt;p&gt;70-290, Security+, 70-270, 70-291, 70-293, 70-294, 70-298, 70-299&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

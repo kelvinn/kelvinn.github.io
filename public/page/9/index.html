@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.145.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Kelvin Nicholson</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Zenoss Default Password" href="http://localhost:1313/2008/12/zenoss-default-password_1357.html">Zenoss Default Password </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-20 21:30:00.002 +1100 AEDT'>Published on December 20, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;ve evaluated Zenoss before, but forgot the default password, and searching for it didn&rsquo;t come up with anything quickly. I tried everything under the sun: password, 1234, admin, God, Sex, but alas, grep to the rescue:</p>
+<pre tabindex="0"><code>kelvin@monitor:/usr/local/zenoss/zenoss/etc$ grep admin \*
+hubpasswd:admin:zenoss
+</code></pre><p>Update: it is listed on page 4 of the Admin PDF :)</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Install ESX from a USB (no CDROM)" href="http://localhost:1313/2008/12/install-esx-from-usb-no-cdrom_3723.html">Install ESX from a USB (no CDROM) </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.011 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>My little server doesn&rsquo;t have a cdrom, but I didn&rsquo;t want to actually run ESX from a USB (i.e. esx-on-a-stick). Here are my notes of configuring a flash disk to boot the ESX installer (so you can install it onto a local disk). For this demo, my USB is /dev/sdb</p>
+<ol>
+<li>
+<p>Install the syslinux utils to your computer (apt-get install syslinux mboot)</p>
+</li>
+<li>
+<p>Install the MBR</p>
+</li>
+</ol>
+<pre tabindex="0"><code>sudo install-mbr /dev/sdb
+</code></pre><ol start="3">
+<li>
+<p>Copy all the files from the ISO to your fat32 formated partition</p>
+</li>
+<li>
+<p>Install syslinux</p>
+</li>
+</ol>
+<pre tabindex="0"><code>sudo syslinux /dev/sdb1
+</code></pre><ol start="5">
+<li>Move isolinux.cfg to syslinux.cfg, and try booting. If it doesn&rsquo;t work, edit syslinux.cfg says something like:</li>
+</ol>
+<pre tabindex="0"><code>default menu.c32
+menu title ESXi Boot
+timeout 100
+
+label ESXi
+menu label Boot VMware ESXi
+kernel mboot.c32
+append vmkernel.gz --- binmod.tgz --- environ.tgz --- cim.tgz
+ipappend 2
+</code></pre><ol start="6">
+<li>Unplug your USB, put it in your server, reboot, boot to USB-HDD (or select the USB disk), and install ESX to the local disk. You will likely be greeted with a sign saying &ldquo;MBR FA:&rdquo;, where you need to press &ldquo;A&rdquo; and then &ldquo;1&rdquo;.</li>
+</ol>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Migrating large disks into ESXi" href="http://localhost:1313/2008/12/migrating-large-disks-into-esxi_4692.html">Migrating large disks into ESXi </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.009 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I recently had the need to move a rather large (450GB) VMDK file from an external hard drive into ESXi. Since ESXi doesn&rsquo;t support external hard drives, this makes things quite a bit more difficult. At first I tried using SCP to copy the file over (after enabling SSH access for ESXi). However, when I tried to do this the time left was almost 20 hours &ndash; a tad too long!</p>
+<p>I rethought my idea and decided to use this process:</p>
+<ol>
+<li>
+<p>Create an NFS share on my laptop, using the external hard drive (with the VMDK) as a mount point.</p>
+</li>
+<li>
+<p>Use vmkfstools to move the image over.</p>
+</li>
+<li>
+<p>Update any bugs I encountered.</p>
+</li>
+</ol>
+<p>Creating the NFS share on Linux is extermily easy. After install nfs via whatever package management tool you choose, put this entry into your /etc/exports file:</p>
+<pre tabindex="0"><code>  
+/media/disk-1 192.168.1.0/24(ro,no\_root\_squash,async)  
+</code></pre><p>This assumes your USB disk is mounted as /media/disk-1, and your local subnet is 192.168.1.0/24. In OpenFiler, add a new storage with type NFS and use your laptops IP as the hose, and /media/disk-1 as the mount point. For safey, tick read-only.</p>
+<p>Next, unlock SSH if you haven&rsquo;t already. Once you are in, browse to /vmfs/volumes and you can see your nfs share and your other datastores. Let&rsquo;s say you USB virtual disk is located at /vmfs/volumes/nfs/bigdisk.vmdk, and you want to import it into your normal datastore, under a folder called &lsquo;NAS&rsquo;. Using vmware specific tools, you can import the file as so:</p>
+<pre tabindex="0"><code>  
+\# vmkfstools -i /vmfs/volumes/nfs/bigdisk.vmdk /vmfs/volumes/datastore1/NAS/bigdisk.vmdk  
+</code></pre><p>I needed to update the hardware version of my imported disk. To do this, open up the .vmdk file (you should also have a -flat.vmdk file), and update the virtualHWVersion entry from 7 to 4. With that, join your disk to an image, and you should be good to go.</p>
+<p>An addition result I noticed was the speed at which it came over. By using SCP, the entire file was going to take 20hr. By using NFS and vmkfstools, the files was migrated in under 10 hours.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to OpenFiler Permission Issue" href="http://localhost:1313/2008/12/openfiler-permission-issue_2907.html">OpenFiler Permission Issue </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.01 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;ve had issues before with OpenFiler where doesn&rsquo;t update the permissions, although they appear correct in the UI. To rectify that, I stumbled upon a one liner that fixed it. Let&rsquo;s say you have a group called &ldquo;Trusted&rdquo; that you want to have full access to your music folder. Here&rsquo;s the one-liner:</p>
+<pre tabindex="0"><code>\[root@files data\]# pwd
+/mnt/openfiler/data
+root@files data\]# setfacl --recursive -m u:nobody:rwx,g:Trusted:rwx music
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Speeding Up VMWare Server" href="http://localhost:1313/2008/12/speeding-up-vmware-server_791.html">Speeding Up VMWare Server </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.008 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I found VMWare Server to have very slow I/O, and sought to improve it. Below are a list of tests I performed, the change, and the results.</p>
+<pre tabindex="0"><code>  
+  
+\### Host OS ###  
+/dev/sdb1:  
+ Timing buffered disk reads:  220 MB in  3.05 seconds =  72.17 MB/sec  
+kelvin@gorilla:~$ sudo hdparm -t /dev/sdb1  
+  
+/dev/sdb1:  
+ Timing buffered disk reads:  266 MB in  3.01 seconds =  88.33 MB/sec  
+kelvin@gorilla:~$ sudo hdparm -t /dev/sdb1  
+  
+/dev/sdb1:  
+ Timing buffered disk reads:  310 MB in  3.01 seconds = 102.99 MB/sec  
+  
+  
+\### Before Changes ###  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:    8 MB in  3.36 seconds =   2.38 MB/sec  
+\[root@files etc\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:   24 MB in  3.63 seconds =   6.61 MB/sec  
+\[root@files etc\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:   28 MB in  4.54 seconds =   6.16 MB/sec  
+  
+</code></pre><p>I made several changes, but the changes that seemed to have the most impact are below:</p>
+<pre tabindex="0"><code>  
+  
+vm.dirty\_background\_ratio = 5  
+vm.dirty\_ratio = 10  
+vm.swappiness = 0  
+  
+</code></pre><p>Pop this into the virtual machine&rsquo;s .vmx file, reboot, and off you go. One unfortunate side effect is that you can no longer overload the memory (e.g. allocate more memory with the VMs than you actually have available).</p>
+<pre tabindex="0"><code>  
+  
+\### After Changes ###  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:   52 MB in  3.13 seconds =  16.61 MB/sec  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:   82 MB in  3.31 seconds =  24.75 MB/sec  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:  118 MB in  3.19 seconds =  36.97 MB/sec  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:  144 MB in  3.32 seconds =  43.37 MB/sec  
+  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:  160 MB in  3.10 seconds =  51.57 MB/sec  
+  
+  
+</code></pre><p><strong>UPDATE</strong>: Those wanting all the speed and still want to use memory overloading, I&rsquo;d suggested you give ESXi a try. So far, so good.</p>
+<pre tabindex="0"><code>  
+\## With ESXi, same hardware ##  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data   
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:  200 MB in  3.18 seconds =  62.92 MB/sec  
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Integrating OSSEC with Cisco IOS" href="http://localhost:1313/2008/11/integrating-ossec-with-cisco-ios_7061.html">Integrating OSSEC with Cisco IOS </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-15 21:30:00.002 +1100 AEDT'>Published on November 15, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I rank OSSEC as one of my favorite pieces of open source software, and finally decided to play around with it more in my own free time. (Yup, I do this sort of stuff for <em>fun</em>). My goal was quite simple: send syslog packets from my Cisco to my &ldquo;proxy&rdquo; server, running OSSEC. I found that, although OSSEC supports Cisco IOS logging, it didn&rsquo;t really work. In fact, I couldn&rsquo;t find any examples or articles of anybody actually getting it to work.</p>
+<p>I initially tried to get it to work &ldquo;correctly,&rdquo; and soon settled to &ldquo;just getting it to work.&rdquo; I implemented some rules in the local_rules.xml file, which worked, but I&rsquo;m pretty stubborn, and wanted to do it &ldquo;correctly.&rdquo; With a couple pots of tea, and the support of my girlfriend, I became much, much more familiar with OSSEC. The key (and a lot of credit) goes to Jeremy Melanson for <a href="http://www.ossec.net/ossec-list/2007-September/msg00124.html">hinting at some of the updates</a> to the decoder.xml file that need to take place.</p>
+<p>The first step is to read the OSSEC + Cisco IOS <a href="http://www.ossec.net/wiki/index.php/PIX_and_IOS_Syslog_Config_examples#Configuring_Cisco_IOS_router">wiki page</a>. Everything on that page is pretty straight forward. I then added three explicit drop rules at the end of my Cisco&rsquo;s ACL:</p>
+<pre tabindex="0"><code>...
+
+access-list 101 deny tcp any host 220.244.xxx.xxx log
+access-list 101 deny ip any host 220.244.xxx.xxx log
+access-list 101 deny udp any host 220.244.xxx.xxx log
+</code></pre><p>(220.244.xxx.xxx is my WAN IP, and I&rsquo;m sure you could figure out xxx.xxx pretty darn easily, but I&rsquo;ll x them out anyways).</p>
+<p>To reiterate, OSSEC needs to be told to listen for syslog traffic, which you should be set on the Cisco. If you haven&rsquo;t done this, go re-read the wiki above.</p>
+<pre tabindex="0"><code> syslog
+192.168.0.1 
+</code></pre><p>On or around line 1550 in /var/ossec/etc/decoder.xml I needed to update the regex that was used to detect the syslog stream.</p>
+<pre tabindex="0"><code>...
+
+ ^%\\w+-\\d-\\w+: |^: %\\w+-\\d-\\w+: 
+
+ ^%\\w+-\\d-\\w+: |^: %\\w+-\\d-\\w+: 
+
+ cisco-ios
+firewall
+^%SEC-6-IPACCESSLOGP: |^: %SEC-6-IPACCESSLOGP: 
+^list \\d+ (\\w+) (\\w+) 
+(\\S+)\\((\\d+)\\) -&gt; (\\S+)\\((\\d+)\\),
+action, protocol, srcip, srcport, dstip, dstport 
+
+...
+</code></pre><p>In the general OSSEC configuration file, re-order the list of rules. I had to do this because syslog_rules.xml includes a search for &ldquo;denied&rdquo;, and that triggers an alarm.</p>
+<pre tabindex="0"><code>...
+telnetd\_rules.xml
+cisco-ios\_rules.xml
+syslog\_rules.xml
+arpwatch\_rules.xml
+...
+</code></pre><p>Remember that these dropped events will go into /var/ossec/logs/firewall/firewall.log. Because this is my home connection, and I don&rsquo;t have any active_responses configured (yet!), I tightened the firewall_rules.xml file (lowering the frequency, raising the timeframe).</p>
+<p>And in the end, I get a pretty email when somebody tries to port scan me.</p>
+<h4 id="pretty-email">Pretty email</h4>
+<pre tabindex="0"><code>OSSEC HIDS Notification.
+2008 Nov 15 23:19:36
+
+Received From: proxy-&gt;xxx.xxx.xxx.xxx
+Rule: 4151 fired (level 10) -&gt; &#34;Multiple Firewall drop events from same source.&#34;
+Portion of the log(s):
+
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(244), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(253), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(243), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(254), 1 packet 
+
+
+
+--END OF NOTIFICATION
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Using Django with SQL Server and IIS" href="http://localhost:1313/2008/11/using-django-with-sql-server-and-iis_4115.html">Using Django with SQL Server and IIS </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-08 21:30:00.002 +1100 AEDT'>Published on November 8, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>As you can tell from reading some of the other pages, I like Linux and open source. But I also like to answer the question &ldquo;what if&hellip;&rdquo; This post is my [brief] run down of answering &ldquo;what if I could run Django on Server 2003 with SQL Server and IIS.&rdquo; Why, you may ask? To be honest with you, at this point, I don&rsquo;t really know. One of the deciding factors was seeing that the django-mssql project maintains support for inspectdb, which means I could take a stock 2003 server running SQL Server, inspect the DB, and build a web app on top of it. The Django docs offer a lengthy <a href="http://code.djangoproject.com/wiki/DjangoOnWindowsWithIISAndSQLServer">howto</a> for using Django with IIS and SQL Server, but the website for PyISAPIe seems to have been down for the last month or so. Without further delay, below are my notes on installing Django with SQL Server and IIS.</p>
+<p>1a) Install python-2.x.x.msi from python.org</p>
+<p>1b) Consider adding C:\Python25\ to your Path (right click My Computer, Advanced, Environment Variables. Enter in blahblahblah;C:\Python25\)</p>
+<ol start="2">
+<li>Download a 1.0+ branch of Django (and 7-zip if you need it)</li>
+</ol>
+<p>3a) Extract the contents of the Django. From inside Django-1.0, execute:</p>
+<pre tabindex="0"><code>C:\\Python25\\python.exe setup.py install
+</code></pre><p>3b) Consider adding C:\Python25\Script to your path.</p>
+<ol start="4">
+<li>
+<p>Look in C:\Python25\Lib\site-packages &ndash; confirm there is a Django package.</p>
+</li>
+<li>
+<p>Checkout django-mssql (<a href="http://code.google.com/p/django-mssql/)">http://code.google.com/p/django-mssql/)</a>, copy sqlserver_ado from inside source to the site-packages directory</p>
+</li>
+<li>
+<p>Download and install PyWin32 from sf.net</p>
+</li>
+<li>
+<p>Start a test project in C:\Inetpub\ called &rsquo;test'</p>
+</li>
+</ol>
+<pre tabindex="0"><code>c:\\Python25\\scripts\\django-admin.py startproject test
+</code></pre><p>8a) Create a database using SQL Management Studio, create a user. (First, go to the Security dropdown. Right click Logins, add a new user. Next, right click Databases, New Database. Enter in the name, and change the owner to the user you just created).</p>
+<p>8b) Edit the settings.py and add &lsquo;sqlserver_ado&rsquo; and add database credentials. Use the below example if your database comes up in the Studio as COMPUTERNAME\SQLEXPRESS (you are using SQLExpress).</p>
+<pre tabindex="0"><code>import os
+DATABASE\_ENGINE = &#39;sqlserver\_ado&#39;           # &#39;postgresql\_psycopg2&#39;, &#39;postgresql&#39;, &#39;mysql&#39;, &#39;sqlite3&#39; or &#39;oracle&#39;.
+DATABASE\_NAME = &#39;crmtest&#39;             # Or path to database file if using sqlite3.
+DATABASE\_USER = &#39;crmtest&#39;             # Not used with sqlite3.
+DATABASE\_PASSWORD = &#39;password&#39;         # Not used with sqlite3.
+DATABASE\_MSSQL\_REGEX = True
+DATABASE\_HOST =  os.environ\[&#39;COMPUTERNAME&#39;\] + r&#39;\\SQLEXPRESS&#39; # I use SQLEXPRESS
+DATABASE\_PORT = &#39;&#39;             # Set to empty string for default. Not used with sqlite3.
+</code></pre><ol start="9">
+<li>Install/download FLUP: <a href="http://www.saddi.com/software/flup/dist/flup-1.0.1.tar.gz">http://www.saddi.com/software/flup/dist/flup-1.0.1.tar.gz</a></li>
+</ol>
+<pre tabindex="0"><code>python setup.py install
+</code></pre><p>10a) Download pyisapi-scgi from <a href="http://code.google.com/p/pyisapi-scgi/">http://code.google.com/p/pyisapi-scgi/</a></p>
+<p>10b) Extract the files to somewhere you can remember on your computer, like, c:\scgi</p>
+<ol start="11">
+<li>Double click pyisapi_scgi.py</li>
+</ol>
+<p>12a) Follow the directions here: <a href="http://code.google.com/p/pyisapi-scgi/wiki/howtoen">http://code.google.com/p/pyisapi-scgi/wiki/howtoen</a> &ndash; I set a temporary different port since I&rsquo;m just testing this out.</p>
+<p>12b) The last few parts might be better served with an image or two:</p>
+<h4 id="using-an-app-pool-to-get-the-right-permissions">Using an app pool to get the right permissions</h4>
+<p>(No resource/photo)</p>
+<h4 id="the-scgi-configuration-file">The SCGI configuration file</h4>
+<p>(No resource/photo)</p>
+<h4 id="properties-of-the-web-site">Properties of the web site</h4>
+<p>(No resource/photo)<br>
+13) Start the scgi process from the Django folder directory</p>
+<pre tabindex="0"><code>python manage.py runfcgi method=threaded protocol=scgi port=3033 host=127.0.0.1
+</code></pre><ol start="14">
+<li>Test your django page, http://192.168.12.34:8080</li>
+</ol>
+<p>(No resource/photo)</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Upgrading Cisco Wireless Firmware" href="http://localhost:1313/2008/11/upgrading-cisco-wireless-firmware_3066.html">Upgrading Cisco Wireless Firmware </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-03 21:30:00.002 +1100 AEDT'>Published on November 3, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;m always forgetting the exact string to enter at the CLI for updating the IOS on a wireless Cisco AP, so I&rsquo;ll just put it here to end my future searches:</p>
+<pre tabindex="0"><code>Chimp# archive download-sw /force-reload /overwrite tftp://192.168.83.150/c1100-k9w7-tar.123-8.JEC1.tar
+</code></pre><p>192.168.83.150 obviously being your tftp server, and the .tar file sitting in the root of the tftp server.</p>
+<p>I suppose if you wanted to backup your IOS you could do something along the lines of:</p>
+<pre tabindex="0"><code>Chimp# archive upload-sw tftp://192.168.83.150/someimage.tar
+</code></pre><p>But I haven&rsquo;t tried it&hellip;</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Backup OpenFiler to S3" href="http://localhost:1313/2008/11/backup-openfiler-to-s3_9140.html">Backup OpenFiler to S3 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-02 21:30:00.01 +1100 AEDT'>Published on November 2, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Backing up your Openfiler box to S3</p>
+<p>While I don&rsquo;t think most pople would expect to backup their entire NAS/SAN to Amazon&rsquo;s S3, there might be a few very crucial things you need to backup. For instance, my girlfriend&rsquo;s PhD papers and data.</p>
+<p>I&rsquo;ve seen an implementation using Ruby and s3sync &ndash; something that I do on my server &ndash; but I&rsquo;m trying to migrate everything to Python. Although there are a lot of great tools out there for S3, many of them Python-based, I wanted to do one thing and do it well: have one complete full backup available, and using as little bandwidth as possible. In these regards Duplicity would work well, except I wanted the ability to browse the S3 store using any other tool.</p>
+<p>I&rsquo;ve digged deeper into <a href="http://s3tools.logix.cz/s3cmd">s3cmd</a>, which I had noticed a long time ago, but I failed to notice it has a sync option. I have tested it out, and it appears to work very, very well. Here&rsquo;s how to use it with OF.</p>
+<p>First, download <a href="http://s3tools.logix.cz/download">s3cmd</a>. You&rsquo;ll need to use subversion, so I first checked it out to my laptop, then uploaded it via SSH to OF. I put my s3cmd folder in /opt.</p>
+<pre tabindex="0"><code>  
+\[root@files opt\]# ls  
+openfiler  s3cmd  
+\[root@files opt\]#   
+</code></pre><p>If you don&rsquo;t have elementtree installed, now is a good time to install it.</p>
+<pre tabindex="0"><code>  
+conary update elementtree:python  
+</code></pre><p>We need to next configure s3cmd with our AWS creds.</p>
+<pre tabindex="0"><code>  
+\[root@files s3cmd\]# ./s3cmd --configure  
+</code></pre><p>In the end I didn&rsquo;t configure encryption for my files (so just hit enter), but you may choose to do so. I have configured the transfer to use HTTPS, however.</p>
+<pre tabindex="0"><code>  
+Save settings? \[y/N\] y  
+Configuration saved to &#39;/root/.s3cfg&#39;  
+</code></pre><p>Cool. Now create a bucket on S3 for your NAS, e.g. blah2134accesskey.openfiler, using whatever method you choose (I typically use Cockpit). Now that you have a bucket, configure a *really* simple script to drop in cron:</p>
+<pre tabindex="0"><code>  
+#!/bin/bash  
+  
+/opt/s3cmd/s3cmd sync /mnt/openfiler/data/profiles/bunny s3://blah2134accesskey.openfiler/mnt/openfiler/data/profiles/bunny  
+/opt/s3cmd/s3cmd sync /mnt/openfiler/data/profiles/kelvin-pc s3://blah2134accesskey.openfiler/mnt/openfiler/data/profiles/knicholson/kelvin-pc  
+</code></pre><p>Sweet! I like this approach quite a bit: I get file-level access to anything on the NAS, you don&rsquo;t have to actually install anything, and it &lsquo;just works.&rsquo;</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Configure Timevault to Remote Server" href="http://localhost:1313/2008/11/configure-timevault-to-remote-server_2418.html">Configure Timevault to Remote Server </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-02 21:30:00.011 +1100 AEDT'>Published on November 2, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Using TimeVault with a shared drive as a backend is actually quite easy, but it does require a few special things setup. Note: this is gonna be a brief summary.</p>
+<p>Install samba-tools, smbfs&hellip;</p>
+<pre tabindex="0"><code>sudo apt-get install samba-tools smbfs
+</code></pre><p>A lot more other stuff may install as well.</p>
+<p>Create a script that mounts your samba share. You could also do this in fstab, but I tend to suspend my laptop when I come home, and I like clicking buttons.</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+mount -t cifs //192.168.44.2/kelvin /mnt/backups -o netbiosname=KELVIN-PC,iocharset=utf8,credentials=/home/kelvin/Apps/.smb-details.txt
+</code></pre><p>smb-details.txt includes:</p>
+<pre tabindex="0"><code>username=DOMAIN\\kelvin
+password=mypassword
+</code></pre><p>Finally, create a folder called &rsquo;timevault&rsquo; or something inside your mapped share, then launch TimeVault and configure it to use the above mentioned /mnt/backups/timevault folder. Configure Timevault as normal.</p>
+
+  </div>
+
+  
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/page/8/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/page/10/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

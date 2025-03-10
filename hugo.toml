@@ -1,0 +1,13 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = "Kelvin Nicholson"
+theme = "hugo-PaperMod"
+
+[permalinks]
+posts = "/:year/:month/:title"
+
+
+[params]
+disableSpecial1stPost = true
+ShowReadingTime = true
+ShowBreadCrumbs = false

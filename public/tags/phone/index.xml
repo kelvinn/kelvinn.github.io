@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Phone on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/phone/</link>
+    <description>Recent content in Phone on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Feb 2008 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/phone/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPS on the SkypePhone</title>
+      <link>http://localhost:1313/2008/02/gps-on-skypephone_9589.html</link>
+      <pubDate>Sun, 03 Feb 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/02/gps-on-skypephone_9589.html</guid>
+      <description>&lt;p&gt;Yesterday I was sort of curious if I could use my 3 Skypephone in a pinch if I got lost, which here in Sydney, happens quite often. Luckily 3&amp;rsquo;s Skypephone has both Bluetooth, and supports j2me apps. Mobile GPS unit, here I come.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/3AY6h-qKwGk9NpnB9hrwsw?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjExWMS7zKJdGCG_1MHdpb900yTseLCrbHerf2PlfzwSouqfnmJHr5V1jiIcDcbMrEul2OZUFlCYOQhTgrq_3C-cYDWmxkx-yDOr6NNwokX8P-gUikt3DSjxRi11qJrMuP4_aSRLpjhLPax/s288/DSC03368.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The recipe to get maps on your Skypephone is pretty darn easy. You&amp;rsquo;ll need one dash bluetooth GPS receiver (I have the &lt;a href=&#34;http://www.qstarz.com/Products/GPS%20Products/BT-Q1000.html&#34;&gt;Qstarz BT-Q1000&lt;/a&gt;), &lt;a href=&#34;http://linuxtechs.net/kruch/tb/forum/index.php&#34;&gt;TrekBuddy&lt;/a&gt;, a TrekBuddy acceptable map (&lt;a href=&#34;http://osm.bandnet.org/browse/?1,1,1,0&#34;&gt;easily downloadable&lt;/a&gt;), and one dab computer &amp;ndash; but since you&amp;rsquo;re reading this, I figure you&amp;rsquo;ve got that part taken care of.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Python | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/python/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/python/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/python/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Most Frequently Used French Words" href="http://localhost:1313/2009/08/most-frequently-used-french-words_140.html">Most Frequently Used French Words </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-08-30 20:30:00.003 +1000 AEST'>Published on August 30, 2009</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Status:</p>
+<p>I&rsquo;m currently studying French with my partner, and if you&rsquo;ve read any of this site, you&rsquo;ll notice I&rsquo;m a bit of a techie. Often several of my interests collide, which is what happened today. I was searching for the &ldquo;most frequent french words,&rdquo; and while I found some lists, nothing was exactly what I wanted.<br>
+My desire was to have a PDF of the top few thousand most used French words. With the English translation next to it. In order. I&rsquo;ve found some great resources, which I&rsquo;ll list now</p>
+<ul>
+<li><a href="http://www.fst.ch/FST/download/347_Voc_Courant.pdf">347 most frequent French words (78% of French conversations)</a></li>
+<li><a href="http://en.wiktionary.org/wiki/Wiktionary:List_of_the_1750_most_frequently_used_French_words">Wiktionary entry of 1750 most frequently used French words</a></li>
+</ul>
+<p>I&rsquo;ve also found 100s of sites with 50 words or so - not exactly what I wanted. This spawned a question for me: if I were to search a popular French newspaper website, what words would be the most frequent? I would want to learn those first. A few hours later, and I&rsquo;ve compiled that list. I&rsquo;ll write the details of how I did it at the end, but just know I collected over 16,000 unique words, and &ldquo;read&rdquo; over 80,000 words from a variety of articles. Below is a PDF of the most popular words, ranked in order, with (maybe crappy) English translations.</p>
+<p><a href="http://cdn.kelvinism.com/files/wordlist.pdf">The 3216 Most Unofficially Frequent French Words</a> (or <a href="http://cdn.kelvinism.com/files/wordlist.ods">download as ODS format</a>)</p>
+<p>More to come&hellip;! I&rsquo;m going to continue building the database to make sure the ranking is correct, and will make some pretty graphs when I have time. I will also likely modify things to include what type of word it is, and an example in a sentence.</p>
+<p>Please feel free to use this list as you see fit in accordance with <a href="http://creativecommons.org/licenses/by/4.0/">CC by 4.0</a></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to ISO Code Error" href="http://localhost:1313/2009/06/iso-code-error_1265.html">ISO Code Error </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-06-17 20:30:00.002 +1000 AEST'>Published on June 17, 2009</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;ve received this error a few times when working with pytz:</p>
+<pre tabindex="0"><code>Error reading file &#39;/usr/share/xml/iso-codes/iso\_3166.xml&#39;
+</code></pre><p>In short, install the &lsquo;iso-codes&rsquo; package in Ubuntu/Debian. I&rsquo;m sure this is covered in the manual that I didn&rsquo;t read, but I&rsquo;m sure others didn&rsquo;t read it too.</p>
+<pre tabindex="0"><code>apt-get install iso-codes
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Zenoss Default Password" href="http://localhost:1313/2008/12/zenoss-default-password_1357.html">Zenoss Default Password </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-20 21:30:00.002 +1100 AEDT'>Published on December 20, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;ve evaluated Zenoss before, but forgot the default password, and searching for it didn&rsquo;t come up with anything quickly. I tried everything under the sun: password, 1234, admin, God, Sex, but alas, grep to the rescue:</p>
+<pre tabindex="0"><code>kelvin@monitor:/usr/local/zenoss/zenoss/etc$ grep admin \*
+hubpasswd:admin:zenoss
+</code></pre><p>Update: it is listed on page 4 of the Admin PDF :)</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Integrating OSSEC with Cisco IOS" href="http://localhost:1313/2008/11/integrating-ossec-with-cisco-ios_7061.html">Integrating OSSEC with Cisco IOS </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-15 21:30:00.002 +1100 AEDT'>Published on November 15, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I rank OSSEC as one of my favorite pieces of open source software, and finally decided to play around with it more in my own free time. (Yup, I do this sort of stuff for <em>fun</em>). My goal was quite simple: send syslog packets from my Cisco to my &ldquo;proxy&rdquo; server, running OSSEC. I found that, although OSSEC supports Cisco IOS logging, it didn&rsquo;t really work. In fact, I couldn&rsquo;t find any examples or articles of anybody actually getting it to work.</p>
+<p>I initially tried to get it to work &ldquo;correctly,&rdquo; and soon settled to &ldquo;just getting it to work.&rdquo; I implemented some rules in the local_rules.xml file, which worked, but I&rsquo;m pretty stubborn, and wanted to do it &ldquo;correctly.&rdquo; With a couple pots of tea, and the support of my girlfriend, I became much, much more familiar with OSSEC. The key (and a lot of credit) goes to Jeremy Melanson for <a href="http://www.ossec.net/ossec-list/2007-September/msg00124.html">hinting at some of the updates</a> to the decoder.xml file that need to take place.</p>
+<p>The first step is to read the OSSEC + Cisco IOS <a href="http://www.ossec.net/wiki/index.php/PIX_and_IOS_Syslog_Config_examples#Configuring_Cisco_IOS_router">wiki page</a>. Everything on that page is pretty straight forward. I then added three explicit drop rules at the end of my Cisco&rsquo;s ACL:</p>
+<pre tabindex="0"><code>...
+
+access-list 101 deny tcp any host 220.244.xxx.xxx log
+access-list 101 deny ip any host 220.244.xxx.xxx log
+access-list 101 deny udp any host 220.244.xxx.xxx log
+</code></pre><p>(220.244.xxx.xxx is my WAN IP, and I&rsquo;m sure you could figure out xxx.xxx pretty darn easily, but I&rsquo;ll x them out anyways).</p>
+<p>To reiterate, OSSEC needs to be told to listen for syslog traffic, which you should be set on the Cisco. If you haven&rsquo;t done this, go re-read the wiki above.</p>
+<pre tabindex="0"><code> syslog
+192.168.0.1 
+</code></pre><p>On or around line 1550 in /var/ossec/etc/decoder.xml I needed to update the regex that was used to detect the syslog stream.</p>
+<pre tabindex="0"><code>...
+
+ ^%\\w+-\\d-\\w+: |^: %\\w+-\\d-\\w+: 
+
+ ^%\\w+-\\d-\\w+: |^: %\\w+-\\d-\\w+: 
+
+ cisco-ios
+firewall
+^%SEC-6-IPACCESSLOGP: |^: %SEC-6-IPACCESSLOGP: 
+^list \\d+ (\\w+) (\\w+) 
+(\\S+)\\((\\d+)\\) -&gt; (\\S+)\\((\\d+)\\),
+action, protocol, srcip, srcport, dstip, dstport 
+
+...
+</code></pre><p>In the general OSSEC configuration file, re-order the list of rules. I had to do this because syslog_rules.xml includes a search for &ldquo;denied&rdquo;, and that triggers an alarm.</p>
+<pre tabindex="0"><code>...
+telnetd\_rules.xml
+cisco-ios\_rules.xml
+syslog\_rules.xml
+arpwatch\_rules.xml
+...
+</code></pre><p>Remember that these dropped events will go into /var/ossec/logs/firewall/firewall.log. Because this is my home connection, and I don&rsquo;t have any active_responses configured (yet!), I tightened the firewall_rules.xml file (lowering the frequency, raising the timeframe).</p>
+<p>And in the end, I get a pretty email when somebody tries to port scan me.</p>
+<h4 id="pretty-email">Pretty email</h4>
+<pre tabindex="0"><code>OSSEC HIDS Notification.
+2008 Nov 15 23:19:36
+
+Received From: proxy-&gt;xxx.xxx.xxx.xxx
+Rule: 4151 fired (level 10) -&gt; &#34;Multiple Firewall drop events from same source.&#34;
+Portion of the log(s):
+
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(244), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(253), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(243), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(254), 1 packet 
+
+
+
+--END OF NOTIFICATION
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Using Django with SQL Server and IIS" href="http://localhost:1313/2008/11/using-django-with-sql-server-and-iis_4115.html">Using Django with SQL Server and IIS </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-08 21:30:00.002 +1100 AEDT'>Published on November 8, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>As you can tell from reading some of the other pages, I like Linux and open source. But I also like to answer the question &ldquo;what if&hellip;&rdquo; This post is my [brief] run down of answering &ldquo;what if I could run Django on Server 2003 with SQL Server and IIS.&rdquo; Why, you may ask? To be honest with you, at this point, I don&rsquo;t really know. One of the deciding factors was seeing that the django-mssql project maintains support for inspectdb, which means I could take a stock 2003 server running SQL Server, inspect the DB, and build a web app on top of it. The Django docs offer a lengthy <a href="http://code.djangoproject.com/wiki/DjangoOnWindowsWithIISAndSQLServer">howto</a> for using Django with IIS and SQL Server, but the website for PyISAPIe seems to have been down for the last month or so. Without further delay, below are my notes on installing Django with SQL Server and IIS.</p>
+<p>1a) Install python-2.x.x.msi from python.org</p>
+<p>1b) Consider adding C:\Python25\ to your Path (right click My Computer, Advanced, Environment Variables. Enter in blahblahblah;C:\Python25\)</p>
+<ol start="2">
+<li>Download a 1.0+ branch of Django (and 7-zip if you need it)</li>
+</ol>
+<p>3a) Extract the contents of the Django. From inside Django-1.0, execute:</p>
+<pre tabindex="0"><code>C:\\Python25\\python.exe setup.py install
+</code></pre><p>3b) Consider adding C:\Python25\Script to your path.</p>
+<ol start="4">
+<li>
+<p>Look in C:\Python25\Lib\site-packages &ndash; confirm there is a Django package.</p>
+</li>
+<li>
+<p>Checkout django-mssql (<a href="http://code.google.com/p/django-mssql/)">http://code.google.com/p/django-mssql/)</a>, copy sqlserver_ado from inside source to the site-packages directory</p>
+</li>
+<li>
+<p>Download and install PyWin32 from sf.net</p>
+</li>
+<li>
+<p>Start a test project in C:\Inetpub\ called &rsquo;test'</p>
+</li>
+</ol>
+<pre tabindex="0"><code>c:\\Python25\\scripts\\django-admin.py startproject test
+</code></pre><p>8a) Create a database using SQL Management Studio, create a user. (First, go to the Security dropdown. Right click Logins, add a new user. Next, right click Databases, New Database. Enter in the name, and change the owner to the user you just created).</p>
+<p>8b) Edit the settings.py and add &lsquo;sqlserver_ado&rsquo; and add database credentials. Use the below example if your database comes up in the Studio as COMPUTERNAME\SQLEXPRESS (you are using SQLExpress).</p>
+<pre tabindex="0"><code>import os
+DATABASE\_ENGINE = &#39;sqlserver\_ado&#39;           # &#39;postgresql\_psycopg2&#39;, &#39;postgresql&#39;, &#39;mysql&#39;, &#39;sqlite3&#39; or &#39;oracle&#39;.
+DATABASE\_NAME = &#39;crmtest&#39;             # Or path to database file if using sqlite3.
+DATABASE\_USER = &#39;crmtest&#39;             # Not used with sqlite3.
+DATABASE\_PASSWORD = &#39;password&#39;         # Not used with sqlite3.
+DATABASE\_MSSQL\_REGEX = True
+DATABASE\_HOST =  os.environ\[&#39;COMPUTERNAME&#39;\] + r&#39;\\SQLEXPRESS&#39; # I use SQLEXPRESS
+DATABASE\_PORT = &#39;&#39;             # Set to empty string for default. Not used with sqlite3.
+</code></pre><ol start="9">
+<li>Install/download FLUP: <a href="http://www.saddi.com/software/flup/dist/flup-1.0.1.tar.gz">http://www.saddi.com/software/flup/dist/flup-1.0.1.tar.gz</a></li>
+</ol>
+<pre tabindex="0"><code>python setup.py install
+</code></pre><p>10a) Download pyisapi-scgi from <a href="http://code.google.com/p/pyisapi-scgi/">http://code.google.com/p/pyisapi-scgi/</a></p>
+<p>10b) Extract the files to somewhere you can remember on your computer, like, c:\scgi</p>
+<ol start="11">
+<li>Double click pyisapi_scgi.py</li>
+</ol>
+<p>12a) Follow the directions here: <a href="http://code.google.com/p/pyisapi-scgi/wiki/howtoen">http://code.google.com/p/pyisapi-scgi/wiki/howtoen</a> &ndash; I set a temporary different port since I&rsquo;m just testing this out.</p>
+<p>12b) The last few parts might be better served with an image or two:</p>
+<h4 id="using-an-app-pool-to-get-the-right-permissions">Using an app pool to get the right permissions</h4>
+<p>(No resource/photo)</p>
+<h4 id="the-scgi-configuration-file">The SCGI configuration file</h4>
+<p>(No resource/photo)</p>
+<h4 id="properties-of-the-web-site">Properties of the web site</h4>
+<p>(No resource/photo)<br>
+13) Start the scgi process from the Django folder directory</p>
+<pre tabindex="0"><code>python manage.py runfcgi method=threaded protocol=scgi port=3033 host=127.0.0.1
+</code></pre><ol start="14">
+<li>Test your django page, http://192.168.12.34:8080</li>
+</ol>
+<p>(No resource/photo)</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to PyGTK &#43; py2exe for Windows" href="http://localhost:1313/2008/11/pygtk-py2exe-for-windows_8282.html">PyGTK &#43; py2exe for Windows </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-02 21:30:00.009 +1100 AEDT'>Published on November 2, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;m writing down these quick notes so I can remember the steps for getting py2exe to work with GTK.</p>
+<ul>
+<li>Download the GTK+ runtime</li>
+<li>Download py2exe</li>
+<li>Copy over your project into the windows box</li>
+<li>Create a setup.py file (see below)</li>
+<li>Run &ldquo;c:\Python25\python.exe setup.py py2exe&rdquo;</li>
+<li>Copy over the lib, etc, and share folder from C:\Program Files\GTK2-Runtime into the dist folder</li>
+<li>Run app!</li>
+</ul>
+<p>setup.py:</p>
+<pre tabindex="0"><code>from distutils.core import setup
+import py2exe
+
+setup(
+name = &#39;ploteq&#39;,
+description = &#39;Bunnys Plotting Tool&#39;,
+version = &#39;1.0&#39;,
+
+windows = \[
+{
+&#39;script&#39;: &#39;ploteq.py&#39;,
+}
+\],
+
+options = {
+&#39;py2exe&#39;: {
+&#39;packages&#39;:&#39;encodings&#39;,
+&#39;includes&#39;: &#39;cairo, pango, pangocairo, atk, gobject&#39;, 
+}
+},
+
+data\_files=\[
+&#39;ploteq.glade&#39;,
+\]
+)
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Slope Finder for the Missus" href="http://localhost:1313/2008/11/slope-finder-for-missus_5304.html">Slope Finder for the Missus </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-02 21:30:00.008 +1100 AEDT'>Published on November 2, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Since I do sysadminy stuff all day, I don&rsquo;t really get a chance to do much coding (or not as much of a chance as I would like). You can imagine my joy when my girlfriend expressed a problem she needed solved: &ldquo;I&rsquo;m going to need to solve 100s of slope equations, i.e. where two lines intersect. Can you write a program to do it?&rdquo; Sure!</p>
+<p>I asked if she wanted to do a batch input or just a one-off type of deal, she decided on the latter. Although I&rsquo;ve done a fair bit of PyGTK stuff, I had never actually needed to convert it to Windows. I debated using IronPython &ndash; but needed to use a special library to help solve the equations (I&rsquo;m lazy).</p>
+<p>So, where is the power in Python? After about 15-20m I had a console based app that could solve the slopes. I added the Linux GUI part in maybe 45m, and then the Windows part in, well, not 45m!</p>
+<p>Either way, screenshot is below. Thanks girlfriend, I had fun!</p>
+<p><a href="http://picasaweb.google.com/lh/photo/z7c7K2SAI4DQi84sBKkiGA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEAxIIJW4HIfuL3VFBYCY8aQM8pVChFP5qcxi3_Daaay5oN2OEJ4XstDByk-fOFICyJUfkp3Beerf12V4n3HmWFn_4WNd36bvDOFd0y5Grx6cgo5WpICpgFU5exuS0zwHrCNTaSHeuzMOt/s800/slopefinder.jpg"></a></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to GUI to Plot Driving Speed" href="http://localhost:1313/2008/05/gui-to-plot-driving-speed_6997.html">GUI to Plot Driving Speed </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-05-27 20:30:00.002 +1000 AEST'>Published on May 27, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I needed another Python fix, and I need one pretty badly. I spent the weekend wondering why it appears to be impossible to edit the GUIDs inside an Exchange mailbox store (read: NOT the GUIDs stored in AD for Exchange). Anyways, I digress.</p>
+<p>My goals were simple. I wanted to use Python, wanted something to do with traffic, and wanted to play around with Glade/PyGTK and graphing stuff. My end result was a little app that allows you to specify a GPX file, and it plots the waypoints (and calculates the moving average!). Pretty simple, pretty useless, but pretty fun. I really do like pretty pictures.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/qv9V1YGpNjeYA0oywW8BGA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgbsbQ8Cni_yPDyZ4MPoq2GXKP-XOFmq9aEpdc3acy9aMR5QemSj4UXMS1rGJ0IUSF3yc3unogl13DXYQM9z3wD_PmGreclmzDvmaqzJlSEuHJnq-sysd-r34mpNlI1gLOFwuWuyIWfRFp8/s400/SpeedPlotrX.jpg"></a></p>
+<p>I ended up using matplotlab for the graphing part, but I don&rsquo;t really like how the graphs look. I will likely use Pycha (which dips into Cairo) for my future projects &ndash; but we&rsquo;ll see when that point comes. (If data sensitivity wasn&rsquo;t an issue, I would totally use Google Charts, since I&rsquo;m a sucker for APIs).</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Another Baby Step" href="http://localhost:1313/2008/04/another-baby-step_1340.html">Another Baby Step </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-29 20:30:00.006 +1000 AEST'>Published on April 29, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I showed a few of my co-workers my graph and one replied &ndash; oh! that&rsquo;s really cool. (I think only two of my co-workers are actually interested in my geekyness). He then emailed me tonight a .kmz file containing a colorized file of his speed. I looked at the kml and noticed it appeared to be dynamically allocated judging by the top speed. Well, as you could guess, I surely had to modify my code to include colors.</p>
+<p>Within an hour I had a semi-working example, and within two hours will easily be done with this blog post. The code might not be perfect, but it first parses the xml and returns the max speed for the trip. Next, it colorizes the speeds based on a scale of 0-255, with 0 being blue for fast and 255 for being yellow, or slow. I was going to study for the CCNA tonight, but it looks like writing Python is just too much fun.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/vQ_v3bb0f6QLHiOEEShN1Q?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhHE0LrPY3qk6xEJfwkyjpNu6wcJtGv9vtho2gi7W9NCTbViKUXsImuIoNjcoZGTiSTTrGkRCOzb_WP8RE7wTweah7WkOwdp1x6b2b7teDvMvGcf2u-Ou9jYkfyKTDXpWY8N8J_GYEDYKkI/s288/gpstracks1.jpg"></a></p>
+<p><a href="http://picasaweb.google.com/lh/photo/L7745TDqLkWkkftff8bV8g?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhySCFquf2IZDhKtK0aJNzlga4jA04ye11unofmz42J5_UB1AdyLDrsuxfZCwVUuj-9HBPcs04l3vkke-S3aMfbdI_2i6iwM4pmL4WFrCpD6YmSUJ9T8I6ixMDzhnuX7-I62nPs8VsP8gXx/s288/gpstracks2.jpg"></a></p>
+<p>So what, you might ask, are those dips? Good question. They are huge speed bumps (and the tall blue mound in the middle is a really steep hill).</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Installing Mapnik on Ubuntu 7.10" href="http://localhost:1313/2008/04/installing-mapnik-on-ubuntu-710_6688.html">Installing Mapnik on Ubuntu 7.10 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-19 20:30:00.002 +1000 AEST'>Published on April 19, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I have managed to install mapnik 0.4, 0.5, 0.5.1 and various SVN releases in-between on Ubuntu. While this isn&rsquo;t in itself exciting, I think I manage to stumble at every installation. I typically forget to add the flags when building, so, to prevent myself from stumbling again, I&rsquo;m going to write them out here.</p>
+<p><strong>Build mapnik</strong></p>
+<pre tabindex="0"><code>$ python scons/scons.py PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p><strong>Then install it</strong></p>
+<pre tabindex="0"><code>$ sudo python scons/scons.py install PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p>Then proceed as normal.</p>
+
+  </div>
+
+  
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/tags/python/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/tags/python/page/3/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

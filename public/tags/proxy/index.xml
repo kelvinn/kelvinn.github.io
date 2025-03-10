@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Proxy on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/proxy/</link>
+    <description>Recent content in Proxy on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Mar 2007 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I Hate GeoIP Advertising</title>
+      <link>http://localhost:1313/2007/03/i-hate-geoip-advertising_6728.html</link>
+      <pubDate>Thu, 15 Mar 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/03/i-hate-geoip-advertising_6728.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/WRMH3mQauVVNRBo9Jr-mdQ?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUCe5P3KESIXOcTikN8dyhNqIGGwP9liL62sQXgx7FeGNf2oQjwyHSbe8UJxuveH6RlUmFs8_120nmV_9XNj3aShEdCP_nH9j8lPYXkgEGTyzaztQOH0PxR8ClpM4MYqJP2I4hmV3RGfwS/s400/geoiphell1.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Remember, I&amp;rsquo;m in a coffee shop? GeoIPized Girls = have to sit with back to wall.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Country_IP_database&#34;&gt;GeoIP&lt;/a&gt; is the concept that allows you to map a user&amp;rsquo;s IP to the country it came from (I hacked up my commenting system just so you can see an example, if you are a visual type of person). Advertisers have long since picked up on this as a way to make their ads &amp;ldquo;better,&amp;rdquo; hopefully becoming more appealing to their clientele. Sometimes the adaptation doesn&amp;rsquo;t quite work as expected. This morning I was searching for an eBook on Embedded Linux (it is really hard to find English tech books here) &amp;ndash; and just had to snap a few screenshots. The advertisers picked up my IP, from Taiwan, and &amp;ldquo;customized&amp;rdquo; the advertisement. Needless to say, I&amp;rsquo;ve seen a total of five white females here over the entire last year.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Darn You HiNet</title>
+      <link>http://localhost:1313/2007/01/darn-you-hinet_4291.html</link>
+      <pubDate>Wed, 24 Jan 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/01/darn-you-hinet_4291.html</guid>
+      <description>&lt;p&gt;As you may know by now, I&amp;rsquo;m in Taiwan.  Live is pretty good here, especially the internet &amp;ndash; I&amp;rsquo;m sitting on a pretty decent 12M/1M connection.  But the company I have my internet through seems pretty laid back about &lt;a href=&#34;http://www.spamhaus.org/statistics/networks.lasso&#34;&gt;network usage&lt;/a&gt;&lt;br&gt;
+-- which for me isn&amp;rsquo;t good.  Their entire IP subnet appears banned from IRC, which means I have to be a little sneaky when I want to talk to my I.T. friends in New Zealand.  Worse, some websites even banned the entire subnet:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

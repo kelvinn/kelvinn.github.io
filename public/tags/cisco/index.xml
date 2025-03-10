@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cisco on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/cisco/</link>
+    <description>Recent content in Cisco on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Jun 2011 14:15:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reload a Cisco Router WIthout Worry</title>
+      <link>http://localhost:1313/2011/06/reload-cisco-router-without-worry.html</link>
+      <pubDate>Wed, 08 Jun 2011 14:15:00 +1000</pubDate>
+      <guid>http://localhost:1313/2011/06/reload-cisco-router-without-worry.html</guid>
+      <description>&lt;p&gt;Recently I tried editing my Cisco&amp;rsquo;s ACL at home on the train. It went something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I logged in&lt;/li&gt;
+&lt;li&gt;I started updating the ACL&lt;/li&gt;
+&lt;li&gt;I hit a blackspot in my 3g coverage&lt;/li&gt;
+&lt;li&gt;My command stops at &amp;ldquo;router(config)#access-&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;I get a call from my partner saying &amp;ldquo;what did you do to our internet!&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Although it is simple enough to just ask her to &amp;ldquo;flip the switch on the black box&amp;rdquo;, I still don&amp;rsquo;t like doing it. Plus, if she&amp;rsquo;s not home, I&amp;rsquo;m stuck. This accident immediately reminded me of one of a trait of the &amp;lsquo;reload&amp;rsquo; command: it can be scheduled.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Charting the Hackers</title>
+      <link>http://localhost:1313/2008/12/charting-hackers_7870.html</link>
+      <pubDate>Sun, 28 Dec 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/12/charting-hackers_7870.html</guid>
+      <description>&lt;p&gt;A normal internet connection gets attacked, a lot. The majority of attacks are of the form &amp;ldquo;hello, anybody there?&amp;rdquo; &amp;ndash; where most people just don&amp;rsquo;t answer. But sometimes, just sometimes, the question gets an answer. Depending on the answer, the attacker will start to explore.&lt;/p&gt;
+&lt;p&gt;A few weeks back I was a little bored and started fiddling. I wanted to play with my Cisco, but also wanted to play with OSSEC, but also has a GIS craving. In the end I decided to create a map of the people who ask, &amp;ldquo;hello&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NetFlow into MySQL with flow-tools</title>
+      <link>http://localhost:1313/2008/12/netflow-into-mysql-with-flow-tools_5439.html</link>
+      <pubDate>Sun, 21 Dec 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/12/netflow-into-mysql-with-flow-tools_5439.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been side-tracked on another little project, and keep coming back to NetFlow. For this project I&amp;rsquo;ll need to access NetFlow data with &lt;a href=&#34;http://www.djangoproject.com&#34;&gt;Django&lt;/a&gt;, but this is a bit tricky. First, I&amp;rsquo;m sort of lazy when it comes to my own project; maybe not lazy, I just like taking the most direct route. The most up-to-date NetFlow collector I noticed was &lt;a href=&#34;http://code.google.com/p/flow-tools/&#34;&gt;flow-tools&lt;/a&gt;, and there is even a switch to export the information into MySQL. Sweet! However, I wanted to insert the flows into MySQL automatically, or at least on a regular basis. I first started writing a python script that would do the job, but after a few minutes noticed flow-capture had a rotate_program switch, and started investigating. Since I somehow couldn&amp;rsquo;t find anywhere instructions how to insert the data automatically, here&amp;rsquo;s what I came up with:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Upgrading Cisco Wireless Firmware</title>
+      <link>http://localhost:1313/2008/11/upgrading-cisco-wireless-firmware_3066.html</link>
+      <pubDate>Mon, 03 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/upgrading-cisco-wireless-firmware_3066.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m always forgetting the exact string to enter at the CLI for updating the IOS on a wireless Cisco AP, so I&amp;rsquo;ll just put it here to end my future searches:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Chimp# archive download-sw /force-reload /overwrite tftp://192.168.83.150/c1100-k9w7-tar.123-8.JEC1.tar
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;192.168.83.150 obviously being your tftp server, and the .tar file sitting in the root of the tftp server.&lt;/p&gt;
+&lt;p&gt;I suppose if you wanted to backup your IOS you could do something along the lines of:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hunt the Anomaly</title>
+      <link>http://localhost:1313/2006/09/hunt-anomaly_560.html</link>
+      <pubDate>Fri, 01 Sep 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/09/hunt-anomaly_560.html</guid>
+      <description>&lt;p&gt;Information is power, or so many of us think. As an I.T. administrator, no matter what the level, it is of my opinion that knowing what your network is doing is important. This includes regular operation, what it could do in the event of a disaster, or when it is just slightly not functioning.&lt;/p&gt;
+&lt;p&gt;Jeez, I&amp;rsquo;m personifying a computer network.&lt;/p&gt;
+&lt;p&gt;As I wrote in another post, I setup &lt;a href=&#34;http://www.kelvinism.com/projects/monitoring-traffic-usage/&#34;&gt;network monitoring&lt;/a&gt; for several nodes. But, what happens when an anomaly occurs? This is the story of hunting down a worm/virus, from far, far away.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cisco IPSec Tutorial</title>
+      <link>http://localhost:1313/2006/04/cisco-ipsec-tutorial_5224.html</link>
+      <pubDate>Wed, 05 Apr 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/04/cisco-ipsec-tutorial_5224.html</guid>
+      <description>&lt;p&gt;The following sites might be helpful to configure IPSec again, or on a more complex basis:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.cisco.com/univercd/cc/td/doc/product/iaabu/pix/pix&#34;&gt;http://www.cisco.com/univercd/cc/td/doc/product/iaabu/pix/pix&lt;/a&gt;_60/ipsec/conipsec.htm&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.cisco.com/warp/public/707/overload&#34;&gt;http://www.cisco.com/warp/public/707/overload&lt;/a&gt;_private.shtml&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

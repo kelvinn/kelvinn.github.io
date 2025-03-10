@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Vortex86dx | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/vortex86dx/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/vortex86dx/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/vortex86dx/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Installing Debian 5.0 on Vortex86DX" href="http://localhost:1313/2009/06/installing-debian-50-on-vortex86dx_3246.html">Installing Debian 5.0 on Vortex86DX </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-06-14 20:30:00.006 +1000 AEST'>Published on June 14, 2009</span>&nbsp;·&nbsp;5 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>After writing about <a href="http://kelvinism.com/tech-blog/compiling-kernel-vortex86dx/">compiling a new kernel</a> for the Vortex86DX, I&rsquo;ve had quite a few people email me asking how I installed Debian in the first place. The installation is actually quite straightforward, but it involved several quirky techniques. After doing another install I decided to keep track of the process of installing Debian 5.0 on my eBox-3300.</p>
+<p>The following guide assumes a few things. First, you are currently using Linux and a debian variety (although instructions could be altered if using Windows). Second, your USB shows up as /dev/sdb. Third, your eBox-3300 has the HDD set in Native mode. Forth, you are patient.</p>
+<ol>
+<li>Download the custom vmlinuz and initrd.gz files from my site. Also, download the custom deb files we&rsquo;ll use near the end of installation:</li>
+</ol>
+<pre tabindex="0"><code>http://cdn.kelvinism.com/ebox/vmlinuz
+http://cdn.kelvinism.com/ebox/initrd.gz
+http://cdn.kelvinism.com/ebox/linux-headers-2.6.29.3-vortex86dx.deb
+http://cdn.kelvinism.com/ebox/linux-image-2.6.29.3-vortex86dx.deb
+</code></pre><ol start="2">
+<li>Download an i386 netinst iso:</li>
+</ol>
+<pre tabindex="0"><code>http://www.debian.org/CD/netinst/
+</code></pre><ol start="3">
+<li>Make sure the USB has an MBR installed:</li>
+</ol>
+<pre tabindex="0"><code>apt-get install syslinux mtools mbr
+install-mbr /dev/sdb
+</code></pre><ol start="4">
+<li>
+<p>Format the device as FAT32 with whatever tool you like.</p>
+</li>
+<li>
+<p>Run syslinux on it:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>syslinux /dev/sdb1
+</code></pre><ol start="6">
+<li>Mount the USB (or pull it out and plug it in again so it shows up on your desktop), and copy the downloaded vmlinuz, initrd, netinst.iso and deb files onto the USB. There should be a file called ldlinux.sys already; create a file called syslinux.cfg and put the following in it:</li>
+</ol>
+<pre tabindex="0"><code>default vmlinuz
+append initrd=initrd.gz root=/dev/rd/0 devfs=mount,dall rw DEBCONF\_PRIORITY=medium
+</code></pre><p>It should look like this:</p>
+<p><img alt="Ebox files" loading="lazy" src="http://cdn.kelvinism.com/images/ebox3300files.png"></p>
+<ol start="7">
+<li>
+<p>Unmount the USB, and put it in your eBox-3300. When the system boots up initially, hit F11. Select your USB device. Depending how you created the MBR it might come up as saying &ldquo;MBR FA:&rdquo;. Press &ldquo;A&rdquo;. When 1234F comes up, press &ldquo;1&rdquo;. Press enter at the SYSLINUX &ldquo;boot:&rdquo; screen.</p>
+</li>
+<li>
+<p>Proceed as normal through the menu. It will search for an ISO image, and should detect the netinst image you inserted earlier. When you get to the &ldquo;Load installer components&rdquo; section, it will complain about no kernel modules found. Select YES. On the next screen you shouldn&rsquo;t need to load any components, so hit continue. Proceed as normal.</p>
+</li>
+<li>
+<p>If you are ever asked about starting PC card services, hit NO. Proceed as normal.</p>
+</li>
+<li>
+<p>Eventually you will hit a screen that says LVM is not available, hit CONTINUE. Proceed as normal.</p>
+</li>
+<li>
+<p>Near the end it will toss up a list of available kernels. Select either, it shouldn&rsquo;t matter. When you are allowed to select drivers to include in the initrd, select TARGETED. Proceed as normal.</p>
+</li>
+<li>
+<p>You might get to a point where it says Install GRUB boot loader on a hard disk. This will fail. That&rsquo;s ok, just skip it and select &ldquo;continue without boot loader&rdquo;.</p>
+</li>
+<li>
+<p>You will end up on the &ldquo;Finish the installation&rdquo; menu. <strong>DO NOT</strong> finish! We now need to swap out the current kernel with one that works. Scroll down and select &ldquo;Execute a shell&rdquo;. Press CONTINUE. Try these steps when the shell prompt appears:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>cd hd-media
+cp \*.deb /target/usr/src/
+cp vmlinuz /target/boot/vmlinuz-2.6.26-2.486
+cp initrd.gz /target/boot/
+cd /target/boot
+gunzip initrd.gz
+mv initrd initrd.img-2.6.26-2-486
+reboot
+</code></pre><p>Your system will now reboot, and it should actually boot correctly. However, you&rsquo;re using a kernel that doesn&rsquo;t have any headers or modules, which means you can&rsquo;t activate anything. Once the box boots up, login and install the included custom kernels:</p>
+<pre tabindex="0"><code>cd /usr/src
+dpkg -i linux-image-2.6.29.3-vortex86dx.deb
+dpkg -i linux-headers-2.6.29.3-vortex86dx.deb
+reboot
+</code></pre><p>Once the system comes back up, you should be running a spiffy 2.6.29 kernel, with the ability to add modules.</p>
+<p>You may want to follow the tuning section from the <a href="http://groups.google.com/group/microclient/web/ubuntu-on-microclient-sr">MicroClient page</a> on Google Groups. I also modified my fstab file to help reduce wear on the CF card:</p>
+<pre tabindex="0"><code>tmpfs /var/run tmpfs defaults,noatime 0 0
+tmpfs /var/lock tmpfs defaults,noatime 0 0
+tmpfs /var/tmp tmpfs defaults,noatime 0 0 
+</code></pre><p><strong>Contribution 1:</strong> <a href="http://www.idiap.ch/~fleuret/">Francois Fleuret</a> emailed through a kind reminder that the qemu-onto-SD card method is a viable option. So, if you want to go the SD route, and have an SD reader, this might be what you&rsquo;re after!</p>
+<pre tabindex="0"><code>Basically, install Debian on a SD card with qemu (start qemu with the
+install disk iso as cdrom and the SD card as hda), while you are still
+in qemu, download and install the kernel deb file
+
+ftp://ftp.icop.com.tw/upload/Shawn/linux-image-2.6.27.9-vortex86dx\_2.6.27.9-vortex86dx\_i386.deb
+
+then quit qemu, put the SD card in the box and reboot. You are done!
+</code></pre><p>If you want the source file for the above kernels, you can get it from here: <a href="http://cdn.kelvinism.com/ebox/linux-source-2.6.29.3-vortex86dx.deb">2.6.29-3 source</a>. I recently recompiled the kernel with some extra modules enabled (e.g. ecryptfs), so if you would like to try a newer kernel, you can download my updated kernels too:</p>
+<pre tabindex="0"><code>http://cdn.kelvinism.com/ebox/linux-headers-2.6.30.4-vortex86dx.deb
+http://cdn.kelvinism.com/ebox/linux-image-2.6.30.4-vortex86dx\_2.6.30.4.deb
+</code></pre><p><strong>Contribution 2</strong>: Trent L has also recompiled a 2.6.28 kernel with wireless extensions built into it, which is what was needed for his wireless card. He has kindly allowed me to distribute them; you can find them here:</p>
+<pre tabindex="0"><code>http://cdn.kelvinism.com/ebox/linux-source-2.6.28.10\_vortex86dx.deb
+http://cdn.kelvinism.com/ebox/linux-image-2.6.28.10\_vortex86dx.deb
+http://cdn.kelvinism.com/ebox/linux-headers-2.6.28.10\_vortex86dx.deb
+http://cdn.kelvinism.com/ebox/2.6.28.config
+</code></pre><p><strong>Contribution 3</strong>: If you have the ebox-3310, you can still read through this, but you may also want to see a <a href="http://kelvinism.com/howtos/lenny-ebox-3310a/">suggested installation method and kernels</a> from Stefan.</p>
+<p><strong>Contribution 4</strong>: Alexandru T. sent through some instructions directly received from ICOP. I&rsquo;ve added <a href="http://www.kelvinism.com/howtos/vortex86dx-instructions-icop/">another page</a> with the details. Thanks Alex!</p>
+<p><strong>Contribution 5:</strong>: Rainbow sent through the solution if your kernel panics with:</p>
+<pre tabindex="0"><code>it report &#34;kernel bug at fs/buffer.c 1864&#34; and system go mad, even
+&gt; &#34;halt&#34; &#34;reboot&#34; take no effect.
+</code></pre><p>Rainbow reported that:</p>
+<pre tabindex="0"><code>this issue cause by an error Vcore, 0.90v refered by datasheet, and it should be above 0.97.
+</code></pre><p><strong>Contribution 6:</strong>: Bob&rsquo;s also sent through his <a href="http://cdn.kelvinism.com/ebox/config-2.6.29.3-ziti.3">config</a> file.</p>
+<p><strong>Contribution 7</strong>: Bob A. has sent through some resources about a special ISO specific for the ebox. It has been added to <a href="http://www.kelvinism.com/howtos/vortex86dx-instructions-icop/">another page</a>.</p>
+<p><strong>Update</strong>: I&rsquo;ve needed to recompile a new Lenny vortex86dx-enabled kernel for 2.6.31.5: <a href="http://cdn.kelvinism.com/ebox/linux-image-2.6.31.5-vortex86dx.deb">image</a>, <a href="http://cdn.kelvinism.com/ebox/linux-headers-2.6.31.5-vortex86dx.deb">headers</a>, <a href="http://cdn.kelvinism.com/ebox/linux-source-2.6.31.5-vortex86dx.deb">source</a> and <a href="http://cdn.kelvinism.com/ebox/config-2.6.31.5">config</a>.</p>
+
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vps on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/vps/</link>
+    <description>Recent content in Vps on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 May 2010 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RIP Old Sites</title>
+      <link>http://localhost:1313/2010/05/rip-old-sites_7527.html</link>
+      <pubDate>Sun, 16 May 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/05/rip-old-sites_7527.html</guid>
+      <description>&lt;p&gt;Over the years I&amp;rsquo;ve created several websites, some with the hope of becoming big and popular. Naturally, I&amp;rsquo;m still waiting to create a site that becomes big and popular. In the meantime, it seems appropriate to retire some of the older sites and ideas. The truth is, I&amp;rsquo;m moving all my little sites from MySQL on a mediocre VPS to Postgresql on EC2.&lt;/p&gt;
+&lt;p&gt;Because I put some sweat and blood into these sites, I thought it would be only appropriate to record how the sites looked for future sentimental value. I downloaded a small plug-in for Firefox to take full-length pictures, and I thus post them here.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Size of Uncompressed OSM File</title>
+      <link>http://localhost:1313/2008/01/size-of-uncompressed-osm-file_95.html</link>
+      <pubDate>Tue, 08 Jan 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/01/size-of-uncompressed-osm-file_95.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been playing around with &lt;a href=&#34;http://www.openstreetmap.com&#34;&gt;OSM&lt;/a&gt; a little lately, and have been meaning to construct my own slippy map. At first I wanted to do it on my VPS &amp;ndash; but with rather limited storage, and even more limited memory, there just isn&amp;rsquo;t a way. Three problems exists: the first occurs when trying to use osm2pgsql to import the OSM file into the database. Current records state that this typically uses 650+ MB, something my 512MB VPS just doesn&amp;rsquo;t have (although I&amp;rsquo;m writing some code that might make this possible in the future).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

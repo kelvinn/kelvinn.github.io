@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Debian on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/debian/</link>
+    <description>Recent content in Debian on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 Dec 2009 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vortex86DX Instructions from ICOP</title>
+      <link>http://localhost:1313/2009/12/vortex86dx-instructions-from-icop_3935.html</link>
+      <pubDate>Sat, 05 Dec 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/12/vortex86dx-instructions-from-icop_3935.html</guid>
+      <description>&lt;p&gt;Alexandru T. and I have exchanged a few emails, and he sent through a few helpful suggestions that were provided from ICOP. I have included them below. Thanks Alexandru!&lt;/p&gt;
+&lt;p&gt;1. Install Debian 5.0 on a normal PC (using a netinst image, for minimal install)&lt;/p&gt;
+&lt;p&gt;2. After installation boot normally from the same PC&lt;/p&gt;
+&lt;p&gt;3. Then, take the kernel from &lt;a href=&#34;ftp://icop.com.tw/DIS&#34;&gt;ftp://icop.com.tw/DIS&lt;/a&gt;_info/VDX/operating_system/VDX_Linux/linux-image-2.6.30-vortex86mx_1.0_i386.deb and then issue the following commands :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\# dpkg -i  linux-image-2.6.30-vortex86mx\_1.0\_i386.deb
+# update-initramfs -k 2.6.30-vortex86mx -c
+# update-grub
+# restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4. Then take the hard-drive and install it on the Vortex86DX&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installing Debian 5.0 on Vortex86DX</title>
+      <link>http://localhost:1313/2009/06/installing-debian-50-on-vortex86dx_3246.html</link>
+      <pubDate>Sun, 14 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/installing-debian-50-on-vortex86dx_3246.html</guid>
+      <description>&lt;p&gt;After writing about &lt;a href=&#34;http://kelvinism.com/tech-blog/compiling-kernel-vortex86dx/&#34;&gt;compiling a new kernel&lt;/a&gt; for the Vortex86DX, I&amp;rsquo;ve had quite a few people email me asking how I installed Debian in the first place. The installation is actually quite straightforward, but it involved several quirky techniques. After doing another install I decided to keep track of the process of installing Debian 5.0 on my eBox-3300.&lt;/p&gt;
+&lt;p&gt;The following guide assumes a few things. First, you are currently using Linux and a debian variety (although instructions could be altered if using Windows). Second, your USB shows up as /dev/sdb. Third, your eBox-3300 has the HDD set in Native mode. Forth, you are patient.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fixing mysql warning message</title>
+      <link>http://localhost:1313/2009/05/fixing-mysql-warning-message_4782.html</link>
+      <pubDate>Sun, 03 May 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/05/fixing-mysql-warning-message_4782.html</guid>
+      <description>&lt;p&gt;After restoring databases from one server to another I sometimes get this error on Ubuntu or Debian:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;error: &amp;#39;Access denied for user &amp;#39;debian-sys-maint&amp;#39;@&amp;#39;localhost&amp;#39; (using password: YES)&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This makes a lot of sense, and the solution is pretty simple. If you look in:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat /etc/mysql/debian.cnf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You&amp;rsquo;ll see the defaults for your system. Copy the password listed there, and open a connection to MySQL as root (or some other user). Next, enter this (lets say your password specified in debian.cnf was &amp;lsquo;abracadabra&amp;rsquo;:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

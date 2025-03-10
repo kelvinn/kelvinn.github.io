@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Monitoring on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/monitoring/</link>
+    <description>Recent content in Monitoring on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jun 2009 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a Movie from Images</title>
+      <link>http://localhost:1313/2009/06/create-movie-from-images_6692.html</link>
+      <pubDate>Mon, 01 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/create-movie-from-images_6692.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve started leaving my webcam on as a motion detector to find out who is leaving the shopping cards on our lawn, and ultimately have found it useful to stitch the images together into a movie. There are several ways to do this - and my way maybe isn&amp;rsquo;t the best - but it works for me.&lt;/p&gt;
+&lt;p&gt;I first installed and configured &lt;a href=&#34;http://www.lavrsen.dk/twiki/bin/view/Motion/WebHome&#34;&gt;motion&lt;/a&gt;, which I&amp;rsquo;ve used for years. I then created a file in ~/.motion called motion.com:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>NetFlow into MySQL with flow-tools</title>
+      <link>http://localhost:1313/2008/12/netflow-into-mysql-with-flow-tools_5439.html</link>
+      <pubDate>Sun, 21 Dec 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/12/netflow-into-mysql-with-flow-tools_5439.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been side-tracked on another little project, and keep coming back to NetFlow. For this project I&amp;rsquo;ll need to access NetFlow data with &lt;a href=&#34;http://www.djangoproject.com&#34;&gt;Django&lt;/a&gt;, but this is a bit tricky. First, I&amp;rsquo;m sort of lazy when it comes to my own project; maybe not lazy, I just like taking the most direct route. The most up-to-date NetFlow collector I noticed was &lt;a href=&#34;http://code.google.com/p/flow-tools/&#34;&gt;flow-tools&lt;/a&gt;, and there is even a switch to export the information into MySQL. Sweet! However, I wanted to insert the flows into MySQL automatically, or at least on a regular basis. I first started writing a python script that would do the job, but after a few minutes noticed flow-capture had a rotate_program switch, and started investigating. Since I somehow couldn&amp;rsquo;t find anywhere instructions how to insert the data automatically, here&amp;rsquo;s what I came up with:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PSAD and Syslog-NG</title>
+      <link>http://localhost:1313/2007/04/psad-and-syslog-ng_7378.html</link>
+      <pubDate>Wed, 18 Apr 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/04/psad-and-syslog-ng_7378.html</guid>
+      <description>&lt;p&gt;I really like using PSAD, both on my server and my laptop. You never know where the mean people are. I also seem to use syslog-ng quite often, meanwhile PSAD seems oriented to syslog. This is fine, and I&amp;rsquo;m pretty sure the install.pl for the source built will configure syslog-ng.conf automatically. However, I almost always tend to stick with packages if I can &amp;ndash; if they are even remotely close to the current version.&lt;br&gt;
+Anyways, if you need to get syslog-ng.conf configured for PSAD, this is what you need to do:&lt;br&gt;
+Add this code to the &amp;ldquo;# pipes&amp;rdquo; section, maybe stick to keeping it alphabetical.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hunt the Anomaly</title>
+      <link>http://localhost:1313/2006/09/hunt-anomaly_560.html</link>
+      <pubDate>Fri, 01 Sep 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/09/hunt-anomaly_560.html</guid>
+      <description>&lt;p&gt;Information is power, or so many of us think. As an I.T. administrator, no matter what the level, it is of my opinion that knowing what your network is doing is important. This includes regular operation, what it could do in the event of a disaster, or when it is just slightly not functioning.&lt;/p&gt;
+&lt;p&gt;Jeez, I&amp;rsquo;m personifying a computer network.&lt;/p&gt;
+&lt;p&gt;As I wrote in another post, I setup &lt;a href=&#34;http://www.kelvinism.com/projects/monitoring-traffic-usage/&#34;&gt;network monitoring&lt;/a&gt; for several nodes. But, what happens when an anomaly occurs? This is the story of hunting down a worm/virus, from far, far away.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Xml on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/xml/</link>
+    <description>Recent content in Xml on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Aug 2009 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Most Frequently Used French Words</title>
+      <link>http://localhost:1313/2009/08/most-frequently-used-french-words_140.html</link>
+      <pubDate>Sun, 30 Aug 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/08/most-frequently-used-french-words_140.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m currently studying French with my partner, and if you&amp;rsquo;ve read any of this site, you&amp;rsquo;ll notice I&amp;rsquo;m a bit of a techie. Often several of my interests collide, which is what happened today. I was searching for the &amp;ldquo;most frequent french words,&amp;rdquo; and while I found some lists, nothing was exactly what I wanted.&lt;br&gt;
+My desire was to have a PDF of the top few thousand most used French words. With the English translation next to it. In order. I&amp;rsquo;ve found some great resources, which I&amp;rsquo;ll list now&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integrating OSSEC with Cisco IOS</title>
+      <link>http://localhost:1313/2008/11/integrating-ossec-with-cisco-ios_7061.html</link>
+      <pubDate>Sat, 15 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/integrating-ossec-with-cisco-ios_7061.html</guid>
+      <description>&lt;p&gt;I rank OSSEC as one of my favorite pieces of open source software, and finally decided to play around with it more in my own free time. (Yup, I do this sort of stuff for &lt;em&gt;fun&lt;/em&gt;). My goal was quite simple: send syslog packets from my Cisco to my &amp;ldquo;proxy&amp;rdquo; server, running OSSEC. I found that, although OSSEC supports Cisco IOS logging, it didn&amp;rsquo;t really work. In fact, I couldn&amp;rsquo;t find any examples or articles of anybody actually getting it to work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Event vs. DOM Driven Parsing of XML</title>
+      <link>http://localhost:1313/2008/04/event-vs-dom-driven-parsing-of-xml_6678.html</link>
+      <pubDate>Tue, 29 Apr 2008 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2008/04/event-vs-dom-driven-parsing-of-xml_6678.html</guid>
+      <description>&lt;p&gt;I recently have been &lt;a href=&#34;http://www.kelvinism.com/tech-blog/baby-steps-graphing-traffic/&#34;&gt;playing&lt;/a&gt; with parsing GPX files and spitting out the results into a special KML file. I initially wrote a parser using minidom, yet after running this the first time &amp;ndash; and my Core2Duo laptop reaching 100% utilization for 10 seconds &amp;ndash; I realized I needed to re-write it using something else.&lt;/p&gt;
+&lt;p&gt;I spent a little time reading the different parsers for XML and eventually read more about &lt;a href=&#34;http://effbot.org/zone/celementtree.htm&#34;&gt;cElementTree&lt;/a&gt;. And it is included with Python2.5, sweet.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Django Syndication with Colddirt II</title>
+      <link>http://localhost:1313/2007/06/django-syndication-with-colddirt-ii_3665.html</link>
+      <pubDate>Sun, 03 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/django-syndication-with-colddirt-ii_3665.html</guid>
+      <description>&lt;p&gt;Since I&amp;rsquo;ve already covered a really simple syndication example, I&amp;rsquo;ll move onto something a little more complex. Let&amp;rsquo;s say you want to offer syndication that is slightly more custom. The Django &lt;a href=&#34;http://www.djangoproject.com/documentation/syndication_feeds/&#34;&gt;syndication docs&lt;/a&gt; give an example from &lt;a href=&#34;http://www.holovaty.com/&#34;&gt;Adrian&amp;rsquo;s&lt;/a&gt; &lt;a href=&#34;http://www.chicagocrime.org/&#34;&gt;Chicagocrime.org&lt;/a&gt; syndication of beats. I had to ponder a minute to get &amp;ldquo;custom&amp;rdquo; syndication to work, so here&amp;rsquo;s my example from start to finish.&lt;br&gt;
+First, as usual, feeds.py&lt;/p&gt;
+&lt;h4 id=&#34;feedspy&#34;&gt;feeds.py&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class PerDirt(Feed):
+
+    link = &amp;#34;/&amp;#34;
+    copyright = &amp;#39;Copyright (c) 2007, Blog Mozaic&amp;#39;
+    
+    def get\_object(self, bits):
+        from django.shortcuts import get\_object\_or\_404
+        if len(bits) != 1:
+            raise ObjectDoesNotExist
+        my\_dirt = get\_object\_or\_404(Dirt, slug\_\_exact=bits\[0\])
+        return my\_dirt
+
+    def title(self, obj):
+        return obj.slug
+    
+    def description(self, obj):
+        return obj.description
+    
+    def items(self, obj):
+        from django.contrib.comments.models import FreeComment
+        return FreeComment.objects.filter(object\_id=obj.id).order\_by(&amp;#39;-submit\_date&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can see that this differs slightly from the simpler syndication example. I&amp;rsquo;ll not a few things. But first, I need to show urls.py:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

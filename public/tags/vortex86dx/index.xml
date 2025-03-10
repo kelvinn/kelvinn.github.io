@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Vortex86dx on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/vortex86dx/</link>
+    <description>Recent content in Vortex86dx on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 14 Jun 2009 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/vortex86dx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Debian 5.0 on Vortex86DX</title>
+      <link>http://localhost:1313/2009/06/installing-debian-50-on-vortex86dx_3246.html</link>
+      <pubDate>Sun, 14 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/installing-debian-50-on-vortex86dx_3246.html</guid>
+      <description>&lt;p&gt;After writing about &lt;a href=&#34;http://kelvinism.com/tech-blog/compiling-kernel-vortex86dx/&#34;&gt;compiling a new kernel&lt;/a&gt; for the Vortex86DX, I&amp;rsquo;ve had quite a few people email me asking how I installed Debian in the first place. The installation is actually quite straightforward, but it involved several quirky techniques. After doing another install I decided to keep track of the process of installing Debian 5.0 on my eBox-3300.&lt;/p&gt;
+&lt;p&gt;The following guide assumes a few things. First, you are currently using Linux and a debian variety (although instructions could be altered if using Windows). Second, your USB shows up as /dev/sdb. Third, your eBox-3300 has the HDD set in Native mode. Forth, you are patient.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Screencasts on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/screencasts/</link>
+    <description>Recent content in Screencasts on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 03 Nov 2006 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/screencasts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Katapult Screencast</title>
+      <link>http://localhost:1313/2006/11/katapult-screencast_788.html</link>
+      <pubDate>Fri, 03 Nov 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/11/katapult-screencast_788.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.ianfitzpatrick.com/&#34;&gt;Ian&lt;/a&gt; keeps bugging me at how great Quicksilver is. Knowning that there &lt;em&gt;must&lt;/em&gt; be an alternative built for linux, I accidently stumbled across Katapult.&lt;/p&gt;
+&lt;p&gt;While it still has a little room to grow, Katapult makes a great tool in any KDE toolchest. Press ALT+SPACE, and your widget fires up, ready to take your orders. Since words don&amp;rsquo;t really do this justice, I created a screencast.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://vimeo.com/10316527&#34;&gt;Katapult Screencast&lt;/a&gt; from &lt;a href=&#34;http://vimeo.com/user3417633&#34;&gt;Kelvin Nicholson&lt;/a&gt; on &lt;a href=&#34;http://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

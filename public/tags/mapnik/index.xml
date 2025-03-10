@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mapnik on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/mapnik/</link>
+    <description>Recent content in Mapnik on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Apr 2008 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/mapnik/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Mapnik on Ubuntu 7.10</title>
+      <link>http://localhost:1313/2008/04/installing-mapnik-on-ubuntu-710_6688.html</link>
+      <pubDate>Sat, 19 Apr 2008 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2008/04/installing-mapnik-on-ubuntu-710_6688.html</guid>
+      <description>&lt;p&gt;I have managed to install mapnik 0.4, 0.5, 0.5.1 and various SVN releases in-between on Ubuntu. While this isn&amp;rsquo;t in itself exciting, I think I manage to stumble at every installation. I typically forget to add the flags when building, so, to prevent myself from stumbling again, I&amp;rsquo;m going to write them out here.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Build mapnik&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ python scons/scons.py PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Then install it&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo python scons/scons.py install PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then proceed as normal.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using Distcc</title>
+      <link>http://localhost:1313/2008/01/using-distcc_1425.html</link>
+      <pubDate>Tue, 01 Jan 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/01/using-distcc_1425.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m in the process of working on one of my projects, and the requirement came up to download a fairly large file (4GB). Since I only receive ~20GB/month at my house, I decided to just use my server in the U.S. The next requirement came about needing to compile Mapnik, which I had intended to do on the server at some point anyways, yet I ran into memory constraints.&lt;/p&gt;
+&lt;p&gt;Good old distcc comes to the rescue. I don&amp;rsquo;t need to use distcc that often, yet when I do, it is very handy. However, I always forget to set g++ to use distcc as well. So, for when I forget next time&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

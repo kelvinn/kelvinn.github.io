@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+    
+      <link href="/postsold/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/postsold/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+      
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/postsold/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/postsold/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Postsolds">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Postsolds">
+  <meta itemprop="datePublished" content="2025-01-31T21:41:00+11:00">
+  <meta itemprop="dateModified" content="2025-01-31T21:41:00+11:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Postsolds">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Postsolds
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/05/fixing-locale-errors-in-ubuntu-804_7736.html" class="link black dim">
+        Fixing locale errors in Ubuntu 8.04
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;ve hit this problem a few times, and figured I&rsquo;d leave a note for myself how to fix it. Ubuntu 8.04 seems to hiccup sometimes (on a VPS) for generating the correct locales. In particular, I get this error, a lot:</p>
+<pre tabindex="0"><code>perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+LANGUAGE = (unset),
+LC\_ALL = (unset),
+LANG = &#34;en\_US.UTF-8&#34;
+are supported and installed on your system.
+perl: warning: Falling back to the standard locale (&#34;C&#34;).
+</code></pre><p>Normally I just do &lsquo;dpkg-reconfigure locales&rsquo;, but with 8.04, this doesn&rsquo;t seem to do squat. The solution is to edit the <strong>/var/lib/locales/supported.d/local</strong> file, and insert the correct locales (it will normally not exist, so create it):</p>
+    </div>
+    <a href="/2009/05/fixing-locale-errors-in-ubuntu-804_7736.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/05/fixing-mysql-warning-message_4782.html" class="link black dim">
+        Fixing mysql warning message
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>After restoring databases from one server to another I sometimes get this error on Ubuntu or Debian:</p>
+<pre tabindex="0"><code>error: &#39;Access denied for user &#39;debian-sys-maint&#39;@&#39;localhost&#39; (using password: YES)&#39;
+</code></pre><p>This makes a lot of sense, and the solution is pretty simple. If you look in:</p>
+<pre tabindex="0"><code>cat /etc/mysql/debian.cnf
+</code></pre><p>You&rsquo;ll see the defaults for your system. Copy the password listed there, and open a connection to MySQL as root (or some other user). Next, enter this (lets say your password specified in debian.cnf was &lsquo;abracadabra&rsquo;:</p>
+    </div>
+    <a href="/2009/05/fixing-mysql-warning-message_4782.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/04/operation-field_8222.html" class="link black dim">
+        Operation Field
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Status:</p>
+<p>It is time for a new project. I&rsquo;ve finally decided I want to do some electronics stuff - at least play around in that realm a little. However, I want to &ldquo;get out and about&rdquo; a little as well, so this leads me to my idea: a controllable long-range RC plane.</p>
+<p>I&rsquo;ve been debating whether to go the embedded Linux route, or the more simple microcontroller route. One of the first things I stumbled upon was <a href="http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A44814">ArduPilot</a>, a cheap Arduino-based board allowing for a UAV. However, after looking through the requirements I would have needed to purchase an RF transmitter, and they aren&rsquo;t cheap. This made me rethink the ArduPilot route and to evaluate what I really wanted to do: control the plan. My ultimate goal is to attach a joystick to my computer and be able to control the RC plane. This presents another problem with the ArduPilot, however, as there isn&rsquo;t an extra Rx pin available on the ArduPilot board (or so the forums say), I wouldn&rsquo;t be able to transmit coordinates on the fly.</p>
+    </div>
+    <a href="/2009/04/operation-field_8222.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/04/true-consolidation_6503.html" class="link black dim">
+        True Consolidation
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Back in 2000 I managed to acquire several retired systems to bring to Uni: this included 4-5 cheap P120 machines. At the time, I thought this was great; I had an OpenBSD box as my gateway, a FreeBSD box, a few Linux boxes, and likely something else that doesn&rsquo;t even exist now. The school has a superfast connection, unlimited bandwidth, and I was curious. Although I didn&rsquo;t really have <em>time</em>, I still managed to install and have all these servers running from my room.</p>
+    </div>
+    <a href="/2009/04/true-consolidation_6503.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/03/files-between-esx-and-linux-via-nfs_6022.html" class="link black dim">
+        Files between ESX and Linux via NFS
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I like ESX. I like Linux. It is absurdly easy to configure Linux as an NFS server and mount it in ESXIi).</p>
+<p><strong>Installed NFS</strong></p>
+<p>I currently use Ubuntu Server for my home lab, but the process is basically the same for Red Hat and derivatives.</p>
+<pre tabindex="0"><code>sudo apt-get install nfs-common
+sudo apt-get install nfs-kernel-server
+</code></pre><p>Next, configure NFS so it can server your local LAN. Normally you would list only specific servers, but, well, we&rsquo;re being cheap and dirty today. Open /etc/exports in VI or your editor of choice.</p>
+    </div>
+    <a href="/2009/03/files-between-esx-and-linux-via-nfs_6022.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/01/renaming-apache-log-locations_1724.html" class="link black dim">
+        Renaming Apache Log Locations
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I realized a few of my log files were growing unusually large, and even worse, logrotate was skipping them. I took a look in logrotate.d and straight away realized why: I had created silly names for the log file. logrotate look for .log files, but I had specified mine as .log &ndash; e.g. kelvinism_access_log. I was as familiar with logrotate when I set up the domains, so set forth to get them in the rotation.</p>
+    </div>
+    <a href="/2009/01/renaming-apache-log-locations_1724.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/01/beginning-scripting-esxi_6126.html" class="link black dim">
+        Beginning Scripting ESXi
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;m not impressed too often with much software, especially the closed source kind. I find a leaning preference to all things FOSS. If I had a million dollars, I&rsquo;d likely spend all day contributing to all the projects I wish I had time to contribute to. Regardless, there are a select few closed-source products that I believe are truly excellent. I mean, the type of software where you aren&rsquo;t asking &ldquo;I wish this could do this&rdquo; and start asking &ldquo;I wonder what else this can do.&rdquo;</p>
+    </div>
+    <a href="/2009/01/beginning-scripting-esxi_6126.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/12/alexa-thumbnail-service_3160.html" class="link black dim">
+        Alexa Thumbnail Service
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Amazon offers some pretty cool services: S3, EC2, Alexa Site Thumbnail, and others. A while back I wanted to use <a href="http://aws.amazon.com/ast/">AST</a> with <a href="http://www.djangoproject.com">Django</a>, so ended up writing the Python bindings to the REST API (they didn&rsquo;t previously exist. I even wrote up a quick <a href="http://www.kelvinism.com/howtos/alexa-site-thumbnail-and-django/">tutorial</a>.</p>
+<p><strong>Update</strong>: Amazon no longer maintains AST. I&rsquo;ve decided to <a href="http://www.kelvinism.com/tech-blog/rip-old-sites/">archive</a> a few of the old sites, so no longer need to take thumbnails. However, a few other thumbnail services seem to have crept up, including <a href="http://snapcasa.com/">SnapCasa&quot;</a>, and <a href="http://www.websnapr.com/">WebSnapr</a>.</p>
+    </div>
+    <a href="/2008/12/alexa-thumbnail-service_3160.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/12/charting-hackers_7870.html" class="link black dim">
+        Charting the Hackers
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>A normal internet connection gets attacked, a lot. The majority of attacks are of the form &ldquo;hello, anybody there?&rdquo; &ndash; where most people just don&rsquo;t answer. But sometimes, just sometimes, the question gets an answer. Depending on the answer, the attacker will start to explore.</p>
+<p>A few weeks back I was a little bored and started fiddling. I wanted to play with my Cisco, but also wanted to play with OSSEC, but also has a GIS craving. In the end I decided to create a map of the people who ask, &ldquo;hello&rdquo;.</p>
+    </div>
+    <a href="/2008/12/charting-hackers_7870.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/12/netflow-into-mysql-with-flow-tools_5439.html" class="link black dim">
+        NetFlow into MySQL with flow-tools
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;ve been side-tracked on another little project, and keep coming back to NetFlow. For this project I&rsquo;ll need to access NetFlow data with <a href="http://www.djangoproject.com">Django</a>, but this is a bit tricky. First, I&rsquo;m sort of lazy when it comes to my own project; maybe not lazy, I just like taking the most direct route. The most up-to-date NetFlow collector I noticed was <a href="http://code.google.com/p/flow-tools/">flow-tools</a>, and there is even a switch to export the information into MySQL. Sweet! However, I wanted to insert the flows into MySQL automatically, or at least on a regular basis. I first started writing a python script that would do the job, but after a few minutes noticed flow-capture had a rotate_program switch, and started investigating. Since I somehow couldn&rsquo;t find anywhere instructions how to insert the data automatically, here&rsquo;s what I came up with:</p>
+    </div>
+    <a href="/2008/12/netflow-into-mysql-with-flow-tools_5439.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/postsold/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/7/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/7/" aria-label="Page 7" class="page-link" role="button">7</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 8" class="page-link" role="button">8</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/10/" aria-label="Page 10" class="page-link" role="button">10</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/9/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/21/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

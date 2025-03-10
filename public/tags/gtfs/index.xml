@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gtfs on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/gtfs/</link>
+    <description>Recent content in Gtfs on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Aug 2013 07:55:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gtfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sydney Commute Times Mapped Part 2</title>
+      <link>http://localhost:1313/2013/08/sydney-commute-times-mapped-part-2.html</link>
+      <pubDate>Mon, 05 Aug 2013 07:55:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/08/sydney-commute-times-mapped-part-2.html</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://www.kelvinism.com/2013/07/sydney-commute-times-mapped-part-1.html&#34;&gt;Sydney Commute Times Mapped Part 1&lt;/a&gt; I took a small step to a bigger goal of mashing together public transport in Sydney, and the &lt;a href=&#34;http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf&#34;&gt;Metropolitan Strategy for Sydney to 2031&lt;/a&gt;. The question I wanted to answer is this: how aligned is Sydney&amp;rsquo;s public transport infrastructure and the Metropolitan Strategy&amp;rsquo;s of a &amp;ldquo;city of cities&amp;rdquo;?&lt;/p&gt;
+&lt;p&gt;I decided to find out.&lt;/p&gt;
+&lt;p&gt;Thanks to the release of GTFS data by 131500 it is possible to visualise how long it takes via public transport to commute to the nearest &amp;ldquo;centre&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sydney Commute Times Mapped Part 1</title>
+      <link>http://localhost:1313/2013/07/sydney-commute-times-mapped-part-1.html</link>
+      <pubDate>Sun, 21 Jul 2013 10:06:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/07/sydney-commute-times-mapped-part-1.html</guid>
+      <description>&lt;p&gt;I quite like open data. I like data based on open standards (or mostly open standards) even better. Many transport operators around the world have started releasing their timetable data using (mostly) open standards, e.g. &lt;a href=&#34;http://en.wikipedia.org/wiki/General_Transit_Feed_Specification&#34;&gt;GTFS&lt;/a&gt;. One of the nice things about using a standard is that clever people have created tools to work with the timetable data, and those tools can now be used to manipulate timetable data from hundreds of agencies. The magnificent OpenTripPlanner is one such tool, and it works well with &lt;a href=&#34;http://131500.info/&#34;&gt;131500&lt;/a&gt;&amp;rsquo;s GTFS data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How to convert 131500 TDX to GTFS</title>
+      <link>http://localhost:1313/2012/07/how-to-convert-131500-tdx-to-gtfs.html</link>
+      <pubDate>Mon, 02 Jul 2012 13:59:00 +1000</pubDate>
+      <guid>http://localhost:1313/2012/07/how-to-convert-131500-tdx-to-gtfs.html</guid>
+      <description>&lt;p&gt;TDX data has been available for a number of years on 131500.info, but many tools are GTFS specific. I also find GTFS easier to work with.&lt;/p&gt;
+&lt;p&gt;Luckily, converting from TDX to GTFS is not overly difficult, and below are some instructions. This howto is a bit old, as I am only now copying it from my &amp;ldquo;Notes&amp;rdquo; folder to put online to help others.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You can now directly download GTFS from the TransportInfo website: &lt;a href=&#34;https://tdx.131500.com.au/&#34;&gt;https://tdx.131500.com.au&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fusion Tables and 131500 Stops</title>
+      <link>http://localhost:1313/2011/06/fusion-tables-and-131500-stops_465.html</link>
+      <pubDate>Sat, 11 Jun 2011 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2011/06/fusion-tables-and-131500-stops_465.html</guid>
+      <description>&lt;p&gt;A short while ago I wrote about &lt;a href=&#34;http://www.kelvinism.com/articles/visualizing-transport/&#34;&gt;visualizing transport&lt;/a&gt; by using 131500&amp;rsquo;s TDX data, converted to GTFS, and served by GeoServer. Because I&amp;rsquo;ve started &lt;a href=&#34;http://www.kelvinism.com/travelmap/&#34;&gt;playing around&lt;/a&gt; with Google&amp;rsquo;s Fusion table, I thought it would be interesting to see what all the transit stops in Sydney look like in FT. So, voila!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Converting GTFS to GraphServer</title>
+      <link>http://localhost:1313/2011/06/converting-gtfs-to-graphserver.html</link>
+      <pubDate>Mon, 06 Jun 2011 14:07:00 +1000</pubDate>
+      <guid>http://localhost:1313/2011/06/converting-gtfs-to-graphserver.html</guid>
+      <description>&lt;p&gt;If you want to use Graphserver to do some analysis with GTFS, you will need to convert GTFS into the database. This is how I did it.&lt;/p&gt;
+&lt;h4 id=&#34;get-an-appropriate-ami-from-amazons-ec2&#34;&gt;Get an appropriate AMI from Amazon&amp;rsquo;s EC2&lt;/h4&gt;
+&lt;p&gt;I used the following AMI. If you have enough memory, you don&amp;rsquo;t need to do this.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ami-7000f019
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Lookup and read the GTFSDB &lt;a href=&#34;http://code.google.com/p/gtfsdb/downloads/detail?name=GTFSDB%20INSTALL.txt&#34;&gt;INSTALL.txt&lt;/a&gt; document&lt;/p&gt;
+&lt;h4 id=&#34;prepare-system&#34;&gt;Prepare system&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install mercurial
+hg clone https://gtfsdb.googlecode.com/hg/ gtfsdb
+sudo apt-get install python-setuptools
+sudo easy\_install psycopg2
+sudo apt-get install build-essential
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;download-gtfs-database&#34;&gt;Download GTFS database&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ubuntu@domU-12-31-39-00-5D-B8:/mnt/gtfsdb$ pwd
+/mnt/gtfsdb
+sudo python setup.py install
+sudo wget http://cdn.kelvinism.com/google\_transit.zip
+sudo apt-get install python-psycopg2
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;prepare-configuration-file&#34;&gt;Prepare configuration file&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#default.cfg
+\[options\]
+create = True
+database = postgresql://nsw:131500@10.128.49.175:5432/nsw
+filename = /mnt/google\_transit.zip
+geospatial = True
+#schema = None
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;perform-import&#34;&gt;Perform import&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;screen
+python gtfsdb/scripts/load.py
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Visualizing Transport</title>
+      <link>http://localhost:1313/2011/04/visualizing-transport_1492.html</link>
+      <pubDate>Sun, 03 Apr 2011 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2011/04/visualizing-transport_1492.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve had several conversations with neighbors and co-workers about the &amp;ldquo;lack&amp;rdquo; of forward thinking, or at least the lack of forward action. Of course, I keep in the back of my mind that we aren&amp;rsquo;t &amp;ldquo;experts&amp;rdquo;, and the more I learn about transport the more I learn how complex it is. Dr. Sussman&amp;rsquo;s &lt;em&gt;CLIOS&lt;/em&gt; process (Complex, Large-&lt;br&gt;
+Scale, Integrated, Open Systems) appears more and more true the longer I work in and study transport. There is a plethora of excuses that can be made, but the general conclusion was that the earlier we prepare the better. I can remember working near Zhongshan 7-8 years ago and driving around on huge roads in the middle of empty fields. There weren&amp;rsquo;t even stoplights at every intersection. It was then that I had an epiphany of how smart the planning was to build the infrastructure &lt;em&gt;before&lt;/em&gt; the masses arrived.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Iot on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/iot/</link>
+    <description>Recent content in Iot on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 May 2018 14:08:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IoT Foray with Sonoff S20 / IFTTT / Lambda / CloudMQTT</title>
+      <link>http://localhost:1313/2018/05/ys-and-i-recently-purchased-echo-from.html</link>
+      <pubDate>Sat, 26 May 2018 14:08:00 +1000</pubDate>
+      <guid>http://localhost:1313/2018/05/ys-and-i-recently-purchased-echo-from.html</guid>
+      <description>&lt;p&gt;I recently purchased an Echo from Amazon, and we were contemplating how else to better integrate it with our somewhat minimalistic home. I thought it would be interesting to get it to link to a WiFi-enabled power outlet, but unfortunately they are pretty expensive in Australia.&lt;/p&gt;
+&lt;p&gt;Then I stumbled across the &lt;a href=&#34;http://sonoff.itead.cc/en/&#34;&gt;Sonoff&lt;/a&gt; devices by Itead, and learned that they were somewhat hackable via a &lt;a href=&#34;https://github.com/arendst/Sonoff-Tasmota&#34;&gt;custom firmware&lt;/a&gt;. Coincidentally I received the two devices on the same day my daughter was off sick, so when she had her nap, I got hacking.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

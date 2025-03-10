@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/linux/</link>
+    <description>Recent content in Linux on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 May 2014 12:50:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TLS Module In SaltStack Not Available (Fixed)</title>
+      <link>http://localhost:1313/2014/05/tls-module-in-saltstack-not-available.html</link>
+      <pubDate>Wed, 07 May 2014 12:50:00 +1000</pubDate>
+      <guid>http://localhost:1313/2014/05/tls-module-in-saltstack-not-available.html</guid>
+      <description>&lt;p&gt;I was trying to install &lt;a href=&#34;https://github.com/saltstack/halite&#34;&gt;HALite&lt;/a&gt;, the WebUI for &lt;a href=&#34;http://www.saltstack.com/&#34;&gt;SaltStack&lt;/a&gt;, using the provided instructions. However, I kept getting the following errors when trying to create the certificates using Salt:&lt;br&gt;
+&lt;code&gt;   &#39;tls.create_ca_signed_cert&#39; is not available.   &#39;tls.create_ca&#39; is not available.&lt;/code&gt;&lt;br&gt;
+Basically, the &amp;rsquo;tls&amp;rsquo; module in Salt simply didn&amp;rsquo;t appear to work. The reason for this is detailed on &lt;a href=&#34;http://intothesaltmine.org/install_and_configure_halite_alpha_on_arch_linux.html&#34;&gt;intothesaltmind.org&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note: Use of the tls module within Salt requires the pyopenssl python extension.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;That makes sense. We can fix this with something like:&lt;br&gt;
+&lt;code&gt;   apt-get install libffi-dev   pip install -U pyOpenSSL   /etc/init.d/salt-minion restart&lt;/code&gt;&lt;br&gt;
+Or, better yet, with Salt alone:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Error opening /dev/sda: No medium found</title>
+      <link>http://localhost:1313/2014/03/error-opening-devsda-no-medium-found.html</link>
+      <pubDate>Sat, 01 Mar 2014 10:02:00 +1100</pubDate>
+      <guid>http://localhost:1313/2014/03/error-opening-devsda-no-medium-found.html</guid>
+      <description>&lt;p&gt;I have had this issue before, solved it, and had it again.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s say you plug in a USB drive into a Linux machine, and try to access it (mount it, partition it with fdisk/parted, or format it), and you get the error&lt;br&gt;
+&lt;code&gt;  Error opening /dev/sda: No medium found  &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Naturally the first thing you will do is ensure that it appeared when you plugged it in, so you run &amp;lsquo;dmesg&amp;rsquo; and get:&lt;br&gt;
+&lt;code&gt;  sd 2:0:0:0: [sda] 125045424 512-byte logical blocks: (64.0 GB/59.6 GiB)  &lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lenny on Ebox 3310A</title>
+      <link>http://localhost:1313/2009/11/lenny-on-ebox-3310a_5547.html</link>
+      <pubDate>Tue, 03 Nov 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/11/lenny-on-ebox-3310a_5547.html</guid>
+      <description>&lt;p&gt;As a preface, I take absolutely no credit for the below instructions. Stefan L kindly sent these through these instructions on installing Debian on the 3310A. I need to send a special thanks to Stefan, as I receive a lot of emails about the 3310 - but I don&amp;rsquo;t have one, so I can&amp;rsquo;t really do much:(&lt;br&gt;
+The only edit I&amp;rsquo;ve done is change out the links to my files on S3. If you find these helpful, or want to suggest an alteration, please leave a comment.&lt;br&gt;
+Download these files first:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>New Atheros Module and Ubuntu</title>
+      <link>http://localhost:1313/2009/09/new-atheros-module-and-ubuntu_1580.html</link>
+      <pubDate>Tue, 22 Sep 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/09/new-atheros-module-and-ubuntu_1580.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been using Atheros for quite some time, and I&amp;rsquo;ve always liked the madwifi drivers. They allowed really easy switching into monitor mode, and decent levels of packet injection. However, since I&amp;rsquo;m mostly in an office now, instead of writing web apps in cafes and trying to score free internet, I don&amp;rsquo;t really need anything fancy. My gentoo stage 1 (3?) days are over. I use Ubuntu, because I&amp;rsquo;m lazy, and it mostly works.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Create a Movie from Images</title>
+      <link>http://localhost:1313/2009/06/create-movie-from-images_6692.html</link>
+      <pubDate>Mon, 01 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/create-movie-from-images_6692.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve started leaving my webcam on as a motion detector to find out who is leaving the shopping cards on our lawn, and ultimately have found it useful to stitch the images together into a movie. There are several ways to do this - and my way maybe isn&amp;rsquo;t the best - but it works for me.&lt;/p&gt;
+&lt;p&gt;I first installed and configured &lt;a href=&#34;http://www.lavrsen.dk/twiki/bin/view/Motion/WebHome&#34;&gt;motion&lt;/a&gt;, which I&amp;rsquo;ve used for years. I then created a file in ~/.motion called motion.com:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Compiling kernel for Vortex86dx</title>
+      <link>http://localhost:1313/2009/05/compiling-kernel-for-vortex86dx_5058.html</link>
+      <pubDate>Sun, 10 May 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/05/compiling-kernel-for-vortex86dx_5058.html</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: I&amp;rsquo;ve written up a &lt;a href=&#34;http://kelvinism.com/howtos/installing-debian-50-vortex86dx/&#34;&gt;short tutorial&lt;/a&gt; on the method I used to install Debian 5.0 on this device.&lt;/p&gt;
+&lt;p&gt;A few months ago I purchased the eBox-3300 from WDL Systems. The system was promptly shipped, and there were no &amp;ldquo;gotchas&amp;rdquo; from WDL. The little box fit my exact needs - it is small, and built very, very well. I flew back to Australia and, after some trial and error, installed Debian 5.0 on it. For quite some time I was just using the vmlinuz file provided by WDL, which was provided by ICOP (DMP). This worked well, but there were two issues:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fixing locale errors in Ubuntu 8.04</title>
+      <link>http://localhost:1313/2009/05/fixing-locale-errors-in-ubuntu-804_7736.html</link>
+      <pubDate>Sun, 03 May 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/05/fixing-locale-errors-in-ubuntu-804_7736.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve hit this problem a few times, and figured I&amp;rsquo;d leave a note for myself how to fix it. Ubuntu 8.04 seems to hiccup sometimes (on a VPS) for generating the correct locales. In particular, I get this error, a lot:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+LANGUAGE = (unset),
+LC\_ALL = (unset),
+LANG = &amp;#34;en\_US.UTF-8&amp;#34;
+are supported and installed on your system.
+perl: warning: Falling back to the standard locale (&amp;#34;C&amp;#34;).
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Normally I just do &amp;lsquo;dpkg-reconfigure locales&amp;rsquo;, but with 8.04, this doesn&amp;rsquo;t seem to do squat. The solution is to edit the &lt;strong&gt;/var/lib/locales/supported.d/local&lt;/strong&gt; file, and insert the correct locales (it will normally not exist, so create it):&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>True Consolidation</title>
+      <link>http://localhost:1313/2009/04/true-consolidation_6503.html</link>
+      <pubDate>Mon, 13 Apr 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/04/true-consolidation_6503.html</guid>
+      <description>&lt;p&gt;Back in 2000 I managed to acquire several retired systems to bring to Uni: this included 4-5 cheap P120 machines. At the time, I thought this was great; I had an OpenBSD box as my gateway, a FreeBSD box, a few Linux boxes, and likely something else that doesn&amp;rsquo;t even exist now. The school has a superfast connection, unlimited bandwidth, and I was curious. Although I didn&amp;rsquo;t really have &lt;em&gt;time&lt;/em&gt;, I still managed to install and have all these servers running from my room.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Files between ESX and Linux via NFS</title>
+      <link>http://localhost:1313/2009/03/files-between-esx-and-linux-via-nfs_6022.html</link>
+      <pubDate>Mon, 02 Mar 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/03/files-between-esx-and-linux-via-nfs_6022.html</guid>
+      <description>&lt;p&gt;I like ESX. I like Linux. It is absurdly easy to configure Linux as an NFS server and mount it in ESXIi).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Installed NFS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I currently use Ubuntu Server for my home lab, but the process is basically the same for Red Hat and derivatives.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install nfs-common
+sudo apt-get install nfs-kernel-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next, configure NFS so it can server your local LAN. Normally you would list only specific servers, but, well, we&amp;rsquo;re being cheap and dirty today. Open /etc/exports in VI or your editor of choice.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Renaming Apache Log Locations</title>
+      <link>http://localhost:1313/2009/01/renaming-apache-log-locations_1724.html</link>
+      <pubDate>Sun, 25 Jan 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/01/renaming-apache-log-locations_1724.html</guid>
+      <description>&lt;p&gt;I realized a few of my log files were growing unusually large, and even worse, logrotate was skipping them. I took a look in logrotate.d and straight away realized why: I had created silly names for the log file. logrotate look for .log files, but I had specified mine as .log &amp;ndash; e.g. kelvinism_access_log. I was as familiar with logrotate when I set up the domains, so set forth to get them in the rotation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configure Timevault to Remote Server</title>
+      <link>http://localhost:1313/2008/11/configure-timevault-to-remote-server_2418.html</link>
+      <pubDate>Sun, 02 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/configure-timevault-to-remote-server_2418.html</guid>
+      <description>&lt;p&gt;Using TimeVault with a shared drive as a backend is actually quite easy, but it does require a few special things setup. Note: this is gonna be a brief summary.&lt;/p&gt;
+&lt;p&gt;Install samba-tools, smbfs&amp;hellip;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install samba-tools smbfs
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A lot more other stuff may install as well.&lt;/p&gt;
+&lt;p&gt;Create a script that mounts your samba share. You could also do this in fstab, but I tend to suspend my laptop when I come home, and I like clicking buttons.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using Distcc</title>
+      <link>http://localhost:1313/2008/01/using-distcc_1425.html</link>
+      <pubDate>Tue, 01 Jan 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/01/using-distcc_1425.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m in the process of working on one of my projects, and the requirement came up to download a fairly large file (4GB). Since I only receive ~20GB/month at my house, I decided to just use my server in the U.S. The next requirement came about needing to compile Mapnik, which I had intended to do on the server at some point anyways, yet I ran into memory constraints.&lt;/p&gt;
+&lt;p&gt;Good old distcc comes to the rescue. I don&amp;rsquo;t need to use distcc that often, yet when I do, it is very handy. However, I always forget to set g++ to use distcc as well. So, for when I forget next time&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Zenity GUI to a Shell Script</title>
+      <link>http://localhost:1313/2007/10/zenity-gui-to-shell-script_5432.html</link>
+      <pubDate>Sun, 21 Oct 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/10/zenity-gui-to-shell-script_5432.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/whbV2vHNOr5d7pvO8qsgRw?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigBFNcFKSB9lKhJPiSiwDlp9q9SmO2yEu9v343B1M-2NFN5s2cJ-cUji8qR3LW1CmmitKztwUh3QxLAIjkSMYio5lIwhX1GszzhfZnufjrxugrWTNSZLH06e-qxV4ldttqBMDRBPWfXlc4/s800/zenityss.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I have to admit, I&amp;rsquo;m pretty lazy. I don&amp;rsquo;t (ironically) like to type, and I really don&amp;rsquo;t like typing the same command over and over. I found myself switching between my external monitor and laptop quite frequently, and decided to somewhat automate the task. Although I know there are other programs out there that allow this, they either had too many features, or crashed. Xrandr works just fine, but like I said, I&amp;rsquo;m lazy&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Liferea RSS in Liferea</title>
+      <link>http://localhost:1313/2007/06/liferea-rss-in-liferea_7495.html</link>
+      <pubDate>Thu, 14 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/liferea-rss-in-liferea_7495.html</guid>
+      <description>&lt;p&gt;Today on &lt;a href=&#34;http://community.linux.com/article.pl?sid=07/06/07/1458229&#34;&gt;Linux.com, Liferea was mentioned&lt;/a&gt; I find this particularly because I&amp;rsquo;ve been using Liferea for quite a few months, and haven&amp;rsquo;t been able to find anything that better suits my needs. It sits quietly in the corner until a new RSS is available, and slightly changes color. Plus, it integrates wonderfully into GNOME.&lt;/p&gt;
+&lt;p&gt;Well, the Linux.com article does a great job summarizing the reader, so if you are in the market, I&amp;rsquo;d take a look. For posterities sake, I took a screenshot of the Linux.com feed of Liferea, in Liferea.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu Upgrade</title>
+      <link>http://localhost:1313/2007/05/ubuntu-upgrade_2905.html</link>
+      <pubDate>Sat, 26 May 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/05/ubuntu-upgrade_2905.html</guid>
+      <description>&lt;p&gt;Having been in I.T. for quite a few years, upgrading can sometimes be quite a hassle. Having switched to Linux for many years, the crazy upgrade madness of windows is gone. So, how easy is upgrading in Linux?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/gfJ0rsA5-yezsSSBzH5fSQ?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgdy7UBLsk4QTB1cYb0IXBmWjq5f4F5CcjYlthEQcPG8lPwKy0aYqu5Gsy30wZhOatB_KxYU0RJPubZVjO78EgQcpBmRi0zakN7fHOek4DmgG9bRj1F-FxP4vpWLmEaJvxLYRq6Qel-W2l/s288/Screenshot-feisty.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/husChXOCHJJ3h1FCRePdlA?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiT3OQw0WwVxKnf0vp4xuaf2ClyLihyphenhyphenk2GH1Tgm3OunZWyXb_Gydptfm0ID2qBZezLkbELq6IbJgJ_jAc8LKhGJ9aLZf4ktlFS8h_e2gGVldydYnb87WLTNeUWbtc9z5fFcCAmfXQSdPj9b/s288/Screenshot-distupgrade.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Yea, pretty darn easy, I must admit. And my system certainly isn&amp;rsquo;t normal! It has been an upgrade from Debian Sarge(ish) -&amp;gt; Ubuntu LTS(ish) -&amp;gt; 6.10 -&amp;gt; 7.04&amp;hellip; The only hiccup was at some point when the fonts were reinstalling (I totally ignored the &amp;ldquo;close all programs&amp;rdquo; warning:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Gentoo test</title>
+      <link>http://localhost:1313/2007/05/the-gentoo-test_1297.html</link>
+      <pubDate>Thu, 24 May 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/05/the-gentoo-test_1297.html</guid>
+      <description>&lt;p&gt;I have a love-hate relationship with Linux. I love it because if there is a problem, I can actually tinker and find the problem and fix it. But I hate it because I like to tinker.&lt;/p&gt;
+&lt;p&gt;Recently I&amp;rsquo;ve been doing a fair amount of Django programming &amp;ndash; enjoying every minute of it. After completing several of my projects I decided to do some benchmarks, and the results are in! Generally I can server cached/semi-cached pages at about 200req/sec. 200req! Considering this is 5,000,000 or so requests a day, and a number I am never going to reach, I still began to wonder: why isn&amp;rsquo;t it higher? I mean, serving a static html page is at like 1000+ req/sec, so why would a cached page be significantly different? I started exploring and noticed that Apache would spike the CPU. Ok, time to be thorough, and as I said, I like to tinker.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>One More Point Linux</title>
+      <link>http://localhost:1313/2007/03/one-more-point-linux_9010.html</link>
+      <pubDate>Thu, 15 Mar 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/03/one-more-point-linux_9010.html</guid>
+      <description>&lt;p&gt;It should come as a surprise that I enjoy using Linux. For the record, the first time I booted into Linux on my own was 1997, this was just before entering high school. So, while some of my tech friends played with NT, I was rumbling with the Penguin. Starting in 2000 I was using Linux as my main operating system, sometimes supplemented by OS X, and only using Windows when the gaming urge surfaced. In 2004 I mostly dropped playing any games, which resulted in dropping Windows &amp;ndash; and besides for work, I haven&amp;rsquo;t used it since.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Katapult Screencast</title>
+      <link>http://localhost:1313/2006/11/katapult-screencast_788.html</link>
+      <pubDate>Fri, 03 Nov 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/11/katapult-screencast_788.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.ianfitzpatrick.com/&#34;&gt;Ian&lt;/a&gt; keeps bugging me at how great Quicksilver is. Knowning that there &lt;em&gt;must&lt;/em&gt; be an alternative built for linux, I accidently stumbled across Katapult.&lt;/p&gt;
+&lt;p&gt;While it still has a little room to grow, Katapult makes a great tool in any KDE toolchest. Press ALT+SPACE, and your widget fires up, ready to take your orders. Since words don&amp;rsquo;t really do this justice, I created a screencast.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://vimeo.com/10316527&#34;&gt;Katapult Screencast&lt;/a&gt; from &lt;a href=&#34;http://vimeo.com/user3417633&#34;&gt;Kelvin Nicholson&lt;/a&gt; on &lt;a href=&#34;http://vimeo.com&#34;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Open Source Video Editing</title>
+      <link>http://localhost:1313/2006/10/open-source-video-editing_7656.html</link>
+      <pubDate>Sun, 15 Oct 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/10/open-source-video-editing_7656.html</guid>
+      <description>&lt;p&gt;In the next year I plan to make a little video, nothing fancy likely, but something that will require an editor. However, I don&amp;rsquo;t own a mac (which rules our Final Cut Pro + After Effect and iMovie, which Ian and I both have had too much fun with. Inside joke.) I&amp;rsquo;m also a die-hard Linux fan, trying to hold out buying a mac for as long as possible.&lt;/p&gt;
+&lt;p&gt;SF to the rescure. There are four editors listed, and in the next year I&amp;rsquo;ll try them all. Overalll, they look quite promising.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unified Linux Desktop Experience</title>
+      <link>http://localhost:1313/2006/10/unified-linux-desktop-experience_9273.html</link>
+      <pubDate>Thu, 12 Oct 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/10/unified-linux-desktop-experience_9273.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ll admit, I think one of the thickest barriers to entry regarding Linux is variety. I love variety, but general end users don&amp;rsquo;t adjust well to change (IMHO). Thus enter the stage: Portland. So, what does this mean to the end user? This means that, eventually, the UI throughout linux will all look similar &amp;ndash; regardless if it is designed to utilize GTK, QT or anything else (that is, if it is built off the Portland standard).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Where the &amp;#39;f is my Diskspace</title>
+      <link>http://localhost:1313/2006/04/where-is-my-diskspace_4579.html</link>
+      <pubDate>Wed, 05 Apr 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/04/where-is-my-diskspace_4579.html</guid>
+      <description>&lt;p&gt;Logs spiraling crazy, we run out of disk space all the time. A nifty trick to find where the disk went is to issue: du -cks * |sort -rn |head -11&lt;/p&gt;
+&lt;p&gt;This returns where the disk usage is, and makes finding the bloated log a lot easier.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building Custom LiveCDs</title>
+      <link>http://localhost:1313/2006/01/building-custom-livecds_4795.html</link>
+      <pubDate>Thu, 26 Jan 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/01/building-custom-livecds_4795.html</guid>
+      <description>&lt;p&gt;I have a feeling we will shortly be deploying many Linux servers to perform certain actions. Maybe we will implement Asterisk to be used as a VoIP interchange between locations, maybe the backup servers will be Linux based, maybe the BDCs.&lt;/p&gt;
+&lt;p&gt;One thing that could speed up implementation at remote sites is to build live cds for certain purposes. For instance, on the file server in PDX to keep updated live cds for certain projects. Like, a BDC live cd or a backup live cd. Already setup with the most current packages (or scripts to fetch+install them). So when we get to the site we just put the CD in, click or type &amp;ldquo;load&amp;rdquo; and poof, the server is installed and configured.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

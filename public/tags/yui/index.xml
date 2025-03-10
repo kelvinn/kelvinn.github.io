@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Yui on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/yui/</link>
+    <description>Recent content in Yui on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Mar 2008 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/yui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>And Yet Another Remodel</title>
+      <link>http://localhost:1313/2008/03/and-yet-another-remodel_7848.html</link>
+      <pubDate>Wed, 19 Mar 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/03/and-yet-another-remodel_7848.html</guid>
+      <description>&lt;p&gt;I have finally decided to do another remodel of this site. I had a few goals before starting:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Use one image&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use the YUI-CSS framework&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use Django&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make it easily extendable&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So far, I think I&amp;rsquo;ve accomplished these goals. The site is easier to read, easy to modify, and has a few new features. More entries to come!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

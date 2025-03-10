@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+    
+      <link href="/postsold/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/postsold/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+      
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/postsold/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/postsold/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Postsolds">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Postsolds">
+  <meta itemprop="datePublished" content="2025-01-31T21:41:00+11:00">
+  <meta itemprop="dateModified" content="2025-01-31T21:41:00+11:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Postsolds">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Postsolds
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/11/pygtk-py2exe-for-windows_8282.html" class="link black dim">
+        PyGTK &#43; py2exe for Windows
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;m writing down these quick notes so I can remember the steps for getting py2exe to work with GTK.</p>
+<ul>
+<li>Download the GTK+ runtime</li>
+<li>Download py2exe</li>
+<li>Copy over your project into the windows box</li>
+<li>Create a setup.py file (see below)</li>
+<li>Run &ldquo;c:\Python25\python.exe setup.py py2exe&rdquo;</li>
+<li>Copy over the lib, etc, and share folder from C:\Program Files\GTK2-Runtime into the dist folder</li>
+<li>Run app!</li>
+</ul>
+<p>setup.py:</p>
+<pre tabindex="0"><code>from distutils.core import setup
+import py2exe
+
+setup(
+name = &#39;ploteq&#39;,
+description = &#39;Bunnys Plotting Tool&#39;,
+version = &#39;1.0&#39;,
+
+windows = \[
+{
+&#39;script&#39;: &#39;ploteq.py&#39;,
+}
+\],
+
+options = {
+&#39;py2exe&#39;: {
+&#39;packages&#39;:&#39;encodings&#39;,
+&#39;includes&#39;: &#39;cairo, pango, pangocairo, atk, gobject&#39;, 
+}
+},
+
+data\_files=\[
+&#39;ploteq.glade&#39;,
+\]
+)
+</code></pre>
+    </div>
+    <a href="/2008/11/pygtk-py2exe-for-windows_8282.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/11/slope-finder-for-missus_5304.html" class="link black dim">
+        Slope Finder for the Missus
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Since I do sysadminy stuff all day, I don&rsquo;t really get a chance to do much coding (or not as much of a chance as I would like). You can imagine my joy when my girlfriend expressed a problem she needed solved: &ldquo;I&rsquo;m going to need to solve 100s of slope equations, i.e. where two lines intersect. Can you write a program to do it?&rdquo; Sure!</p>
+<p>I asked if she wanted to do a batch input or just a one-off type of deal, she decided on the latter. Although I&rsquo;ve done a fair bit of PyGTK stuff, I had never actually needed to convert it to Windows. I debated using IronPython &ndash; but needed to use a special library to help solve the equations (I&rsquo;m lazy).</p>
+    </div>
+    <a href="/2008/11/slope-finder-for-missus_5304.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/11/capped-internet_4903.html" class="link black dim">
+        Capped Internet
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;ve lived in several different parts of the world, and they all do internet differently. Back in the US I had 8Mb/sec cable (leaving just before Fios was really an option, darn!) In New Zealand, for instance, I was paying for &ldquo;high speed ADSL&rdquo; rated at 1.5Mb/256k. Vrooom. Up in Taiwan I was paying 1/2 what I paid in New Zealand, but for 12Mb/1Mb. Down to Sydney and we have a rated 24Mb/1Mb.</p>
+    </div>
+    <a href="/2008/11/capped-internet_4903.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/11/revised-modtile-install-howto_1369.html" class="link black dim">
+        Revised mod_tile Install HOWTO
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>This is the laundry list of things I did while creating a mod_tile VMware appliance based on Ubuntu Server 8.04. I&rsquo;ve kept descriptions limited but left all the commands in. Let&rsquo;s start installing things&hellip;</p>
+<p><strong>Useful goodies for compiling source</strong></p>
+<pre tabindex="0"><code>sudo apt-get build-essential
+</code></pre><p><strong>More goodies for Mapnik + Friends</strong></p>
+<pre tabindex="0"><code>sudo apt-get install libboost-dev libboost-filesystem-dev libboost-filesystem1.34.1 libboost-iostreams-dev libboost-iostreams1.34.1 libboost-program-options-dev libboost-program-options1.34.1 libboost-python-dev libboost-python1.34.1 libboost-regex-dev libboost-regex1.34.1 libboost-serialization-dev libboost-serialization1.34.1 libboost-thread-dev libboost-thread1.34.1 libicu-dev libicu38 libstdc++5 libstdc++5-3.3-dev python2.5-dev
+</code></pre><pre tabindex="0"><code>sudo aptitude install libfreetype6 libfreetype6-dev libjpeg62 libjpeg62-dev libltdl3 libltdl3-dev libpng12-0 libpng12-dev libtiff4 libtiff4-dev libtiffxx0c2 python-imaging python-imaging-dbg proj
+</code></pre><pre tabindex="0"><code>sudo aptitude install libcairo2 libcairo2-dev python-cairo python-cairo-dev libcairomm-1.0-1 libcairomm-1.0-dev libglib2.0-0 libpixman-1-0 libpixman-1-dev libpthread-stubs0 libpthread-stubs0-dev ttf-dejavu ttf-dejavu-core ttf-dejavu-extra
+</code></pre><pre tabindex="0"><code>sudo aptitude install libgdal-dev python2.5-gdal postgresql-8.3-postgis postgresql-8.3 postgresql-server-dev-8.3 postgresql-contrib-8.3
+</code></pre><pre tabindex="0"><code>sudo aptitude install libxslt1.1 libxslt1-dev libxml2-dev libxml2 gdal-bin libgeos-dev libbz2-dev
+</code></pre><pre tabindex="0"><code>sudo aptitude install apache2 apache2-threaded-dev apache2-mpm-prefork apache2-utils
+</code></pre><pre tabindex="0"><code>sudo aptitude install subversion
+</code></pre><p>This checks out the mapnik source:</p>
+    </div>
+    <a href="/2008/11/revised-modtile-install-howto_1369.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/08/using-raw-disks-with-vmware-server-2_3562.html" class="link black dim">
+        Using Raw Disks with VMware Server 2
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>For various reasons I had the need to open a raw disk inside VMware Server 2. The reports from the field say that this just isn&rsquo;t supported. Although I don&rsquo;t need to actually run a raw disk, I needed to get some data off it &ndash; 400GB worth. It turns out &rsquo;not supported&rsquo; really means &rsquo;not in the UI.&rsquo; I don&rsquo;t know the reason why it isn&rsquo;t in the UI, maybe marketing wants people to use ESX, or maybe the UI guys fell behind with their workload.</p>
+    </div>
+    <a href="/2008/08/using-raw-disks-with-vmware-server-2_3562.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/08/vm-automatic-startup-in-server-2_6579.html" class="link black dim">
+        VM Automatic Startup in Server 2
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I think possibly one of the most practical upgrades in VMware Server 2 appears to be the ability to automatically turn on virtual machines in a stagnated order. I have fond memories of turning on a server with 10 virtual machines, and when they all turn on at once, the hard disk grinds to a halt. This forced me to turn on the machines manually afterwards.</p>
+<p>+1 VMware in my books.</p>
+    </div>
+    <a href="/2008/08/vm-automatic-startup-in-server-2_6579.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html" class="link black dim">
+        Ubuntu 8.04 64-Bit and VMware Server 2
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I now have successful installation of VMware Server 2 (Beta RC1) on top of Ubuntu 8.04 64-bit. I have been using various virtualization technologies for years, and VMware is usually the easiest to install and configure. So far, VMware Server 2 RC1, has proven to be the exception to the rule.</p>
+<p>That said, I am very excited by the direction VMware is taking &ndash; this new server version looks to have great potential.</p>
+    </div>
+    <a href="/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/08/vmware-tools-in-vmware-server-2_6233.html" class="link black dim">
+        VMware Tools in VMware Server 2
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Installing the tools in VMware Server 2 is a little different than Workstation or the previous versions of VMware Server. Under the Summary tab of your Virtual Machine, look for a link that says &ldquo;Install VMware Tools&rdquo; &ndash; click it.</p>
+<p>Wait for &lsquo;Success&rsquo; to show up on the bottom, and jump into your virtual machine. Mount the tools as so:</p>
+<pre tabindex="0"><code>mount /dev/cdrom /media/cdrom
+</code></pre><p>And install as normal (copy the .tar.gz to /usr/src, extract it, install it). Easy peasy.</p>
+    </div>
+    <a href="/2008/08/vmware-tools-in-vmware-server-2_6233.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/05/gui-to-plot-driving-speed_6997.html" class="link black dim">
+        GUI to Plot Driving Speed
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I needed another Python fix, and I need one pretty badly. I spent the weekend wondering why it appears to be impossible to edit the GUIDs inside an Exchange mailbox store (read: NOT the GUIDs stored in AD for Exchange). Anyways, I digress.</p>
+<p>My goals were simple. I wanted to use Python, wanted something to do with traffic, and wanted to play around with Glade/PyGTK and graphing stuff. My end result was a little app that allows you to specify a GPX file, and it plots the waypoints (and calculates the moving average!). Pretty simple, pretty useless, but pretty fun. I really do like pretty pictures.</p>
+    </div>
+    <a href="/2008/05/gui-to-plot-driving-speed_6997.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/another-baby-step_1340.html" class="link black dim">
+        Another Baby Step
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I showed a few of my co-workers my graph and one replied &ndash; oh! that&rsquo;s really cool. (I think only two of my co-workers are actually interested in my geekyness). He then emailed me tonight a .kmz file containing a colorized file of his speed. I looked at the kml and noticed it appeared to be dynamically allocated judging by the top speed. Well, as you could guess, I surely had to modify my code to include colors.</p>
+    </div>
+    <a href="/2008/04/another-baby-step_1340.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/postsold/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/9/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/8/" aria-label="Page 8" class="page-link" role="button">8</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 10" class="page-link" role="button">10</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/11/" aria-label="Page 11" class="page-link" role="button">11</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/12/" aria-label="Page 12" class="page-link" role="button">12</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/11/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/21/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

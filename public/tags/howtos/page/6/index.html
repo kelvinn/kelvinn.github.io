@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Howtos | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/howtos/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/howtos/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/howtos/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Solved: NO PUBKEY" href="http://localhost:1313/2007/05/solved-no-pubkey_625.html">Solved: NO PUBKEY </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-05-25 20:30:00.005 +1000 AEST'>Published on May 25, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;ve received this error more than once, so I&rsquo;m finally writing my notes how I solve it.</p>
+<h4 id="error-message">Error message:</h4>
+<p>W: GPG error: <a href="http://security.debian.org">http://security.debian.org</a> stable/updates Release: The following signatures couldn&rsquo;t be verified because the public key is not available: NO_PUBKEY A70DAF536070D3A1</p>
+<p>This really is just your standard don&rsquo;t-have-the-gpg-keys error. So, get&rsquo;em &ndash; take the last eight digits from the long NO_PUBKEY string <strong>that is displayed on your computer</strong>. If you are using Debian 4.0, the above key is likely correct; if you are using Ubuntu or another version of Debian, it will be wrong. (The last eight digits are used as an identifier at the keyservers). Then:</p>
+<pre tabindex="0"><code>gpg --keyserver subkeys.pgp.net --recv-keys 6070D3A1
+gpg --export 6070D3A1 | apt-key add -
+</code></pre><p>Repeat if necessary. All done, just do an apt-get update and no more warning!</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Postfix/Dovecot &#43; MySQL" href="http://localhost:1313/2007/05/postfixdovecot-mysql_1687.html">Postfix/Dovecot &#43; MySQL </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-05-24 20:30:00.005 +1000 AEST'>Published on May 24, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>As you can see by <a href="http://www.blogger.com/tech-blog/gentoo-test/">another post</a>, I decided to reinstall the server. This isn&rsquo;t really a problem, I have pretty good backups. I&rsquo;ve installed apache and friends a bagillion times. However, Postfix(chroot)+Dovecot authenticating from MySQl, that doesn&rsquo;t install quite so smoothly.<br>
+Just for my future reference, and maybe helpful for somebody, someday. Clearly not a tutorial. The postfix chroot = /var/spool/postfix</p>
+<h4 id="cannot-connect-to-saslauthd-server-no-such-file-or-directory">cannot connect to saslauthd server: No such file or directory</h4>
+<p>First, get the saslauthd files into the postfix chroot. Edit /etc/conf.d/saslauthd (or /etc/default/saslauthd), and add this:</p>
+<pre tabindex="0"><code>SASLAUTHD\_OPTS=&#34;-m /var/spool/postfix/var/run/saslauthd&#34;
+</code></pre><p>Second, add it to the init script.</p>
+<pre tabindex="0"><code>stop() {
+        ebegin &#34;Stopping saslauthd&#34;
+        start-stop-daemon --stop --quiet /
+--pidfile /var/spool/postfix/var/run/saslauthd/saslauthd.pid
+        eend $?
+}
+</code></pre><p>Third, maybe, change /etc/sasl2/smtpd.conf (or /etc/postfix/sasl/smtpd.conf) and add this:</p>
+<pre tabindex="0"><code>saslauthd\_path: /var/run/saslauthd/mux
+</code></pre><p>Ok, that error should go away now.</p>
+<h4 id="recipient-address-rejected-domain-not-found">Recipient address rejected: Domain not found;</h4>
+<h4 id="host-or-domain-name-not-found-name-service-error-for-namedomaincom">(Host or domain name not found. Name service error for name=<em>domain.com</em></h4>
+<p>These are actually the same type of error. Copy /etc/resolv.conf into the chroot.</p>
+<h4 id="fatal-unknown-service-smtptcp">fatal: unknown service: smtp/tcp</h4>
+<p>Copy /etc/services into the chroot.<br>
+I searched google for these answers, to a certain degree at least, but couldn&rsquo;t really find much. Then I remembered &ldquo;crap, this is a chroot, it needs things&rdquo; &ndash; and fixed stuff. If you came here from google, and these super quick notes were helpful, feel free to leave a comment, or contact me directly if you have any questions.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Generating a Self-Signed SSL Cert" href="http://localhost:1313/2007/05/generating-self-signed-ssl-cert_2490.html">Generating a Self-Signed SSL Cert </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-05-11 20:30:00.002 +1000 AEST'>Published on May 11, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I have the need to generate an SSL cert (Apache2) about once every 3 months. And since I&rsquo;m cheap, I don&rsquo;t ever actually *buy* one, I just self-sign it. And every time I forget the commands needed. So, here they are, for my reference only.<br>
+<strong>1) Generate Private Key</strong></p>
+<pre tabindex="0"><code>openssl genrsa -des3 -out server.key 1024
+</code></pre><p><strong>2) Generate a CSR</strong></p>
+<pre tabindex="0"><code>openssl req -new -key server.key -out server.csr
+</code></pre><p><strong>3) Remove passphrase</strong></p>
+<pre tabindex="0"><code>cp server.key server.key.org
+openssl rsa -in server.key.org -out server.key
+</code></pre><p><strong>4) Generate Self-Signed Cert</strong></p>
+<pre tabindex="0"><code>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to PNG Transparency and IE" href="http://localhost:1313/2007/05/png-transparency-and-ie_2740.html">PNG Transparency and IE </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-05-07 20:30:00.002 +1000 AEST'>Published on May 7, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p><img alt="I Hate IE!" loading="lazy" src="http://media.kelvinism.com/images/freakingannoying.png"><br>
+I&rsquo;ve vowed to not use transparent PNGs until almost everybody has switched to IE7, where they are actually supported (despite being supported by every other major browser). I&rsquo;ve done the hacks, and have had good results. I like using PNGs, I&rsquo;ll admit it. <a href="http://www.inkscape.org/">Inkscape</a> exports them directly, however one slight problem: transparency still exists. This isn&rsquo;t really a problem since I&rsquo;m not layering images, or is it?<br>
+My initial assumption is that IE would simple pull the white background and everything would be dandy. Well, we all know what they say about assumptions.</p>
+<p>A few options exist:</p>
+<ul>
+<li>
+<p>Convert them to GIFs</p>
+</li>
+<li>
+<p>Try some sneaky PNG IE hack</p>
+</li>
+<li>
+<p>Do a rewrite and send all IE6 traffic to download firefox. Err&hellip; Do a rewrite and send all IE6 traffic to download firefox</p>
+</li>
+<li>
+<p>Open each in GIMP and add a white background</p>
+</li>
+<li>
+<p>Use <a href="http://www.imagemagick.org/">ImageMagick</a> and convert the background to white.</p>
+</li>
+</ul>
+<p>We have a winner! The problem is, for the life of me, I couldn&rsquo;t figure out a simple convert command to do this. The quick bash script would suffice:</p>
+<pre tabindex="0"><code>#/bin/bash
+CONVERT=/usr/bin/convert
+for image in \*.png; do
+ $CONVERT -background white $image $image
+ echo &#34;Finished converting: $image&#34;
+done
+</code></pre><p>**Note:**This is gonna convert all PNGs.</p>
+<p>So, no the transparent GIFs have a &ldquo;white&rdquo; base layer, IE renders them fine, normal browswers render the images fine, and I&rsquo;m allowed a cup of coffee. I hope this helps somebody, if so, leave a note!</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Simple Chrooted SSH" href="http://localhost:1313/2007/03/simple-chrooted-ssh_6907.html">Simple Chrooted SSH </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-03-29 20:30:00.002 +1000 AEST'>Published on March 29, 2007</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>You might be asking: why would you want to chroot ssh? Why use ssh anyways? Here are the quick answers:</p>
+<ul>
+<li>
+<p><strong>FTP usually sucks</strong>. Unless sent over SSL, all information is sent <em>cleartext</em>.</p>
+</li>
+<li>
+<p><strong>SSH usually rules</strong>. SSH sends all data over an encrypted channel &ndash; the main drawback is: you can often browse around the system, and if permissions aren&rsquo;t set right, read things you shouldn&rsquo;t be able to.</p>
+</li>
+<li>
+<p><strong>Chroot&rsquo;d SSH rocks</strong>. The solution to both the above problems</p>
+</li>
+</ul>
+<p>.</p>
+<p>So, let me tell a quick story.<br>
+When I started uni in 2001 I was a nerd. Still a nerd, I guess. I was cramped in my apartment on campus with like 5 boxes, most of them crappy p100s running Linux or OpenBSD. Life was good.<br>
+I started a CS degree (shifted into Business with a focus on IT), and we were told to use the school&rsquo;s main servers to compile our programs. The other interesting thing is that <em>all</em> user accounts were visible when logged in via ssh &ndash; but hey, that is just the nature of Linux. I knew this, but asked the head I.T. person &ldquo;why don&rsquo;t you jail the connections?&rdquo; He responded quickly telling me to go away.<br>
+Well, shortly after making the comment (although solutions existed at the time being), pam-chroot was released. This is right about the time students figured they could spam everybody in the school, some 25,000 emails, quickly and easily &ndash; &lsquo;cause all the accounts were displayed. Sweet &ndash; now we can chroot individual ssh connections.<br>
+This quick demo will be on Debian, we&rsquo;ll create a pretend user named &ldquo;karl.&rdquo; (I&rsquo;ll assume you&rsquo;ve already added the user before beginning these steps). Also, the jails will be in /var/chroot/{username}</p>
+<h4 id="first-install-libpam-chroot-and-makejail">First: Install libpam-chroot and makejail</h4>
+<p>session required pam_chroot.so</p>
+<pre tabindex="0"><code>kelvin@server ~$ sudo apt-get install libpam-chroot makejail
+</code></pre><h4 id="second-makejail-config-file">Second: makejail config file</h4>
+<p>Put the following in /etc/makejail/create-user.py:</p>
+<pre tabindex="0"><code>#Clean the jail
+
+cleanJailFirst=1
+
+
+preserve=\[&#34;/html&#34;, &#34;/home&#34;\]
+
+
+chroot=&#34;/var/chroot/karl&#34;
+
+
+users=\[&#34;root&#34;,&#34;karl&#34;\]
+
+groups=\[&#34;root&#34;,&#34;karl&#34;\]
+
+
+packages=\[&#34;coreutils&#34;\]
+</code></pre><p><strong>Edit</strong>: If you need to use SFTP also, try this config:</p>
+<pre tabindex="0"><code>cleanJailFirst=1
+
+preserve=\[&#34;/html&#34;, &#34;/home&#34;\]
+
+chroot=&#34;/home/vhosts/karl&#34;
+
+forceCopy=\[&#34;/usr/bin/scp&#34;, &#34;/usr/lib/sftp-server&#34;, /
+
+ &#34;/usr/bin/find&#34;, &#34;/dev/null&#34;, &#34;/dev/zero&#34;\]
+
+users=\[&#34;root&#34;,&#34;karl&#34;\]
+
+groups=\[&#34;root&#34;,&#34;karl&#34;\]
+
+packages=\[&#34;coreutils&#34;\]
+</code></pre><p>As you&rsquo;ll see, there is a &ldquo;preserve&rdquo; directive. This is so that when you &ldquo;clean&rdquo; the jail (if you need to refresh the files, for instance), you won&rsquo;t wipe out anything important. I created an /html so that the user can upload their web docs to that file.</p>
+<h4 id="third-configure-libpam_chroot">Third: configure libpam_chroot</h4>
+<p>Add the following to /etc/pam.d/ssh:</p>
+<pre tabindex="0"><code>\# Set up chrootd ssh
+
+session required pam\_chroot.so
+</code></pre><h4 id="forth-allow-the-actual-user-to-be-chrootd">Forth: allow the actual user to be chrootd</h4>
+<p>Edit /etc/security/chroot.conf and add the following:</p>
+<pre tabindex="0"><code>karl /var/chroot/karl
+</code></pre><h4 id="fifth-createchown-the-chrootd-dir">Fifth: create/chown the chroot&rsquo;d dir</h4>
+<pre tabindex="0"><code>kelvin@server ~$ sudo mkdir -p /var/chroot/karl/home
+
+kelvin@server ~$ sudo chown /var/chroot/karl/home
+</code></pre><p>Now you should be able to log in, via the new username karl.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Layer Images Using ImageMagick" href="http://localhost:1313/2007/03/layer-images-using-imagemagick_25.html">Layer Images Using ImageMagick </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-03-22 21:30:00.002 +1100 AEDT'>Published on March 22, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>For one of my <a href="http://www.brokebutnot.com/">webapp projects</a> I&rsquo;m needing to layer two images. This isn&rsquo;t a problem on my laptop &ndash; I just fire up GIMP, do some copy &rsquo;n pasting, and I&rsquo;m done. However, since everything needs to be automated (scripted), and on a server &ndash; well, you get the point.<br>
+The great <a href="http://www.imagemagick.org/">ImageMagick</a> toolkit comes to the rescue. This is highly documented elsewhere, so I&rsquo;m going to be brief.</p>
+<h4 id="take-this">Take this:</h4>
+<p><a href="http://picasaweb.google.com/lh/photo/qQpq_rmGDyoXcID-MUKJRA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9DtidDx_8lHusK9vq-3mkIcKg0JVjCMnyYy4DjZjap556Hb8z2kl3eVTnK-Mz-yBv0D_AG-DYTg2IhIy6Zxluvhe1iv7bbB6JbhmcQKwOL8bDQNqheRmrUN3WMdPjv_s_WgOW3XvCunUQ/s400/world.jpg"></a></p>
+<h4 id="and-add-it-to-this">And add it to this:</h4>
+<p><a href="http://picasaweb.google.com/lh/photo/FHDY48lASCafTiMXXbYbtA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfXQwFtbAJUa7qcRPpCBny5h188YpMglxSc-uUZPQcp4iCyKZRJddY3MUkmzRNTbE4rd0ueQzxJJyAevjiVOVar7mQPhoExM4E-z_OxXWxEnd5AoyUkWKqaAvDjqm4tjmh76oroizz4UFH/s400/bg.jpg"></a></p>
+<p>I first tried to use the following technique:</p>
+<pre tabindex="0"><code>convert bg.jpg -gravity center world.png -composite test.png
+</code></pre><p>This generated a pretty picture, what I wanted. What I didn&rsquo;t want was the fact that the picture was freaking 1.5 megs large, not to mention the resources were a little high:</p>
+<pre tabindex="0"><code>real    0m7.405s
+user    0m7.064s
+sys     0m0.112s
+</code></pre><p>Next, I tried to just use composite.</p>
+<pre tabindex="0"><code>composite -gravity center world.png bg.png output.png
+</code></pre><p>Same results, although the resource usage was just a tad lower. So, what was I doing wrong? I explored a little and realized I was slightly being a muppet. I was using a bng background that was 1.2 megs large (long story). I further changed the compose type to &ldquo;atop,&rdquo; as that is what appeared to have the lowest resource usage. I modified things appropriately:</p>
+<pre tabindex="0"><code> composite -compose atop -gravity center world.png bg.jpg output.jpg
+</code></pre><p>This also yielded an acceptable resource usage.</p>
+<h4 id="the-result">The result:</h4>
+<p><a href="http://picasaweb.google.com/lh/photo/UCqOBQ2ohdqcBCZXrkHZzg?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgZdMmBEvPgAYTaDp7y4Lh-wEoTDZafQCGDo6cfh2vPmtpr714ioNsddZViGiIhfydnqbtXEfjYP8nDoq_bK_1SZQQxvsHYlGpo5FSfPnJwuDw7M7rW3rDA__jUOFtZ-Ijghda78yaiyX1/s400/output.jpg"></a></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Resize a VMWare Image of Windows XP" href="http://localhost:1313/2007/01/resize-vmware-image-of-windows-xp_4908.html">Resize a VMWare Image of Windows XP </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-01-27 21:30:00.002 +1100 AEDT'>Published on January 27, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Over the years I have been shrinking the number of computers I own.  At one point my dorm was littered with old P100s, running whatever OS I felt like playing with at the time.  </p>
+<p>VMWare comes to help.  In this recent oops, an image I made (for Windows XP), was slightly too small.  I didn&rsquo;t feel like reinstalling XP + cruft, so just resized the image.  This is the process:</p>
+<ol>
+<li>
+<p>Make Clone or just backup your VMWare image.</p>
+</li>
+<li>
+<p>Note: if your disk is a Dynamic Disk, you won&rsquo;t be able use GParted.  There is a chance you can use Disk Management inside Computer Managemen inside XP.</p>
+</li>
+<li>
+<p>Turn off VMWare image.</p>
+</li>
+<li>
+<p>Grow the image.  </p>
+</li>
+</ol>
+<pre tabindex="0"><code> vmware-vdiskmanager -x sizeGB yourimagename.vmdk 
+</code></pre><ol start="5">
+<li>
+<p>Download the <a href="http://gparted.sourceforge.net/download.php">GParted LiveCD</a></p>
+</li>
+<li>
+<p>Change the CD-ROM drive of your  VMWare image to boot from the ISO you just downloaded.</p>
+</li>
+<li>
+<p>Boot VMWare image.  Make sure to press ESC right when it starts.</p>
+</li>
+<li>
+<p>Follow the instructions for GParted. I had to select the Xvesa option, then Done.  Choose your language and keyboard and resolution.</p>
+</li>
+<li>
+<p>GParted will come up.  First delete the partition (the empty one!), and make sure it says unallocated.  Then go up to Edit and hit Apply.  Then select the partition and say Resize.  Hit apply again.</p>
+</li>
+<li>
+<p>Reboot image.  Windows XP will come up, and go through checking the disk.  It will reboot again, and you should then be able to log in.</p>
+</li>
+</ol>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Lighttpd As Apache&#39;s Sidekick" href="http://localhost:1313/2006/12/lighttpd-as-apache-sidekick_4400.html">Lighttpd As Apache&amp;#39;s Sidekick </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2006-12-12 21:30:00.002 +1100 AEDT'>Published on December 12, 2006</span>&nbsp;·&nbsp;4 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>So, you have a web server. So, you have PHP. So, you want to make it a little quicker? The following are a few ideas to let you do that. First, let me share my experiences.<br>
+I have always been wondering &ldquo;what would a digg do to my site.&rdquo; I mean, I don&rsquo;t run a commenting system, so I&rsquo;m refering to just some article. Because I prefer to manage my own server, I have decided to use a VPS (Virtual Private Server) from <a href="http://www.vpslink.com/">VPSLink</a>. Before purchasing I searched around, read reviews, and finally tested it out. Liking what I tested, I stayed. However, since I just host a few &lsquo;play&rsquo; sites (http/email/ftp), and a few sites for friends, I am not going to spend much money on a high-end plan. That leaves me with a little problem: how can I maximize what I&rsquo;ve got?<br>
+I&rsquo;ve tried quite a few things. I finally ended up using Apache to handle php and <a href="http://www.lighttpd.net/">Lighttpd</a> to serve all static crap. So, how?</p>
+<h4 id="staticzerize-a-page">Staticzerize A Page</h4>
+<p>One of the first things you will need to do is pull down a static copy of your page.</p>
+<pre tabindex="0"><code> user@vps:~$ wget http://www.kelvinism.com/howtos/notes/quick-n-dirty-firewall.html 
+```That was easy enough. Next, let&#39;s create a directory for static pages.  
+</code></pre><p>user@vps:<del>$ sudo mkdir /var/www/html/kelvinism/static
+user@vps:</del>$ sudo mv quick-n-dirty-firewall.html /var/www/html/kelvinism/static/</p>
+<pre tabindex="0"><code class="language-Sweet." data-lang="Sweet.">
+#### Lighttpd Configuration
+
+  
+  
+Install Lighttpd however you [choose](http://trac.lighttpd.net/trac/wiki/TutorialInstallation). There are a few key changes to make in the configuration.  
+First, change the directory for your base DocumentRoot. Next, change what ports the server will listen on.  
+  
+  
+</code></pre><p>server.document-root = \&quot;/var/www/html\&quot;</p>
+<h2 id="bind-to-port-default-80">bind to port (default: 80)</h2>
+<p>server.port = 81</p>
+<h2 id="bind-to-localhost-default-all-interfaces">bind to localhost (default: all interfaces)</h2>
+<p>server.bind = \&ldquo;127.0.0.1\&rdquo;</p>
+<pre tabindex="0"><code>  
+Ok, Lighttpd is all done. Now just start her up, and move onto Apache.  
+  
+  
+</code></pre><p>user@vps:/etc/lighttpd$ sudo /etc/init.d/lighttpd start</p>
+<pre tabindex="0"><code>  
+
+#### Master Configuration
+
+Depending on your distro and what apache you installed, you might need to do this a little different. I will illustrate how to do it with the Apache package from the Debian repository. Let&#39;s activate the mod\_proxy module.  
+  
+  
+</code></pre><p>user@vps:~$ sudo a2enmod
+Password:
+Which module would you like to enable?
+Your choices are: actions alias asis auth_basic auth_digest authn_alias authn_anon authn_dbd authn_dbm authn_default authn_file authnz_ldap authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cern_meta cgi cgid charset_lite dav dav_fs dav_lock dbd deflate dir disk_cache dump_io env expires ext_filter file_cache filter headers ident imagemap include info ldap log_forensic mem_cache mime mime_magic negotiation php5 proxy proxy_ajp proxy_balancer proxy_connect proxy_ftp proxy_http rewrite setenvif speling ssl status suexec unique_id userdir usertrack version vhost_alias</p>
+<p>Module name? proxy_http</p>
+<pre tabindex="0"><code>  
+If you are not using a system with a2enmod, you can edit your configuration by hand. Just insert the following into your apache2.conf or httpd.conf files:  
+  
+  
+</code></pre><p>LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
+LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so</p>
+<pre tabindex="0"><code>  
+The actual location of the extension (\*.so) will vary depending on where you installed it. If you have tried this out and get forbidden errors, or it just simply isn&#39;t working, the reason is because the proxy modules isn&#39;t configured right. You will likely get an error like:  
+</code></pre><p>client denied by server configuration: proxy</p>
+<pre tabindex="0"><code>  
+To solve this, you need to edit /etc/apache2/mods-enabled/proxy.conf or your httpd.conf file.  
+  
+  
+</code></pre><p>&lt;IfModule mod_proxy.c&gt;
+#turning ProxyRequests on and allowing proxying from all may allow
+#spammers to use your proxy to send email.
+ProxyRequests Off
+&lt;Proxy *&gt;
+AddDefaultCharset off
+Order deny,allow
+Deny from all
+Allow from .kelvinism.com
+<!-- raw HTML omitted -->
+# Enable/disable the handling of HTTP/1.1 \&ldquo;Via:\&rdquo; headers.
+# (\&ldquo;Full\&rdquo; adds the server version; \&ldquo;Block\&rdquo; removes all outgoing Via: headers)
+# Set to one of: Off | On | Full | Block
+ProxyVia On
+<!-- raw HTML omitted --></p>
+<pre tabindex="0"><code class="language-Now," data-lang="Now,">  
+</code></pre><p>#DocumentRoot is just for reference, I assume you know how to setup virtualhosts.</p>
+<p>DocumentRoot /var/www/html/kelvinism/
+ProxyRequests Off
+ProxyPreserveHost On
+ProxyPass /howtos/notes/quick-n-dirty-firewall.html http://127.0.0.1:81/kelvinism/stat ic/quick-n-dirty-firewall.html
+ProxyPass /images/ http://127.0.0.1:81/kelvinism/images/
+ProxyPassReverse / http://127.0.0.1:81/kelvinism/</p>
+<pre tabindex="0"><code>  
+As an alternative, you could use a rewrite rule.  
+  
+  
+</code></pre><p>#DocumentRoot is just for reference, I assume you know how to setup virtualhosts.
+DocumentRoot /var/www/html/kelvinism/
+RewriteEngine On
+RewriteRule ^/howtos/notes/quick-n-dirty-firewall\.html$
+http://127.0.0.1:81/kelvinism/static/quick-n-dirty-firewall.html [P,L]
+ProxyPass /images/ http://127.0.0.1:81/kelvinism/images/
+ProxyPassReverse / http://127.0.0.1:81/kelvinism/</p>
+<pre tabindex="0"><code>  
+So what this does is pass the page http://www.kelvinism.com/howtos/notes/quick-n-dirty-firewall.html through mod\_proxy to Lighttpd. So, test it out, and you are all done!
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Make Dynamic Crap Static" href="http://localhost:1313/2006/12/make-dynamic-crap-static_7513.html">Make Dynamic Crap Static </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2006-12-07 21:30:00.002 +1100 AEDT'>Published on December 7, 2006</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Let&rsquo;s say one page on your site is getting hit hard. And I mean, it was digg&rsquo;d or something. If the page resides on some CMS or blog, and each request is being processed by PHP and resulting in requests to your database, crap is gonna hit the fan. Well, at least if you&rsquo;re cheap like me, you&rsquo;ll try to squeeze every penny out of what you&rsquo;ve got.<br>
+That said, mod_rewrite comes to the rescue.<br>
+There are only a few modifications that you need to do. The first is to ensure that mod_rewrite is enabled. If you have apache installed on debian, this might do:</p>
+<pre tabindex="0"><code>user@vps:~$ sudo a2enmod
+Password:
+Which module would you like to enable?
+Your choices are: actions alias asis auth\_basic auth\_digest authn\_alias authn\_anon authn\_dbd authn\_dbm authn\_default authn\_file authnz\_ldap authz\_dbm authz\_default authz\_groupfile authz\_host authz\_owner authz\_user autoindex cache cern\_meta cgi cgid charset\_lite dav dav\_fs dav\_lock dbd deflate dir disk\_cache dump\_io env expires ext\_filter file\_cache filter headers ident imagemap include info ldap log\_forensic mem\_cache mime mime\_magic negotiation php5 proxy proxy\_ajp proxy\_balancer proxy\_connect proxy\_ftp proxy\_http rewrite setenvif speling ssl status suexec unique\_id userdir usertrack version vhost\_alias
+Module name? rewrite 
+</code></pre><p>Otherwise, you&rsquo;ll need to drop the following in your apache2.conf (or httpd.conf).</p>
+<pre tabindex="0"><code>LoadModule rewrite\_module /usr/lib/apache2/modules/mod\_rewrite.so
+</code></pre><p>Next, grab the page that is getting hit hard from your site.</p>
+<pre tabindex="0"><code>user@vps:~$ wget http://www.kelvinism.com/stuff/hit-hard.html
+</code></pre><p>Next, let&rsquo;s create a static directory and move that page into it.</p>
+<pre tabindex="0"><code>user@vps:~$ sudo mkdir /var/www/html/kelvinism/static
+user@vps:~$ sudo mv hit-hard.html /var/www/html/kelvinism/static/
+</code></pre><p>Coolio. Now we&rsquo;ll rewrite the normal URL (the one being hit hard) to the static URL.<br>
+If you have full access to the server, just mimic the following to a VirtualHost:</p>
+<pre tabindex="0"><code>&lt;VirtualHost \*&gt;
+    DocumentRoot /var/www/html/kelvinism
+    ServerName www.kelvinism.com
+    ServerAlias kelvinism.com www.kelvinism.com
+&lt;Directory \\&#34;/var/www/html/kelvinism\\&#34;&gt;
+    Options Indexes -FollowSymLinks +SymLinksIfOwnerMatch
+    allow from all
+    AllowOverride None
+    RewriteEngine On
+    RewriteRule ^stuff/hit-hard\\\\.html$ /static/hit-hard.html \[L\]
+&lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code></pre><p>If you don&rsquo;t have access to the server, you can just add the following to a .htaccess file:</p>
+<pre tabindex="0"><code>RewriteEngine On
+RewriteRule ^stuff/hit-hard\\.html$ /static/hit-hard.html \[L\]
+```Sweet.
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Resize a Xen Image" href="http://localhost:1313/2006/11/resize-xen-image_3704.html">Resize a Xen Image </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2006-11-08 21:30:00.004 +1100 AEDT'>Published on November 8, 2006</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>So, you&rsquo;ve got a few Xen images around, and they are starting to fill up. How do you add a few more gigs to &rsquo;em?</p>
+<pre tabindex="0"><code> root@tpe:/# xm shutdown vm01  
+ root@tpe:/# cd /xenimages  
+ root@tpe:/xenimages# dd if=/dev/zero bs=1024 count=1000000 &gt;&gt; vm01.img  
+ root@tpe:/path/to/images# resize2fs -f vm01.img  
+ 
+```That&#39;s it, you just added a gig to your image called &#39;vm01.img&#39;.
+</code></pre>
+  </div>
+
+  
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/tags/howtos/page/5/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/tags/howtos/page/7/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

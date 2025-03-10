@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>OSM on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/osm/</link>
+    <description>Recent content in OSM on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Feb 2010 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/osm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fun with OSM</title>
+      <link>http://localhost:1313/2010/02/fun-with-osm_3920.html</link>
+      <pubDate>Fri, 12 Feb 2010 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2010/02/fun-with-osm_3920.html</guid>
+      <description>&lt;p&gt;I have to admit, to me, editing &lt;a href=&#34;http://www.openstreetmap.org/&#34;&gt;OpenStreetMap&lt;/a&gt; is actually a little therapeutic. Sort of like gardening.&lt;/p&gt;
+&lt;p&gt;My first major contribution was when I brought my little QStarz GPS unit across Indonesia, by train, sitting against the window.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/a9waevHOnamwhJuZ0631AQ?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVRc8DuYUf5aDc9yLzjBA5JZmXTczhYyV8R4LeLVmss6J1D7RvhUo5MvP-NRqbOQ7a-v9UBY0vqlIEG_nXnQ0XJ3cZjDGBtmAygoJNRUu7R3ptkL7TtnRQM3fnRYhq01LZjLCLi6b2c3ll/s288/indorailroad.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/xg8TeUUtiZZhLH8T2irceA?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihqDfKD5tB1QYhRxDb3FFUfxBaDTMn7gNCdK7SeVrC_JzI5OwYdYS2NFaZ5hh-dtX3GgRW4Ony8XAbIr8hRKYNP1UMQmKAoSM7CoX-YsoYdYYwwCQm_jjnRCzRFcxdkiD2olu-guGS0s4e/s288/dubbozoo.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The most recent contribution was our trip to Dubbo, where I helped fill in a few missing roads, and added an initial outlay of Dubbo Zoo.&lt;/p&gt;
+&lt;p&gt;If you have a GPS or have $60 to spend on one, and like anything CAD-drawing like, give editing OSM a try!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Operation Field</title>
+      <link>http://localhost:1313/2009/04/operation-field_8222.html</link>
+      <pubDate>Mon, 13 Apr 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/04/operation-field_8222.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;It is time for a new project. I&amp;rsquo;ve finally decided I want to do some electronics stuff - at least play around in that realm a little. However, I want to &amp;ldquo;get out and about&amp;rdquo; a little as well, so this leads me to my idea: a controllable long-range RC plane.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve been debating whether to go the embedded Linux route, or the more simple microcontroller route. One of the first things I stumbled upon was &lt;a href=&#34;http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A44814&#34;&gt;ArduPilot&lt;/a&gt;, a cheap Arduino-based board allowing for a UAV. However, after looking through the requirements I would have needed to purchase an RF transmitter, and they aren&amp;rsquo;t cheap. This made me rethink the ArduPilot route and to evaluate what I really wanted to do: control the plan. My ultimate goal is to attach a joystick to my computer and be able to control the RC plane. This presents another problem with the ArduPilot, however, as there isn&amp;rsquo;t an extra Rx pin available on the ArduPilot board (or so the forums say), I wouldn&amp;rsquo;t be able to transmit coordinates on the fly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Charting the Hackers</title>
+      <link>http://localhost:1313/2008/12/charting-hackers_7870.html</link>
+      <pubDate>Sun, 28 Dec 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/12/charting-hackers_7870.html</guid>
+      <description>&lt;p&gt;A normal internet connection gets attacked, a lot. The majority of attacks are of the form &amp;ldquo;hello, anybody there?&amp;rdquo; &amp;ndash; where most people just don&amp;rsquo;t answer. But sometimes, just sometimes, the question gets an answer. Depending on the answer, the attacker will start to explore.&lt;/p&gt;
+&lt;p&gt;A few weeks back I was a little bored and started fiddling. I wanted to play with my Cisco, but also wanted to play with OSSEC, but also has a GIS craving. In the end I decided to create a map of the people who ask, &amp;ldquo;hello&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Revised mod_tile Install HOWTO</title>
+      <link>http://localhost:1313/2008/11/revised-modtile-install-howto_1369.html</link>
+      <pubDate>Sat, 01 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/revised-modtile-install-howto_1369.html</guid>
+      <description>&lt;p&gt;This is the laundry list of things I did while creating a mod_tile VMware appliance based on Ubuntu Server 8.04. I&amp;rsquo;ve kept descriptions limited but left all the commands in. Let&amp;rsquo;s start installing things&amp;hellip;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Useful goodies for compiling source&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get build-essential
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;More goodies for Mapnik + Friends&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install libboost-dev libboost-filesystem-dev libboost-filesystem1.34.1 libboost-iostreams-dev libboost-iostreams1.34.1 libboost-program-options-dev libboost-program-options1.34.1 libboost-python-dev libboost-python1.34.1 libboost-regex-dev libboost-regex1.34.1 libboost-serialization-dev libboost-serialization1.34.1 libboost-thread-dev libboost-thread1.34.1 libicu-dev libicu38 libstdc++5 libstdc++5-3.3-dev python2.5-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo aptitude install libfreetype6 libfreetype6-dev libjpeg62 libjpeg62-dev libltdl3 libltdl3-dev libpng12-0 libpng12-dev libtiff4 libtiff4-dev libtiffxx0c2 python-imaging python-imaging-dbg proj
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo aptitude install libcairo2 libcairo2-dev python-cairo python-cairo-dev libcairomm-1.0-1 libcairomm-1.0-dev libglib2.0-0 libpixman-1-0 libpixman-1-dev libpthread-stubs0 libpthread-stubs0-dev ttf-dejavu ttf-dejavu-core ttf-dejavu-extra
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo aptitude install libgdal-dev python2.5-gdal postgresql-8.3-postgis postgresql-8.3 postgresql-server-dev-8.3 postgresql-contrib-8.3
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo aptitude install libxslt1.1 libxslt1-dev libxml2-dev libxml2 gdal-bin libgeos-dev libbz2-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo aptitude install apache2 apache2-threaded-dev apache2-mpm-prefork apache2-utils
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo aptitude install subversion
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This checks out the mapnik source:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

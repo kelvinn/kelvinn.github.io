@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Embedded on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/embedded/</link>
+    <description>Recent content in Embedded on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 Dec 2009 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/embedded/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vortex86DX Instructions from ICOP</title>
+      <link>http://localhost:1313/2009/12/vortex86dx-instructions-from-icop_3935.html</link>
+      <pubDate>Sat, 05 Dec 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/12/vortex86dx-instructions-from-icop_3935.html</guid>
+      <description>&lt;p&gt;Alexandru T. and I have exchanged a few emails, and he sent through a few helpful suggestions that were provided from ICOP. I have included them below. Thanks Alexandru!&lt;/p&gt;
+&lt;p&gt;1. Install Debian 5.0 on a normal PC (using a netinst image, for minimal install)&lt;/p&gt;
+&lt;p&gt;2. After installation boot normally from the same PC&lt;/p&gt;
+&lt;p&gt;3. Then, take the kernel from &lt;a href=&#34;ftp://icop.com.tw/DIS&#34;&gt;ftp://icop.com.tw/DIS&lt;/a&gt;_info/VDX/operating_system/VDX_Linux/linux-image-2.6.30-vortex86mx_1.0_i386.deb and then issue the following commands :&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\# dpkg -i  linux-image-2.6.30-vortex86mx\_1.0\_i386.deb
+# update-initramfs -k 2.6.30-vortex86mx -c
+# update-grub
+# restart
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;4. Then take the hard-drive and install it on the Vortex86DX&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lenny on Ebox 3310A</title>
+      <link>http://localhost:1313/2009/11/lenny-on-ebox-3310a_5547.html</link>
+      <pubDate>Tue, 03 Nov 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/11/lenny-on-ebox-3310a_5547.html</guid>
+      <description>&lt;p&gt;As a preface, I take absolutely no credit for the below instructions. Stefan L kindly sent these through these instructions on installing Debian on the 3310A. I need to send a special thanks to Stefan, as I receive a lot of emails about the 3310 - but I don&amp;rsquo;t have one, so I can&amp;rsquo;t really do much:(&lt;br&gt;
+The only edit I&amp;rsquo;ve done is change out the links to my files on S3. If you find these helpful, or want to suggest an alteration, please leave a comment.&lt;br&gt;
+Download these files first:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>True Consolidation</title>
+      <link>http://localhost:1313/2009/04/true-consolidation_6503.html</link>
+      <pubDate>Mon, 13 Apr 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/04/true-consolidation_6503.html</guid>
+      <description>&lt;p&gt;Back in 2000 I managed to acquire several retired systems to bring to Uni: this included 4-5 cheap P120 machines. At the time, I thought this was great; I had an OpenBSD box as my gateway, a FreeBSD box, a few Linux boxes, and likely something else that doesn&amp;rsquo;t even exist now. The school has a superfast connection, unlimited bandwidth, and I was curious. Although I didn&amp;rsquo;t really have &lt;em&gt;time&lt;/em&gt;, I still managed to install and have all these servers running from my room.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

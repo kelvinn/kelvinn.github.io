@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Notes on Installing mod_tile for Mapnik | Kelvin Nicholson</title>
+<meta name="keywords" content="howtos">
+<meta name="description" content="I have no idea if these notes on how to install mod_tile will be useful for anybody. The current readme states that you need to edit the source code, but never actually where. Well, this is where, at least until the code can either take switches or can auto-configure itself. This is quite brief, so if you need more details, shoot me an email or leave a comment. I have repeated this process on two Ubuntu 7.10 machines.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2008/04/notes-on-installing-modtile-for-mapnik_168.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2008/04/notes-on-installing-modtile-for-mapnik_168.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to Notes on Installing mod_tile for Mapnik" href="http://localhost:1313/2008/04/notes-on-installing-modtile-for-mapnik_168.html">Notes on Installing mod_tile for Mapnik </a>
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-22 20:30:00.002 +1000 AEST'>Published on April 22, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>I have no idea if these notes on how to install mod_tile will be useful for anybody. The current readme states that you need to edit the source code, but never actually where. Well, this is where, at least until the code can either take switches or can auto-configure itself. This is quite brief, so if you need more details, shoot me an email or leave a comment. I have repeated this process on two Ubuntu 7.10 machines.</p>
+<ol>
+<li>Install mapnik as per normal &ndash; you may also need to do a&hellip;</li>
+</ol>
+<pre tabindex="0"><code>$ ./bootstrap
+$ ./autogen.sh
+$ ./configure
+$ make
+# make install
+</code></pre><ol start="2">
+<li>
+<p>Install libagg (apt-get install libagg-dev)</p>
+</li>
+<li>
+<p>Make sure the mapnik library files are /usr/local/lib (libmapnik.*)</p>
+</li>
+<li>
+<p>Make sure to copy/install fonts and input folders into /usr/local/lib/mapnik</p>
+</li>
+<li>
+<p>Edit Makefile, change line 27 to where your include files are located</p>
+</li>
+</ol>
+<pre tabindex="0"><code>RENDER\_CPPFLAGS += -I/usr/local/include/mapnik
+</code></pre><ol start="6">
+<li>Edit Makefile, change line 33 to where your mapnik libraries are (libmapnik.*)</li>
+</ol>
+<pre tabindex="0"><code>RENDER\_LDFLAGS += -lmapnik -L/usr/local/lib
+</code></pre><ol start="7">
+<li>Edit Line 40 of gen_tile.cpp to point to your osm.xml file (that you can verify works with generate_image.py)</li>
+</ol>
+<pre tabindex="0"><code>static const char \*mapfile = &#34;/home/kelvin/mapnik-osm/osm.xml&#34;;
+</code></pre><ol start="8">
+<li>Edit line 219 of gen_tile.cpp to point to the correct location of the datasource input.</li>
+</ol>
+<pre tabindex="0"><code>datasource\_cache::instance()-&gt;register\_datasources(&#34;/usr/local/lib/mapnik/input&#34;);
+</code></pre><ol start="9">
+<li>Edit line 221 of gen_tile.cpp to point to the correct location of your fonts directory.</li>
+</ol>
+<pre tabindex="0"><code>load\_fonts(&#34;/usr/local/lib/mapnik/fonts&#34;, 0);
+</code></pre><ol start="10">
+<li>The module will install in /usr/lib/apache2/modules, so mod_tile.conf should read:</li>
+</ol>
+<pre tabindex="0"><code>LoadModule tile\_module /usr/lib/apache2/modules/mod\_tile.so
+</code></pre><p><strong>Final note:</strong> I think it would be possible to just symlink the lib directory to lib64, although I would expect that could have some undesirable outcomes down the road. However, despite being pretty new code, how do I find mod_tile? Pretty good, actually. I expected more difficulties setting it up, but overall the procedure hasn&rsquo;t been too bad. I like the approach of creating a module vs. using several middle-layers. So once again, hats off to the OSM crew.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/howtos/">Howtos</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

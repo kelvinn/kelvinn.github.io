@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Compiling kernel for Vortex86dx | Kelvin Nicholson</title>
+<meta name="keywords" content="linux, articles, kernel, ebox">
+<meta name="description" content="Update: I&rsquo;ve written up a short tutorial on the method I used to install Debian 5.0 on this device.
+A few months ago I purchased the eBox-3300 from WDL Systems. The system was promptly shipped, and there were no &ldquo;gotchas&rdquo; from WDL. The little box fit my exact needs - it is small, and built very, very well. I flew back to Australia and, after some trial and error, installed Debian 5.0 on it. For quite some time I was just using the vmlinuz file provided by WDL, which was provided by ICOP (DMP). This worked well, but there were two issues:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2009/05/compiling-kernel-for-vortex86dx_5058.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2009/05/compiling-kernel-for-vortex86dx_5058.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to Compiling kernel for Vortex86dx" href="http://localhost:1313/2009/05/compiling-kernel-for-vortex86dx_5058.html">Compiling kernel for Vortex86dx </a>
+    </h2>
+
+    <div class="post-meta"><span title='2009-05-10 20:30:00.002 +1000 AEST'>Published on May 10, 2009</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p><strong>Update</strong>: I&rsquo;ve written up a <a href="http://kelvinism.com/howtos/installing-debian-50-vortex86dx/">short tutorial</a> on the method I used to install Debian 5.0 on this device.</p>
+<p>A few months ago I purchased the eBox-3300 from WDL Systems. The system was promptly shipped, and there were no &ldquo;gotchas&rdquo; from WDL. The little box fit my exact needs - it is small, and built very, very well. I flew back to Australia and, after some trial and error, installed Debian 5.0 on it. For quite some time I was just using the vmlinuz file provided by WDL, which was provided by ICOP (DMP). This worked well, but there were two issues:</p>
+<ol>
+<li>
+<p>I couldn&rsquo;t load any modules (e.g. NFS).</p>
+</li>
+<li>
+<p>I received an annoying email from OSSEC every few hours telling me it couldn&rsquo;t find modules.dep.</p>
+</li>
+</ol>
+<p>At the end of last week I finally decided to do something about it, and considering this little box is &ldquo;x86 compliant&rdquo;, I figured it wouldn&rsquo;t be too hard to create a new package. It has been several years since I last created a self-compiled Debian-packaged kernel, so I decided to document the process for the next time I do it. These steps are really just a summary - but if you have much Linux experience, they should be enough to guide you. If I&rsquo;m unclear, just send me an email.</p>
+<p>Because the eBox-3300 is embedded, I logically decided to create the package on another system. However, I wanted to maximize the chances of it working, so I installed Debian 5.0 in VirtualBox, updated it, and proceeded.</p>
+<p>As a prep, you may need to install ncurses-dev and kernel-package in your build environment.</p>
+<pre tabindex="0"><code>apt-get install ncurses-dev kernel-package
+</code></pre><ol>
+<li>
+<p>Download latest kernel from: <a href="http://www.kernel.org/pub/linux/kernel/v2.6/">http://www.kernel.org/pub/linux/kernel/v2.6/</a></p>
+</li>
+<li>
+<p>Download the DMP provided patch/config file for 2.6.27.3, copy it to /usr/src. Alternatively, you can borrow my <a href="http://cdn.kelvinism.com/ebox/config-2.6.29.3-vortex86dx">2.6.29.3 config</a> Make a backup.</p>
+</li>
+<li>
+<p>Untar kernel, cd into the kernel directory. Issue:</p>
+</li>
+</ol>
+<pre tabindex="0"><code>make menuconfig
+</code></pre><ol start="4">
+<li>Configure kernel. If you used my config file, a lot of these should already be ticked.</li>
+</ol>
+<p>a) Load alternative config file, I selected mine as /usr/src/config-2.6.27.9-vortex86dx, or if you downloaded the one from me, use config-2.6.29.3-vortex86dx</p>
+<p>b) Enable generic x86 support</p>
+<p>c) Enable Kernel .config support</p>
+<p>d) Device drivers -&gt; Network -&gt; 10 or 100Mbit -&gt; RDC R6040, set at built in</p>
+<p>e) Turn off generic IDE support</p>
+<p>f) Exit, make sure to save the kernel</p>
+<p>g) Verify .config exists. If it doesn&rsquo;t, copy the config-2.6.x.x-vortex86dx file to .config</p>
+<ol start="5">
+<li>Create the kernel debs. In the kernel directory, issue these commands. This will build the kernel image, the headers, and the modules.</li>
+</ol>
+<pre tabindex="0"><code>make-kpkg --initrd kernel\_image kernel\_source kernel\_headers modules\_image
+</code></pre><ol start="6">
+<li>
+<p>Make coffee</p>
+</li>
+<li>
+<p>Copy the debs to your running ebox by sftp (or usb, or whatever is available)</p>
+</li>
+<li>
+<p>Install kernel in eBox-3300</p>
+</li>
+</ol>
+<pre tabindex="0"><code>dpkg -i linux-source-2.6.29.3-vortex86dx.deb
+dpkg -i linux-headers-2.6.29.3-vortex86dx.deb
+dpkg -i linux-image-2.6.29.3-vortex86dx.deb
+</code></pre><ol start="9">
+<li>Reboot. If you want my compiled kernel/sources/header .DEBs, just shoot me an email and I&rsquo;ll make them available.</li>
+</ol>
+<p><strong>Summary:</strong> My only gripe about this little box was the lack of an easily customizable kernel, but no more. I&rsquo;m still very happy with this $150 purchase.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="http://localhost:1313/tags/articles/">Articles</a></li>
+      <li><a href="http://localhost:1313/tags/kernel/">Kernel</a></li>
+      <li><a href="http://localhost:1313/tags/ebox/">Ebox</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

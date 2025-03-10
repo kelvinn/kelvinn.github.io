@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Adding Search to Django | Kelvin Nicholson</title>
+<meta name="keywords" content="search, django, articles">
+<meta name="description" content="This is fairly well documented in the Django docs, so I&rsquo;ll be brief. This is the the bit of search code I use in almost all of my Django sites, and it works great:
+
+def search(request):
+    from django.db.models import Q
+    q = request.GET.get(&#34;q&#34;, &#34;&#34;)
+    if q and len(q) &gt;= 3:
+        clause = Q(dirtword\_\_icontains=q)               \\
+               | Q(description\_\_icontains=q)       \\
+               | Q(tags\_\_name\_\_icontains=q)        
+        site\_search = Dirt.objects.filter(clause).distinct()
+    else:
+        site\_search = Dirt.objects.order\_by(&#39;?&#39;)\[:100\]
+    return list\_detail.object\_list(
+        request              = request,
+        queryset             = site\_search,
+        template\_name        = &#34;dirty/search.html&#34;,
+        template\_object\_name = &#34;dirty&#34;,
+        paginate\_by          = 20,
+        extra\_context        = {&#34;q&#34; : q},
+    )  
+While this should be pretty self-explanatory, the process goes like this: q is taken from the GET request and if it is over three characters long, it is searched for in the dirtword column, through the description and also through the m2m relationship of tags__name. Yup, it is pretty nifty to be able to access relationship in this way (tags__name). You will notice that at the end of each search it says &ldquo;__icontains&rdquo; &ndash; this simply does a fuzzy search for the word. Once the queryset is created (the filter) I&rsquo;ve added a .distinct() on the end &ndash;this prevents multiple rows from being returned to the template. If there isn&rsquo;t a search, or it isn&rsquo;t long enough, a random list will be returned.
+One thing I like to do is include the search as extra_context &ndash; this allows you to say something like &ldquo;you&rsquo;ve searched for&hellip;&rdquo; at the top of your search. I couldn&rsquo;t imagine implementing a search feature as being any easier.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2007/06/adding-search-to-django_6300.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2007/06/adding-search-to-django_6300.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to Adding Search to Django" href="http://localhost:1313/2007/06/adding-search-to-django_6300.html">Adding Search to Django </a>
+    </h2>
+
+    <div class="post-meta"><span title='2007-06-03 20:30:00.008 +1000 AEST'>Published on June 3, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>This is fairly well documented in the Django docs, so I&rsquo;ll be brief. This is the the bit of search code I use in almost all of my Django sites, and it works great:</p>
+<pre tabindex="0"><code>
+def search(request):
+    from django.db.models import Q
+    q = request.GET.get(&#34;q&#34;, &#34;&#34;)
+    if q and len(q) &gt;= 3:
+        clause = Q(dirtword\_\_icontains=q)               \\
+               | Q(description\_\_icontains=q)       \\
+               | Q(tags\_\_name\_\_icontains=q)        
+        site\_search = Dirt.objects.filter(clause).distinct()
+    else:
+        site\_search = Dirt.objects.order\_by(&#39;?&#39;)\[:100\]
+    return list\_detail.object\_list(
+        request              = request,
+        queryset             = site\_search,
+        template\_name        = &#34;dirty/search.html&#34;,
+        template\_object\_name = &#34;dirty&#34;,
+        paginate\_by          = 20,
+        extra\_context        = {&#34;q&#34; : q},
+    )  
+</code></pre><p>While this should be pretty self-explanatory, the process goes like this: q is taken from the GET request and if it is over three characters long, it is searched for in the dirtword column, through the description and also through the m2m relationship of tags__name. Yup, it is pretty nifty to be able to access relationship in this way (tags__name). You will notice that at the end of each search it says &ldquo;__icontains&rdquo; &ndash; this simply does a fuzzy search for the word. Once the queryset is created (the filter) I&rsquo;ve added a .distinct() on the end &ndash;this prevents multiple rows from being returned to the template. If there isn&rsquo;t a search, or it isn&rsquo;t long enough, a random list will be returned.<br>
+One thing I like to do is include the search as extra_context &ndash; this allows you to say something like &ldquo;you&rsquo;ve searched for&hellip;&rdquo; at the top of your search. I couldn&rsquo;t imagine implementing a search feature as being any easier.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/search/">Search</a></li>
+      <li><a href="http://localhost:1313/tags/django/">Django</a></li>
+      <li><a href="http://localhost:1313/tags/articles/">Articles</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

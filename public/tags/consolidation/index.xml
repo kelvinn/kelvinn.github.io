@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Consolidation on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/consolidation/</link>
+    <description>Recent content in Consolidation on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Apr 2009 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/consolidation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>True Consolidation</title>
+      <link>http://localhost:1313/2009/04/true-consolidation_6503.html</link>
+      <pubDate>Mon, 13 Apr 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/04/true-consolidation_6503.html</guid>
+      <description>&lt;p&gt;Back in 2000 I managed to acquire several retired systems to bring to Uni: this included 4-5 cheap P120 machines. At the time, I thought this was great; I had an OpenBSD box as my gateway, a FreeBSD box, a few Linux boxes, and likely something else that doesn&amp;rsquo;t even exist now. The school has a superfast connection, unlimited bandwidth, and I was curious. Although I didn&amp;rsquo;t really have &lt;em&gt;time&lt;/em&gt;, I still managed to install and have all these servers running from my room.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

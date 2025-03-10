@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Distcc on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/distcc/</link>
+    <description>Recent content in Distcc on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jan 2008 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/distcc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Distcc</title>
+      <link>http://localhost:1313/2008/01/using-distcc_1425.html</link>
+      <pubDate>Tue, 01 Jan 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/01/using-distcc_1425.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m in the process of working on one of my projects, and the requirement came up to download a fairly large file (4GB). Since I only receive ~20GB/month at my house, I decided to just use my server in the U.S. The next requirement came about needing to compile Mapnik, which I had intended to do on the server at some point anyways, yet I ran into memory constraints.&lt;/p&gt;
+&lt;p&gt;Good old distcc comes to the rescue. I don&amp;rsquo;t need to use distcc that often, yet when I do, it is very handy. However, I always forget to set g++ to use distcc as well. So, for when I forget next time&amp;hellip;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Iis on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/iis/</link>
+    <description>Recent content in Iis on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Nov 2008 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/iis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Django with SQL Server and IIS</title>
+      <link>http://localhost:1313/2008/11/using-django-with-sql-server-and-iis_4115.html</link>
+      <pubDate>Sat, 08 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/using-django-with-sql-server-and-iis_4115.html</guid>
+      <description>&lt;p&gt;As you can tell from reading some of the other pages, I like Linux and open source. But I also like to answer the question &amp;ldquo;what if&amp;hellip;&amp;rdquo; This post is my [brief] run down of answering &amp;ldquo;what if I could run Django on Server 2003 with SQL Server and IIS.&amp;rdquo; Why, you may ask? To be honest with you, at this point, I don&amp;rsquo;t really know. One of the deciding factors was seeing that the django-mssql project maintains support for inspectdb, which means I could take a stock 2003 server running SQL Server, inspect the DB, and build a web app on top of it. The Django docs offer a lengthy &lt;a href=&#34;http://code.djangoproject.com/wiki/DjangoOnWindowsWithIISAndSQLServer&#34;&gt;howto&lt;/a&gt; for using Django with IIS and SQL Server, but the website for PyISAPIe seems to have been down for the last month or so. Without further delay, below are my notes on installing Django with SQL Server and IIS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>IIS7 GoLive Program</title>
+      <link>http://localhost:1313/2007/06/iis7-golive-program_3958.html</link>
+      <pubDate>Mon, 18 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/iis7-golive-program_3958.html</guid>
+      <description>&lt;p&gt;You can easily see that I am a big Linux fan, I&amp;rsquo;ve mentioned this over and over. I&amp;rsquo;ve also mentioned that I&amp;rsquo;m finishing up my MCSE, which started as a dare with my buddy, Ian. In the process of studying for my MCSE I&amp;rsquo;ve developed a certain amount of respect for Windows Server 2003, yet I&amp;rsquo;ll comment more on this later.&lt;/p&gt;
+&lt;p&gt;What I really wanted to write two paragraphs about was an interesting discovery I made today. I happened to stumble over to Microsoft&amp;rsquo;s hardware site, and noticed in my little Server Spy monitor that it was running IIS/7 &amp;ndash; the first time I have seen this anywhere. Upon further investigation I perused their &lt;a href=&#34;http://www.iis.net/default.aspx?tabid=7&amp;amp;subtabid=79&#34;&gt;GoLive program&lt;/a&gt;, which details several ways to test drive IIS7. There are some details about Microsoft&amp;rsquo;s setup, which one would expect to be impressive. And it is. So, if you are a Microsoft person, you may want to grab a test drive of Beta3 while you still can.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

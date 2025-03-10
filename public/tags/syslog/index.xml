@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Syslog on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/syslog/</link>
+    <description>Recent content in Syslog on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Apr 2007 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/syslog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PSAD and Syslog-NG</title>
+      <link>http://localhost:1313/2007/04/psad-and-syslog-ng_7378.html</link>
+      <pubDate>Wed, 18 Apr 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/04/psad-and-syslog-ng_7378.html</guid>
+      <description>&lt;p&gt;I really like using PSAD, both on my server and my laptop. You never know where the mean people are. I also seem to use syslog-ng quite often, meanwhile PSAD seems oriented to syslog. This is fine, and I&amp;rsquo;m pretty sure the install.pl for the source built will configure syslog-ng.conf automatically. However, I almost always tend to stick with packages if I can &amp;ndash; if they are even remotely close to the current version.&lt;br&gt;
+Anyways, if you need to get syslog-ng.conf configured for PSAD, this is what you need to do:&lt;br&gt;
+Add this code to the &amp;ldquo;# pipes&amp;rdquo; section, maybe stick to keeping it alphabetical.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

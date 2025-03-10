@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pytz on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/pytz/</link>
+    <description>Recent content in Pytz on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Jun 2009 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pytz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ISO Code Error</title>
+      <link>http://localhost:1313/2009/06/iso-code-error_1265.html</link>
+      <pubDate>Wed, 17 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/iso-code-error_1265.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve received this error a few times when working with pytz:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Error reading file &amp;#39;/usr/share/xml/iso-codes/iso\_3166.xml&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In short, install the &amp;lsquo;iso-codes&amp;rsquo; package in Ubuntu/Debian. I&amp;rsquo;m sure this is covered in the manual that I didn&amp;rsquo;t read, but I&amp;rsquo;m sure others didn&amp;rsquo;t read it too.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apt-get install iso-codes
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+  </channel>
+</rss>

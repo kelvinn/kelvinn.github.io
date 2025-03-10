@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/home/</link>
+    <description>Recent content in Home on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Jan 2014 14:45:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/home/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Continuous Flow Through Worm Bin</title>
+      <link>http://localhost:1313/2014/01/continuous-flow-through-worm-bin.html</link>
+      <pubDate>Sun, 05 Jan 2014 14:45:00 +1100</pubDate>
+      <guid>http://localhost:1313/2014/01/continuous-flow-through-worm-bin.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;A few months ago we decided we wanted a worm bin, as we were eating a lot of vegetables, and tossing away bits that weren&amp;rsquo;t used. We were also buying soil for our plants, so it made sense to try to turn one into another.&lt;/p&gt;
+&lt;p&gt;One of our friends gave us some worms from her compost - no idea what kind - and I build an experimental CFT worm bin (&lt;a href=&#34;http://vermicomposters.ning.com/forum/topics/diy-flow-through-bins-a&#34;&gt;sample plans&lt;/a&gt;). We harvested once at about two months, but I don&amp;rsquo;t think it was quite ready. We&amp;rsquo;ll keep experimenting.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Operation Cold House</title>
+      <link>http://localhost:1313/2009/06/operation-cold-house_7266.html</link>
+      <pubDate>Sun, 14 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/operation-cold-house_7266.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;My house is cold. I want to start playing with simple electronics before starting &lt;a href=&#34;http://www.kelvinism.com/projects/operation-field/&#34;&gt;Operation Field&lt;/a&gt;, so have created Operation Cold House.&lt;/p&gt;
+&lt;p&gt;This is just simply sticking a temperature sensor onto an Arduino, linking that up to my little home &amp;ldquo;&lt;a href=&#34;http://www.kelvinism.com/tech-blog/true-consolidation/&#34;&gt;server&lt;/a&gt;&amp;rdquo;, and uploading that to my website. I&amp;rsquo;ll display some nifty graphs, too, and link it to &lt;a href=&#34;http://www.pachube.com/&#34;&gt;Pachube&lt;/a&gt;. Stay tuned.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Complete! The proof is &lt;a href=&#34;http://www.kelvinism.com/howtos/simple-arduino-led-tutorial/&#34;&gt;in the&lt;/a&gt; &lt;a href=&#34;http://www.kelvinism.com/tech-blog/arduino-101/&#34;&gt;pudding&lt;/a&gt;. I now have a personal website from home (sorry, not public) that displays the daily and weekly temperature at home. The process is basically like this: my little Arduino gathers the temperature, and is polled every minute with a python script via cron. This script then sticks the time and temperature into MySQL. It also exports the temperature to Pachube. Every 30m I have a script that queries MySQL and uses Google&amp;rsquo;s Chart&amp;rsquo;s API to graph the temperature. Looks great, I&amp;rsquo;ll post a graph soon.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>NetFlow into MySQL with flow-tools | Kelvin Nicholson</title>
+<meta name="keywords" content="mysql, monitoring, cisco, howtos, netflow">
+<meta name="description" content="I&rsquo;ve been side-tracked on another little project, and keep coming back to NetFlow. For this project I&rsquo;ll need to access NetFlow data with Django, but this is a bit tricky. First, I&rsquo;m sort of lazy when it comes to my own project; maybe not lazy, I just like taking the most direct route. The most up-to-date NetFlow collector I noticed was flow-tools, and there is even a switch to export the information into MySQL. Sweet! However, I wanted to insert the flows into MySQL automatically, or at least on a regular basis. I first started writing a python script that would do the job, but after a few minutes noticed flow-capture had a rotate_program switch, and started investigating. Since I somehow couldn&rsquo;t find anywhere instructions how to insert the data automatically, here&rsquo;s what I came up with:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2008/12/netflow-into-mysql-with-flow-tools_5439.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2008/12/netflow-into-mysql-with-flow-tools_5439.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to NetFlow into MySQL with flow-tools" href="http://localhost:1313/2008/12/netflow-into-mysql-with-flow-tools_5439.html">NetFlow into MySQL with flow-tools </a>
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-21 21:30:00.002 +1100 AEDT'>Published on December 21, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>I&rsquo;ve been side-tracked on another little project, and keep coming back to NetFlow. For this project I&rsquo;ll need to access NetFlow data with <a href="http://www.djangoproject.com">Django</a>, but this is a bit tricky. First, I&rsquo;m sort of lazy when it comes to my own project; maybe not lazy, I just like taking the most direct route. The most up-to-date NetFlow collector I noticed was <a href="http://code.google.com/p/flow-tools/">flow-tools</a>, and there is even a switch to export the information into MySQL. Sweet! However, I wanted to insert the flows into MySQL automatically, or at least on a regular basis. I first started writing a python script that would do the job, but after a few minutes noticed flow-capture had a rotate_program switch, and started investigating. Since I somehow couldn&rsquo;t find anywhere instructions how to insert the data automatically, here&rsquo;s what I came up with:</p>
+<ol>
+<li>
+<p>Download <a href="http://code.google.com/p/flow-tools/">flow-tools</a>; make sure to configure with &ndash;with-mysql (and you&rsquo;ll have to make sure you have the needed libraries).</p>
+</li>
+<li>
+<p>Create a new database, I called mine &rsquo;netflow'.</p>
+</li>
+<li>
+<p>Create a table that can contain all the netflow fields, a sample is below. I added a &ldquo;flow_id&rdquo; field that I used as a primary key, but you don&rsquo;t necessarily need this.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>CREATE TABLE \`flows\` (
+\`FLOW\_ID\` int(32) NOT NULL AUTO\_INCREMENT,
+\`UNIX\_SECS\` int(32) unsigned NOT NULL default &#39;0&#39;,
+\`UNIX\_NSECS\` int(32) unsigned NOT NULL default &#39;0&#39;,
+\`SYSUPTIME\` int(20) NOT NULL,
+\`EXADDR\` varchar(16) NOT NULL,
+\`DPKTS\` int(32) unsigned NOT NULL default &#39;0&#39;,
+\`DOCTETS\` int(32) unsigned NOT NULL default &#39;0&#39;,
+\`FIRST\` int(32) unsigned NOT NULL default &#39;0&#39;,
+\`LAST\` int(32) unsigned NOT NULL default &#39;0&#39;,
+\`ENGINE\_TYPE\` int(10) NOT NULL,
+\`ENGINE\_ID\` int(15) NOT NULL,
+\`SRCADDR\` varchar(16) NOT NULL default &#39;0&#39;,
+\`DSTADDR\` varchar(16) NOT NULL default &#39;0&#39;,
+\`NEXTHOP\` varchar(16) NOT NULL default &#39;0&#39;,
+\`INPUT\` int(16) unsigned NOT NULL default &#39;0&#39;,
+\`OUTPUT\` int(16) unsigned NOT NULL default &#39;0&#39;,
+\`SRCPORT\` int(16) unsigned NOT NULL default &#39;0&#39;,
+\`DSTPORT\` int(16) unsigned NOT NULL default &#39;0&#39;,
+\`PROT\` int(8) unsigned NOT NULL default &#39;0&#39;,
+\`TOS\` int(2) NOT NULL,
+\`TCP\_FLAGS\` int(8) unsigned NOT NULL default &#39;0&#39;,
+\`SRC\_MASK\` int(8) unsigned NOT NULL default &#39;0&#39;,
+\`DST\_MASK\` int(8) unsigned NOT NULL default &#39;0&#39;,
+\`SRC\_AS\` int(16) unsigned NOT NULL default &#39;0&#39;,
+\`DST\_AS\` int(16) unsigned NOT NULL default &#39;0&#39;,
+PRIMARY KEY (FLOW\_ID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+</code></pre><ol start="4">
+<li>
+<p>Setup your router so it sends netflow packets to your linux box (see README/INSTALL)</p>
+</li>
+<li>
+<p>Create a &ldquo;rotate program&rdquo; that will actually enter in the information into mysql.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>kelvin@monitor:/usr/bin$ cat flow-mysql-export 
+#!/bin/bash
+
+flow-export -f3 -u &#34;username:password:localhost:3306:netflow:flows&#34; &lt; /flows/router/$1
+</code></pre><ol start="6">
+<li>
+<p>Create the /flows/router directory</p>
+</li>
+<li>
+<p>Start flow-capture (9801 is the port netflow traffic is being directed to); all done.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>flow-capture -w /flows/router -E5G 0/0/9801 -R /usr/bin/flow-mysql-export
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/mysql/">Mysql</a></li>
+      <li><a href="http://localhost:1313/tags/monitoring/">Monitoring</a></li>
+      <li><a href="http://localhost:1313/tags/cisco/">Cisco</a></li>
+      <li><a href="http://localhost:1313/tags/howtos/">Howtos</a></li>
+      <li><a href="http://localhost:1313/tags/netflow/">Netflow</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

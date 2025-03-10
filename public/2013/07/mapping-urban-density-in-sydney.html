@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Mapping Urban Density in Sydney | Kelvin Nicholson</title>
+<meta name="keywords" content="postgis, gis, articles, tilemill">
+<meta name="description" content="Five years ago I started exploring different mapping technologies by detailing instructions on installing Mapnik and mod_tile. Times have changed significantly in the last five years, and thanks a lot to the products offered by MapBox. After playing with TileMill, MBTiles, Leaflet and UTFGrids, it is great how many annoyances have been fixed by MapBox. I find it enjoyable making maps now, as I no longer need to worry about patching code just to get it to run, or mucking about with oddities in web browser.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2013/07/mapping-urban-density-in-sydney.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2013/07/mapping-urban-density-in-sydney.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to Mapping Urban Density in Sydney" href="http://localhost:1313/2013/07/mapping-urban-density-in-sydney.html">Mapping Urban Density in Sydney </a>
+    </h2>
+
+    <div class="post-meta"><span title='2013-07-20 00:34:00.001 +1000 AEST'>Published on July 20, 2013</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>Five years ago I started exploring different mapping technologies by detailing instructions on <a href="http://www.kelvinism.com/2008/04/setting-up-mapnik-server-on-ubuntu_118.html">installing Mapnik</a> and <a href="http://www.kelvinism.com/2008/11/revised-modtile-install-howto_1369.html">mod_tile</a>. Times have changed significantly in the last five years, and thanks a lot to the products offered by <a href="http://www.mapbox.com/">MapBox</a>. After playing with TileMill, MBTiles, Leaflet and UTFGrids, it is great how many annoyances have been fixed by MapBox. I find it enjoyable making maps now, as I no longer need to worry about patching code just to get it to run, or mucking about with oddities in web browser.</p>
+<p>Each night this week I have created a new map using Mesh Block spatial data from the Australian Bureau of Statistics (Mesh Blocks are the smallest area used when conducting surveys). I am thankful to live in a country that provides a certain amount of open data, and the ABS should be applauded for the amount of data they provide. They provide <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument">spatial data</a> about Mesh Blocks, as well as <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument">population counts</a> for this spatial data. It is relatively easy to merge the two and then visualise them using TileMill.</p>
+<p>First up - population density of Sydney, i.e. persons reported to be living in each mesh block. Darker red indicates a higher population count.</p>
+<p><a href="http://maps.kelvinism.com/syd_pop_density.html">View Full Screen</a></p>
+<p>I find it interesting to see how many people live in certain Mesh Blocks. You will notice that Mesh Blocks with high population levels tend to be nearer public transport - either major roads with frequent bus service, or train stations.</p>
+<p>We can look at the urban densities by determining dwellings per hectare, and do this per Mesh Block. The definition I used for urban densities comes from <a href="http://annforsyth.net/">Ann Forsyth</a> in &ldquo;Measuring Density: Working Definitions for Residential Density and Building Intensity&rdquo; (<a href="http://www.corridordevelopment.org/pdfs/from_MDC_Website/db9.pdf">pdf</a>). Ann discusses the need to consider net or gross densities, depending on the type of land use. At the Mesh Block level the land use type appears to be singular: Industrial, Parkland, Commercial, Residential, and Transport. Because the land use type was generally singular I have not adjusted to gross/net, but still used Ann&rsquo;s definitions of certain density bands:</p>
+<ul>
+<li>Very low density: 11 dw/ha</li>
+<li>Low density: 11-22 dw/ha</li>
+<li>Medium density: 23-45 dw/ha</li>
+<li>High density: 45 dw/ha</li>
+</ul>
+<p>&ldquo;dw/ha&rdquo; is dwellings per hectare. I decided to map the four density levels, which can be relatively easily achieved using TileMill. See below for an example.</p>
+<p><a href="http://maps.kelvinism.com/syd_urban_density.html">View Full Screen</a></p>
+<p>You can zoom in and scroll over any Mesh Block in Sydney to find out more. Additional installation information on how I did this can be found on this special page: <a href="http://www.kelvinism.com/2013/07/mapping-mesh-blocks-with-tilemill.html">Mapping Mesh Block Data</a>.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/postgis/">Postgis</a></li>
+      <li><a href="http://localhost:1313/tags/gis/">Gis</a></li>
+      <li><a href="http://localhost:1313/tags/articles/">Articles</a></li>
+      <li><a href="http://localhost:1313/tags/tilemill/">Tilemill</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

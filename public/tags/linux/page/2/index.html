@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Linux | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/linux/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/linux/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/linux/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Configure Timevault to Remote Server" href="http://localhost:1313/2008/11/configure-timevault-to-remote-server_2418.html">Configure Timevault to Remote Server </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-02 21:30:00.011 +1100 AEDT'>Published on November 2, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Using TimeVault with a shared drive as a backend is actually quite easy, but it does require a few special things setup. Note: this is gonna be a brief summary.</p>
+<p>Install samba-tools, smbfs&hellip;</p>
+<pre tabindex="0"><code>sudo apt-get install samba-tools smbfs
+</code></pre><p>A lot more other stuff may install as well.</p>
+<p>Create a script that mounts your samba share. You could also do this in fstab, but I tend to suspend my laptop when I come home, and I like clicking buttons.</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+mount -t cifs //192.168.44.2/kelvin /mnt/backups -o netbiosname=KELVIN-PC,iocharset=utf8,credentials=/home/kelvin/Apps/.smb-details.txt
+</code></pre><p>smb-details.txt includes:</p>
+<pre tabindex="0"><code>username=DOMAIN\\kelvin
+password=mypassword
+</code></pre><p>Finally, create a folder called &rsquo;timevault&rsquo; or something inside your mapped share, then launch TimeVault and configure it to use the above mentioned /mnt/backups/timevault folder. Configure Timevault as normal.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Using Distcc" href="http://localhost:1313/2008/01/using-distcc_1425.html">Using Distcc </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-01-01 21:30:00.002 +1100 AEDT'>Published on January 1, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;m in the process of working on one of my projects, and the requirement came up to download a fairly large file (4GB). Since I only receive ~20GB/month at my house, I decided to just use my server in the U.S. The next requirement came about needing to compile Mapnik, which I had intended to do on the server at some point anyways, yet I ran into memory constraints.</p>
+<p>Good old distcc comes to the rescue. I don&rsquo;t need to use distcc that often, yet when I do, it is very handy. However, I always forget to set g++ to use distcc as well. So, for when I forget next time&hellip;</p>
+<pre tabindex="0"><code>DISTCC\_HOSTS=&#39;home&#39;
+./configure
+make CC=distcc CXX=distcc
+</code></pre><p>Maybe one of these days I&rsquo;ll write a more in depth tutorial for installing distcc, yet until then, you can <a href="http://wiki.vpslink.com/index.php?title=HOWTO:_Install/Configure_Distcc">peruse the notes</a> I left on my VPS provider&rsquo;s wiki.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Zenity GUI to a Shell Script" href="http://localhost:1313/2007/10/zenity-gui-to-shell-script_5432.html">Zenity GUI to a Shell Script </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-10-21 20:30:00.002 +1000 AEST'>Published on October 21, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p><a href="http://picasaweb.google.com/lh/photo/whbV2vHNOr5d7pvO8qsgRw?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigBFNcFKSB9lKhJPiSiwDlp9q9SmO2yEu9v343B1M-2NFN5s2cJ-cUji8qR3LW1CmmitKztwUh3QxLAIjkSMYio5lIwhX1GszzhfZnufjrxugrWTNSZLH06e-qxV4ldttqBMDRBPWfXlc4/s800/zenityss.jpg"></a></p>
+<p>I have to admit, I&rsquo;m pretty lazy. I don&rsquo;t (ironically) like to type, and I really don&rsquo;t like typing the same command over and over. I found myself switching between my external monitor and laptop quite frequently, and decided to somewhat automate the task. Although I know there are other programs out there that allow this, they either had too many features, or crashed. Xrandr works just fine, but like I said, I&rsquo;m lazy&hellip;</p>
+<p>Enter <a href="http://live.gnome.org/Zenity">Zenity</a>. Initially I created a PyGTK monitor switcher, yet wanted something even simpler. If you aren&rsquo;t in the know, Zenity allows you to create super fast, super simple dialogs to regular commands. After you click &ldquo;ok&rdquo;, the command is executed, and the dialog disappears. Perfect for switching displays.</p>
+<p>And here is the simplistic code behind it:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+ans=$(zenity  --list  --text &#34;How do you want to switch your monitor?&#34; \\
+--radiolist  --column &#34;Pick&#34; --column &#34;Output Type&#34; TRUE LCD FALSE VGA \\
+FALSE Both);
+
+if \[ &#34;$ans&#34; = &#34;LCD&#34; \]
+then
+xrandr --output VGA --off
+xrandr --output LVDS --auto
+elif \[ &#34;$ans&#34; = &#34;VGA&#34; \]
+then
+xrandr --output LVDS --off
+xrandr --output VGA --auto
+elif \[ &#34;$ans&#34; = &#34;Both&#34; \]
+then
+xrandr --output VGA --auto
+xrandr --output LVDS --mode 1024x768
+fi
+</code></pre><p>I send a big cheers and thanks to the Zenity guys, I&rsquo;ll surely use this quick language more frequently.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Liferea RSS in Liferea" href="http://localhost:1313/2007/06/liferea-rss-in-liferea_7495.html">Liferea RSS in Liferea </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-06-14 20:30:00.005 +1000 AEST'>Published on June 14, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Today on <a href="http://community.linux.com/article.pl?sid=07/06/07/1458229">Linux.com, Liferea was mentioned</a> I find this particularly because I&rsquo;ve been using Liferea for quite a few months, and haven&rsquo;t been able to find anything that better suits my needs. It sits quietly in the corner until a new RSS is available, and slightly changes color. Plus, it integrates wonderfully into GNOME.</p>
+<p>Well, the Linux.com article does a great job summarizing the reader, so if you are in the market, I&rsquo;d take a look. For posterities sake, I took a screenshot of the Linux.com feed of Liferea, in Liferea.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/GiTUvj2FlLe0cVvbZV3Deg?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvsniPdfJxZMp6paqoK1axzlYJ7o-YKnrQkJvY466s5PsPQ2AU0g5o2P8EOgHH2o6iLBTGbAEOx69aRRDX34_ShNen-YjAYkI42bWeoGPktPnw73uP13s3j3keWgFrvB9PZPN4tUiWHpFp/s400/screenshot-liferea.jpg"></a></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Ubuntu Upgrade" href="http://localhost:1313/2007/05/ubuntu-upgrade_2905.html">Ubuntu Upgrade </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-05-26 20:30:00.002 +1000 AEST'>Published on May 26, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Having been in I.T. for quite a few years, upgrading can sometimes be quite a hassle. Having switched to Linux for many years, the crazy upgrade madness of windows is gone. So, how easy is upgrading in Linux?</p>
+<p><a href="http://picasaweb.google.com/lh/photo/gfJ0rsA5-yezsSSBzH5fSQ?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgdy7UBLsk4QTB1cYb0IXBmWjq5f4F5CcjYlthEQcPG8lPwKy0aYqu5Gsy30wZhOatB_KxYU0RJPubZVjO78EgQcpBmRi0zakN7fHOek4DmgG9bRj1F-FxP4vpWLmEaJvxLYRq6Qel-W2l/s288/Screenshot-feisty.jpg"></a></p>
+<p><a href="http://picasaweb.google.com/lh/photo/husChXOCHJJ3h1FCRePdlA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiT3OQw0WwVxKnf0vp4xuaf2ClyLihyphenhyphenk2GH1Tgm3OunZWyXb_Gydptfm0ID2qBZezLkbELq6IbJgJ_jAc8LKhGJ9aLZf4ktlFS8h_e2gGVldydYnb87WLTNeUWbtc9z5fFcCAmfXQSdPj9b/s288/Screenshot-distupgrade.jpg"></a></p>
+<p>Yea, pretty darn easy, I must admit. And my system certainly isn&rsquo;t normal! It has been an upgrade from Debian Sarge(ish) -&gt; Ubuntu LTS(ish) -&gt; 6.10 -&gt; 7.04&hellip; The only hiccup was at some point when the fonts were reinstalling (I totally ignored the &ldquo;close all programs&rdquo; warning:</p>
+<p><a href="http://picasaweb.google.com/lh/photo/ATQPq4IyXPOUsKgykXO3Yg?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj9PwKUX6cn2rBmo8DMWoDYU_p4GC6SOD9a7CT2Pho-vTKNpPnHaTMicN1BlhQjMN8hgA7cNePA0aYggj_esDIwmbxNINsukdVEZL2nQi9p_ppzIuC4lfGtvX9Sc7kiMqSWguaJcQg6pQkD/s800/Screenshot-gaim.jpg"></a></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to The Gentoo test" href="http://localhost:1313/2007/05/the-gentoo-test_1297.html">The Gentoo test </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-05-24 20:30:00.004 +1000 AEST'>Published on May 24, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I have a love-hate relationship with Linux. I love it because if there is a problem, I can actually tinker and find the problem and fix it. But I hate it because I like to tinker.</p>
+<p>Recently I&rsquo;ve been doing a fair amount of Django programming &ndash; enjoying every minute of it. After completing several of my projects I decided to do some benchmarks, and the results are in! Generally I can server cached/semi-cached pages at about 200req/sec. 200req! Considering this is 5,000,000 or so requests a day, and a number I am never going to reach, I still began to wonder: why isn&rsquo;t it higher? I mean, serving a static html page is at like 1000+ req/sec, so why would a cached page be significantly different? I started exploring and noticed that Apache would spike the CPU. Ok, time to be thorough, and as I said, I like to tinker.</p>
+<p>I tried lighttpd as a fastcgi to python &ndash; not a significant different, basically the same. Next I tried several versions of python &ndash; one from 2.4 and one from 2.5, one as a package and one from source &ndash; same results. High cpu usage. Thinking it could be something related to my VPS (or some odd limit within Debian) I decided, ok, I&rsquo;ll reinstall.</p>
+<p>I reinstalled and got things working pretty quickly. The only slight hiccup was postfix/dovecot, cause postfix insists on being in a jail (and my configs are all setup for that). Also, Chinese support in Apache isn&rsquo;t working. Regardless, I re-ran the benchmarks and the results were the same &ndash; so, it isn&rsquo;t related to my previous install after all. Doh.</p>
+<p>I&rsquo;ll evaluate Gentoo as a server setup for a little while, but I&rsquo;m thinking I&rsquo;ll do a quick reinstall of Debian.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to One More Point Linux" href="http://localhost:1313/2007/03/one-more-point-linux_9010.html">One More Point Linux </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-03-15 21:30:00.008 +1100 AEDT'>Published on March 15, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>It should come as a surprise that I enjoy using Linux. For the record, the first time I booted into Linux on my own was 1997, this was just before entering high school. So, while some of my tech friends played with NT, I was rumbling with the Penguin. Starting in 2000 I was using Linux as my main operating system, sometimes supplemented by OS X, and only using Windows when the gaming urge surfaced. In 2004 I mostly dropped playing any games, which resulted in dropping Windows &ndash; and besides for work, I haven&rsquo;t used it since.</p>
+<p>For me, I&rsquo;ll admit, there are three things that Linux still lacks:</p>
+<ul>
+<li>
+<p>Simplistic video conferencing support</p>
+</li>
+<li>
+<p>Video editing support</p>
+</li>
+<li>
+<p>Gaming</p>
+</li>
+</ul>
+<p>I know that all of these are <em>supported</em>, but, in my opinion, not particularly well. Well, I don&rsquo;t care about any of these enough to actually need windows, but it would be nice to see them improve.</p>
+<p>So, I&rsquo;m set. I&rsquo;m 100% legal (don&rsquo;t steal a single piece of software). And don&rsquo;t have to be too afraid of virus&rsquo;. What prompted me to write this little excerpt? A recent article at the Washington Post scared the beejeepers out of me, and makes me wish even more for Vista to either cure security problems, or everybody move over to Linux. The <a href="http://www.washingtonpost.com/wp-dyn/content/article/2007/03/13/AR2007031301522.html">article</a> details the aftermath a virus can cause, not on damaging one&rsquo;s computer, but on capturing information. The author further <a href="http://blog.washingtonpost.com/securityfix/2007/03/tracking_the_password_thieves_1.html">details</a> his experience hunting down the data. This was one of the better articles I&rsquo;ve read, and I thoroughly enjoyed the further details. If you want a little more motivation to move to Linux (or just tighten your machine), then I suggest you take a few moments to read the articles as well.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Katapult Screencast" href="http://localhost:1313/2006/11/katapult-screencast_788.html">Katapult Screencast </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2006-11-03 21:30:00.002 +1100 AEDT'>Published on November 3, 2006</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p><a href="http://www.ianfitzpatrick.com/">Ian</a> keeps bugging me at how great Quicksilver is. Knowning that there <em>must</em> be an alternative built for linux, I accidently stumbled across Katapult.</p>
+<p>While it still has a little room to grow, Katapult makes a great tool in any KDE toolchest. Press ALT+SPACE, and your widget fires up, ready to take your orders. Since words don&rsquo;t really do this justice, I created a screencast.</p>
+<p><a href="http://vimeo.com/10316527">Katapult Screencast</a> from <a href="http://vimeo.com/user3417633">Kelvin Nicholson</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Open Source Video Editing" href="http://localhost:1313/2006/10/open-source-video-editing_7656.html">Open Source Video Editing </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2006-10-15 20:30:00.004 +1000 AEST'>Published on October 15, 2006</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>In the next year I plan to make a little video, nothing fancy likely, but something that will require an editor. However, I don&rsquo;t own a mac (which rules our Final Cut Pro + After Effect and iMovie, which Ian and I both have had too much fun with. Inside joke.) I&rsquo;m also a die-hard Linux fan, trying to hold out buying a mac for as long as possible.</p>
+<p>SF to the rescure. There are four editors listed, and in the next year I&rsquo;ll try them all. Overalll, they look quite promising.</p>
+<p><a href="http://sourceforge.net/projects/jahshakafx">Jahshaka</a> &ndash; Beta. Good reviews from what I&rsquo;ve seen.<br>
+<a href="http://sourceforge.net/projects/kdenlive">Kdenlive</a> &ndash; Alpha/Beta. Looks a lot less mature than Jahshaka, especially since I&rsquo;m going to have to check it out via svn. But, the screenshots look quite impressive.<br>
+<a href="http://sourceforge.net/projects/lives">LiVES</a> &ndash; Beta.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Unified Linux Desktop Experience" href="http://localhost:1313/2006/10/unified-linux-desktop-experience_9273.html">Unified Linux Desktop Experience </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2006-10-12 20:30:00.002 +1000 AEST'>Published on October 12, 2006</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;ll admit, I think one of the thickest barriers to entry regarding Linux is variety. I love variety, but general end users don&rsquo;t adjust well to change (IMHO). Thus enter the stage: Portland. So, what does this mean to the end user? This means that, eventually, the UI throughout linux will all look similar &ndash; regardless if it is designed to utilize GTK, QT or anything else (that is, if it is built off the Portland standard).</p>
+<p><a href="http://www.osdl.org/newsroom/press_releases/2006/2006_10_11_beaverton.html">Sweeeet</a>.</p>
+<p>And as a runner-up, worth mentioning, the user driven <a href="http://tango.freedesktop.org/Tango_Desktop_Project">Tango Desktop Project</a></p>
+
+  </div>
+
+  
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/tags/linux/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/tags/linux/page/3/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Django on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/django/</link>
+    <description>Recent content in Django on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2013 20:14:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrate Custom Blog to Blogger</title>
+      <link>http://localhost:1313/2013/01/migrate-custom-blog-to-blogger.html</link>
+      <pubDate>Thu, 10 Jan 2013 20:14:00 +1100</pubDate>
+      <guid>http://localhost:1313/2013/01/migrate-custom-blog-to-blogger.html</guid>
+      <description>&lt;p&gt;For the last ten years I have run this website from various systems. First it was on Wordpress, then Mambo, then Joomla, and since early 2006 it has been running on custom code written using Django. I used this site as a learning tool for Django, re-wrote it after gaining more knowledge of Django, and then re-wrote it again when Google released App Engine. However, I recently realised that for the last few years I have spent more time writing little features than actually writing. I have entire trips that I never wrote because I was too busy writing code.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Removing Unused ContentTypes</title>
+      <link>http://localhost:1313/2011/01/removing-unused-contenttypes_4881.html</link>
+      <pubDate>Wed, 19 Jan 2011 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2011/01/removing-unused-contenttypes_4881.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been cleaning up my personal blog a bit, and I noticed that my tagging system recently broke. I&amp;rsquo;ve investigated the cause, and it appears to be because I removed some apps but the contenttypes remained. This meant that whenever I tried calling a tag with a TaggedItem that had been deleted, I was getting this error:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;#39;NoneType&amp;#39; object has no attribute &amp;#39;\_meta&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The solution is to first list all app_labels for contenttypes, and then delete any not in use.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integrate imified into Django</title>
+      <link>http://localhost:1313/2011/01/integrate-imified-into-django_2631.html</link>
+      <pubDate>Tue, 18 Jan 2011 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2011/01/integrate-imified-into-django_2631.html</guid>
+      <description>&lt;p&gt;I recently had the desire to send small updates to my so called &lt;a href=&#34;http://www.blogger.com/about-me/&#34;&gt;lifestream&lt;/a&gt; page via XMPP/GTalk. I played around with Twisted Words and several other Python XMPP clients, but I didn&amp;rsquo;t really want to keep a daemon running if unnecessary. It turns out imified took a lot of the pain out of it. The steps for me were as follows:&lt;br&gt;
+Create an account with imified, and create a URL, e.g. /app/api/&lt;br&gt;
+We then configure the &lt;strong&gt;urls.conf&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using HTML in a Django form label</title>
+      <link>http://localhost:1313/2010/07/using-html-in-django-form-label_2240.html</link>
+      <pubDate>Sun, 11 Jul 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/07/using-html-in-django-form-label_2240.html</guid>
+      <description>&lt;p&gt;I recently had the need to add some HTML to the label for a form field using Django. The solution is pretty easy, except I didn&amp;rsquo;t see it written explicitly anywhere, and I missed the memo of the function I should be using.&lt;br&gt;
+My form first just had the HTML in the form label as so:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+from django import forms
+
+class AccountForm(forms.Form):
+    name = forms.CharField(widget=forms.TextInput(), max\_length=15, label=&amp;#39;Your Name ([why](http://www.blogger.com/questions/whyname/)?&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;However, when I displayed it, the form was autoescaped.&lt;br&gt;
+&lt;a href=&#34;http://picasaweb.google.com/lh/photo/PyGNXDrpXtrgBNnoOLlfLA?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvsLvb6I4SDBB3NKptLZzGLGnwUZK0KmYlx7X9UC2_fzyQCNTkeFiKz5-4_3BmKArYZhRwU8TNEIhrGAMsb039N47hxcY8BIMEJjfK1UafYCRvAPzY18c8ceq3QFOOsp_oGO6SavZ1LmGR/s800/accountsform.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 10.04, Django and GAE - Part 1</title>
+      <link>http://localhost:1313/2010/06/ubuntu-1004-django-and-gae-part-1_8750.html</link>
+      <pubDate>Sat, 12 Jun 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/06/ubuntu-1004-django-and-gae-part-1_8750.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve started to get into Google&amp;rsquo;s App Engine again, and have started developing a simple product that I had a use for. The initial first draft was a quick 200 lines in webapp, and it worked great. However, I&amp;rsquo;m starting to find certain things quite cumbersome. I&amp;rsquo;m a huge fan of Django, and but also about keeping things as simple as possible, which is why I picked webapp to begin with.&lt;br&gt;
+I&amp;rsquo;m now considering making a swap to Django, but there are some development issues; namely, I&amp;rsquo;m using Ubuntu 10.04, Python 2.6, and Django 1.2. This setup presents several setbacks, as GAE has the requirement of Django 1.1 and Python 2.5. There are two solutions that I found: a) use virtualenv, which &lt;a href=&#34;http://www.blogger.com/blogger.g?blogID=3439832858234004835#&#34;&gt;I&amp;rsquo;ve detailed&lt;/a&gt;, or b) chroot. This document will hopefully show how to configure a chroot environment of Ubuntu 9.10 and prepare it for Django on GAE. Using a jailed environment should allow you to edit your code with your normal IDE and VCS, but use Django 1.1 and Python 2.5.&lt;br&gt;
+First, I installed schroot and debootstrap.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 10.04, Django and GAE - Part 2</title>
+      <link>http://localhost:1313/2010/06/ubuntu-1004-django-and-gae-part-2_6130.html</link>
+      <pubDate>Sat, 12 Jun 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/06/ubuntu-1004-django-and-gae-part-2_6130.html</guid>
+      <description>&lt;p&gt;All my Django sites are running 1.2, which poses a conflict with writing apps for Google&amp;rsquo;s App Engine, as use_library currently only supports &amp;lt; Django 1.1. There are two solutions that I found: a) use virtualenv, or b) chroot, which &lt;a href=&#34;http://www.kelvinism.com/howtos/ubuntu-1004-django-and-gae-part-1/&#34;&gt;I&amp;rsquo;ve already detailed&lt;/a&gt;. This document will hopefully show you how to create a virtual environment to use a secondary django version, especially for GAE. Of the two options, I think this one is a bit quicker, but there will likely be tradeoffs that a chroot environment can deal with better, e.g. python imaging (I don&amp;rsquo;t use it for GAE).&lt;br&gt;
+First, install PIP and virtualenv:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Remove Dead Tags</title>
+      <link>http://localhost:1313/2009/09/remove-dead-tags_6886.html</link>
+      <pubDate>Mon, 21 Sep 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/09/remove-dead-tags_6886.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve noticed my django-tagging install has been giving a lot of empty entries when doing a lookup on a tag. Tonight I finally got around to looking at what was causing this. This is surely not the best way to do this, but at 12:00am on a weekday, well, I shouldn&amp;rsquo;t be doing it in the first place&amp;hellip; I first wanted to see what type of content was generating the error:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alexa Thumbnail Service</title>
+      <link>http://localhost:1313/2008/12/alexa-thumbnail-service_3160.html</link>
+      <pubDate>Sun, 28 Dec 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/12/alexa-thumbnail-service_3160.html</guid>
+      <description>&lt;p&gt;Amazon offers some pretty cool services: S3, EC2, Alexa Site Thumbnail, and others. A while back I wanted to use &lt;a href=&#34;http://aws.amazon.com/ast/&#34;&gt;AST&lt;/a&gt; with &lt;a href=&#34;http://www.djangoproject.com&#34;&gt;Django&lt;/a&gt;, so ended up writing the Python bindings to the REST API (they didn&amp;rsquo;t previously exist. I even wrote up a quick &lt;a href=&#34;http://www.kelvinism.com/howtos/alexa-site-thumbnail-and-django/&#34;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Amazon no longer maintains AST. I&amp;rsquo;ve decided to &lt;a href=&#34;http://www.kelvinism.com/tech-blog/rip-old-sites/&#34;&gt;archive&lt;/a&gt; a few of the old sites, so no longer need to take thumbnails. However, a few other thumbnail services seem to have crept up, including &lt;a href=&#34;http://snapcasa.com/&#34;&gt;SnapCasa&amp;quot;&lt;/a&gt;, and &lt;a href=&#34;http://www.websnapr.com/&#34;&gt;WebSnapr&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using Django with SQL Server and IIS</title>
+      <link>http://localhost:1313/2008/11/using-django-with-sql-server-and-iis_4115.html</link>
+      <pubDate>Sat, 08 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/using-django-with-sql-server-and-iis_4115.html</guid>
+      <description>&lt;p&gt;As you can tell from reading some of the other pages, I like Linux and open source. But I also like to answer the question &amp;ldquo;what if&amp;hellip;&amp;rdquo; This post is my [brief] run down of answering &amp;ldquo;what if I could run Django on Server 2003 with SQL Server and IIS.&amp;rdquo; Why, you may ask? To be honest with you, at this point, I don&amp;rsquo;t really know. One of the deciding factors was seeing that the django-mssql project maintains support for inspectdb, which means I could take a stock 2003 server running SQL Server, inspect the DB, and build a web app on top of it. The Django docs offer a lengthy &lt;a href=&#34;http://code.djangoproject.com/wiki/DjangoOnWindowsWithIISAndSQLServer&#34;&gt;howto&lt;/a&gt; for using Django with IIS and SQL Server, but the website for PyISAPIe seems to have been down for the last month or so. Without further delay, below are my notes on installing Django with SQL Server and IIS.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>And Yet Another Remodel</title>
+      <link>http://localhost:1313/2008/03/and-yet-another-remodel_7848.html</link>
+      <pubDate>Wed, 19 Mar 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/03/and-yet-another-remodel_7848.html</guid>
+      <description>&lt;p&gt;I have finally decided to do another remodel of this site. I had a few goals before starting:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Use one image&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use the YUI-CSS framework&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Use Django&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make it easily extendable&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So far, I think I&amp;rsquo;ve accomplished these goals. The site is easier to read, easy to modify, and has a few new features. More entries to come!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mass Spam Delete Django</title>
+      <link>http://localhost:1313/2007/10/mass-spam-delete-django_8712.html</link>
+      <pubDate>Tue, 02 Oct 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/10/mass-spam-delete-django_8712.html</guid>
+      <description>&lt;p&gt;As you can read, I&amp;rsquo;ve been traveling around quite a bit lately. This means I haven&amp;rsquo;t been checking the comments on my blog, which means quite a bit of spam has been entered. I am blocking the spam via akismet, however, it is still recorded in the database. Being somebody who hates cluttered desktops, you can imagine how I feel about having a lot (447) of spam. Well, since akismet flips the is_public switch True for good comments and False for bad comments, that makes a &lt;strong&gt;really&lt;/strong&gt; easy query in mysql.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adding Search to Django</title>
+      <link>http://localhost:1313/2007/06/adding-search-to-django_6300.html</link>
+      <pubDate>Sun, 03 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/adding-search-to-django_6300.html</guid>
+      <description>&lt;p&gt;This is fairly well documented in the Django docs, so I&amp;rsquo;ll be brief. This is the the bit of search code I use in almost all of my Django sites, and it works great:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+def search(request):
+    from django.db.models import Q
+    q = request.GET.get(&amp;#34;q&amp;#34;, &amp;#34;&amp;#34;)
+    if q and len(q) &amp;gt;= 3:
+        clause = Q(dirtword\_\_icontains=q)               \\
+               | Q(description\_\_icontains=q)       \\
+               | Q(tags\_\_name\_\_icontains=q)        
+        site\_search = Dirt.objects.filter(clause).distinct()
+    else:
+        site\_search = Dirt.objects.order\_by(&amp;#39;?&amp;#39;)\[:100\]
+    return list\_detail.object\_list(
+        request              = request,
+        queryset             = site\_search,
+        template\_name        = &amp;#34;dirty/search.html&amp;#34;,
+        template\_object\_name = &amp;#34;dirty&amp;#34;,
+        paginate\_by          = 20,
+        extra\_context        = {&amp;#34;q&amp;#34; : q},
+    )  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;While this should be pretty self-explanatory, the process goes like this: q is taken from the GET request and if it is over three characters long, it is searched for in the dirtword column, through the description and also through the m2m relationship of tags__name. Yup, it is pretty nifty to be able to access relationship in this way (tags__name). You will notice that at the end of each search it says &amp;ldquo;__icontains&amp;rdquo; &amp;ndash; this simply does a fuzzy search for the word. Once the queryset is created (the filter) I&amp;rsquo;ve added a .distinct() on the end &amp;ndash;this prevents multiple rows from being returned to the template. If there isn&amp;rsquo;t a search, or it isn&amp;rsquo;t long enough, a random list will be returned.&lt;br&gt;
+One thing I like to do is include the search as extra_context &amp;ndash; this allows you to say something like &amp;ldquo;you&amp;rsquo;ve searched for&amp;hellip;&amp;rdquo; at the top of your search. I couldn&amp;rsquo;t imagine implementing a search feature as being any easier.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Django Syndication with Colddirt</title>
+      <link>http://localhost:1313/2007/06/django-syndication-with-colddirt_5107.html</link>
+      <pubDate>Sun, 03 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/django-syndication-with-colddirt_5107.html</guid>
+      <description>&lt;p&gt;Creating feeds in Django is freaking simple. I&amp;rsquo;ll start with an example of just updating a feed with the newest objects (for instace, newest blog posts). Similar to the forms.py way of handling our different forms, I&amp;rsquo;ve created a feeds.py to handle the feeds.&lt;/p&gt;
+&lt;h4 id=&#34;feedspy&#34;&gt;feeds.py&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+from django.contrib.syndication.feeds import Feed
+from colddirt.dirty.models import Dirt
+
+class LatestDirts(Feed):
+    title = &amp;#34;Cold Dirt&amp;#34;
+    link = &amp;#34;/&amp;#34;
+    description = &amp;#34;When you have dirt, you&amp;#39;ve got dirt.  Right...&amp;#34;
+    copyright = &amp;#39;All Rights Unreserved&amp;#39;
+    
+    def items(self):
+        return Dirt.objects.all()\[:50\]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What this will do is query our Dirt DB and return an obj. The fields here are pretty well documented in the Django docs, besides being pretty obvious.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Django Syndication with Colddirt II</title>
+      <link>http://localhost:1313/2007/06/django-syndication-with-colddirt-ii_3665.html</link>
+      <pubDate>Sun, 03 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/django-syndication-with-colddirt-ii_3665.html</guid>
+      <description>&lt;p&gt;Since I&amp;rsquo;ve already covered a really simple syndication example, I&amp;rsquo;ll move onto something a little more complex. Let&amp;rsquo;s say you want to offer syndication that is slightly more custom. The Django &lt;a href=&#34;http://www.djangoproject.com/documentation/syndication_feeds/&#34;&gt;syndication docs&lt;/a&gt; give an example from &lt;a href=&#34;http://www.holovaty.com/&#34;&gt;Adrian&amp;rsquo;s&lt;/a&gt; &lt;a href=&#34;http://www.chicagocrime.org/&#34;&gt;Chicagocrime.org&lt;/a&gt; syndication of beats. I had to ponder a minute to get &amp;ldquo;custom&amp;rdquo; syndication to work, so here&amp;rsquo;s my example from start to finish.&lt;br&gt;
+First, as usual, feeds.py&lt;/p&gt;
+&lt;h4 id=&#34;feedspy&#34;&gt;feeds.py&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;class PerDirt(Feed):
+
+    link = &amp;#34;/&amp;#34;
+    copyright = &amp;#39;Copyright (c) 2007, Blog Mozaic&amp;#39;
+    
+    def get\_object(self, bits):
+        from django.shortcuts import get\_object\_or\_404
+        if len(bits) != 1:
+            raise ObjectDoesNotExist
+        my\_dirt = get\_object\_or\_404(Dirt, slug\_\_exact=bits\[0\])
+        return my\_dirt
+
+    def title(self, obj):
+        return obj.slug
+    
+    def description(self, obj):
+        return obj.description
+    
+    def items(self, obj):
+        from django.contrib.comments.models import FreeComment
+        return FreeComment.objects.filter(object\_id=obj.id).order\_by(&amp;#39;-submit\_date&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You can see that this differs slightly from the simpler syndication example. I&amp;rsquo;ll not a few things. But first, I need to show urls.py:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Django Newforms Usage in Colddirt</title>
+      <link>http://localhost:1313/2007/06/django-newforms-usage-in-colddirt_1103.html</link>
+      <pubDate>Fri, 01 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/django-newforms-usage-in-colddirt_1103.html</guid>
+      <description>&lt;p&gt;I hear many complaints and questions about newforms, but I&amp;rsquo;ve personally found it rather easy and logical to use. There are numerous ways for you to use do forms in Django, and most likely the best way to see them all is to &lt;a href=&#34;http://www.djangoproject.com/documentation/newforms/&#34;&gt;read the docs&lt;/a&gt;. On the Colddirt demo site, this is how I used newforms. I&amp;rsquo;ll take the index page as an example.&lt;br&gt;
+I&amp;rsquo;ve accessed the newforms module like so:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Simple Ajax with Django</title>
+      <link>http://localhost:1313/2007/06/simple-ajax-with-django_1754.html</link>
+      <pubDate>Fri, 01 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/simple-ajax-with-django_1754.html</guid>
+      <description>&lt;p&gt;So, the Django developers, in my opinion, are freaking smart. Instead of bundling Django with a particular library, they have added XML and JSON serialization; us humble users can choose whatever AJAX library we want. &lt;a href=&#34;http://www.prototypejs.org/&#34;&gt;Prototype 1.5.1&lt;/a&gt; has been pretty fun to work with, so I&amp;rsquo;ll kick off this demo with a really simple example.&lt;br&gt;
+How simple? The intended goal is to have the total number of &amp;lsquo;dirts&amp;rsquo; update without user intervention. &lt;em&gt;Laaaammmeee&lt;/em&gt;. If you are a visual type of person, &lt;a href=&#34;http://www.colddirt.com/huh/&#34;&gt;take a look&lt;/a&gt; on the Colddirt &lt;a href=&#34;http://www.colddirt.com/huh/&#34;&gt;huh&lt;/a&gt; page. That number automatically increases without user intervention. And this is how.&lt;br&gt;
+The process (some pseudocode) will go like this:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Colddirt Information</title>
+      <link>http://localhost:1313/2007/05/colddirt-information_1890.html</link>
+      <pubDate>Tue, 29 May 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/05/colddirt-information_1890.html</guid>
+      <description>&lt;p&gt;&lt;em&gt;Note&lt;/em&gt;: Colddirt&amp;rsquo;s source code is run from Django SVN, check out on May 10th-ish. If you are using a newer branch, some things have changed. i.e. clean_data has been renamed cleaned_data. Remember to check the &lt;a href=&#34;http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges&#34;&gt;BackwardsIncompatible&lt;/a&gt; page in the wiki.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Part 1&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/simple-ajax-with-django_1754.html&#34;&gt;Simple AJAX with Django&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Part 2&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/django-newforms-usage-in-colddirt_1103.html&#34;&gt;Django Newforms Usage&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Part 3&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/adding-search-to-django_6300.html&#34;&gt;Search with Django&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Part 4&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/django-syndication-with-colddirt_5107.html&#34;&gt;Django&amp;rsquo;s Syndication Framework (simple)&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Part 5&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/django-syndication-with-colddirt-ii_3665.html&#34;&gt;Django&amp;rsquo;s Syndication Framework (little more complex)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Feel free to see the &lt;a href=&#34;https://github.com/kelvinn/colddirt&#34;&gt;source code&lt;/a&gt; from Github.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Django SVN Update Goes Splat</title>
+      <link>http://localhost:1313/2007/05/django-svn-update-goes-splat_5490.html</link>
+      <pubDate>Wed, 09 May 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/05/django-svn-update-goes-splat_5490.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m writing this just in case somebody runs into this same issue. I&amp;rsquo;m about to go live with a website and figured it would be best to have the latest SVN snapshot checked out from Django. I updated, and noticed that my voting module didn&amp;rsquo;t quite work as expected. I was getting the following error:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;#39;module&amp;#39; object has no attribute &amp;#39;GenericForeignKey&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;I jumped into Trac and noticed that &lt;em&gt;just yesterday&lt;/em&gt; some things were rearranged. In short, if you are using generic relations, you&amp;rsquo;ll need to change two parts of your code. First, the generic relations field must be imported out of conttenttype.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Version 3.0 Part Two</title>
+      <link>http://localhost:1313/2007/02/version-30-part-two_8083.html</link>
+      <pubDate>Mon, 05 Feb 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/02/version-30-part-two_8083.html</guid>
+      <description>&lt;p&gt;Well, I&amp;rsquo;m basically all done upgrading to Version 3.0, I deserve a cake or something. Here&amp;rsquo;s the 411:&lt;/p&gt;
+&lt;p&gt;For the past few years I have been using Mambo, then Joomla, to manage the content on my site. It worked quite well, and was in PHP, so I could add or remove any code. Indeed, I&amp;rsquo;ve written a decent amount of PHP apps. In early 2004 I wrote a PHP platform to track adventures people had gone on, and networked people seeking to go on adventures with each other. I never marketed it, and mainly created it to learn PHP, but it was a CMS (Content Management System), and a little more. Late in 2004 I wrote another blog-esque platform for my second trip to Europe. It was pretty cool, I&amp;rsquo;ll admit: Casey and I each had a blog, and people could leave us &amp;ldquo;dares&amp;rdquo; and/or messages &amp;ndash; and we could easily update our status. Overall, it worked great. You can also see the &lt;a href=&#34;http://localhost:1313/projects/&#34;&gt;projects&lt;/a&gt; section of my site for some of the other things I&amp;rsquo;ve done in PHP.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

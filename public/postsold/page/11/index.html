@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+    
+      <link href="/postsold/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/postsold/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+      
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/postsold/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/postsold/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Postsolds">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Postsolds">
+  <meta itemprop="datePublished" content="2025-01-31T21:41:00+11:00">
+  <meta itemprop="dateModified" content="2025-01-31T21:41:00+11:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Postsolds">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Postsolds
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/event-vs-dom-driven-parsing-of-xml_6678.html" class="link black dim">
+        Event vs. DOM Driven Parsing of XML
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I recently have been <a href="http://www.kelvinism.com/tech-blog/baby-steps-graphing-traffic/">playing</a> with parsing GPX files and spitting out the results into a special KML file. I initially wrote a parser using minidom, yet after running this the first time &ndash; and my Core2Duo laptop reaching 100% utilization for 10 seconds &ndash; I realized I needed to re-write it using something else.</p>
+<p>I spent a little time reading the different parsers for XML and eventually read more about <a href="http://effbot.org/zone/celementtree.htm">cElementTree</a>. And it is included with Python2.5, sweet.</p>
+    </div>
+    <a href="/2008/04/event-vs-dom-driven-parsing-of-xml_6678.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/setting-up-windows-2003-as-ntp-client_4269.html" class="link black dim">
+        Setting up Windows 2003 as an NTP Client
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I have had to search for the commands to setup a Windows 2003 box as an ntp client a few times now, so have decided to finally write them down here for my own good measure. Funny thing is, I&rsquo;m pretty sure there are three ways to setup a 2003 box as an ntp client.</p>
+<h4 id="1-via-the-cli">1) Via the CLI</h4>
+<p>Open up the cmd prompt and type in:</p>
+<pre tabindex="0"><code>w32tm /config /manualpeerlist:&#34;0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org&#34; 
+/syncfromflags:MANUAL /reliable:YES /update
+</code></pre><h4 id="2-via-the-cli-option-2">2) Via the CLI, option 2</h4>
+<pre tabindex="0"><code>net time setsntp: &#34;0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org&#34;
+</code></pre><h4 id="3-via-gui">3) Via GUI</h4>
+<p>Type in <strong>gpedit.msc</strong> and your local GPO editor will pop up. Go to the folder as indicated in the below screenshot and Enable the &ldquo;Enable Windows NTP Client&rdquo; option. Next set the &ldquo;Configure Windows NTP Client&rdquo; option to whatever time servers you so choose. As always, make sure to keep the 0x1 at the end.</p>
+    </div>
+    <a href="/2008/04/setting-up-windows-2003-as-ntp-client_4269.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/baby-steps-at-graphing-traffic_522.html" class="link black dim">
+        Baby Steps at Graphing Traffic
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Status:<br>
+You can likely tell that I&rsquo;ve been having some fun with graphing and mapping recently. I was reading a few articles about GIS and stumbled upon a pretty darn cool project at <a href="http://www.webopticon.com/projects/neighborhood_nets">Webopticon</a>, which included cool pictures. I showed it to my girlfriend thinking she would find it interesting, and then realized: oh! KML has an altitude attribute. That could be interesting.<br>
+One of my projects is to create <a href="http://www.kelvinism.com/2007/12/sydneys-driving-habits.html">maps of Sydney&rsquo;s traffic</a><a href="http://www.blogger.com/"></a>, so I have been experimenting heavily with Mapnik and OSM. I figured I could have some fun and finally parse some gps tracks and display the data.<br>
+<a href="http://picasaweb.google.com/lh/photo/bkhs8KqkZyS7yIoA6AeNnA?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8Ju2Qv3TAIupmzBjORZ5wUBGjxIlwZ_0mrPb0Mku5Yob6_ldYEmtRO0GP_kQ62-aZDZ3fP8_vh6nfXv9NpP5X98oneS25YXXf9Tr-pD1RMkp7l_jbDBWBsqxrA5hIDhH8KvfVjZI0TvGc/s288/gpstracks3.jpg" alt=""></a></p>
+    </div>
+    <a href="/2008/04/baby-steps-at-graphing-traffic_522.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/setting-up-mapnik-server-on-ubuntu_118.html" class="link black dim">
+        Setting up a Mapnik Server on Ubuntu
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>First, we go ahead and install the needed packages. I&rsquo;ve tried to include &ldquo;my&rdquo; list of packages that were needed to get a vanilla 7.10 image up to steam.</p>
+<pre tabindex="0"><code>apt-get install build-essential libltdl3-dev autoconf libtool automake \\
+postgresql postgresql-8.2-postgis postgresql-server-dev-8.2 \\
+wget subversion libboost-python1.34.1 libboost-thread-dev \\
+libboost-program-options-dev libboost-regex-dev \\
+libboost-python-dev libboost-serialization-dev \\
+libboost-filesystem-dev libpng12-dev libjpeg62-dev \\
+libtiff4-dev zlib1g-dev libfreetype6-dev libgeos-dev \\
+unzip apache2-prefork-dev
+</code></pre><p>Next we start to download a few components. I did this in my home directory, /home/kelvin</p>
+    </div>
+    <a href="/2008/04/setting-up-mapnik-server-on-ubuntu_118.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/redirecting-fun-with-lightty_330.html" class="link black dim">
+        Redirecting Fun with Lightty
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Two of my colleagues were having just a little bit <a href="http://www.kelvinism.com/blog/Australia/i-caught-fish/#c1926">too much fun</a> with my blog, so I decided to have some fun back. Over a period of 10 minutes, they managed to leave 10+ comments. Luckily I have full control over my server, and was able to quickly create my practical joke.</p>
+<pre tabindex="0"><code>$HTTP\[&#34;remoteip&#34;\] == &#34;123.45.678.910&#34; {
+url.redirect = (
+&#34;^/(.\*)&#34; =&gt; &#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&#34;,
+&#34;&#34; =&gt; &#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&#34;,
+&#34;/&#34; =&gt; &#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&#34;
+)
+}
+</code></pre>
+    </div>
+    <a href="/2008/04/redirecting-fun-with-lightty_330.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/notes-on-installing-modtile-for-mapnik_168.html" class="link black dim">
+        Notes on Installing mod_tile for Mapnik
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I have no idea if these notes on how to install mod_tile will be useful for anybody. The current readme states that you need to edit the source code, but never actually where. Well, this is where, at least until the code can either take switches or can auto-configure itself. This is quite brief, so if you need more details, shoot me an email or leave a comment. I have repeated this process on two Ubuntu 7.10 machines.</p>
+    </div>
+    <a href="/2008/04/notes-on-installing-modtile-for-mapnik_168.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/ethx-issues-with-xen-and-ubuntu_2003.html" class="link black dim">
+        ethX Issues with Xen and Ubuntu
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>My new guest VMs under Xen seem to be having issues where upon each reboot, the network interface gets incremented by 1. For instance, it starts at eth0, then goes to eth1, then eth2, and eventually ethX. There are two issues to fix: 1) get the count back to 0, and 2) stop it from counting again.</p>
+<p>I was able to get them to decrease by looking in the /etc/udev/rules.d/70-persistent-net.rules file and removing all entries.</p>
+    </div>
+    <a href="/2008/04/ethx-issues-with-xen-and-ubuntu_2003.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/04/installing-mapnik-on-ubuntu-710_6688.html" class="link black dim">
+        Installing Mapnik on Ubuntu 7.10
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I have managed to install mapnik 0.4, 0.5, 0.5.1 and various SVN releases in-between on Ubuntu. While this isn&rsquo;t in itself exciting, I think I manage to stumble at every installation. I typically forget to add the flags when building, so, to prevent myself from stumbling again, I&rsquo;m going to write them out here.</p>
+<p><strong>Build mapnik</strong></p>
+<pre tabindex="0"><code>$ python scons/scons.py PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p><strong>Then install it</strong></p>
+<pre tabindex="0"><code>$ sudo python scons/scons.py install PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p>Then proceed as normal.</p>
+    </div>
+    <a href="/2008/04/installing-mapnik-on-ubuntu-710_6688.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/03/and-yet-another-remodel_7848.html" class="link black dim">
+        And Yet Another Remodel
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I have finally decided to do another remodel of this site. I had a few goals before starting:</p>
+<ul>
+<li>
+<p>Use one image</p>
+</li>
+<li>
+<p>Use the YUI-CSS framework</p>
+</li>
+<li>
+<p>Use Django</p>
+</li>
+<li>
+<p>Make it easily extendable</p>
+</li>
+</ul>
+<p>So far, I think I&rsquo;ve accomplished these goals. The site is easier to read, easy to modify, and has a few new features. More entries to come!</p>
+    </div>
+    <a href="/2008/03/and-yet-another-remodel_7848.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2008/02/database-woopsie_863.html" class="link black dim">
+        Database Woopsie
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I returned to my computer today to notice I had the following error:</p>
+<pre tabindex="0"><code>(145, &#34;Table &#39;./databasename/comments\_freecomment&#39; is marked as crashed and should be repaired&#34;)
+</code></pre><p>Well, crap. The solution is quite easy, however:</p>
+<pre tabindex="0"><code>mysqlcheck -uUsername -pPassword databasename comments\_freecomment
+</code></pre><p>Now you know what you already know, you can fix it:</p>
+<pre tabindex="0"><code>mysqlcheck -r -uUsername -pPassword databasename comments\_freecomment
+</code></pre><p>If that doesn&rsquo;t work, you can try a slightly different method. First, go to the location where your databases are stored on the disk (most likely something like /var/lib/mysql/databasename). Next, stop the database &ndash; and try to free up as much memory as possible. Then run:</p>
+    </div>
+    <a href="/2008/02/database-woopsie_863.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/postsold/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/10/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/10/" aria-label="Page 10" class="page-link" role="button">10</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 11" class="page-link" role="button">11</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/12/" aria-label="Page 12" class="page-link" role="button">12</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/13/" aria-label="Page 13" class="page-link" role="button">13</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/12/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/21/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

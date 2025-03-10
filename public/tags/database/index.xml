@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Database on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/database/</link>
+    <description>Recent content in Database on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 Feb 2008 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Database Woopsie</title>
+      <link>http://localhost:1313/2008/02/database-woopsie_863.html</link>
+      <pubDate>Wed, 13 Feb 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/02/database-woopsie_863.html</guid>
+      <description>&lt;p&gt;I returned to my computer today to notice I had the following error:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;(145, &amp;#34;Table &amp;#39;./databasename/comments\_freecomment&amp;#39; is marked as crashed and should be repaired&amp;#34;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Well, crap. The solution is quite easy, however:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mysqlcheck -uUsername -pPassword databasename comments\_freecomment
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now you know what you already know, you can fix it:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;mysqlcheck -r -uUsername -pPassword databasename comments\_freecomment
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If that doesn&amp;rsquo;t work, you can try a slightly different method. First, go to the location where your databases are stored on the disk (most likely something like /var/lib/mysql/databasename). Next, stop the database &amp;ndash; and try to free up as much memory as possible. Then run:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

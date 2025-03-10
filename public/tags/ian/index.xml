@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ian on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/ian/</link>
+    <description>Recent content in Ian on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Feb 2007 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ian the Apt</title>
+      <link>http://localhost:1313/2007/02/ian-apt_4570.html</link>
+      <pubDate>Wed, 14 Feb 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/02/ian-apt_4570.html</guid>
+      <description>&lt;p&gt;You know you are too nerd like when your conversations are like this. Preface: I posted some packages I needed to upgrade into a Skype window (much better than a clipboard)&amp;hellip;.&lt;/p&gt;
+&lt;p&gt;[11:56:03] Kelvin Nicholson: sorry, needed to post that somewhere&lt;/p&gt;
+&lt;p&gt;[11:56:04] Ian FItzpatrick: i am not apt!&lt;/p&gt;
+&lt;p&gt;[11:56:15] &amp;hellip; you can&amp;rsquo;t pass packages to me ;)&lt;/p&gt;
+&lt;p&gt;[11:56:34] Kelvin Nicholson: blah blah blah&lt;/p&gt;
+&lt;p&gt;[11:56:43] &amp;hellip; apt-get upgrade ian&lt;/p&gt;
+&lt;p&gt;[11:57:02] Ian FItzpatrick: apt-get error: unmet dependency, &amp;ldquo;beer 1.0-4 not found&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

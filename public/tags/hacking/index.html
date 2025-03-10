@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Hacking | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/hacking/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/hacking/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/hacking/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Charting the Hackers" href="http://localhost:1313/2008/12/charting-hackers_7870.html">Charting the Hackers </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-28 21:30:00.005 +1100 AEDT'>Published on December 28, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>A normal internet connection gets attacked, a lot. The majority of attacks are of the form &ldquo;hello, anybody there?&rdquo; &ndash; where most people just don&rsquo;t answer. But sometimes, just sometimes, the question gets an answer. Depending on the answer, the attacker will start to explore.</p>
+<p>A few weeks back I was a little bored and started fiddling. I wanted to play with my Cisco, but also wanted to play with OSSEC, but also has a GIS craving. In the end I decided to create a map of the people who ask, &ldquo;hello&rdquo;.</p>
+<p>Take a look at the <a href="http://www.kelvinism.com/attackmap/">map and explanation</a> if that sort of thing is your cup of tea.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Integrating OSSEC with Cisco IOS" href="http://localhost:1313/2008/11/integrating-ossec-with-cisco-ios_7061.html">Integrating OSSEC with Cisco IOS </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-15 21:30:00.002 +1100 AEDT'>Published on November 15, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I rank OSSEC as one of my favorite pieces of open source software, and finally decided to play around with it more in my own free time. (Yup, I do this sort of stuff for <em>fun</em>). My goal was quite simple: send syslog packets from my Cisco to my &ldquo;proxy&rdquo; server, running OSSEC. I found that, although OSSEC supports Cisco IOS logging, it didn&rsquo;t really work. In fact, I couldn&rsquo;t find any examples or articles of anybody actually getting it to work.</p>
+<p>I initially tried to get it to work &ldquo;correctly,&rdquo; and soon settled to &ldquo;just getting it to work.&rdquo; I implemented some rules in the local_rules.xml file, which worked, but I&rsquo;m pretty stubborn, and wanted to do it &ldquo;correctly.&rdquo; With a couple pots of tea, and the support of my girlfriend, I became much, much more familiar with OSSEC. The key (and a lot of credit) goes to Jeremy Melanson for <a href="http://www.ossec.net/ossec-list/2007-September/msg00124.html">hinting at some of the updates</a> to the decoder.xml file that need to take place.</p>
+<p>The first step is to read the OSSEC + Cisco IOS <a href="http://www.ossec.net/wiki/index.php/PIX_and_IOS_Syslog_Config_examples#Configuring_Cisco_IOS_router">wiki page</a>. Everything on that page is pretty straight forward. I then added three explicit drop rules at the end of my Cisco&rsquo;s ACL:</p>
+<pre tabindex="0"><code>...
+
+access-list 101 deny tcp any host 220.244.xxx.xxx log
+access-list 101 deny ip any host 220.244.xxx.xxx log
+access-list 101 deny udp any host 220.244.xxx.xxx log
+</code></pre><p>(220.244.xxx.xxx is my WAN IP, and I&rsquo;m sure you could figure out xxx.xxx pretty darn easily, but I&rsquo;ll x them out anyways).</p>
+<p>To reiterate, OSSEC needs to be told to listen for syslog traffic, which you should be set on the Cisco. If you haven&rsquo;t done this, go re-read the wiki above.</p>
+<pre tabindex="0"><code> syslog
+192.168.0.1 
+</code></pre><p>On or around line 1550 in /var/ossec/etc/decoder.xml I needed to update the regex that was used to detect the syslog stream.</p>
+<pre tabindex="0"><code>...
+
+ ^%\\w+-\\d-\\w+: |^: %\\w+-\\d-\\w+: 
+
+ ^%\\w+-\\d-\\w+: |^: %\\w+-\\d-\\w+: 
+
+ cisco-ios
+firewall
+^%SEC-6-IPACCESSLOGP: |^: %SEC-6-IPACCESSLOGP: 
+^list \\d+ (\\w+) (\\w+) 
+(\\S+)\\((\\d+)\\) -&gt; (\\S+)\\((\\d+)\\),
+action, protocol, srcip, srcport, dstip, dstport 
+
+...
+</code></pre><p>In the general OSSEC configuration file, re-order the list of rules. I had to do this because syslog_rules.xml includes a search for &ldquo;denied&rdquo;, and that triggers an alarm.</p>
+<pre tabindex="0"><code>...
+telnetd\_rules.xml
+cisco-ios\_rules.xml
+syslog\_rules.xml
+arpwatch\_rules.xml
+...
+</code></pre><p>Remember that these dropped events will go into /var/ossec/logs/firewall/firewall.log. Because this is my home connection, and I don&rsquo;t have any active_responses configured (yet!), I tightened the firewall_rules.xml file (lowering the frequency, raising the timeframe).</p>
+<p>And in the end, I get a pretty email when somebody tries to port scan me.</p>
+<h4 id="pretty-email">Pretty email</h4>
+<pre tabindex="0"><code>OSSEC HIDS Notification.
+2008 Nov 15 23:19:36
+
+Received From: proxy-&gt;xxx.xxx.xxx.xxx
+Rule: 4151 fired (level 10) -&gt; &#34;Multiple Firewall drop events from same source.&#34;
+Portion of the log(s):
+
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(244), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(253), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(243), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(254), 1 packet 
+
+
+
+--END OF NOTIFICATION
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Lightweight Detection" href="http://localhost:1313/2007/01/lightweight-detection_8013.html">Lightweight Detection </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-01-23 21:30:00.002 +1100 AEDT'>Published on January 23, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I love my Snort, I really do.  But sometimes, I just don&rsquo;t need all the extra overhead &ndash; sometimes the resources on a server are somewhat, limited.  Looking for a solution I stumbled upon <a href="http://www.cipherdyne.com/psad/">PSAD</a> , a way to detect port scans.  Since port scans are often one of the first tactics used to find vulnerabilities on a server, it is a pretty good idea to detect them.   Depending on the attack, I receive a nice little email telling me what is going on.  To test it out I first fired up nmap, and received a few emails.  Next I fired up nessus with updated plugins &ndash; you can be the judge.  I now have 50 emails from myself telling me somebody is doing something naughty:</p>
+<pre tabindex="0"><code>\=-=-=-=-=-=-=-=-=-=-=-= Tue Jan 23 10:30:04 2007 =-=-=-=-=-=-=-=-=-=-=-=
+
+
+         Danger level: \[5\] (out of 5) Multi-Protocol
+
+    Scanned tcp ports: \[11-41111: 337 packets\]
+            tcp flags: \[SYN: 337 packets, Nmap: -sT or -sS\]
+       iptables chain: INPUT, 337 packets
+
+               Source: 218.167.75.27
+                  DNS: 218-167-75-27.dynamic.hinet.net
+
+          Destination: 64.79.194.165
+                  DNS: kelvinism.com
+
+      Syslog hostname: kelvinism
+
+     Current interval: Tue Jan 23 10:29:54 2007 (start)
+                       Tue Jan 23 10:30:04 2007 (end)
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Three Little Commands and a Pen-Test" href="http://localhost:1313/2006/10/three-little-commands-and-pen-test_9.html">Three Little Commands and a Pen-Test </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2006-10-15 20:30:00.005 +1000 AEST'>Published on October 15, 2006</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Yea, you read that right. Three commands and you can run a pen-test on your website/webserver. So, how?</p>
+<p>kelvin@home:<del>$ sudo apt-get install nikto<br>
+kelvin@home:</del>$ sudo nikto -update<br>
+kelvin@home:~$ nikto -h <a href="https://www.thoughtdeposit.net">www.thoughtdeposit.net</a></p>
+<p>As you can see, Nikto is a web server scanner, apparently for over 3200 dangerous files/vulnerabilities. Additional features can be seen at the <a href="http://www.cirt.net/code/nikto.shtml">Nikto</a> website, yet you will certainly want to add this old gem to your webserver toolbelt as soon as possible.</p>
+
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

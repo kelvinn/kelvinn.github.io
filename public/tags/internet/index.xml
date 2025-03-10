@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Internet on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/internet/</link>
+    <description>Recent content in Internet on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Nov 2008 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/internet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Capped Internet</title>
+      <link>http://localhost:1313/2008/11/capped-internet_4903.html</link>
+      <pubDate>Sat, 01 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/capped-internet_4903.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve lived in several different parts of the world, and they all do internet differently. Back in the US I had 8Mb/sec cable (leaving just before Fios was really an option, darn!) In New Zealand, for instance, I was paying for &amp;ldquo;high speed ADSL&amp;rdquo; rated at 1.5Mb/256k. Vrooom. Up in Taiwan I was paying 1/2 what I paid in New Zealand, but for 12Mb/1Mb. Down to Sydney and we have a rated 24Mb/1Mb.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

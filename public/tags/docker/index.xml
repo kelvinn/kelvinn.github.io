@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Docker on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/docker/</link>
+    <description>Recent content in Docker on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Jul 2014 18:13:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Solved: slow build times from Dockerfiles with Python packages (pip)</title>
+      <link>http://localhost:1313/2014/07/solved-slow-build-times-from.html</link>
+      <pubDate>Wed, 02 Jul 2014 18:13:00 +1000</pubDate>
+      <guid>http://localhost:1313/2014/07/solved-slow-build-times-from.html</guid>
+      <description>&lt;p&gt;I have recently had the opportunity to begin exploring &lt;a href=&#34;http://www.docker.com/&#34;&gt;Docker&lt;/a&gt;, the currently hip way to build application containers, and I generally like it. It feels a bit like using Xen back in 2005, when you still had to download it from cl.cam.ac.uk, but there is &lt;em&gt;huge&lt;/em&gt; momentum right now. I like the idea of breaking down each component of your application into unique services and bundling them up - it seems clean. The next year is going to be very interesting with Docker, as I am especially looking forward to seeing how Google&amp;rsquo;s App Engine allows Docker usage, or what&amp;rsquo;s in store for the likes of Flynn, Deis, CoreOS, or Stackdock.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

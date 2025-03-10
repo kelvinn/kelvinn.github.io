@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nfsen on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/nfsen/</link>
+    <description>Recent content in Nfsen on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 29 Aug 2006 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nfsen/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitoring Traffic Usage</title>
+      <link>http://localhost:1313/2006/08/monitoring-traffic-usage_3593.html</link>
+      <pubDate>Tue, 29 Aug 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/08/monitoring-traffic-usage_3593.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;One of the greatest benefits, in my opinion, of Cisco routers is the ability to generate netflows. In a lot of ways, I would prefer to do this than implement some appliance (say, using ntop). The ability to analyse the amount of traffic becomes extremely valuable. Not only can one measure the amount of traffic, but the type of traffic that is being generated through the network.&lt;/p&gt;
+&lt;p&gt;Using a similar configuration, I setup all four Ciscos to export netflows that stream back to a server in the States. I decided to use &lt;a href=&#34;http://nfdump.sourceforge.net&#34;&gt;nfdump&lt;/a&gt; as a collector. After the dumps are collected, it is simple to setup &lt;a href=&#34;http://nfsen.sourceforge.net&#34;&gt;nfsen&lt;/a&gt; to parse and analyse the received flows. It even allows you to generate &lt;a href=&#34;http://nfsen.sourceforge.net/details-graphs.png&#34;&gt;really pretty graphs&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

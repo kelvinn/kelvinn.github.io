@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Arduino | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/arduino/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/arduino/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/arduino/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Testing SMS Gateways" href="http://localhost:1313/2009/07/testing-sms-gateways_5212.html">Testing SMS Gateways </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-07-14 20:30:00.002 +1000 AEST'>Published on July 14, 2009</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>For one of my projects I&rsquo;m testing an SMS gateway, and decided it would be fun to build a useful alarm clock out of it. For those of you who know Python, you may find this funny. /dev/ttyUSB0 is my Arduino with a temperature sensor.</p>
+<pre tabindex="0"><code>import serial
+import urllib2
+
+def check\_temp():
+ser = serial.Serial(&#39;/dev/ttyUSB0&#39;, 9600)
+t = ser.readline().strip()
+return float(t)
+
+t = check\_temp()
+if int(t) &lt; 8:
+message = &#34;It+is+now+%f+degrees;+chuck+a+sicky.&#34; % t
+f = urllib2.urlopen(&#39;http://api.clickatell.com/http/sendmsg?user=johnd&amp;password=p@55w0rd&amp;api\_id=2132867&amp;from=61433735555&amp;to=61433735555&amp;text=%s&#39; % message)
+</code></pre><p>And in crontab:</p>
+<pre tabindex="0"><code>45 6 \* \* \* python /opt/scripts/temp\_alarm.py
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Arduino 101" href="http://localhost:1313/2009/07/arduino-101_3715.html">Arduino 101 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-07-01 20:30:00.004 +1000 AEST'>Published on July 1, 2009</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Tonight, I&rsquo;m proud to say, I&rsquo;ve returned to childhood. Let me explain.</p>
+<p>OK, fun over, back to work.</p>
+<p>For the last year I&rsquo;ve been wanting to purchase an <a href="http://www.arduino.cc/">Arduino</a>, for no other reason than to play with. Like a kid. My Arduino arrived two days ago. This is a story of problems, but not the pull-your-hair-out type, more the&hellip; like when you run out of gas in the middle of Sydney. Going to your Christmas dinner. In your friend&rsquo;s car. Long story.</p>
+<p>As a kid I never really learned about electronics. I took apart anything broken my parents set downstairs (and put back together the microwave I dismantled that my parent were going to give to my sister as a gift). But no electronics. I had a computer of some sort from when I was a wee kid, but not a single electronics kit, or not one I can remember.</p>
+<p>I soon realised I forgot to order a few resistors needed for the various sensors I purchased. This morning before work I stopped by the local electronics store, and like a kid in a candy shop, ordered $1.60 worth of resistors and LEDs.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/bQknpoVRSuBRuA6fRpHGqQ?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9aGnpVsYFCvX_eDS2xdoGrwAqxlHjxESlPKtgiWtsPkXLnPNZ5awjyj-evmbnad6D1Q5VibWNtCwyRviSJip4uKDos8YM_uJybO_rvKtj6q4Amggs7xJ27DZ6lyTynzn3Da5f6uTLp9PA/s400/tempcode.jpg"></a></p>
+<p>Just after coming home and eating insanely good Indian with YS, I set out to get an LED blinking. Without too many troubles, <a href="http://www.kelvinism.com/howtos/simple-arduino-led-tutorial/">success</a>! I graduated myself to the next grade and pulled out the temperature sensor. I looked at the &lsquo;special&rsquo; wires I bought to connect to the sensor and the breadboard, and I soon realised I actually purchased the M-&gt;F wires instead of the assorted pack. I started looking around for cables I could cut.</p>
+<p>Spare USB cable, no. Telephone cable, maybe. My partner&rsquo;s iPod cable&hellip; and I realised I could just slice up one of the cables and see if it worked. The cables were braided instead of solid coper, which sort of made my hopes sink, but it was too late now.</p>
+<p>I soon wired everything together as the various forum posts suggest, plugged it in to my laptop, started the Arduino software, and loaded the <a href="http://milesburton.com/wiki/index.php?title=Dallas_Temperature_Control_Library">Dallas Temperature Library</a>, and - &ldquo;Invalid CRC&rdquo;. I pulled the wires off, stripped a little more cabling off, plugged it back in, and tried again. It worked! I don&rsquo;t really know if the temperature is correct or not - we don&rsquo;t have any other way to measure it - but at this point, until I put in some more robust wires, I don&rsquo;t really even care.<br>
+<a href="http://picasaweb.google.com/lh/photo/l1LM6Vq2tOQdvCD7HErEew?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcGg4UbKOnexsGAxg-zxeSWpiF6o8z7oo2BGMcwzkQQ5ymggVqZhZWsXw2dlsWu_0jlCqVUfW3hncFswy8dHmRbqmlwobEGAjy1ffbs5Gn8AH6oSAYC7rEw9XIe-ITBIs1RLBNsxcoDACy/s400/arduino.jpg"></a></p>
+<p>Overall, I&rsquo;m happy. I&rsquo;ve created two simple physical computing missions, and wrote two blog entries, in well under two hours. This has been quite a relaxing break from the other duties in life. I plan to make the little system &lsquo;proper&rsquo; (more robust), and link it to my <a href="http://www.kelvinism.com/tech-blog/true-consolidation">mini server</a>. I&rsquo;ll then create a simple chart (via Google&rsquo;s API) to display on this website.<br>
+OK, fun over, back to work.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Simple Arduino &#43; LED Tutorial" href="http://localhost:1313/2009/07/simple-arduino-led-tutorial_319.html">Simple Arduino &#43; LED Tutorial </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-07-01 20:30:00.005 +1000 AEST'>Published on July 1, 2009</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>For this you&rsquo;ll need: an Arduino, an LED, a USB cable, and the Arduino software.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/VUU7F7qd8doQ0pCcs88wPQ?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSGIXNe3gLRzm8r7ioq8niUHdBdzZBD8L9WoBp4oQAIAtlbMGaI7r3RjGzEup0sN-sZKP7E0JQuUaH9jTtPE0at4L6MK_QwduouTOIyQFyEzC2bB9U_Y8ausq1PNXwdbqUzOccLRPNg2FF/s400/arduinowLED.jpg"></a></p>
+<ol>
+<li>
+<p>Get the LED, and plug it in to your Arduino. Plug in the long end to pin 13, plug the short end to the GND.</p>
+</li>
+<li>
+<p>Plug in the Arduino into your laptop. Go to Tools-&gt;Serial Port. Choose the USB port that appears.</p>
+</li>
+<li>
+<p>Take the code from the <a href="http://www.arduino.cc/en/Tutorial/BlinkingLED">BlinkingLED tutorial</a> and paste it in to the arduino like so:</p>
+</li>
+</ol>
+<p><a href="http://picasaweb.google.com/lh/photo/9cKJq_IKgb-LMXdghLOmCg?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgD4UsTrzaB5lO4bVPBYinUZPyiFIUE17ygdSRy2ceZCmXOgcM_4ivrL6lho0DkZk5JbDQAmhyphenhyphenxz1bcS1FtZozT14oDmQQle0jYK5ckBOkjhbN9EBn2Oy84mTyoHcaJ7MctQWx5wBXjrQ5A/s400/arduino-LED.png"></a></p>
+<ol start="4">
+<li>
+<p>Hit File-&gt;Upload to I/O Board.</p>
+</li>
+<li>
+<p>Hit (physically) the little reset button. Voila! a blinking LED!</p>
+</li>
+</ol>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Operation Cold House" href="http://localhost:1313/2009/06/operation-cold-house_7266.html">Operation Cold House </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-06-14 20:30:00.009 +1000 AEST'>Published on June 14, 2009</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Status:</p>
+<p>My house is cold. I want to start playing with simple electronics before starting <a href="http://www.kelvinism.com/projects/operation-field/">Operation Field</a>, so have created Operation Cold House.</p>
+<p>This is just simply sticking a temperature sensor onto an Arduino, linking that up to my little home &ldquo;<a href="http://www.kelvinism.com/tech-blog/true-consolidation/">server</a>&rdquo;, and uploading that to my website. I&rsquo;ll display some nifty graphs, too, and link it to <a href="http://www.pachube.com/">Pachube</a>. Stay tuned.</p>
+<p><strong>Update</strong>: Complete! The proof is <a href="http://www.kelvinism.com/howtos/simple-arduino-led-tutorial/">in the</a> <a href="http://www.kelvinism.com/tech-blog/arduino-101/">pudding</a>. I now have a personal website from home (sorry, not public) that displays the daily and weekly temperature at home. The process is basically like this: my little Arduino gathers the temperature, and is polled every minute with a python script via cron. This script then sticks the time and temperature into MySQL. It also exports the temperature to Pachube. Every 30m I have a script that queries MySQL and uses Google&rsquo;s Chart&rsquo;s API to graph the temperature. Looks great, I&rsquo;ll post a graph soon.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Operation Field" href="http://localhost:1313/2009/04/operation-field_8222.html">Operation Field </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-04-13 20:30:00.005 +1000 AEST'>Published on April 13, 2009</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Status:</p>
+<p>It is time for a new project. I&rsquo;ve finally decided I want to do some electronics stuff - at least play around in that realm a little. However, I want to &ldquo;get out and about&rdquo; a little as well, so this leads me to my idea: a controllable long-range RC plane.</p>
+<p>I&rsquo;ve been debating whether to go the embedded Linux route, or the more simple microcontroller route. One of the first things I stumbled upon was <a href="http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A44814">ArduPilot</a>, a cheap Arduino-based board allowing for a UAV. However, after looking through the requirements I would have needed to purchase an RF transmitter, and they aren&rsquo;t cheap. This made me rethink the ArduPilot route and to evaluate what I really wanted to do: control the plan. My ultimate goal is to attach a joystick to my computer and be able to control the RC plane. This presents another problem with the ArduPilot, however, as there isn&rsquo;t an extra Rx pin available on the ArduPilot board (or so the forums say), I wouldn&rsquo;t be able to transmit coordinates on the fly.</p>
+<p>After much research, I think I&rsquo;ve determined what I&rsquo;m going to do. I&rsquo;m ultimately going to adopt the best parts of the ArduPilot, and fill in the gaps with my own board. I&rsquo;m going to take an EasyStar, combine it with an Arduino Mini, Xbee, XY Sensor, GPS module, servos, H-bridges and a custom PCB, and hope it works.</p>
+<p>One thing I&rsquo;ve learned from YS is to stage our the things I buy. For instance, instead of signing up for a year at a local gym, try a month first. This project won&rsquo;t be any different, and while most of the equipment is very reasonably priced, I still want to make sure I enjoy this type of thing. The first stage is going to be to buy the Arduino Mini, breadboard, servos and h-bridge (and a cheap DC motor), and see if I can get it all working. If I can, I&rsquo;ll buy the EasyStar and see if I can control it with a joystick. If still successful, I&rsquo;ll acquire the Xbees and GPS module - and these represent the majority of the cost.</p>
+<p>Another element I&rsquo;ve considered is how to visualize the RC plane flying around. I had contemplated looking into using Google Earth, but I&rsquo;d really prefer to use a free variant. I also want to strengthen my Java knowledge, so have opted to use the SDK for WorldWind. I was very excited to see that they also have support for OSM, which is just spectaculous. I plan to have a HUD that on the right displays the plane&rsquo;s location in WorldWind, and on the left display current altitude, tilt and RF strength. Since I&rsquo;ve been flying through a book on Processing, this looks like a perfect real-life opportunity to use it.</p>
+<p>I&rsquo;m likely to start putting my money where my mouth is in the next two weeks.</p>
+
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

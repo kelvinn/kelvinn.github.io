@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pycha on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/pycha/</link>
+    <description>Recent content in Pycha on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 May 2008 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pycha/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GUI to Plot Driving Speed</title>
+      <link>http://localhost:1313/2008/05/gui-to-plot-driving-speed_6997.html</link>
+      <pubDate>Tue, 27 May 2008 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2008/05/gui-to-plot-driving-speed_6997.html</guid>
+      <description>&lt;p&gt;I needed another Python fix, and I need one pretty badly. I spent the weekend wondering why it appears to be impossible to edit the GUIDs inside an Exchange mailbox store (read: NOT the GUIDs stored in AD for Exchange). Anyways, I digress.&lt;/p&gt;
+&lt;p&gt;My goals were simple. I wanted to use Python, wanted something to do with traffic, and wanted to play around with Glade/PyGTK and graphing stuff. My end result was a little app that allows you to specify a GPX file, and it plots the waypoints (and calculates the moving average!). Pretty simple, pretty useless, but pretty fun. I really do like pretty pictures.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

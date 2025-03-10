@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Iot | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/iot/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/iot/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/iot/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to IoT Foray with Sonoff S20 / IFTTT / Lambda / CloudMQTT" href="http://localhost:1313/2018/05/ys-and-i-recently-purchased-echo-from.html">IoT Foray with Sonoff S20 / IFTTT / Lambda / CloudMQTT </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2018-05-26 14:08:00.002 +1000 AEST'>Published on May 26, 2018</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I recently purchased an Echo from Amazon, and we were contemplating how else to better integrate it with our somewhat minimalistic home. I thought it would be interesting to get it to link to a WiFi-enabled power outlet, but unfortunately they are pretty expensive in Australia.</p>
+<p>Then I stumbled across the <a href="http://sonoff.itead.cc/en/">Sonoff</a> devices by Itead, and learned that they were somewhat hackable via a <a href="https://github.com/arendst/Sonoff-Tasmota">custom firmware</a>. Coincidentally I received the two devices on the same day my daughter was off sick, so when she had her nap, I got hacking.</p>
+<p>The first bottleneck was discovering that the units I received did not have any headers. A little quick soldering later, and we had headers.</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzXxcHLSh3p-9YEHjtC6rnj6mJO17whJj92HUsJts2ZxD9umE7b7Rb-KUL6yFe2Ppu3ckOaoFhBmDr5yX915j97AKICugRNSOTQ-RI9dK90n6zR9J_0HnftlSFtzP-tXW0o7Q0pCrdWL1K/s1600/20180502_200103.jpg"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzXxcHLSh3p-9YEHjtC6rnj6mJO17whJj92HUsJts2ZxD9umE7b7Rb-KUL6yFe2Ppu3ckOaoFhBmDr5yX915j97AKICugRNSOTQ-RI9dK90n6zR9J_0HnftlSFtzP-tXW0o7Q0pCrdWL1K/s640/20180502_200103.jpg"></a></p>
+<p>No headers mom :(</p>
+<p><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxcIKHmY3Z3RMOShYMEGg92Tyd9QG6ENDpfn7QiDMiUtLbWhkm8smrsGYHTc7wNlkGv0f8T760LOqsISTPu7XEVetkuuIuzGOpqWQkjFOmUVo8mAyMBFju8GHWN-VLs1mCPzvdpNogJhd9/s1600/20180502_163741.jpg"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxcIKHmY3Z3RMOShYMEGg92Tyd9QG6ENDpfn7QiDMiUtLbWhkm8smrsGYHTc7wNlkGv0f8T760LOqsISTPu7XEVetkuuIuzGOpqWQkjFOmUVo8mAyMBFju8GHWN-VLs1mCPzvdpNogJhd9/s640/20180502_163741.jpg"></a></p>
+<p>Now we have headers!</p>
+<p>A few notes of warning: the $2 programmer I got from AliExpress has 3.3v and 5v, but the <em>output</em> is 5v. I&rsquo;m glad I measured it with my multimeter, and used a random 3.3v breadboard supply instead.</p>
+<p>In hindsight I wish I had just purchased the <a href="https://www.itead.cc/foca.html">FTDI programmer</a> from Itead. It looks pretty neat.</p>
+<p>After following the rest of the Tasmoto <a href="https://github.com/arendst/Sonoff-Tasmota/wiki/Sonoff-S20-Smart-Socket">hardware instructions</a>, and then the <a href="https://github.com/arendst/Sonoff-Tasmota/wiki/Upload">PlatformIO instructions</a>, I was able to successfully flash both my units with the custom firmware.</p>
+<p>I then created a Lambda function that sends a signal to CloudMQTT, and connected the two devices.</p>
+<p>Voila!</p>
+
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

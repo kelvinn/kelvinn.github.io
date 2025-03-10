@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Postgis | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/postgis/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/postgis/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/postgis/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Sydney&#39;s Education Levels Mapped" href="http://localhost:1313/2013/09/sydneys-education-levels-mapped.html">Sydney&#39;s Education Levels Mapped </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2013-09-08 10:45:00.001 +1000 AEST'>Published on September 8, 2013</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I was talking to a friend about what education levels might look like across Sydney, and a friend challenged me to map it. The below map is my first draft.</p>
+<p>The map was derived by combining three datasets from the Australian Bureau of Statistics (<a href="http://www.abs.gov.au/">ABS</a> - a department releasing some great datasets). The first dataset was the spatial data for &ldquo;SA2&rdquo; level boundaries, the second the population data for various geographic areas, and the third from the 2011 Census on Non-School Qualification Level of Education (e.g. Certificates, Diplomas, Masters, Doctorates). I aggregated all people with bachelors or higher in an SA2 region, and then divided that number by the total number of people in that region. A different methodology could have been used.</p>
+<p><strong>EDIT</strong>: I should have paid more attention to mapping education levels. I mapped the percentage of overall population, but should have mapped the percentage of 25 to 34 year olds, as this would have aligned to various government metrics.</p>
+<p>Reported education levels differ vastly by region, e.g. &ldquo;North Sydney - Lavender Bay&rdquo; (40%) vs. &ldquo;Bidwell - Hebersham - Emerton&rdquo; (3%). It is interesting to look at the different <a href="http://www.kelvinism.com/2013/07/mapping-urban-density-in-sydney.html">urban density levels</a> of the areas, as well as the <a href="http://www.kelvinism.com/2013/08/sydney-commute-times-mapped-part-2.html">commute times to the nearest centre</a>.</p>
+<p>Without trying to sound too elitist, I was hoping to use this map to guide me where to consider buying our next property (i.e. looking for a well educated, clean area with decent schools and frequent public transport). It was interesting to discover that the SA2 region we currently live in has the second highest percentage in NSW.</p>
+<p>Feel free to take a <a href="https://docs.google.com/spreadsheet/pub?key=0Ak3XfQfX87ELdEJRYVhIYlFRUGRZaDhQel9sbXlHY0E&amp;output=html">look at the aggregated data</a> yourself or <a href="https://docs.google.com/spreadsheet/pub?key=0Ak3XfQfX87ELdEJRYVhIYlFRUGRZaDhQel9sbXlHY0E&amp;single=true&amp;gid=0&amp;output=csv">download it</a> (attribution to ABS for source datasets).</p>
+<p><a href="http://maps.kelvinism.com/sydney_educated.html">View Full Screen</a></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Sydney Commute Times Mapped Part 1" href="http://localhost:1313/2013/07/sydney-commute-times-mapped-part-1.html">Sydney Commute Times Mapped Part 1 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2013-07-21 10:06:00.002 +1000 AEST'>Published on July 21, 2013</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I quite like open data. I like data based on open standards (or mostly open standards) even better. Many transport operators around the world have started releasing their timetable data using (mostly) open standards, e.g. <a href="http://en.wikipedia.org/wiki/General_Transit_Feed_Specification">GTFS</a>. One of the nice things about using a standard is that clever people have created tools to work with the timetable data, and those tools can now be used to manipulate timetable data from hundreds of agencies. The magnificent OpenTripPlanner is one such tool, and it works well with <a href="http://131500.info/">131500</a>&rsquo;s GTFS data.</p>
+<p>New South Wales Planning &amp; Infrastructure have released a draft <a href="http://strategies.planning.nsw.gov.au/MetropolitanStrategyforSydney.aspx">plan</a> for how they hope to shape Sydney&rsquo;s growth, which is where they detail the idea of a &ldquo;city of cities&rdquo;. I thought it would be interesting to mash these smaller &ldquo;cities&rdquo; with 131500&rsquo;s transport data, and then display a map with the shortest commute to the nearest city. Various cities, I believe including Melbourne, have goals of re-achieving a &ldquo;20-minute&rdquo; city, or something similar (i.e. X% of the population can reach X% of the city within X minutes).</p>
+<p>This map is the first stage. It only displays the commute time to St Leonards from every Mesh Block in the greater Sydney area. I used the open source tool OpenTripPlanner to computer the commute times, with OpenStreetMaps to support walking distances. The next map I release will probably have all the regional cities, and a similar styled map depicting time to nearest &ldquo;centre&rdquo;.</p>
+<p><a href="http://maps.kelvinism.com/st_leonards_commute.html">View Full Screen</a></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Mapping Mesh Blocks with TileMill" href="http://localhost:1313/2013/07/mapping-mesh-blocks-with-tilemill.html">Mapping Mesh Blocks with TileMill </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2013-07-20 02:00:00 +1000 AEST'>Published on July 20, 2013</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>This quick tutorial will detail how to prepair the ABS Mesh Blocks to be used with MapBox&rsquo;s TileMill. Beyond scope is how to install postgresql, postgis and TileMill. There is a lot of documentation how to do these tasks.</p>
+<p>First, we create a database to import the <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument">shapefile</a> and <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument">population data</a> into:</p>
+<p>Using &lsquo;psql&rsquo; or &lsquo;SQL Query&rsquo;, create a new database:</p>
+<pre tabindex="0"><code>CREATE DATABASE transport WITH TEMPLATE postgis20 OWNER postgres;
+# Query returned successfully with no result in 5527 ms.
+</code></pre><p>It is necessary to first import the Mesh Block spatial file using something like PostGIS Loader.</p>
+<p><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8zpIUCky4eqQcl82ds0um_KZvlqepw11Svcc5SnyMT24IBX8O9ZTIurIyzM0nNivejDs3uiPyoejPNuxpuVcMgf45IY7xYb6FmtcCUG9TbTxCDiq2feCnileNBwms5M8PrEDjhP7DRtvG/s640/PostGISLoader2.png"></p>
+<p>We then create a table to import the Mesh Block population data:</p>
+<pre tabindex="0"><code>CREATE TABLE tmp\_x (id character varying(11), Dwellings numeric, Persons\_Usually\_Resident numeric);
+</code></pre><p>And then load the data:</p>
+<pre tabindex="0"><code>COPY tmp\_x FROM &#39;/home/kelvinn/censuscounts\_mb\_2011\_aust\_good.csv&#39; DELIMITERS &#39;,&#39; CSV HEADER;
+</code></pre><p>It is possible to import the GIS information and view it in QGIS:</p>
+<p><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir_OlfVmY_FZjQGoh_UdIr2wVe1xsNQLDzYH6M5gX5V5a-lknehk_lDEuhaZUC9tqwcoKHoKCv9KLLSSmlcqU5sX89jkJzne-FHgQYQUML9KwGoCoAQEa8DEOHuI3KA4qDq7n4kWtUbvC3/s640/qgis.png"></p>
+<p>Now that we know the shapefile was imported correctly we can merge the population with spatial data. The following query is used to merge the datasets:</p>
+<pre tabindex="0"><code>UPDATE mb\_2011\_nsw
+SET    dwellings = tmp\_x.dwellings FROM tmp\_x
+WHERE  mb\_2011\_nsw.mb\_code11 = tmp\_x.id;
+</code></pre><pre tabindex="0"><code>UPDATE mb\_2011\_nsw
+SET    pop = tmp\_x.persons\_usually\_resident FROM tmp\_x
+WHERE  mb\_2011\_nsw.mb\_code11 = tmp\_x.id;
+</code></pre><p>We can do a rough validation by using this query:</p>
+<pre tabindex="0"><code>SELECT sum(pop) FROM mb\_2011\_nsw;
+</code></pre><p>And we get 6916971, which is about right (ABS has the 2011 official NSW population of 7.21 million).</p>
+<p>Finally, using TileMill, we can connect to the PostgGIS database and apply some themes to the map.</p>
+<pre tabindex="0"><code>host=127.0.0.1 user=MyUsername password=MyPassword dbname=transport
+(SELECT \* from mb\_2011\_nsw JOIN westmead\_health on mb\_2011\_nsw.mb\_code11 = westmead\_health.label) as mb
+</code></pre><p><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEheoXfae5qm5A8jKuBJg99a2zR_idp0NTWM3I40Belyi1GIwvM-kzHSOBbYd1rHEouJon19thdULDYo_GVKdZDMCF2JJ51iR6xc9JNdOw-K5dubGsvK32IXrLMGe2WUlxBWnALGhsV4ZlOK/s640/tilemill_1.png"></p>
+<p><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgMEZ7vsutC7RO2T4jT78IIxxKpW4wVrk3Mokfgb9SqTXWQ7dt4Gysc5C03y6IZC7_IPRbzx0wjSBxgRrR5yapT-H3AGJL7a4jY3nsXeMeR8aVdR0o39Gkobs361WOckKzzK4_56_5j-9M7/s640/tilemill_2.png"></p>
+<p>After generating the MBTiles file I pushed it to my little $15/year VPS and used <a href="http://tilestache.org/">TileStache</a> to serve the tiles and UTFGrids. The TileStache configuration I am using looks something like this:</p>
+<pre tabindex="0"><code>{
+  &#34;cache&#34;: {
+    &#34;class&#34;: &#34;TileStache.Goodies.Caches.LimitedDisk.Cache&#34;,
+    &#34;kwargs&#34;: {
+        &#34;path&#34;: &#34;/tmp/limited-cache&#34;,
+        &#34;limit&#34;: 16777216
+    }
+  },
+  &#34;layers&#34;: 
+  {
+    &#34;NSWUrbanDensity&#34;:
+    {
+        &#34;provider&#34;: {
+            &#34;name&#34;: &#34;mbtiles&#34;,
+            &#34;tileset&#34;: &#34;/home/user/mbtiles/NSWUrbanDensity.mbtiles&#34;
+        }
+    },
+    &#34;NSWPopDensity&#34;:
+    {
+        &#34;provider&#34;: {
+            &#34;name&#34;: &#34;mbtiles&#34;,
+            &#34;tileset&#34;: &#34;/home/user/mbtiles/NSWPopDensity.mbtiles&#34;
+        }
+    }
+  }
+}
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Mapping Urban Density in Sydney" href="http://localhost:1313/2013/07/mapping-urban-density-in-sydney.html">Mapping Urban Density in Sydney </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2013-07-20 00:34:00.001 +1000 AEST'>Published on July 20, 2013</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Five years ago I started exploring different mapping technologies by detailing instructions on <a href="http://www.kelvinism.com/2008/04/setting-up-mapnik-server-on-ubuntu_118.html">installing Mapnik</a> and <a href="http://www.kelvinism.com/2008/11/revised-modtile-install-howto_1369.html">mod_tile</a>. Times have changed significantly in the last five years, and thanks a lot to the products offered by <a href="http://www.mapbox.com/">MapBox</a>. After playing with TileMill, MBTiles, Leaflet and UTFGrids, it is great how many annoyances have been fixed by MapBox. I find it enjoyable making maps now, as I no longer need to worry about patching code just to get it to run, or mucking about with oddities in web browser.</p>
+<p>Each night this week I have created a new map using Mesh Block spatial data from the Australian Bureau of Statistics (Mesh Blocks are the smallest area used when conducting surveys). I am thankful to live in a country that provides a certain amount of open data, and the ABS should be applauded for the amount of data they provide. They provide <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument">spatial data</a> about Mesh Blocks, as well as <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument">population counts</a> for this spatial data. It is relatively easy to merge the two and then visualise them using TileMill.</p>
+<p>First up - population density of Sydney, i.e. persons reported to be living in each mesh block. Darker red indicates a higher population count.</p>
+<p><a href="http://maps.kelvinism.com/syd_pop_density.html">View Full Screen</a></p>
+<p>I find it interesting to see how many people live in certain Mesh Blocks. You will notice that Mesh Blocks with high population levels tend to be nearer public transport - either major roads with frequent bus service, or train stations.</p>
+<p>We can look at the urban densities by determining dwellings per hectare, and do this per Mesh Block. The definition I used for urban densities comes from <a href="http://annforsyth.net/">Ann Forsyth</a> in &ldquo;Measuring Density: Working Definitions for Residential Density and Building Intensity&rdquo; (<a href="http://www.corridordevelopment.org/pdfs/from_MDC_Website/db9.pdf">pdf</a>). Ann discusses the need to consider net or gross densities, depending on the type of land use. At the Mesh Block level the land use type appears to be singular: Industrial, Parkland, Commercial, Residential, and Transport. Because the land use type was generally singular I have not adjusted to gross/net, but still used Ann&rsquo;s definitions of certain density bands:</p>
+<ul>
+<li>Very low density: 11 dw/ha</li>
+<li>Low density: 11-22 dw/ha</li>
+<li>Medium density: 23-45 dw/ha</li>
+<li>High density: 45 dw/ha</li>
+</ul>
+<p>&ldquo;dw/ha&rdquo; is dwellings per hectare. I decided to map the four density levels, which can be relatively easily achieved using TileMill. See below for an example.</p>
+<p><a href="http://maps.kelvinism.com/syd_urban_density.html">View Full Screen</a></p>
+<p>You can zoom in and scroll over any Mesh Block in Sydney to find out more. Additional installation information on how I did this can be found on this special page: <a href="http://www.kelvinism.com/2013/07/mapping-mesh-blocks-with-tilemill.html">Mapping Mesh Block Data</a>.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Installing Mapnik on Ubuntu 7.10" href="http://localhost:1313/2008/04/installing-mapnik-on-ubuntu-710_6688.html">Installing Mapnik on Ubuntu 7.10 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-19 20:30:00.002 +1000 AEST'>Published on April 19, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I have managed to install mapnik 0.4, 0.5, 0.5.1 and various SVN releases in-between on Ubuntu. While this isn&rsquo;t in itself exciting, I think I manage to stumble at every installation. I typically forget to add the flags when building, so, to prevent myself from stumbling again, I&rsquo;m going to write them out here.</p>
+<p><strong>Build mapnik</strong></p>
+<pre tabindex="0"><code>$ python scons/scons.py PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p><strong>Then install it</strong></p>
+<pre tabindex="0"><code>$ sudo python scons/scons.py install PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p>Then proceed as normal.</p>
+
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Esxi | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/esxi/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/esxi/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/esxi/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to True Consolidation" href="http://localhost:1313/2009/04/true-consolidation_6503.html">True Consolidation </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-04-13 20:30:00.004 +1000 AEST'>Published on April 13, 2009</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Back in 2000 I managed to acquire several retired systems to bring to Uni: this included 4-5 cheap P120 machines. At the time, I thought this was great; I had an OpenBSD box as my gateway, a FreeBSD box, a few Linux boxes, and likely something else that doesn&rsquo;t even exist now. The school has a superfast connection, unlimited bandwidth, and I was curious. Although I didn&rsquo;t really have <em>time</em>, I still managed to install and have all these servers running from my room.</p>
+<p>I realized I was doing at home what I was being paid to do at work.</p>
+<p>Fast forward to 2007, and my mindset has changed. In 2007 I didn&rsquo;t want to have 6 servers running at once, I wanted to have one server running 12 servers at once! Thanks to Xen and VMware this was easily obtained. Initially using Xen, and then ESXi, I had the freedom to setup Domains, tear them down, and start over. Eventually, however, I realized I was doing at home what I was being paid to do at work. That doesn&rsquo;t sound like fun. I also realized that, despite picking a motherboard and processor that could shift into low power usage, I was still using more watts than I needed to. I was also spending way too much time mucking around with things - I want to focus on just one or two projects at a time, and I <em>really</em> want to start programming more.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/NUJH80rJPtKH0NsD_ZTLxA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcfWyN502_EgPg12BajqcMJbJhr9iaYe1SWLaZDGUIFaOJmPC7QXngeZtr5qlESw3l2QB7DINsCjjskut4PYYKwkOYz6N68bc3TxILX1cjiReHA5FOiK5yM2B8UTddfoOY4Yk6GxuB738/s400/ebox3300.jpg"></a></p>
+<p>Last month I finally finished the ultimate &lsquo;consolidation&rsquo;: I moved everything to a tiny embedded Linux box. While back in the U.S. I contacted <a href="http://www.wdlsystems.com/">WDL Systems</a> and requested for shipping costs on a tiny embedded box. I bought the eBox-3300, with an embedded board from ICOP, and it was promptly shipped out. After returning home to Sydney I migrated all my apps from the various virtual servers to my little box running Debian 5.0: OSSEC, Samba, Lighttpd, Asterisk and flow-tools. The little box is just perfect for what I need - a tiny home server. I still get around 8MB/sec transferring files, which indicates the network is still the bottleneck, and VOIP calls with Asterisk are still clear.</p>
+<p>Overall, I&rsquo;ve been happy with this little box. My &lsquo;playing time&rsquo; with IT has gone down significantly, my energy usage has gone down, and I now have a server I can take with me wherever I go.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Files between ESX and Linux via NFS" href="http://localhost:1313/2009/03/files-between-esx-and-linux-via-nfs_6022.html">Files between ESX and Linux via NFS </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-03-02 21:30:00.002 +1100 AEDT'>Published on March 2, 2009</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I like ESX. I like Linux. It is absurdly easy to configure Linux as an NFS server and mount it in ESXIi).</p>
+<p><strong>Installed NFS</strong></p>
+<p>I currently use Ubuntu Server for my home lab, but the process is basically the same for Red Hat and derivatives.</p>
+<pre tabindex="0"><code>sudo apt-get install nfs-common
+sudo apt-get install nfs-kernel-server
+</code></pre><p>Next, configure NFS so it can server your local LAN. Normally you would list only specific servers, but, well, we&rsquo;re being cheap and dirty today. Open /etc/exports in VI or your editor of choice.</p>
+<p><strong>/etc/exports</strong></p>
+<pre tabindex="0"><code>/media/disk/Images 192.168.0.0/24(rw,no\_root\_squash,async
+</code></pre><p>Restart NFS.</p>
+<pre tabindex="0"><code>sudo /etc/init.d/nfs-common
+</code></pre><p>Go to Configuration -&gt; Storage -&gt; Add Storage.</p>
+<p>Select NFS</p>
+<p>Fill in the info, see screenshot.</p>
+<p>Wait a minute. Voila! New datastore.</p>
+<p><strong>Images to come shortly.</strong></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Beginning Scripting ESXi" href="http://localhost:1313/2009/01/beginning-scripting-esxi_6126.html">Beginning Scripting ESXi </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-01-06 21:30:00.002 +1100 AEDT'>Published on January 6, 2009</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;m not impressed too often with much software, especially the closed source kind. I find a leaning preference to all things FOSS. If I had a million dollars, I&rsquo;d likely spend all day contributing to all the projects I wish I had time to contribute to. Regardless, there are a select few closed-source products that I believe are truly excellent. I mean, the type of software where you aren&rsquo;t asking &ldquo;I wish this could do this&rdquo; and start asking &ldquo;I wonder what else this can do.&rdquo;</p>
+<p>While I&rsquo;ve played around with most types of virtualization out there (OpenVZ, Xen, V-Server, qemu&hellip;), I&rsquo;ve really found a soft spot for VMWare.</p>
+<p>Don&rsquo;t get me wrong, if I was going to host a heap of Linux web servers I would absolutely use Xen, but for a heterogeneous environment, I haven&rsquo;t used anything as easy as VMWare&rsquo;s products. Not that I judge a product by how easy it is to use, not by a long shot, but ease of use sure makes judging other factors easier.</p>
+<p>Regardless, this isn&rsquo;t a post trumpeting VMWare. I just realized tonight that some of the VMs I have running don&rsquo;t need to be except for certain hours of the day, or if condition A is true. The first example is my backup mail server; I really don&rsquo;t need it even powered on unless my main server is down. The second example is my Server 2003 instance, which has VI3 on it; I don&rsquo;t need this running unless I&rsquo;m asleep. One of the most useful resources I&rsquo;ve seen for the vmrun command is over at <a href="http://www.virtuatopia.com/index.php/Controlling_VMware_Virtual_Machines_from_the_Command_Line_with_vmrun">VirtualTopia</a> &ndash; loaded with examples.</p>
+<h4 id="turn-off-via-time">Turn off via time</h4>
+<p>On my &ldquo;monitoring&rdquo; instance, which is always up, I&rsquo;ve decided to install the script that controls my VM. I&rsquo;ve opted to use a soft shutdown.</p>
+<p>192.168.0.10 = ESXi box</p>
+<p>datastore1 = name of datastore that hosts VMs</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password stop &#34;\[datastore1\] Server 2003 R2/Server 2003 R2.vmx&#34; soft
+</code></pre><p>I have that saved in a file called <strong>stop_2003.sh</strong> in /opt/vmware/bin; make sure it isn&rsquo;t world readable. I also have a <strong>start_2003.sh</strong>:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start &#34;\[datastore1\] Server 2003 R2/Server 2003 R2.vmx&#34;
+</code></pre><p>Next, edit root&rsquo;s crontab (crontab -e):</p>
+<pre tabindex="0"><code>\# m h  dom mon dow   command
+0 8 \* \* \* /opt/vmware/bin/start\_2003.sh
+0 23 \* \* \* /opt/vmware/bin/stop\_2003.sh
+</code></pre><p>The conditional task is a tad bit more tricky, but just a tad. Ping won&rsquo;t do, since the mailserver could go down itself, so install nmap. Create a script:</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+if nmap -p25 -PN -sT -oG - mail.kelvinism.com | grep &#39;Ports:.\*/open/&#39; &gt;/dev/null ; then
+echo \`time\` &gt;&gt; mailserver.log
+else
+/opt/vmware/bin/start\_mail.sh
+fi
+</code></pre><p>And sticking with our theme, <strong>start_mail.sh</strong>:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start &#34;\[datastore1\] Mail Server/Mail Server.vmx&#34;
+</code></pre><p>This of course changes the crontab entry to:</p>
+<pre tabindex="0"><code>\# m h  dom mon dow   command
+0 8 \* \* \* /opt/vmware/bin/start\_2003.sh
+0 23 \* \* \* /opt/vmware/bin/stop\_2003.sh
+\*/5 \* \* \* \* /opt/vmware/bin/detect\_port.sh
+</code></pre><p>So, that&rsquo;s it. detect_port.sh is lacking any type of error detection or redundancy - if one packet/scan is dropped, the mail server will turn on. I&rsquo;ll re-work this at some point, but it works for now.</p>
+<p><strong>Update</strong>: Vmware has also released a decent blog entry about using vmrun: <a href="http://blogs.vmware.com/vix/2008/12/managing-vm-guests-using-vmrun.html">on their blog</a>.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Install ESX from a USB (no CDROM)" href="http://localhost:1313/2008/12/install-esx-from-usb-no-cdrom_3723.html">Install ESX from a USB (no CDROM) </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.011 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>My little server doesn&rsquo;t have a cdrom, but I didn&rsquo;t want to actually run ESX from a USB (i.e. esx-on-a-stick). Here are my notes of configuring a flash disk to boot the ESX installer (so you can install it onto a local disk). For this demo, my USB is /dev/sdb</p>
+<ol>
+<li>
+<p>Install the syslinux utils to your computer (apt-get install syslinux mboot)</p>
+</li>
+<li>
+<p>Install the MBR</p>
+</li>
+</ol>
+<pre tabindex="0"><code>sudo install-mbr /dev/sdb
+</code></pre><ol start="3">
+<li>
+<p>Copy all the files from the ISO to your fat32 formated partition</p>
+</li>
+<li>
+<p>Install syslinux</p>
+</li>
+</ol>
+<pre tabindex="0"><code>sudo syslinux /dev/sdb1
+</code></pre><ol start="5">
+<li>Move isolinux.cfg to syslinux.cfg, and try booting. If it doesn&rsquo;t work, edit syslinux.cfg says something like:</li>
+</ol>
+<pre tabindex="0"><code>default menu.c32
+menu title ESXi Boot
+timeout 100
+
+label ESXi
+menu label Boot VMware ESXi
+kernel mboot.c32
+append vmkernel.gz --- binmod.tgz --- environ.tgz --- cim.tgz
+ipappend 2
+</code></pre><ol start="6">
+<li>Unplug your USB, put it in your server, reboot, boot to USB-HDD (or select the USB disk), and install ESX to the local disk. You will likely be greeted with a sign saying &ldquo;MBR FA:&rdquo;, where you need to press &ldquo;A&rdquo; and then &ldquo;1&rdquo;.</li>
+</ol>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Migrating large disks into ESXi" href="http://localhost:1313/2008/12/migrating-large-disks-into-esxi_4692.html">Migrating large disks into ESXi </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.009 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I recently had the need to move a rather large (450GB) VMDK file from an external hard drive into ESXi. Since ESXi doesn&rsquo;t support external hard drives, this makes things quite a bit more difficult. At first I tried using SCP to copy the file over (after enabling SSH access for ESXi). However, when I tried to do this the time left was almost 20 hours &ndash; a tad too long!</p>
+<p>I rethought my idea and decided to use this process:</p>
+<ol>
+<li>
+<p>Create an NFS share on my laptop, using the external hard drive (with the VMDK) as a mount point.</p>
+</li>
+<li>
+<p>Use vmkfstools to move the image over.</p>
+</li>
+<li>
+<p>Update any bugs I encountered.</p>
+</li>
+</ol>
+<p>Creating the NFS share on Linux is extermily easy. After install nfs via whatever package management tool you choose, put this entry into your /etc/exports file:</p>
+<pre tabindex="0"><code>  
+/media/disk-1 192.168.1.0/24(ro,no\_root\_squash,async)  
+</code></pre><p>This assumes your USB disk is mounted as /media/disk-1, and your local subnet is 192.168.1.0/24. In OpenFiler, add a new storage with type NFS and use your laptops IP as the hose, and /media/disk-1 as the mount point. For safey, tick read-only.</p>
+<p>Next, unlock SSH if you haven&rsquo;t already. Once you are in, browse to /vmfs/volumes and you can see your nfs share and your other datastores. Let&rsquo;s say you USB virtual disk is located at /vmfs/volumes/nfs/bigdisk.vmdk, and you want to import it into your normal datastore, under a folder called &lsquo;NAS&rsquo;. Using vmware specific tools, you can import the file as so:</p>
+<pre tabindex="0"><code>  
+\# vmkfstools -i /vmfs/volumes/nfs/bigdisk.vmdk /vmfs/volumes/datastore1/NAS/bigdisk.vmdk  
+</code></pre><p>I needed to update the hardware version of my imported disk. To do this, open up the .vmdk file (you should also have a -flat.vmdk file), and update the virtualHWVersion entry from 7 to 4. With that, join your disk to an image, and you should be good to go.</p>
+<p>An addition result I noticed was the speed at which it came over. By using SCP, the entire file was going to take 20hr. By using NFS and vmkfstools, the files was migrated in under 10 hours.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Ubuntu 8.04 64-Bit and VMware Server 2" href="http://localhost:1313/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html">Ubuntu 8.04 64-Bit and VMware Server 2 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-08-01 20:30:00.004 +1000 AEST'>Published on August 1, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I now have successful installation of VMware Server 2 (Beta RC1) on top of Ubuntu 8.04 64-bit. I have been using various virtualization technologies for years, and VMware is usually the easiest to install and configure. So far, VMware Server 2 RC1, has proven to be the exception to the rule.</p>
+<p>That said, I am very excited by the direction VMware is taking &ndash; this new server version looks to have great potential.</p>
+<p>The &lsquo;server&rsquo; this is on is a mATX motherboard from Gigabyte (GA-G33M-DS2R), with 4GB (2x2GB) of Transcend DDR2-800 memory, topped off with the E8200. I have been nothing but impressed with this combination of hardware.</p>
+<p>However, although I was thinking VMware Server 2 would install seamlessly over Ubuntu, I was wrong. There were a few things I had to tweak to get everything working correctly.</p>
+<p>The first thing I had major issues with was VMware choking on the parallel port. Normally the parport is the first thing I would turn off, but in this instance, I guess excitement overtook me. My tip is to first remove the lp module from inside /etc/modules, and then disable the parallel port inside the BIOS. The symptoms I was having involved VMware halting/freezing on either startup or shutdown. This occurred for both RC1 as well as 1.0.6.</p>
+<p>My second tip, if VMware freezes half way through starting up or shutting down, is to go through the vmware startup script, /etc/init.d/vmware, and comment out anything refering to the parport_pc. In particular, I looked for this line and made sure to comment it out:</p>
+<pre tabindex="0"><code>/sbin/modprobe -r parport\_pc &gt;/dev/null 2&gt;&amp;1
+</code></pre><p>I commented out lines 974 and 1076. After doing this, VMware loaded perfectly.</p>
+<p>The second major issue I had occurred after actually installing VMware. I opened Firefox and went to the IP of my virtual server, logged in just fine, and loaded up my first virtual machine. However, after booting the virtual machine, I was unable to open up the remote console. It turns out I had just upgraded to Firefox 3.0.1, and the Remote Console is set to fail on anything above 3.0.0.1. The fix is quite easy.</p>
+<p>First click where it says &ldquo;click anywhere to open the virtual machine&rdquo;. Copy the address of the XPI and use something like wget to download the file. This is an example:</p>
+<pre tabindex="0"><code>wget --no-check-certificate https://192.168.50.10/ui/plugin/vmware-vmrc-linux-x86.xpi
+</code></pre><p>If you are using Gnome, right click the file you just downloaded and say Open With then Archive Manager. Do the same for the &lsquo;install.rdf&rsquo; file inside, specifying gedit as the application if need be. Next, edit line 20 so it reads as follows:</p>
+<pre tabindex="0"><code>3.0.\*
+</code></pre><p>Save the file, open the XPI with Firefox, and you should be good to go.</p>
+<p>I&rsquo;ve seen a lot of other suggestions on the &rsquo;net on how to fix VMware RC1 when booting &ndash; including disabling ipv6, checking the hosts file, and running the any-any patches. None of these approaches helped me at all, but maybe it is exactly what you need. My biggest tip is that if VMware isn&rsquo;t starting up or stopping correctly, open up /etc/init.d/vmware and find out exactly where it is faulting (add things like &rsquo;echo &ldquo;fail&rdquo;&rsquo; inside the IF statements).</p>
+
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

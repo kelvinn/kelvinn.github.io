@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Xmpp on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/xmpp/</link>
+    <description>Recent content in Xmpp on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jan 2011 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/xmpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Integrate imified into Django</title>
+      <link>http://localhost:1313/2011/01/integrate-imified-into-django_2631.html</link>
+      <pubDate>Tue, 18 Jan 2011 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2011/01/integrate-imified-into-django_2631.html</guid>
+      <description>&lt;p&gt;I recently had the desire to send small updates to my so called &lt;a href=&#34;http://www.blogger.com/about-me/&#34;&gt;lifestream&lt;/a&gt; page via XMPP/GTalk. I played around with Twisted Words and several other Python XMPP clients, but I didn&amp;rsquo;t really want to keep a daemon running if unnecessary. It turns out imified took a lot of the pain out of it. The steps for me were as follows:&lt;br&gt;
+Create an account with imified, and create a URL, e.g. /app/api/&lt;br&gt;
+We then configure the &lt;strong&gt;urls.conf&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>How to convert 131500 TDX to GTFS | Kelvin Nicholson</title>
+<meta name="keywords" content="tdx, howtos, gtfs">
+<meta name="description" content="TDX data has been available for a number of years on 131500.info, but many tools are GTFS specific. I also find GTFS easier to work with.
+Luckily, converting from TDX to GTFS is not overly difficult, and below are some instructions. This howto is a bit old, as I am only now copying it from my &ldquo;Notes&rdquo; folder to put online to help others.
+Note: You can now directly download GTFS from the TransportInfo website: https://tdx.131500.com.au">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2012/07/how-to-convert-131500-tdx-to-gtfs.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2012/07/how-to-convert-131500-tdx-to-gtfs.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to How to convert 131500 TDX to GTFS" href="http://localhost:1313/2012/07/how-to-convert-131500-tdx-to-gtfs.html">How to convert 131500 TDX to GTFS </a>
+    </h2>
+
+    <div class="post-meta"><span title='2012-07-02 13:59:00 +1000 AEST'>Published on July 2, 2012</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>TDX data has been available for a number of years on 131500.info, but many tools are GTFS specific. I also find GTFS easier to work with.</p>
+<p>Luckily, converting from TDX to GTFS is not overly difficult, and below are some instructions. This howto is a bit old, as I am only now copying it from my &ldquo;Notes&rdquo; folder to put online to help others.</p>
+<p><strong>Note:</strong> You can now directly download GTFS from the TransportInfo website: <a href="https://tdx.131500.com.au/">https://tdx.131500.com.au</a></p>
+<ol>
+<li>Signup for an account with EC2 (AWS), unless you have 16GB of memory available on a machine.</li>
+<li>Upload <a href="http://code.google.com/p/googletransitdatafeed/">TransXChange2GTFS</a> to a place you can download from.</li>
+<li>Upload the latest TDX data dump from 131500.info to a place you can download from.</li>
+<li>Login to AWS and start an EC2 instance.  I picked a large instance and used 64-bit Ubuntu 10.04, us-east-1 ami-f8f40591</li>
+<li>Download the Data and transxchange to /mnt</li>
+</ol>
+<pre tabindex="0"><code>wget http://ec2-175-41-139-176.ap-southeast-1.compute.amazonaws.com/Data20110127.zip
+wget http://cdn.kelvinism.com/transxchange2GoogleTransit.jar
+</code></pre><ol start="6">
+<li>Install Sun JRE.</li>
+</ol>
+<pre tabindex="0"><code>apt-get install python-software-properties
+add-apt-repository &#34;deb http://archive.canonical.com/ lucid partner&#34;
+apt-get update
+apt-get install sun-java6-jre
+
+
+```7) Check how much memory is available  
+</code></pre><p>root@domU-12-31-39-10-31-B1:/mnt# free -m
+             total       used       free     shared    buffers     cached
+Mem:          7680        626       7053          0         11        329
+-/+ buffers/cache:        285       7394
+Swap:            0          0          0</p>
+<pre tabindex="0"><code>8) Create a configuration file **sydney.conf**  
+  
+</code></pre><p>url=http://131500.info
+timezone=Australia/Sydney
+default-route-type=2
+output-directory=output
+useagencyshortname=true
+skipemptyservice=true
+skiporhpanstops=true</p>
+<pre tabindex="0"><code>9) If you&#39;re on the train like me, start screen, and start converting. The number you pick for &#34;-Xmx&#34; obviously needs to fit in the amount of free memory you have.  
+  
+</code></pre><p>java -Xmx104000m -jar dist\transxchange2GoogleTransit.jar Data20120524.zip -c sydney.conf</p>
+<pre tabindex="0"><code></code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/tdx/">Tdx</a></li>
+      <li><a href="http://localhost:1313/tags/howtos/">Howtos</a></li>
+      <li><a href="http://localhost:1313/tags/gtfs/">Gtfs</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

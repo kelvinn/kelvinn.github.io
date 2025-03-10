@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.145.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Kelvin Nicholson</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Event vs. DOM Driven Parsing of XML" href="http://localhost:1313/2008/04/event-vs-dom-driven-parsing-of-xml_6678.html">Event vs. DOM Driven Parsing of XML </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-29 20:30:00.007 +1000 AEST'>Published on April 29, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I recently have been <a href="http://www.kelvinism.com/tech-blog/baby-steps-graphing-traffic/">playing</a> with parsing GPX files and spitting out the results into a special KML file. I initially wrote a parser using minidom, yet after running this the first time &ndash; and my Core2Duo laptop reaching 100% utilization for 10 seconds &ndash; I realized I needed to re-write it using something else.</p>
+<p>I spent a little time reading the different parsers for XML and eventually read more about <a href="http://effbot.org/zone/celementtree.htm">cElementTree</a>. And it is included with Python2.5, sweet.</p>
+<p>I quickly rewrote the code and did some tests. First, the two bits of code for parsing my GPX file:</p>
+<p><strong>minidom-speed.py</strong></p>
+<pre tabindex="0"><code>#!/usr/bin/python
+
+from xml.dom import minidom
+from genshi.template import TemplateLoader
+
+def collect\_info():
+dom = minidom.parse(&#39;airport.gpx&#39;)
+for node in dom.getElementsByTagName(&#39;trkpt&#39;):
+lat = node.getAttribute(&#39;lat&#39;)
+lon = node.getAttribute(&#39;lon&#39;)
+speed = node.getElementsByTagName(&#39;speed&#39;)\[0\].firstChild.data
+speed = float(speed) \* 10
+coords = &#39;%s,%s&#39; % (lon, lat)
+coords\_speed = &#39;%s,%s&#39; % (coords, speed)
+yield {
+&#39;coordinates&#39;: coords\_speed
+}
+
+loader = TemplateLoader(\[&#39;.&#39;\])
+template = loader.load(&#39;template-speed.kml&#39;)
+stream = template.generate(collection=collect\_info())
+
+f = open(&#39;minidom.kml&#39;, &#39;w&#39;)
+f.write(stream.render())
+</code></pre><p><strong>cet-speed.py</strong></p>
+<pre tabindex="0"><code>#!/usr/bin/python
+
+import sys,os
+import xml.etree.cElementTree as ET
+import string
+from genshi.template import TemplateLoader
+
+def collect\_info():
+mainNS=string.Template(&#34;{http://www.topografix.com/GPX/1/0}$tag&#34;)
+
+wptTag=mainNS.substitute(tag=&#34;trkpt&#34;)
+nameTag=mainNS.substitute(tag=&#34;speed&#34;)
+
+et=ET.parse(open(&#34;airport.gpx&#34;))
+for wpt in et.findall(&#34;//&#34;+wptTag):
+wptinfo=\[\]
+wptinfo.append(wpt.get(&#34;lon&#34;))
+wptinfo.append(wpt.get(&#34;lat&#34;))
+wptinfo.append(str(float(wpt.findtext(nameTag)) \* 10))
+coords\_speed = &#34;,&#34;.join(wptinfo)
+yield {
+&#39;coordinates&#39;: coords\_speed,
+}
+
+loader = TemplateLoader(\[&#39;.&#39;\])
+template = loader.load(&#39;template-speed.kml&#39;)
+stream = template.generate(collection=collect\_info())
+
+f = open(&#39;cet.kml&#39;, &#39;w&#39;)
+f.write(stream.render())
+</code></pre><p>The speed difference is not just noticeable, but <strong>very</strong> noticeable.</p>
+<p><strong>minidom-speed.py</strong></p>
+<pre tabindex="0"><code>$ python -m cProfile minidom-speed.py
+4405376 function calls (3787047 primitive calls) in 32.142 CPU seconds
+</code></pre><p><strong>cet-speed.py</strong></p>
+<pre tabindex="0"><code>$ python -m cProfile cet-speed.py
+1082061 function calls (904167 primitive calls) in 6.736 CPU seconds
+</code></pre><p>A quarter as many calls and almost 5x faster &ndash; at least that&rsquo;s how I interpret the results. Much better!</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Setting up Windows 2003 as an NTP Client" href="http://localhost:1313/2008/04/setting-up-windows-2003-as-ntp-client_4269.html">Setting up Windows 2003 as an NTP Client </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-29 20:30:00.008 +1000 AEST'>Published on April 29, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I have had to search for the commands to setup a Windows 2003 box as an ntp client a few times now, so have decided to finally write them down here for my own good measure. Funny thing is, I&rsquo;m pretty sure there are three ways to setup a 2003 box as an ntp client.</p>
+<h4 id="1-via-the-cli">1) Via the CLI</h4>
+<p>Open up the cmd prompt and type in:</p>
+<pre tabindex="0"><code>w32tm /config /manualpeerlist:&#34;0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org&#34; 
+/syncfromflags:MANUAL /reliable:YES /update
+</code></pre><h4 id="2-via-the-cli-option-2">2) Via the CLI, option 2</h4>
+<pre tabindex="0"><code>net time setsntp: &#34;0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org&#34;
+</code></pre><h4 id="3-via-gui">3) Via GUI</h4>
+<p>Type in <strong>gpedit.msc</strong> and your local GPO editor will pop up. Go to the folder as indicated in the below screenshot and Enable the &ldquo;Enable Windows NTP Client&rdquo; option. Next set the &ldquo;Configure Windows NTP Client&rdquo; option to whatever time servers you so choose. As always, make sure to keep the 0x1 at the end.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Baby Steps at Graphing Traffic" href="http://localhost:1313/2008/04/baby-steps-at-graphing-traffic_522.html">Baby Steps at Graphing Traffic </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-27 20:30:00.006 +1000 AEST'>Published on April 27, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Status:<br>
+You can likely tell that I&rsquo;ve been having some fun with graphing and mapping recently. I was reading a few articles about GIS and stumbled upon a pretty darn cool project at <a href="http://www.webopticon.com/projects/neighborhood_nets">Webopticon</a>, which included cool pictures. I showed it to my girlfriend thinking she would find it interesting, and then realized: oh! KML has an altitude attribute. That could be interesting.<br>
+One of my projects is to create <a href="http://www.kelvinism.com/2007/12/sydneys-driving-habits.html">maps of Sydney&rsquo;s traffic</a><a href="http://www.blogger.com/"></a>, so I have been experimenting heavily with Mapnik and OSM. I figured I could have some fun and finally parse some gps tracks and display the data.<br>
+<a href="http://picasaweb.google.com/lh/photo/bkhs8KqkZyS7yIoA6AeNnA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8Ju2Qv3TAIupmzBjORZ5wUBGjxIlwZ_0mrPb0Mku5Yob6_ldYEmtRO0GP_kQ62-aZDZ3fP8_vh6nfXv9NpP5X98oneS25YXXf9Tr-pD1RMkp7l_jbDBWBsqxrA5hIDhH8KvfVjZI0TvGc/s288/gpstracks3.jpg"></a></p>
+<p>I first started off trying to play around with the KML files my gps logger natively stores. After a while I realized it shouldn&rsquo;t be this hard to parse the XML, and realized it also stores data in gpx format. I opened up one of the gpx files and immediately saw how much easier it would be to work with. I quickly created a parser for the xml in Python (using the dom method, yet I think I&rsquo;m going to rewrite it using sax), and then with the aid of <a href="http://zcologia.com/news/584/better-python-practices-for-the-geoweb/">an article</a> by Sean Gillies, converted the needed objects into KML. I used the speed attribute (with some magnification) as the altitude, and voila, a pretty picture.<br>
+This picture is as Victoria Road crosses James Rouse Drive &ndash; a spot that is always congested in the morning.<br>
+I&rsquo;ll likely post some code shortly, I would like to rewrite the parsing section to use something event-driven &ndash; hopefully it will be a little faster.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Setting up a Mapnik Server on Ubuntu" href="http://localhost:1313/2008/04/setting-up-mapnik-server-on-ubuntu_118.html">Setting up a Mapnik Server on Ubuntu </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-27 20:30:00.005 +1000 AEST'>Published on April 27, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>First, we go ahead and install the needed packages. I&rsquo;ve tried to include &ldquo;my&rdquo; list of packages that were needed to get a vanilla 7.10 image up to steam.</p>
+<pre tabindex="0"><code>apt-get install build-essential libltdl3-dev autoconf libtool automake \\
+postgresql postgresql-8.2-postgis postgresql-server-dev-8.2 \\
+wget subversion libboost-python1.34.1 libboost-thread-dev \\
+libboost-program-options-dev libboost-regex-dev \\
+libboost-python-dev libboost-serialization-dev \\
+libboost-filesystem-dev libpng12-dev libjpeg62-dev \\
+libtiff4-dev zlib1g-dev libfreetype6-dev libgeos-dev \\
+unzip apache2-prefork-dev
+</code></pre><p>Next we start to download a few components. I did this in my home directory, /home/kelvin</p>
+<p><strong>mod_tile</strong> - this is the apache module and rendering daemon that uses mapnik to render the maps.</p>
+<pre tabindex="0"><code>svn co http://svn.openstreetmap.org/applications/utils/mod\_tile
+</code></pre><p><strong>Mapnik</strong> - this will help us create the maps.</p>
+<pre tabindex="0"><code>wget http://download.berlios.de/mapnik/mapnik\_src-0.5.1.tar.gz
+</code></pre><p>Now we start to install things.</p>
+<pre tabindex="0"><code>tar -xpzf mapnik\_src-0.5.1.tar.gz
+cd mapnik-0.5.1
+</code></pre><p>Build mapnik as per: <a href="http://wiki.openstreetmap.org/index.php/Mapnik">http://wiki.openstreetmap.org/index.php/Mapnik</a> &ndash; make sure to use scons as follows:</p>
+<pre tabindex="0"><code>python scons/scons.py PYTHON=/usr/bin/python \\
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p>Now, I&rsquo;m temporarily serving/rendering my tiles from an old Thinkpad &ldquo;server&rdquo; (PIII with 512MB RAM, of which only 128MB goes to the Xen instance that hosts all of this). So, I am using osm2pgsql on my laptop (a new Thinkpad), and pushing it into the postgres database on my &ldquo;server&rdquo;. So, I built osm2pgsql on my new Thinkpad, and setup postgres on the &ldquo;server&rdquo; to accept connections from my new Thinkpad.</p>
+<p><strong>pg_hba.conf</strong> &ndash; Set these lines should be added, assuming your computer is 192.168.10.100:</p>
+<pre tabindex="0"><code>host    all     all     192.168.10.100/32  trust
+</code></pre><p>Then I do the actual import, assuming my &ldquo;server&rdquo; has an IP of 192.168.10.10:</p>
+<pre tabindex="0"><code>./osm2pgsql -H 192.168.10.10 -U username -l -m -d gis -W /home/location/to/osm/australia.osm
+</code></pre><p>Make sure generate_image works before installing mod_tile!</p>
+<p>Install mod_tile as per the modifications needed: <a href="http://www.kelvinism.com/howtos/notes-installing-mod">http://www.kelvinism.com/howtos/notes-installing-mod</a>_tile-mapnik/</p>
+<p>And the end result? <a href="http://tiles.kelvinism.com">http://tiles.kelvinism.com</a> (remember, on a seven year old Thinkpad!)</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Redirecting Fun with Lightty" href="http://localhost:1313/2008/04/redirecting-fun-with-lightty_330.html">Redirecting Fun with Lightty </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-23 20:30:00.002 +1000 AEST'>Published on April 23, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Two of my colleagues were having just a little bit <a href="http://www.kelvinism.com/blog/Australia/i-caught-fish/#c1926">too much fun</a> with my blog, so I decided to have some fun back. Over a period of 10 minutes, they managed to leave 10+ comments. Luckily I have full control over my server, and was able to quickly create my practical joke.</p>
+<pre tabindex="0"><code>$HTTP\[&#34;remoteip&#34;\] == &#34;123.45.678.910&#34; {
+url.redirect = (
+&#34;^/(.\*)&#34; =&gt; &#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&#34;,
+&#34;&#34; =&gt; &#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&#34;,
+&#34;/&#34; =&gt; &#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&#34;
+)
+}
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Notes on Installing mod_tile for Mapnik" href="http://localhost:1313/2008/04/notes-on-installing-modtile-for-mapnik_168.html">Notes on Installing mod_tile for Mapnik </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-22 20:30:00.002 +1000 AEST'>Published on April 22, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I have no idea if these notes on how to install mod_tile will be useful for anybody. The current readme states that you need to edit the source code, but never actually where. Well, this is where, at least until the code can either take switches or can auto-configure itself. This is quite brief, so if you need more details, shoot me an email or leave a comment. I have repeated this process on two Ubuntu 7.10 machines.</p>
+<ol>
+<li>Install mapnik as per normal &ndash; you may also need to do a&hellip;</li>
+</ol>
+<pre tabindex="0"><code>$ ./bootstrap
+$ ./autogen.sh
+$ ./configure
+$ make
+# make install
+</code></pre><ol start="2">
+<li>
+<p>Install libagg (apt-get install libagg-dev)</p>
+</li>
+<li>
+<p>Make sure the mapnik library files are /usr/local/lib (libmapnik.*)</p>
+</li>
+<li>
+<p>Make sure to copy/install fonts and input folders into /usr/local/lib/mapnik</p>
+</li>
+<li>
+<p>Edit Makefile, change line 27 to where your include files are located</p>
+</li>
+</ol>
+<pre tabindex="0"><code>RENDER\_CPPFLAGS += -I/usr/local/include/mapnik
+</code></pre><ol start="6">
+<li>Edit Makefile, change line 33 to where your mapnik libraries are (libmapnik.*)</li>
+</ol>
+<pre tabindex="0"><code>RENDER\_LDFLAGS += -lmapnik -L/usr/local/lib
+</code></pre><ol start="7">
+<li>Edit Line 40 of gen_tile.cpp to point to your osm.xml file (that you can verify works with generate_image.py)</li>
+</ol>
+<pre tabindex="0"><code>static const char \*mapfile = &#34;/home/kelvin/mapnik-osm/osm.xml&#34;;
+</code></pre><ol start="8">
+<li>Edit line 219 of gen_tile.cpp to point to the correct location of the datasource input.</li>
+</ol>
+<pre tabindex="0"><code>datasource\_cache::instance()-&gt;register\_datasources(&#34;/usr/local/lib/mapnik/input&#34;);
+</code></pre><ol start="9">
+<li>Edit line 221 of gen_tile.cpp to point to the correct location of your fonts directory.</li>
+</ol>
+<pre tabindex="0"><code>load\_fonts(&#34;/usr/local/lib/mapnik/fonts&#34;, 0);
+</code></pre><ol start="10">
+<li>The module will install in /usr/lib/apache2/modules, so mod_tile.conf should read:</li>
+</ol>
+<pre tabindex="0"><code>LoadModule tile\_module /usr/lib/apache2/modules/mod\_tile.so
+</code></pre><p><strong>Final note:</strong> I think it would be possible to just symlink the lib directory to lib64, although I would expect that could have some undesirable outcomes down the road. However, despite being pretty new code, how do I find mod_tile? Pretty good, actually. I expected more difficulties setting it up, but overall the procedure hasn&rsquo;t been too bad. I like the approach of creating a module vs. using several middle-layers. So once again, hats off to the OSM crew.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to ethX Issues with Xen and Ubuntu" href="http://localhost:1313/2008/04/ethx-issues-with-xen-and-ubuntu_2003.html">ethX Issues with Xen and Ubuntu </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-20 20:30:00.002 +1000 AEST'>Published on April 20, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>My new guest VMs under Xen seem to be having issues where upon each reboot, the network interface gets incremented by 1. For instance, it starts at eth0, then goes to eth1, then eth2, and eventually ethX. There are two issues to fix: 1) get the count back to 0, and 2) stop it from counting again.</p>
+<p>I was able to get them to decrease by looking in the /etc/udev/rules.d/70-persistent-net.rules file and removing all entries.</p>
+<p>Next, I was able to prevent this by simply inserting a MAC address to the interface in the configuration. For instance, one of my domU&rsquo;s has this entry:</p>
+<pre tabindex="0"><code>vif         = \[ &#39;mac=00:D0:59:83:DC:B5,bridge=xenbr0&#39; \]
+</code></pre><p>Lastly, I made sure (as I would with any server) to create an entry in the /etc/network/interfaces file.</p>
+<pre tabindex="0"><code>auto eth0
+iface eth0 inet static
+address 192.168.1.16
+gateway 192.168.1.1
+netmask 255.255.255.0
+</code></pre><p>Works like a charm.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Installing Mapnik on Ubuntu 7.10" href="http://localhost:1313/2008/04/installing-mapnik-on-ubuntu-710_6688.html">Installing Mapnik on Ubuntu 7.10 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-04-19 20:30:00.002 +1000 AEST'>Published on April 19, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I have managed to install mapnik 0.4, 0.5, 0.5.1 and various SVN releases in-between on Ubuntu. While this isn&rsquo;t in itself exciting, I think I manage to stumble at every installation. I typically forget to add the flags when building, so, to prevent myself from stumbling again, I&rsquo;m going to write them out here.</p>
+<p><strong>Build mapnik</strong></p>
+<pre tabindex="0"><code>$ python scons/scons.py PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p><strong>Then install it</strong></p>
+<pre tabindex="0"><code>$ sudo python scons/scons.py install PYTHON=/usr/bin/python \\ 
+
+PGSQL\_INCLUDES=/usr/include/postgresql \\
+
+PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+</code></pre><p>Then proceed as normal.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to And Yet Another Remodel" href="http://localhost:1313/2008/03/and-yet-another-remodel_7848.html">And Yet Another Remodel </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-03-19 21:30:00.002 +1100 AEDT'>Published on March 19, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I have finally decided to do another remodel of this site. I had a few goals before starting:</p>
+<ul>
+<li>
+<p>Use one image</p>
+</li>
+<li>
+<p>Use the YUI-CSS framework</p>
+</li>
+<li>
+<p>Use Django</p>
+</li>
+<li>
+<p>Make it easily extendable</p>
+</li>
+</ul>
+<p>So far, I think I&rsquo;ve accomplished these goals. The site is easier to read, easy to modify, and has a few new features. More entries to come!</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Database Woopsie" href="http://localhost:1313/2008/02/database-woopsie_863.html">Database Woopsie </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-02-13 21:30:00.002 +1100 AEDT'>Published on February 13, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I returned to my computer today to notice I had the following error:</p>
+<pre tabindex="0"><code>(145, &#34;Table &#39;./databasename/comments\_freecomment&#39; is marked as crashed and should be repaired&#34;)
+</code></pre><p>Well, crap. The solution is quite easy, however:</p>
+<pre tabindex="0"><code>mysqlcheck -uUsername -pPassword databasename comments\_freecomment
+</code></pre><p>Now you know what you already know, you can fix it:</p>
+<pre tabindex="0"><code>mysqlcheck -r -uUsername -pPassword databasename comments\_freecomment
+</code></pre><p>If that doesn&rsquo;t work, you can try a slightly different method. First, go to the location where your databases are stored on the disk (most likely something like /var/lib/mysql/databasename). Next, stop the database &ndash; and try to free up as much memory as possible. Then run:</p>
+<pre tabindex="0"><code>myisamchk -r comments\_freecomment
+</code></pre><p>If that doesn&rsquo;t work, try to force it:</p>
+<pre tabindex="0"><code>myisamchk -r comments\_freecomment -f
+</code></pre><p>Hope that helps!</p>
+
+  </div>
+
+  
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/page/10/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/page/12/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

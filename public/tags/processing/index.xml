@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Processing on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/processing/</link>
+    <description>Recent content in Processing on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jan 2010 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/processing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>French Word Collage</title>
+      <link>http://localhost:1313/2010/01/french-word-collage_8613.html</link>
+      <pubDate>Fri, 01 Jan 2010 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2010/01/french-word-collage_8613.html</guid>
+      <description>&lt;p&gt;For the last year YS and I have been studying French once a week (4.5hr on Saturday!) A few months ago I wrote some Python code to read the RSS feeds of the most popular French newspaper site, and then kept track of the count of each word. I repeated this every week for a few months.&lt;br&gt;
+In the end I had a database of the top ~3000 words used on the site. Today I decided I wanted to play with &lt;a href=&#34;https://www.blogger.com/www.processing.org&#34;&gt;Processing&lt;/a&gt;, so created this little word collage. It is 1680x1050, my monitor&amp;rsquo;s resolution. Two thumbs up for Processing!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

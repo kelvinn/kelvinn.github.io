@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ajax on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/ajax/</link>
+    <description>Recent content in Ajax on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Jun 2007 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simple Ajax with Django</title>
+      <link>http://localhost:1313/2007/06/simple-ajax-with-django_1754.html</link>
+      <pubDate>Fri, 01 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/simple-ajax-with-django_1754.html</guid>
+      <description>&lt;p&gt;So, the Django developers, in my opinion, are freaking smart. Instead of bundling Django with a particular library, they have added XML and JSON serialization; us humble users can choose whatever AJAX library we want. &lt;a href=&#34;http://www.prototypejs.org/&#34;&gt;Prototype 1.5.1&lt;/a&gt; has been pretty fun to work with, so I&amp;rsquo;ll kick off this demo with a really simple example.&lt;br&gt;
+How simple? The intended goal is to have the total number of &amp;lsquo;dirts&amp;rsquo; update without user intervention. &lt;em&gt;Laaaammmeee&lt;/em&gt;. If you are a visual type of person, &lt;a href=&#34;http://www.colddirt.com/huh/&#34;&gt;take a look&lt;/a&gt; on the Colddirt &lt;a href=&#34;http://www.colddirt.com/huh/&#34;&gt;huh&lt;/a&gt; page. That number automatically increases without user intervention. And this is how.&lt;br&gt;
+The process (some pseudocode) will go like this:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python &#43; Web Developement</title>
+      <link>http://localhost:1313/2006/01/python-web-developement_4306.html</link>
+      <pubDate>Wed, 25 Jan 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/01/python-web-developement_4306.html</guid>
+      <description>&lt;p&gt;A developer just showed me an interesting framework to produce python-backed sites VERY quickly. This is mainly for you Ian, it natively supports AJAX as well. Here&amp;rsquo;s the link:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.turbogears.org/&#34;&gt;http://www.turbogears.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I watched the demo, pretty interesting.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

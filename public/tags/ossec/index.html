@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Ossec | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/ossec/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/ossec/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/ossec/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to True Consolidation" href="http://localhost:1313/2009/04/true-consolidation_6503.html">True Consolidation </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-04-13 20:30:00.004 +1000 AEST'>Published on April 13, 2009</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Back in 2000 I managed to acquire several retired systems to bring to Uni: this included 4-5 cheap P120 machines. At the time, I thought this was great; I had an OpenBSD box as my gateway, a FreeBSD box, a few Linux boxes, and likely something else that doesn&rsquo;t even exist now. The school has a superfast connection, unlimited bandwidth, and I was curious. Although I didn&rsquo;t really have <em>time</em>, I still managed to install and have all these servers running from my room.</p>
+<p>I realized I was doing at home what I was being paid to do at work.</p>
+<p>Fast forward to 2007, and my mindset has changed. In 2007 I didn&rsquo;t want to have 6 servers running at once, I wanted to have one server running 12 servers at once! Thanks to Xen and VMware this was easily obtained. Initially using Xen, and then ESXi, I had the freedom to setup Domains, tear them down, and start over. Eventually, however, I realized I was doing at home what I was being paid to do at work. That doesn&rsquo;t sound like fun. I also realized that, despite picking a motherboard and processor that could shift into low power usage, I was still using more watts than I needed to. I was also spending way too much time mucking around with things - I want to focus on just one or two projects at a time, and I <em>really</em> want to start programming more.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/NUJH80rJPtKH0NsD_ZTLxA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgcfWyN502_EgPg12BajqcMJbJhr9iaYe1SWLaZDGUIFaOJmPC7QXngeZtr5qlESw3l2QB7DINsCjjskut4PYYKwkOYz6N68bc3TxILX1cjiReHA5FOiK5yM2B8UTddfoOY4Yk6GxuB738/s400/ebox3300.jpg"></a></p>
+<p>Last month I finally finished the ultimate &lsquo;consolidation&rsquo;: I moved everything to a tiny embedded Linux box. While back in the U.S. I contacted <a href="http://www.wdlsystems.com/">WDL Systems</a> and requested for shipping costs on a tiny embedded box. I bought the eBox-3300, with an embedded board from ICOP, and it was promptly shipped out. After returning home to Sydney I migrated all my apps from the various virtual servers to my little box running Debian 5.0: OSSEC, Samba, Lighttpd, Asterisk and flow-tools. The little box is just perfect for what I need - a tiny home server. I still get around 8MB/sec transferring files, which indicates the network is still the bottleneck, and VOIP calls with Asterisk are still clear.</p>
+<p>Overall, I&rsquo;ve been happy with this little box. My &lsquo;playing time&rsquo; with IT has gone down significantly, my energy usage has gone down, and I now have a server I can take with me wherever I go.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Charting the Hackers" href="http://localhost:1313/2008/12/charting-hackers_7870.html">Charting the Hackers </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-28 21:30:00.005 +1100 AEDT'>Published on December 28, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>A normal internet connection gets attacked, a lot. The majority of attacks are of the form &ldquo;hello, anybody there?&rdquo; &ndash; where most people just don&rsquo;t answer. But sometimes, just sometimes, the question gets an answer. Depending on the answer, the attacker will start to explore.</p>
+<p>A few weeks back I was a little bored and started fiddling. I wanted to play with my Cisco, but also wanted to play with OSSEC, but also has a GIS craving. In the end I decided to create a map of the people who ask, &ldquo;hello&rdquo;.</p>
+<p>Take a look at the <a href="http://www.kelvinism.com/attackmap/">map and explanation</a> if that sort of thing is your cup of tea.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Integrating OSSEC with Cisco IOS" href="http://localhost:1313/2008/11/integrating-ossec-with-cisco-ios_7061.html">Integrating OSSEC with Cisco IOS </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-11-15 21:30:00.002 +1100 AEDT'>Published on November 15, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I rank OSSEC as one of my favorite pieces of open source software, and finally decided to play around with it more in my own free time. (Yup, I do this sort of stuff for <em>fun</em>). My goal was quite simple: send syslog packets from my Cisco to my &ldquo;proxy&rdquo; server, running OSSEC. I found that, although OSSEC supports Cisco IOS logging, it didn&rsquo;t really work. In fact, I couldn&rsquo;t find any examples or articles of anybody actually getting it to work.</p>
+<p>I initially tried to get it to work &ldquo;correctly,&rdquo; and soon settled to &ldquo;just getting it to work.&rdquo; I implemented some rules in the local_rules.xml file, which worked, but I&rsquo;m pretty stubborn, and wanted to do it &ldquo;correctly.&rdquo; With a couple pots of tea, and the support of my girlfriend, I became much, much more familiar with OSSEC. The key (and a lot of credit) goes to Jeremy Melanson for <a href="http://www.ossec.net/ossec-list/2007-September/msg00124.html">hinting at some of the updates</a> to the decoder.xml file that need to take place.</p>
+<p>The first step is to read the OSSEC + Cisco IOS <a href="http://www.ossec.net/wiki/index.php/PIX_and_IOS_Syslog_Config_examples#Configuring_Cisco_IOS_router">wiki page</a>. Everything on that page is pretty straight forward. I then added three explicit drop rules at the end of my Cisco&rsquo;s ACL:</p>
+<pre tabindex="0"><code>...
+
+access-list 101 deny tcp any host 220.244.xxx.xxx log
+access-list 101 deny ip any host 220.244.xxx.xxx log
+access-list 101 deny udp any host 220.244.xxx.xxx log
+</code></pre><p>(220.244.xxx.xxx is my WAN IP, and I&rsquo;m sure you could figure out xxx.xxx pretty darn easily, but I&rsquo;ll x them out anyways).</p>
+<p>To reiterate, OSSEC needs to be told to listen for syslog traffic, which you should be set on the Cisco. If you haven&rsquo;t done this, go re-read the wiki above.</p>
+<pre tabindex="0"><code> syslog
+192.168.0.1 
+</code></pre><p>On or around line 1550 in /var/ossec/etc/decoder.xml I needed to update the regex that was used to detect the syslog stream.</p>
+<pre tabindex="0"><code>...
+
+ ^%\\w+-\\d-\\w+: |^: %\\w+-\\d-\\w+: 
+
+ ^%\\w+-\\d-\\w+: |^: %\\w+-\\d-\\w+: 
+
+ cisco-ios
+firewall
+^%SEC-6-IPACCESSLOGP: |^: %SEC-6-IPACCESSLOGP: 
+^list \\d+ (\\w+) (\\w+) 
+(\\S+)\\((\\d+)\\) -&gt; (\\S+)\\((\\d+)\\),
+action, protocol, srcip, srcport, dstip, dstport 
+
+...
+</code></pre><p>In the general OSSEC configuration file, re-order the list of rules. I had to do this because syslog_rules.xml includes a search for &ldquo;denied&rdquo;, and that triggers an alarm.</p>
+<pre tabindex="0"><code>...
+telnetd\_rules.xml
+cisco-ios\_rules.xml
+syslog\_rules.xml
+arpwatch\_rules.xml
+...
+</code></pre><p>Remember that these dropped events will go into /var/ossec/logs/firewall/firewall.log. Because this is my home connection, and I don&rsquo;t have any active_responses configured (yet!), I tightened the firewall_rules.xml file (lowering the frequency, raising the timeframe).</p>
+<p>And in the end, I get a pretty email when somebody tries to port scan me.</p>
+<h4 id="pretty-email">Pretty email</h4>
+<pre tabindex="0"><code>OSSEC HIDS Notification.
+2008 Nov 15 23:19:36
+
+Received From: proxy-&gt;xxx.xxx.xxx.xxx
+Rule: 4151 fired (level 10) -&gt; &#34;Multiple Firewall drop events from same source.&#34;
+Portion of the log(s):
+
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(244), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(253), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(243), 1 packet 
+: %SEC-6-IPACCESSLOGP: list 101 denied tcp 4.79.142.206(36183) -&gt; 220.244.xxx.xxx(254), 1 packet 
+
+
+
+--END OF NOTIFICATION
+</code></pre>
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

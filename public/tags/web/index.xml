@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Web on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/web/</link>
+    <description>Recent content in Web on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Jul 2010 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using HTML in a Django form label</title>
+      <link>http://localhost:1313/2010/07/using-html-in-django-form-label_2240.html</link>
+      <pubDate>Sun, 11 Jul 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/07/using-html-in-django-form-label_2240.html</guid>
+      <description>&lt;p&gt;I recently had the need to add some HTML to the label for a form field using Django. The solution is pretty easy, except I didn&amp;rsquo;t see it written explicitly anywhere, and I missed the memo of the function I should be using.&lt;br&gt;
+My form first just had the HTML in the form label as so:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+from django import forms
+
+class AccountForm(forms.Form):
+    name = forms.CharField(widget=forms.TextInput(), max\_length=15, label=&amp;#39;Your Name ([why](http://www.blogger.com/questions/whyname/)?&amp;#39;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;However, when I displayed it, the form was autoescaped.&lt;br&gt;
+&lt;a href=&#34;http://picasaweb.google.com/lh/photo/PyGNXDrpXtrgBNnoOLlfLA?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvsLvb6I4SDBB3NKptLZzGLGnwUZK0KmYlx7X9UC2_fzyQCNTkeFiKz5-4_3BmKArYZhRwU8TNEIhrGAMsb039N47hxcY8BIMEJjfK1UafYCRvAPzY18c8ceq3QFOOsp_oGO6SavZ1LmGR/s800/accountsform.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Redirecting Fun with Lightty</title>
+      <link>http://localhost:1313/2008/04/redirecting-fun-with-lightty_330.html</link>
+      <pubDate>Wed, 23 Apr 2008 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2008/04/redirecting-fun-with-lightty_330.html</guid>
+      <description>&lt;p&gt;Two of my colleagues were having just a little bit &lt;a href=&#34;http://www.kelvinism.com/blog/Australia/i-caught-fish/#c1926&#34;&gt;too much fun&lt;/a&gt; with my blog, so I decided to have some fun back. Over a period of 10 minutes, they managed to leave 10+ comments. Luckily I have full control over my server, and was able to quickly create my practical joke.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$HTTP\[&amp;#34;remoteip&amp;#34;\] == &amp;#34;123.45.678.910&amp;#34; {
+url.redirect = (
+&amp;#34;^/(.\*)&amp;#34; =&amp;gt; &amp;#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&amp;#34;,
+&amp;#34;&amp;#34; =&amp;gt; &amp;#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&amp;#34;,
+&amp;#34;/&amp;#34; =&amp;gt; &amp;#34;http://www.urbandictionary.com/define.php?term=annoying+fuck&amp;#34;
+)
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Colddirt Information</title>
+      <link>http://localhost:1313/2007/05/colddirt-information_1890.html</link>
+      <pubDate>Tue, 29 May 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/05/colddirt-information_1890.html</guid>
+      <description>&lt;p&gt;&lt;em&gt;Note&lt;/em&gt;: Colddirt&amp;rsquo;s source code is run from Django SVN, check out on May 10th-ish. If you are using a newer branch, some things have changed. i.e. clean_data has been renamed cleaned_data. Remember to check the &lt;a href=&#34;http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges&#34;&gt;BackwardsIncompatible&lt;/a&gt; page in the wiki.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Part 1&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/simple-ajax-with-django_1754.html&#34;&gt;Simple AJAX with Django&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Part 2&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/django-newforms-usage-in-colddirt_1103.html&#34;&gt;Django Newforms Usage&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Part 3&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/adding-search-to-django_6300.html&#34;&gt;Search with Django&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Part 4&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/django-syndication-with-colddirt_5107.html&#34;&gt;Django&amp;rsquo;s Syndication Framework (simple)&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Part 5&lt;/strong&gt;: &lt;a href=&#34;http://www.kelvinism.com/2007/06/django-syndication-with-colddirt-ii_3665.html&#34;&gt;Django&amp;rsquo;s Syndication Framework (little more complex)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Feel free to see the &lt;a href=&#34;https://github.com/kelvinn/colddirt&#34;&gt;source code&lt;/a&gt; from Github.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Risk in Risk Mitigation</title>
+      <link>http://localhost:1313/2007/03/the-risk-in-risk-mitigation_5540.html</link>
+      <pubDate>Thu, 15 Mar 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/03/the-risk-in-risk-mitigation_5540.html</guid>
+      <description>&lt;p&gt;&lt;em&gt;Back in the day&lt;/em&gt; the barrier to entry for the Internet was quite high. The technology used required a steep learning curve, the equipment extremely expensive, and sometimes even hard to acquire. Fast forward to 2007 and things have certainly changed. If you know any tech people you can likely get free hosting for a small website, and even more demanding websites can be hosted &lt;a href=&#34;http://www.vpslink.com/vps-hosting/&#34;&gt;for not much&lt;/a&gt;. The cost of dedicated servers has dropped even more. And the final kicker: web services. I&amp;rsquo;ve started to think of some web services not as a service, but more like outsourcing requirements.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Version 3.0 Part Two</title>
+      <link>http://localhost:1313/2007/02/version-30-part-two_8083.html</link>
+      <pubDate>Mon, 05 Feb 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/02/version-30-part-two_8083.html</guid>
+      <description>&lt;p&gt;Well, I&amp;rsquo;m basically all done upgrading to Version 3.0, I deserve a cake or something. Here&amp;rsquo;s the 411:&lt;/p&gt;
+&lt;p&gt;For the past few years I have been using Mambo, then Joomla, to manage the content on my site. It worked quite well, and was in PHP, so I could add or remove any code. Indeed, I&amp;rsquo;ve written a decent amount of PHP apps. In early 2004 I wrote a PHP platform to track adventures people had gone on, and networked people seeking to go on adventures with each other. I never marketed it, and mainly created it to learn PHP, but it was a CMS (Content Management System), and a little more. Late in 2004 I wrote another blog-esque platform for my second trip to Europe. It was pretty cool, I&amp;rsquo;ll admit: Casey and I each had a blog, and people could leave us &amp;ldquo;dares&amp;rdquo; and/or messages &amp;ndash; and we could easily update our status. Overall, it worked great. You can also see the &lt;a href=&#34;http://localhost:1313/projects/&#34;&gt;projects&lt;/a&gt; section of my site for some of the other things I&amp;rsquo;ve done in PHP.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Version 3.0</title>
+      <link>http://localhost:1313/2007/01/version-30_1604.html</link>
+      <pubDate>Fri, 26 Jan 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/01/version-30_1604.html</guid>
+      <description>&lt;p&gt;To all my loyal (but most likely few, and mainly with the same last name as me):&lt;/p&gt;
+&lt;p&gt;I think I&amp;rsquo;m going to redo the structure of my site, yes, it is about time.  I&amp;rsquo;ve been using a CMS (Content Management System) to categorize everything, but it is time to ditch that and write something.  Time to stop being lazy.  Time to stop procrastinating.  Time to learn something new.&lt;/p&gt;
+&lt;p&gt;Let me make this clear: version 3.0 surely won&amp;rsquo;t be based off PHP.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Firefox &#43; BugMeNot</title>
+      <link>http://localhost:1313/2006/02/firefox-bugmenot_9551.html</link>
+      <pubDate>Thu, 09 Feb 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/02/firefox-bugmenot_9551.html</guid>
+      <description>&lt;p&gt;Here&amp;rsquo;s a tip for Firefox. An extension called BugMeNot enables you to right click on &amp;ldquo;general&amp;rdquo; forms and say &amp;ldquo;Login with BugMeNot.&amp;rdquo; Firefox will call the BugMeNot extension which looks up in an external database login information. For instance, &lt;a href=&#34;https://www.nytimes.com&#34;&gt;www.nytimes.com&lt;/a&gt; requires a login, which is a great place to test it out.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://extensionroom.mozdev.org/more-info/bugmenot&#34;&gt;http://extensionroom.mozdev.org/more-info/bugmenot&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python &#43; Web Developement</title>
+      <link>http://localhost:1313/2006/01/python-web-developement_4306.html</link>
+      <pubDate>Wed, 25 Jan 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/01/python-web-developement_4306.html</guid>
+      <description>&lt;p&gt;A developer just showed me an interesting framework to produce python-backed sites VERY quickly. This is mainly for you Ian, it natively supports AJAX as well. Here&amp;rsquo;s the link:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.turbogears.org/&#34;&gt;http://www.turbogears.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I watched the demo, pretty interesting.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

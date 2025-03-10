@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Syndication on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/syndication/</link>
+    <description>Recent content in Syndication on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Jun 2007 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/syndication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django Syndication with Colddirt</title>
+      <link>http://localhost:1313/2007/06/django-syndication-with-colddirt_5107.html</link>
+      <pubDate>Sun, 03 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/django-syndication-with-colddirt_5107.html</guid>
+      <description>&lt;p&gt;Creating feeds in Django is freaking simple. I&amp;rsquo;ll start with an example of just updating a feed with the newest objects (for instace, newest blog posts). Similar to the forms.py way of handling our different forms, I&amp;rsquo;ve created a feeds.py to handle the feeds.&lt;/p&gt;
+&lt;h4 id=&#34;feedspy&#34;&gt;feeds.py&lt;/h4&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+from django.contrib.syndication.feeds import Feed
+from colddirt.dirty.models import Dirt
+
+class LatestDirts(Feed):
+    title = &amp;#34;Cold Dirt&amp;#34;
+    link = &amp;#34;/&amp;#34;
+    description = &amp;#34;When you have dirt, you&amp;#39;ve got dirt.  Right...&amp;#34;
+    copyright = &amp;#39;All Rights Unreserved&amp;#39;
+    
+    def items(self):
+        return Dirt.objects.all()\[:50\]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;What this will do is query our Dirt DB and return an obj. The fields here are pretty well documented in the Django docs, besides being pretty obvious.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

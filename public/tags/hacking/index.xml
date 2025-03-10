@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hacking on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/hacking/</link>
+    <description>Recent content in Hacking on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Dec 2008 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hacking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Charting the Hackers</title>
+      <link>http://localhost:1313/2008/12/charting-hackers_7870.html</link>
+      <pubDate>Sun, 28 Dec 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/12/charting-hackers_7870.html</guid>
+      <description>&lt;p&gt;A normal internet connection gets attacked, a lot. The majority of attacks are of the form &amp;ldquo;hello, anybody there?&amp;rdquo; &amp;ndash; where most people just don&amp;rsquo;t answer. But sometimes, just sometimes, the question gets an answer. Depending on the answer, the attacker will start to explore.&lt;/p&gt;
+&lt;p&gt;A few weeks back I was a little bored and started fiddling. I wanted to play with my Cisco, but also wanted to play with OSSEC, but also has a GIS craving. In the end I decided to create a map of the people who ask, &amp;ldquo;hello&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integrating OSSEC with Cisco IOS</title>
+      <link>http://localhost:1313/2008/11/integrating-ossec-with-cisco-ios_7061.html</link>
+      <pubDate>Sat, 15 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/integrating-ossec-with-cisco-ios_7061.html</guid>
+      <description>&lt;p&gt;I rank OSSEC as one of my favorite pieces of open source software, and finally decided to play around with it more in my own free time. (Yup, I do this sort of stuff for &lt;em&gt;fun&lt;/em&gt;). My goal was quite simple: send syslog packets from my Cisco to my &amp;ldquo;proxy&amp;rdquo; server, running OSSEC. I found that, although OSSEC supports Cisco IOS logging, it didn&amp;rsquo;t really work. In fact, I couldn&amp;rsquo;t find any examples or articles of anybody actually getting it to work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lightweight Detection</title>
+      <link>http://localhost:1313/2007/01/lightweight-detection_8013.html</link>
+      <pubDate>Tue, 23 Jan 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/01/lightweight-detection_8013.html</guid>
+      <description>&lt;p&gt;I love my Snort, I really do.  But sometimes, I just don&amp;rsquo;t need all the extra overhead &amp;ndash; sometimes the resources on a server are somewhat, limited.  Looking for a solution I stumbled upon &lt;a href=&#34;http://www.cipherdyne.com/psad/&#34;&gt;PSAD&lt;/a&gt; , a way to detect port scans.  Since port scans are often one of the first tactics used to find vulnerabilities on a server, it is a pretty good idea to detect them.   Depending on the attack, I receive a nice little email telling me what is going on.  To test it out I first fired up nmap, and received a few emails.  Next I fired up nessus with updated plugins &amp;ndash; you can be the judge.  I now have 50 emails from myself telling me somebody is doing something naughty:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Three Little Commands and a Pen-Test</title>
+      <link>http://localhost:1313/2006/10/three-little-commands-and-pen-test_9.html</link>
+      <pubDate>Sun, 15 Oct 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/10/three-little-commands-and-pen-test_9.html</guid>
+      <description>&lt;p&gt;Yea, you read that right. Three commands and you can run a pen-test on your website/webserver. So, how?&lt;/p&gt;
+&lt;p&gt;kelvin@home:&lt;del&gt;$ sudo apt-get install nikto&lt;br&gt;
+kelvin@home:&lt;/del&gt;$ sudo nikto -update&lt;br&gt;
+kelvin@home:~$ nikto -h &lt;a href=&#34;https://www.thoughtdeposit.net&#34;&gt;www.thoughtdeposit.net&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, Nikto is a web server scanner, apparently for over 3200 dangerous files/vulnerabilities. Additional features can be seen at the &lt;a href=&#34;http://www.cirt.net/code/nikto.shtml&#34;&gt;Nikto&lt;/a&gt; website, yet you will certainly want to add this old gem to your webserver toolbelt as soon as possible.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

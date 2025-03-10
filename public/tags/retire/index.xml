@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Retire on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/retire/</link>
+    <description>Recent content in Retire on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 May 2010 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/retire/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Retiring Another Site</title>
+      <link>http://localhost:1313/2010/05/retiring-another-site_942.html</link>
+      <pubDate>Sun, 16 May 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/05/retiring-another-site_942.html</guid>
+      <description>&lt;p&gt;After much consideration, I&amp;rsquo;ve decided to retire yet another website: Colddirt. This site was created as an example of how to use the different parts of Django, mostly in just one afternoon. I&amp;rsquo;ve decided it is time to just take a few screenshots and retire the site - the domain is expiring, and honestly, I don&amp;rsquo;t want to spend $10 to renew the domain. So, here are the screenshots.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/ePVyNddWOBJSJWqEIhYalw?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi09jrZynm_kNvbfNESRQ9Dp8epPrHZ2iIrLNkGcoV2XpenNw51zVDWyq9rQmtdnYtabIsTnGaN0G9cWio2VhwKEmXkAdDd0ec0E6yr4uLeokPiZrVVMhoy3b9Ud34QWHHpPAueSWNnn_So/s400/colddirt_2.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Retiring Old Websites</title>
+      <link>http://localhost:1313/2010/05/retiring-old-websites_2251.html</link>
+      <pubDate>Sun, 16 May 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/05/retiring-old-websites_2251.html</guid>
+      <description>&lt;p&gt;Sometimes all good things &lt;a href=&#34;http://www.kelvinism.com/tech-blog/rip-old-sites/&#34;&gt;come to an end&lt;/a&gt;. There aren&amp;rsquo;t too many links going into either of these sites, but I&amp;rsquo;d like to redirect all of them to a page on my blog saying the website doesn&amp;rsquo;t exist anymore. I&amp;rsquo;ve already created simple screendumps for nostalgic purposes with the Firefox plugin Screengrab!, so the remaining simple server-side steps are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Edit the DNS records from the live server to the server with the notice page is on.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Create a new vhost on the server the notice exists on, add old websites as ServerAlias.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Add a redirect in the vhost to the notice about the retired sites.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Reload apache config.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The below vhost entry will redirect any link to the retired sites to the notice page.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

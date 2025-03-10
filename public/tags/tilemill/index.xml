@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tilemill on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/tilemill/</link>
+    <description>Recent content in Tilemill on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jul 2013 02:00:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/tilemill/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mapping Mesh Blocks with TileMill</title>
+      <link>http://localhost:1313/2013/07/mapping-mesh-blocks-with-tilemill.html</link>
+      <pubDate>Sat, 20 Jul 2013 02:00:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/07/mapping-mesh-blocks-with-tilemill.html</guid>
+      <description>&lt;p&gt;This quick tutorial will detail how to prepair the ABS Mesh Blocks to be used with MapBox&amp;rsquo;s TileMill. Beyond scope is how to install postgresql, postgis and TileMill. There is a lot of documentation how to do these tasks.&lt;/p&gt;
+&lt;p&gt;First, we create a database to import the &lt;a href=&#34;http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument&#34;&gt;shapefile&lt;/a&gt; and &lt;a href=&#34;http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument&#34;&gt;population data&lt;/a&gt; into:&lt;/p&gt;
+&lt;p&gt;Using &amp;lsquo;psql&amp;rsquo; or &amp;lsquo;SQL Query&amp;rsquo;, create a new database:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CREATE DATABASE transport WITH TEMPLATE postgis20 OWNER postgres;
+# Query returned successfully with no result in 5527 ms.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It is necessary to first import the Mesh Block spatial file using something like PostGIS Loader.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mapping Urban Density in Sydney</title>
+      <link>http://localhost:1313/2013/07/mapping-urban-density-in-sydney.html</link>
+      <pubDate>Sat, 20 Jul 2013 00:34:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/07/mapping-urban-density-in-sydney.html</guid>
+      <description>&lt;p&gt;Five years ago I started exploring different mapping technologies by detailing instructions on &lt;a href=&#34;http://www.kelvinism.com/2008/04/setting-up-mapnik-server-on-ubuntu_118.html&#34;&gt;installing Mapnik&lt;/a&gt; and &lt;a href=&#34;http://www.kelvinism.com/2008/11/revised-modtile-install-howto_1369.html&#34;&gt;mod_tile&lt;/a&gt;. Times have changed significantly in the last five years, and thanks a lot to the products offered by &lt;a href=&#34;http://www.mapbox.com/&#34;&gt;MapBox&lt;/a&gt;. After playing with TileMill, MBTiles, Leaflet and UTFGrids, it is great how many annoyances have been fixed by MapBox. I find it enjoyable making maps now, as I no longer need to worry about patching code just to get it to run, or mucking about with oddities in web browser.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Virtualization on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/virtualization/</link>
+    <description>Recent content in Virtualization on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Apr 2008 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ethX Issues with Xen and Ubuntu</title>
+      <link>http://localhost:1313/2008/04/ethx-issues-with-xen-and-ubuntu_2003.html</link>
+      <pubDate>Sun, 20 Apr 2008 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2008/04/ethx-issues-with-xen-and-ubuntu_2003.html</guid>
+      <description>&lt;p&gt;My new guest VMs under Xen seem to be having issues where upon each reboot, the network interface gets incremented by 1. For instance, it starts at eth0, then goes to eth1, then eth2, and eventually ethX. There are two issues to fix: 1) get the count back to 0, and 2) stop it from counting again.&lt;/p&gt;
+&lt;p&gt;I was able to get them to decrease by looking in the /etc/udev/rules.d/70-persistent-net.rules file and removing all entries.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Last Xenful Comments</title>
+      <link>http://localhost:1313/2007/06/last-xenful-comments_2649.html</link>
+      <pubDate>Fri, 29 Jun 2007 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2007/06/last-xenful-comments_2649.html</guid>
+      <description>&lt;p&gt;One of the biggest things I regret is not utilizing Xen more. I&amp;rsquo;ve finally been admitted to Amazon&amp;rsquo;s EC2 Limited Beta, just two days before I leave, so not enough time to actually do anything fun. However, I think Xen is an ideal infrastructure aid for SMEs in particular. The cost of technology is continuing to decrease, which means bigger servers cost less. This is great for the small/branch office. Let me explain.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Server Virtualization</title>
+      <link>http://localhost:1313/2006/01/server-virtualization_5778.html</link>
+      <pubDate>Tue, 24 Jan 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/01/server-virtualization_5778.html</guid>
+      <description>&lt;p&gt;We don&amp;rsquo;t want to have a billion servers each doing their own task &amp;ndash; so what can we use as a solution? Server virtualization (or semi-virtualization or para-virtualization). This involves cutting down a server into mini servers that each have full customization. Our VPS at hostmysite is like this. So why would you want to do this? A few reasons actually.&lt;/p&gt;
+&lt;p&gt;-Localize exploits. Let&amp;rsquo;s say DNS gets exploited &amp;ndash; the access gained would only be for DNS, and not for mail and web and everything else.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Openfiler on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/openfiler/</link>
+    <description>Recent content in Openfiler on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Dec 2008 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/openfiler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenFiler Permission Issue</title>
+      <link>http://localhost:1313/2008/12/openfiler-permission-issue_2907.html</link>
+      <pubDate>Sun, 07 Dec 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/12/openfiler-permission-issue_2907.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve had issues before with OpenFiler where doesn&amp;rsquo;t update the permissions, although they appear correct in the UI. To rectify that, I stumbled upon a one liner that fixed it. Let&amp;rsquo;s say you have a group called &amp;ldquo;Trusted&amp;rdquo; that you want to have full access to your music folder. Here&amp;rsquo;s the one-liner:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;\[root@files data\]# pwd
+/mnt/openfiler/data
+root@files data\]# setfacl --recursive -m u:nobody:rwx,g:Trusted:rwx music
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Backup OpenFiler to S3</title>
+      <link>http://localhost:1313/2008/11/backup-openfiler-to-s3_9140.html</link>
+      <pubDate>Sun, 02 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/backup-openfiler-to-s3_9140.html</guid>
+      <description>&lt;p&gt;Backing up your Openfiler box to S3&lt;/p&gt;
+&lt;p&gt;While I don&amp;rsquo;t think most pople would expect to backup their entire NAS/SAN to Amazon&amp;rsquo;s S3, there might be a few very crucial things you need to backup. For instance, my girlfriend&amp;rsquo;s PhD papers and data.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve seen an implementation using Ruby and s3sync &amp;ndash; something that I do on my server &amp;ndash; but I&amp;rsquo;m trying to migrate everything to Python. Although there are a lot of great tools out there for S3, many of them Python-based, I wanted to do one thing and do it well: have one complete full backup available, and using as little bandwidth as possible. In these regards Duplicity would work well, except I wanted the ability to browse the S3 store using any other tool.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

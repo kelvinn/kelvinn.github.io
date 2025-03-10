@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ubuntu on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/ubuntu/</link>
+    <description>Recent content in Ubuntu on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Sep 2010 20:30:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enable ICMP through UFW</title>
+      <link>http://localhost:1313/2010/09/enable-icmp-through-ufw_461.html</link>
+      <pubDate>Tue, 21 Sep 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/09/enable-icmp-through-ufw_461.html</guid>
+      <description>&lt;p&gt;I like using Ubuntu&amp;rsquo;s UFW command, but today I needed to allow outgoing ICMP. I received results as so:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  
+$ ping 4.2.2.2  
+PING 4.2.2.2 (4.2.2.2) 56(84) bytes of data.  
+ping: sendmsg: Operation not permitted  
+ping: sendmsg: Operation not permitted  
+ping: sendmsg: Operation not permitted  
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;To allow outbound icmp I edited &amp;lsquo;before.rules&amp;rsquo; and added the following lines.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ sudo vi /etc/ufw/before.rules
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;  
+\# allow outbound icmp  
+\-A ufw-before-output -p icmp -m state --state NEW,ESTABLISHED,RELATED -j ACCEPT  
+\-A ufw-before-output -p icmp -m state --state ESTABLISHED,RELATED -j ACCEPT  
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 10.04, Django and GAE - Part 1</title>
+      <link>http://localhost:1313/2010/06/ubuntu-1004-django-and-gae-part-1_8750.html</link>
+      <pubDate>Sat, 12 Jun 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/06/ubuntu-1004-django-and-gae-part-1_8750.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve started to get into Google&amp;rsquo;s App Engine again, and have started developing a simple product that I had a use for. The initial first draft was a quick 200 lines in webapp, and it worked great. However, I&amp;rsquo;m starting to find certain things quite cumbersome. I&amp;rsquo;m a huge fan of Django, and but also about keeping things as simple as possible, which is why I picked webapp to begin with.&lt;br&gt;
+I&amp;rsquo;m now considering making a swap to Django, but there are some development issues; namely, I&amp;rsquo;m using Ubuntu 10.04, Python 2.6, and Django 1.2. This setup presents several setbacks, as GAE has the requirement of Django 1.1 and Python 2.5. There are two solutions that I found: a) use virtualenv, which &lt;a href=&#34;http://www.blogger.com/blogger.g?blogID=3439832858234004835#&#34;&gt;I&amp;rsquo;ve detailed&lt;/a&gt;, or b) chroot. This document will hopefully show how to configure a chroot environment of Ubuntu 9.10 and prepare it for Django on GAE. Using a jailed environment should allow you to edit your code with your normal IDE and VCS, but use Django 1.1 and Python 2.5.&lt;br&gt;
+First, I installed schroot and debootstrap.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 10.04, Django and GAE - Part 2</title>
+      <link>http://localhost:1313/2010/06/ubuntu-1004-django-and-gae-part-2_6130.html</link>
+      <pubDate>Sat, 12 Jun 2010 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2010/06/ubuntu-1004-django-and-gae-part-2_6130.html</guid>
+      <description>&lt;p&gt;All my Django sites are running 1.2, which poses a conflict with writing apps for Google&amp;rsquo;s App Engine, as use_library currently only supports &amp;lt; Django 1.1. There are two solutions that I found: a) use virtualenv, or b) chroot, which &lt;a href=&#34;http://www.kelvinism.com/howtos/ubuntu-1004-django-and-gae-part-1/&#34;&gt;I&amp;rsquo;ve already detailed&lt;/a&gt;. This document will hopefully show you how to create a virtual environment to use a secondary django version, especially for GAE. Of the two options, I think this one is a bit quicker, but there will likely be tradeoffs that a chroot environment can deal with better, e.g. python imaging (I don&amp;rsquo;t use it for GAE).&lt;br&gt;
+First, install PIP and virtualenv:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lenny on Ebox 3310A</title>
+      <link>http://localhost:1313/2009/11/lenny-on-ebox-3310a_5547.html</link>
+      <pubDate>Tue, 03 Nov 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/11/lenny-on-ebox-3310a_5547.html</guid>
+      <description>&lt;p&gt;As a preface, I take absolutely no credit for the below instructions. Stefan L kindly sent these through these instructions on installing Debian on the 3310A. I need to send a special thanks to Stefan, as I receive a lot of emails about the 3310 - but I don&amp;rsquo;t have one, so I can&amp;rsquo;t really do much:(&lt;br&gt;
+The only edit I&amp;rsquo;ve done is change out the links to my files on S3. If you find these helpful, or want to suggest an alteration, please leave a comment.&lt;br&gt;
+Download these files first:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>New Atheros Module and Ubuntu</title>
+      <link>http://localhost:1313/2009/09/new-atheros-module-and-ubuntu_1580.html</link>
+      <pubDate>Tue, 22 Sep 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/09/new-atheros-module-and-ubuntu_1580.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been using Atheros for quite some time, and I&amp;rsquo;ve always liked the madwifi drivers. They allowed really easy switching into monitor mode, and decent levels of packet injection. However, since I&amp;rsquo;m mostly in an office now, instead of writing web apps in cafes and trying to score free internet, I don&amp;rsquo;t really need anything fancy. My gentoo stage 1 (3?) days are over. I use Ubuntu, because I&amp;rsquo;m lazy, and it mostly works.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ISO Code Error</title>
+      <link>http://localhost:1313/2009/06/iso-code-error_1265.html</link>
+      <pubDate>Wed, 17 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/iso-code-error_1265.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve received this error a few times when working with pytz:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Error reading file &amp;#39;/usr/share/xml/iso-codes/iso\_3166.xml&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In short, install the &amp;lsquo;iso-codes&amp;rsquo; package in Ubuntu/Debian. I&amp;rsquo;m sure this is covered in the manual that I didn&amp;rsquo;t read, but I&amp;rsquo;m sure others didn&amp;rsquo;t read it too.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;apt-get install iso-codes
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    <item>
+      <title>Fixing locale errors in Ubuntu 8.04</title>
+      <link>http://localhost:1313/2009/05/fixing-locale-errors-in-ubuntu-804_7736.html</link>
+      <pubDate>Sun, 03 May 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/05/fixing-locale-errors-in-ubuntu-804_7736.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve hit this problem a few times, and figured I&amp;rsquo;d leave a note for myself how to fix it. Ubuntu 8.04 seems to hiccup sometimes (on a VPS) for generating the correct locales. In particular, I get this error, a lot:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+LANGUAGE = (unset),
+LC\_ALL = (unset),
+LANG = &amp;#34;en\_US.UTF-8&amp;#34;
+are supported and installed on your system.
+perl: warning: Falling back to the standard locale (&amp;#34;C&amp;#34;).
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Normally I just do &amp;lsquo;dpkg-reconfigure locales&amp;rsquo;, but with 8.04, this doesn&amp;rsquo;t seem to do squat. The solution is to edit the &lt;strong&gt;/var/lib/locales/supported.d/local&lt;/strong&gt; file, and insert the correct locales (it will normally not exist, so create it):&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fixing mysql warning message</title>
+      <link>http://localhost:1313/2009/05/fixing-mysql-warning-message_4782.html</link>
+      <pubDate>Sun, 03 May 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/05/fixing-mysql-warning-message_4782.html</guid>
+      <description>&lt;p&gt;After restoring databases from one server to another I sometimes get this error on Ubuntu or Debian:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;error: &amp;#39;Access denied for user &amp;#39;debian-sys-maint&amp;#39;@&amp;#39;localhost&amp;#39; (using password: YES)&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This makes a lot of sense, and the solution is pretty simple. If you look in:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;cat /etc/mysql/debian.cnf
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You&amp;rsquo;ll see the defaults for your system. Copy the password listed there, and open a connection to MySQL as root (or some other user). Next, enter this (lets say your password specified in debian.cnf was &amp;lsquo;abracadabra&amp;rsquo;:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Configure Timevault to Remote Server</title>
+      <link>http://localhost:1313/2008/11/configure-timevault-to-remote-server_2418.html</link>
+      <pubDate>Sun, 02 Nov 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/11/configure-timevault-to-remote-server_2418.html</guid>
+      <description>&lt;p&gt;Using TimeVault with a shared drive as a backend is actually quite easy, but it does require a few special things setup. Note: this is gonna be a brief summary.&lt;/p&gt;
+&lt;p&gt;Install samba-tools, smbfs&amp;hellip;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install samba-tools smbfs
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;A lot more other stuff may install as well.&lt;/p&gt;
+&lt;p&gt;Create a script that mounts your samba share. You could also do this in fstab, but I tend to suspend my laptop when I come home, and I like clicking buttons.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Ubuntu 8.04 64-Bit and VMware Server 2</title>
+      <link>http://localhost:1313/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html</link>
+      <pubDate>Fri, 01 Aug 2008 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html</guid>
+      <description>&lt;p&gt;I now have successful installation of VMware Server 2 (Beta RC1) on top of Ubuntu 8.04 64-bit. I have been using various virtualization technologies for years, and VMware is usually the easiest to install and configure. So far, VMware Server 2 RC1, has proven to be the exception to the rule.&lt;/p&gt;
+&lt;p&gt;That said, I am very excited by the direction VMware is taking &amp;ndash; this new server version looks to have great potential.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Simple Chrooted SSH | Kelvin Nicholson</title>
+<meta name="keywords" content="howtos">
+<meta name="description" content="You might be asking: why would you want to chroot ssh? Why use ssh anyways? Here are the quick answers:
+
+
+FTP usually sucks. Unless sent over SSL, all information is sent cleartext.
+
+
+SSH usually rules. SSH sends all data over an encrypted channel &ndash; the main drawback is: you can often browse around the system, and if permissions aren&rsquo;t set right, read things you shouldn&rsquo;t be able to.
+
+
+Chroot&rsquo;d SSH rocks. The solution to both the above problems">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2007/03/simple-chrooted-ssh_6907.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2007/03/simple-chrooted-ssh_6907.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to Simple Chrooted SSH" href="http://localhost:1313/2007/03/simple-chrooted-ssh_6907.html">Simple Chrooted SSH </a>
+    </h2>
+
+    <div class="post-meta"><span title='2007-03-29 20:30:00.002 +1000 AEST'>Published on March 29, 2007</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>You might be asking: why would you want to chroot ssh? Why use ssh anyways? Here are the quick answers:</p>
+<ul>
+<li>
+<p><strong>FTP usually sucks</strong>. Unless sent over SSL, all information is sent <em>cleartext</em>.</p>
+</li>
+<li>
+<p><strong>SSH usually rules</strong>. SSH sends all data over an encrypted channel &ndash; the main drawback is: you can often browse around the system, and if permissions aren&rsquo;t set right, read things you shouldn&rsquo;t be able to.</p>
+</li>
+<li>
+<p><strong>Chroot&rsquo;d SSH rocks</strong>. The solution to both the above problems</p>
+</li>
+</ul>
+<p>.</p>
+<p>So, let me tell a quick story.<br>
+When I started uni in 2001 I was a nerd. Still a nerd, I guess. I was cramped in my apartment on campus with like 5 boxes, most of them crappy p100s running Linux or OpenBSD. Life was good.<br>
+I started a CS degree (shifted into Business with a focus on IT), and we were told to use the school&rsquo;s main servers to compile our programs. The other interesting thing is that <em>all</em> user accounts were visible when logged in via ssh &ndash; but hey, that is just the nature of Linux. I knew this, but asked the head I.T. person &ldquo;why don&rsquo;t you jail the connections?&rdquo; He responded quickly telling me to go away.<br>
+Well, shortly after making the comment (although solutions existed at the time being), pam-chroot was released. This is right about the time students figured they could spam everybody in the school, some 25,000 emails, quickly and easily &ndash; &lsquo;cause all the accounts were displayed. Sweet &ndash; now we can chroot individual ssh connections.<br>
+This quick demo will be on Debian, we&rsquo;ll create a pretend user named &ldquo;karl.&rdquo; (I&rsquo;ll assume you&rsquo;ve already added the user before beginning these steps). Also, the jails will be in /var/chroot/{username}</p>
+<h4 id="first-install-libpam-chroot-and-makejail">First: Install libpam-chroot and makejail<a hidden class="anchor" aria-hidden="true" href="#first-install-libpam-chroot-and-makejail">#</a></h4>
+<p>session required pam_chroot.so</p>
+<pre tabindex="0"><code>kelvin@server ~$ sudo apt-get install libpam-chroot makejail
+</code></pre><h4 id="second-makejail-config-file">Second: makejail config file<a hidden class="anchor" aria-hidden="true" href="#second-makejail-config-file">#</a></h4>
+<p>Put the following in /etc/makejail/create-user.py:</p>
+<pre tabindex="0"><code>#Clean the jail
+
+cleanJailFirst=1
+
+
+preserve=\[&#34;/html&#34;, &#34;/home&#34;\]
+
+
+chroot=&#34;/var/chroot/karl&#34;
+
+
+users=\[&#34;root&#34;,&#34;karl&#34;\]
+
+groups=\[&#34;root&#34;,&#34;karl&#34;\]
+
+
+packages=\[&#34;coreutils&#34;\]
+</code></pre><p><strong>Edit</strong>: If you need to use SFTP also, try this config:</p>
+<pre tabindex="0"><code>cleanJailFirst=1
+
+preserve=\[&#34;/html&#34;, &#34;/home&#34;\]
+
+chroot=&#34;/home/vhosts/karl&#34;
+
+forceCopy=\[&#34;/usr/bin/scp&#34;, &#34;/usr/lib/sftp-server&#34;, /
+
+ &#34;/usr/bin/find&#34;, &#34;/dev/null&#34;, &#34;/dev/zero&#34;\]
+
+users=\[&#34;root&#34;,&#34;karl&#34;\]
+
+groups=\[&#34;root&#34;,&#34;karl&#34;\]
+
+packages=\[&#34;coreutils&#34;\]
+</code></pre><p>As you&rsquo;ll see, there is a &ldquo;preserve&rdquo; directive. This is so that when you &ldquo;clean&rdquo; the jail (if you need to refresh the files, for instance), you won&rsquo;t wipe out anything important. I created an /html so that the user can upload their web docs to that file.</p>
+<h4 id="third-configure-libpam_chroot">Third: configure libpam_chroot<a hidden class="anchor" aria-hidden="true" href="#third-configure-libpam_chroot">#</a></h4>
+<p>Add the following to /etc/pam.d/ssh:</p>
+<pre tabindex="0"><code>\# Set up chrootd ssh
+
+session required pam\_chroot.so
+</code></pre><h4 id="forth-allow-the-actual-user-to-be-chrootd">Forth: allow the actual user to be chrootd<a hidden class="anchor" aria-hidden="true" href="#forth-allow-the-actual-user-to-be-chrootd">#</a></h4>
+<p>Edit /etc/security/chroot.conf and add the following:</p>
+<pre tabindex="0"><code>karl /var/chroot/karl
+</code></pre><h4 id="fifth-createchown-the-chrootd-dir">Fifth: create/chown the chroot&rsquo;d dir<a hidden class="anchor" aria-hidden="true" href="#fifth-createchown-the-chrootd-dir">#</a></h4>
+<pre tabindex="0"><code>kelvin@server ~$ sudo mkdir -p /var/chroot/karl/home
+
+kelvin@server ~$ sudo chown /var/chroot/karl/home
+</code></pre><p>Now you should be able to log in, via the new username karl.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/howtos/">Howtos</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

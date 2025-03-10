@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+
+    
+      
+
+    
+
+    
+    
+      <link href="/postsold/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+      <link href="/postsold/index.xml" rel="feed" type="application/rss+xml" title="My New Hugo Site" />
+      
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/postsold/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/postsold/">
+  <meta property="og:site_name" content="My New Hugo Site">
+  <meta property="og:title" content="Postsolds">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Postsolds">
+  <meta itemprop="datePublished" content="2025-01-31T21:41:00+11:00">
+  <meta itemprop="dateModified" content="2025-01-31T21:41:00+11:00">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Postsolds">
+
+	
+  </head><body class="ma0 avenir bg-near-white development">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Postsolds
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/07/testing-sms-gateways_5212.html" class="link black dim">
+        Testing SMS Gateways
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>For one of my projects I&rsquo;m testing an SMS gateway, and decided it would be fun to build a useful alarm clock out of it. For those of you who know Python, you may find this funny. /dev/ttyUSB0 is my Arduino with a temperature sensor.</p>
+<pre tabindex="0"><code>import serial
+import urllib2
+
+def check\_temp():
+ser = serial.Serial(&#39;/dev/ttyUSB0&#39;, 9600)
+t = ser.readline().strip()
+return float(t)
+
+t = check\_temp()
+if int(t) &lt; 8:
+message = &#34;It+is+now+%f+degrees;+chuck+a+sicky.&#34; % t
+f = urllib2.urlopen(&#39;http://api.clickatell.com/http/sendmsg?user=johnd&amp;password=p@55w0rd&amp;api\_id=2132867&amp;from=61433735555&amp;to=61433735555&amp;text=%s&#39; % message)
+</code></pre><p>And in crontab:</p>
+    </div>
+    <a href="/2009/07/testing-sms-gateways_5212.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/07/arduino-101_3715.html" class="link black dim">
+        Arduino 101
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Tonight, I&rsquo;m proud to say, I&rsquo;ve returned to childhood. Let me explain.</p>
+<p>OK, fun over, back to work.</p>
+<p>For the last year I&rsquo;ve been wanting to purchase an <a href="http://www.arduino.cc/">Arduino</a>, for no other reason than to play with. Like a kid. My Arduino arrived two days ago. This is a story of problems, but not the pull-your-hair-out type, more the&hellip; like when you run out of gas in the middle of Sydney. Going to your Christmas dinner. In your friend&rsquo;s car. Long story.</p>
+    </div>
+    <a href="/2009/07/arduino-101_3715.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/07/simple-arduino-led-tutorial_319.html" class="link black dim">
+        Simple Arduino &#43; LED Tutorial
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>For this you&rsquo;ll need: an Arduino, an LED, a USB cable, and the Arduino software.</p>
+<p><a href="http://picasaweb.google.com/lh/photo/VUU7F7qd8doQ0pCcs88wPQ?feat=embedwebsite"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSGIXNe3gLRzm8r7ioq8niUHdBdzZBD8L9WoBp4oQAIAtlbMGaI7r3RjGzEup0sN-sZKP7E0JQuUaH9jTtPE0at4L6MK_QwduouTOIyQFyEzC2bB9U_Y8ausq1PNXwdbqUzOccLRPNg2FF/s400/arduinowLED.jpg" alt=""></a></p>
+<ol>
+<li>
+<p>Get the LED, and plug it in to your Arduino. Plug in the long end to pin 13, plug the short end to the GND.</p>
+</li>
+<li>
+<p>Plug in the Arduino into your laptop. Go to Tools-&gt;Serial Port. Choose the USB port that appears.</p>
+</li>
+<li>
+<p>Take the code from the <a href="http://www.arduino.cc/en/Tutorial/BlinkingLED">BlinkingLED tutorial</a> and paste it in to the arduino like so:</p>
+    </div>
+    <a href="/2009/07/simple-arduino-led-tutorial_319.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/06/gps-gem-find-tangogps_8634.html" class="link black dim">
+        GPS Gem Find - TangoGPS
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;ve been looking for a simple, no-hassles GPS display program for Linux, and I believe I finally found one: <a href="http://www.tangogps.org/gps/cat/About">TangoGPS</a>. My requirements were quite simple; I needed something that would talk to gpsd, and display a dot on OpenStreetMaps. I&rsquo;ve been able to do this in other programs (even in 3d in WorldWind), but I wanted something to download the maps for me, and GTK+ would be a plus.</p>
+<p>TangoGPS was easy to install (apt-get install tangogps), and on my test &lsquo;drive&rsquo; home tonight on the train, worked a treat. See related screenshots.</p>
+    </div>
+    <a href="/2009/06/gps-gem-find-tangogps_8634.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/06/iso-code-error_1265.html" class="link black dim">
+        ISO Code Error
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;ve received this error a few times when working with pytz:</p>
+<pre tabindex="0"><code>Error reading file &#39;/usr/share/xml/iso-codes/iso\_3166.xml&#39;
+</code></pre><p>In short, install the &lsquo;iso-codes&rsquo; package in Ubuntu/Debian. I&rsquo;m sure this is covered in the manual that I didn&rsquo;t read, but I&rsquo;m sure others didn&rsquo;t read it too.</p>
+<pre tabindex="0"><code>apt-get install iso-codes
+</code></pre>
+    </div>
+    <a href="/2009/06/iso-code-error_1265.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/06/installing-debian-50-on-vortex86dx_3246.html" class="link black dim">
+        Installing Debian 5.0 on Vortex86DX
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>After writing about <a href="http://kelvinism.com/tech-blog/compiling-kernel-vortex86dx/">compiling a new kernel</a> for the Vortex86DX, I&rsquo;ve had quite a few people email me asking how I installed Debian in the first place. The installation is actually quite straightforward, but it involved several quirky techniques. After doing another install I decided to keep track of the process of installing Debian 5.0 on my eBox-3300.</p>
+<p>The following guide assumes a few things. First, you are currently using Linux and a debian variety (although instructions could be altered if using Windows). Second, your USB shows up as /dev/sdb. Third, your eBox-3300 has the HDD set in Native mode. Forth, you are patient.</p>
+    </div>
+    <a href="/2009/06/installing-debian-50-on-vortex86dx_3246.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/06/operation-cold-house_7266.html" class="link black dim">
+        Operation Cold House
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>Status:</p>
+<p>My house is cold. I want to start playing with simple electronics before starting <a href="http://www.kelvinism.com/projects/operation-field/">Operation Field</a>, so have created Operation Cold House.</p>
+<p>This is just simply sticking a temperature sensor onto an Arduino, linking that up to my little home &ldquo;<a href="http://www.kelvinism.com/tech-blog/true-consolidation/">server</a>&rdquo;, and uploading that to my website. I&rsquo;ll display some nifty graphs, too, and link it to <a href="http://www.pachube.com/">Pachube</a>. Stay tuned.</p>
+<p><strong>Update</strong>: Complete! The proof is <a href="http://www.kelvinism.com/howtos/simple-arduino-led-tutorial/">in the</a> <a href="http://www.kelvinism.com/tech-blog/arduino-101/">pudding</a>. I now have a personal website from home (sorry, not public) that displays the daily and weekly temperature at home. The process is basically like this: my little Arduino gathers the temperature, and is polled every minute with a python script via cron. This script then sticks the time and temperature into MySQL. It also exports the temperature to Pachube. Every 30m I have a script that queries MySQL and uses Google&rsquo;s Chart&rsquo;s API to graph the temperature. Looks great, I&rsquo;ll post a graph soon.</p>
+    </div>
+    <a href="/2009/06/operation-cold-house_7266.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/06/downloading-vmware-with-firefox_4800.html" class="link black dim">
+        Downloading VMWare with Firefox
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;ve had this issue happen to me several times, and I&rsquo;m finally writing myself a note to fix it in the future. There seems to be an issue with downloading VMWare Workstation (.bundle). I first tried it with Firefox, but it just crapped out at loading it into /tmp. Next, I tried it with Lynx, but alas, it tried to download it as a text file.</p>
+<p>Ahah! The quickest solution I could find is to right click the link, save as, and save it as a zip. Rename it to .bundle when you&rsquo;re done.</p>
+    </div>
+    <a href="/2009/06/downloading-vmware-with-firefox_4800.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/06/create-movie-from-images_6692.html" class="link black dim">
+        Create a Movie from Images
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p>I&rsquo;ve started leaving my webcam on as a motion detector to find out who is leaving the shopping cards on our lawn, and ultimately have found it useful to stitch the images together into a movie. There are several ways to do this - and my way maybe isn&rsquo;t the best - but it works for me.</p>
+<p>I first installed and configured <a href="http://www.lavrsen.dk/twiki/bin/view/Motion/WebHome">motion</a>, which I&rsquo;ve used for years. I then created a file in ~/.motion called motion.com:</p>
+    </div>
+    <a href="/2009/06/create-movie-from-images_6692.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Postsolds</span>
+    <h1 class="f3 near-black">
+      <a href="/2009/05/compiling-kernel-for-vortex86dx_5058.html" class="link black dim">
+        Compiling kernel for Vortex86dx
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      <p><strong>Update</strong>: I&rsquo;ve written up a <a href="http://kelvinism.com/howtos/installing-debian-50-vortex86dx/">short tutorial</a> on the method I used to install Debian 5.0 on this device.</p>
+<p>A few months ago I purchased the eBox-3300 from WDL Systems. The system was promptly shipped, and there were no &ldquo;gotchas&rdquo; from WDL. The little box fit my exact needs - it is small, and built very, very well. I flew back to Australia and, after some trial and error, installed Debian 5.0 on it. For quite some time I was just using the vmlinuz file provided by WDL, which was provided by ICOP (DMP). This worked well, but there were two issues:</p>
+    </div>
+    <a href="/2009/05/compiling-kernel-for-vortex86dx_5058.html" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/postsold/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/6/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 7" class="page-link" role="button">7</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/8/" aria-label="Page 8" class="page-link" role="button">8</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/8/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/postsold/page/21/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  My New Hugo Site 2025 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Ubuntu 8.04 64-Bit and VMware Server 2 | Kelvin Nicholson</title>
+<meta name="keywords" content="esxi, ubuntu, vmware, howtos">
+<meta name="description" content="I now have successful installation of VMware Server 2 (Beta RC1) on top of Ubuntu 8.04 64-bit. I have been using various virtualization technologies for years, and VMware is usually the easiest to install and configure. So far, VMware Server 2 RC1, has proven to be the exception to the rule.
+That said, I am very excited by the direction VMware is taking &ndash; this new server version looks to have great potential.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to Ubuntu 8.04 64-Bit and VMware Server 2" href="http://localhost:1313/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html">Ubuntu 8.04 64-Bit and VMware Server 2 </a>
+    </h2>
+
+    <div class="post-meta"><span title='2008-08-01 20:30:00.004 +1000 AEST'>Published on August 1, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>I now have successful installation of VMware Server 2 (Beta RC1) on top of Ubuntu 8.04 64-bit. I have been using various virtualization technologies for years, and VMware is usually the easiest to install and configure. So far, VMware Server 2 RC1, has proven to be the exception to the rule.</p>
+<p>That said, I am very excited by the direction VMware is taking &ndash; this new server version looks to have great potential.</p>
+<p>The &lsquo;server&rsquo; this is on is a mATX motherboard from Gigabyte (GA-G33M-DS2R), with 4GB (2x2GB) of Transcend DDR2-800 memory, topped off with the E8200. I have been nothing but impressed with this combination of hardware.</p>
+<p>However, although I was thinking VMware Server 2 would install seamlessly over Ubuntu, I was wrong. There were a few things I had to tweak to get everything working correctly.</p>
+<p>The first thing I had major issues with was VMware choking on the parallel port. Normally the parport is the first thing I would turn off, but in this instance, I guess excitement overtook me. My tip is to first remove the lp module from inside /etc/modules, and then disable the parallel port inside the BIOS. The symptoms I was having involved VMware halting/freezing on either startup or shutdown. This occurred for both RC1 as well as 1.0.6.</p>
+<p>My second tip, if VMware freezes half way through starting up or shutting down, is to go through the vmware startup script, /etc/init.d/vmware, and comment out anything refering to the parport_pc. In particular, I looked for this line and made sure to comment it out:</p>
+<pre tabindex="0"><code>/sbin/modprobe -r parport\_pc &gt;/dev/null 2&gt;&amp;1
+</code></pre><p>I commented out lines 974 and 1076. After doing this, VMware loaded perfectly.</p>
+<p>The second major issue I had occurred after actually installing VMware. I opened Firefox and went to the IP of my virtual server, logged in just fine, and loaded up my first virtual machine. However, after booting the virtual machine, I was unable to open up the remote console. It turns out I had just upgraded to Firefox 3.0.1, and the Remote Console is set to fail on anything above 3.0.0.1. The fix is quite easy.</p>
+<p>First click where it says &ldquo;click anywhere to open the virtual machine&rdquo;. Copy the address of the XPI and use something like wget to download the file. This is an example:</p>
+<pre tabindex="0"><code>wget --no-check-certificate https://192.168.50.10/ui/plugin/vmware-vmrc-linux-x86.xpi
+</code></pre><p>If you are using Gnome, right click the file you just downloaded and say Open With then Archive Manager. Do the same for the &lsquo;install.rdf&rsquo; file inside, specifying gedit as the application if need be. Next, edit line 20 so it reads as follows:</p>
+<pre tabindex="0"><code>3.0.\*
+</code></pre><p>Save the file, open the XPI with Firefox, and you should be good to go.</p>
+<p>I&rsquo;ve seen a lot of other suggestions on the &rsquo;net on how to fix VMware RC1 when booting &ndash; including disabling ipv6, checking the hosts file, and running the any-any patches. None of these approaches helped me at all, but maybe it is exactly what you need. My biggest tip is that if VMware isn&rsquo;t starting up or stopping correctly, open up /etc/init.d/vmware and find out exactly where it is faulting (add things like &rsquo;echo &ldquo;fail&rdquo;&rsquo; inside the IF statements).</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/esxi/">Esxi</a></li>
+      <li><a href="http://localhost:1313/tags/ubuntu/">Ubuntu</a></li>
+      <li><a href="http://localhost:1313/tags/vmware/">Vmware</a></li>
+      <li><a href="http://localhost:1313/tags/howtos/">Howtos</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

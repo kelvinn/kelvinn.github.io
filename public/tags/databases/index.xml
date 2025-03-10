@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Databases on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/databases/</link>
+    <description>Recent content in Databases on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Nov 2006 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/databases/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL Compat</title>
+      <link>http://localhost:1313/2006/11/mysql-compat_1690.html</link>
+      <pubDate>Wed, 15 Nov 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/11/mysql-compat_1690.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve run into this error quite a few times, might as well toss blog entry about it:&lt;br&gt;
+ERROR 1064 at line 17: You have an error in your SQL syntax near &amp;lsquo;ENGINE=MyISAM DEFAULT CHARSET=latin1&amp;rsquo; at line 7&lt;br&gt;
+One likely reason this comes about is because the data being imported/exported is not compatible with the database version. For instance, at home you export the information from a mysql5 database. Then you try to import it on a mysql3.23 database somewhere else &amp;ndash; and it craps out on you. Bummer.&lt;br&gt;
+The solution is quite simple:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

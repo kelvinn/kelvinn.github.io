@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Nfs on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/nfs/</link>
+    <description>Recent content in Nfs on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Mar 2009 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/nfs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Files between ESX and Linux via NFS</title>
+      <link>http://localhost:1313/2009/03/files-between-esx-and-linux-via-nfs_6022.html</link>
+      <pubDate>Mon, 02 Mar 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/03/files-between-esx-and-linux-via-nfs_6022.html</guid>
+      <description>&lt;p&gt;I like ESX. I like Linux. It is absurdly easy to configure Linux as an NFS server and mount it in ESXIi).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Installed NFS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I currently use Ubuntu Server for my home lab, but the process is basically the same for Red Hat and derivatives.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt-get install nfs-common
+sudo apt-get install nfs-kernel-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next, configure NFS so it can server your local LAN. Normally you would list only specific servers, but, well, we&amp;rsquo;re being cheap and dirty today. Open /etc/exports in VI or your editor of choice.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gis on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/gis/</link>
+    <description>Recent content in Gis on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Sep 2013 10:45:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sydney&#39;s Education Levels Mapped</title>
+      <link>http://localhost:1313/2013/09/sydneys-education-levels-mapped.html</link>
+      <pubDate>Sun, 08 Sep 2013 10:45:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/09/sydneys-education-levels-mapped.html</guid>
+      <description>&lt;p&gt;I was talking to a friend about what education levels might look like across Sydney, and a friend challenged me to map it. The below map is my first draft.&lt;/p&gt;
+&lt;p&gt;The map was derived by combining three datasets from the Australian Bureau of Statistics (&lt;a href=&#34;http://www.abs.gov.au/&#34;&gt;ABS&lt;/a&gt; - a department releasing some great datasets). The first dataset was the spatial data for &amp;ldquo;SA2&amp;rdquo; level boundaries, the second the population data for various geographic areas, and the third from the 2011 Census on Non-School Qualification Level of Education (e.g. Certificates, Diplomas, Masters, Doctorates). I aggregated all people with bachelors or higher in an SA2 region, and then divided that number by the total number of people in that region. A different methodology could have been used.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sydney Commute Times Mapped Part 1</title>
+      <link>http://localhost:1313/2013/07/sydney-commute-times-mapped-part-1.html</link>
+      <pubDate>Sun, 21 Jul 2013 10:06:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/07/sydney-commute-times-mapped-part-1.html</guid>
+      <description>&lt;p&gt;I quite like open data. I like data based on open standards (or mostly open standards) even better. Many transport operators around the world have started releasing their timetable data using (mostly) open standards, e.g. &lt;a href=&#34;http://en.wikipedia.org/wiki/General_Transit_Feed_Specification&#34;&gt;GTFS&lt;/a&gt;. One of the nice things about using a standard is that clever people have created tools to work with the timetable data, and those tools can now be used to manipulate timetable data from hundreds of agencies. The magnificent OpenTripPlanner is one such tool, and it works well with &lt;a href=&#34;http://131500.info/&#34;&gt;131500&lt;/a&gt;&amp;rsquo;s GTFS data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mapping Mesh Blocks with TileMill</title>
+      <link>http://localhost:1313/2013/07/mapping-mesh-blocks-with-tilemill.html</link>
+      <pubDate>Sat, 20 Jul 2013 02:00:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/07/mapping-mesh-blocks-with-tilemill.html</guid>
+      <description>&lt;p&gt;This quick tutorial will detail how to prepair the ABS Mesh Blocks to be used with MapBox&amp;rsquo;s TileMill. Beyond scope is how to install postgresql, postgis and TileMill. There is a lot of documentation how to do these tasks.&lt;/p&gt;
+&lt;p&gt;First, we create a database to import the &lt;a href=&#34;http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/1270.0.55.001July%202011?OpenDocument&#34;&gt;shapefile&lt;/a&gt; and &lt;a href=&#34;http://www.abs.gov.au/AUSSTATS/abs@.nsf/DetailsPage/2074.02011?OpenDocument&#34;&gt;population data&lt;/a&gt; into:&lt;/p&gt;
+&lt;p&gt;Using &amp;lsquo;psql&amp;rsquo; or &amp;lsquo;SQL Query&amp;rsquo;, create a new database:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CREATE DATABASE transport WITH TEMPLATE postgis20 OWNER postgres;
+# Query returned successfully with no result in 5527 ms.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;It is necessary to first import the Mesh Block spatial file using something like PostGIS Loader.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mapping Urban Density in Sydney</title>
+      <link>http://localhost:1313/2013/07/mapping-urban-density-in-sydney.html</link>
+      <pubDate>Sat, 20 Jul 2013 00:34:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/07/mapping-urban-density-in-sydney.html</guid>
+      <description>&lt;p&gt;Five years ago I started exploring different mapping technologies by detailing instructions on &lt;a href=&#34;http://www.kelvinism.com/2008/04/setting-up-mapnik-server-on-ubuntu_118.html&#34;&gt;installing Mapnik&lt;/a&gt; and &lt;a href=&#34;http://www.kelvinism.com/2008/11/revised-modtile-install-howto_1369.html&#34;&gt;mod_tile&lt;/a&gt;. Times have changed significantly in the last five years, and thanks a lot to the products offered by &lt;a href=&#34;http://www.mapbox.com/&#34;&gt;MapBox&lt;/a&gt;. After playing with TileMill, MBTiles, Leaflet and UTFGrids, it is great how many annoyances have been fixed by MapBox. I find it enjoyable making maps now, as I no longer need to worry about patching code just to get it to run, or mucking about with oddities in web browser.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fusion Tables and 131500 Stops</title>
+      <link>http://localhost:1313/2011/06/fusion-tables-and-131500-stops_465.html</link>
+      <pubDate>Sat, 11 Jun 2011 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2011/06/fusion-tables-and-131500-stops_465.html</guid>
+      <description>&lt;p&gt;A short while ago I wrote about &lt;a href=&#34;http://www.kelvinism.com/articles/visualizing-transport/&#34;&gt;visualizing transport&lt;/a&gt; by using 131500&amp;rsquo;s TDX data, converted to GTFS, and served by GeoServer. Because I&amp;rsquo;ve started &lt;a href=&#34;http://www.kelvinism.com/travelmap/&#34;&gt;playing around&lt;/a&gt; with Google&amp;rsquo;s Fusion table, I thought it would be interesting to see what all the transit stops in Sydney look like in FT. So, voila!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fun with OSM</title>
+      <link>http://localhost:1313/2010/02/fun-with-osm_3920.html</link>
+      <pubDate>Fri, 12 Feb 2010 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2010/02/fun-with-osm_3920.html</guid>
+      <description>&lt;p&gt;I have to admit, to me, editing &lt;a href=&#34;http://www.openstreetmap.org/&#34;&gt;OpenStreetMap&lt;/a&gt; is actually a little therapeutic. Sort of like gardening.&lt;/p&gt;
+&lt;p&gt;My first major contribution was when I brought my little QStarz GPS unit across Indonesia, by train, sitting against the window.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/a9waevHOnamwhJuZ0631AQ?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVRc8DuYUf5aDc9yLzjBA5JZmXTczhYyV8R4LeLVmss6J1D7RvhUo5MvP-NRqbOQ7a-v9UBY0vqlIEG_nXnQ0XJ3cZjDGBtmAygoJNRUu7R3ptkL7TtnRQM3fnRYhq01LZjLCLi6b2c3ll/s288/indorailroad.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/xg8TeUUtiZZhLH8T2irceA?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihqDfKD5tB1QYhRxDb3FFUfxBaDTMn7gNCdK7SeVrC_JzI5OwYdYS2NFaZ5hh-dtX3GgRW4Ony8XAbIr8hRKYNP1UMQmKAoSM7CoX-YsoYdYYwwCQm_jjnRCzRFcxdkiD2olu-guGS0s4e/s288/dubbozoo.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The most recent contribution was our trip to Dubbo, where I helped fill in a few missing roads, and added an initial outlay of Dubbo Zoo.&lt;/p&gt;
+&lt;p&gt;If you have a GPS or have $60 to spend on one, and like anything CAD-drawing like, give editing OSM a try!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GPS Gem Find - TangoGPS</title>
+      <link>http://localhost:1313/2009/06/gps-gem-find-tangogps_8634.html</link>
+      <pubDate>Mon, 29 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/gps-gem-find-tangogps_8634.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been looking for a simple, no-hassles GPS display program for Linux, and I believe I finally found one: &lt;a href=&#34;http://www.tangogps.org/gps/cat/About&#34;&gt;TangoGPS&lt;/a&gt;. My requirements were quite simple; I needed something that would talk to gpsd, and display a dot on OpenStreetMaps. I&amp;rsquo;ve been able to do this in other programs (even in 3d in WorldWind), but I wanted something to download the maps for me, and GTK+ would be a plus.&lt;/p&gt;
+&lt;p&gt;TangoGPS was easy to install (apt-get install tangogps), and on my test &amp;lsquo;drive&amp;rsquo; home tonight on the train, worked a treat. See related screenshots.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Charting the Hackers</title>
+      <link>http://localhost:1313/2008/12/charting-hackers_7870.html</link>
+      <pubDate>Sun, 28 Dec 2008 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2008/12/charting-hackers_7870.html</guid>
+      <description>&lt;p&gt;A normal internet connection gets attacked, a lot. The majority of attacks are of the form &amp;ldquo;hello, anybody there?&amp;rdquo; &amp;ndash; where most people just don&amp;rsquo;t answer. But sometimes, just sometimes, the question gets an answer. Depending on the answer, the attacker will start to explore.&lt;/p&gt;
+&lt;p&gt;A few weeks back I was a little bored and started fiddling. I wanted to play with my Cisco, but also wanted to play with OSSEC, but also has a GIS craving. In the end I decided to create a map of the people who ask, &amp;ldquo;hello&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Baby Steps at Graphing Traffic</title>
+      <link>http://localhost:1313/2008/04/baby-steps-at-graphing-traffic_522.html</link>
+      <pubDate>Sun, 27 Apr 2008 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2008/04/baby-steps-at-graphing-traffic_522.html</guid>
+      <description>&lt;p&gt;Status:&lt;br&gt;
+You can likely tell that I&amp;rsquo;ve been having some fun with graphing and mapping recently. I was reading a few articles about GIS and stumbled upon a pretty darn cool project at &lt;a href=&#34;http://www.webopticon.com/projects/neighborhood_nets&#34;&gt;Webopticon&lt;/a&gt;, which included cool pictures. I showed it to my girlfriend thinking she would find it interesting, and then realized: oh! KML has an altitude attribute. That could be interesting.&lt;br&gt;
+One of my projects is to create &lt;a href=&#34;http://www.kelvinism.com/2007/12/sydneys-driving-habits.html&#34;&gt;maps of Sydney&amp;rsquo;s traffic&lt;/a&gt;&lt;a href=&#34;http://www.blogger.com/&#34;&gt;&lt;/a&gt;, so I have been experimenting heavily with Mapnik and OSM. I figured I could have some fun and finally parse some gps tracks and display the data.&lt;br&gt;
+&lt;a href=&#34;http://picasaweb.google.com/lh/photo/bkhs8KqkZyS7yIoA6AeNnA?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8Ju2Qv3TAIupmzBjORZ5wUBGjxIlwZ_0mrPb0Mku5Yob6_ldYEmtRO0GP_kQ62-aZDZ3fP8_vh6nfXv9NpP5X98oneS25YXXf9Tr-pD1RMkp7l_jbDBWBsqxrA5hIDhH8KvfVjZI0TvGc/s288/gpstracks3.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>I Hate GeoIP Advertising</title>
+      <link>http://localhost:1313/2007/03/i-hate-geoip-advertising_6728.html</link>
+      <pubDate>Thu, 15 Mar 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/03/i-hate-geoip-advertising_6728.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://picasaweb.google.com/lh/photo/WRMH3mQauVVNRBo9Jr-mdQ?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjUCe5P3KESIXOcTikN8dyhNqIGGwP9liL62sQXgx7FeGNf2oQjwyHSbe8UJxuveH6RlUmFs8_120nmV_9XNj3aShEdCP_nH9j8lPYXkgEGTyzaztQOH0PxR8ClpM4MYqJP2I4hmV3RGfwS/s400/geoiphell1.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Remember, I&amp;rsquo;m in a coffee shop? GeoIPized Girls = have to sit with back to wall.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Country_IP_database&#34;&gt;GeoIP&lt;/a&gt; is the concept that allows you to map a user&amp;rsquo;s IP to the country it came from (I hacked up my commenting system just so you can see an example, if you are a visual type of person). Advertisers have long since picked up on this as a way to make their ads &amp;ldquo;better,&amp;rdquo; hopefully becoming more appealing to their clientele. Sometimes the adaptation doesn&amp;rsquo;t quite work as expected. This morning I was searching for an eBook on Embedded Linux (it is really hard to find English tech books here) &amp;ndash; and just had to snap a few screenshots. The advertisers picked up my IP, from Taiwan, and &amp;ldquo;customized&amp;rdquo; the advertisement. Needless to say, I&amp;rsquo;ve seen a total of five white females here over the entire last year.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

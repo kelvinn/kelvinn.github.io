@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Transport on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/transport/</link>
+    <description>Recent content in Transport on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Aug 2013 07:55:00 +1000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/transport/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sydney Commute Times Mapped Part 2</title>
+      <link>http://localhost:1313/2013/08/sydney-commute-times-mapped-part-2.html</link>
+      <pubDate>Mon, 05 Aug 2013 07:55:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/08/sydney-commute-times-mapped-part-2.html</guid>
+      <description>&lt;p&gt;In &lt;a href=&#34;http://www.kelvinism.com/2013/07/sydney-commute-times-mapped-part-1.html&#34;&gt;Sydney Commute Times Mapped Part 1&lt;/a&gt; I took a small step to a bigger goal of mashing together public transport in Sydney, and the &lt;a href=&#34;http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf&#34;&gt;Metropolitan Strategy for Sydney to 2031&lt;/a&gt;. The question I wanted to answer is this: how aligned is Sydney&amp;rsquo;s public transport infrastructure and the Metropolitan Strategy&amp;rsquo;s of a &amp;ldquo;city of cities&amp;rdquo;?&lt;/p&gt;
+&lt;p&gt;I decided to find out.&lt;/p&gt;
+&lt;p&gt;Thanks to the release of GTFS data by 131500 it is possible to visualise how long it takes via public transport to commute to the nearest &amp;ldquo;centre&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sydney Commute Times Mapped Part 1</title>
+      <link>http://localhost:1313/2013/07/sydney-commute-times-mapped-part-1.html</link>
+      <pubDate>Sun, 21 Jul 2013 10:06:00 +1000</pubDate>
+      <guid>http://localhost:1313/2013/07/sydney-commute-times-mapped-part-1.html</guid>
+      <description>&lt;p&gt;I quite like open data. I like data based on open standards (or mostly open standards) even better. Many transport operators around the world have started releasing their timetable data using (mostly) open standards, e.g. &lt;a href=&#34;http://en.wikipedia.org/wiki/General_Transit_Feed_Specification&#34;&gt;GTFS&lt;/a&gt;. One of the nice things about using a standard is that clever people have created tools to work with the timetable data, and those tools can now be used to manipulate timetable data from hundreds of agencies. The magnificent OpenTripPlanner is one such tool, and it works well with &lt;a href=&#34;http://131500.info/&#34;&gt;131500&lt;/a&gt;&amp;rsquo;s GTFS data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visualizing Transport</title>
+      <link>http://localhost:1313/2011/04/visualizing-transport_1492.html</link>
+      <pubDate>Sun, 03 Apr 2011 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2011/04/visualizing-transport_1492.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve had several conversations with neighbors and co-workers about the &amp;ldquo;lack&amp;rdquo; of forward thinking, or at least the lack of forward action. Of course, I keep in the back of my mind that we aren&amp;rsquo;t &amp;ldquo;experts&amp;rdquo;, and the more I learn about transport the more I learn how complex it is. Dr. Sussman&amp;rsquo;s &lt;em&gt;CLIOS&lt;/em&gt; process (Complex, Large-&lt;br&gt;
+Scale, Integrated, Open Systems) appears more and more true the longer I work in and study transport. There is a plethora of excuses that can be made, but the general conclusion was that the earlier we prepare the better. I can remember working near Zhongshan 7-8 years ago and driving around on huge roads in the middle of empty fields. There weren&amp;rsquo;t even stoplights at every intersection. It was then that I had an epiphany of how smart the planning was to build the infrastructure &lt;em&gt;before&lt;/em&gt; the masses arrived.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

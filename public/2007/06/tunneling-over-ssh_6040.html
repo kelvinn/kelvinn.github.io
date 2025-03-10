@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Tunneling over SSH | Kelvin Nicholson</title>
+<meta name="keywords" content="howtos">
+<meta name="description" content="As a rule, whenever I&rsquo;m online I&rsquo;m logged into my server back in the States. I&rsquo;m also usually wireless, which we all know is beyond insecure &ndash; I&rsquo;ve found it especially useful to tunnel firefox over SSH. I try my best to tunnel stuff over SSH back, and if you want to also, this is how.
+Setup the SSH/SOCKS tunnel
+I&rsquo;m on Linux, so this is pretty darn easy.
+ssh user@domain.com -D 1080
+If the SSH daemon runs on a different port, you&rsquo;d do something like this:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/2007/06/tunneling-over-ssh_6040.html">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/2007/06/tunneling-over-ssh_6040.html">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main">
+
+<article class="post-entry">
+  <header class="entry-header">
+
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to Tunneling over SSH" href="http://localhost:1313/2007/06/tunneling-over-ssh_6040.html">Tunneling over SSH </a>
+    </h2>
+
+    <div class="post-meta"><span title='2007-06-07 20:30:00.005 +1000 AEST'>Published on June 7, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> 
+  <div class="entry-content"><p>As a rule, whenever I&rsquo;m online I&rsquo;m logged into my server back in the States. I&rsquo;m also usually wireless, which we all know is beyond insecure &ndash; I&rsquo;ve found it <em>especially</em> useful to tunnel firefox over SSH. I try my best to tunnel stuff over SSH back, and if you want to also, this is how.</p>
+<h4 id="setup-the-sshsocks-tunnel">Setup the SSH/SOCKS tunnel<a hidden class="anchor" aria-hidden="true" href="#setup-the-sshsocks-tunnel">#</a></h4>
+<p>I&rsquo;m on Linux, so this is pretty darn easy.</p>
+<pre tabindex="0"><code>ssh user@domain.com -D 1080
+</code></pre><p>If the SSH daemon runs on a different port, you&rsquo;d do something like this:</p>
+<pre tabindex="0"><code>ssh -oPort=1234 user@damon.com -D 1080
+</code></pre><p>Remember ports below 1024 are reserved, and you would need root access. Now it is time to configure the different programs to use the newly created tunnel.</p>
+<p><a href="https://picasaweb.google.com/lh/photo/QH-jPk3gHgigKtmQcrhoig?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5MWWeIZYH4RZuL3binMtkPHLDyvU5HRdNdJCtBdH5IYYrdEqk95ROxmFMKWJTjFxY267VFVw-_eohgpwD4K-RVRM4X9m80Mv1Gv6HxJJAO7T57eV7y_hZF_9RWEWKnDUp0d5pcr52Nq9S/s400/gnome-settings.jpg"></a></p>
+<h4 id="setting-up-gnome-optional">Setting up Gnome (optional)<a hidden class="anchor" aria-hidden="true" href="#setting-up-gnome-optional">#</a></h4>
+<p><a href="https://picasaweb.google.com/lh/photo/USO3dEudCNgJGvNOh8IAQA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRsef8lcC6qNZh2vdPbGZ1t8cL91ibwCeuHwy1hwZMlqQpNDKw7MRh7zBMmxvRfsFcL6iYe7xKv_Mdnqsn_394B_buuZlRoApNOT7z9vgwOChr6x2yByWue3Awgo-NHtPmI7aecOXTlg4F/s400/msn-settings.jpg"></a></p>
+<h4 id="tunneling-pidgen">Tunneling Pidgen<a hidden class="anchor" aria-hidden="true" href="#tunneling-pidgen">#</a></h4>
+<p><a href="https://picasaweb.google.com/lh/photo/HX-kbMnfI3fwpbUyRf17FA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7xGVXjZDHSQlReX7mAad4ko6zk7Lf7JWyIe6TYj2yrIAk7L8jCpo0mypVrNP0DqU4OTPEPX2TuEbOo8ySZgdzkexVU7V_hnBguhfg_ACbXfjTM_KNvtdj-gLDmiqMzIoCpKEvYWXhifSN/s400/xchat-settings.jpg"></a></p>
+<h4 id="tunneling-xchat">Tunneling XChat<a hidden class="anchor" aria-hidden="true" href="#tunneling-xchat">#</a></h4>
+<p><strong>Tunneling Firefox</strong><br>
+<em>Note</em>: I&rsquo;m going to list two examples, one is with FoxyProxy and the other is with the ordinary proxy settings.</p>
+<p><a href="https://picasaweb.google.com/lh/photo/iKYUjPKEnU6WWq5ytUlftg?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGCLf_YOke30XnQgqrLAW_6aRGAm1INIHSEzcA7NZitNF4CMpOADpfBRmnhZ3UcLGhGNUiFj6BnJc66DDA8CnhE1GaSrh-mTFzFXXS7OsiviFdYNKH4o-yTnZIjl8hW4NMR4biKUvC0ws8/s400/foxyproxy-settings.jpg"></a></p>
+<h4 id="foxyproxy">FoxyProxy<a hidden class="anchor" aria-hidden="true" href="#foxyproxy">#</a></h4>
+<p><a href="https://picasaweb.google.com/lh/photo/gCoCFhGSNBf2T0vGhHoSrA?feat=embedwebsite"><img loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3N60K_2L5EX61zgiQG42vWxG-0oiEU0gNQE_M5JYd9ulZBx9p-NW4jBmk6sRYPG4U4VQIOelYAktI3WPT1UGztDyAJ1jSEVAaHn1HBfzG-L-Mw-WyAIA53StGCrV8SoIAiYnk_VyiwNpJ/s400/firefox-settings.jpg"></a></p>
+<h4 id="normal-proxy">Normal Proxy<a hidden class="anchor" aria-hidden="true" href="#normal-proxy">#</a></h4>
+<p><em>Make sure the other fields or empty, or you won&rsquo;t connect.</em></p>
+<p>So, there you have it. There are quite a few unix shell providers out there, I&rsquo;m sure it wouldn&rsquo;t be too hard to spot a link for one. I&rsquo;ve seen <a href="http://www.quadspeedi.net/?page=services">QuadSpeedInternet</a> having SSH access for $3/month, and <a href="http://www.jvds.com/freeshells/">JVDS</a> or <a href="http://sdf.lonestar.org/">Lonestar</a> offering possible free shells. Alternatively, you could just get a <em>really</em> inexpensive VPS at <a href="http://www.vpslink.com/vps-hosting/">VPSLink</a> ($6-$8/month, but they often have 25% off discounts).</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/howtos/">Howtos</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

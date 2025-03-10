@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Projects on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/projects/</link>
+    <description>Recent content in Projects on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Jan 2014 14:45:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Continuous Flow Through Worm Bin</title>
+      <link>http://localhost:1313/2014/01/continuous-flow-through-worm-bin.html</link>
+      <pubDate>Sun, 05 Jan 2014 14:45:00 +1100</pubDate>
+      <guid>http://localhost:1313/2014/01/continuous-flow-through-worm-bin.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;A few months ago we decided we wanted a worm bin, as we were eating a lot of vegetables, and tossing away bits that weren&amp;rsquo;t used. We were also buying soil for our plants, so it made sense to try to turn one into another.&lt;/p&gt;
+&lt;p&gt;One of our friends gave us some worms from her compost - no idea what kind - and I build an experimental CFT worm bin (&lt;a href=&#34;http://vermicomposters.ning.com/forum/topics/diy-flow-through-bins-a&#34;&gt;sample plans&lt;/a&gt;). We harvested once at about two months, but I don&amp;rsquo;t think it was quite ready. We&amp;rsquo;ll keep experimenting.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Most Frequently Used French Words</title>
+      <link>http://localhost:1313/2009/08/most-frequently-used-french-words_140.html</link>
+      <pubDate>Sun, 30 Aug 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/08/most-frequently-used-french-words_140.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m currently studying French with my partner, and if you&amp;rsquo;ve read any of this site, you&amp;rsquo;ll notice I&amp;rsquo;m a bit of a techie. Often several of my interests collide, which is what happened today. I was searching for the &amp;ldquo;most frequent french words,&amp;rdquo; and while I found some lists, nothing was exactly what I wanted.&lt;br&gt;
+My desire was to have a PDF of the top few thousand most used French words. With the English translation next to it. In order. I&amp;rsquo;ve found some great resources, which I&amp;rsquo;ll list now&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Operation Cold House</title>
+      <link>http://localhost:1313/2009/06/operation-cold-house_7266.html</link>
+      <pubDate>Sun, 14 Jun 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/06/operation-cold-house_7266.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;My house is cold. I want to start playing with simple electronics before starting &lt;a href=&#34;http://www.kelvinism.com/projects/operation-field/&#34;&gt;Operation Field&lt;/a&gt;, so have created Operation Cold House.&lt;/p&gt;
+&lt;p&gt;This is just simply sticking a temperature sensor onto an Arduino, linking that up to my little home &amp;ldquo;&lt;a href=&#34;http://www.kelvinism.com/tech-blog/true-consolidation/&#34;&gt;server&lt;/a&gt;&amp;rdquo;, and uploading that to my website. I&amp;rsquo;ll display some nifty graphs, too, and link it to &lt;a href=&#34;http://www.pachube.com/&#34;&gt;Pachube&lt;/a&gt;. Stay tuned.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;/strong&gt;: Complete! The proof is &lt;a href=&#34;http://www.kelvinism.com/howtos/simple-arduino-led-tutorial/&#34;&gt;in the&lt;/a&gt; &lt;a href=&#34;http://www.kelvinism.com/tech-blog/arduino-101/&#34;&gt;pudding&lt;/a&gt;. I now have a personal website from home (sorry, not public) that displays the daily and weekly temperature at home. The process is basically like this: my little Arduino gathers the temperature, and is polled every minute with a python script via cron. This script then sticks the time and temperature into MySQL. It also exports the temperature to Pachube. Every 30m I have a script that queries MySQL and uses Google&amp;rsquo;s Chart&amp;rsquo;s API to graph the temperature. Looks great, I&amp;rsquo;ll post a graph soon.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Operation Field</title>
+      <link>http://localhost:1313/2009/04/operation-field_8222.html</link>
+      <pubDate>Mon, 13 Apr 2009 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2009/04/operation-field_8222.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;It is time for a new project. I&amp;rsquo;ve finally decided I want to do some electronics stuff - at least play around in that realm a little. However, I want to &amp;ldquo;get out and about&amp;rdquo; a little as well, so this leads me to my idea: a controllable long-range RC plane.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve been debating whether to go the embedded Linux route, or the more simple microcontroller route. One of the first things I stumbled upon was &lt;a href=&#34;http://diydrones.com/profiles/blog/show?id=705844%3ABlogPost%3A44814&#34;&gt;ArduPilot&lt;/a&gt;, a cheap Arduino-based board allowing for a UAV. However, after looking through the requirements I would have needed to purchase an RF transmitter, and they aren&amp;rsquo;t cheap. This made me rethink the ArduPilot route and to evaluate what I really wanted to do: control the plan. My ultimate goal is to attach a joystick to my computer and be able to control the RC plane. This presents another problem with the ArduPilot, however, as there isn&amp;rsquo;t an extra Rx pin available on the ArduPilot board (or so the forums say), I wouldn&amp;rsquo;t be able to transmit coordinates on the fly.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Baby Steps at Graphing Traffic</title>
+      <link>http://localhost:1313/2008/04/baby-steps-at-graphing-traffic_522.html</link>
+      <pubDate>Sun, 27 Apr 2008 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2008/04/baby-steps-at-graphing-traffic_522.html</guid>
+      <description>&lt;p&gt;Status:&lt;br&gt;
+You can likely tell that I&amp;rsquo;ve been having some fun with graphing and mapping recently. I was reading a few articles about GIS and stumbled upon a pretty darn cool project at &lt;a href=&#34;http://www.webopticon.com/projects/neighborhood_nets&#34;&gt;Webopticon&lt;/a&gt;, which included cool pictures. I showed it to my girlfriend thinking she would find it interesting, and then realized: oh! KML has an altitude attribute. That could be interesting.&lt;br&gt;
+One of my projects is to create &lt;a href=&#34;http://www.kelvinism.com/2007/12/sydneys-driving-habits.html&#34;&gt;maps of Sydney&amp;rsquo;s traffic&lt;/a&gt;&lt;a href=&#34;http://www.blogger.com/&#34;&gt;&lt;/a&gt;, so I have been experimenting heavily with Mapnik and OSM. I figured I could have some fun and finally parse some gps tracks and display the data.&lt;br&gt;
+&lt;a href=&#34;http://picasaweb.google.com/lh/photo/bkhs8KqkZyS7yIoA6AeNnA?feat=embedwebsite&#34;&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8Ju2Qv3TAIupmzBjORZ5wUBGjxIlwZ_0mrPb0Mku5Yob6_ldYEmtRO0GP_kQ62-aZDZ3fP8_vh6nfXv9NpP5X98oneS25YXXf9Tr-pD1RMkp7l_jbDBWBsqxrA5hIDhH8KvfVjZI0TvGc/s288/gpstracks3.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sydney&#39;s Driving Habits</title>
+      <link>http://localhost:1313/2007/12/sydneys-driving-habits.html</link>
+      <pubDate>Sun, 30 Dec 2007 20:20:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/12/sydneys-driving-habits.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve heard that Sydney is one of the most liveable cities in the entire world &amp;ndash; a statement I would generally agree with. However. whoever made this statement obviously didn&amp;rsquo;t drive to work every day. I&amp;rsquo;ve reached the conclusion that one of the biggest (and only) drawbacks to Sydney, is the traffic.&lt;/p&gt;
+&lt;p&gt;So &lt;em&gt;why&lt;/em&gt; is the traffic this bad? I have a few theories. The first theory is that Sydney drivers aren&amp;rsquo;t particularly cordial. I mean, the road could be ending on the merging lane and drivers still won&amp;rsquo;t let you in. I&amp;rsquo;ve literally sat for two blocks in near deadlock traffic with my blinker on, and nobody would let me in. Combine this with the fact that whoever designed Sydney&amp;rsquo;s roads was drunk at the time (roads that suddenly veer off to one side, other roads that go from three lanes to one, roads that steer around a park causing 20 minute delays, or roads always having a bottleneck whilst crossing the rail tracks, etc.,). This plays a role in how everybody typically drives &amp;ndash; they drive &lt;strong&gt;very&lt;/strong&gt; close to each other. I don&amp;rsquo;t just mean tailgating, it is something else. I&amp;rsquo;ve been to quite a few cities in the world, and I&amp;rsquo;ve never seen people drive so close to each other.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Small Business Server 2003</title>
+      <link>http://localhost:1313/2007/12/small-business-server-2003_4192.html</link>
+      <pubDate>Tue, 11 Dec 2007 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2007/12/small-business-server-2003_4192.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve recently been hired for a company that does consulting for small businesses. Naturally, I haven&amp;rsquo;t had a huge exposure to SBS. My employer asked me to take the SBS MCP Certification, and this afternoon, I passed. The exam was pretty easy &amp;ndash; I think Microsoft basically took the easy questions spread out across the MCSE and dumped them into the SBS exam (some of the questions were very similar). My tips to anybody taking the exam:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MCSE: Security</title>
+      <link>http://localhost:1313/2006/11/mcse-security_5711.html</link>
+      <pubDate>Wed, 08 Nov 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/11/mcse-security_5711.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;My buddy &lt;a href=&#34;http://www.ianfitzpatrick.com/&#34;&gt;Ian&lt;/a&gt; and myself have decided to get our MCSEs. However, Ian is a Mac lover, and I can&amp;rsquo;t seem to stay away from Linux (and I&amp;rsquo;m too cheap right now to buy a MacBook). The irony might be subtle, yet we are still studying and making progress. For the most part, I have decided to take the tests in the following order:&lt;/p&gt;
+&lt;p&gt;70-290, Security+, 70-270, 70-291, 70-293, 70-294, 70-298, 70-299&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Xen &#43; nVidia</title>
+      <link>http://localhost:1313/2006/11/xen-nvidia_5527.html</link>
+      <pubDate>Thu, 02 Nov 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/11/xen-nvidia_5527.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve played with quite a bit of virtualization, especially VMWare for ages. About eight months ago I started to play around with Xen, and got it to work great, except for the fact that the nvidia driver wouldn&amp;rsquo;t work with the Xen kernel. That said, I&amp;rsquo;m gonna give another go.&lt;/p&gt;
+&lt;p&gt;Throughout senior high, and especially my last year, I managed to score a bunch of crappy motherboards and random parts and pieces. Six or so years later, my parents are &lt;em&gt;still&lt;/em&gt; finding old motherboards. Considering these computers were mainly P120s with 64-128 megs of RAM, they weren&amp;rsquo;t so hot. What is one to do?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Another VPN Node</title>
+      <link>http://localhost:1313/2006/09/another-vpn-node_6602.html</link>
+      <pubDate>Fri, 08 Sep 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/09/another-vpn-node_6602.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;After consulting several vendors in Kuala Lumpur, I was able to get the right Cisco with the right IOS. One of their technicians came and installed it, and that night I hooked it up to our VPN. Besides the fact that the internet distribution is still a little shady in Kuala Lumpur, the connection remains somewhat stable, and yet another node is brought on the company intranet.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Monitoring Traffic Usage</title>
+      <link>http://localhost:1313/2006/08/monitoring-traffic-usage_3593.html</link>
+      <pubDate>Tue, 29 Aug 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/08/monitoring-traffic-usage_3593.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;One of the greatest benefits, in my opinion, of Cisco routers is the ability to generate netflows. In a lot of ways, I would prefer to do this than implement some appliance (say, using ntop). The ability to analyse the amount of traffic becomes extremely valuable. Not only can one measure the amount of traffic, but the type of traffic that is being generated through the network.&lt;/p&gt;
+&lt;p&gt;Using a similar configuration, I setup all four Ciscos to export netflows that stream back to a server in the States. I decided to use &lt;a href=&#34;http://nfdump.sourceforge.net&#34;&gt;nfdump&lt;/a&gt; as a collector. After the dumps are collected, it is simple to setup &lt;a href=&#34;http://nfsen.sourceforge.net&#34;&gt;nfsen&lt;/a&gt; to parse and analyse the received flows. It even allows you to generate &lt;a href=&#34;http://nfsen.sourceforge.net/details-graphs.png&#34;&gt;really pretty graphs&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LDAP Backend</title>
+      <link>http://localhost:1313/2006/07/ldap-backend_5061.html</link>
+      <pubDate>Fri, 07 Jul 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/07/ldap-backend_5061.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Users don&amp;rsquo;t like to remember passwords, heck, I don&amp;rsquo;t like to remember to use passwords. I decided to upgrade all the webapps to authenticate off the domain, welcome a start to SSO. To do this I implemented the &lt;a href=&#34;http://adldap.sourceforge.net/&#34;&gt;adldap php class&lt;/a&gt; to control authentication to each webapp. Thus, a simple GPO can control who has access to the app or not. A simple solution to a rather simple problem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Very Remote Backups</title>
+      <link>http://localhost:1313/2006/06/very-remote-backups_5452.html</link>
+      <pubDate>Thu, 22 Jun 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/06/very-remote-backups_5452.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Backing up across the states has worked decently well, but due to several changes a more dedicated backup solution is in order. Desiring something quick, simple and inexpensive, research revealed a company that would perfectly fit the requirements. &lt;a href=&#34;http://www.ibackup.com&#34;&gt;iBackup&lt;/a&gt; was a perfect substitute - instead of SSH+rsync to another office, iBackup provides rsync over ssl to their data center. A few simple changes to the cron job, and backup location is thus changed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>An Upgrade in China</title>
+      <link>http://localhost:1313/2006/06/an-upgrade-in-china_4087.html</link>
+      <pubDate>Fri, 02 Jun 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/06/an-upgrade-in-china_4087.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Time has come to bring another network on the VPN, and perform some more upgrades. The usual by now, I guess.&lt;/p&gt;
+&lt;p&gt;-Get China on VPN&lt;br&gt;
+-Limit access to other locations&lt;br&gt;
+-Update all systems&lt;br&gt;
+-Perform security audits&lt;br&gt;
+-Upgrade wifi&lt;br&gt;
+-Setup video conferencing&lt;/p&gt;
+&lt;p&gt;Ian and I set off for our China office out of Hong Kong, and the next day started working. Total preparation was around a month, maybe a little large, mainly due to red tape. We first acquired assistance of IBM China, who were of a great help aiding us in finding our desired Cisco. One of the most important factors, which we couldn&amp;rsquo;t resolve by purchasing the Cisco in the States, is support/warranty contracts (if the Cisco totally dies, what then). Through our contact we were also able to find some local vendors that would support Wifi and the Cisco, in case of an emergency.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Domain Remame</title>
+      <link>http://localhost:1313/2006/06/domain-remame_1834.html</link>
+      <pubDate>Thu, 01 Jun 2006 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2006/06/domain-remame_1834.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Before we grow any further, a new DNS scheme is in order. Following the pattern of: citycode.domain.com - shouldn&amp;rsquo;t be too hard. A slightly stressful rename of the PDC (just one so far, still small) was in order. After that (and client computers re-associated), the routers were updated, the DNS server updated, and everything worked peachie. Not bad for a weekends worth of work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Quickie Backups</title>
+      <link>http://localhost:1313/2006/02/quickie-backups_2198.html</link>
+      <pubDate>Wed, 01 Feb 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/02/quickie-backups_2198.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;All is well for some disasters, but what happens if our entire office burns down? SSH+rsync to the rescue, again.&lt;/p&gt;
+&lt;p&gt;I first setup the PDC and webapp server to backup to the file server on a regular basis (PDC: incremental every day, full on Saturday). Then the file server takes those backups (including the files stored on the file server) every night and syncs them with another server across the States. In case something drastic happens, these off-site backups should be a savior.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>MySQL Replication</title>
+      <link>http://localhost:1313/2006/01/mysql-replication_5029.html</link>
+      <pubDate>Mon, 23 Jan 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/01/mysql-replication_5029.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;The webapp server is running fine, but backups are important. Better yet, a hot computer is a great idea. To do this, I setup an older spare rackmount as a &amp;rsquo;live&amp;rsquo; webapp server, just in case. A duplicate LAMP was setup, web apps copied over SSH via rsync on a regular basis, and the icing on the cake: mysql replication.&lt;/p&gt;
+&lt;p&gt;So, if the dedicated webapp server dies a painful death, a quick change of IP for the webapp server in the internal DNS to the backup rackmount, and nobody will know anything happened.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>New File and Webapp Server</title>
+      <link>http://localhost:1313/2006/01/new-file-and-webapp-server_9847.html</link>
+      <pubDate>Fri, 13 Jan 2006 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2006/01/new-file-and-webapp-server_9847.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Time has come to upgrade a few servers in the office. An older P4 2.8 was being used as a webapp server, and that needs to go. The resource utilization wasn&amp;rsquo;t too much of an issue, however the computer was aging. Plus, it wasn&amp;rsquo;t strictly built to host critical services, but since we grew so quickly, it is what was available. Additionally, the PDC was hosting user files and with these mounting in size, a dedicated file server is in order.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Internet In China (Essay)</title>
+      <link>http://localhost:1313/2005/12/internet-in-china-essay_7360.html</link>
+      <pubDate>Mon, 05 Dec 2005 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2005/12/internet-in-china-essay_7360.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;I realized at the end of the 2005 school year that I was going to be two business credits short of graduating. Two! Understandable I think, since I had been working full time or over full time (one to four jobs) for the last three years. Plus, I changed my degree after the first year; not to mention I somehow crammed five years worth of credits in four years. Well, I arranged with one of my teachers (who had a great class, I must add) to guide me through the last two credits. The credits involved writing a paper regarding China and the Internet. A broad topic, I must admit.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Network Upgrade</title>
+      <link>http://localhost:1313/2005/11/network-upgrade_1831.html</link>
+      <pubDate>Mon, 14 Nov 2005 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2005/11/network-upgrade_1831.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;A network upgrade is in order, since we are depending more and more on our internet connectivity. Historically we have been using D-Link &amp;ldquo;Business Grade&amp;rdquo; equipment over DSL lines (decent bandwidth, but not 100% reliable, plus latency that is a little high). Time for an upgrade.&lt;/p&gt;
+&lt;p&gt;Since FiOS isn&amp;rsquo;t offered yet where our office is located, we had to settle on a T1. However, since both locations in the States will have T1s through the same company, the quality should be decent. Since I&amp;rsquo;m telecommuting now, my colleague organized what company to order the T1 through, and had the line installed. Since our offices are both quite small, there isn&amp;rsquo;t a need for any huge routers, we aren&amp;rsquo;t moving a tremendous amount of traffic. Then again, we do need a certain amount of features. Initially the T1 company almost required us to use their equipment (which was luckily discounted highly), and after we gave them our set of requirements, they gave us a pair of Cisco 1723s, which I was a little skeptical about. A Cisco technician came out and sort of set them up (enough for me to gain remote access at least). However, a slew of issues surrounded the 1723s. The routing wasn&amp;rsquo;t setup up quite properly, and the IOS was a little outdated.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Inventory Tracking</title>
+      <link>http://localhost:1313/2005/10/inventory-tracking_1633.html</link>
+      <pubDate>Tue, 25 Oct 2005 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2005/10/inventory-tracking_1633.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;RATS, or Return Authorization Tracking System, is a way for us to handle RMAs.&lt;/p&gt;
+&lt;p&gt;The site uses modified TOES code (although cleaned up significantly) to track returns and warranty claims (and depending on which type of claim it, this determines which part of the U.S. the warehouse will be shipped). It categorizes where they order is going, the status of the order, which company the return belongs to and customer information. Nothing too complicated, although I&amp;rsquo;m contemplating integrating it with our website so customers can check the status of their returns online.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>An Overseas Update</title>
+      <link>http://localhost:1313/2005/09/an-overseas-update_1045.html</link>
+      <pubDate>Fri, 30 Sep 2005 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2005/09/an-overseas-update_1045.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Kuala Lumpur represents a new adventure for me, and a new project. The goals were simple: update/clean the systems, upgrade the internet connection, give pseudo-voip capability and try to get them on the VPN.&lt;/p&gt;
+&lt;p&gt;Before leaving the states I had to make sure several things were in order. First, I needed to order the rotuer I was going to bring out with me. Next, I needed to make sure KL had arranged the appropriate DSL upgrades, and last: pretest the connection. Before leaving L.A. I had the opportunity to test the new router and have it connect to the VPN. All is good to go.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ERP Time</title>
+      <link>http://localhost:1313/2005/09/erp-time_2348.html</link>
+      <pubDate>Fri, 09 Sep 2005 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2005/09/erp-time_2348.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Currently our ERP setup is a nightmare, both in stability, features and especially administration. A new solution is in order. After collecting goals/requirements we have begun researching, and even started testing some platforms. The &amp;ldquo;other half&amp;rdquo; of the IT department and I installed and tested &lt;a href=&#34;http://www.compiere.com&#34;&gt;Compiere&lt;/a&gt; today on a spare (albeit low performance) rackmount. For those of you (most) who don&amp;rsquo;t know, Compiere is an ERP solution that ties together all the faucets of a company under one hood. We are impressed with Compiere, but installation is a bit on the complicated side.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TOES</title>
+      <link>http://localhost:1313/2005/09/toes_1320.html</link>
+      <pubDate>Mon, 05 Sep 2005 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2005/09/toes_1320.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Toes, aka the Temporary Order Entry System, is a, get this, a temporary ordering system to buy some more time while the full ERP is designed and implemented. Because we grew so quickly, orders needed to be put in a temporary zone, then moved somewhere else (apologies for being vague, you can understand why). Myself and a co-worker hacked up a temporary holding zone for the orders. It allows New Invoices, to View Invoices, whatever is In Queue, Voided and Search. The order entry page is auto-loads prices and things from the database, so totals are pulled out of the database and added up automatically. We ultimately entered well over 1500 invoices into TOES before the ERP was implemented, and besides a few odd hiccups, it was pretty stable. The UI doesn&amp;rsquo;t look all web2.0-like, but for an intranet project, it didn&amp;rsquo;t need to.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Track My Hours Please</title>
+      <link>http://localhost:1313/2005/07/track-my-hours-please_6190.html</link>
+      <pubDate>Sun, 31 Jul 2005 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2005/07/track-my-hours-please_6190.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Initially all CSRs were hired as temps, which means they had their own timesheets. Some new people have been hired as full/part-time employees, so we need to handle their timesheets &amp;ndash; plus, several people (including myself) are paid on an hourly basis. Perfect time to setup a Timesheet.&lt;/p&gt;
+&lt;p&gt;Since we are still small, with no ERP, and I don&amp;rsquo;t have time or desire to write a timesheet app, I decided to do some research. I found a few on SourceForge, but I wanted something uber-simple to use and uber-simple to install. I settled upon &lt;a href=&#34;http://www.timesheetphp.com/&#34;&gt;TimesheetPHP&lt;/a&gt;. Luckily it even allowed LDAP support, which would be useful eventually for SSO. Installation was a breeze, and now everybody logs hours onto the an intraweb server.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Faxing, Hurrah!</title>
+      <link>http://localhost:1313/2005/07/faxing-hurrah_6354.html</link>
+      <pubDate>Mon, 04 Jul 2005 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2005/07/faxing-hurrah_6354.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;Another line needing to be ported over: fax. Since time is very constrained, I quickly setup an extra server (OS X, actually) to act as a fax server. The fax line inserts immediately into the server, then from there any new faxes are printed on a normal printer and dropped into a central shared repository for the CSRs to access. Surely we will replace this setup sometime in the future, but for now it gets the job done.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>A Division in 30 Days</title>
+      <link>http://localhost:1313/2005/06/a-division-in-30-days_9756.html</link>
+      <pubDate>Thu, 30 Jun 2005 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2005/06/a-division-in-30-days_9756.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;On a Friday I was told we might purchase a division from another company. Monday I heard that we purchased the division, and that we needed to have a website taking orders and a call center, capable of handling 500+/day (and not short calls); by the end of the month. Not to mention that the products wouldn&amp;rsquo;t even ship out of the same warehouse that held the call center, but a warehouse half-way across the country. And that a recall was occurring, which had additional requirements. On Tuesday the CEO, and my boss, left for Asia.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Britney Spears&amp;#39; Toxic, Remixed</title>
+      <link>http://localhost:1313/2004/06/britney-spears-toxic-remixed_6603.html</link>
+      <pubDate>Fri, 04 Jun 2004 20:30:00 +1000</pubDate>
+      <guid>http://localhost:1313/2004/06/britney-spears-toxic-remixed_6603.html</guid>
+      <description>&lt;p&gt;Status:&lt;/p&gt;
+&lt;p&gt;I started University as a CS major trying to get a business degree as well. The first two terms I was overloaded with classes (taking 19 and 22 credits, respectively). At one point I was in my C++ class and chatting to my mom, mentioning how I wasn&amp;rsquo;t really meeting that many people, especially females &amp;ndash; which when you are an 18 year old male, is something typically on your mind. She replied that most of the students in her communication class were female, and taking a few communication classes would make me a better husband one day blah blah blah; I dropped the CS degree and picked up a minor in Communication.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

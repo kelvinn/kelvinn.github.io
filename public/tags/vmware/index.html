@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Vmware | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/vmware/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/vmware/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/vmware/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Downloading VMWare with Firefox" href="http://localhost:1313/2009/06/downloading-vmware-with-firefox_4800.html">Downloading VMWare with Firefox </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-06-09 20:30:00.002 +1000 AEST'>Published on June 9, 2009</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;ve had this issue happen to me several times, and I&rsquo;m finally writing myself a note to fix it in the future. There seems to be an issue with downloading VMWare Workstation (.bundle). I first tried it with Firefox, but it just crapped out at loading it into /tmp. Next, I tried it with Lynx, but alas, it tried to download it as a text file.</p>
+<p>Ahah! The quickest solution I could find is to right click the link, save as, and save it as a zip. Rename it to .bundle when you&rsquo;re done.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Files between ESX and Linux via NFS" href="http://localhost:1313/2009/03/files-between-esx-and-linux-via-nfs_6022.html">Files between ESX and Linux via NFS </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-03-02 21:30:00.002 +1100 AEDT'>Published on March 2, 2009</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I like ESX. I like Linux. It is absurdly easy to configure Linux as an NFS server and mount it in ESXIi).</p>
+<p><strong>Installed NFS</strong></p>
+<p>I currently use Ubuntu Server for my home lab, but the process is basically the same for Red Hat and derivatives.</p>
+<pre tabindex="0"><code>sudo apt-get install nfs-common
+sudo apt-get install nfs-kernel-server
+</code></pre><p>Next, configure NFS so it can server your local LAN. Normally you would list only specific servers, but, well, we&rsquo;re being cheap and dirty today. Open /etc/exports in VI or your editor of choice.</p>
+<p><strong>/etc/exports</strong></p>
+<pre tabindex="0"><code>/media/disk/Images 192.168.0.0/24(rw,no\_root\_squash,async
+</code></pre><p>Restart NFS.</p>
+<pre tabindex="0"><code>sudo /etc/init.d/nfs-common
+</code></pre><p>Go to Configuration -&gt; Storage -&gt; Add Storage.</p>
+<p>Select NFS</p>
+<p>Fill in the info, see screenshot.</p>
+<p>Wait a minute. Voila! New datastore.</p>
+<p><strong>Images to come shortly.</strong></p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Beginning Scripting ESXi" href="http://localhost:1313/2009/01/beginning-scripting-esxi_6126.html">Beginning Scripting ESXi </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2009-01-06 21:30:00.002 +1100 AEDT'>Published on January 6, 2009</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;m not impressed too often with much software, especially the closed source kind. I find a leaning preference to all things FOSS. If I had a million dollars, I&rsquo;d likely spend all day contributing to all the projects I wish I had time to contribute to. Regardless, there are a select few closed-source products that I believe are truly excellent. I mean, the type of software where you aren&rsquo;t asking &ldquo;I wish this could do this&rdquo; and start asking &ldquo;I wonder what else this can do.&rdquo;</p>
+<p>While I&rsquo;ve played around with most types of virtualization out there (OpenVZ, Xen, V-Server, qemu&hellip;), I&rsquo;ve really found a soft spot for VMWare.</p>
+<p>Don&rsquo;t get me wrong, if I was going to host a heap of Linux web servers I would absolutely use Xen, but for a heterogeneous environment, I haven&rsquo;t used anything as easy as VMWare&rsquo;s products. Not that I judge a product by how easy it is to use, not by a long shot, but ease of use sure makes judging other factors easier.</p>
+<p>Regardless, this isn&rsquo;t a post trumpeting VMWare. I just realized tonight that some of the VMs I have running don&rsquo;t need to be except for certain hours of the day, or if condition A is true. The first example is my backup mail server; I really don&rsquo;t need it even powered on unless my main server is down. The second example is my Server 2003 instance, which has VI3 on it; I don&rsquo;t need this running unless I&rsquo;m asleep. One of the most useful resources I&rsquo;ve seen for the vmrun command is over at <a href="http://www.virtuatopia.com/index.php/Controlling_VMware_Virtual_Machines_from_the_Command_Line_with_vmrun">VirtualTopia</a> &ndash; loaded with examples.</p>
+<h4 id="turn-off-via-time">Turn off via time</h4>
+<p>On my &ldquo;monitoring&rdquo; instance, which is always up, I&rsquo;ve decided to install the script that controls my VM. I&rsquo;ve opted to use a soft shutdown.</p>
+<p>192.168.0.10 = ESXi box</p>
+<p>datastore1 = name of datastore that hosts VMs</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password stop &#34;\[datastore1\] Server 2003 R2/Server 2003 R2.vmx&#34; soft
+</code></pre><p>I have that saved in a file called <strong>stop_2003.sh</strong> in /opt/vmware/bin; make sure it isn&rsquo;t world readable. I also have a <strong>start_2003.sh</strong>:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start &#34;\[datastore1\] Server 2003 R2/Server 2003 R2.vmx&#34;
+</code></pre><p>Next, edit root&rsquo;s crontab (crontab -e):</p>
+<pre tabindex="0"><code>\# m h  dom mon dow   command
+0 8 \* \* \* /opt/vmware/bin/start\_2003.sh
+0 23 \* \* \* /opt/vmware/bin/stop\_2003.sh
+</code></pre><p>The conditional task is a tad bit more tricky, but just a tad. Ping won&rsquo;t do, since the mailserver could go down itself, so install nmap. Create a script:</p>
+<pre tabindex="0"><code>#!/bin/bash
+
+if nmap -p25 -PN -sT -oG - mail.kelvinism.com | grep &#39;Ports:.\*/open/&#39; &gt;/dev/null ; then
+echo \`time\` &gt;&gt; mailserver.log
+else
+/opt/vmware/bin/start\_mail.sh
+fi
+</code></pre><p>And sticking with our theme, <strong>start_mail.sh</strong>:</p>
+<pre tabindex="0"><code>#!/bin/sh
+
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start &#34;\[datastore1\] Mail Server/Mail Server.vmx&#34;
+</code></pre><p>This of course changes the crontab entry to:</p>
+<pre tabindex="0"><code>\# m h  dom mon dow   command
+0 8 \* \* \* /opt/vmware/bin/start\_2003.sh
+0 23 \* \* \* /opt/vmware/bin/stop\_2003.sh
+\*/5 \* \* \* \* /opt/vmware/bin/detect\_port.sh
+</code></pre><p>So, that&rsquo;s it. detect_port.sh is lacking any type of error detection or redundancy - if one packet/scan is dropped, the mail server will turn on. I&rsquo;ll re-work this at some point, but it works for now.</p>
+<p><strong>Update</strong>: Vmware has also released a decent blog entry about using vmrun: <a href="http://blogs.vmware.com/vix/2008/12/managing-vm-guests-using-vmrun.html">on their blog</a>.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Install ESX from a USB (no CDROM)" href="http://localhost:1313/2008/12/install-esx-from-usb-no-cdrom_3723.html">Install ESX from a USB (no CDROM) </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.011 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>My little server doesn&rsquo;t have a cdrom, but I didn&rsquo;t want to actually run ESX from a USB (i.e. esx-on-a-stick). Here are my notes of configuring a flash disk to boot the ESX installer (so you can install it onto a local disk). For this demo, my USB is /dev/sdb</p>
+<ol>
+<li>
+<p>Install the syslinux utils to your computer (apt-get install syslinux mboot)</p>
+</li>
+<li>
+<p>Install the MBR</p>
+</li>
+</ol>
+<pre tabindex="0"><code>sudo install-mbr /dev/sdb
+</code></pre><ol start="3">
+<li>
+<p>Copy all the files from the ISO to your fat32 formated partition</p>
+</li>
+<li>
+<p>Install syslinux</p>
+</li>
+</ol>
+<pre tabindex="0"><code>sudo syslinux /dev/sdb1
+</code></pre><ol start="5">
+<li>Move isolinux.cfg to syslinux.cfg, and try booting. If it doesn&rsquo;t work, edit syslinux.cfg says something like:</li>
+</ol>
+<pre tabindex="0"><code>default menu.c32
+menu title ESXi Boot
+timeout 100
+
+label ESXi
+menu label Boot VMware ESXi
+kernel mboot.c32
+append vmkernel.gz --- binmod.tgz --- environ.tgz --- cim.tgz
+ipappend 2
+</code></pre><ol start="6">
+<li>Unplug your USB, put it in your server, reboot, boot to USB-HDD (or select the USB disk), and install ESX to the local disk. You will likely be greeted with a sign saying &ldquo;MBR FA:&rdquo;, where you need to press &ldquo;A&rdquo; and then &ldquo;1&rdquo;.</li>
+</ol>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Migrating large disks into ESXi" href="http://localhost:1313/2008/12/migrating-large-disks-into-esxi_4692.html">Migrating large disks into ESXi </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.009 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I recently had the need to move a rather large (450GB) VMDK file from an external hard drive into ESXi. Since ESXi doesn&rsquo;t support external hard drives, this makes things quite a bit more difficult. At first I tried using SCP to copy the file over (after enabling SSH access for ESXi). However, when I tried to do this the time left was almost 20 hours &ndash; a tad too long!</p>
+<p>I rethought my idea and decided to use this process:</p>
+<ol>
+<li>
+<p>Create an NFS share on my laptop, using the external hard drive (with the VMDK) as a mount point.</p>
+</li>
+<li>
+<p>Use vmkfstools to move the image over.</p>
+</li>
+<li>
+<p>Update any bugs I encountered.</p>
+</li>
+</ol>
+<p>Creating the NFS share on Linux is extermily easy. After install nfs via whatever package management tool you choose, put this entry into your /etc/exports file:</p>
+<pre tabindex="0"><code>  
+/media/disk-1 192.168.1.0/24(ro,no\_root\_squash,async)  
+</code></pre><p>This assumes your USB disk is mounted as /media/disk-1, and your local subnet is 192.168.1.0/24. In OpenFiler, add a new storage with type NFS and use your laptops IP as the hose, and /media/disk-1 as the mount point. For safey, tick read-only.</p>
+<p>Next, unlock SSH if you haven&rsquo;t already. Once you are in, browse to /vmfs/volumes and you can see your nfs share and your other datastores. Let&rsquo;s say you USB virtual disk is located at /vmfs/volumes/nfs/bigdisk.vmdk, and you want to import it into your normal datastore, under a folder called &lsquo;NAS&rsquo;. Using vmware specific tools, you can import the file as so:</p>
+<pre tabindex="0"><code>  
+\# vmkfstools -i /vmfs/volumes/nfs/bigdisk.vmdk /vmfs/volumes/datastore1/NAS/bigdisk.vmdk  
+</code></pre><p>I needed to update the hardware version of my imported disk. To do this, open up the .vmdk file (you should also have a -flat.vmdk file), and update the virtualHWVersion entry from 7 to 4. With that, join your disk to an image, and you should be good to go.</p>
+<p>An addition result I noticed was the speed at which it came over. By using SCP, the entire file was going to take 20hr. By using NFS and vmkfstools, the files was migrated in under 10 hours.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Speeding Up VMWare Server" href="http://localhost:1313/2008/12/speeding-up-vmware-server_791.html">Speeding Up VMWare Server </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-12-07 21:30:00.008 +1100 AEDT'>Published on December 7, 2008</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I found VMWare Server to have very slow I/O, and sought to improve it. Below are a list of tests I performed, the change, and the results.</p>
+<pre tabindex="0"><code>  
+  
+\### Host OS ###  
+/dev/sdb1:  
+ Timing buffered disk reads:  220 MB in  3.05 seconds =  72.17 MB/sec  
+kelvin@gorilla:~$ sudo hdparm -t /dev/sdb1  
+  
+/dev/sdb1:  
+ Timing buffered disk reads:  266 MB in  3.01 seconds =  88.33 MB/sec  
+kelvin@gorilla:~$ sudo hdparm -t /dev/sdb1  
+  
+/dev/sdb1:  
+ Timing buffered disk reads:  310 MB in  3.01 seconds = 102.99 MB/sec  
+  
+  
+\### Before Changes ###  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:    8 MB in  3.36 seconds =   2.38 MB/sec  
+\[root@files etc\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:   24 MB in  3.63 seconds =   6.61 MB/sec  
+\[root@files etc\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:   28 MB in  4.54 seconds =   6.16 MB/sec  
+  
+</code></pre><p>I made several changes, but the changes that seemed to have the most impact are below:</p>
+<pre tabindex="0"><code>  
+  
+vm.dirty\_background\_ratio = 5  
+vm.dirty\_ratio = 10  
+vm.swappiness = 0  
+  
+</code></pre><p>Pop this into the virtual machine&rsquo;s .vmx file, reboot, and off you go. One unfortunate side effect is that you can no longer overload the memory (e.g. allocate more memory with the VMs than you actually have available).</p>
+<pre tabindex="0"><code>  
+  
+\### After Changes ###  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:   52 MB in  3.13 seconds =  16.61 MB/sec  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:   82 MB in  3.31 seconds =  24.75 MB/sec  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:  118 MB in  3.19 seconds =  36.97 MB/sec  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:  144 MB in  3.32 seconds =  43.37 MB/sec  
+  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data  
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:  160 MB in  3.10 seconds =  51.57 MB/sec  
+  
+  
+</code></pre><p><strong>UPDATE</strong>: Those wanting all the speed and still want to use memory overloading, I&rsquo;d suggested you give ESXi a try. So far, so good.</p>
+<pre tabindex="0"><code>  
+\## With ESXi, same hardware ##  
+\[root@files ~\]# hdparm -t /dev/mapper/openfiler-data   
+  
+/dev/mapper/openfiler-data:  
+ Timing buffered disk reads:  200 MB in  3.18 seconds =  62.92 MB/sec  
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Using Raw Disks with VMware Server 2" href="http://localhost:1313/2008/08/using-raw-disks-with-vmware-server-2_3562.html">Using Raw Disks with VMware Server 2 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-08-11 20:30:00.002 +1000 AEST'>Published on August 11, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>For various reasons I had the need to open a raw disk inside VMware Server 2. The reports from the field say that this just isn&rsquo;t supported. Although I don&rsquo;t need to actually run a raw disk, I needed to get some data off it &ndash; 400GB worth. It turns out &rsquo;not supported&rsquo; really means &rsquo;not in the UI.&rsquo; I don&rsquo;t know the reason why it isn&rsquo;t in the UI, maybe marketing wants people to use ESX, or maybe the UI guys fell behind with their workload.</p>
+<p>Alas, it is possible. And here&rsquo;s how.</p>
+<ol>
+<li>
+<p>Take out your &lsquo;raw disk&rsquo; and put it into another machine.</p>
+</li>
+<li>
+<p>Fire up Server 1.0.x or Workstation and open a virtual machine (or create a new one). Edit the preferences and add a new hard disk. Select &lsquo;use a physical disk&rsquo;, and select the disk you put in above. Select use entire disk. You may want to change the SCSI LUN to SCSI1:0 (depending how many disks are in your &lsquo;proper&rsquo; server).</p>
+</li>
+<li>
+<p>Save it as something like 500GB.vmdk</p>
+</li>
+<li>
+<p>Copy out the relevant bit from the vmx file, e.g.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>\# Test VM.vmx
+scsi1.present = &#34;TRUE&#34;
+scsi1:0.present = &#34;TRUE&#34;
+scsi1:0.fileName = &#34;500GB.vmdk&#34;
+scsi1:0.deviceType = &#34;rawDisk&#34;
+</code></pre><p>And of course, the entire 500GB.vmdk file</p>
+<pre tabindex="0"><code>\# 500GB.vmdk
+# Disk DescriptorFile
+version=1
+CID=7e245252
+parentCID=ffffffff
+createType=&#34;fullDevice&#34;
+
+# Extent description
+RW 976773168 FLAT &#34;/dev/sdb&#34; 0
+
+# The Disk Data Base 
+#DDB
+
+ddb.virtualHWVersion = &#34;6&#34;
+ddb.geometry.cylinders = &#34;60801&#34;
+ddb.geometry.heads = &#34;255&#34;
+ddb.geometry.sectors = &#34;63&#34;
+ddb.geometry.biosCylinders = &#34;60801&#34;
+ddb.geometry.biosHeads = &#34;255&#34;
+ddb.geometry.biosSectors = &#34;63&#34;
+ddb.adapterType = &#34;buslogic&#34;
+</code></pre><p><strong>Note</strong>: If your guest OS is 64-bit, you won&rsquo;t be able to use buslogic. Switch the last entry above to &rsquo;lsilogic&rsquo;.</p>
+<p>While you could likely create the vmdk file by hand, the only number I&rsquo;m not certain about is the part after the RW. (UPDATE: Note added to page). The Disk Data Base you can just see by typing in &lsquo;fdisk /dev/sdb&rsquo;</p>
+<ol start="4">
+<li>
+<p>Move the disk back to the &lsquo;server&rsquo; and turn the server back on.</p>
+</li>
+<li>
+<p>Edit the vmx file of whatever virtual machine you want to use and put in the part copied from the vmx file of your other machine. Alternatively, if you did an upgrade, you could just copy it across now. Create a new 500GB.vmdk file in the same directory, paste in the bit you copied out from the test virtual machine. Double check that the &lsquo;raw disk&rsquo; comes up as the same node in /dev.</p>
+</li>
+<li>
+<p>Boot up the virtual machine. You will notice in the WebUI that a new scsi controller is inserted. You should also noticed a new disk accessible inside your virtual machine, e.g.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>\[root@files dev\]# ls sd\*
+sda  sda1  sda2  sda3  sdb  sdb1
+\[root@files dev\]# ls /mnt
+cdrom  floppy
+\[root@files dev\]# mkdir /mnt/disk
+\[root@files dev\]# mount /dev/sdb1 /mnt/disk
+\[root@files dev\]# ls /mnt/disk
+Files  lost+found  Movies  Music  Personal  VMWare
+\[root@files dev\]#
+</code></pre><p><strong>Update</strong>: Peter Jonsson kindly sent in the answer to &ldquo;I don&rsquo;t know what to put after the RW.&rdquo; Below is the description of how to find the correct number. Thanks Peter!</p>
+<pre tabindex="0"><code>The magic formula is:
+
+ThePartAfterTheRW  =  TOTAL AMMOUNT OF DISKBYTES   /   512
+
+
+This is my Western Digital 500 GB drive: 
+
+fdisk -l
+
+Disk /dev/sdc: 500.1 GB, 500107862016 bytes
+
+256 heads, 63 sectors/track, 60563 cylinders
+
+Units = cylinders of 16128 \* 512 = 8257536 bytes
+
+Disk identifier: 0x00000000
+
+And using the formula I got the &#34;RW&#34; stuff:
+
+500107862016 / 512  = 976773168
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to VM Automatic Startup in Server 2" href="http://localhost:1313/2008/08/vm-automatic-startup-in-server-2_6579.html">VM Automatic Startup in Server 2 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-08-02 20:30:00.002 +1000 AEST'>Published on August 2, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I think possibly one of the most practical upgrades in VMware Server 2 appears to be the ability to automatically turn on virtual machines in a stagnated order. I have fond memories of turning on a server with 10 virtual machines, and when they all turn on at once, the hard disk grinds to a halt. This forced me to turn on the machines manually afterwards.</p>
+<p>+1 VMware in my books.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Ubuntu 8.04 64-Bit and VMware Server 2" href="http://localhost:1313/2008/08/ubuntu-804-64-bit-and-vmware-server-2_1451.html">Ubuntu 8.04 64-Bit and VMware Server 2 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-08-01 20:30:00.004 +1000 AEST'>Published on August 1, 2008</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I now have successful installation of VMware Server 2 (Beta RC1) on top of Ubuntu 8.04 64-bit. I have been using various virtualization technologies for years, and VMware is usually the easiest to install and configure. So far, VMware Server 2 RC1, has proven to be the exception to the rule.</p>
+<p>That said, I am very excited by the direction VMware is taking &ndash; this new server version looks to have great potential.</p>
+<p>The &lsquo;server&rsquo; this is on is a mATX motherboard from Gigabyte (GA-G33M-DS2R), with 4GB (2x2GB) of Transcend DDR2-800 memory, topped off with the E8200. I have been nothing but impressed with this combination of hardware.</p>
+<p>However, although I was thinking VMware Server 2 would install seamlessly over Ubuntu, I was wrong. There were a few things I had to tweak to get everything working correctly.</p>
+<p>The first thing I had major issues with was VMware choking on the parallel port. Normally the parport is the first thing I would turn off, but in this instance, I guess excitement overtook me. My tip is to first remove the lp module from inside /etc/modules, and then disable the parallel port inside the BIOS. The symptoms I was having involved VMware halting/freezing on either startup or shutdown. This occurred for both RC1 as well as 1.0.6.</p>
+<p>My second tip, if VMware freezes half way through starting up or shutting down, is to go through the vmware startup script, /etc/init.d/vmware, and comment out anything refering to the parport_pc. In particular, I looked for this line and made sure to comment it out:</p>
+<pre tabindex="0"><code>/sbin/modprobe -r parport\_pc &gt;/dev/null 2&gt;&amp;1
+</code></pre><p>I commented out lines 974 and 1076. After doing this, VMware loaded perfectly.</p>
+<p>The second major issue I had occurred after actually installing VMware. I opened Firefox and went to the IP of my virtual server, logged in just fine, and loaded up my first virtual machine. However, after booting the virtual machine, I was unable to open up the remote console. It turns out I had just upgraded to Firefox 3.0.1, and the Remote Console is set to fail on anything above 3.0.0.1. The fix is quite easy.</p>
+<p>First click where it says &ldquo;click anywhere to open the virtual machine&rdquo;. Copy the address of the XPI and use something like wget to download the file. This is an example:</p>
+<pre tabindex="0"><code>wget --no-check-certificate https://192.168.50.10/ui/plugin/vmware-vmrc-linux-x86.xpi
+</code></pre><p>If you are using Gnome, right click the file you just downloaded and say Open With then Archive Manager. Do the same for the &lsquo;install.rdf&rsquo; file inside, specifying gedit as the application if need be. Next, edit line 20 so it reads as follows:</p>
+<pre tabindex="0"><code>3.0.\*
+</code></pre><p>Save the file, open the XPI with Firefox, and you should be good to go.</p>
+<p>I&rsquo;ve seen a lot of other suggestions on the &rsquo;net on how to fix VMware RC1 when booting &ndash; including disabling ipv6, checking the hosts file, and running the any-any patches. None of these approaches helped me at all, but maybe it is exactly what you need. My biggest tip is that if VMware isn&rsquo;t starting up or stopping correctly, open up /etc/init.d/vmware and find out exactly where it is faulting (add things like &rsquo;echo &ldquo;fail&rdquo;&rsquo; inside the IF statements).</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to VMware Tools in VMware Server 2" href="http://localhost:1313/2008/08/vmware-tools-in-vmware-server-2_6233.html">VMware Tools in VMware Server 2 </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2008-08-01 20:30:00.005 +1000 AEST'>Published on August 1, 2008</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Installing the tools in VMware Server 2 is a little different than Workstation or the previous versions of VMware Server. Under the Summary tab of your Virtual Machine, look for a link that says &ldquo;Install VMware Tools&rdquo; &ndash; click it.</p>
+<p>Wait for &lsquo;Success&rsquo; to show up on the bottom, and jump into your virtual machine. Mount the tools as so:</p>
+<pre tabindex="0"><code>mount /dev/cdrom /media/cdrom
+</code></pre><p>And install as normal (copy the .tar.gz to /usr/src, extract it, install it). Easy peasy.</p>
+
+  </div>
+
+  
+</article>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

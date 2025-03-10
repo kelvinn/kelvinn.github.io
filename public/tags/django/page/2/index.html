@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Django | Kelvin Nicholson</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/tags/django/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f038d33f020044aa04216c98f1a9c10e5ddb17b67121a7e556e42a43f96f24f5.css" integrity="sha256-8DjTPwIARKoEIWyY8anBDl3bF7ZxIaflVuQqQ/lvJPU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/django/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/tags/django/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="list" id="top">
+<div id='redbar'></div>
+<div id='greenbar'></div>
+
+<div class="container">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+
+
+
+<header class="header">
+    <a href='/'><span id='logo'></span></a>
+    <ul>
+        <li><a href='/tags/travel/'>Travel</a></li>
+        <li><a href='/tags/longevity/'>Longevity</a></li>
+        <li><a href='/tags/projects/'>Projects</a></li>
+        <li><a href='/tags/howtos/'>Tutorials</a></li>
+        <li><a href='/about/'>Who</a></li>
+    </ul>
+
+</header><main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Mass Spam Delete Django" href="http://localhost:1313/2007/10/mass-spam-delete-django_8712.html">Mass Spam Delete Django </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-10-02 20:30:00.002 +1000 AEST'>Published on October 2, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>As you can read, I&rsquo;ve been traveling around quite a bit lately. This means I haven&rsquo;t been checking the comments on my blog, which means quite a bit of spam has been entered. I am blocking the spam via akismet, however, it is still recorded in the database. Being somebody who hates cluttered desktops, you can imagine how I feel about having a lot (447) of spam. Well, since akismet flips the is_public switch True for good comments and False for bad comments, that makes a <strong>really</strong> easy query in mysql.</p>
+<pre tabindex="0"><code>mysql&gt; delete from comments\_freecomment where is\_public = False
+</code></pre><p>Of course, make sure you have backed up your database first.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Adding Search to Django" href="http://localhost:1313/2007/06/adding-search-to-django_6300.html">Adding Search to Django </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-06-03 20:30:00.008 +1000 AEST'>Published on June 3, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>This is fairly well documented in the Django docs, so I&rsquo;ll be brief. This is the the bit of search code I use in almost all of my Django sites, and it works great:</p>
+<pre tabindex="0"><code>
+def search(request):
+    from django.db.models import Q
+    q = request.GET.get(&#34;q&#34;, &#34;&#34;)
+    if q and len(q) &gt;= 3:
+        clause = Q(dirtword\_\_icontains=q)               \\
+               | Q(description\_\_icontains=q)       \\
+               | Q(tags\_\_name\_\_icontains=q)        
+        site\_search = Dirt.objects.filter(clause).distinct()
+    else:
+        site\_search = Dirt.objects.order\_by(&#39;?&#39;)\[:100\]
+    return list\_detail.object\_list(
+        request              = request,
+        queryset             = site\_search,
+        template\_name        = &#34;dirty/search.html&#34;,
+        template\_object\_name = &#34;dirty&#34;,
+        paginate\_by          = 20,
+        extra\_context        = {&#34;q&#34; : q},
+    )  
+</code></pre><p>While this should be pretty self-explanatory, the process goes like this: q is taken from the GET request and if it is over three characters long, it is searched for in the dirtword column, through the description and also through the m2m relationship of tags__name. Yup, it is pretty nifty to be able to access relationship in this way (tags__name). You will notice that at the end of each search it says &ldquo;__icontains&rdquo; &ndash; this simply does a fuzzy search for the word. Once the queryset is created (the filter) I&rsquo;ve added a .distinct() on the end &ndash;this prevents multiple rows from being returned to the template. If there isn&rsquo;t a search, or it isn&rsquo;t long enough, a random list will be returned.<br>
+One thing I like to do is include the search as extra_context &ndash; this allows you to say something like &ldquo;you&rsquo;ve searched for&hellip;&rdquo; at the top of your search. I couldn&rsquo;t imagine implementing a search feature as being any easier.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Django Syndication with Colddirt" href="http://localhost:1313/2007/06/django-syndication-with-colddirt_5107.html">Django Syndication with Colddirt </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-06-03 20:30:00.007 +1000 AEST'>Published on June 3, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Creating feeds in Django is freaking simple. I&rsquo;ll start with an example of just updating a feed with the newest objects (for instace, newest blog posts). Similar to the forms.py way of handling our different forms, I&rsquo;ve created a feeds.py to handle the feeds.</p>
+<h4 id="feedspy">feeds.py</h4>
+<pre tabindex="0"><code>
+from django.contrib.syndication.feeds import Feed
+from colddirt.dirty.models import Dirt
+
+class LatestDirts(Feed):
+    title = &#34;Cold Dirt&#34;
+    link = &#34;/&#34;
+    description = &#34;When you have dirt, you&#39;ve got dirt.  Right...&#34;
+    copyright = &#39;All Rights Unreserved&#39;
+    
+    def items(self):
+        return Dirt.objects.all()\[:50\]
+</code></pre><p>What this will do is query our Dirt DB and return an obj. The fields here are pretty well documented in the Django docs, besides being pretty obvious.</p>
+<h4 id="urlspy">urls.py</h4>
+<p>We need three things in our urls.py &ndash; first, import our feeds from feeds.py:</p>
+<pre tabindex="0"><code>from colddirt.feeds import LatestDirts
+</code></pre><p>Next, we map the feed we want to a name urls.py can use:</p>
+<pre tabindex="0"><code>feeds = {
+    &#39;newdirt&#39;: LatestDirts,
+}
+</code></pre><p>Finally we create which URL to use for the feeds:</p>
+<pre tabindex="0"><code>    (r&#39;^feeds/(?P.\*)/$&#39;, &#39;django.contrib.syndication.views.feed&#39;, {&#39;feed\_dict&#39;: feeds}),
+</code></pre><p>When we look at a request, the process goes like this: it comes in as /feeds/newdirt/, which then gets looked up and matches newdirt in the feeds_dict. Next, LatestDirts is looked at and evaluated, and returned. But how is it returned? One final thing to do is create a template for the feed to use, which is where we can tell exactly <em>what</em> is to be displayed to the user.</p>
+<h4 id="templatesfeedsnewdirt_titlehtml">templates/feeds/newdirt_title.html</h4>
+<pre tabindex="0"><code>{{ obj.dirtword }}
+</code></pre><h4 id="templatesfeedsnewdirt_descriptionhtml">templates/feeds/newdirt_description.html</h4>
+<pre tabindex="0"><code>{{ obj.description }}
+</code></pre><p>The naming for the templates, as usual, is important. If you want to have that little orange RSS button near your url, add this to your template&rsquo;s head:</p>
+<pre tabindex="0"><code></code></pre><p>So, there you have it, a simple example of how to use Django&rsquo;s syndication framework. I&rsquo;ll follow this up with another slightly more complex tutorial.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Django Syndication with Colddirt II" href="http://localhost:1313/2007/06/django-syndication-with-colddirt-ii_3665.html">Django Syndication with Colddirt II </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-06-03 20:30:00.006 +1000 AEST'>Published on June 3, 2007</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Since I&rsquo;ve already covered a really simple syndication example, I&rsquo;ll move onto something a little more complex. Let&rsquo;s say you want to offer syndication that is slightly more custom. The Django <a href="http://www.djangoproject.com/documentation/syndication_feeds/">syndication docs</a> give an example from <a href="http://www.holovaty.com/">Adrian&rsquo;s</a> <a href="http://www.chicagocrime.org/">Chicagocrime.org</a> syndication of beats. I had to ponder a minute to get &ldquo;custom&rdquo; syndication to work, so here&rsquo;s my example from start to finish.<br>
+First, as usual, feeds.py</p>
+<h4 id="feedspy">feeds.py</h4>
+<pre tabindex="0"><code>class PerDirt(Feed):
+
+    link = &#34;/&#34;
+    copyright = &#39;Copyright (c) 2007, Blog Mozaic&#39;
+    
+    def get\_object(self, bits):
+        from django.shortcuts import get\_object\_or\_404
+        if len(bits) != 1:
+            raise ObjectDoesNotExist
+        my\_dirt = get\_object\_or\_404(Dirt, slug\_\_exact=bits\[0\])
+        return my\_dirt
+
+    def title(self, obj):
+        return obj.slug
+    
+    def description(self, obj):
+        return obj.description
+    
+    def items(self, obj):
+        from django.contrib.comments.models import FreeComment
+        return FreeComment.objects.filter(object\_id=obj.id).order\_by(&#39;-submit\_date&#39;)
+</code></pre><p>You can see that this differs slightly from the simpler syndication example. I&rsquo;ll not a few things. But first, I need to show urls.py:</p>
+<h4 id="urlspy">urls.py</h4>
+<pre tabindex="0"><code>feeds = {
+    &#39;mydirt&#39;: PerDirt,
+}
+
+urlpatterns = patterns(&#39;&#39;,
+    (r&#39;^feeds/(?P&lt;url&gt;.\*)/$&#39;, &#39;django.contrib.syndication.views.feed&#39;, {&#39;feed\_dict&#39;: feeds}),
+)
+</code></pre><p>Let&rsquo;s pretend the dirt word (or if you were doing a blog, you could do this based on slug) is &ldquo;nifty&rdquo;. So, the process is like this: a request comes in as /feeds/mydirt/nifty/ &ndash; it is first looked up in the feed_dict (because of the mydirt part) and then sent to PerDict. Once in PerDict it hits the first def, get_object. One of the things that confused me at first is what the &lsquo;bits&rsquo; part is. Simply put: it is the crap after you tell Django which feed to use. Similar to the beats example, I&rsquo;m testing to make sure the length is only one &ndash; so if the word doesn&rsquo;t exist or somebody just types in feeds/mydirt/nifty/yeehaaa/ &ndash; they will get an error. Next the object is looked up, in this case the dirt word (in your case, maybe a blog entry).<br>
+The title and description are self-explanatory. The items are a query from the FreeComment database, ordered by date. What we need next is the correct templates.</p>
+<h4 id="templatesfeedsmydirt_titlehtml">templates/feeds/mydirt_title.html</h4>
+<pre tabindex="0"><code>Comment by {{ obj.person\_name }}
+</code></pre><p>Once again, the filename is important (mydirt_title). obj.person_name is the name from the comment.</p>
+<h4 id="templatesfeedsmydirt_descriptionhtml">templates/feeds/mydirt_description.html</h4>
+<pre tabindex="0"><code>{{ obj.comment }}
+Posted by: {{ obj.person\_name }}
+Published: {{ obj.submit\_date }}
+</code></pre><p>If you are curious how to get that little orange icon next to your site&rsquo;s url, you do this:</p>
+<pre tabindex="0"><code></code></pre><p>That&rsquo;s it. Hopefully I&rsquo;ve explained how to create somewhat custom syndication feeds, in case you needed another example.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Django Newforms Usage in Colddirt" href="http://localhost:1313/2007/06/django-newforms-usage-in-colddirt_1103.html">Django Newforms Usage in Colddirt </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-06-01 20:30:00.004 +1000 AEST'>Published on June 1, 2007</span>&nbsp;·&nbsp;5 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I hear many complaints and questions about newforms, but I&rsquo;ve personally found it rather easy and logical to use. There are numerous ways for you to use do forms in Django, and most likely the best way to see them all is to <a href="http://www.djangoproject.com/documentation/newforms/">read the docs</a>. On the Colddirt demo site, this is how I used newforms. I&rsquo;ll take the index page as an example.<br>
+I&rsquo;ve accessed the newforms module like so:</p>
+<pre tabindex="0"><code>from django import newforms as forms
+</code></pre><p>The next thing to look at is the actual creation of the form. You can keep your forms in models.py, although there is a trend going to keep them in a forms.py file. That is they are for Colddirt.</p>
+<h4 id="formspy">forms.py</h4>
+<pre tabindex="0"><code>attrs\_dict = { &#39;class&#39;: &#39;norm\_required&#39; }
+tag\_dict = { &#39;class&#39;: &#39;tag\_required&#39; }
+
+class DirtyForm(forms.Form):
+    description = forms.CharField(widget=forms.Textarea(attrs=textbox\_dict), label=&#39;What\\&#39;s your cold dirt?&#39;)
+    tag\_list = forms.CharField(max\_length=150, widget=forms.TextInput(attrs=tag\_dict), label=&#39;Tags&#39;)
+</code></pre><p>I&rsquo;m keeping it simple for now. Some key things to note is the field type (CharField) and the widget type (Textarea/TextInput). You can guess what each means. Here&rsquo;s a gem for your tool chest: how do you apply CSS to the forms? That is what the &lsquo;attrs=&rsquo; part is about &ndash; that will put in a class for you to assign CSS to. Nifty. The label creates a &rsquo;label&rsquo; element that you can access. Let&rsquo;s render the form and send it to the template.<br>
+To get a form displayed we need to generate the form, and send it to the template.</p>
+<h4 id="viewspy">views.py</h4>
+<pre tabindex="0"><code>dirt\_form = DirtyForm() 
+</code></pre><p>Send it to the template.</p>
+<h4 id="viewspy-1">views.py</h4>
+<pre tabindex="0"><code>    return list\_detail.object\_list(
+           request,
+           queryset = Dirt.objects.order\_by(&#39;?&#39;)\[:100\],
+           template\_name = &#34;dirty/dirt\_list.html&#34;,
+           template\_object\_name = &#34;dirty&#34;,
+           paginate\_by = 10,
+           extra\_context = {&#39;form&#39;: dirt\_form.as\_ul()}
+        )
+</code></pre><p>That&rsquo;s it, although we will revisit this index view shortly. One important thing to note is the .as_ul() appended to the form element. This tells the template to encapsulate the form elements as list elements (as opposed to say, a table). Now, let&rsquo;s display the form.</p>
+<h4 id="templatesdirt_listhtml">templates/dirt_list.html</h4>
+<pre tabindex="0"><code>{% if form %}
+        
+
+{{ form }}
+
+{% endif %}
+</code></pre><p>The form thus appears because of the block, {{ form }}. You can see in the action type that it will post the data to the index page-&gt;view. Let&rsquo;s revisit the entire index view now.</p>
+<h4 id="viewspy-2">views.py</h4>
+<pre tabindex="0"><code>def index(request):
+    import re
+    from django.template.defaultfilters import slugify
+    dirt\_form = DirtyForm()
+    if request.method == &#39;POST&#39;:
+        dirt\_form = DirtyForm(request.POST)
+        if dirt\_form.is\_valid():
+            # I opted not to create an m2m relationship for several
+            # reasons. Note: the latest\_word is some random word.
+            latest\_word = Word.objects.filter(is\_taken\_\_exact=False).order\_by(&#39;?&#39;)\[:1\]            
+            latest\_word\[0\].is\_taken=True
+            latest\_word\[0\].save()
+            new\_dirt = Dirt(description=dirt\_form.clean\_data\[&#39;description&#39;\],
+                            dirtword=latest\_word\[0\].dirtyword)
+            new\_dirt.save()
+            # Credit for the tag parsing goes to Ubernostrum (James B)
+            # from the Cab (great for learning!) project
+            # I opted to not store tag\_list in each entry
+            # Splitting to get the new tag list is tricky, because people
+            # will stick commas and other whitespace in the darndest places.
+            new\_tag\_list = \[t for t in re.split(&#39;\[\\s,\]+&#39;, dirt\_form.clean\_data\[&#39;tag\_list&#39;\]) if t\]
+            # Now add the tags
+            for tag\_name in new\_tag\_list:
+                tag, created = Tagling.objects.get\_or\_create(name=slugify(tag\_name), slug=slugify(tag\_name))
+                new\_dirt.tags.add(tag)
+            return HttpResponseRedirect(new\_dirt.get\_absolute\_url())
+    return list\_detail.object\_list(
+           request,
+           queryset = Dirt.objects.order\_by(&#39;?&#39;)\[:100\],
+           template\_name = &#34;dirty/dirt\_list.html&#34;,
+           template\_object\_name = &#34;dirty&#34;,
+           paginate\_by = 10,
+           extra\_context = {&#39;form&#39;: dirt\_form.as\_ul()}
+        )
+</code></pre><p>Let me pretend I am the form and have just been submitted to the view. First I&rsquo;m tested if I&rsquo;m a POST. Next, my data is dumped into the dirt_form variable. I&rsquo;m then tested if I&rsquo;m valid data or not (validation explanation next). Since I&rsquo;m valid data, stuff happens. In the instance of Colddirt, a random word is taken from the Word database. The word is then updated as is_taken, and saved. Then the dirt is actually created. One thing to notice is how we access form data:</p>
+<pre tabindex="0"><code>description=dirt\_form.clean\_data\[&#39;description&#39;\]
+</code></pre><p>So, the new dirt (with description and new word) is saved. Next, let&rsquo;s deal with the tags. Credit goes to <a href="http://www.b-list.org/">James</a> for parsing the tag_list.</p>
+<pre tabindex="0"><code>            new\_tag\_list = \[t for t in re.split(&#39;\[\\s,\]+&#39;, dirt\_form.clean\_data\[&#39;tag\_list&#39;\]) if t\]
+            # Now add the tags
+            for tag\_name in new\_tag\_list:
+                tag, created = Tagling.objects.get\_or\_create(name=slugify(tag\_name), slug=slugify(tag\_name))
+                new\_dirt.tags.add(tag)
+</code></pre><p>You can see dirt_form.clean_data used again. Another neat trick is to use slugify to make sure your tags are lowercase and aren&rsquo;t all weirdo like. The user is then redirected to the absolute url of the dirt the just created.<br>
+So what about validation? Don&rsquo;t think I forgot this one. Validation (from what I have seen) is actually really easy. I&rsquo;m going to first display the <em>entire</em> form.</p>
+<h4 id="formspy-1">forms.py</h4>
+<pre tabindex="0"><code>class DirtyForm(forms.Form):
+    description = forms.CharField(widget=forms.Textarea(attrs=textbox\_dict), label=&#39;What\\&#39;s your cold dirt?&#39;)
+    tag\_list = forms.CharField(max\_length=150, widget=forms.TextInput(attrs=tag\_dict), label=&#39;Tags&#39;)
+ 
+    def clean\_description(self):
+        import re
+        if self.clean\_data.get(&#39;description&#39;):
+            value = self.clean\_data\[&#39;description&#39;\]
+            if len(value) &gt; 20 and not re.search(&#39;\[&lt;&gt;\]&#39;, value):
+                try: 
+                    hasNoProfanities(value, None)
+                    return value
+                except:
+                    raise forms.ValidationError(u&#39;Extremily dirty words, racial slurs and random crap characters are not allowed in dirt.&#39;) 
+            else:
+                raise forms.ValidationError(u&#39;A little more detail please. No HTML.&#39;)
+               
+    def clean\_tag\_list(self):
+        if self.clean\_data.get(&#39;tag\_list&#39;):
+            value = self.clean\_data\[&#39;tag\_list&#39;\]
+            try: 
+                hasNoProfanities(value, None)
+                return value
+            except:
+                raise forms.ValidationError(u&#39;Extremily dirty words or racial slurs are not allowed!&#39;) 
+</code></pre><p>There is a fair amount of normal validation that occurs in the is_valid process, but here is some extra validation I added. Inside the DirtyForm class (as you can see) simply add a test for if the data is &lsquo;clean&rsquo; or not (I don&rsquo;t know how to beter phrase this &ndash; &ldquo;send the data to the cleaners&rdquo;). I&rsquo;m testing the description to make sure it is long enough, and to make sure it doesn&rsquo;t have &lt;&gt;&rsquo;s in it (to prevent XSS and odd stuff). If it detects them, the lower error is displayed. I&rsquo;ve also tied in the hasNoProfanities validation, which pulls the words from my settings file. Not that I care if people swear or not, I&rsquo;m mainly using this to prevent racial slurs, which I do care about.<br>
+So, there you have it, one example of how newforms is used in a &rsquo;live&rsquo; site. I hope this is helpful for somebody, I wish I could have seen more newforms examples when I started learning. If you are truly stumped on something, take a look inside the django source (/tests/regressiontests/forms/tests.py) for a <strong>lot</strong> of examples of every way you could use newforms.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Simple Ajax with Django" href="http://localhost:1313/2007/06/simple-ajax-with-django_1754.html">Simple Ajax with Django </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-06-01 20:30:00.005 +1000 AEST'>Published on June 1, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>So, the Django developers, in my opinion, are freaking smart. Instead of bundling Django with a particular library, they have added XML and JSON serialization; us humble users can choose whatever AJAX library we want. <a href="http://www.prototypejs.org/">Prototype 1.5.1</a> has been pretty fun to work with, so I&rsquo;ll kick off this demo with a really simple example.<br>
+How simple? The intended goal is to have the total number of &lsquo;dirts&rsquo; update without user intervention. <em>Laaaammmeee</em>. If you are a visual type of person, <a href="http://www.colddirt.com/huh/">take a look</a> on the Colddirt <a href="http://www.colddirt.com/huh/">huh</a> page. That number automatically increases without user intervention. And this is how.<br>
+The process (some pseudocode) will go like this:</p>
+<p>check /dirt_count/ for an update</p>
+<p>if update:</p>
+<p>make number bigger</p>
+<p>else:</p>
+<p>check less frequently</p>
+<p>Pretty simple, eh?</p>
+<h4 id="urlspy">urls.py</h4>
+<pre tabindex="0"><code>    (r&#39;^dirt\_count/$&#39;, views.dirt\_count),
+</code></pre><p>As you can see, it just sends the request to the view.</p>
+<h4 id="viewspy">views.py</h4>
+<pre tabindex="0"><code>def dirt\_count(request):
+    from django.http import HttpResponse
+    countd = str(Dirt.objects.all().count())
+    return HttpResponse(countd, mimetype=&#39;text/plain&#39;)
+</code></pre><p>Pretty simple &ndash; count the dirts. That makes sense.</p>
+<h4 id="dirtyjs">dirty.js</h4>
+<pre tabindex="0"><code>new Ajax.PeriodicalUpdater(&#39;dirtcount&#39;, &#39;/dirt\_count/&#39;, {
+  method: &#39;get&#39;,
+  frequency: 3,
+  decay: 2,
+});
+</code></pre><p>Yea, Prototype makes that <em>real</em> easy. Just make sure to have a element in your template somewhere with an id of &lsquo;dirtcount&rsquo;.</p>
+<h4 id="templateshuhhtml">templates/huh.html</h4>
+<pre tabindex="0"><code>0
+</code></pre>
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Colddirt Information" href="http://localhost:1313/2007/05/colddirt-information_1890.html">Colddirt Information </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-05-29 20:30:00.002 +1000 AEST'>Published on May 29, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p><em>Note</em>: Colddirt&rsquo;s source code is run from Django SVN, check out on May 10th-ish. If you are using a newer branch, some things have changed. i.e. clean_data has been renamed cleaned_data. Remember to check the <a href="http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges">BackwardsIncompatible</a> page in the wiki.</p>
+<p><strong>Part 1</strong>: <a href="http://www.kelvinism.com/2007/06/simple-ajax-with-django_1754.html">Simple AJAX with Django</a><br>
+<strong>Part 2</strong>: <a href="http://www.kelvinism.com/2007/06/django-newforms-usage-in-colddirt_1103.html">Django Newforms Usage</a><br>
+<strong>Part 3</strong>: <a href="http://www.kelvinism.com/2007/06/adding-search-to-django_6300.html">Search with Django</a><br>
+<strong>Part 4</strong>: <a href="http://www.kelvinism.com/2007/06/django-syndication-with-colddirt_5107.html">Django&rsquo;s Syndication Framework (simple)</a><br>
+<strong>Part 5</strong>: <a href="http://www.kelvinism.com/2007/06/django-syndication-with-colddirt-ii_3665.html">Django&rsquo;s Syndication Framework (little more complex)</a></p>
+<p>Feel free to see the <a href="https://github.com/kelvinn/colddirt">source code</a> from Github.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Django SVN Update Goes Splat" href="http://localhost:1313/2007/05/django-svn-update-goes-splat_5490.html">Django SVN Update Goes Splat </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-05-09 20:30:00.002 +1000 AEST'>Published on May 9, 2007</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>I&rsquo;m writing this just in case somebody runs into this same issue. I&rsquo;m about to go live with a website and figured it would be best to have the latest SVN snapshot checked out from Django. I updated, and noticed that my voting module didn&rsquo;t quite work as expected. I was getting the following error:</p>
+<pre tabindex="0"><code>&#39;module&#39; object has no attribute &#39;GenericForeignKey&#39;
+</code></pre><p>I jumped into Trac and noticed that <em>just yesterday</em> some things were rearranged. In short, if you are using generic relations, you&rsquo;ll need to change two parts of your code. First, the generic relations field must be imported out of conttenttype.</p>
+<pre tabindex="0"><code>from django.contrib.contenttypes import generic
+</code></pre><p>And second, you&rsquo;ll need to change the &rsquo;location prefix&rsquo; (for lack of a better description:<br>
+<strong>From:</strong></p>
+<pre tabindex="0"><code>generic\_field = models.GenericRelation(SomeOtherModel)
+</code></pre><p><strong>To:</strong></p>
+<pre tabindex="0"><code>generic\_field = generic.GenericRelation(SomeOtherModel)
+</code></pre><p>All should be find from there on out. For more information, take a look at <a href="http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges">the reference wiki article</a>.</p>
+
+  </div>
+
+  
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="post-title entry-hint-parent">
+      
+      <a aria-label="post link to Version 3.0 Part Two" href="http://localhost:1313/2007/02/version-30-part-two_8083.html">Version 3.0 Part Two </a>
+      
+      
+    </h2>
+
+    <div class="post-meta"><span title='2007-02-05 21:30:00.002 +1100 AEDT'>Published on February 5, 2007</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header>
+
+  <div class="entry-content">
+    <p>Well, I&rsquo;m basically all done upgrading to Version 3.0, I deserve a cake or something. Here&rsquo;s the 411:</p>
+<p>For the past few years I have been using Mambo, then Joomla, to manage the content on my site. It worked quite well, and was in PHP, so I could add or remove any code. Indeed, I&rsquo;ve written a decent amount of PHP apps. In early 2004 I wrote a PHP platform to track adventures people had gone on, and networked people seeking to go on adventures with each other. I never marketed it, and mainly created it to learn PHP, but it was a CMS (Content Management System), and a little more. Late in 2004 I wrote another blog-esque platform for my second trip to Europe. It was pretty cool, I&rsquo;ll admit: Casey and I each had a blog, and people could leave us &ldquo;dares&rdquo; and/or messages &ndash; and we could easily update our status. Overall, it worked great. You can also see the <a href="/projects/">projects</a> section of my site for some of the other things I&rsquo;ve done in PHP.</p>
+<p>Fast forward a few years, and here it is in early 2007. I&rsquo;ve never really liked PHP all that much, but I couldn&rsquo;t put my thumb on it. Deciding to switch to something else, I picked up and read the book, Beginning Python, from Novice to Professional. If anybody is looking for a well written book, I would highly recommend this one. Anyways, with my goal to drop PHP in mind, I held the debate of Django and TurboGears. I went through the demos for each, and felt like I really played around with them. Ultimately it came down to 1) Django has obvious crazy cool caching, 2) Django has pretty darn good documentation, and a freaking <a href="http://www.djangobook.com">online book</a>, and 3) the &ldquo;powered by&rdquo; sites are quite impressive &ndash; both the length of the list and the large amount of traffic some of these sites entertain.</p>
+<p>So I went with Django. My friend in New Zealand, Ben Ford, has been ragging me for two months to get my ass in gear and learn it, saying I would love it. And he is right, the framework is simply beautiful. For the last week I&rsquo;ve been reading through the documentation, going through the online book (both are incomplete, in my opinion, but compliment each other nicely). I think it is important to write your own code instead of just repeating examples, so my goal: transform my blog/site by using just Django.</p>
+<p>So, while some of the kinks still need to be worked out, everything is no transfered over. I&rsquo;ll mention my experiences shortly, but overall: I&rsquo;m very impressed.</p>
+
+  </div>
+
+  
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="http://localhost:1313/tags/django/">
+      «&nbsp;Prev&nbsp;
+    </a>
+  </nav>
+</footer>
+    </main>
+
+    </div>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kelvin Nicholson</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

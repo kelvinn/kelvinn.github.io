@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Scripting on Kelvin Nicholson</title>
+    <link>http://localhost:1313/tags/scripting/</link>
+    <description>Recent content in Scripting on Kelvin Nicholson</description>
+    <generator>Hugo -- 0.145.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jan 2009 21:30:00 +1100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Renaming Apache Log Locations</title>
+      <link>http://localhost:1313/2009/01/renaming-apache-log-locations_1724.html</link>
+      <pubDate>Sun, 25 Jan 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/01/renaming-apache-log-locations_1724.html</guid>
+      <description>&lt;p&gt;I realized a few of my log files were growing unusually large, and even worse, logrotate was skipping them. I took a look in logrotate.d and straight away realized why: I had created silly names for the log file. logrotate look for .log files, but I had specified mine as .log &amp;ndash; e.g. kelvinism_access_log. I was as familiar with logrotate when I set up the domains, so set forth to get them in the rotation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Beginning Scripting ESXi</title>
+      <link>http://localhost:1313/2009/01/beginning-scripting-esxi_6126.html</link>
+      <pubDate>Tue, 06 Jan 2009 21:30:00 +1100</pubDate>
+      <guid>http://localhost:1313/2009/01/beginning-scripting-esxi_6126.html</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m not impressed too often with much software, especially the closed source kind. I find a leaning preference to all things FOSS. If I had a million dollars, I&amp;rsquo;d likely spend all day contributing to all the projects I wish I had time to contribute to. Regardless, there are a select few closed-source products that I believe are truly excellent. I mean, the type of software where you aren&amp;rsquo;t asking &amp;ldquo;I wish this could do this&amp;rdquo; and start asking &amp;ldquo;I wonder what else this can do.&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
