@@ -103,7 +103,7 @@ body {
     width: 209px;
     height: 47px;
     margin-top: -10px;
-    background-image: url('https://kelvinn.github.io/images/logo.png');
+    background-image: url('/images/logo.png');
     float: left;
 }
 
