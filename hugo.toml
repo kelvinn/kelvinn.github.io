@@ -10,4 +10,4 @@ posts = "/:year/:month/:title"
 disableSpecial1stPost = true
 ShowReadingTime = true
 ShowBreadCrumbs = false
-defaultTheme = true
+defaultTheme = "light"
