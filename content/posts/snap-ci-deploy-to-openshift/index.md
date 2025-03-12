@@ -46,35 +46,36 @@ If you've used ssh much, you are probably aware that that you can specify an ide
   
 Add another New File in Snap and paste in the below script:  
   
-```
+```bash
 #!/bin/bash
-
+ 
 # The MIT License (MIT)
 # Copyright (c) 2013 Alvin Abad
-
-if \[ $# -eq 0 \]; then
+ 
+if [ $# -eq 0 ]; then
     echo "Git wrapper script that can specify an ssh-key file
 Usage:
     git.sh -i ssh-key-file git-command
     "
     exit 1
 fi
-
+ 
 # remove temporary file on exit
-trap 'rm -f /tmp/.git\_ssh.$$' 0
-
-if \[ "$1" = "-i" \]; then
-    SSH\_KEY=$2; shift; shift
-    echo "ssh -i $SSH\_KEY \\$@" > /tmp/.git\_ssh.$$
-    chmod +x /tmp/.git\_ssh.$$
-    export GIT\_SSH=/tmp/.git\_ssh.$$
+trap 'rm -f /tmp/.git_ssh.$$' 0
+ 
+if [ "$1" = "-i" ]; then
+    SSH_KEY=$2; shift; shift
+    echo "ssh -i $SSH_KEY \$@" > /tmp/.git_ssh.$$
+    chmod +x /tmp/.git_ssh.$$
+    export GIT_SSH=/tmp/.git_ssh.$$
 fi
-
+ 
 # in case the git command is repeated
-\[ "$1" = "git" \] && shift
-
+[ "$1" = "git" ] && shift
+ 
 # Run the git command
 git "$@"
+
 
 ```  
 Give this script the name "git.sh", set the file permissions to "0755", and update the file location to "/var/go".  
@@ -87,8 +88,8 @@ Give this script the name "git.sh", set the file permissions to "0755", and upda
 **Profit**  
 With all these parts configured correctly you can add this single line to your Deploy script:  
   
-```
-/var/go/git.sh -i /var/go/id\_rsa push ssh://ABCDEFGHIJK123@example.yourdomain.rhcloud.com/~/git/example.git/
+```bash
+/var/go/git.sh -i /var/go/id_rsa push ssh://ABCDEFGHIJK123@example.yourdomain.rhcloud.com/~/git/example.git/
 
 
 ```  

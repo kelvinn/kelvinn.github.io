@@ -326,9 +326,7 @@ Easy off track
 
 That's a problem
 
-[  
-  
-](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiinEK3RhSlKsSNSE5mos0fHb0kYrPxHzA0JR_Qsfx2DOgiRl_vXfOcH_1Ga4dptIjtL3xheIC4-1eC8siT4tni94mPMo4WP8TWCoA-jpmVi7VQDDEXBNxo0jfYhw-vV3yO6fXpOoA5jAhM/s2048/IMG_0212.jpeg)
+[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiinEK3RhSlKsSNSE5mos0fHb0kYrPxHzA0JR_Qsfx2DOgiRl_vXfOcH_1Ga4dptIjtL3xheIC4-1eC8siT4tni94mPMo4WP8TWCoA-jpmVi7VQDDEXBNxo0jfYhw-vV3yO6fXpOoA5jAhM/s2048/IMG_0212.jpeg)](abc)
 
   
 

@@ -33,14 +33,9 @@ Mixture of simple (high GI) and complex (low GI) carbs. Simple carbs hand off to
   
 
 Ideal ratio for breakfast:
-
-  
-
-65% calories from fat
-
-28% from carbs, ideally split complex/simple, maybe leaning to simple
-
-7% from protein
+* 65% calories from fat
+* 28% from carbs, ideally split complex/simple, maybe leaning to simple
+* 7% from protein
 
   
 
@@ -54,19 +49,13 @@ Probably want something in the 5% - 15% calories from sugar range, unless eating
 
 Ideal ratio for the trail:
 
-  
-
-65% calories from fat
-
-28% from carbs, ideally split complex/simple, maybe leaning to complex
-
-7% from protein
+* 65% calories from fat
+* 28% from carbs, ideally split complex/simple, maybe leaning to complex
+* 7% from protein
 
   
 
 **Recovery**
-
-  
 
 *   Drink mix consumed within 15 minutes of finishing for the day.
 *   Ideally a carb/protein ratio between 3:1 and 4:1. 
@@ -90,35 +79,31 @@ A few key bullet points on usage of electrolytes:
 
   
 
-*   Three states of dehydration:
+Three states of dehydration:
+- hypertonic: water loss is greater in comparison to sodium loss, so serum sodium concentration increases
+- hypotonic: water loss is accompanied by excessive sodium loss, so serum sodium concentration decreases
+- isotonic: water and sodium are lost at the same rate
 
-*   hypertonic: water loss is greater in comparison to sodium loss, so serum sodium concentration increases
-*   hypotonic: water loss is accompanied by excessive sodium loss, so serum sodium concentration decreases
-*   isotonic: water and sodium are lost at the same rate
+More notes: 
+- Hypernatremia is a _result_ of dehydration.
+- Hyponatremia is not a result of dehydration, but a result of treatment of dehydration with fluids that do not contain enough sodium.
+- Hiking for 8.5 hours @ 435mg Na/hr = 3600mg lost sodium
 
-*   Hypernatremia is a _result_ of dehydration.
-*   Hyponatremia is not a result of dehydration, but a result of treatment of dehydration with fluids that do not contain enough sodium.
-*   Hiking for 8.5 hours @ 435mg Na/hr = 3600mg lost sodium
-*   Expected losl per hour:
+Expected losl per hour:
+- Na 300 - 500
+- K 100 - 160
+- Mg 40 - 60
+- Ca 20 - 30
 
-*   Na 300 - 500
-*   K 100 - 160
-*   Mg 40 - 60
-*   Ca 20 - 30
-
-*   Reminder that to monitor water intake, urine frequency and colour is the way to go.
-*   Condition most likely to encounter on the trail is "exercise-associated hyponatremia", aka drinking plenty of fluids, but not enough electrolytes. One symptom of hyponatremia is swelling, in particular in hands and feet. Ring is a sensitive instrument... "snug fit, time to start taking on electrolytes with water. Loosey goosey? No need to supplement beyond what already get from trail snacks."
+More notes:
+- Reminder that to monitor water intake, urine frequency and colour is the way to go.
+- Condition most likely to encounter on the trail is "exercise-associated hyponatremia", aka drinking plenty of fluids, but not enough electrolytes. One symptom of hyponatremia is swelling, in particular in hands and feet. Ring is a sensitive instrument... "snug fit, time to start taking on electrolytes with water. Loosey goosey? No need to supplement beyond what already get from trail snacks."
 
 [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtHf82oGqG2xU1eUNict6W9p4CA8cnXqJ6ktLJIJKsjL3wflDGseJl5KB8ydS3bdeALcJNuawMXV-Rv9CPjqxuThpFM31we2qCvvNJxFQ_SlL0S3QU2U_R2bjL06zGHAThPRQGGZcz5pab/s16000/electrolyte+chart+diagram.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtHf82oGqG2xU1eUNict6W9p4CA8cnXqJ6ktLJIJKsjL3wflDGseJl5KB8ydS3bdeALcJNuawMXV-Rv9CPjqxuThpFM31we2qCvvNJxFQ_SlL0S3QU2U_R2bjL06zGHAThPRQGGZcz5pab/s474/electrolyte+chart+diagram.jpeg)
 
 Lots of sodium - 4,500mg would be for long days hiking in the heat  
 
   
-
-  
-
-  
-
 **_In Practice_**
 
 Here is a [follow-up comment](https://www.reddit.com/r/Ultralight/comments/i023nd/ultralight_food_performance_nutrition_for/fzp0gf3/) on what that might look like in practice:

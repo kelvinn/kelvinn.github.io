@@ -15,31 +15,32 @@ We're going to use the command line program [ExifTool](http://www.sno.phy.queens
   
 Firstly, install exiftool using [brew](http://brew.sh/). Here's the command:  
   
-```
+```bash
 brew install exiftool
 
-```  
+```
+
 Copy the gpx files into your image directory and initiate the sync with the geotag flag:  
   
-```
-exiftool -geotag=gpslog2014-12-10\_212401.gpx ./
+```bash
+exiftool -geotag=gpslog2014-12-10_212401.gpx ./
 
 ```  
 It is possible to also specify multiple gpx files (e.g. multiple day trip):  
   
-```
-exiftool -geotag=gpslog2014-12-10\_212401.gpx -geotag=gpslog2014-12-07\_132315.gpx -geotag=gpslog2014-12-08\_181318.gpx -geotag=gpslog2014-12-10\_073811.gpx ./
+```bash
+exiftool -geotag=gpslog2014-12-10_212401.gpx -geotag=gpslog2014-12-07_132315.gpx -geotag=gpslog2014-12-08_181318.gpx -geotag=gpslog2014-12-10_073811.gpx ./
 
 ```  
 And finally, you can include a time offset with the geosync flag. For instance, I had an 11-hour (39600 seconds) difference due to a timezone hiccup with my new camera, so we can get rid of that:  
   
-```
-exiftool -geotag=gpslog2014-12-10\_212401.gpx -geotag=gpslog2014-12-07\_132315.gpx -geotag=gpslog2014-12-08\_181318.gpx -geotag=gpslog2014-12-10\_073811.gpx -geosync=39600 ./
+```bash
+exiftool -geotag=gpslog2014-12-10_212401.gpx -geotag=gpslog2014-12-07_132315.gpx -geotag=gpslog2014-12-08_181318.gpx -geotag=gpslog2014-12-10_073811.gpx -geosync=39600 ./
 
 ```  
 It will process the images, renaming the original with an ".original" extension, and give you a report at the end:  
   
-```
+```bash
 1 directories scanned
 193 image files updated
 83 image files unchanged
@@ -47,8 +48,8 @@ It will process the images, renaming the original with an ".original" extension,
 ```  
 If your camera is set to GMT, then put all the GPX files in the same directory as the photos to geocode, and do this:  
   
-```
-TZ=GMT exiftool -geotag "\*.gpx" \*.jpg
+```bash
+TZ=GMT exiftool -geotag "\*.gpx" *.jpg
 
 ```  
 For any additional manual geocoding I fallback on Picasa's Places [GeoTag](http://www.snafu.org/GeoTag/) to add the coordinates.  

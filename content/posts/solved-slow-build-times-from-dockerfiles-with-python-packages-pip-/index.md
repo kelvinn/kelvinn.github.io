@@ -28,8 +28,8 @@ There are various documented ways around this, from two Dockerfiles to just usin
 For instance, I had something (abbreviated snippet) like this:
 
   
-```
-\# Set the base image to Ubuntu
+```dockerfile
+# Set the base image to Ubuntu
 FROM ubuntu:14.04
 
 # Update the sources list
@@ -54,16 +54,16 @@ EXPOSE 80 8000
 # Set the default directory where CMD will execute
 WORKDIR /app
 
-VOLUME \[/app\]
+VOLUME [/app]
 
-CMD \["sh", "/app/run.sh"\]
+CMD ["sh", "/app/run.sh"]
 
 ```  
 
 And it rebuild pip whenever the code changes. Just add the requirements and move the RUN pip line:
 
   
-```
+```dockerfile
 \# Set the base image to Ubuntu
 FROM ubuntu:14.04
 

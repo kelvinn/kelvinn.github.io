@@ -40,6 +40,8 @@
 
 code {
     direction: ltr;
+    text-wrap: wrap;
+    
 }
 
 div.highlight,

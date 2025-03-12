@@ -38,18 +38,22 @@ This could easily occur if somebody was manually typing in the lists, dictating 
   
 If we wanted to match people on List 1 to List 2, how could we go about that? For a small list like this you can just look and see, but with many thousands of people, something more sophisticated would be useful. One tool could be NLTK's edit\_distance function. The following Python script displays how easy this is:  
   
-```
+```bash
 import nltk
-
-list\_1 = \['Leonard Hofstadter', 'Sheldon Cooper', 'Penny', 'Howard Wolowitz', 'Raj Koothrappali', 'Leslie Winkle', 'Bernadette Rostenkowski', 'Amy Farrah Fowler', 'Stuart Bloom', 'Alex Jensen', 'Barry Kripke'\]
-
-list\_2 = \['Leonard Hofstadter', 'Sheldon Coopers', 'Howie Wolowits', 'Rav Toothrapaly', 'Ami Sarah Fowler', 'Stu Broom', 'Alexander Jensen'\]
-
-for person\_1 in list\_1:
-    for person\_2 in list\_2:
-        print nltk.metrics.edit\_distance(person\_1, person\_2), person\_1, person\_2
+ 
+list_1 = ['Leonard Hofstadter', 'Sheldon Cooper', 'Penny', 'Howard Wolowitz', 'Raj Koothrappali', 'Leslie Winkle', 'Bernadette Rostenkowski', 'Amy Farrah Fowler', 'Stuart Bloom', 'Alex Jensen', 'Barry Kripke']
+ 
+list_2 = ['Leonard Hofstadter', 'Sheldon Coopers', 'Howie Wolowits', 'Rav Toothrapaly', 'Ami Sarah Fowler', 'Stu Broom', 'Alexander Jensen']
+ 
+for person_1 in list_1:
+    for person_2 in list_2:
+        print nltk.metrics.edit_distance(person_1, person_2), person_1, person_2
 
 ```  
+
+And we get this output:
+
+```plain
 0 Leonard Hofstadter Leonard Hofstadter  
 15 Leonard Hofstadter Sheldon Coopers  
 14 Leonard Hofstadter Howie Wolowits  
@@ -127,21 +131,26 @@ for person\_1 in list\_1:
 13 Barry Kripke Ami Sarah Fowler  
 10 Barry Kripke Stu Broom  
 14 Barry Kripke Alexander Jensen  
-  
+```
+
 As you can see, this displays the [Levenstein distance](http://en.wikipedia.org/wiki/Levenshtein_distance) of the two sequences. Another option we have is to look at the ratio.  
   
-```
-len1 = len(list\_1)
-len2 = len(list\_2)
+```python
+len1 = len(list_1)
+len2 = len(list_2)
 lensum = len1 + len2
-for person\_1 in list\_1:
-    for person\_2 in list\_2:
-        levdist = nltk.metrics.edit\_distance(person\_1, person\_2)
+for person_1 in list_1:
+    for person_2 in list_2:
+        levdist = nltk.metrics.edit_distance(person_1, person_2)
         nltkratio = (float(lensum) - float(levdist)) / float(lensum)
         if nltkratio > 0.70:
-            print nltkratio, person\_1, person\_2
+            print nltkratio, person_1, person_2
 
 ```  
+
+Which we can see the end result below:
+
+```plain
 1.0 Leonard Hofstadter Leonard Hofstadter  
 0.944444444444 Sheldon Cooper Sheldon Coopers  
 0.777777777778 Howard Wolowitz Howie Wolowits  
@@ -149,3 +158,4 @@ for person\_1 in list\_1:
 0.833333333333 Amy Farrah Fowler Ami Sarah Fowler  
 0.777777777778 Stuart Bloom Stu Broom  
 0.722222222222 Alex Jensen Alexander Jensen
+```
