@@ -41,12 +41,14 @@
 code {
     direction: ltr;
     text-wrap: wrap;
-    
 }
 
 div.highlight,
 pre {
     position: relative;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding: 3px;
 }
 
 .copy-code {

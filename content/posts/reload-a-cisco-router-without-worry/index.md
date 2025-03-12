@@ -21,7 +21,7 @@ Although it is simple enough to just ask her to "flip the switch on the black bo
   
 In the case of updating a device remotely, it is as easy as:  
   
-```
+```plain
 router# reload in 2
 router# conf t
 router(config)# \[type in desired commands\]

@@ -14,31 +14,30 @@ Alexandru T. and I have exchanged a few emails, and he sent through a few helpfu
 
   
   
-1\. Install Debian 5.0 on a normal PC (using a netinst image, for minimal install)  
-  
-2\. After installation boot normally from the same PC  
-  
-3\. Then, take the kernel from ftp://icop.com.tw/DIS\_info/VDX/operating\_system/VDX\_Linux/linux-image-2.6.30-vortex86mx\_1.0\_i386.deb and then issue the following commands :  
+1. Install Debian 5.0 on a normal PC (using a netinst image, for minimal install)  
+2. After installation boot normally from the same PC  
+3. Then, take the kernel from ftp://icop.com.tw/DIS\_info/VDX/operating\_system/VDX\_Linux/linux-image-2.6.30-vortex86mx\_1.0\_i386.deb and then issue the following commands :  
   
   
-```
-\# dpkg -i  linux-image-2.6.30-vortex86mx\_1.0\_i386.deb
+```bash
+# dpkg -i  linux-image-2.6.30-vortex86mx_1.0_i386.deb
 # update-initramfs -k 2.6.30-vortex86mx -c
 # update-grub
 # restart
 
+
 ```  
   
   
-4\. Then take the hard-drive and install it on the Vortex86DX  
+4. Then take the hard-drive and install it on the Vortex86DX  
+5. When GRUB menu appears, press "e" and modify the boot loader as follows :  
   
-5\. When GRUB menu appears, press "e" and modify the boot loader as follows :  
   
-  
-```
+```bash
 root        (hd0,0)
 kernel        /boot/vmlinuz-2.6.30-vortex86mx root=/dev/hdb1 ro         --> if hdb1 does not work you can try (hda1= Primary Master or hdc1=Secondary Master)
 initrd        /boot/initrd.img-2.6.30-vortex86mx
+
 
 ```  
   
@@ -46,7 +45,7 @@ Then press b to boot
   
   
   
-6\. After booting, go to /boot/grub/menu.lst and make modifications from above permanently, so you will boot without any intervention ;)  
+6. After booting, go to /boot/grub/menu.lst and make modifications from above permanently, so you will boot without any intervention ;)  
   
   
   

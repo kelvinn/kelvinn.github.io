@@ -21,21 +21,23 @@ Luckily, converting from TDX to GTFS is not overly difficult, and below are some
 4) Login to AWS and start an EC2 instance.  I picked a large instance and used 64-bit Ubuntu 10.04, us-east-1 ami-f8f40591  
 5) Download the Data and transxchange to /mnt  
   
-```
+```bash
 wget http://ec2-175-41-139-176.ap-southeast-1.compute.amazonaws.com/Data20110127.zip
 wget http://cdn.kelvinism.com/transxchange2GoogleTransit.jar
 
 ```  
 6) Install Sun JRE.  
-```
+
+```bash
 apt-get install python-software-properties
 add-apt-repository "deb http://archive.canonical.com/ lucid partner"
 apt-get update
 apt-get install sun-java6-jre
-
-
-```7) Check how much memory is available  
 ```
+
+7) Check how much memory is available  
+
+```bash
 root@domU-12-31-39-10-31-B1:/mnt# free -m
              total       used       free     shared    buffers     cached
 Mem:          7680        626       7053          0         11        329
@@ -46,7 +48,7 @@ Swap:            0          0          0
 ```  
 8) Create a configuration file **sydney.conf**  
   
-```
+```plain
 url=http://131500.info
 timezone=Australia/Sydney
 default-route-type=2
@@ -58,7 +60,7 @@ skiporhpanstops=true
 ```  
 9) If you're on the train like me, start screen, and start converting. The number you pick for "-Xmx" obviously needs to fit in the amount of free memory you have.  
   
-```
+```bash
 java -Xmx104000m -jar dist\\transxchange2GoogleTransit.jar Data20120524.zip -c sydney.conf
 
 ```

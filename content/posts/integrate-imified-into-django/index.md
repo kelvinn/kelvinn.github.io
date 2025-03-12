@@ -13,61 +13,64 @@ tags:
 I recently had the desire to send small updates to my so called [lifestream](http://www.blogger.com/about-me/) page via XMPP/GTalk. I played around with Twisted Words and several other Python XMPP clients, but I didn't really want to keep a daemon running if unnecessary. It turns out imified took a lot of the pain out of it. The steps for me were as follows:  
 Create an account with imified, and create a URL, e.g. /app/api/  
 We then configure the **urls.conf**  
-```
-urlpatterns = patterns('',   
-(r'^app/api/$', bot\_stream),
+
+```python
+urlpatterns = patterns('',  
+    (r'^app/api/$', bot_stream),
 )
 
 ```  
   
 We then create the necessary views. So, in **views.py**:  
-```
-from django.shortcuts import render\_to\_response
+
+```python
+from django.shortcuts import render_to_response
 from django.http import HttpResponse
-from lifestream.forms import \*
+from lifestream.forms import *
 from datetime import datetime
 from time import time
-
-def bot\_stream(request):
-if request.method == 'POST':
-botkey = request.POST.get('botkey')
-username = request.POST.get('user')
-msg = request.POST.get('msg')
-network = request.POST.get('network')
-
-if username == "username@gmail.com" or network == "debugger":
-blob\_obj = Blob(id=time(), body=msg, service\_name="Mobile",
-link="http://www.kelvinism.com/about-me/", published=datetime.now())
-blob\_obj.save()
-resp = "OK"
-else:
-resp = "Wrong username %s" % username
-else:
-resp = "No POST data"
-return HttpResponse(resp)
-
+ 
+def bot_stream(request):
+    if request.method == 'POST':
+        botkey = request.POST.get('botkey')
+        username = request.POST.get('user')
+        msg = request.POST.get('msg')
+        network = request.POST.get('network')
+    
+    if username == "username@gmail.com" or network == "debugger":
+        blob_obj = Blob(id=time(), body=msg, service_name="Mobile",
+        link="http://www.kelvinism.com/about-me/", published=datetime.now())
+        blob_obj.save()
+        resp = "OK"
+    else:
+        resp = "Wrong username %s" % username
+    else:
+        resp = "No POST data"
+    return HttpResponse(resp)
 
 ```  
   
 To complete this little example, you can see what I used for my **models.py**  
-```
+
+```python
 class Blob(models.Model):
-id = models.CharField(max\_length=255, primary\_key=True)
-body = models.TextField(max\_length = 1024, null = True, blank = True)
-service\_name = models.CharField(max\_length=50, null=True, blank=True)
-link = models.URLField(max\_length=255, verify\_exists=False, null=True, blank=True)
-published = models.DateTimeField(null=True, blank=True)
-
-def \_\_unicode\_\_(self):
-return self.id
-
+    id = models.CharField(max_length=255, primary_key=True)
+    body = models.TextField(max_length = 1024, null = True, blank = True)
+    service_name = models.CharField(max_length=50, null=True, blank=True)
+    link = models.URLField(max_length=255, verify_exists=False, null=True, blank=True)
+    published = models.DateTimeField(null=True, blank=True)
+ 
+def __unicode__(self):
+    return self.id
+ 
 class Meta:
-ordering = \['-published'\]
-verbose\_name = 'Blob'
-verbose\_name\_plural = 'Blobs'
+    ordering = ['-published']
+    verbose_name = 'Blob'
+    verbose_name_plural = 'Blobs'
+ 
+def get_absolute_url(self):
+    return "/about-me/"
 
-def get\_absolute\_url(self):
-return "/about-me/"
 
 
 ```  

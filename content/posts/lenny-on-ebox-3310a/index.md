@@ -23,21 +23,30 @@ Download these files first:
   
 The steps to install Lenny to CF in brief is:  
 
-*   1) Install i386 version of Lenny to CF on another computer
-*   2) Add the revised kernel deb with dpkg -i \*.deb
-*   3) Change fstab from hda1 to sdb1 (sda1 if there is no micro sd card) - uuids  
-    may be better
-*   4) Change /boot/grub/menu.lst to:
-```
+1. Install i386 version of Lenny to CF on another computer
+2. Add the revised kernel deb with dpkg -i \*.deb
+3. Change fstab from hda1 to sdb1 (sda1 if there is no micro sd card) - uuids  may be better
+4. Change /boot/grub/menu.lst to:
+
+```bash
 title           Debian GNU/Linux, kernel 2.6.31.5-vortex86-sl3
 root            (hd0,0)
 kernel          /boot/vmlinuz-2.6.31.5-vortex86-sl3 root=/dev/sdb1 ro verbose
 
-```5) Probably need to change /boot/grub/device.map```
+```
+5. Probably need to change /boot/grub/device.map
+
+```bash
 (hd1)   /dev/sda
 (hd0)   /dev/sdb
 
-```With no micro sd it would be:```
+```
+
+With no micro sd it would be:
+
+```bash
 (hd0) /dev/sda
 
-```6) delete the section below "# PCI device ...." in /etc/udev/rules.d/70-persistent-net.rules (Otherwise the eBox network gets remapped to eth1 and may not appear if only eth0 is specified in the network settings) 7) **Reboot & pray** (bold added by Kelvin:P ). The next one is a revised initrd for the current Ubuntu 9.10: http://staff.washington.edu/lombaard/initrd.img-2.6.31-14-generic-pata\_rdc [2.6.31-14 pata\_rdc module for Ubuntu 9.10](http://cdn.kelvinism.com/ebox/initrd.img-2.6.31-14-generic-pata_rdc-Ubuntu_9.10) The two changes are: blacklist dm\_raid45 & add pata-rdc.ko "blacklist dm\_raid45" needs to be added to /etc/modprobe.d/blacklist.conf I managed to boot into gnome desktop without any further problems. I have enabled PCI IDE Bus Mastering, plug&play and IDE native mode in the bios. Hope this saves someone else a few hours of frustration.
+```
+6. delete the section below "# PCI device ...." in /etc/udev/rules.d/70-persistent-net.rules (Otherwise the eBox network gets remapped to eth1 and may not appear if only eth0 is specified in the network settings) 
+7. **Reboot & pray** The next one is a revised initrd for the current Ubuntu 9.10: http://staff.washington.edu/lombaard/initrd.img-2.6.31-14-generic-pata_rdc. (EDIT 12-03-2025: Lost my image that was linked from here). The two changes are: blacklist dm_raid45 & add pata-rdc.ko "blacklist dm_raid45" needs to be added to /etc/modprobe.d/blacklist.conf I managed to boot into gnome desktop without any further problems. I have enabled PCI IDE Bus Mastering, plug&play and IDE native mode in the bios. Hope this saves someone else a few hours of frustration.
