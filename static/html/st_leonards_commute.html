@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Commute Duration from St Leonards</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
+
+	<script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+	<script src="http://maps.kelvinism.com/static/leaflet.utfgrid.js"></script>
+    <style>
+        html, body, #map {
+          margin: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .score {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.score h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+        
+		.info {
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.info h4 {
+			margin: 0 0 5px;
+			color: #777;
+		}
+
+		.legend {
+			text-align: left;
+			line-height: 18px;
+			color: #555;
+		}
+		.legend i {
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin-right: 8px;
+			opacity: 0.7;
+		}
+
+	</style>
+    
+</head>
+<body>
+
+	<div id="map"></div>
+	
+	<script type="text/javascript">
+
+        
+        var mapboxTiles = L.tileLayer('https://{s}.tiles.mapbox.com/v3/examples.map-0l53fhk2/{z}/{x}/{y}.png', {
+            attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
+        });
+
+		var utfGrid = new L.UtfGrid('http://d2i0kygte2vy0v.cloudfront.net/sydney.mbtiles/{z}/{x}/{y}.json', {
+            useJsonP: false
+        });
+		
+        var tileslayer = new L.TileLayer('http://d2i0kygte2vy0v.cloudfront.net/sydney.mbtiles/{z}/{x}/{y}.png');
+        
+		//Use a LayerGroup to group together a TileLayer and our UtfGrid layer
+		//This enables us to toggle them both together in the layers dialog
+		var interactiveLayerGroup = L.layerGroup([
+			//cloudmade2,
+            mapboxTiles,
+            tileslayer,
+			utfGrid
+		]);
+		
+        var info = L.control();
+        //info.options.position = 'bottomright';
+        info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'score'); // create a div with a class "info"
+            this.update();
+            return this._div;
+        };
+
+        info.update = function (props) {
+            this._div.innerHTML = "<h4>Information</h4>"  +
+            
+            "Mesh Block Code: " + (props ?
+            "<b>" + props.data.mb_code11 + "</b><br />" +
+            "Category: <b>" + props.data.mb_cat11 + "</b><br />" +
+            "SA2 Name: <b>" + props.data.sa2_name11 + "</b><br />" +
+            "SQM: <b>" + props.data.albers_sqm + "</b><br />" +
+            "Population: <b>" + props.data.pop + "</b><br />" +
+            "Transport Duration (sec): <b>" + props.data.output + "</b><br />"
+            : 'Hover over a location');
+        };
+
+		
+		//Events
+		utfGrid.on('click', function (e) {
+			if (e.data) {
+				document.getElementById('click').innerHTML = 'click: ' + e.data.sa2_name11;
+			} else {
+				document.getElementById('click').innerHTML = 'click: nothing';
+			}
+		}); 
+		utfGrid.on('mouseover', function (e) {
+			if (e.data) {
+				info.update(e);
+			}
+		});
+		utfGrid.on('mouseout', function (e) {
+			//console.log('mouseout: ' + e.data);
+		});
+
+
+		//Create our map with just the base TileLayer
+		var map = L.map('map')
+				.setView([-33.823154, 151.194618], 11)
+				.addLayer(mapboxTiles)
+                .addLayer(tileslayer)
+                .addLayer(utfGrid)
+                .addControl(info);
+
+	</script>
+</body>
+</html>

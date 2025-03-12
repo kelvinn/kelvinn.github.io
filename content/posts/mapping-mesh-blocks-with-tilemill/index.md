@@ -17,7 +17,7 @@ First, we create a database to import the [shapefile](http://www.abs.gov.au/AUSS
   
 Using 'psql' or 'SQL Query', create a new database:  
   
-```
+```sql
 CREATE DATABASE transport WITH TEMPLATE postgis20 OWNER postgres;
 # Query returned successfully with no result in 5527 ms.
 ```  
@@ -27,13 +27,13 @@ It is necessary to first import the Mesh Block spatial file using something like
   
 We then create a table to import the Mesh Block population data:  
   
-```
-CREATE TABLE tmp\_x (id character varying(11), Dwellings numeric, Persons\_Usually\_Resident numeric);
+```sql
+CREATE TABLE tmp_x (id character varying(11), Dwellings numeric, Persons_Usually_Resident numeric);
 ```  
 And then load the data:  
   
-```
-COPY tmp\_x FROM '/home/kelvinn/censuscounts\_mb\_2011\_aust\_good.csv' DELIMITERS ',' CSV HEADER;
+```sql
+COPY tmp_x FROM '/home/kelvinn/censuscounts_mb_2011_aust_good.csv' DELIMITERS ',' CSV HEADER;
 ```  
 It is possible to import the GIS information and view it in QGIS:  
   
@@ -41,28 +41,28 @@ It is possible to import the GIS information and view it in QGIS:
   
 Now that we know the shapefile was imported correctly we can merge the population with spatial data. The following query is used to merge the datasets:  
   
-```
-UPDATE mb\_2011\_nsw
-SET    dwellings = tmp\_x.dwellings FROM tmp\_x
-WHERE  mb\_2011\_nsw.mb\_code11 = tmp\_x.id;
-```  
-```
-UPDATE mb\_2011\_nsw
-SET    pop = tmp\_x.persons\_usually\_resident FROM tmp\_x
-WHERE  mb\_2011\_nsw.mb\_code11 = tmp\_x.id;
+```sql
+UPDATE mb_2011_nsw
+SET    dwellings = tmp_x.dwellings FROM tmp_x
+WHERE  mb_2011_nsw.mb_code11 = tmp_x.id;
+
+UPDATE mb_2011_nsw
+SET    pop = tmp_x.persons_usually_resident FROM tmp_x
+WHERE  mb_2011_nsw.mb_code11 = tmp_x.id;
+
 ```  
 We can do a rough validation by using this query:  
   
-```
-SELECT sum(pop) FROM mb\_2011\_nsw;
+```sql
+SELECT sum(pop) FROM mb_2011_nsw;
 ```  
 And we get 6916971, which is about right (ABS has the 2011 official NSW population of 7.21 million).  
   
 Finally, using TileMill, we can connect to the PostgGIS database and apply some themes to the map.  
   
-```
+```bash
 host=127.0.0.1 user=MyUsername password=MyPassword dbname=transport
-(SELECT \* from mb\_2011\_nsw JOIN westmead\_health on mb\_2011\_nsw.mb\_code11 = westmead\_health.label) as mb
+(SELECT * from mb_2011_nsw JOIN westmead_health on mb_2011_nsw.mb_code11 = westmead_health.label) as mb
 
 
 ```  
@@ -72,7 +72,7 @@ host=127.0.0.1 user=MyUsername password=MyPassword dbname=transport
   
 After generating the MBTiles file I pushed it to my little $15/year VPS and used [TileStache](http://tilestache.org/) to serve the tiles and UTFGrids. The TileStache configuration I am using looks something like this:  
   
-```
+```json
 {
   "cache": {
     "class": "TileStache.Goodies.Caches.LimitedDisk.Cache",

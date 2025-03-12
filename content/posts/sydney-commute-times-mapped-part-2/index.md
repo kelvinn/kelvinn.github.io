@@ -11,6 +11,8 @@ tags:
 - gtfs
 ---
 
+EDIT 12-03-2025: I accidentially broke the maps when deleting my AWS account, as the mbtiles were hosted there. Oops.
+
 In [Sydney Commute Times Mapped Part 1](http://www.kelvinism.com/2013/07/sydney-commute-times-mapped-part-1.html) I took a small step to a bigger goal of mashing together public transport in Sydney, and the [Metropolitan Strategy for Sydney to 2031](http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf). The question I wanted to answer is this: how aligned is Sydney's public transport infrastructure and the Metropolitan Strategy's of a "city of cities"?  
   
 I decided to find out.  
@@ -37,14 +39,9 @@ The simplified process I used was this, for the technical minded:
   
 The first map I created was simply to indicate how long it would take to the nearest centre. There appears to be rapidly poorer accessibility on the fringe of Sydney. I was also surprised of what appears to be a belt of higher times between Wetherill Park and all the way to Marrickville. There also appears to be poorer accessibility in _parts_ of Western Sydney. It is worth noting that I offer not guarantee of the integrity of the data in these maps, and I have seen a few spots where the commute times increase significantly in adjacent mesh blocks. This tells me the street data (from OpenStreetMap) might not be connected correctly.  
   
-  
-  
-[View Full Screen](http://maps.kelvinism.com/syd_city_cities.html)  
+    
   
 My next map shows what areas are within 30 minutes.  
-  
-  
-[View Full Screen](http://maps.kelvinism.com/syd_city_cities_2.html)  
   
 These maps were both created using open data and open source tools, which I find quite neat. In that spirit, I have exported the database (probably a bit hard for most to work with) to a Shapefile. You can open this in TileMill and experiment, if you wish. Download it from [here](http://cdn.kelvinism.com/mb_2011_nsw_transport.zip) (note: 250MB zip file):  
   
