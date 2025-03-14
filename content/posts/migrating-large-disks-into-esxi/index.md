@@ -15,18 +15,16 @@ I rethought my idea and decided to use this process:
 
   
 1) Create an NFS share on my laptop, using the external hard drive (with the VMDK) as a mount point.  
-  
 2) Use vmkfstools to move the image over.  
-  
 3) Update any bugs I encountered.  
   
   
 
 Creating the NFS share on Linux is extermily easy. After install nfs via whatever package management tool you choose, put this entry into your /etc/exports file:  
 
-```
+```bash
   
-/media/disk-1 192.168.1.0/24(ro,no\_root\_squash,async)  
+/media/disk-1 192.168.1.0/24(ro,no_root_squash,async)  
 
 ```  
 
@@ -34,9 +32,9 @@ This assumes your USB disk is mounted as /media/disk-1, and your local subnet is
 
 Next, unlock SSH if you haven't already. Once you are in, browse to /vmfs/volumes and you can see your nfs share and your other datastores. Let's say you USB virtual disk is located at /vmfs/volumes/nfs/bigdisk.vmdk, and you want to import it into your normal datastore, under a folder called 'NAS'. Using vmware specific tools, you can import the file as so:
 
-```
+```bash
   
-\# vmkfstools -i /vmfs/volumes/nfs/bigdisk.vmdk /vmfs/volumes/datastore1/NAS/bigdisk.vmdk  
+# vmkfstools -i /vmfs/volumes/nfs/bigdisk.vmdk /vmfs/volumes/datastore1/NAS/bigdisk.vmdk  
 
 ```  
 

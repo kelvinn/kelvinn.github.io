@@ -19,41 +19,39 @@ In summary: the ath5k driver in the 2.6.28 kernel, which is what Ubuntu 9.04 use
 
 I'll get a few basic troubleshooting commands out of the way first. After updating the kernel I kept getting disconnected - it appeared I was associate/disassociating frequently.
 
-```
-\# dmesg
+```bash
+# dmesg
 ...
-2577.134060\] wlan0: associated
-\[ 2580.984838\] wlan0: disassociating by local choice (reason=3)
+2577.134060] wlan0: associated
+[ 2580.984838] wlan0: disassociating by local choice (reason=3)
 ...
 
 ```  
   
   
-```
-\# lspci | grep Atheros
+```bash
+# lspci | grep Atheros
 03:00.0 Ethernet controller: Atheros Communications Inc. AR5212 802.11abg NIC (rev 01)
-
 ```  
   
   
+```bash
+# ping 192.168.1.1
+...
+64 bytes from 192.168.1.1: icmp_seq=2409 ttl=64 time=1.13 ms
+64 bytes from 192.168.1.1: icmp_seq=2410 ttl=64 time=2236.61 ms
+64 bytes from 192.168.1.1: icmp_seq=2411 ttl=64 time=4562.40 ms
+64 bytes from 192.168.1.1: icmp_seq=2412 ttl=64 time=6521.868 ms
+...
+
 ```
-\# ping 192.168.1.1
-...
-64 bytes from 192.168.1.1: icmp\_seq=2409 ttl=64 time=1.13 ms
-64 bytes from 192.168.1.1: icmp\_seq=2410 ttl=64 time=2236.61 ms
-64 bytes from 192.168.1.1: icmp\_seq=2411 ttl=64 time=4562.40 ms
-64 bytes from 192.168.1.1: icmp\_seq=2412 ttl=64 time=6521.868 ms
-...
-
-```  
-  
 
 The steps to resolve are as follows:
 
-*   1) Make sure you have headers for your current kernel.
-*   2) Make sure you have ability to compile programs.
-*   3) Download and install compat-wireless
-*   4) Unload and load the module.
+1. Make sure you have headers for your current kernel.
+2. Make sure you have ability to compile programs.
+3. Download and install compat-wireless
+4. Unload and load the module.
 
   
   
@@ -62,37 +60,39 @@ So, first, use Synapitc to get the latest kernel headers and the 'build-essentia
 
 Next, download the compat-wireless package. I needed to use one from a few weeks ago because I received the following error:
 
-```
+```bash
 make -C /lib/modules/2.6.28-15-generic/build M=/usr/src/compat-wireless-2009-09-22 modules
-make\[1\]: Entering directory \`/usr/src/linux-headers-2.6.28-15-generic'
-CC \[M\]  /usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.o
-/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c: In function 'b43\_do\_interrupt':
-/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c:1888: error: 'IRQ\_WAKE\_THREAD' undeclared (first use in this function)
+make[1]: Entering directory `/usr/src/linux-headers-2.6.28-15-generic'
+CC [M]  /usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.o
+/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c: In function 'b43_do_interrupt':
+/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c:1888: error: 'IRQ_WAKE_THREAD' undeclared (first use in this function)
 /usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c:1888: error: (Each undeclared identifier is reported only once
 /usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c:1888: error: for each function it appears in.)
-/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c: In function 'b43\_request\_firmware':
+/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c: In function 'b43_request_firmware':
 /usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c:2218: warning: format not a string literal and no format arguments
-/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c: In function 'b43\_wireless\_core\_start':
-/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c:3867: error: implicit declaration of function 'request\_threaded\_irq'
-make\[4\]: \*\*\* \[/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.o\] Error 1
-make\[3\]: \*\*\* \[/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43\] Error 2
-make\[2\]: \*\*\* \[/usr/src/compat-wireless-2009-09-22/drivers/net/wireless\] Error 2
-make\[1\]: \*\*\* \[\_module\_/usr/src/compat-wireless-2009-09-22\] Error 2
-make\[1\]: Leaving directory \`/usr/src/linux-headers-2.6.28-15-generic'
-make: \*\*\* \[modules\] Error 2
+/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c: In function 'b43_wireless_core_start':
+/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.c:3867: error: implicit declaration of function 'request_threaded_irq'
+make[4]: *** [/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43/main.o] Error 1
+make[3]: *** [/usr/src/compat-wireless-2009-09-22/drivers/net/wireless/b43] Error 2
+make[2]: *** [/usr/src/compat-wireless-2009-09-22/drivers/net/wireless] Error 2
+make[1]: *** [_module_/usr/src/compat-wireless-2009-09-22] Error 2
+make[1]: Leaving directory `/usr/src/linux-headers-2.6.28-15-generic'
+make: *** [modules] Error 2
+
 
 ```  
   
 
 You can download a working 2009-09-05 set from [orbit-lab.org](http://www.orbit-lab.org/kernel/compat-wireless-2.6/2009/09/compat-wireless-2009-09-05.tar.bz2)
 
-```
-\# tar -xpjf compat-wireless-2009-09-05.tar.bz2
+```bash
+# tar -xpjf compat-wireless-2009-09-05.tar.bz2
 # cd compat-wireless-2009-09-05
 # make
 # make install
 # make unload
 # modprobe ath5k
+
 
 ```  
   

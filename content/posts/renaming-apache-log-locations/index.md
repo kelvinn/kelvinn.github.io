@@ -11,12 +11,13 @@ tags:
 - bash
 ---
 
-I realized a few of my log files were growing unusually large, and even worse, logrotate was skipping them. I took a look in logrotate.d and straight away realized why: I had created silly names for the log file. logrotate look for .log files, but I had specified mine as .log -- e.g. kelvinism\_access\_log. I was as familiar with logrotate when I set up the domains, so set forth to get them in the rotation.
+I realized a few of my log files were growing unusually large, and even worse, logrotate was skipping them. I took a look in logrotate.d and straight away realized why: I had created silly names for the log file. logrotate look for .log files, but I had specified mine as .log -- e.g. kelvinism_access_log. I was as familiar with logrotate when I set up the domains, so set forth to get them in the rotation.
 
-Firstly, I had to rename the actual log files. So, to rename kelvinism\_access\_log to kelvinism\_access.log, a one-liner:
+Firstly, I had to rename the actual log files. So, to rename kelvinism_access_log to kelvinism_access.log, a one-liner:
 
 ```
-for x in \*\_log; do mv $x \`basename $x \_log\`.log; done;
+for x in *_log; do mv $x `basename $x _log`.log; done;
+
 
 ```  
   
@@ -25,11 +26,12 @@ Next, I needed to rename the log location inside each of the Apache config files
 
 ```
 #!/bin/sh
-
-for x in \*
+ 
+for x in *
 do
-sed 's/\\\_log/\\.log/' $x > /tmp/tmpfile.tmp
+sed 's/\_log/\.log/' $x > /tmp/tmpfile.tmp
 mv /tmp/tmpfile.tmp $x
 done
+
 
 ```

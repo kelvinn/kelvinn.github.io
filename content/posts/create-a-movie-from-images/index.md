@@ -19,7 +19,7 @@ I first installed and configured [motion](http://www.lavrsen.dk/twiki/bin/view/M
 
 $ cat ~/.motion/motion.conf
 
-```
+```bash
 height 480
 width 640
 framerate 2
@@ -33,18 +33,19 @@ With motion installed, and configured, now install mencoder.
 
 I prefer to generate a seed file based on the creation date for each image. If you try to use mencoder with just a \*.jpg, it works, but my video jumped around.
 
-```
+```bash
 $ pwd
 /home/path/Desktop/motion
-$ ls -rt \*.jpg > list.txt
+$ ls -rt *.jpg > list.txt
+
 
 ```  
   
 
 This list.txt file now has the filenames, in chronological order, ready for consumption. I create the video like so:
 
-```
-mencoder mf://@list.txt -o \`date +%G%m%d\`.avi -ovc lavc -lavcopts vcodec=mjpeg
+```bash
+mencoder mf://@list.txt -o `date +%G%m%d`.avi -ovc lavc -lavcopts vcodec=mjpeg
 
 ```  
   

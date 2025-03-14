@@ -17,7 +17,7 @@ I like ESX. I like Linux. It is absurdly easy to configure Linux as an NFS serve
 
 I currently use Ubuntu Server for my home lab, but the process is basically the same for Red Hat and derivatives.
 
-```
+```bash
 sudo apt-get install nfs-common
 sudo apt-get install nfs-kernel-server
 
@@ -26,14 +26,14 @@ sudo apt-get install nfs-kernel-server
 Next, configure NFS so it can server your local LAN. Normally you would list only specific servers, but, well, we're being cheap and dirty today. Open /etc/exports in VI or your editor of choice.
 
 **/etc/exports**  
-```
-/media/disk/Images 192.168.0.0/24(rw,no\_root\_squash,async
+```bash
+/media/disk/Images 192.168.0.0/24(rw,no_root_squash,async
 
 ```  
 
 Restart NFS.
 
-```
+```bash
 sudo /etc/init.d/nfs-common
 
 ```  

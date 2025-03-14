@@ -33,21 +33,21 @@ On my "monitoring" instance, which is always up, I've decided to install the scr
 datastore1 = name of datastore that hosts VMs  
   
 
-```
+```bash
 #!/bin/sh
-
-vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password stop "\[datastore1\] Server 2003 R2/Server 2003 R2.vmx" soft
+ 
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root_password stop "[datastore1] Server 2003 R2/Server 2003 R2.vmx" soft
 
 
 ```  
 
-I have that saved in a file called **stop\_2003.sh** in /opt/vmware/bin; make sure it isn't world readable. I also have a **start\_2003.sh**:  
+I have that saved in a file called **stop_2003.sh** in /opt/vmware/bin; make sure it isn't world readable. I also have a **start_2003.sh**:  
   
 
-```
+```bash
 #!/bin/sh
-
-vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start "\[datastore1\] Server 2003 R2/Server 2003 R2.vmx"
+ 
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root_password start "[datastore1] Server 2003 R2/Server 2003 R2.vmx"
 
 
 ```  
@@ -55,17 +55,18 @@ vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start "\[data
   
 Next, edit root's crontab (crontab -e):  
 
-```
-\# m h  dom mon dow   command
-0 8 \* \* \* /opt/vmware/bin/start\_2003.sh
-0 23 \* \* \* /opt/vmware/bin/stop\_2003.sh
+```bash
+# m h  dom mon dow   command
+0 8 * * * /opt/vmware/bin/start_2003.sh
+0 23 * * * /opt/vmware/bin/stop_2003.sh
+
 
 ```  
   
 
 The conditional task is a tad bit more tricky, but just a tad. Ping won't do, since the mailserver could go down itself, so install nmap. Create a script:
 
-```
+```bash
 #!/bin/bash
 
 if nmap -p25 -PN -sT -oG - mail.kelvinism.com | grep 'Ports:.\*/open/' >/dev/null ; then
@@ -79,7 +80,7 @@ fi
 
 And sticking with our theme, **start\_mail.sh**:
 
-```
+```bash
 #!/bin/sh
 
 vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start "\[datastore1\] Mail Server/Mail Server.vmx"
@@ -89,11 +90,15 @@ vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start "\[data
 
 This of course changes the crontab entry to:
 
-```
-\# m h  dom mon dow   command
-0 8 \* \* \* /opt/vmware/bin/start\_2003.sh
-0 23 \* \* \* /opt/vmware/bin/stop\_2003.sh
-\*/5 \* \* \* \* /opt/vmware/bin/detect\_port.sh
+```bash
+#!/bin/bash
+ 
+if nmap -p25 -PN -sT -oG - mail.kelvinism.com | grep 'Ports:.*/open/' >/dev/null ; then
+echo `time` >> mailserver.log
+else
+/opt/vmware/bin/start_mail.sh
+fi
+
 
 ```  
   

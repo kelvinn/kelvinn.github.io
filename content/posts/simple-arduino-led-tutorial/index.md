@@ -16,19 +16,13 @@ For this you'll need: an Arduino, an LED, a USB cable, and the Arduino software.
 
   
   
-1) Get the LED, and plug it in to your Arduino. Plug in the long end to pin 13, plug the short end to the GND.  
-  
-2) Plug in the Arduino into your laptop. Go to Tools->Serial Port. Choose the USB port that appears.  
-  
-3) Take the code from the [BlinkingLED tutorial](http://www.arduino.cc/en/Tutorial/BlinkingLED) and paste it in to the arduino like so:  
+1. Get the LED, and plug it in to your Arduino. Plug in the long end to pin 13, plug the short end to the GND.  
+2. Plug in the Arduino into your laptop. Go to Tools->Serial Port. Choose the USB port that appears.  
+3. Take the code from the [BlinkingLED tutorial](http://www.arduino.cc/en/Tutorial/BlinkingLED) and paste it in to the arduino like so:  
   
   
   
 [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgD4UsTrzaB5lO4bVPBYinUZPyiFIUE17ygdSRy2ceZCmXOgcM_4ivrL6lho0DkZk5JbDQAmhyphenhyphenxz1bcS1FtZozT14oDmQQle0jYK5ckBOkjhbN9EBn2Oy84mTyoHcaJ7MctQWx5wBXjrQ5A/s400/arduino-LED.png)](http://picasaweb.google.com/lh/photo/9cKJq_IKgb-LMXdghLOmCg?feat=embedwebsite)  
   
-  
-  
-  
-4) Hit File->Upload to I/O Board.  
-  
-5) Hit (physically) the little reset button. Voila! a blinking LED!
+4. Hit File->Upload to I/O Board.  
+5. Hit (physically) the little reset button. Voila! a blinking LED!

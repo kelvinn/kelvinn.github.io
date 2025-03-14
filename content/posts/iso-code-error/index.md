@@ -12,15 +12,15 @@ tags:
 
 I've received this error a few times when working with pytz:
 
-```
-Error reading file '/usr/share/xml/iso-codes/iso\_3166.xml'
+```python
+Error reading file '/usr/share/xml/iso-codes/iso_3166.xml'
 
 ```  
   
 
 In short, install the 'iso-codes' package in Ubuntu/Debian. I'm sure this is covered in the manual that I didn't read, but I'm sure others didn't read it too.
 
-```
+```bash
 apt-get install iso-codes
 
 ```

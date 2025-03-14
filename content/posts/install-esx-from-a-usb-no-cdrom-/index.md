@@ -14,24 +14,22 @@ My little server doesn't have a cdrom, but I didn't want to actually run ESX fro
   
   
 1) Install the syslinux utils to your computer (apt-get install syslinux mboot)  
-  
 2) Install the MBR  
   
-```
+```bash
 sudo install-mbr /dev/sdb
 
 ```  
 3) Copy all the files from the ISO to your fat32 formated partition  
-  
 4) Install syslinux  
   
-```
+```bash
 sudo syslinux /dev/sdb1
 
 ```  
 5) Move isolinux.cfg to syslinux.cfg, and try booting. If it doesn't work, edit syslinux.cfg says something like:  
   
-```
+```bash
 default menu.c32
 menu title ESXi Boot
 timeout 100

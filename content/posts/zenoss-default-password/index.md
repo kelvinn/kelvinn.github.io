@@ -12,8 +12,8 @@ tags:
 
 I've evaluated Zenoss before, but forgot the default password, and searching for it didn't come up with anything quickly. I tried everything under the sun: password, 1234, admin, God, Sex, but alas, grep to the rescue:
 
-```
-kelvin@monitor:/usr/local/zenoss/zenoss/etc$ grep admin \*
+```bash
+kelvin@monitor:/usr/local/zenoss/zenoss/etc$ grep admin *
 hubpasswd:admin:zenoss
 
 ```  
