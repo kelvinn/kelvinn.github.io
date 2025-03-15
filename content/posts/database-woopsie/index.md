@@ -16,7 +16,7 @@ I returned to my computer today to notice I had the following error:
 ```  
   
 
-Well, crap. The solution is quite easy, however:
+Darn. The solution is quite easy, however:
 
 ```bash
 mysqlcheck -uUsername -pPassword databasename comments_freecomment

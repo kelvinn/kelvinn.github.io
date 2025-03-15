@@ -51,4 +51,4 @@ These are actually the same type of error. Copy /etc/resolv.conf into the chroot
   
   
 Copy /etc/services into the chroot.  
-I searched google for these answers, to a certain degree at least, but couldn't really find much. Then I remembered "crap, this is a chroot, it needs things" -- and fixed stuff. If you came here from google, and these super quick notes were helpful, feel free to leave a comment, or contact me directly if you have any questions.
+I searched google for these answers, to a certain degree at least, but couldn't really find much. Then I remembered "oh, this is a chroot, it needs things" -- and fixed stuff. If you came here from google, and these super quick notes were helpful, feel free to leave a comment, or contact me directly if you have any questions.

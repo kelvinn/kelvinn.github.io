@@ -7,7 +7,7 @@ tags:
 - howtos
 ---
 
-Let's say one page on your site is getting hit hard. And I mean, it was digg'd or something. If the page resides on some CMS or blog, and each request is being processed by PHP and resulting in requests to your database, crap is gonna hit the fan. Well, at least if you're cheap like me, you'll try to squeeze every penny out of what you've got.  
+Let's say one page on your site is getting hit hard. And I mean, it was digg'd or something. If the page resides on some CMS or blog, and each request is being processed by PHP and resulting in requests to your database, which, as they say, crap is gonna hit the fan. Well, at least if you're cheap like me, you'll try to squeeze every penny out of what you've got.  
 That said, mod_rewrite comes to the rescue.  
 There are only a few modifications that you need to do. The first is to ensure that mod_rewrite is enabled. If you have apache installed on debian, this might do:  
   

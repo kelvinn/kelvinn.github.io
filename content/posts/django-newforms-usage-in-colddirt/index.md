@@ -149,7 +149,7 @@ class DirtyForm(forms.Form):
                     hasNoProfanities(value, None)
                     return value
                 except:
-                    raise forms.ValidationError(u'Extremily dirty words, racial slurs and random crap characters are not allowed in dirt.') 
+                    raise forms.ValidationError(u'Extremily dirty words, racial slurs and random characters are not allowed in dirt.') 
             else:
                 raise forms.ValidationError(u'A little more detail please. No HTML.')
                

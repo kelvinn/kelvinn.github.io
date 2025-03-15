@@ -29,7 +29,7 @@ Don't bring jeans, or bring only one nice pair of pants for semi-formal situatio
   
 Try to find one pair of shoes that are ergonomic and athletic enough for walking 20KM/day, or on a trail, but also stylish enough to go into a nice restaurant and not draw too much attention. And dry quickly. I don't really have any suggestions, since I'm still looking, but I'm certainly never going to put my Allen Edmonds in a backpack.
   
-Bring cotton undershirts instead of normal shirts for winter travel. I never ended up wearing a t-shirt on the outside, so the shirts were basically just used to keep the rest of my clothing clean. I may look into undershits that wick better than cotton.  
+Bring cotton undershirts instead of normal shirts for winter travel. I never ended up wearing a t-shirt on the outside, so the shirts were basically just used to keep the rest of my clothing clean. I may look into undershirts that wick better than cotton.  
   
 Replace my money belt with something. It is just uncomfortable. I am trying to find an alternative, maybe something that goes over the shoulder instead. I only need something for my passport.  
   

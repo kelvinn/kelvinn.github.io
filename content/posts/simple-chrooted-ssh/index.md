@@ -16,7 +16,7 @@ You might be asking: why would you want to chroot ssh? Why use ssh anyways? Here
   
   
 So, let me tell a quick story.  
-When I started uni in 2001 I was a nerd. Still a nerd, I guess. I was cramped in my apartment on campus with like 5 boxes, most of them crappy p100s running Linux or OpenBSD. Life was good.  
+When I started uni in 2001 I was a nerd. Still a nerd, I guess. I was cramped in my apartment on campus with like 5 boxes, most of them old p100s running Linux or OpenBSD. Life was good.  
 I started a CS degree (shifted into Business with a focus on IT), and we were told to use the school's main servers to compile our programs. The other interesting thing is that _all_ user accounts were visible when logged in via ssh -- but hey, that is just the nature of Linux. I knew this, but asked the head I.T. person "why don't you jail the connections?" He responded quickly telling me to go away.  
 Well, shortly after making the comment (although solutions existed at the time being), pam-chroot was released. This is right about the time students figured they could spam everybody in the school, some 25,000 emails, quickly and easily -- 'cause all the accounts were displayed. Sweet -- now we can chroot individual ssh connections.  
 This quick demo will be on Debian, we'll create a pretend user named "karl." (I'll assume you've already added the user before beginning these steps). Also, the jails will be in /var/chroot/{username}  

@@ -9,7 +9,7 @@ tags:
 
 So, you have a web server. So, you have PHP. So, you want to make it a little quicker? The following are a few ideas to let you do that. First, let me share my experiences.  
 I have always been wondering "what would a digg do to my site." I mean, I don't run a commenting system, so I'm refering to just some article. Because I prefer to manage my own server, I have decided to use a VPS (Virtual Private Server) from [VPSLink](http://www.vpslink.com/). Before purchasing I searched around, read reviews, and finally tested it out. Liking what I tested, I stayed. However, since I just host a few 'play' sites (http/email/ftp), and a few sites for friends, I am not going to spend much money on a high-end plan. That leaves me with a little problem: how can I maximize what I've got?  
-I've tried quite a few things. I finally ended up using Apache to handle php and [Lighttpd](http://www.lighttpd.net/) to serve all static crap. So, how?  
+I've tried quite a few things. I finally ended up using Apache to handle php and [Lighttpd](http://www.lighttpd.net/) to serve all static stuff. So, how?  
 
 #### Staticzerize A Page
 

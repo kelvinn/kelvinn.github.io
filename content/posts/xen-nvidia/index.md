@@ -7,12 +7,12 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 I've played with quite a bit of virtualization, especially VMWare for ages. About eight months ago I started to play around with Xen, and got it to work great, except for the fact that the nvidia driver wouldn't work with the Xen kernel. That said, I'm gonna give another go.
 
-Throughout senior high, and especially my last year, I managed to score a bunch of crappy motherboards and random parts and pieces. Six or so years later, my parents are _still_ finding old motherboards. Considering these computers were mainly P120s with 64-128 megs of RAM, they weren't so hot. What is one to do?
+Throughout senior high, and especially my last year, I managed to score a bunch of old motherboards and random parts and pieces. Six or so years later, my parents are _still_ finding old motherboards. Considering these computers were mainly P120s with 64-128 megs of RAM, they weren't so hot. What is one to do?
 
 As you could guess, when I started university I had quite a few computers in my room. I had about three or so P120s (one in a hampster cage, don't ask), one AMD600, an AMD1ghz and one iBook (500 whooping mhz). Computers would die, get replaced, but overall they worked quite well. Considering almost all the computers ran Linux (the AMD1ghz also ran Windows -- to play games -- and the iBook sort of ran OSX -- and YDL), every system was quite happy. I had an OpenBSD box as my gateway. Life was good.
 
