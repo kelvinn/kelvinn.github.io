@@ -12,7 +12,7 @@ tags:
 
 I'm always forgetting the exact string to enter at the CLI for updating the IOS on a wireless Cisco AP, so I'll just put it here to end my future searches:
 
-```
+```bash
 Chimp# archive download-sw /force-reload /overwrite tftp://192.168.83.150/c1100-k9w7-tar.123-8.JEC1.tar
 
 ```  
@@ -22,7 +22,7 @@ Chimp# archive download-sw /force-reload /overwrite tftp://192.168.83.150/c1100-
 
 I suppose if you wanted to backup your IOS you could do something along the lines of:
 
-```
+```bash
 Chimp# archive upload-sw tftp://192.168.83.150/someimage.tar
 
 ```  

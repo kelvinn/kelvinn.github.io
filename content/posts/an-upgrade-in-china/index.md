@@ -29,7 +29,7 @@ While the Cisco tech (who I believe is a good guy, even though I did the Cisco i
 
 Next on the list was video conferencing. The solution was the path of least resistance: Skype on a laptop. Ian took this one, setup the laptop, and tested conferencing back to the States.
 
-On the agenda for that night was VPN. The problem with bringing the China office on the VPN is one of security. Virus' were quite prevalent (e.g. my shared drive on my Linux laptop, to use as a sandbox, had a couple .exe files dropped into it. All with rather odd names...) -- so we first ran some security audits. Nessus was a great help, as always, and we tracked down over \[an UNFATHOMABLE amount of\] _critical_ holes. Picking the biggest culprits we started patching computers, removing spyware and running anti-virus. Slowly (a few days) we got the number knocked down significantly.
+On the agenda for that night was VPN. The problem with bringing the China office on the VPN is one of security. Virus' were quite prevalent (e.g. my shared drive on my Linux laptop, to use as a sandbox, had a couple .exe files dropped into it. All with rather odd names...) -- so we first ran some security audits. Nessus was a great help, as always, and we tracked down over [an UNFATHOMABLE amount of] _critical_ holes. Picking the biggest culprits we started patching computers, removing spyware and running anti-virus. Slowly (a few days) we got the number knocked down significantly.
 
 Lastly I hooked China up to the VPN. In order to do this safely I created some very strict access lists, to only allow outgoing communication over ports 80 and 443 (since that is all they needed at that point). Previously setup we had a webshare website (auth linked to the PDC), so no need to open any other ports.
 

@@ -13,15 +13,15 @@ As you can see by my previous post, my question to squeeze more req/sec from the
 Two hours later everything was up and running -- and I guess I can't complain about a two hour bare-metal restore from one distro to another. And let me iterate, this isn't just a typical LAMP boxen. It's got:
 
   
-*   apache/mod\_php/ssl with ~10 domains
+*   apache/mod_php/ssl with ~10 domains
   
-*   apache/mod\_python/ssl with ~4 domains
+*   apache/mod_python/ssl with ~4 domains
   
 *   lighttpd with ~5 domains (static files)
   
 *   about 8 gigs of web data/images
   
-*   svn repos + web\_dav access
+*   svn repos + web_dav access
   
 *   mysql restored
   
@@ -35,4 +35,4 @@ Two hours later everything was up and running -- and I guess I can't complain ab
   
   
 
-I'm sure I missed something on this list, I was typing pretty quick. Well, that's the update. I'm gonna go tinker with mod\_cache some.
+I'm sure I missed something on this list, I was typing pretty quick. Well, that's the update. I'm gonna go tinker with mod_cache some.

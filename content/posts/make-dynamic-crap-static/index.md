@@ -8,21 +8,21 @@ tags:
 ---
 
 Let's say one page on your site is getting hit hard. And I mean, it was digg'd or something. If the page resides on some CMS or blog, and each request is being processed by PHP and resulting in requests to your database, crap is gonna hit the fan. Well, at least if you're cheap like me, you'll try to squeeze every penny out of what you've got.  
-That said, mod\_rewrite comes to the rescue.  
-There are only a few modifications that you need to do. The first is to ensure that mod\_rewrite is enabled. If you have apache installed on debian, this might do:  
+That said, mod_rewrite comes to the rescue.  
+There are only a few modifications that you need to do. The first is to ensure that mod_rewrite is enabled. If you have apache installed on debian, this might do:  
   
 ```
 user@vps:~$ sudo a2enmod
 Password:
 Which module would you like to enable?
-Your choices are: actions alias asis auth\_basic auth\_digest authn\_alias authn\_anon authn\_dbd authn\_dbm authn\_default authn\_file authnz\_ldap authz\_dbm authz\_default authz\_groupfile authz\_host authz\_owner authz\_user autoindex cache cern\_meta cgi cgid charset\_lite dav dav\_fs dav\_lock dbd deflate dir disk\_cache dump\_io env expires ext\_filter file\_cache filter headers ident imagemap include info ldap log\_forensic mem\_cache mime mime\_magic negotiation php5 proxy proxy\_ajp proxy\_balancer proxy\_connect proxy\_ftp proxy\_http rewrite setenvif speling ssl status suexec unique\_id userdir usertrack version vhost\_alias
+Your choices are: actions alias asis auth_basic auth_digest authn_alias authn_anon authn_dbd authn_dbm authn_default authn_file authnz_ldap authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cern_meta cgi cgid charset_lite dav dav_fs dav_lock dbd deflate dir disk_cache dump_io env expires ext_filter file_cache filter headers ident imagemap include info ldap log_forensic mem_cache mime mime_magic negotiation php5 proxy proxy_ajp proxy_balancer proxy_connect proxy_ftp proxy_http rewrite setenvif speling ssl status suexec unique_id userdir usertrack version vhost_alias
 Module name? rewrite 
 ```  
   
 Otherwise, you'll need to drop the following in your apache2.conf (or httpd.conf).  
   
 ```
-LoadModule rewrite\_module /usr/lib/apache2/modules/mod\_rewrite.so
+LoadModule rewrite_module /usr/lib/apache2/modules/mod_rewrite.so
 ```  
 Next, grab the page that is getting hit hard from your site.  
   
@@ -43,7 +43,7 @@ If you have full access to the server, just mimic the following to a VirtualHost
   
   
 ```
-<VirtualHost \*>
+<VirtualHost *>
     DocumentRoot /var/www/html/kelvinism
     ServerName www.kelvinism.com
     ServerAlias kelvinism.com www.kelvinism.com
@@ -52,7 +52,7 @@ If you have full access to the server, just mimic the following to a VirtualHost
     allow from all
     AllowOverride None
     RewriteEngine On
-    RewriteRule ^stuff/hit-hard\\\\.html$ /static/hit-hard.html \[L\]
+    RewriteRule ^stuff/hit-hard\\\\.html$ /static/hit-hard.html [L]
 </Directory>
 </VirtualHost>
 ```  
@@ -62,5 +62,5 @@ If you don't have access to the server, you can just add the following to a .hta
   
 ```
 RewriteEngine On
-RewriteRule ^stuff/hit-hard\\.html$ /static/hit-hard.html \[L\]
+RewriteRule ^stuff/hit-hard\\.html$ /static/hit-hard.html [L]
 ```Sweet.

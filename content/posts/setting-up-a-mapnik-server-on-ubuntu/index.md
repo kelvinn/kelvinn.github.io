@@ -24,17 +24,17 @@ unzip apache2-prefork-dev
 
 Next we start to download a few components. I did this in my home directory, /home/kelvin
 
-**mod\_tile** - this is the apache module and rendering daemon that uses mapnik to render the maps.
+**mod_tile** - this is the apache module and rendering daemon that uses mapnik to render the maps.
 
 ```
-svn co http://svn.openstreetmap.org/applications/utils/mod\_tile
+svn co http://svn.openstreetmap.org/applications/utils/mod_tile
 
 ```  
 
 **Mapnik** - this will help us create the maps.
 
 ```
-wget http://download.berlios.de/mapnik/mapnik\_src-0.5.1.tar.gz
+wget http://download.berlios.de/mapnik/mapnik_src-0.5.1.tar.gz
 
 ```  
   
@@ -42,7 +42,7 @@ wget http://download.berlios.de/mapnik/mapnik\_src-0.5.1.tar.gz
 Now we start to install things.
 
 ```
-tar -xpzf mapnik\_src-0.5.1.tar.gz
+tar -xpzf mapnik_src-0.5.1.tar.gz
 cd mapnik-0.5.1
 
 ```  
@@ -52,15 +52,15 @@ Build mapnik as per: http://wiki.openstreetmap.org/index.php/Mapnik -- make sure
 
 ```
 python scons/scons.py PYTHON=/usr/bin/python \\
-PGSQL\_INCLUDES=/usr/include/postgresql \\
-PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+PGSQL_INCLUDES=/usr/include/postgresql \\
+PGSQL_LIBS=/usr/lib/postgresql BOOST_INCLUDES=/usr/include/boost BOOST_LIBS=/usr/lib
 
 ```  
   
 
 Now, I'm temporarily serving/rendering my tiles from an old Thinkpad "server" (PIII with 512MB RAM, of which only 128MB goes to the Xen instance that hosts all of this). So, I am using osm2pgsql on my laptop (a new Thinkpad), and pushing it into the postgres database on my "server". So, I built osm2pgsql on my new Thinkpad, and setup postgres on the "server" to accept connections from my new Thinkpad.
 
-**pg\_hba.conf** -- Set these lines should be added, assuming your computer is 192.168.10.100:
+**pg_hba.conf** -- Set these lines should be added, assuming your computer is 192.168.10.100:
 
 ```
 host    all     all     192.168.10.100/32  trust
@@ -75,8 +75,8 @@ Then I do the actual import, assuming my "server" has an IP of 192.168.10.10:
 ```  
   
 
-Make sure generate\_image works before installing mod\_tile!
+Make sure generate_image works before installing mod_tile!
 
-Install mod\_tile as per the modifications needed: http://www.kelvinism.com/howtos/notes-installing-mod\_tile-mapnik/
+Install mod_tile as per the modifications needed: http://www.kelvinism.com/howtos/notes-installing-mod_tile-mapnik/
 
 And the end result? [http://tiles.kelvinism.com](http://tiles.kelvinism.com) (remember, on a seven year old Thinkpad!)

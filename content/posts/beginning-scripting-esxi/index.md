@@ -69,21 +69,21 @@ The conditional task is a tad bit more tricky, but just a tad. Ping won't do, si
 ```bash
 #!/bin/bash
 
-if nmap -p25 -PN -sT -oG - mail.kelvinism.com | grep 'Ports:.\*/open/' >/dev/null ; then
+if nmap -p25 -PN -sT -oG - mail.kelvinism.com | grep 'Ports:.*/open/' >/dev/null ; then
 echo \`time\` >> mailserver.log
 else
-/opt/vmware/bin/start\_mail.sh
+/opt/vmware/bin/start_mail.sh
 fi
 
 
 ```  
 
-And sticking with our theme, **start\_mail.sh**:
+And sticking with our theme, **start_mail.sh**:
 
 ```bash
 #!/bin/sh
 
-vmrun -t esx -h https://192.168.0.10/sdk -u root -p root\_password start "\[datastore1\] Mail Server/Mail Server.vmx"
+vmrun -t esx -h https://192.168.0.10/sdk -u root -p root_password start "[datastore1] Mail Server/Mail Server.vmx"
 
 ```  
   
@@ -103,6 +103,6 @@ fi
 ```  
   
 
-So, that's it. detect\_port.sh is lacking any type of error detection or redundancy - if one packet/scan is dropped, the mail server will turn on. I'll re-work this at some point, but it works for now.
+So, that's it. detect_port.sh is lacking any type of error detection or redundancy - if one packet/scan is dropped, the mail server will turn on. I'll re-work this at some point, but it works for now.
 
 **Update**: Vmware has also released a decent blog entry about using vmrun: [on their blog](http://blogs.vmware.com/vix/2008/12/managing-vm-guests-using-vmrun.html).

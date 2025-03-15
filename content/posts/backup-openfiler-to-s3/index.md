@@ -19,18 +19,18 @@ I've digged deeper into [s3cmd](http://s3tools.logix.cz/s3cmd), which I had noti
 
 First, download [s3cmd](http://s3tools.logix.cz/download). You'll need to use subversion, so I first checked it out to my laptop, then uploaded it via SSH to OF. I put my s3cmd folder in /opt.
 
-```
+```bash
   
-\[root@files opt\]# ls  
+[root@files opt]# ls  
 openfiler  s3cmd  
-\[root@files opt\]#   
+[root@files opt]#   
 
 ```  
   
 
 If you don't have elementtree installed, now is a good time to install it.
 
-```
+```bash
   
 conary update elementtree:python  
 
@@ -39,26 +39,26 @@ conary update elementtree:python
 
 We need to next configure s3cmd with our AWS creds.
 
-```
+```bash
   
-\[root@files s3cmd\]# ./s3cmd --configure  
+[root@files s3cmd]# ./s3cmd --configure  
 
 ```  
   
 
 In the end I didn't configure encryption for my files (so just hit enter), but you may choose to do so. I have configured the transfer to use HTTPS, however.
 
-```
+```bash
   
-Save settings? \[y/N\] y  
+Save settings? [y/N] y  
 Configuration saved to '/root/.s3cfg'  
 
 ```  
   
 
-Cool. Now create a bucket on S3 for your NAS, e.g. blah2134accesskey.openfiler, using whatever method you choose (I typically use Cockpit). Now that you have a bucket, configure a \*really\* simple script to drop in cron:
+Cool. Now create a bucket on S3 for your NAS, e.g. blah2134accesskey.openfiler, using whatever method you choose (I typically use Cockpit). Now that you have a bucket, configure a *really* simple script to drop in cron:
 
-```
+```bash
   
 #!/bin/bash  
   

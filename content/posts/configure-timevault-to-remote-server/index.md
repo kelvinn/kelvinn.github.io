@@ -16,7 +16,7 @@ Using TimeVault with a shared drive as a backend is actually quite easy, but it 
 Install samba-tools, smbfs...
 
   
-```
+```bash
 sudo apt-get install samba-tools smbfs
 
 ```  
@@ -28,7 +28,7 @@ A lot more other stuff may install as well.
 Create a script that mounts your samba share. You could also do this in fstab, but I tend to suspend my laptop when I come home, and I like clicking buttons.
 
   
-```
+```bash
 #!/bin/bash
 
 mount -t cifs //192.168.44.2/kelvin /mnt/backups -o netbiosname=KELVIN-PC,iocharset=utf8,credentials=/home/kelvin/Apps/.smb-details.txt
@@ -38,7 +38,7 @@ mount -t cifs //192.168.44.2/kelvin /mnt/backups -o netbiosname=KELVIN-PC,iochar
 
 smb-details.txt includes:
 
-```
+```bash
 username=DOMAIN\\kelvin
 password=mypassword
 

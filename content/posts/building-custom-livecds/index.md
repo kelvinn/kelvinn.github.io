@@ -18,4 +18,4 @@ These links (haven't read all of the process) may be helpful:
 
 http://www.linuxjournal.com/article/7233
 
-http://gentoo-wiki.com/HOWTO\_build\_a\_LiveCD\_from\_scratch
+http://gentoo-wiki.com/HOWTO_build_a_LiveCD_from_scratch

@@ -16,7 +16,7 @@ Alexandru T. and I have exchanged a few emails, and he sent through a few helpfu
   
 1. Install Debian 5.0 on a normal PC (using a netinst image, for minimal install)  
 2. After installation boot normally from the same PC  
-3. Then, take the kernel from ftp://icop.com.tw/DIS\_info/VDX/operating\_system/VDX\_Linux/linux-image-2.6.30-vortex86mx\_1.0\_i386.deb and then issue the following commands :  
+3. Then, take the kernel from ftp://icop.com.tw/DIS_info/VDX/operating_system/VDX_Linux/linux-image-2.6.30-vortex86mx_1.0_i386.deb and then issue the following commands :  
   
   
 ```bash

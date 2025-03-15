@@ -31,7 +31,7 @@ We have a winner! The problem is, for the life of me, I couldn't figure out a si
 ```
 #/bin/bash
 CONVERT=/usr/bin/convert
-for image in \*.png; do
+for image in *.png; do
  $CONVERT -background white $image $image
  echo "Finished converting: $image"
 done

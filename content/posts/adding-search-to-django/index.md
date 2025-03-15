@@ -16,22 +16,22 @@ def search(request):
     from django.db.models import Q
     q = request.GET.get("q", "")
     if q and len(q) >= 3:
-        clause = Q(dirtword\_\_icontains=q)               \\
-               | Q(description\_\_icontains=q)       \\
-               | Q(tags\_\_name\_\_icontains=q)        
-        site\_search = Dirt.objects.filter(clause).distinct()
+        clause = Q(dirtword__icontains=q)               \\
+               | Q(description__icontains=q)       \\
+               | Q(tags__name__icontains=q)        
+        site_search = Dirt.objects.filter(clause).distinct()
     else:
-        site\_search = Dirt.objects.order\_by('?')\[:100\]
-    return list\_detail.object\_list(
+        site_search = Dirt.objects.order_by('?')[:100]
+    return list_detail.object_list(
         request              = request,
-        queryset             = site\_search,
-        template\_name        = "dirty/search.html",
-        template\_object\_name = "dirty",
-        paginate\_by          = 20,
-        extra\_context        = {"q" : q},
+        queryset             = site_search,
+        template_name        = "dirty/search.html",
+        template_object_name = "dirty",
+        paginate_by          = 20,
+        extra_context        = {"q" : q},
     )  
 
 ```  
   
-While this should be pretty self-explanatory, the process goes like this: q is taken from the GET request and if it is over three characters long, it is searched for in the dirtword column, through the description and also through the m2m relationship of tags\_\_name. Yup, it is pretty nifty to be able to access relationship in this way (tags\_\_name). You will notice that at the end of each search it says "\_\_icontains" -- this simply does a fuzzy search for the word. Once the queryset is created (the filter) I've added a .distinct() on the end --this prevents multiple rows from being returned to the template. If there isn't a search, or it isn't long enough, a random list will be returned.  
-One thing I like to do is include the search as extra\_context -- this allows you to say something like "you've searched for..." at the top of your search. I couldn't imagine implementing a search feature as being any easier.
+While this should be pretty self-explanatory, the process goes like this: q is taken from the GET request and if it is over three characters long, it is searched for in the dirtword column, through the description and also through the m2m relationship of tags__name. Yup, it is pretty nifty to be able to access relationship in this way (tags__name). You will notice that at the end of each search it says "__icontains" -- this simply does a fuzzy search for the word. Once the queryset is created (the filter) I've added a .distinct() on the end --this prevents multiple rows from being returned to the template. If there isn't a search, or it isn't long enough, a random list will be returned.  
+One thing I like to do is include the search as extra_context -- this allows you to say something like "you've searched for..." at the top of your search. I couldn't imagine implementing a search feature as being any easier.

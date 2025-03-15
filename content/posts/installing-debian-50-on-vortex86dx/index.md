@@ -114,7 +114,7 @@ Basically, install Debian on a SD card with qemu (start qemu with the
 install disk iso as cdrom and the SD card as hda), while you are still
 in qemu, download and install the kernel deb file
 
-ftp://ftp.icop.com.tw/upload/Shawn/linux-image-2.6.27.9-vortex86dx\_2.6.27.9-vortex86dx\_i386.deb
+ftp://ftp.icop.com.tw/upload/Shawn/linux-image-2.6.27.9-vortex86dx_2.6.27.9-vortex86dx_i386.deb
 
 then quit qemu, put the SD card in the box and reboot. You are done!
 

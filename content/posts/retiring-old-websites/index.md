@@ -25,6 +25,6 @@ The below vhost entry will redirect any link to the retired sites to the notice 
 ```bash
 ServerName ducktracker.com
 ServerAlias www.ducktracker.com blogmozaic.com www.blogmozaic.com
-RedirectMatch permanent (.\*)$ http://www.kelvinism.com/tech-blog/rip-old-sites/ 
+RedirectMatch permanent (.*)$ http://www.kelvinism.com/tech-blog/rip-old-sites/ 
 
 ```

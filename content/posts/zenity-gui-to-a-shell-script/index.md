@@ -28,15 +28,15 @@ ans=$(zenity  --list  --text "How do you want to switch your monitor?" \\
 --radiolist  --column "Pick" --column "Output Type" TRUE LCD FALSE VGA \\
 FALSE Both);
 
-if \[ "$ans" = "LCD" \]
+if [ "$ans" = "LCD" ]
 then
 xrandr --output VGA --off
 xrandr --output LVDS --auto
-elif \[ "$ans" = "VGA" \]
+elif [ "$ans" = "VGA" ]
 then
 xrandr --output LVDS --off
 xrandr --output VGA --auto
-elif \[ "$ans" = "Both" \]
+elif [ "$ans" = "Both" ]
 then
 xrandr --output VGA --auto
 xrandr --output LVDS --mode 1024x768

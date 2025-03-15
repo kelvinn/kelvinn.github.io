@@ -12,7 +12,7 @@ tags:
 
 A friend has a simple WordPress-based website that I set up for him a few year ago - and he likes to post a lot of images. For various reasons I have it hosted on my VPS in Australia, which only comes with 15GB of bandwidth, most likely because I got a crazy good deal on it.
 
-The problem is, that isn't much bandwidth. Each page of his site was previously using almost 10MB of bandwidth per view - which meant the 15GB was running out. I deduced the high usage in Firebug and noticed it was \*gasp\* from large images, some almost 1MB large. The images on the server are contained in subdirectories under a gallery folder - and I wanted to resize them. What I actually wanted to do was:
+The problem is, that isn't much bandwidth. Each page of his site was previously using almost 10MB of bandwidth per view - which meant the 15GB was running out. I deduced the high usage in Firebug and noticed it was *gasp* from large images, some almost 1MB large. The images on the server are contained in subdirectories under a gallery folder - and I wanted to resize them. What I actually wanted to do was:
 
   
   

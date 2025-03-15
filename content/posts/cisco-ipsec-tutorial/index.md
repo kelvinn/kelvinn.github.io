@@ -11,6 +11,6 @@ tags:
 
 The following sites might be helpful to configure IPSec again, or on a more complex basis:
 
-http://www.cisco.com/univercd/cc/td/doc/product/iaabu/pix/pix\_60/ipsec/conipsec.htm
+http://www.cisco.com/univercd/cc/td/doc/product/iaabu/pix/pix_60/ipsec/conipsec.htm
 
-http://www.cisco.com/warp/public/707/overload\_private.shtml
+http://www.cisco.com/warp/public/707/overload_private.shtml

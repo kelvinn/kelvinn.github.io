@@ -38,32 +38,32 @@ import sys
 import urllib
 import urllib2
 
-AWS\_ACCESS\_KEY\_ID = 'your-access-key'
-AWS\_SECRET\_ACCESS\_KEY = 'your-super-secret-key'
+AWS_ACCESS_KEY_ID = 'your-access-key'
+AWS_SECRET_ACCESS_KEY = 'your-super-secret-key'
 
-def get\_websearch(searchterm):
-    def generate\_timestamp(dtime):
+def get_websearch(searchterm):
+    def generate_timestamp(dtime):
         return dtime.strftime("%Y-%m-%dT%H:%M:%SZ")
     
-    def generate\_signature(operation, timestamp, secret\_access\_key):
-        my\_sha\_hmac = hmac.new(secret\_access\_key, operation + timestamp, sha)
-        my\_b64\_hmac\_digest = base64.encodestring(my\_sha\_hmac.digest()).strip()
-        return my\_b64\_hmac\_digest
+    def generate_signature(operation, timestamp, secret_access_key):
+        my_sha_hmac = hmac.new(secret_access_key, operation + timestamp, sha)
+        my_b64_hmac_digest = base64.encodestring(my_sha_hmac.digest()).strip()
+        return my_b64_hmac_digest
     
-    timestamp\_datetime = datetime.datetime.utcnow()
-    timestamp\_list = list(timestamp\_datetime.timetuple())
-    timestamp\_list\[6\] = 0
-    timestamp\_tuple = tuple(timestamp\_list)
-    timestamp = generate\_timestamp(timestamp\_datetime)
+    timestamp_datetime = datetime.datetime.utcnow()
+    timestamp_list = list(timestamp_datetime.timetuple())
+    timestamp_list[6] = 0
+    timestamp_tuple = tuple(timestamp_list)
+    timestamp = generate_timestamp(timestamp_datetime)
     
-    signature = generate\_signature('WebSearch', timestamp, AWS\_SECRET\_ACCESS\_KEY)
+    signature = generate_signature('WebSearch', timestamp, AWS_SECRET_ACCESS_KEY)
     
-    def generate\_rest\_url (access\_key, secret\_key, query):
+    def generate_rest_url (access_key, secret_key, query):
         """Returns the AWS REST URL to run a web search query on the specified
         query string."""
     
         params = urllib.urlencode(
-            { 'AWSAccessKeyId':access\_key,
+            { 'AWSAccessKeyId':access_key,
               'Timestamp':timestamp,
               'Signature':signature,
               'Action':'WebSearch',
@@ -72,7 +72,7 @@ def get\_websearch(searchterm):
         return "http://websearch.amazonaws.com/?%s" % (params)
     
     # print "Querying '%s'..." % (query)
-    url = generate\_rest\_url(AWS\_ACCESS\_KEY\_ID, AWS\_SECRET\_ACCESS\_KEY, searchterm)
+    url = generate_rest_url(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, searchterm)
     # print "url => %s" % (url)
     print urllib2.urlopen(url).read()
 
@@ -81,6 +81,6 @@ def get\_websearch(searchterm):
   
 You run it like this:  
 ```
-\>>> from websearch import get\_websearch
->>> get\_websearch('python')
+\>>> from websearch import get_websearch
+>>> get_websearch('python')
 ```

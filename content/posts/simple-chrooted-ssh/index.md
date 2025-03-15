@@ -27,7 +27,7 @@ This quick demo will be on Debian, we'll create a pretend user named "karl." (I'
 
 #### First: Install libpam-chroot and makejail
 
-session required pam\_chroot.so  
+session required pam_chroot.so  
   
 ```
 kelvin@server ~$ sudo apt-get install libpam-chroot makejail
@@ -45,18 +45,18 @@ Put the following in /etc/makejail/create-user.py:
 cleanJailFirst=1
 
 
-preserve=\["/html", "/home"\]
+preserve=["/html", "/home"]
 
 
 chroot="/var/chroot/karl"
 
 
-users=\["root","karl"\]
+users=["root","karl"]
 
-groups=\["root","karl"\]
+groups=["root","karl"]
 
 
-packages=\["coreutils"\]
+packages=["coreutils"]
 
 ```  
   
@@ -67,32 +67,32 @@ packages=\["coreutils"\]
 ```
 cleanJailFirst=1
 
-preserve=\["/html", "/home"\]
+preserve=["/html", "/home"]
 
 chroot="/home/vhosts/karl"
 
-forceCopy=\["/usr/bin/scp", "/usr/lib/sftp-server", /
+forceCopy=["/usr/bin/scp", "/usr/lib/sftp-server", /
 
- "/usr/bin/find", "/dev/null", "/dev/zero"\]
+ "/usr/bin/find", "/dev/null", "/dev/zero"]
 
-users=\["root","karl"\]
+users=["root","karl"]
 
-groups=\["root","karl"\]
+groups=["root","karl"]
 
-packages=\["coreutils"\]
+packages=["coreutils"]
 
 ```  
   
 As you'll see, there is a "preserve" directive. This is so that when you "clean" the jail (if you need to refresh the files, for instance), you won't wipe out anything important. I created an /html so that the user can upload their web docs to that file.  
 
-#### Third: configure libpam\_chroot
+#### Third: configure libpam_chroot
 
   
 Add the following to /etc/pam.d/ssh:  
 ```
-\# Set up chrootd ssh
+# Set up chrootd ssh
 
-session required pam\_chroot.so
+session required pam_chroot.so
 
 ```  
   

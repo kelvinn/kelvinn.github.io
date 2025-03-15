@@ -27,7 +27,7 @@ class LatestDirts(Feed):
     copyright = 'All Rights Unreserved'
     
     def items(self):
-        return Dirt.objects.all()\[:50\]
+        return Dirt.objects.all()[:50]
 
 
 ```  
@@ -52,19 +52,19 @@ feeds = {
   
 Finally we create which URL to use for the feeds:  
 ```
-    (r'^feeds/(?P.\*)/$', 'django.contrib.syndication.views.feed', {'feed\_dict': feeds}),
+    (r'^feeds/(?P.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
 ```  
   
-When we look at a request, the process goes like this: it comes in as /feeds/newdirt/, which then gets looked up and matches newdirt in the feeds\_dict. Next, LatestDirts is looked at and evaluated, and returned. But how is it returned? One final thing to do is create a template for the feed to use, which is where we can tell exactly _what_ is to be displayed to the user.  
+When we look at a request, the process goes like this: it comes in as /feeds/newdirt/, which then gets looked up and matches newdirt in the feeds_dict. Next, LatestDirts is looked at and evaluated, and returned. But how is it returned? One final thing to do is create a template for the feed to use, which is where we can tell exactly _what_ is to be displayed to the user.  
 
-#### templates/feeds/newdirt\_title.html
+#### templates/feeds/newdirt_title.html
 
   
 ```
 {{ obj.dirtword }}
 ```  
 
-#### templates/feeds/newdirt\_description.html
+#### templates/feeds/newdirt_description.html
 
   
 ```

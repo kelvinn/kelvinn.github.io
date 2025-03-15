@@ -14,9 +14,9 @@ There are some wonderful [CI](http://www.thoughtworks.com/continuous-integration
 I have recently moved my projects to Snap, and my hack for the day needed to be deployed to OpenShift. Although Snap has built in integrations for some providers, no such integration currently exists for OpenShift (yet!). However, it takes less than 10 minutes to configure a Deploy step to OpenShift, and here's how.  
   
 **Add SSH Keys**  
-You will need to add your private SSH key (i.e. id\_rsa) to Snap, and your public key to OpenShift (i.e. id\_rsa.pub)  
+You will need to add your private SSH key (i.e. id_rsa) to Snap, and your public key to OpenShift (i.e. id_rsa.pub)  
   
-You can create the keys on another machine with the ssh-keygen command, and copy them into them into the corresponding places. In OpenShift, this is under Settings -> Add a new key. Once open, paste in the contents of your id\_rsa.pub key  
+You can create the keys on another machine with the ssh-keygen command, and copy them into them into the corresponding places. In OpenShift, this is under Settings -> Add a new key. Once open, paste in the contents of your id_rsa.pub key  
   
 [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmL4dE8VgbPKgFDflwiA3-oPHDGrFOd78PatxOxxjTH-j2r5HTmgKlelJpZbVN-9ye1dENz4GQSnIIKqDP0WzlXBbzMFluNn_U3s_z98W4iRYVVKp1PEwW1NDAGFe604gFoSRRnMj-C2uq/s320/openshift.tiff)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmL4dE8VgbPKgFDflwiA3-oPHDGrFOd78PatxOxxjTH-j2r5HTmgKlelJpZbVN-9ye1dENz4GQSnIIKqDP0WzlXBbzMFluNn_U3s_z98W4iRYVVKp1PEwW1NDAGFe604gFoSRRnMj-C2uq/s1600/openshift.tiff)  
   
@@ -32,7 +32,7 @@ In Snap, edit your configuration, navigate to your Deploy step, and look for "Se
   
 
   
-Get the content of the id\_rsa key you generated earlier and post it in the content box. It should look like this, with "/var/go" as the file location, except with a real key:  
+Get the content of the id_rsa key you generated earlier and post it in the content box. It should look like this, with "/var/go" as the file location, except with a real key:  
   
 [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA8Ox5iz27x-HNT2QVWG8prydd6lMfbcrDa6YPAkU8zTSECO0ZDK_4e4KLP_-1zPt8dtRVPQPgP6hWMmffFPEmTmci13SBYL2azquQkelAouMa-s9xsmVqCLDCz_Yfthh4Zz53TsbJ9BNF/s400/AddIdRSA.tiff)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA8Ox5iz27x-HNT2QVWG8prydd6lMfbcrDa6YPAkU8zTSECO0ZDK_4e4KLP_-1zPt8dtRVPQPgP6hWMmffFPEmTmci13SBYL2azquQkelAouMa-s9xsmVqCLDCz_Yfthh4Zz53TsbJ9BNF/s1600/AddIdRSA.tiff)  
   

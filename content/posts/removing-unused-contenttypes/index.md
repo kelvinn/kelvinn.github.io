@@ -16,7 +16,7 @@ I've been cleaning up my personal blog a bit, and I noticed that my tagging syst
 
 ```  
   
-The solution is to first list all app\_labels for contenttypes, and then delete any not in use.  
+The solution is to first list all app_labels for contenttypes, and then delete any not in use.  
 
 ```plain
 In [61]: from django.contrib.contenttypes.models import ContentType

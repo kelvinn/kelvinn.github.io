@@ -14,7 +14,7 @@ My buddy [Ian](http://www.ianfitzpatrick.com/)  mentioned Amazon's S3 service, 
 1) Making sure SSL is working.  The site mentioned above just has you hunt down some random bash file, that isn't even hosted anymore.  On my Debian system I simply added this to my upload.sh:  
   
 ```
-export SSL\_CERT\_DIR=/etc/ssl/certs/
+export SSL_CERT_DIR=/etc/ssl/certs/
 ```  
 2) The second suggestion is another example of the s2sync layout.  Let's say you created the bucket "kelvinism" -- the following would move the documents inside a test folder from /home/kelvin named test to a folder named test in the kelvinism bucket.  Sweet.  
   

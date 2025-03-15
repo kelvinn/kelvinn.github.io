@@ -15,7 +15,7 @@ So, the Django developers, in my opinion, are freaking smart. Instead of bundlin
 How simple? The intended goal is to have the total number of 'dirts' update without user intervention. _Laaaammmeee_. If you are a visual type of person, [take a look](http://www.colddirt.com/huh/) on the Colddirt [huh](http://www.colddirt.com/huh/) page. That number automatically increases without user intervention. And this is how.  
 The process (some pseudocode) will go like this:  
   
-check /dirt\_count/ for an update  
+check /dirt_count/ for an update  
   
 if update:  
   
@@ -32,7 +32,7 @@ Pretty simple, eh?
 
   
 ```
-    (r'^dirt\_count/$', views.dirt\_count),
+    (r'^dirt_count/$', views.dirt_count),
 ```  
 As you can see, it just sends the request to the view.  
 
@@ -40,7 +40,7 @@ As you can see, it just sends the request to the view.
 
   
 ```
-def dirt\_count(request):
+def dirt_count(request):
     from django.http import HttpResponse
     countd = str(Dirt.objects.all().count())
     return HttpResponse(countd, mimetype='text/plain')
@@ -53,7 +53,7 @@ Pretty simple -- count the dirts. That makes sense.
 
   
 ```
-new Ajax.PeriodicalUpdater('dirtcount', '/dirt\_count/', {
+new Ajax.PeriodicalUpdater('dirtcount', '/dirt_count/', {
   method: 'get',
   frequency: 3,
   decay: 2,

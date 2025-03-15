@@ -11,7 +11,7 @@ tags:
 - iis
 ---
 
-As you can tell from reading some of the other pages, I like Linux and open source. But I also like to answer the question "what if..." This post is my \[brief\] run down of answering "what if I could run Django on Server 2003 with SQL Server and IIS." Why, you may ask? To be honest with you, at this point, I don't really know. One of the deciding factors was seeing that the django-mssql project maintains support for inspectdb, which means I could take a stock 2003 server running SQL Server, inspect the DB, and build a web app on top of it. The Django docs offer a lengthy [howto](http://code.djangoproject.com/wiki/DjangoOnWindowsWithIISAndSQLServer) for using Django with IIS and SQL Server, but the website for PyISAPIe seems to have been down for the last month or so. Without further delay, below are my notes on installing Django with SQL Server and IIS.
+As you can tell from reading some of the other pages, I like Linux and open source. But I also like to answer the question "what if..." This post is my [brief] run down of answering "what if I could run Django on Server 2003 with SQL Server and IIS." Why, you may ask? To be honest with you, at this point, I don't really know. One of the deciding factors was seeing that the django-mssql project maintains support for inspectdb, which means I could take a stock 2003 server running SQL Server, inspect the DB, and build a web app on top of it. The Django docs offer a lengthy [howto](http://code.djangoproject.com/wiki/DjangoOnWindowsWithIISAndSQLServer) for using Django with IIS and SQL Server, but the website for PyISAPIe seems to have been down for the last month or so. Without further delay, below are my notes on installing Django with SQL Server and IIS.
 
   
   
@@ -23,53 +23,46 @@ As you can tell from reading some of the other pages, I like Linux and open sour
   
 3a) Extract the contents of the Django. From inside Django-1.0, execute:  
   
-```
-C:\\Python25\\python.exe setup.py install
+```plain
+C:\Python25\python.exe setup.py install
 
 ```  
-3b) Consider adding C:\\Python25\\Script to your path.  
-  
-4) Look in C:\\Python25\\Lib\\site-packages -- confirm there is a Django package.  
-  
-5) Checkout django-mssql (http://code.google.com/p/django-mssql/), copy sqlserver\_ado from inside source to the site-packages directory  
-  
+3b) Consider adding C:\Python25\Script to your path.  
+4) Look in C:\Python25\Lib\site-packages -- confirm there is a Django package.  
+5) Checkout django-mssql (http://code.google.com/p/django-mssql/), copy sqlserver_ado from inside source to the site-packages directory  
 6) Download and install PyWin32 from sf.net  
+7) Start a test project in C:\Inetpub\ called 'test'  
   
-7) Start a test project in C:\\Inetpub\\ called 'test'  
-  
-```
-c:\\Python25\\scripts\\django-admin.py startproject test
+```plain
+c:\Python25\scripts\django-admin.py startproject test
 
 ```  
 8a) Create a database using SQL Management Studio, create a user. (First, go to the Security dropdown. Right click Logins, add a new user. Next, right click Databases, New Database. Enter in the name, and change the owner to the user you just created).  
   
-8b) Edit the settings.py and add 'sqlserver\_ado' and add database credentials. Use the below example if your database comes up in the Studio as COMPUTERNAME\\SQLEXPRESS (you are using SQLExpress).  
+8b) Edit the settings.py and add 'sqlserver_ado' and add database credentials. Use the below example if your database comes up in the Studio as COMPUTERNAME\\SQLEXPRESS (you are using SQLExpress).  
   
-```
+```python
 import os
-DATABASE\_ENGINE = 'sqlserver\_ado'           # 'postgresql\_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE\_NAME = 'crmtest'             # Or path to database file if using sqlite3.
-DATABASE\_USER = 'crmtest'             # Not used with sqlite3.
-DATABASE\_PASSWORD = 'password'         # Not used with sqlite3.
-DATABASE\_MSSQL\_REGEX = True
-DATABASE\_HOST =  os.environ\['COMPUTERNAME'\] + r'\\SQLEXPRESS' # I use SQLEXPRESS
-DATABASE\_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+DATABASE_ENGINE = 'sqlserver_ado'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = 'crmtest'             # Or path to database file if using sqlite3.
+DATABASE_USER = 'crmtest'             # Not used with sqlite3.
+DATABASE_PASSWORD = 'password'         # Not used with sqlite3.
+DATABASE_MSSQL_REGEX = True
+DATABASE_HOST =  os.environ['COMPUTERNAME'] + r'\SQLEXPRESS' # I use SQLEXPRESS
+DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
 ```  
 9) Install/download FLUP: http://www.saddi.com/software/flup/dist/flup-1.0.1.tar.gz  
   
-```
+```bash
 python setup.py install
 
 ```  
 10a) Download pyisapi-scgi from http://code.google.com/p/pyisapi-scgi/  
   
-10b) Extract the files to somewhere you can remember on your computer, like, c:\\scgi  
-  
-11) Double click pyisapi\_scgi.py  
-  
+10b) Extract the files to somewhere you can remember on your computer, like, c:\scgi  
+11) Double click pyisapi_scgi.py  
 12a) Follow the directions here: http://code.google.com/p/pyisapi-scgi/wiki/howtoen -- I set a temporary different port since I'm just testing this out.  
-  
 12b) The last few parts might be better served with an image or two:  
   
 
@@ -93,12 +86,10 @@ python setup.py install
 (No resource/photo)  
 13) Start the scgi process from the Django folder directory  
   
-```
+```bash
 python manage.py runfcgi method=threaded protocol=scgi port=3033 host=127.0.0.1
 
 ```  
 14) Test your django page, http://192.168.12.34:8080  
-  
-  
   
 (No resource/photo)

@@ -16,7 +16,7 @@ I was able to get them to decrease by looking in the /etc/udev/rules.d/70-persis
 Next, I was able to prevent this by simply inserting a MAC address to the interface in the configuration. For instance, one of my domU's has this entry:
 
 ```
-vif         = \[ 'mac=00:D0:59:83:DC:B5,bridge=xenbr0' \]
+vif         = [ 'mac=00:D0:59:83:DC:B5,bridge=xenbr0' ]
 
 ```  
   

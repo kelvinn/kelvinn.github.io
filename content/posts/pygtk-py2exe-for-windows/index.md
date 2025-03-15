@@ -23,31 +23,31 @@ I'm writing down these quick notes so I can remember the steps for getting py2ex
 
 setup.py:
 
-```
+```python
 from distutils.core import setup
 import py2exe
 
 setup(
-name = 'ploteq',
-description = 'Bunnys Plotting Tool',
-version = '1.0',
+    name = 'ploteq',
+    description = 'Bunnys Plotting Tool',
+    version = '1.0',
 
-windows = \[
-{
-'script': 'ploteq.py',
-}
-\],
+    windows = [
+        {
+        'script': 'ploteq.py',
+        }
+    ],
 
-options = {
-'py2exe': {
-'packages':'encodings',
-'includes': 'cairo, pango, pangocairo, atk, gobject', 
-}
-},
+    options = {
+        'py2exe': {
+        'packages':'encodings',
+        'includes': 'cairo, pango, pangocairo, atk, gobject', 
+        }
+    },
 
-data\_files=\[
-'ploteq.glade',
-\]
+    data_files=[
+        'ploteq.glade',
+    ]
 )
 
 ```

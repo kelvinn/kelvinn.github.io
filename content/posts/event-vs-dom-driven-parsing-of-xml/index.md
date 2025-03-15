@@ -24,22 +24,22 @@ I quickly rewrote the code and did some tests. First, the two bits of code for p
 from xml.dom import minidom
 from genshi.template import TemplateLoader
 
-def collect\_info():
+def collect_info():
 dom = minidom.parse('airport.gpx')
 for node in dom.getElementsByTagName('trkpt'):
 lat = node.getAttribute('lat')
 lon = node.getAttribute('lon')
-speed = node.getElementsByTagName('speed')\[0\].firstChild.data
-speed = float(speed) \* 10
+speed = node.getElementsByTagName('speed')[0].firstChild.data
+speed = float(speed) * 10
 coords = '%s,%s' % (lon, lat)
-coords\_speed = '%s,%s' % (coords, speed)
+coords_speed = '%s,%s' % (coords, speed)
 yield {
-'coordinates': coords\_speed
+'coordinates': coords_speed
 }
 
-loader = TemplateLoader(\['.'\])
+loader = TemplateLoader(['.'])
 template = loader.load('template-speed.kml')
-stream = template.generate(collection=collect\_info())
+stream = template.generate(collection=collect_info())
 
 f = open('minidom.kml', 'w')
 f.write(stream.render())
@@ -57,7 +57,7 @@ import xml.etree.cElementTree as ET
 import string
 from genshi.template import TemplateLoader
 
-def collect\_info():
+def collect_info():
 mainNS=string.Template("{http://www.topografix.com/GPX/1/0}$tag")
 
 wptTag=mainNS.substitute(tag="trkpt")
@@ -65,18 +65,18 @@ nameTag=mainNS.substitute(tag="speed")
 
 et=ET.parse(open("airport.gpx"))
 for wpt in et.findall("//"+wptTag):
-wptinfo=\[\]
+wptinfo=[]
 wptinfo.append(wpt.get("lon"))
 wptinfo.append(wpt.get("lat"))
-wptinfo.append(str(float(wpt.findtext(nameTag)) \* 10))
-coords\_speed = ",".join(wptinfo)
+wptinfo.append(str(float(wpt.findtext(nameTag)) * 10))
+coords_speed = ",".join(wptinfo)
 yield {
-'coordinates': coords\_speed,
+'coordinates': coords_speed,
 }
 
-loader = TemplateLoader(\['.'\])
+loader = TemplateLoader(['.'])
 template = loader.load('template-speed.kml')
-stream = template.generate(collection=collect\_info())
+stream = template.generate(collection=collect_info())
 
 f = open('cet.kml', 'w')
 f.write(stream.render())

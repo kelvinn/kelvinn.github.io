@@ -64,7 +64,7 @@ And it rebuild pip whenever the code changes. Just add the requirements and move
 
   
 ```dockerfile
-\# Set the base image to Ubuntu
+# Set the base image to Ubuntu
 FROM ubuntu:14.04
 
 # Update the sources list
@@ -91,9 +91,9 @@ EXPOSE 80 8000
 # Set the default directory where CMD will execute
 WORKDIR /app
 
-VOLUME \[/app\]
+VOLUME [/app]
 
-CMD \["sh", "/app/run.sh"\]
+CMD ["sh", "/app/run.sh"]
 
 ```  
 I feel a bit awkward for having missed something that must be so obvious, so hopefully this can help somebody in a similar situation.

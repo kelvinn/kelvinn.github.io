@@ -14,10 +14,10 @@ I love my Snort, I really do.  But sometimes, I just don't need all the extra o
 \=-=-=-=-=-=-=-=-=-=-=-= Tue Jan 23 10:30:04 2007 =-=-=-=-=-=-=-=-=-=-=-=
 
 
-         Danger level: \[5\] (out of 5) Multi-Protocol
+         Danger level: [5] (out of 5) Multi-Protocol
 
-    Scanned tcp ports: \[11-41111: 337 packets\]
-            tcp flags: \[SYN: 337 packets, Nmap: -sT or -sS\]
+    Scanned tcp ports: [11-41111: 337 packets]
+            tcp flags: [SYN: 337 packets, Nmap: -sT or -sS]
        iptables chain: INPUT, 337 packets
 
                Source: 218.167.75.27

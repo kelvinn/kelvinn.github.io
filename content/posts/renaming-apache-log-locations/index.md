@@ -29,7 +29,7 @@ Next, I needed to rename the log location inside each of the Apache config files
  
 for x in *
 do
-sed 's/\_log/\.log/' $x > /tmp/tmpfile.tmp
+sed 's/_log/\.log/' $x > /tmp/tmpfile.tmp
 mv /tmp/tmpfile.tmp $x
 done
 

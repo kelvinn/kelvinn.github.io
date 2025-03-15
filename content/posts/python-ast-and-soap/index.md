@@ -26,7 +26,7 @@ wsdl2py -b http://ast.amazonaws.com/doc/2006-05-15/AlexaSiteThumbnail.wsdl
 #### 2\. Look at the code generated.
 
   
-See [AlexaSiteThumbnail\_types.py](http://www.kelvinism.com/media/types.html) and [AlexaSiteThumbnail\_client.py](http://www.kelvinism.com/media/client.html).  
+See [AlexaSiteThumbnail_types.py](http://www.kelvinism.com/media/types.html) and [AlexaSiteThumbnail_client.py](http://www.kelvinism.com/media/client.html).  
   
 
 #### 3\. Write python code to access AST over SOAP.
@@ -41,30 +41,30 @@ import datetime
 import hmac
 import sha
 import base64
-from AlexaSiteThumbnail\_client import \*
+from AlexaSiteThumbnail_client import *
 
 print 'Starting...'
 
-AWS\_ACCESS\_KEY\_ID = 'super-duper-access-key'
-AWS\_SECRET\_ACCESS\_KEY = 'super-secret-key'
+AWS_ACCESS_KEY_ID = 'super-duper-access-key'
+AWS_SECRET_ACCESS_KEY = 'super-secret-key'
 
 print 'Generating signature...'
 
-def generate\_timestamp(dtime):
+def generate_timestamp(dtime):
     return dtime.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-def generate\_signature(operation, timestamp, secret\_access\_key):
-    my\_sha\_hmac = hmac.new(secret\_access\_key, operation + timestamp, sha)
-    my\_b64\_hmac\_digest = base64.encodestring(my\_sha\_hmac.digest()).strip()
-    return my\_b64\_hmac\_digest
+def generate_signature(operation, timestamp, secret_access_key):
+    my_sha_hmac = hmac.new(secret_access_key, operation + timestamp, sha)
+    my_b64_hmac_digest = base64.encodestring(my_sha_hmac.digest()).strip()
+    return my_b64_hmac_digest
 
-timestamp\_datetime = datetime.datetime.utcnow()
-timestamp\_list = list(timestamp\_datetime.timetuple())
-timestamp\_list\[6\] = 0
-timestamp\_tuple = tuple(timestamp\_list)
-timestamp\_str = generate\_timestamp(timestamp\_datetime)
+timestamp_datetime = datetime.datetime.utcnow()
+timestamp_list = list(timestamp_datetime.timetuple())
+timestamp_list[6] = 0
+timestamp_tuple = tuple(timestamp_list)
+timestamp_str = generate_timestamp(timestamp_datetime)
 
-signature = generate\_signature('Thumbnail', timestamp\_str, AWS\_SECRET\_ACCESS\_KEY)
+signature = generate_signature('Thumbnail', timestamp_str, AWS_SECRET_ACCESS_KEY)
 
 print 'Initializing Locator...'
 
@@ -76,9 +76,9 @@ print 'Requesting thumbnails...'
 request = ThumbnailRequestMsg()
 request.Url = "alexa.com"
 request.Signature = signature
-request.Timestamp = timestamp\_tuple
-request.AWSAccessKeyId = AWS\_ACCESS\_KEY\_ID
-request.Request = \[request.new\_Request()\]
+request.Timestamp = timestamp_tuple
+request.AWSAccessKeyId = AWS_ACCESS_KEY_ID
+request.Request = [request.new_Request()]
 
 resp = port.Thumbnail(request)
 
@@ -101,7 +101,7 @@ xmlns:ns1="http://ast.amazonaws.com/doc/2006-05-15/"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-\[Element trace: /SOAP-ENV:Body/ns1:ThumbnailRequest\]
+[Element trace: /SOAP-ENV:Body/ns1:ThumbnailRequest]
 ```  
   
 

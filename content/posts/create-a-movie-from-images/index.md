@@ -27,11 +27,11 @@ framerate 2
 ```  
   
 
-By creating this file, it allows me to start motion without modifying the global motion.conf file permissions, or \*gasp\* running it under sudo. There are [lots of options](http://www.lavrsen.dk/foswiki/bin/view/Motion/ConfigFileOptions) you can put in your motion.com file.
+By creating this file, it allows me to start motion without modifying the global motion.conf file permissions, or *gasp* running it under sudo. There are [lots of options](http://www.lavrsen.dk/foswiki/bin/view/Motion/ConfigFileOptions) you can put in your motion.com file.
 
 With motion installed, and configured, now install mencoder.
 
-I prefer to generate a seed file based on the creation date for each image. If you try to use mencoder with just a \*.jpg, it works, but my video jumped around.
+I prefer to generate a seed file based on the creation date for each image. If you try to use mencoder with just a *.jpg, it works, but my video jumped around.
 
 ```bash
 $ pwd

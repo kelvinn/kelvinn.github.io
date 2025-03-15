@@ -16,7 +16,7 @@ Just for my future reference, and maybe helpful for somebody, someday. Clearly n
   
 First, get the saslauthd files into the postfix chroot. Edit /etc/conf.d/saslauthd (or /etc/default/saslauthd), and add this:  
 ```
-SASLAUTHD\_OPTS="-m /var/spool/postfix/var/run/saslauthd"
+SASLAUTHD_OPTS="-m /var/spool/postfix/var/run/saslauthd"
 ```  
   
 Second, add it to the init script.  
@@ -31,7 +31,7 @@ stop() {
   
 Third, maybe, change /etc/sasl2/smtpd.conf (or /etc/postfix/sasl/smtpd.conf) and add this:  
 ```
-saslauthd\_path: /var/run/saslauthd/mux
+saslauthd_path: /var/run/saslauthd/mux
 ```  
   
 Ok, that error should go away now.  

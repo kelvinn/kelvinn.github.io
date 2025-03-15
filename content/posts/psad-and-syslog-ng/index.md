@@ -19,14 +19,14 @@ destination psadpipe { pipe("/var/lib/psad/psadfifo"); };
   
 Next, go down a little to the "# filters" section, add this:  
 ```
-filter f\_kerninfo { facility(kern); };
+filter f_kerninfo { facility(kern); };
 ```  
   
 And finally in the last section, add this:  
 ```
 log {
-        source(s\_all);
-        filter(f\_kerninfo);
+        source(s_all);
+        filter(f_kerninfo);
         destination(psadpipe);
 };
 ```  

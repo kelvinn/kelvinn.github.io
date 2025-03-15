@@ -17,14 +17,14 @@ Download these files first:
 
 *   [2.6.31.5 kernel image](http://cdn.kelvinism.com/ebox/linux-image-2.6.31.5-vortex86-sl3_2.6.31.5-vortex86-sl3-10.00.Custom_i386.deb)
 *   [2.6.31.5 kernel headers](http://cdn.kelvinism.com/ebox/linux-headers-2.6.31.5-vortex86-sl3_2.6.31.5-vortex86-sl3-10.00.Custom_i386.deb)
-*   [2.6.31-14 custom pata\_rdc module](http://cdn.kelvinism.com/ebox/initrd.img-2.6.31-14-generic-pata_rdc)
+*   [2.6.31-14 custom pata_rdc module](http://cdn.kelvinism.com/ebox/initrd.img-2.6.31-14-generic-pata_rdc)
 
   
   
 The steps to install Lenny to CF in brief is:  
 
 1. Install i386 version of Lenny to CF on another computer
-2. Add the revised kernel deb with dpkg -i \*.deb
+2. Add the revised kernel deb with dpkg -i *.deb
 3. Change fstab from hda1 to sdb1 (sda1 if there is no micro sd card) - uuids  may be better
 4. Change /boot/grub/menu.lst to:
 

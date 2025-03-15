@@ -30,7 +30,7 @@ As you can see, we need the directory tftpbood. Create it.
 3) Restart inetd  
   
 ```
-kelvin@pluto:~$ sudo kill -1 \[inetd pid\]
+kelvin@pluto:~$ sudo kill -1 [inetd pid]
 ```  
 You can get the inetd pid by typing:  
 ```

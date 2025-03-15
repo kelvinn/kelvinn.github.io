@@ -11,7 +11,7 @@ tags:
 - howtos
 ---
 
-All my Django sites are running 1.2, which poses a conflict with writing apps for Google's App Engine, as use\_library currently only supports < Django 1.1. There are two solutions that I found: a) use virtualenv, or b) chroot, which [I've already detailed](http://www.kelvinism.com/howtos/ubuntu-1004-django-and-gae-part-1/). This document will hopefully show you how to create a virtual environment to use a secondary django version, especially for GAE. Of the two options, I think this one is a bit quicker, but there will likely be tradeoffs that a chroot environment can deal with better, e.g. python imaging (I don't use it for GAE).  
+All my Django sites are running 1.2, which poses a conflict with writing apps for Google's App Engine, as use_library currently only supports < Django 1.1. There are two solutions that I found: a) use virtualenv, or b) chroot, which [I've already detailed](http://www.kelvinism.com/howtos/ubuntu-1004-django-and-gae-part-1/). This document will hopefully show you how to create a virtual environment to use a secondary django version, especially for GAE. Of the two options, I think this one is a bit quicker, but there will likely be tradeoffs that a chroot environment can deal with better, e.g. python imaging (I don't use it for GAE).  
 First, install PIP and virtualenv:  
 
 ```bash

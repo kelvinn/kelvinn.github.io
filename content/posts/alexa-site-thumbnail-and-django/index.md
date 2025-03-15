@@ -28,39 +28,39 @@ import xml.dom.minidom
 import os  
 from urlparse import urlsplit  
   
-AWS\_ACCESS\_KEY\_ID = 'your-access-key-id'  
-AWS\_SECRET\_ACCESS\_KEY = 'your-secret-key'  
+AWS_ACCESS_KEY_ID = 'your-access-key-id'  
+AWS_SECRET_ACCESS_KEY = 'your-secret-key'  
 STORELOC = "/path/to/store/webthumbs/"  
   
-def create\_thumbnail(site\_url):  
-    image\_name = re.sub("\\.|\\/", "\_", '.'.join(urlsplit(site\_url)\[1\].rsplit('.', 2)\[-2:\])) + ".jpg"  
-    if not os.path.isfile(STORELOC+image\_name):  
-        def generate\_timestamp(dtime):  
+def create_thumbnail(site_url):  
+    image_name = re.sub("\\.|\\/", "_", '.'.join(urlsplit(site_url)[1].rsplit('.', 2)[-2:])) + ".jpg"  
+    if not os.path.isfile(STORELOC+image_name):  
+        def generate_timestamp(dtime):  
             return dtime.strftime("%Y-%m-%dT%H:%M:%SZ")  
-        def generate\_signature(operation, timestamp, secret\_access\_key):  
-            my\_sha\_hmac = hmac.new(secret\_access\_key, operation + timestamp, sha)  
-            my\_b64\_hmac\_digest = base64.encodestring(my\_sha\_hmac.digest()).strip()  
-            return my\_b64\_hmac\_digest  
-        timestamp\_datetime = datetime.datetime.utcnow()  
-        timestamp\_list = list(timestamp\_datetime.timetuple())  
-        timestamp\_list\[6\] = 0  
-        timestamp\_tuple = tuple(timestamp\_list)  
-        timestamp = generate\_timestamp(timestamp\_datetime)  
-        signature = generate\_signature('Thumbnail', timestamp, AWS\_SECRET\_ACCESS\_KEY)  
+        def generate_signature(operation, timestamp, secret_access_key):  
+            my_sha_hmac = hmac.new(secret_access_key, operation + timestamp, sha)  
+            my_b64_hmac_digest = base64.encodestring(my_sha_hmac.digest()).strip()  
+            return my_b64_hmac_digest  
+        timestamp_datetime = datetime.datetime.utcnow()  
+        timestamp_list = list(timestamp_datetime.timetuple())  
+        timestamp_list[6] = 0  
+        timestamp_tuple = tuple(timestamp_list)  
+        timestamp = generate_timestamp(timestamp_datetime)  
+        signature = generate_signature('Thumbnail', timestamp, AWS_SECRET_ACCESS_KEY)  
         parameters = {  
-            'AWSAccessKeyId': AWS\_ACCESS\_KEY\_ID,  
+            'AWSAccessKeyId': AWS_ACCESS_KEY_ID,  
             'Timestamp': timestamp,  
             'Signature': signature,  
-            'Url': site\_url,  
+            'Url': site_url,  
             'Action': 'Thumbnail',  
             }  
         url = 'http://ast.amazonaws.com/?'  
-        result\_xmlstr = urllib.urlopen(url, urllib.urlencode(parameters)).read()  
-        result\_xml = xml.dom.minidom.parseString(result\_xmlstr)  
-        image\_urls = result\_xml.childNodes\[0\].getElementsByTagName('aws:Thumbnail')\[0\].firstChild.data  
-        store\_name = STORELOC + image\_name  
-        urllib.urlretrieve(image\_urls, store\_name)  
-    return image\_name  
+        result_xmlstr = urllib.urlopen(url, urllib.urlencode(parameters)).read()  
+        result_xml = xml.dom.minidom.parseString(result_xmlstr)  
+        image_urls = result_xml.childNodes[0].getElementsByTagName('aws:Thumbnail')[0].firstChild.data  
+        store_name = STORELOC + image_name  
+        urllib.urlretrieve(image_urls, store_name)  
+    return image_name  
       
   
       
@@ -75,36 +75,36 @@ Not too much to mention here, basically just an extended version of the Thumbnai
   
 ```
   
-\# Create your views here.  
-from django.shortcuts import render\_to\_response, get\_object\_or\_404  
+# Create your views here.  
+from django.shortcuts import render_to_response, get_object_or_404  
 from django.http import HttpResponseRedirect, HttpResponse  
-from webthumbs.models import \*  
+from webthumbs.models import *  
 from django import newforms as forms  
-from getAST import create\_thumbnail  
+from getAST import create_thumbnail  
   
-attrs\_dict = { 'class': 'form-highlight' }  
+attrs_dict = { 'class': 'form-highlight' }  
   
 class imageForm(forms.Form):  
-    url = forms.URLField(max\_length=100, verify\_exists=True, widget=forms.TextInput(attrs=attrs\_dict), initial='http://', label='Site URL')  
+    url = forms.URLField(max_length=100, verify_exists=True, widget=forms.TextInput(attrs=attrs_dict), initial='http://', label='Site URL')  
       
 def index(request):  
-    disp\_img = ''  
+    disp_img = ''  
     # generate default form  
     f = imageForm()  
     # handle add events  
     if request.method == 'POST':  
-        if request.POST\['submit\_action'\] == 'Submit':  
+        if request.POST['submit_action'] == 'Submit':  
             # attempt to do add  
-            add\_f = imageForm(request.POST)  
-            if add\_f.is\_valid():  
-                site\_url = request.POST\['url'\]  
-                disp\_img = create\_thumbnail(site\_url)  
+            add_f = imageForm(request.POST)  
+            if add_f.is_valid():  
+                site_url = request.POST['url']  
+                disp_img = create_thumbnail(site_url)  
         else:  
-            f = add\_f  
-    return render\_to\_response(  
+            f = add_f  
+    return render_to_response(  
         'webthumbs/index.html',   
         {'printform': f,   
-        'disp\_img': disp\_img  
+        'disp_img': disp_img  
         }  
     )  
   
@@ -118,8 +118,8 @@ The key thing to look at here is how getAST is called:
 ```
   
   
-site\_url = request.POST\['url'\]  
-disp\_img = create\_thumbnail(site\_url)  
+site_url = request.POST['url']  
+disp_img = create_thumbnail(site_url)  
   
   
 

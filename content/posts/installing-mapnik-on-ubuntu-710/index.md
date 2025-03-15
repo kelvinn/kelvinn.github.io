@@ -17,9 +17,9 @@ I have managed to install mapnik 0.4, 0.5, 0.5.1 and various SVN releases in-bet
 ```
 $ python scons/scons.py PYTHON=/usr/bin/python \\ 
 
-PGSQL\_INCLUDES=/usr/include/postgresql \\
+PGSQL_INCLUDES=/usr/include/postgresql \\
 
-PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+PGSQL_LIBS=/usr/lib/postgresql BOOST_INCLUDES=/usr/include/boost BOOST_LIBS=/usr/lib
 
 ```  
   
@@ -30,9 +30,9 @@ PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/
 ```
 $ sudo python scons/scons.py install PYTHON=/usr/bin/python \\ 
 
-PGSQL\_INCLUDES=/usr/include/postgresql \\
+PGSQL_INCLUDES=/usr/include/postgresql \\
 
-PGSQL\_LIBS=/usr/lib/postgresql BOOST\_INCLUDES=/usr/include/boost BOOST\_LIBS=/usr/lib
+PGSQL_LIBS=/usr/lib/postgresql BOOST_INCLUDES=/usr/include/boost BOOST_LIBS=/usr/lib
 
 ```  
   

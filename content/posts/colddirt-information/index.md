@@ -11,7 +11,7 @@ tags:
 ---
 
   
-_Note_: Colddirt's source code is run from Django SVN, check out on May 10th-ish. If you are using a newer branch, some things have changed. i.e. clean\_data has been renamed cleaned\_data. Remember to check the [BackwardsIncompatible](http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges) page in the wiki.  
+_Note_: Colddirt's source code is run from Django SVN, check out on May 10th-ish. If you are using a newer branch, some things have changed. i.e. clean_data has been renamed cleaned_data. Remember to check the [BackwardsIncompatible](http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges) page in the wiki.  
   
 **Part 1**: [Simple AJAX with Django](http://www.kelvinism.com/2007/06/simple-ajax-with-django_1754.html)  
 **Part 2**: [Django Newforms Usage](http://www.kelvinism.com/2007/06/django-newforms-usage-in-colddirt_1103.html)  

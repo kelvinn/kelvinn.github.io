@@ -18,7 +18,7 @@ Depending on your server, first locate iptables:
   
   
 ```
- \[root@vps /\]# which iptables 
+ [root@vps /]# which iptables 
 ```  
   
 
@@ -31,7 +31,7 @@ Create a whitelist (ignored by firewall) or blacklist (packet dropped) if you wi
   
   
 ```
- \[root@vps /\]# vi /usr/local/etc/whitelist.txt 
+ [root@vps /]# vi /usr/local/etc/whitelist.txt 
 ```  
   
   
@@ -40,7 +40,7 @@ And/Or...
   
   
 ```
-\[root@vps /\]# vi /usr/local/etc/blacklist.txt 
+[root@vps /]# vi /usr/local/etc/blacklist.txt 
 ```  
   
   
@@ -147,6 +147,6 @@ $IPTABLES -A INPUT -p tcp --syn -j DROP
   
   
 ```
- \[root@vps /\]# chmod 700 /etc/init.d/firewall.sh
-  \[root@vps /\]# /etc/init.d/firewall.sh 
+ [root@vps /]# chmod 700 /etc/init.d/firewall.sh
+  [root@vps /]# /etc/init.d/firewall.sh 
 ```

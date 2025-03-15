@@ -23,10 +23,10 @@ However, although I was thinking VMware Server 2 would install seamlessly over U
 
 The first thing I had major issues with was VMware choking on the parallel port. Normally the parport is the first thing I would turn off, but in this instance, I guess excitement overtook me. My tip is to first remove the lp module from inside /etc/modules, and then disable the parallel port inside the BIOS. The symptoms I was having involved VMware halting/freezing on either startup or shutdown. This occurred for both RC1 as well as 1.0.6.
 
-My second tip, if VMware freezes half way through starting up or shutting down, is to go through the vmware startup script, /etc/init.d/vmware, and comment out anything refering to the parport\_pc. In particular, I looked for this line and made sure to comment it out:
+My second tip, if VMware freezes half way through starting up or shutting down, is to go through the vmware startup script, /etc/init.d/vmware, and comment out anything refering to the parport_pc. In particular, I looked for this line and made sure to comment it out:
 
-```
-/sbin/modprobe -r parport\_pc >/dev/null 2>&1
+```bash
+/sbin/modprobe -r parport_pc >/dev/null 2>&1
 
 ```  
   
@@ -37,7 +37,7 @@ The second major issue I had occurred after actually installing VMware. I opened
 
 First click where it says "click anywhere to open the virtual machine". Copy the address of the XPI and use something like wget to download the file. This is an example:
 
-```
+```bash
 wget --no-check-certificate https://192.168.50.10/ui/plugin/vmware-vmrc-linux-x86.xpi
 
 ```  
@@ -45,8 +45,8 @@ wget --no-check-certificate https://192.168.50.10/ui/plugin/vmware-vmrc-linux-x8
 
 If you are using Gnome, right click the file you just downloaded and say Open With then Archive Manager. Do the same for the 'install.rdf' file inside, specifying gedit as the application if need be. Next, edit line 20 so it reads as follows:
 
-```
-3.0.\*
+```plain
+3.0.*
 
 ```  
   

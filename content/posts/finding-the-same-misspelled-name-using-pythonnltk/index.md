@@ -36,7 +36,7 @@ Alexander Jensen
   
 This could easily occur if somebody was manually typing in the lists, dictating names over the phone, or spell their name differently (e.g. Phil vs. Phillip) at different times.  
   
-If we wanted to match people on List 1 to List 2, how could we go about that? For a small list like this you can just look and see, but with many thousands of people, something more sophisticated would be useful. One tool could be NLTK's edit\_distance function. The following Python script displays how easy this is:  
+If we wanted to match people on List 1 to List 2, how could we go about that? For a small list like this you can just look and see, but with many thousands of people, something more sophisticated would be useful. One tool could be NLTK's edit_distance function. The following Python script displays how easy this is:  
   
 ```bash
 import nltk

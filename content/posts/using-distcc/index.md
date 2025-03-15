@@ -15,7 +15,7 @@ I'm in the process of working on one of my projects, and the requirement came up
 Good old distcc comes to the rescue. I don't need to use distcc that often, yet when I do, it is very handy. However, I always forget to set g++ to use distcc as well. So, for when I forget next time...
 
 ```
-DISTCC\_HOSTS='home'
+DISTCC_HOSTS='home'
 ./configure
 make CC=distcc CXX=distcc
 ```  

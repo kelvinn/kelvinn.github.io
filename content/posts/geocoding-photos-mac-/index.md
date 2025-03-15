@@ -49,7 +49,7 @@ It will process the images, renaming the original with an ".original" extension,
 If your camera is set to GMT, then put all the GPX files in the same directory as the photos to geocode, and do this:  
   
 ```bash
-TZ=GMT exiftool -geotag "\*.gpx" *.jpg
+TZ=GMT exiftool -geotag "*.gpx" *.jpg
 
 ```  
 For any additional manual geocoding I fallback on Picasa's Places [GeoTag](http://www.snafu.org/GeoTag/) to add the coordinates.  

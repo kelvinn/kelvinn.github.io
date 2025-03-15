@@ -9,6 +9,6 @@ tags:
 - tips and tricks
 ---
 
-Logs spiraling crazy, we run out of disk space all the time. A nifty trick to find where the disk went is to issue: du -cks \* |sort -rn |head -11
+Logs spiraling crazy, we run out of disk space all the time. A nifty trick to find where the disk went is to issue: du -cks * |sort -rn |head -11
 
 This returns where the disk usage is, and makes finding the bloated log a lot easier.

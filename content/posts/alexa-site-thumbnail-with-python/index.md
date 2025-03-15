@@ -23,102 +23,102 @@ import re
 import urllib
 import xml.dom.minidom
 
-AWS\_ACCESS\_KEY\_ID = 'your-access-key-id'
-AWS\_SECRET\_ACCESS\_KEY = 'your-super-secret-key'
+AWS_ACCESS_KEY_ID = 'your-access-key-id'
+AWS_SECRET_ACCESS_KEY = 'your-super-secret-key'
 
 # This one is for an individual thumbnail...
-def create\_thumbnail(site\_url, img\_size):
-    def generate\_timestamp(dtime):
+def create_thumbnail(site_url, img_size):
+    def generate_timestamp(dtime):
         return dtime.strftime("%Y-%m-%dT%H:%M:%SZ")
-    def generate\_signature(operation, timestamp, secret\_access\_key):
-        my\_sha\_hmac = hmac.new(secret\_access\_key, operation + timestamp, sha)
-        my\_b64\_hmac\_digest = base64.encodestring(my\_sha\_hmac.digest()).strip()
-        return my\_b64\_hmac\_digest
-    timestamp\_datetime = datetime.datetime.utcnow()
-    timestamp\_list = list(timestamp\_datetime.timetuple())
-    timestamp\_list\[6\] = 0
-    timestamp\_tuple = tuple(timestamp\_list)
-    timestamp = generate\_timestamp(timestamp\_datetime)
-    signature = generate\_signature('Thumbnail', timestamp, AWS\_SECRET\_ACCESS\_KEY)
+    def generate_signature(operation, timestamp, secret_access_key):
+        my_sha_hmac = hmac.new(secret_access_key, operation + timestamp, sha)
+        my_b64_hmac_digest = base64.encodestring(my_sha_hmac.digest()).strip()
+        return my_b64_hmac_digest
+    timestamp_datetime = datetime.datetime.utcnow()
+    timestamp_list = list(timestamp_datetime.timetuple())
+    timestamp_list[6] = 0
+    timestamp_tuple = tuple(timestamp_list)
+    timestamp = generate_timestamp(timestamp_datetime)
+    signature = generate_signature('Thumbnail', timestamp, AWS_SECRET_ACCESS_KEY)
     parameters = {
-        'AWSAccessKeyId': AWS\_ACCESS\_KEY\_ID,
+        'AWSAccessKeyId': AWS_ACCESS_KEY_ID,
         'Timestamp': timestamp,
         'Signature': signature,
-        'Url': site\_url,
+        'Url': site_url,
         'Action': 'Thumbnail',
-        'Size': img\_size,
+        'Size': img_size,
         }
     url = 'http://ast.amazonaws.com/?'
-    result\_xmlstr = urllib.urlopen(url, urllib.urlencode(parameters)).read()
-    result\_xml = xml.dom.minidom.parseString(result\_xmlstr)
-    image\_url = result\_xml.childNodes\[0\].getElementsByTagName('aws:Thumbnail')\[0\].firstChild.data
-    return image\_url
+    result_xmlstr = urllib.urlopen(url, urllib.urlencode(parameters)).read()
+    result_xml = xml.dom.minidom.parseString(result_xmlstr)
+    image_url = result_xml.childNodes[0].getElementsByTagName('aws:Thumbnail')[0].firstChild.data
+    return image_url
   
 # And this one is for a list
-def create\_thumbnail\_list(all\_sites, img\_size):
-    def generate\_timestamp(dtime):
+def create_thumbnail_list(all_sites, img_size):
+    def generate_timestamp(dtime):
         return dtime.strftime("%Y-%m-%dT%H:%M:%SZ")
     
-    def generate\_signature(operation, timestamp, secret\_access\_key):
-        my\_sha\_hmac = hmac.new(secret\_access\_key, operation + timestamp, sha)
-        my\_b64\_hmac\_digest = base64.encodestring(my\_sha\_hmac.digest()).strip()
-        return my\_b64\_hmac\_digest
+    def generate_signature(operation, timestamp, secret_access_key):
+        my_sha_hmac = hmac.new(secret_access_key, operation + timestamp, sha)
+        my_b64_hmac_digest = base64.encodestring(my_sha_hmac.digest()).strip()
+        return my_b64_hmac_digest
     
-    timestamp\_datetime = datetime.datetime.utcnow()
-    timestamp\_list = list(timestamp\_datetime.timetuple())
-    timestamp\_list\[6\] = 0
-    timestamp\_tuple = tuple(timestamp\_list)
-    timestamp = generate\_timestamp(timestamp\_datetime)
+    timestamp_datetime = datetime.datetime.utcnow()
+    timestamp_list = list(timestamp_datetime.timetuple())
+    timestamp_list[6] = 0
+    timestamp_tuple = tuple(timestamp_list)
+    timestamp = generate_timestamp(timestamp_datetime)
     
-    signature = generate\_signature('Thumbnail', timestamp, AWS\_SECRET\_ACCESS\_KEY)
+    signature = generate_signature('Thumbnail', timestamp, AWS_SECRET_ACCESS_KEY)
     
-    image\_loc = {}
-    image\_num = \[\]
-    image\_size = {}
+    image_loc = {}
+    image_num = []
+    image_size = {}
     
     count = 1   
-    for s in all\_sites:
-        image\_num = 'Thumbnail.%s.Url' % count
-        image\_loc\[image\_num\] = s
+    for s in all_sites:
+        image_num = 'Thumbnail.%s.Url' % count
+        image_loc[image_num] = s
         count += 1
         
     parameters = {
-        'AWSAccessKeyId': AWS\_ACCESS\_KEY\_ID,
+        'AWSAccessKeyId': AWS_ACCESS_KEY_ID,
         'Timestamp': timestamp,
         'Signature': signature,
         'Action': 'Thumbnail',
-        'Thumbnail.Shared.Size': img\_size,
+        'Thumbnail.Shared.Size': img_size,
         }
         
-    parameters.update(image\_loc)
+    parameters.update(image_loc)
     
-    ast\_url = 'http://ast.amazonaws.com/?'
+    ast_url = 'http://ast.amazonaws.com/?'
         
-    result\_xmlstr = urllib.urlopen(ast\_url, urllib.urlencode(parameters)).read()
-    result\_xml = xml.dom.minidom.parseString(result\_xmlstr)
+    result_xmlstr = urllib.urlopen(ast_url, urllib.urlencode(parameters)).read()
+    result_xml = xml.dom.minidom.parseString(result_xmlstr)
     
-    image\_urls = \[\]
+    image_urls = []
     count = 0
-    for s in all\_sites:
-        image\_urls.append(result\_xml.childNodes\[0\].getElementsByTagName('aws:Thumbnail')\[count\].firstChild.data)
+    for s in all_sites:
+        image_urls.append(result_xml.childNodes[0].getElementsByTagName('aws:Thumbnail')[count].firstChild.data)
         count += 1
-    return image\_urls
+    return image_urls
 
 
 ```  
   
 This is how you interact with this code for a single thumbnail:  
 ```
-\>>> from ThumbnailUtility import \*
->>> create\_thumbnail('kelvinism.com', 'Large')
+\>>> from ThumbnailUtility import *
+>>> create_thumbnail('kelvinism.com', 'Large')
 u'http://s3-external-1.amazonaws.com/alexa-thumbnails/A46FF6A30BECB0730455F2AB306EDC28605BC19Cl?Signature=XpsxgPey4b0JgreZA46XnvHVVLo%3D&Expires=1181110547&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2'
 ```  
 And for a list:  
 ```
-\>>> from ThumbnailUtility import \*
->>> all\_sites = \['kelvinism.com', 'alexa.com', 'vpslink.com'\]
->>> create\_thumbnail\_list(all\_sites, 'Small')
-\[u'http://s3-external-1.amazonaws.com/alexa-thumbnails/A46FF6A30BECB0730455F2AB306EDC28605BC19Cs?Signature=%2BfcOUKwH4xD9IH9o1vfto%2FMoALU%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2', u'http://s3-external-1.amazonaws.com/alexa-thumbnails/D798D8CE8F821FCC63159C92C85B70319E44D0EFs?Signature=6jriChrGM%2F8DoejN9dn9Dv3Lc5w%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2', u'http://s3-external-1.amazonaws.com/alexa-thumbnails/23529C34E0518AA9C2577653AC237D3647BA8D2Ds?Signature=5ksuwZx0I5TqXWL3Kt%2BWP6r2LQk%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2'\]
+\>>> from ThumbnailUtility import *
+>>> all_sites = ['kelvinism.com', 'alexa.com', 'vpslink.com']
+>>> create_thumbnail_list(all_sites, 'Small')
+[u'http://s3-external-1.amazonaws.com/alexa-thumbnails/A46FF6A30BECB0730455F2AB306EDC28605BC19Cs?Signature=%2BfcOUKwH4xD9IH9o1vfto%2FMoALU%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2', u'http://s3-external-1.amazonaws.com/alexa-thumbnails/D798D8CE8F821FCC63159C92C85B70319E44D0EFs?Signature=6jriChrGM%2F8DoejN9dn9Dv3Lc5w%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2', u'http://s3-external-1.amazonaws.com/alexa-thumbnails/23529C34E0518AA9C2577653AC237D3647BA8D2Ds?Signature=5ksuwZx0I5TqXWL3Kt%2BWP6r2LQk%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2']
 ```  
   
 This is just a simple example to get your feet wet, maybe you'll find it useful. If you are wondering how to integrate this with Django, don't worry, I've got you covered.

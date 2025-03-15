@@ -22,12 +22,12 @@ from django.contrib.contenttypes import generic
 And second, you'll need to change the 'location prefix' (for lack of a better description:  
 **From:**  
 ```
-generic\_field = models.GenericRelation(SomeOtherModel)
+generic_field = models.GenericRelation(SomeOtherModel)
 ```  
   
 **To:**  
 ```
-generic\_field = generic.GenericRelation(SomeOtherModel)
+generic_field = generic.GenericRelation(SomeOtherModel)
 ```  
   
 All should be find from there on out. For more information, take a look at [the reference wiki article](http://code.djangoproject.com/wiki/BackwardsIncompatibleChanges).

@@ -50,27 +50,27 @@ Ok, Lighttpd is all done. Now just start her up, and move onto Apache.
 
 #### Master Configuration
 
-Depending on your distro and what apache you installed, you might need to do this a little different. I will illustrate how to do it with the Apache package from the Debian repository. Let's activate the mod\_proxy module.  
+Depending on your distro and what apache you installed, you might need to do this a little different. I will illustrate how to do it with the Apache package from the Debian repository. Let's activate the mod_proxy module.  
   
   
 ```
  user@vps:~$ sudo a2enmod
 Password:
  Which module would you like to enable?
- Your choices are: actions alias asis auth\_basic auth\_digest authn\_alias authn\_anon authn\_dbd authn\_dbm authn\_default authn\_file authnz\_ldap authz\_dbm authz\_default authz\_groupfile authz\_host authz\_owner authz\_user autoindex cache cern\_meta cgi cgid charset\_lite dav dav\_fs dav\_lock dbd deflate dir disk\_cache dump\_io env expires ext\_filter file\_cache filter headers ident imagemap include info ldap log\_forensic mem\_cache mime mime\_magic negotiation php5 proxy proxy\_ajp proxy\_balancer proxy\_connect proxy\_ftp proxy\_http rewrite setenvif speling ssl status suexec unique\_id userdir usertrack version vhost\_alias
+ Your choices are: actions alias asis auth_basic auth_digest authn_alias authn_anon authn_dbd authn_dbm authn_default authn_file authnz_ldap authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cern_meta cgi cgid charset_lite dav dav_fs dav_lock dbd deflate dir disk_cache dump_io env expires ext_filter file_cache filter headers ident imagemap include info ldap log_forensic mem_cache mime mime_magic negotiation php5 proxy proxy_ajp proxy_balancer proxy_connect proxy_ftp proxy_http rewrite setenvif speling ssl status suexec unique_id userdir usertrack version vhost_alias
 
- Module name? proxy\_http
+ Module name? proxy_http
 ```  
   
 If you are not using a system with a2enmod, you can edit your configuration by hand. Just insert the following into your apache2.conf or httpd.conf files:  
   
   
 ```
-LoadModule proxy\_module /usr/lib/apache2/modules/mod\_proxy.so
-LoadModule proxy\_http\_module /usr/lib/apache2/modules/mod\_proxy\_http.so 
+LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
+LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so 
 ```  
   
-The actual location of the extension (\*.so) will vary depending on where you installed it. If you have tried this out and get forbidden errors, or it just simply isn't working, the reason is because the proxy modules isn't configured right. You will likely get an error like:  
+The actual location of the extension (*.so) will vary depending on where you installed it. If you have tried this out and get forbidden errors, or it just simply isn't working, the reason is because the proxy modules isn't configured right. You will likely get an error like:  
 ```
  client denied by server configuration: proxy 
 ```  
@@ -79,11 +79,11 @@ To solve this, you need to edit /etc/apache2/mods-enabled/proxy.conf or your htt
   
   
 ```
-<IfModule mod\_proxy.c>
+<IfModule mod_proxy.c>
    #turning ProxyRequests on and allowing proxying from all may allow
     #spammers to use your proxy to send email.
     ProxyRequests Off
-    <Proxy \*>
+    <Proxy *>
         AddDefaultCharset off
         Order deny,allow
         Deny from all
@@ -116,10 +116,10 @@ As an alternative, you could use a rewrite rule.
 DocumentRoot /var/www/html/kelvinism/
 RewriteEngine On
 RewriteRule ^/howtos/notes/quick-n-dirty-firewall\\.html$
-http://127.0.0.1:81/kelvinism/static/quick-n-dirty-firewall.html \[P,L\]
+http://127.0.0.1:81/kelvinism/static/quick-n-dirty-firewall.html [P,L]
 ProxyPass /images/ http://127.0.0.1:81/kelvinism/images/
 ProxyPassReverse / http://127.0.0.1:81/kelvinism/
  
 ```  
   
-So what this does is pass the page http://www.kelvinism.com/howtos/notes/quick-n-dirty-firewall.html through mod\_proxy to Lighttpd. So, test it out, and you are all done!
+So what this does is pass the page http://www.kelvinism.com/howtos/notes/quick-n-dirty-firewall.html through mod_proxy to Lighttpd. So, test it out, and you are all done!

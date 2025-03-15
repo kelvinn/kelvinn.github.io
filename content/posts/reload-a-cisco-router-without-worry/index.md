@@ -24,7 +24,7 @@ In the case of updating a device remotely, it is as easy as:
 ```plain
 router# reload in 2
 router# conf t
-router(config)# \[type in desired commands\]
+router(config)# [type in desired commands]
 router(config)# exit
 router# reload cancel
 

@@ -29,11 +29,11 @@ Using the sample section from the blog export, format it so the view you will cr
 #### feeds/rss.html
 
 ```html
-{%  load blog\_extras %}
+{%  load blog_extras %}
 {% for entry in entries %}
-    tag:blogger.com,1999:blog-1700991654357243752.post-{% generate\_id %}
-        {{ entry.publish\_date|date:"Y-m-d" }}T10:30:00.000123
-        {{ entry.publish\_date|date:"Y-m-d" }}T10:30:00.000123
+    tag:blogger.com,1999:blog-1700991654357243752.post-{% generate_id %}
+        {{ entry.publish_date|date:"Y-m-d" }}T10:30:00.000123
+        {{ entry.publish_date|date:"Y-m-d" }}T10:30:00.000123
         {% for tag in entry.tags %}
             {% endfor %}
 
@@ -48,7 +48,7 @@ Using the sample section from the blog export, format it so the view you will cr
 {% endfor %}
 
 ```  
-This isn't really RSS, so if you are pedantic you can name it something else. You will notice I loaded some template tags in there ("blog\_extras"). This is for generating the random number, as this is needed for the ID element.. Here's the template tag.  
+This isn't really RSS, so if you are pedantic you can name it something else. You will notice I loaded some template tags in there ("blog_extras"). This is for generating the random number, as this is needed for the ID element.. Here's the template tag.  
 
 #### blog_extras.py
 
@@ -92,7 +92,7 @@ I did a filter on the model to not include "blog" entries - these are my travel 
   
 5. **Download Entries**  
 
-Visit the URL you mapped to the "show\_rss" function in urls.py, it should generate your list of entries. Copy and paste those entries into the exported XML from Blogger where you took out the original <entry> element.  
+Visit the URL you mapped to the "show_rss" function in urls.py, it should generate your list of entries. Copy and paste those entries into the exported XML from Blogger where you took out the original <entry> element.  
   
 6. **Import Entries**  
 

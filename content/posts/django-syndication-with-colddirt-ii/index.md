@@ -21,12 +21,12 @@ class PerDirt(Feed):
     link = "/"
     copyright = 'Copyright (c) 2007, Blog Mozaic'
     
-    def get\_object(self, bits):
-        from django.shortcuts import get\_object\_or\_404
+    def get_object(self, bits):
+        from django.shortcuts import get_object_or_404
         if len(bits) != 1:
             raise ObjectDoesNotExist
-        my\_dirt = get\_object\_or\_404(Dirt, slug\_\_exact=bits\[0\])
-        return my\_dirt
+        my_dirt = get_object_or_404(Dirt, slug__exact=bits[0])
+        return my_dirt
 
     def title(self, obj):
         return obj.slug
@@ -36,7 +36,7 @@ class PerDirt(Feed):
     
     def items(self, obj):
         from django.contrib.comments.models import FreeComment
-        return FreeComment.objects.filter(object\_id=obj.id).order\_by('-submit\_date')
+        return FreeComment.objects.filter(object_id=obj.id).order_by('-submit_date')
 
 ```  
 You can see that this differs slightly from the simpler syndication example. I'll not a few things. But first, I need to show urls.py:  
@@ -50,29 +50,29 @@ feeds = {
 }
 
 urlpatterns = patterns('',
-    (r'^feeds/(?P<url>.\*)/$', 'django.contrib.syndication.views.feed', {'feed\_dict': feeds}),
+    (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
 )
 ```  
   
   
   
-Let's pretend the dirt word (or if you were doing a blog, you could do this based on slug) is "nifty". So, the process is like this: a request comes in as /feeds/mydirt/nifty/ -- it is first looked up in the feed\_dict (because of the mydirt part) and then sent to PerDict. Once in PerDict it hits the first def, get\_object. One of the things that confused me at first is what the 'bits' part is. Simply put: it is the crap after you tell Django which feed to use. Similar to the beats example, I'm testing to make sure the length is only one -- so if the word doesn't exist or somebody just types in feeds/mydirt/nifty/yeehaaa/ -- they will get an error. Next the object is looked up, in this case the dirt word (in your case, maybe a blog entry).  
+Let's pretend the dirt word (or if you were doing a blog, you could do this based on slug) is "nifty". So, the process is like this: a request comes in as /feeds/mydirt/nifty/ -- it is first looked up in the feed_dict (because of the mydirt part) and then sent to PerDict. Once in PerDict it hits the first def, get_object. One of the things that confused me at first is what the 'bits' part is. Simply put: it is the crap after you tell Django which feed to use. Similar to the beats example, I'm testing to make sure the length is only one -- so if the word doesn't exist or somebody just types in feeds/mydirt/nifty/yeehaaa/ -- they will get an error. Next the object is looked up, in this case the dirt word (in your case, maybe a blog entry).  
 The title and description are self-explanatory. The items are a query from the FreeComment database, ordered by date. What we need next is the correct templates.  
 
-#### templates/feeds/mydirt\_title.html
+#### templates/feeds/mydirt_title.html
 
   
   
 ```
-Comment by {{ obj.person\_name }}
+Comment by {{ obj.person_name }}
 ```  
   
   
   
   
-Once again, the filename is important (mydirt\_title). obj.person\_name is the name from the comment.  
+Once again, the filename is important (mydirt_title). obj.person_name is the name from the comment.  
 
-#### templates/feeds/mydirt\_description.html
+#### templates/feeds/mydirt_description.html
 
   
   
@@ -80,8 +80,8 @@ Once again, the filename is important (mydirt\_title). obj.person\_name is the n
   
 ```
 {{ obj.comment }}
-Posted by: {{ obj.person\_name }}
-Published: {{ obj.submit\_date }}
+Posted by: {{ obj.person_name }}
+Published: {{ obj.submit_date }}
 ```  
   
   

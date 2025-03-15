@@ -430,4 +430,4 @@ What would I do differently next time? I would like to avoid Scotts Main Range, 
 
   
 
-Please don't hesitate reaching out if you wish to do this track and have any questions. This track could be really fun with a group of people without any hard deadlines. This trip report was also cross-posted on r/UltralightAus here: https://www.reddit.com/r/UltralightAus/comments/kox0u9/trip\_report\_katoomba\_to\_mittagong\_131km/
+Please don't hesitate reaching out if you wish to do this track and have any questions. This track could be really fun with a group of people without any hard deadlines. This trip report was also cross-posted on r/UltralightAus here: https://www.reddit.com/r/UltralightAus/comments/kox0u9/trip_report_katoomba_to_mittagong_131km/
