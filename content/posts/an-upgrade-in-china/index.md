@@ -7,17 +7,17 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 Time has come to bring another network on the VPN, and perform some more upgrades. The usual by now, I guess.
 
-\-Get China on VPN  
-\-Limit access to other locations  
-\-Update all systems  
-\-Perform security audits  
-\-Upgrade wifi  
-\-Setup video conferencing  
+- Get China on VPN  
+- Limit access to other locations  
+- Update all systems  
+- Perform security audits  
+- Upgrade wifi  
+- Setup video conferencing  
   
   
 

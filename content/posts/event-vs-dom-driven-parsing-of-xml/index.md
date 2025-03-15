@@ -18,7 +18,7 @@ I quickly rewrote the code and did some tests. First, the two bits of code for p
 
 **minidom-speed.py**
 
-```
+```python
 #!/usr/bin/python
 
 from xml.dom import minidom
@@ -49,7 +49,7 @@ f.write(stream.render())
 
 **cet-speed.py**
 
-```
+```python
 #!/usr/bin/python
 
 import sys,os
@@ -88,7 +88,7 @@ The speed difference is not just noticeable, but **very** noticeable.
 
 **minidom-speed.py**
 
-```
+```bash
 $ python -m cProfile minidom-speed.py
 4405376 function calls (3787047 primitive calls) in 32.142 CPU seconds
 
@@ -97,7 +97,7 @@ $ python -m cProfile minidom-speed.py
 
 **cet-speed.py**
 
-```
+```bash
 $ python -m cProfile cet-speed.py
 1082061 function calls (904167 primitive calls) in 6.736 CPU seconds
 

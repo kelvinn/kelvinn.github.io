@@ -11,7 +11,7 @@ tags:
 Backing up your Openfiler box to S3  
   
 
-While I don't think most pople would expect to backup their entire NAS/SAN to Amazon's S3, there might be a few very crucial things you need to backup. For instance, my girlfriend's PhD papers and data.
+While I don't think most pople would expect to backup their entire NAS/SAN to Amazon's S3, there might be a few very crucial things you need to backup.
 
 I've seen an implementation using Ruby and s3sync -- something that I do on my server -- but I'm trying to migrate everything to Python. Although there are a lot of great tools out there for S3, many of them Python-based, I wanted to do one thing and do it well: have one complete full backup available, and using as little bandwidth as possible. In these regards Duplicity would work well, except I wanted the ability to browse the S3 store using any other tool.
 

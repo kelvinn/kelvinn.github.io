@@ -14,7 +14,7 @@ I generally like Firefox, and generally like Google. But having Google suggest e
 
 Type in 'about:config' into your address bar and type 'search' in the top filter bar. Look about half-way down for this:
 
-```
+```bash
 browser.search.suggest.enabled
 
 ```  

@@ -15,6 +15,6 @@ One likely reason this comes about is because the data being imported/exported i
 The solution is quite simple:  
   
   
-```
+```bash
  mysqldump --compatible=mysql323 -u root -p database > exportName.sql
 ```

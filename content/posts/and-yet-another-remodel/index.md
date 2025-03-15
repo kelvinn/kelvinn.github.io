@@ -12,17 +12,10 @@ tags:
 
 I have finally decided to do another remodel of this site. I had a few goals before starting:
 
-  
-*   Use one image
-  
+
+*   Use one image  
 *   Use the YUI-CSS framework
-  
 *   Use Django
-  
 *   Make it easily extendable
   
-
-  
-  
-
 So far, I think I've accomplished these goals. The site is easier to read, easy to modify, and has a few new features. More entries to come!

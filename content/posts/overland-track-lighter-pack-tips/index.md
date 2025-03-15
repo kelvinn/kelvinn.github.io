@@ -13,7 +13,7 @@ Background
 
   
 
-My hiking companion and I recently completed the Overland Track in Tasmania, and she posted a picture of our packs on a related group on Facebook. There was an overwhelming response, ranging from _good job!_ to _you're a liar_ or _you surely didn't have a tent_ or _you must be on a tour and didn't bring food_.  
+My hiking companion and I recently completed the Overland Track in Tasmania, and they posted a picture of our packs on a related group on Facebook. There was an overwhelming response, ranging from _good job!_ to _you're a liar_ or _you surely didn't have a tent_ or _you must be on a tour and didn't bring food_.  
   
 I can understand the skepticism. Upon inspecting what people brought, and never used, there is definitely a preference for people to _pack their fears_. Considering this track seemed to be the first time many people have done a multi-day backpacking trip, there were a lot of things they likely would not pack after gaining a little more experience.
 

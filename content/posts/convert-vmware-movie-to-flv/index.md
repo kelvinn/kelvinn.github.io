@@ -13,7 +13,7 @@ First, we convert the VMware avi (VMnc format) to the Microsoft avi format.
 
   
   
-```
+```bash
  mencoder -of avi -ovc lavc movie.avi -o movie2.avi 
 ```  
   
@@ -22,7 +22,7 @@ Next, we convert the Microsoft avi format to FLV format.
 
   
   
-```
+```bash
  ffmpeg -i movie2.avi -r 12  -b 100 movie.flv 
 ```  
   

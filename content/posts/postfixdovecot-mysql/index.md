@@ -15,12 +15,12 @@ Just for my future reference, and maybe helpful for somebody, someday. Clearly n
   
   
 First, get the saslauthd files into the postfix chroot. Edit /etc/conf.d/saslauthd (or /etc/default/saslauthd), and add this:  
-```
+```bash
 SASLAUTHD_OPTS="-m /var/spool/postfix/var/run/saslauthd"
 ```  
   
 Second, add it to the init script.  
-```
+```bash
 stop() {
         ebegin "Stopping saslauthd"
         start-stop-daemon --stop --quiet /
@@ -30,7 +30,7 @@ stop() {
 ```  
   
 Third, maybe, change /etc/sasl2/smtpd.conf (or /etc/postfix/sasl/smtpd.conf) and add this:  
-```
+```bash
 saslauthd_path: /var/run/saslauthd/mux
 ```  
   

@@ -1,5 +1,5 @@
 ---
-title: 'Lighttpd As Apache&#39;s Sidekick'
+title: 'Lighttpd As Apache Sidekick'
 date: 2006-12-12T21:30:00.002+11:00
 draft: false
 url: /2006/12/lighttpd-as-apache-sidekick_4400.html
@@ -16,13 +16,18 @@ I've tried quite a few things. I finally ended up using Apache to handle php and
 One of the first things you will need to do is pull down a static copy of your page.  
   
   
-```
+```bash
  user@vps:~$ wget http://www.kelvinism.com/howtos/notes/quick-n-dirty-firewall.html 
-```That was easy enough. Next, let's create a directory for static pages.  
 ```
+
+That was easy enough. Next, let's create a directory for static pages.  
+
+```bash
 user@vps:~$ sudo mkdir /var/www/html/kelvinism/static
 user@vps:~$ sudo mv quick-n-dirty-firewall.html /var/www/html/kelvinism/static/ 
-```Sweet. (This is assuming of course that the site's DirectoryRoot is /var/www/html/kelvinism). Next, Lighttpd.  
+```
+
+Sweet. (This is assuming of course that the site's DirectoryRoot is /var/www/html/kelvinism). Next, Lighttpd.  
 
 #### Lighttpd Configuration
 
@@ -32,19 +37,19 @@ Install Lighttpd however you [choose](http://trac.lighttpd.net/trac/wiki/Tutoria
 First, change the directory for your base DocumentRoot. Next, change what ports the server will listen on.  
   
   
-```
-server.document-root = \\"/var/www/html\\"
+```bash
+server.document-root = \"/var/www/html\"
 ## bind to port (default: 80)
 server.port = 81
 ## bind to localhost (default: all interfaces)
-server.bind = \\"127.0.0.1\\"
+server.bind = \"127.0.0.1\"
 ```  
   
 Ok, Lighttpd is all done. Now just start her up, and move onto Apache.  
   
   
-```
- user@vps:/etc/lighttpd$ sudo /etc/init.d/lighttpd start 
+```bash
+user@vps:/etc/lighttpd$ sudo /etc/init.d/lighttpd start 
 ```  
   
 
@@ -53,7 +58,7 @@ Ok, Lighttpd is all done. Now just start her up, and move onto Apache.
 Depending on your distro and what apache you installed, you might need to do this a little different. I will illustrate how to do it with the Apache package from the Debian repository. Let's activate the mod_proxy module.  
   
   
-```
+```bash
  user@vps:~$ sudo a2enmod
 Password:
  Which module would you like to enable?
@@ -65,25 +70,26 @@ Password:
 If you are not using a system with a2enmod, you can edit your configuration by hand. Just insert the following into your apache2.conf or httpd.conf files:  
   
   
-```
+```bash
 LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
 LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so 
 ```  
   
-The actual location of the extension (*.so) will vary depending on where you installed it. If you have tried this out and get forbidden errors, or it just simply isn't working, the reason is because the proxy modules isn't configured right. You will likely get an error like:  
-```
+The actual location of the extension (\*.so) will vary depending on where you installed it. If you have tried this out and get forbidden errors, or it just simply isn't working, the reason is because the proxy modules isn't configured right. You will likely get an error like:  
+
+```bash
  client denied by server configuration: proxy 
 ```  
   
 To solve this, you need to edit /etc/apache2/mods-enabled/proxy.conf or your httpd.conf file.  
   
   
-```
+```bash
 <IfModule mod_proxy.c>
    #turning ProxyRequests on and allowing proxying from all may allow
     #spammers to use your proxy to send email.
     ProxyRequests Off
-    <Proxy *>
+    <Proxy \*>
         AddDefaultCharset off
         Order deny,allow
         Deny from all
@@ -95,9 +101,10 @@ To solve this, you need to edit /etc/apache2/mods-enabled/proxy.conf or your htt
     ProxyVia On
 </IfModule>
 
-```Now, open up your httpd-vhosts.conf or httpd.conf or wherever your site configuration is stored, and add the following inside the <virtualhost> directive:  
-  
 ```
+Now, open up your httpd-vhosts.conf or httpd.conf or wherever your site configuration is stored, and add the following inside the <virtualhost> directive:  
+  
+```bash
 #DocumentRoot is just for reference, I assume you know how to setup virtualhosts.
 
 DocumentRoot /var/www/html/kelvinism/
@@ -111,11 +118,11 @@ ProxyPassReverse / http://127.0.0.1:81/kelvinism/
 As an alternative, you could use a rewrite rule.  
   
   
-```
+```bash
 #DocumentRoot is just for reference, I assume you know how to setup virtualhosts.
 DocumentRoot /var/www/html/kelvinism/
 RewriteEngine On
-RewriteRule ^/howtos/notes/quick-n-dirty-firewall\\.html$
+RewriteRule ^/howtos/notes/quick-n-dirty-firewall\.html$
 http://127.0.0.1:81/kelvinism/static/quick-n-dirty-firewall.html [P,L]
 ProxyPass /images/ http://127.0.0.1:81/kelvinism/images/
 ProxyPassReverse / http://127.0.0.1:81/kelvinism/

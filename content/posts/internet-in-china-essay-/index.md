@@ -7,7 +7,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 I realized at the end of the 2005 school year that I was going to be two business credits short of graduating. Two! Understandable I think, since I had been working full time or over full time (one to four jobs) for the last three years. Plus, I changed my degree after the first year; not to mention I somehow crammed five years worth of credits in four years. Well, I arranged with one of my teachers (who had a great class, I must add) to guide me through the last two credits. The credits involved writing a paper regarding China and the Internet. A broad topic, I must admit.

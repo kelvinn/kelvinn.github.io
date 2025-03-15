@@ -7,7 +7,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ❌
   
 
 I've heard that Sydney is one of the most liveable cities in the entire world -- a statement I would generally agree with. However. whoever made this statement obviously didn't drive to work every day. I've reached the conclusion that one of the biggest (and only) drawbacks to Sydney, is the traffic.

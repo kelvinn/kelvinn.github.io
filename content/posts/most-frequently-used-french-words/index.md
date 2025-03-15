@@ -13,11 +13,11 @@ tags:
 - parse
 ---
 
-Status:  
+Status: ✅
   
   
   
-I'm currently studying French with my partner, and if you've read any of this site, you'll notice I'm a bit of a techie. Often several of my interests collide, which is what happened today. I was searching for the "most frequent french words," and while I found some lists, nothing was exactly what I wanted.  
+I'm currently studying French, and if you've read any of this site, you'll notice I'm a bit of a techie. Often several of my interests collide, which is what happened today. I was searching for the "most frequent french words," and while I found some lists, nothing was exactly what I wanted.  
 My desire was to have a PDF of the top few thousand most used French words. With the English translation next to it. In order. I've found some great resources, which I'll list now  
 
 *   [347 most frequent French words (78% of French conversations)](http://www.fst.ch/FST/download/347_Voc_Courant.pdf)

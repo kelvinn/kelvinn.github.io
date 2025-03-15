@@ -33,20 +33,20 @@ title           Debian GNU/Linux, kernel 2.6.31.5-vortex86-sl3
 root            (hd0,0)
 kernel          /boot/vmlinuz-2.6.31.5-vortex86-sl3 root=/dev/sdb1 ro verbose
 
-```
+```bash
 5. Probably need to change /boot/grub/device.map
 
 ```bash
 (hd1)   /dev/sda
 (hd0)   /dev/sdb
 
-```
+```bash
 
 With no micro sd it would be:
 
 ```bash
 (hd0) /dev/sda
 
-```
+```bash
 6. delete the section below "# PCI device ...." in /etc/udev/rules.d/70-persistent-net.rules (Otherwise the eBox network gets remapped to eth1 and may not appear if only eth0 is specified in the network settings) 
 7. **Reboot & pray** The next one is a revised initrd for the current Ubuntu 9.10: http://staff.washington.edu/lombaard/initrd.img-2.6.31-14-generic-pata_rdc. (EDIT 12-03-2025: Lost my image that was linked from here). The two changes are: blacklist dm_raid45 & add pata-rdc.ko "blacklist dm_raid45" needs to be added to /etc/modprobe.d/blacklist.conf I managed to boot into gnome desktop without any further problems. I have enabled PCI IDE Bus Mastering, plug&play and IDE native mode in the bios. Hope this saves someone else a few hours of frustration.

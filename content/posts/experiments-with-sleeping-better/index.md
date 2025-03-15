@@ -13,7 +13,7 @@ url:
 *   Lights are dimmed in the evening, and blue-free lights are used as much as possible
 *   Avoid working after 6pm. Avoid reading work-related books.
 *   Hot shower 1-2hr before bed. Avoid baths.
-*   Sleep in separate beds from my partner. Three covers to try and help thermoregulate.
+*   Sleep in separate beds from anyone (people) or anything (animals) else. Three covers to try and help thermoregulate.
 *   Ensure that my daughter knows to not disturb me at light unless she needs to go to the hospital
 *   Ear plugs
 *   No naps

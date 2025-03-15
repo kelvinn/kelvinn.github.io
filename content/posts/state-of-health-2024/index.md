@@ -19,7 +19,7 @@ A few years ago, probably in late 2022, I was doing some self-reflection and was
 5.  Testing or screenings
 6.  Supplementation or pharmacological interventions
 
-The conclusion I reached after seeing/eating more of my partner's diet is that nutrition was the next area for me to focus on. My approach has typically been to deep dive on reading books, and since then I've read the following books related to nutrition and longevity:
+The conclusion I reached after some reflection was that nutrition was the next area for me to focus on. My approach has typically been to deep dive on reading books, and since then I've read the following books related to nutrition and longevity:
 
 *   Longevity Diet
 *   Outlive

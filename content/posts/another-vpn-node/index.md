@@ -7,7 +7,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 After consulting several vendors in Kuala Lumpur, I was able to get the right Cisco with the right IOS. One of their technicians came and installed it, and that night I hooked it up to our VPN. Besides the fact that the internet distribution is still a little shady in Kuala Lumpur, the connection remains somewhat stable, and yet another node is brought on the company intranet.

@@ -26,7 +26,7 @@ def check_temp():
         message = "It+is+now+%f+degrees;+chuck+a+sicky." % t
         f = urllib2.urlopen('http://api.clickatell.com/http/sendmsg?user=johnd&password=p@55w0rd&api_id=2132867&from=61433735555&to=61433735555&text=%s' % message)
 
-```
+```bash
 
 And in crontab:
 

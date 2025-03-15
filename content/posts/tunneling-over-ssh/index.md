@@ -12,12 +12,12 @@ As a rule, whenever I'm online I'm logged into my server back in the States. I'm
 #### Setup the SSH/SOCKS tunnel
 
 I'm on Linux, so this is pretty darn easy.  
-```
+```bash
 ssh user@domain.com -D 1080
 
 ```  
 If the SSH daemon runs on a different port, you'd do something like this:  
-```
+```bash
 ssh -oPort=1234 user@damon.com -D 1080
 
 ```  

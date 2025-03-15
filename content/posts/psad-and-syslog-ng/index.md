@@ -13,17 +13,17 @@ tags:
 I really like using PSAD, both on my server and my laptop. You never know where the mean people are. I also seem to use syslog-ng quite often, meanwhile PSAD seems oriented to syslog. This is fine, and I'm pretty sure the install.pl for the source built will configure syslog-ng.conf automatically. However, I almost always tend to stick with packages if I can -- if they are even remotely close to the current version.  
 Anyways, if you need to get syslog-ng.conf configured for PSAD, this is what you need to do:  
 Add this code to the "# pipes" section, maybe stick to keeping it alphabetical.  
-```
+```bash
 destination psadpipe { pipe("/var/lib/psad/psadfifo"); };
 ```  
   
 Next, go down a little to the "# filters" section, add this:  
-```
+```bash
 filter f_kerninfo { facility(kern); };
 ```  
   
 And finally in the last section, add this:  
-```
+```bash
 log {
         source(s_all);
         filter(f_kerninfo);

@@ -26,22 +26,22 @@ The great [ImageMagick](http://www.imagemagick.org/) toolkit comes to the rescue
 [![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfXQwFtbAJUa7qcRPpCBny5h188YpMglxSc-uUZPQcp4iCyKZRJddY3MUkmzRNTbE4rd0ueQzxJJyAevjiVOVar7mQPhoExM4E-z_OxXWxEnd5AoyUkWKqaAvDjqm4tjmh76oroizz4UFH/s400/bg.jpg)](http://picasaweb.google.com/lh/photo/FHDY48lASCafTiMXXbYbtA?feat=embedwebsite)  
   
 I first tried to use the following technique:  
-```
+```bash
 convert bg.jpg -gravity center world.png -composite test.png
 ```  
 This generated a pretty picture, what I wanted. What I didn't want was the fact that the picture was freaking 1.5 megs large, not to mention the resources were a little high:  
-```
+```bash
 real    0m7.405s
 user    0m7.064s
 sys     0m0.112s
 ```  
   
 Next, I tried to just use composite.  
-```
+```bash
 composite -gravity center world.png bg.png output.png
 ```  
 Same results, although the resource usage was just a tad lower. So, what was I doing wrong? I explored a little and realized I was slightly being a muppet. I was using a bng background that was 1.2 megs large (long story). I further changed the compose type to "atop," as that is what appeared to have the lowest resource usage. I modified things appropriately:  
-```
+```bash
  composite -compose atop -gravity center world.png bg.jpg output.jpg
 ```  
   

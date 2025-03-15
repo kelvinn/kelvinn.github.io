@@ -12,7 +12,7 @@ Installing the tools in VMware Server 2 is a little different than Workstation o
 
 Wait for 'Success' to show up on the bottom, and jump into your virtual machine. Mount the tools as so:
 
-```
+```bash
 mount /dev/cdrom /media/cdrom
 
 ```  

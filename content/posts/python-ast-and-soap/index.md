@@ -14,26 +14,26 @@ tags:
 For one of my projects I need to generate thumbnails for a page. And lots and lots and lots of them. Even though I can generate them via a python script and a very light "gtk browser", I would prefer to mitigate the server load. To do this I've decided to tap into the Alexa Thumbnail Service. They allow two methods: REST and SOAP. After several hours of testing things out, I've decided to toss in the towel and settle on REST. If you can spot the error with my SOAP setup, I owe you a beer.  
 I'm using the ZSI module for python.  
 
-#### 1\. wsdl2py
+#### 1. wsdl2py
 
   
 I pull in the needed classes by using wsdl2py.  
-```
+```bash
 wsdl2py -b http://ast.amazonaws.com/doc/2006-05-15/AlexaSiteThumbnail.wsdl
 ```  
   
 
-#### 2\. Look at the code generated.
+#### 2. Look at the code generated.
 
   
 See [AlexaSiteThumbnail_types.py](http://www.kelvinism.com/media/types.html) and [AlexaSiteThumbnail_client.py](http://www.kelvinism.com/media/client.html).  
   
 
-#### 3\. Write python code to access AST over SOAP.
+#### 3. Write python code to access AST over SOAP.
 
   
   
-```
+```bash
 
 #!/usr/bin/env python
 import sys
@@ -87,12 +87,15 @@ resp = port.Thumbnail(request)
   
   
 
-#### 4\. Run, and see error.
+#### 4. Run, and see error.
 
   
-```
+```bash
+
 ZSI.EvaluateException: Got None for nillable(False), minOccurs(1) element 
 (http://ast.amazonaws.com/doc/2006-05-15/,Url), 
+
+
 
  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" 
 xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" 
@@ -105,12 +108,12 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 ```  
   
 
-#### 5\. Conclusion
+#### 55. Conclusion
 
   
   
 I'm not entirely certain what I'm doing wrong. I've also written another version but actually with NPBinding connecting to the wsdl file. It seems to work much better, as it fully connects, and I get a 200, but it doesn't return the thumbnail location in the response, and I get a:  
-```
+```python
 TypeError: Response is "text/plain", not "text/xml"
 ```  
   

@@ -11,7 +11,7 @@ tags:
 - java
 ---
 
-Status:  
+Status:  ❌
 
 It is time for a new project. I've finally decided I want to do some electronics stuff - at least play around in that realm a little. However, I want to "get out and about" a little as well, so this leads me to my idea: a controllable long-range RC plane.
 

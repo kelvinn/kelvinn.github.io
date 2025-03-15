@@ -11,7 +11,7 @@ I have no idea if these notes on how to install mod_tile will be useful for anyb
 
 1) Install mapnik as per normal -- you may also need to do a...
 
-```
+```bash
 $ ./bootstrap
 $ ./autogen.sh
 $ ./configure
@@ -20,16 +20,12 @@ $ make
 
 ```  
   
-
 2) Install libagg (apt-get install libagg-dev)
-
 3) Make sure the mapnik library files are /usr/local/lib (libmapnik.*)
-
 4) Make sure to copy/install fonts and input folders into /usr/local/lib/mapnik
-
 5) Edit Makefile, change line 27 to where your include files are located
 
-```
+```c
 RENDER_CPPFLAGS += -I/usr/local/include/mapnik
 
 ```  
@@ -37,7 +33,7 @@ RENDER_CPPFLAGS += -I/usr/local/include/mapnik
 
 6) Edit Makefile, change line 33 to where your mapnik libraries are (libmapnik.*)
 
-```
+```c
 RENDER_LDFLAGS += -lmapnik -L/usr/local/lib
 
 ```  
@@ -45,7 +41,7 @@ RENDER_LDFLAGS += -lmapnik -L/usr/local/lib
 
 7) Edit Line 40 of gen_tile.cpp to point to your osm.xml file (that you can verify works with generate_image.py)
 
-```
+```c
 static const char *mapfile = "/home/kelvin/mapnik-osm/osm.xml";
 
 ```  
@@ -53,7 +49,7 @@ static const char *mapfile = "/home/kelvin/mapnik-osm/osm.xml";
 
 8) Edit line 219 of gen_tile.cpp to point to the correct location of the datasource input.
 
-```
+```c
 datasource_cache::instance()->register_datasources("/usr/local/lib/mapnik/input");
 
 ```  
@@ -61,14 +57,14 @@ datasource_cache::instance()->register_datasources("/usr/local/lib/mapnik/input"
 
 9) Edit line 221 of gen_tile.cpp to point to the correct location of your fonts directory.
 
-```
+```c
 load_fonts("/usr/local/lib/mapnik/fonts", 0);
 
 ```  
 
 10) The module will install in /usr/lib/apache2/modules, so mod_tile.conf should read:
 
-```
+```plain
 LoadModule tile_module /usr/lib/apache2/modules/mod_tile.so
 
 ```  

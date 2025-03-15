@@ -8,7 +8,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅
   
 A few months ago we decided we wanted a worm bin, as we were eating a lot of vegetables, and tossing away bits that weren't used. We were also buying soil for our plants, so it made sense to try to turn one into another.  
 

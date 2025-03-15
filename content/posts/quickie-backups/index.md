@@ -1,13 +1,13 @@
 ---
-title: 'Quickie Backups'
+title: 'Quick Backups'
 date: 2006-02-01T21:30:00.003+11:00
 draft: false
-url: /2006/02/quickie-backups_2198.html
+url: /2006/02/quick-backups_2198.html
 tags: 
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 All is well for some disasters, but what happens if our entire office burns down? SSH+rsync to the rescue, again.

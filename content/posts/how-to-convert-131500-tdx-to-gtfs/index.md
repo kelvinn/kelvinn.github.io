@@ -33,7 +33,7 @@ apt-get install python-software-properties
 add-apt-repository "deb http://archive.canonical.com/ lucid partner"
 apt-get update
 apt-get install sun-java6-jre
-```
+```bash
 
 7) Check how much memory is available  
 

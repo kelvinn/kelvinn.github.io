@@ -15,7 +15,7 @@ First, as usual, feeds.py
 #### feeds.py
 
   
-```
+```python
 class PerDirt(Feed):
 
     link = "/"
@@ -44,7 +44,7 @@ You can see that this differs slightly from the simpler syndication example. I'l
 #### urls.py
 
   
-```
+```python
 feeds = {
     'mydirt': PerDirt,
 }
@@ -63,7 +63,7 @@ The title and description are self-explanatory. The items are a query from the F
 
   
   
-```
+```python
 Comment by {{ obj.person_name }}
 ```  
   
@@ -78,18 +78,11 @@ Once again, the filename is important (mydirt_title). obj.person_name is the nam
   
   
   
-```
+```bash
 {{ obj.comment }}
 Posted by: {{ obj.person_name }}
 Published: {{ obj.submit_date }}
 ```  
   
-  
-  
-  
-If you are curious how to get that little orange icon next to your site's url, you do this:  
-```
-
-```  
   
 That's it. Hopefully I've explained how to create somewhat custom syndication feeds, in case you needed another example.

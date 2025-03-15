@@ -12,7 +12,7 @@ tags:
 
 I hear many complaints and questions about newforms, but I've personally found it rather easy and logical to use. There are numerous ways for you to use do forms in Django, and most likely the best way to see them all is to [read the docs](http://www.djangoproject.com/documentation/newforms/). On the Colddirt demo site, this is how I used newforms. I'll take the index page as an example.  
 I've accessed the newforms module like so:  
-```
+```bash
 from django import newforms as forms
 ```  
   
@@ -22,13 +22,14 @@ The next thing to look at is the actual creation of the form. You can keep your 
 
   
   
-```
+```python
 attrs_dict = { 'class': 'norm_required' }
 tag_dict = { 'class': 'tag_required' }
 
 class DirtyForm(forms.Form):
-    description = forms.CharField(widget=forms.Textarea(attrs=textbox_dict), label='What\\'s your cold dirt?')
+    description = forms.CharField(widget=forms.Textarea(attrs=textbox_dict), label='What\'s your cold dirt?')
     tag_list = forms.CharField(max_length=150, widget=forms.TextInput(attrs=tag_dict), label='Tags')
+
 ```  
   
 I'm keeping it simple for now. Some key things to note is the field type (CharField) and the widget type (Textarea/TextInput). You can guess what each means. Here's a gem for your tool chest: how do you apply CSS to the forms? That is what the 'attrs=' part is about -- that will put in a class for you to assign CSS to. Nifty. The label creates a 'label' element that you can access. Let's render the form and send it to the template.  
@@ -37,7 +38,7 @@ To get a form displayed we need to generate the form, and send it to the templat
 #### views.py
 
   
-```
+```python
 dirt_form = DirtyForm() 
 ```  
   
@@ -46,7 +47,7 @@ Send it to the template.
 #### views.py
 
   
-```
+```python
     return list_detail.object_list(
            request,
            queryset = Dirt.objects.order_by('?')[:100],
@@ -62,7 +63,7 @@ That's it, although we will revisit this index view shortly. One important thing
 #### templates/dirt_list.html
 
   
-```
+```python
 {% if form %}
         
 
@@ -77,7 +78,7 @@ The form thus appears because of the block, {{ form }}. You can see in the actio
 
   
   
-```
+```bash
 def index(request):
     import re
     from django.template.defaultfilters import slugify
@@ -98,7 +99,7 @@ def index(request):
             # I opted to not store tag_list in each entry
             # Splitting to get the new tag list is tricky, because people
             # will stick commas and other whitespace in the darndest places.
-            new_tag_list = [t for t in re.split('[\\s,]+', dirt_form.clean_data['tag_list']) if t]
+            new_tag_list = [t for t in re.split('[\s,]+', dirt_form.clean_data['tag_list']) if t]
             # Now add the tags
             for tag_name in new_tag_list:
                 tag, created = Tagling.objects.get_or_create(name=slugify(tag_name), slug=slugify(tag_name))
@@ -115,13 +116,13 @@ def index(request):
 ```  
   
 Let me pretend I am the form and have just been submitted to the view. First I'm tested if I'm a POST. Next, my data is dumped into the dirt_form variable. I'm then tested if I'm valid data or not (validation explanation next). Since I'm valid data, stuff happens. In the instance of Colddirt, a random word is taken from the Word database. The word is then updated as is_taken, and saved. Then the dirt is actually created. One thing to notice is how we access form data:  
-```
+```python
 description=dirt_form.clean_data['description']
 ```  
   
 So, the new dirt (with description and new word) is saved. Next, let's deal with the tags. Credit goes to [James](http://www.b-list.org/) for parsing the tag_list.  
-```
-            new_tag_list = [t for t in re.split('[\\s,]+', dirt_form.clean_data['tag_list']) if t]
+```python
+            new_tag_list = [t for t in re.split('[\s,]+', dirt_form.clean_data['tag_list']) if t]
             # Now add the tags
             for tag_name in new_tag_list:
                 tag, created = Tagling.objects.get_or_create(name=slugify(tag_name), slug=slugify(tag_name))
@@ -134,9 +135,9 @@ So what about validation? Don't think I forgot this one. Validation (from what I
 #### forms.py
 
   
-```
+```bash
 class DirtyForm(forms.Form):
-    description = forms.CharField(widget=forms.Textarea(attrs=textbox_dict), label='What\\'s your cold dirt?')
+    description = forms.CharField(widget=forms.Textarea(attrs=textbox_dict), label='What\'s your cold dirt?')
     tag_list = forms.CharField(max_length=150, widget=forms.TextInput(attrs=tag_dict), label='Tags')
  
     def clean_description(self):
@@ -159,7 +160,7 @@ class DirtyForm(forms.Form):
                 hasNoProfanities(value, None)
                 return value
             except:
-                raise forms.ValidationError(u'Extremily dirty words or racial slurs are not allowed!') 
+                raise forms.ValidationError(u'Extremily dirty words or racial slurs are not allowed!')
 
 ```  
   

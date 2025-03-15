@@ -21,7 +21,7 @@ Enter [Zenity](http://live.gnome.org/Zenity). Initially I created a PyGTK monito
 
 And here is the simplistic code behind it:
 
-```
+```bash
 #!/bin/sh
 
 ans=$(zenity  --list  --text "How do you want to switch your monitor?" \\
@@ -30,16 +30,16 @@ FALSE Both);
 
 if [ "$ans" = "LCD" ]
 then
-xrandr --output VGA --off
-xrandr --output LVDS --auto
+    xrandr --output VGA --off
+    xrandr --output LVDS --auto
 elif [ "$ans" = "VGA" ]
 then
-xrandr --output LVDS --off
-xrandr --output VGA --auto
+    xrandr --output LVDS --off
+    xrandr --output VGA --auto
 elif [ "$ans" = "Both" ]
 then
-xrandr --output VGA --auto
-xrandr --output LVDS --mode 1024x768
+    xrandr --output VGA --auto
+    xrandr --output LVDS --mode 1024x768
 fi
 
 

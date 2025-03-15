@@ -7,7 +7,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 Time has come to upgrade a few servers in the office. An older P4 2.8 was being used as a webapp server, and that needs to go. The resource utilization wasn't too much of an issue, however the computer was aging. Plus, it wasn't strictly built to host critical services, but since we grew so quickly, it is what was available. Additionally, the PDC was hosting user files and with these mounting in size, a dedicated file server is in order.

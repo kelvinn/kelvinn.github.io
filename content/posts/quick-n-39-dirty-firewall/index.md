@@ -1,5 +1,5 @@
 ---
-title: 'Quick n&#39; Dirty Firewall'
+title: 'Quick and Dirty Firewall'
 date: 2006-08-15T20:30:00.002+10:00
 draft: false
 url: /2006/08/quick-n-dirty-firewall_8747.html
@@ -17,7 +17,7 @@ Depending on your server, first locate iptables:
   
   
   
-```
+```bash
  [root@vps /]# which iptables 
 ```  
   
@@ -30,7 +30,7 @@ Create a whitelist (ignored by firewall) or blacklist (packet dropped) if you wi
   
   
   
-```
+```bash
  [root@vps /]# vi /usr/local/etc/whitelist.txt 
 ```  
   
@@ -39,7 +39,7 @@ And/Or...
   
   
   
-```
+```bash
 [root@vps /]# vi /usr/local/etc/blacklist.txt 
 ```  
   
@@ -48,7 +48,7 @@ In each file, add each IP per line, for instance:
   
   
   
-```
+```bash
  4.2.2.2 66.35.15.20 
 ```  
 
@@ -59,7 +59,7 @@ In each file, add each IP per line, for instance:
 Then put the following in /etc/init.d/firewall.sh, and edit to fit your needs:  
   
   
-```
+```bash
 
 #!/bin/sh
 #
@@ -102,7 +102,7 @@ $IPTABLES -A INPUT -t filter -s 127.0.0.1 -j ACCEPT
 ## Whitelist
 #
 
-for x in \`grep -v ^# $WHITELIST | awk \\'{print $1}\\'\`; do
+for x in `grep -v ^# $WHITELIST | awk \'{print $1}\'`; do
         echo "Permitting $x..."
         $IPTABLES -A INPUT -t filter -s $x -j ACCEPT
 done
@@ -111,7 +111,7 @@ done
 ## Blacklist
 #
 
-for x in \`grep -v ^# $BLACKLIST | awk \\'{print $1}\\'\`; do
+for x in `grep -v ^# $BLACKLIST | awk \'{print $1}\'`; do
         echo "Denying $x..."
         $IPTABLES -A INPUT -t filter -s $x -j DROP
 done
@@ -146,7 +146,7 @@ $IPTABLES -A INPUT -p tcp --syn -j DROP
 
   
   
-```
- [root@vps /]# chmod 700 /etc/init.d/firewall.sh
-  [root@vps /]# /etc/init.d/firewall.sh 
+```bash
+[root@vps /]# chmod 700 /etc/init.d/firewall.sh
+[root@vps /]# /etc/init.d/firewall.sh 
 ```

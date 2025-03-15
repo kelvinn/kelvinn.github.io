@@ -14,21 +14,13 @@ Two hours later everything was up and running -- and I guess I can't complain ab
 
   
 *   apache/mod_php/ssl with ~10 domains
-  
 *   apache/mod_python/ssl with ~4 domains
-  
 *   lighttpd with ~5 domains (static files)
-  
 *   about 8 gigs of web data/images
-  
 *   svn repos + web_dav access
-  
 *   mysql restored
-  
 *   postfix(chroot)/dovecot/sasl + mysql auth
-  
 *   home dirs restored
-  
 *   chrooted users again
   
 

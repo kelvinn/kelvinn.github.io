@@ -10,13 +10,9 @@ tags:
 You might be asking: why would you want to chroot ssh? Why use ssh anyways? Here are the quick answers:  
 
   
-*   **FTP usually sucks**. Unless sent over SSL, all information is sent _cleartext_.
-  
-*   **SSH usually rules**. SSH sends all data over an encrypted channel -- the main drawback is: you can often browse around the system, and if permissions aren't set right, read things you shouldn't be able to.
-  
-*   **Chroot'd SSH rocks**. The solution to both the above problems
-
-.  
+*   **FTP usually isn't great**. Unless sent over SSL, all information is sent _cleartext_.
+*   **SSH usually is much better**. SSH sends all data over an encrypted channel -- the main drawback is: you can often browse around the system, and if permissions aren't set right, read things you shouldn't be able to.
+*   **Chroot'd SSH rocks**. The solution to both the above problems.  
   
   
 So, let me tell a quick story.  
@@ -29,7 +25,7 @@ This quick demo will be on Debian, we'll create a pretend user named "karl." (I'
 
 session required pam_chroot.so  
   
-```
+```bash
 kelvin@server ~$ sudo apt-get install libpam-chroot makejail
 ```  
   
@@ -39,23 +35,14 @@ kelvin@server ~$ sudo apt-get install libpam-chroot makejail
   
   
 Put the following in /etc/makejail/create-user.py:  
-```
+```python
 #Clean the jail
 
 cleanJailFirst=1
-
-
 preserve=["/html", "/home"]
-
-
 chroot="/var/chroot/karl"
-
-
 users=["root","karl"]
-
 groups=["root","karl"]
-
-
 packages=["coreutils"]
 
 ```  
@@ -64,21 +51,14 @@ packages=["coreutils"]
 **Edit**: If you need to use SFTP also, try this config:  
   
   
-```
+```python
 cleanJailFirst=1
-
 preserve=["/html", "/home"]
-
 chroot="/home/vhosts/karl"
-
 forceCopy=["/usr/bin/scp", "/usr/lib/sftp-server", /
-
  "/usr/bin/find", "/dev/null", "/dev/zero"]
-
 users=["root","karl"]
-
 groups=["root","karl"]
-
 packages=["coreutils"]
 
 ```  
@@ -89,7 +69,7 @@ As you'll see, there is a "preserve" directive. This is so that when you "clean"
 
   
 Add the following to /etc/pam.d/ssh:  
-```
+```bash
 # Set up chrootd ssh
 
 session required pam_chroot.so
@@ -101,7 +81,7 @@ session required pam_chroot.so
 
   
 Edit /etc/security/chroot.conf and add the following:  
-```
+```bash
 karl /var/chroot/karl
 ```  
   
@@ -109,7 +89,7 @@ karl /var/chroot/karl
 #### Fifth: create/chown the chroot'd dir
 
   
-```
+```bash
 kelvin@server ~$ sudo mkdir -p /var/chroot/karl/home
 
 kelvin@server ~$ sudo chown /var/chroot/karl/home

@@ -15,13 +15,13 @@ Let's say you plug in a USB drive into a Linux machine, and try to access it (mo
 
 ```bash
 Error opening /dev/sda: No medium found  
-```
+```bash
   
 Naturally the first thing you will do is ensure that it appeared when you plugged it in, so you run 'dmesg' and get:  
 
 ```bash
 sd 2:0:0:0: [sda] 125045424 512-byte logical blocks: (64.0 GB/59.6 GiB)  
-```
+```bash
   
 And it appears in /dev  
 
@@ -29,7 +29,7 @@ And it appears in /dev
 Computer:~ $ ls /dev/sd*  
 /dev/sda  
 Computer:~ $  
-```
+```bash
   
 Now what? Here's what has bitten me twice: make sure the drive has enough power. Let's say you mounted a 2.5" USB drive into a Raspberry Pi. The Pi probably doesn't have enough current to power the drive, but it _does_ have enough to make the drive recognisable. Or, if you are like me, the USB charger powering the drive is faulty, so even though it has power, it doesn't have enough.  
   

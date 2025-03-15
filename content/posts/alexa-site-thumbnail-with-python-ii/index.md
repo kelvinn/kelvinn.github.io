@@ -11,8 +11,8 @@ This is how I actually use Alexa Site Thumbnail, and since I'min a sharing mood,
 
 #### views.py
 
-  
-```
+
+```python
 from getAST import create_thumbnail_list
 blog_sites = CoolSiteListing.objects.filter(owner__username__iexact=user_name, is_active=True)
 create_thumbnail_list(blog_sites).start()
@@ -25,7 +25,7 @@ Notice the .start() on the create_thumbnail_list function? That starts the threa
 
   
   
-```
+```bash
 import base64
 import datetime
 import hmac
@@ -78,7 +78,7 @@ class create_thumbnail(threading.Thread):
             result_xmlstr = urllib.urlopen(url, urllib.urlencode(parameters)).read()
             result_xml = xml.dom.minidom.parseString(result_xmlstr)
             image_urls = result_xml.childNodes[0].getElementsByTagName('aws:Thumbnail')[0].firstChild.data
-            #image_name = re.sub("\\.|\\/", "_", result_xml.childNodes[0].getElementsByTagName('aws:RequestUrl')[0].firstChild.data) + ".jpg"
+            #image_name = re.sub("\.|\/", "_", result_xml.childNodes[0].getElementsByTagName('aws:RequestUrl')[0].firstChild.data) + ".jpg"
             image_name = self.site_slug + ".jpg"
             store_name = STORELOC + image_name
             urllib.urlretrieve(image_urls, store_name)

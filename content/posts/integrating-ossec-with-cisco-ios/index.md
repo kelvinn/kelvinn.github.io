@@ -15,7 +15,7 @@ tags:
 
 I rank OSSEC as one of my favorite pieces of open source software, and finally decided to play around with it more in my own free time. (Yup, I do this sort of stuff for _fun_). My goal was quite simple: send syslog packets from my Cisco to my "proxy" server, running OSSEC. I found that, although OSSEC supports Cisco IOS logging, it didn't really work. In fact, I couldn't find any examples or articles of anybody actually getting it to work.
 
-I initially tried to get it to work "correctly," and soon settled to "just getting it to work." I implemented some rules in the local_rules.xml file, which worked, but I'm pretty stubborn, and wanted to do it "correctly." With a couple pots of tea, and the support of my girlfriend, I became much, much more familiar with OSSEC. The key (and a lot of credit) goes to Jeremy Melanson for [hinting at some of the updates](http://www.ossec.net/ossec-list/2007-September/msg00124.html) to the decoder.xml file that need to take place.
+I initially tried to get it to work "correctly," and soon settled to "just getting it to work." I implemented some rules in the local_rules.xml file, which worked, but I'm pretty stubborn, and wanted to do it "correctly." With a couple pots of tea I became much, much more familiar with OSSEC. The key (and a lot of credit) goes to Jeremy Melanson for [hinting at some of the updates](http://www.ossec.net/ossec-list/2007-September/msg00124.html) to the decoder.xml file that need to take place.
 
 The first step is to read the OSSEC + Cisco IOS [wiki page](http://www.ossec.net/wiki/index.php/PIX_and_IOS_Syslog_Config_examples#Configuring_Cisco_IOS_router). Everything on that page is pretty straight forward. I then added three explicit drop rules at the end of my Cisco's ACL:
 

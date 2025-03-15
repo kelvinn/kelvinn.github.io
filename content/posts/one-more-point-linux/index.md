@@ -14,9 +14,7 @@ For me, I'll admit, there are three things that Linux still lacks:
 
   
 *   Simplistic video conferencing support
-  
 *   Video editing support
-  
 *   Gaming
   
 

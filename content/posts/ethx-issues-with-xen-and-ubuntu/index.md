@@ -15,7 +15,7 @@ I was able to get them to decrease by looking in the /etc/udev/rules.d/70-persis
 
 Next, I was able to prevent this by simply inserting a MAC address to the interface in the configuration. For instance, one of my domU's has this entry:
 
-```
+```bash
 vif         = [ 'mac=00:D0:59:83:DC:B5,bridge=xenbr0' ]
 
 ```  
@@ -23,7 +23,7 @@ vif         = [ 'mac=00:D0:59:83:DC:B5,bridge=xenbr0' ]
 
 Lastly, I made sure (as I would with any server) to create an entry in the /etc/network/interfaces file.
 
-```
+```bash
 auto eth0
 iface eth0 inet static
 address 192.168.1.16

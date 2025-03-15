@@ -15,7 +15,7 @@ I realized a few of my log files were growing unusually large, and even worse, l
 
 Firstly, I had to rename the actual log files. So, to rename kelvinism_access_log to kelvinism_access.log, a one-liner:
 
-```
+```bash
 for x in *_log; do mv $x `basename $x _log`.log; done;
 
 
@@ -24,7 +24,7 @@ for x in *_log; do mv $x `basename $x _log`.log; done;
 
 Next, I needed to rename the log location inside each of the Apache config files. While a one-liner might be possible, I used the following tiny script:
 
-```
+```bash
 #!/bin/sh
  
 for x in *

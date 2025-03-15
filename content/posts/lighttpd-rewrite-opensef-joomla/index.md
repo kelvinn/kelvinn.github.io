@@ -14,20 +14,22 @@ So...
 2) Make sure site is listed in OpenSEFs manager inside Joomla  
 3) Make sure SEO is Enabled insided the Joomla 'Site Configuration'  
 4) Change your host conditional statement so it matches this:  
-```
-$HTTP[\\"host\\"] =~ \\"(^|\\\\.)yourdomainname\\\\.com$\\" {
-     server.document-root = \\"/var/www/your/domainlocation/\\"
+```bash
+$HTTP[\"host\"] =~ \"(^|\\.)yourdomainname\\.com$\" {
+     server.document-root = \"/var/www/your/domainlocation/\"
      url.rewrite-once = (
-          \\"^images*\\\\.(jpg|jpeg|gif|png)\\" => \\"$0\\",
-          \\"^/administrator.*$\\" => \\"$0\\",
-          \\"^/mambots.*$\\" => \\"$0\\",
-          \\"(/|\\\\.htm|\\\\.php|\\\\.html|/[^.]*)$\\" => \\"/index.php\\"
+          \"^images*\\.(jpg|jpeg|gif|png)\" => \"$0\",
+          \"^/administrator.*$\" => \"$0\",
+          \"^/mambots.*$\" => \"$0\",
+          \"(/|\\.htm|\\.php|\\.html|/[^.]*)$\" => \"/index.php\"
      )
 }
 
-```Clear your browser cache, and check it out. If it doesn't work, you can try to "Delete All" URLs inside OpenSEF, and then your site will rebuild as necessary. Another note, as you can maybe tell by the above ruleset: you can have rewrite ignore directories. Just include:  
-  
-  
 ```
-\\"^/directory.*$\\" => \\"$0\\",
+
+Clear your browser cache, and check it out. If it doesn't work, you can try to "Delete All" URLs inside OpenSEF, and then your site will rebuild as necessary. Another note, as you can maybe tell by the above ruleset: you can have rewrite ignore directories. Just include:  
+  
+  
+```bash
+\"^/directory.*$\" => \"$0\",
 ```

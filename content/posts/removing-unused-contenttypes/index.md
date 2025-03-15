@@ -30,7 +30,7 @@ delicious
 mapfeed
 comments
 ...
-```
+```bash
 
 I could then delete the unused contenttypes.  
 

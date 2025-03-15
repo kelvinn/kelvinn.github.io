@@ -28,7 +28,7 @@ hg clone https://gtfsdb.googlecode.com/hg/ gtfsdb
 sudo apt-get install python-setuptools
 sudo easy_install psycopg2
 sudo apt-get install build-essential
-```
+```bash
 
 #### Download GTFS database
 
@@ -38,7 +38,7 @@ ubuntu@domU-12-31-39-00-5D-B8:/mnt/gtfsdb$ pwd
 sudo python setup.py install
 sudo wget http://cdn.kelvinism.com/google_transit.zip
 sudo apt-get install python-psycopg2
-```
+```bash
 
 
 
@@ -53,7 +53,7 @@ database = postgresql://nsw:131500@10.128.49.175:5432/nsw
 filename = /mnt/google_transit.zip
 geospatial = True
 #schema = None
-```
+```bash
 
 #### Perform import
 

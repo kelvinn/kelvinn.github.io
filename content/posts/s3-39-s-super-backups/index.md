@@ -1,5 +1,5 @@
 ---
-title: 'S3&#39;s Super Backups'
+title: 'S3 Super Backups'
 date: 2007-01-22T21:30:00.004+11:00
 draft: false
 url: /2007/01/s3-super-backups_8294.html
@@ -13,11 +13,11 @@ My buddy [Ian](http://www.ianfitzpatrick.com/)  mentioned Amazon's S3 service, 
   
 1) Making sure SSL is working.  The site mentioned above just has you hunt down some random bash file, that isn't even hosted anymore.  On my Debian system I simply added this to my upload.sh:  
   
-```
+```bash
 export SSL_CERT_DIR=/etc/ssl/certs/
 ```  
 2) The second suggestion is another example of the s2sync layout.  Let's say you created the bucket "kelvinism" -- the following would move the documents inside a test folder from /home/kelvin named test to a folder named test in the kelvinism bucket.  Sweet.  
   
-```
+```bash
  s3sync.rb -r --ssl --delete /home/kelvin/test kelvinism:/test  
 ```

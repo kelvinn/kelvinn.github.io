@@ -19,7 +19,7 @@ However, in my quest to read every RTFM I stumbled upon a post regarding Python+
 #### websearch.py
 
   
-```
+```bash
 
 #!/usr/bin/python
 
@@ -80,7 +80,7 @@ def get_websearch(searchterm):
 ```  
   
 You run it like this:  
-```
-\>>> from websearch import get_websearch
+```python
+>>> from websearch import get_websearch
 >>> get_websearch('python')
 ```

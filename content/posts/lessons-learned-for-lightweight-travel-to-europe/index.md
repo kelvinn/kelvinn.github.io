@@ -10,7 +10,7 @@ tags:
 
 Now that my Europe trip has ended, I need to leave a note of things I wish I had done better, both travel-wise, and the stuff I brought along.  
   
-I like to travel light, and find it a little comical when I see people struggling with giant 70L backpacks; my partner and I always do carry-on, no matter for a two week trip, or two months. (This means my packs have to weigh less than 7KG). Even in winter it is possible to pack light. The trick seems to be only packing what one will use regularly, with no duplicates, of appropriate size, and hopefully reusable for other purposes. Don't pack anything you would be gutted if it broke.  
+I like to travel light, and find it a little comical when I see people struggling with giant 70L backpacks; I always do carry-on, no matter for a two week trip, or two months. (This means my packs have to weigh less than 7KG). Even in winter it is possible to pack light. The trick seems to be only packing what one will use regularly, with no duplicates, of appropriate size, and hopefully reusable for other purposes. Don't pack anything you would be gutted if it broke.  
   
 The lessons below are not just to pack light, but also to reduce stress. Some really only apply to me for next time :) This is not a howto list on packing light for travel, just a few things I need to do better for next time.  
   

@@ -10,22 +10,22 @@ tags:
 I have the need to generate an SSL cert (Apache2) about once every 3 months. And since I'm cheap, I don't ever actually *buy* one, I just self-sign it. And every time I forget the commands needed. So, here they are, for my reference only.  
 **1) Generate Private Key**  
   
-```
+```bash
 openssl genrsa -des3 -out server.key 1024
 ```  
 **2) Generate a CSR**  
   
-```
+```bash
 openssl req -new -key server.key -out server.csr
 ```  
 **3) Remove passphrase**  
   
-```
+```bash
 cp server.key server.key.org
 openssl rsa -in server.key.org -out server.key
 ```  
 **4) Generate Self-Signed Cert**  
   
-```
+```bash
 openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 ```

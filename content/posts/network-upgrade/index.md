@@ -7,7 +7,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 A network upgrade is in order, since we are depending more and more on our internet connectivity. Historically we have been using D-Link "Business Grade" equipment over DSL lines (decent bandwidth, but not 100% reliable, plus latency that is a little high). Time for an upgrade.

@@ -9,7 +9,7 @@ tags:
 - netflow
 ---
 
-Status:  
+Status:  ✅ 
   
 
 One of the greatest benefits, in my opinion, of Cisco routers is the ability to generate netflows. In a lot of ways, I would prefer to do this than implement some appliance (say, using ntop). The ability to analyse the amount of traffic becomes extremely valuable. Not only can one measure the amount of traffic, but the type of traffic that is being generated through the network.

@@ -7,7 +7,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 The webapp server is running fine, but backups are important. Better yet, a hot computer is a great idea. To do this, I setup an older spare rackmount as a 'live' webapp server, just in case. A duplicate LAMP was setup, web apps copied over SSH via rsync on a regular basis, and the icing on the cake: mysql replication.

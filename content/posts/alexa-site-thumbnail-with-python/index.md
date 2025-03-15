@@ -12,7 +12,7 @@ For one of my sites I needed to get thumbnails, yet [Alexa Site Thumbnail](http:
 #### ThumbnailUtility.py
 
   
-```
+```python
 
 import base64
 import datetime
@@ -108,17 +108,19 @@ def create_thumbnail_list(all_sites, img_size):
 ```  
   
 This is how you interact with this code for a single thumbnail:  
-```
-\>>> from ThumbnailUtility import *
+```python
+>>> from ThumbnailUtility import *
 >>> create_thumbnail('kelvinism.com', 'Large')
 u'http://s3-external-1.amazonaws.com/alexa-thumbnails/A46FF6A30BECB0730455F2AB306EDC28605BC19Cl?Signature=XpsxgPey4b0JgreZA46XnvHVVLo%3D&Expires=1181110547&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2'
+
 ```  
 And for a list:  
-```
-\>>> from ThumbnailUtility import *
+```python
+>>> from ThumbnailUtility import *
 >>> all_sites = ['kelvinism.com', 'alexa.com', 'vpslink.com']
 >>> create_thumbnail_list(all_sites, 'Small')
 [u'http://s3-external-1.amazonaws.com/alexa-thumbnails/A46FF6A30BECB0730455F2AB306EDC28605BC19Cs?Signature=%2BfcOUKwH4xD9IH9o1vfto%2FMoALU%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2', u'http://s3-external-1.amazonaws.com/alexa-thumbnails/D798D8CE8F821FCC63159C92C85B70319E44D0EFs?Signature=6jriChrGM%2F8DoejN9dn9Dv3Lc5w%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2', u'http://s3-external-1.amazonaws.com/alexa-thumbnails/23529C34E0518AA9C2577653AC237D3647BA8D2Ds?Signature=5ksuwZx0I5TqXWL3Kt%2BWP6r2LQk%3D&Expires=1181110698&AWSAccessKeyId=1FVZ0JNEJDA5TK457CR2']
+
 ```  
   
 This is just a simple example to get your feet wet, maybe you'll find it useful. If you are wondering how to integrate this with Django, don't worry, I've got you covered.

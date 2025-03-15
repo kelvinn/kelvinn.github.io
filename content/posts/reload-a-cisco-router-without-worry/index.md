@@ -15,7 +15,7 @@ Recently I tried editing my Cisco's ACL at home on the train. It went something 
 *   I started updating the ACL
 *   I hit a blackspot in my 3g coverage
 *   My command stops at "router(config)#access-"
-*   I get a call from my partner saying "what did you do to our internet!"
+*   I get an alert saying my home internet was down
 
 Although it is simple enough to just ask her to "flip the switch on the black box", I still don't like doing it. Plus, if she's not home, I'm stuck. This accident immediately reminded me of one of a trait of the 'reload' command: it can be scheduled.  
   

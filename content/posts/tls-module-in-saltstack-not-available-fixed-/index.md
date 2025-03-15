@@ -14,7 +14,7 @@ I was trying to install [HALite](https://github.com/saltstack/halite), the WebUI
 ```bash  
 'tls.create_ca_signed_cert' is not available.  
 'tls.create_ca' is not available.
-```
+```bash
 Basically, the 'tls' module in Salt simply didn't appear to work. The reason for this is detailed on [intothesaltmind.org](http://intothesaltmine.org/install_and_configure_halite_alpha_on_arch_linux.html):  
   
 _Note: Use of the tls module within Salt requires the pyopenssl python extension._  
@@ -24,14 +24,14 @@ That makes sense. We can fix this with something like:
 apt-get install libffi-dev  
 pip install -U pyOpenSSL  
 /etc/init.d/salt-minion restart
-```
+```bash
 Or, better yet, with Salt alone:  
   
 ```bash
 salt '*' cmd.run 'apt-get install libffi-dev'  
 salt '*' pip.install pyOpenSSL  
 salt '*' cmd.run "service salt-minion restart"
-```
+```bash
 
 The commands to create the PKI key should work now:  
   

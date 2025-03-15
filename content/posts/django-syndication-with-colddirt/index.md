@@ -15,7 +15,7 @@ Creating feeds in Django is freaking simple. I'll start with an example of just 
 #### feeds.py
 
   
-```
+```python
 
 from django.contrib.syndication.feeds import Feed
 from colddirt.dirty.models import Dirt
@@ -38,12 +38,12 @@ What this will do is query our Dirt DB and return an obj. The fields here are pr
 
   
 We need three things in our urls.py -- first, import our feeds from feeds.py:  
-```
+```python
 from colddirt.feeds import LatestDirts
 ```  
   
 Next, we map the feed we want to a name urls.py can use:  
-```
+```python
 feeds = {
     'newdirt': LatestDirts,
 }
@@ -51,7 +51,7 @@ feeds = {
 ```  
   
 Finally we create which URL to use for the feeds:  
-```
+```python
     (r'^feeds/(?P.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
 ```  
   
@@ -60,19 +60,17 @@ When we look at a request, the process goes like this: it comes in as /feeds/new
 #### templates/feeds/newdirt_title.html
 
   
-```
+```plain
 {{ obj.dirtword }}
 ```  
 
 #### templates/feeds/newdirt_description.html
 
   
-```
+```plain
 {{ obj.description }}
 ```  
-The naming for the templates, as usual, is important. If you want to have that little orange RSS button near your url, add this to your template's head:  
-```
+The naming for the templates, as usual, is important. If you want to have that little orange RSS button near your url, add this to your template's head. 
 
-```  
   
 So, there you have it, a simple example of how to use Django's syndication framework. I'll follow this up with another slightly more complex tutorial.

@@ -15,7 +15,7 @@ Because I put some sweat and blood into these sites, I thought it would be only 
 
 Back in Taiwan I created a site to demo blogs. The idea certainly wasn't revolutionary, but I thought that somebody would find it useful. Nope.
 
-The second idea was to send a bunch of little ducks around the world and track their progress. My friend Jamie took one to Europe, but besides that, I don't think most people really understood that they were supposed to hand the duck off to somebody else. The main reason I created the site was because my partner was out of town. I'll re-brand and launch it again if I can find a little twitter logo to send around, because hopefully people on twitter will understand to pass the duck onwards.
+The second idea was to send a bunch of little ducks around the world and track their progress. My friend Jamie took one to Europe, but besides that, I don't think most people really understood that they were supposed to hand the duck off to somebody else. I'll re-brand and launch it again if I can find a little twitter logo to send around, because hopefully people on twitter will understand to pass the duck onwards.
 
 So photos for nostalgic sake.
 

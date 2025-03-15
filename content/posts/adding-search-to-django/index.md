@@ -10,14 +10,14 @@ tags:
 ---
 
 This is fairly well documented in the Django docs, so I'll be brief. This is the the bit of search code I use in almost all of my Django sites, and it works great:  
-```
+```python
 
 def search(request):
     from django.db.models import Q
     q = request.GET.get("q", "")
     if q and len(q) >= 3:
-        clause = Q(dirtword__icontains=q)               \\
-               | Q(description__icontains=q)       \\
+        clause = Q(dirtword__icontains=q)               \
+               | Q(description__icontains=q)       \
                | Q(tags__name__icontains=q)        
         site_search = Dirt.objects.filter(clause).distinct()
     else:

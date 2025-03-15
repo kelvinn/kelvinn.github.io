@@ -44,7 +44,7 @@ I'll get a few basic troubleshooting commands out of the way first. After updati
 64 bytes from 192.168.1.1: icmp_seq=2412 ttl=64 time=6521.868 ms
 ...
 
-```
+```bash
 
 The steps to resolve are as follows:
 

@@ -131,7 +131,7 @@ And we get this output:
 13 Barry Kripke Ami Sarah Fowler  
 10 Barry Kripke Stu Broom  
 14 Barry Kripke Alexander Jensen  
-```
+```bash
 
 As you can see, this displays the [Levenstein distance](http://en.wikipedia.org/wiki/Levenshtein_distance) of the two sequences. Another option we have is to look at the ratio.  
   

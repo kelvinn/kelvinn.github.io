@@ -10,7 +10,7 @@ tags:
 ---
 
 I love my Snort, I really do.  But sometimes, I just don't need all the extra overhead -- sometimes the resources on a server are somewhat, limited.  Looking for a solution I stumbled upon [PSAD](http://www.cipherdyne.com/psad/) , a way to detect port scans.  Since port scans are often one of the first tactics used to find vulnerabilities on a server, it is a pretty good idea to detect them.   Depending on the attack, I receive a nice little email telling me what is going on.  To test it out I first fired up nmap, and received a few emails.  Next I fired up nessus with updated plugins -- you can be the judge.  I now have 50 emails from myself telling me somebody is doing something naughty:  
-```
+```bash
 \=-=-=-=-=-=-=-=-=-=-=-= Tue Jan 23 10:30:04 2007 =-=-=-=-=-=-=-=-=-=-=-=
 
 

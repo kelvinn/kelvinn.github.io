@@ -18,7 +18,7 @@ I have had to search for the commands to setup a Windows 2003 box as an ntp clie
 
 Open up the cmd prompt and type in:
 
-```
+```bash
 w32tm /config /manualpeerlist:"0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org" 
 /syncfromflags:MANUAL /reliable:YES /update
 
@@ -29,7 +29,7 @@ w32tm /config /manualpeerlist:"0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.po
 
   
   
-```
+```bash
 net time setsntp: "0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org"
 
 ```  
