@@ -33,7 +33,7 @@ def download_images_from_markdown(md_file, output_folder):
                         img_file.write(chunk)
                 
                 # Replace URL in content with local path
-                content = content.replace(img_url, "/images/" + img_name)
+                content = content.replace(img_url, img_name)
                 print(f"Downloaded: {img_url} -> {local_path}")
             else:
                 print(f"Failed to download: {img_url}")
@@ -54,5 +54,5 @@ if __name__ == "__main__":
             print(filename.path)
 
             page_bundle = "content/posts/beers-of-myanmar/"
-            markdown_file = filename.path + "index.md"
+            markdown_file = filename.path + "/index.md"
             download_images_from_markdown(markdown_file, filename.path)
