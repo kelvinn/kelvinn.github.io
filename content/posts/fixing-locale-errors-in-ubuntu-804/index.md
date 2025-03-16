@@ -38,7 +38,7 @@ en_US ISO-8859-1
 en_US.ISO-8859-15 ISO-8859-15
 
 
-```bash
+```
 
 You can then do a 'dpkg-reconfigure locales' and they will be generated correctly. For a list of supported locales, try this:
 

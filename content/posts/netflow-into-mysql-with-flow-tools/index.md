@@ -59,7 +59,7 @@ kelvin@monitor:/usr/bin$ cat flow-mysql-export
 
 flow-export -f3 -u "username:password:localhost:3306:netflow:flows" < /flows/router/$1
 
-```bash
+```
 
 6) Create the /flows/router directory
 7) Start flow-capture (9801 is the port netflow traffic is being directed to); all done.

@@ -18,7 +18,7 @@ Firstly, install exiftool using [brew](http://brew.sh/). Here's the command:
 ```bash
 brew install exiftool
 
-```bash
+```
 
 Copy the gpx files into your image directory and initiate the sync with the geotag flag:  
   

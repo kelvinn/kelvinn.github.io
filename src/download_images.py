@@ -6,6 +6,7 @@ import time
 import re
 import urllib.parse
 
+
 def modify_blogger_url(url: str) -> str:
     # Ensure the URL is from Blogger before making modifications
     if "blogger.googleusercontent.com" not in url:
@@ -19,14 +20,6 @@ def modify_blogger_url(url: str) -> str:
     
     return url
 
-def replace_blogger_urls(text):
-    # Regular expression pattern to match URLs from blogger and extract the filename
-    pattern = r'\((https?://blogger\.googleusercontent\.com[^)]+/([^/]+\.jpeg))\)'
-    
-    # Replace the matched URLs with the extracted filename
-    replaced_text = re.sub(pattern, r'(\2)', text)
-    
-    return replaced_text
 
 def download_images_from_markdown(md_file, output_folder):
     # Ensure output folder exists
@@ -87,6 +80,4 @@ if __name__ == "__main__":
             
             markdown_file = filename.path + "/index.md"
             download_images_from_markdown(markdown_file, filename.path)
-    # page_bundle = "content/posts/beers-of-myanmar"
-    # markdown_file = page_bundle + "/index.md"
-    # download_images_from_markdown(markdown_file, page_bundle)
+ 
