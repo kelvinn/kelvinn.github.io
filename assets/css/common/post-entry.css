@@ -82,6 +82,11 @@
     margin-bottom: 5px;
 }
 
+.entry-content h4 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
 .entry-footer {
     color: var(--secondary);
     font-size: 13px;
