@@ -57,19 +57,19 @@ Photos: [https://imgur.com/a/Q6Fl4fR](https://imgur.com/a/Q6Fl4fR)
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixDQ_3v6pXis-eH6il2TCG5kW7gWfGlvfBXQN7rrNiGStajlUgUWsDllBwCrNZzJSDc8u7Z2DpxSlNCP1tonTingDZMsPvjwc_qe3fdpwp8Dt6NPlkKkIjtIdoYpbOFXYbBcVuHgdy9kYQ/w480-h640/IMG_0156.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixDQ_3v6pXis-eH6il2TCG5kW7gWfGlvfBXQN7rrNiGStajlUgUWsDllBwCrNZzJSDc8u7Z2DpxSlNCP1tonTingDZMsPvjwc_qe3fdpwp8Dt6NPlkKkIjtIdoYpbOFXYbBcVuHgdy9kYQ/s2048/IMG_0156.jpeg)
+[![](IMG_0156.jpeg =100x20)](IMG_0156.jpeg)
 
 Looking Fresh
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHmeYfLmKYkLje9_5SUApepxoKBuP8q3Yt8Xj3rCVUSuGfeWsqFsk3laM6GwZenUWEOdwmNLmWYaqR-Er05cMFjRcTGpTOivxyxnKaDiGXup7t0urMo90oRCe3WTfMLjOxtfEGX8kXTjLs/w640-h373/IMG_0157.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHmeYfLmKYkLje9_5SUApepxoKBuP8q3Yt8Xj3rCVUSuGfeWsqFsk3laM6GwZenUWEOdwmNLmWYaqR-Er05cMFjRcTGpTOivxyxnKaDiGXup7t0urMo90oRCe3WTfMLjOxtfEGX8kXTjLs/s2048/IMG_0157.jpeg)
+[![](IMG_0157.jpeg)](IMG_0157.jpeg)
 
 View from Narrowneck
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir8xxIGyn-IP7lMCGaVtwmWsX_KOUY2Ot-wzznZDfEjPdrRKMjIUeb9HhS_GFgOVschdi7OFlycv7jmkMpfdUJTCgSt6voo98w32cjV8w7IAmJ-lLKUfu05IfxdzpeRC1QkMNqlEknVC93/w640-h480/IMG_0159.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEir8xxIGyn-IP7lMCGaVtwmWsX_KOUY2Ot-wzznZDfEjPdrRKMjIUeb9HhS_GFgOVschdi7OFlycv7jmkMpfdUJTCgSt6voo98w32cjV8w7IAmJ-lLKUfu05IfxdzpeRC1QkMNqlEknVC93/s2048/IMG_0159.jpeg)
+[![](IMG_0159.jpeg)](IMG_0159.jpeg)
 
 More Narrowneck
 
@@ -79,25 +79,19 @@ More Narrowneck
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj60ahIcEo0Ya-jwqAO1T6J01YBnagaGm-0a0iNCo64pZiYAdBe1Op7DQ7AgTFPHCa232MNzpc3brnsMGjXwuHP3lQom89wVq7bIHoDVCcFF8F0C-3u6wn5ZgKGNfAO5Y8Oid-s4eysWwXH/w640-h362/IMG_0162.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj60ahIcEo0Ya-jwqAO1T6J01YBnagaGm-0a0iNCo64pZiYAdBe1Op7DQ7AgTFPHCa232MNzpc3brnsMGjXwuHP3lQom89wVq7bIHoDVCcFF8F0C-3u6wn5ZgKGNfAO5Y8Oid-s4eysWwXH/s2048/IMG_0162.jpeg)
+[![](IMG_0162.jpeg)](IMG_0162.jpeg)
 
 View back towards Katoomba
 
   
 
-  
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaifGKU0-tSk1K_50D14Z-cE8T7MGg7t7EEcF7pxB42qonEaARI8NPMtray9O-xQFhA_PEImaldC3TZny_UXkTpWWYQ1RdqgAhXqwCtV0uTJ7A7NIzy6e4ngz2sRz1SbBY_MfNK5sWCTBP/w480-h640/IMG_0166.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaifGKU0-tSk1K_50D14Z-cE8T7MGg7t7EEcF7pxB42qonEaARI8NPMtray9O-xQFhA_PEImaldC3TZny_UXkTpWWYQ1RdqgAhXqwCtV0uTJ7A7NIzy6e4ngz2sRz1SbBY_MfNK5sWCTBP/s2048/IMG_0166.jpeg)
-
-Tarros Ladder easy peasy
 
   
 
   
 
-  
-
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixSJI10Y11pkPrTRK9bvsJxSth_E72bth9K3E1SSVdi9R1gWxtySXvqS7FxKLfziTsBrU_bdn8781UgT89apex4mk0mT1VD94CtTezrsa-RciE_Z8mTAe_f4QWwPYQn5VGmpyV59RkL1NV/w480-h640/IMG_0168.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixSJI10Y11pkPrTRK9bvsJxSth_E72bth9K3E1SSVdi9R1gWxtySXvqS7FxKLfziTsBrU_bdn8781UgT89apex4mk0mT1VD94CtTezrsa-RciE_Z8mTAe_f4QWwPYQn5VGmpyV59RkL1NV/s2048/IMG_0168.jpeg)
+[![](IMG_0168.jpeg)](IMG_0168.jpeg)
 
 Pretty easy climb
 
@@ -137,19 +131,19 @@ Photos: [https://imgur.com/a/rvIcBkX](https://imgur.com/a/rvIcBkX)
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrNQfpCRC35XhWPVpU77pFURV9S5BfnA68ffE_sOw3FBb1AyiaOAbkUdW29PDW97dUqKRWJ-uJ4agQNhuBZn1-di5P4eu6Iv2N4lRWtR8QLCFkM1N7sAaszHkNEa5G4vqIZR2Cenva7Z4T/w640-h480/IMG_0169.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgrNQfpCRC35XhWPVpU77pFURV9S5BfnA68ffE_sOw3FBb1AyiaOAbkUdW29PDW97dUqKRWJ-uJ4agQNhuBZn1-di5P4eu6Iv2N4lRWtR8QLCFkM1N7sAaszHkNEa5G4vqIZR2Cenva7Z4T/s2048/IMG_0169.jpeg)
+[![](IMG_0169.jpeg)](IMG_0169.jpeg)
 
 Not looking quite as fresh
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpK0JsbU7aeUZfs9zQWgiD86p4ZfScEm1Wb3_G_Sch4IC5yT5vlq9Iu9upn_XDY_t96wnRt-dEIxs68qYl2CGZxXaeSXYZ9niI9ekwFm77k_dfy-JZQLuwicGej09K14EOoxKSd0Aqu782/w480-h640/IMG_0170.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgpK0JsbU7aeUZfs9zQWgiD86p4ZfScEm1Wb3_G_Sch4IC5yT5vlq9Iu9upn_XDY_t96wnRt-dEIxs68qYl2CGZxXaeSXYZ9niI9ekwFm77k_dfy-JZQLuwicGej09K14EOoxKSd0Aqu782/s2048/IMG_0170.jpeg)
+[![](IMG_0170.jpeg)](IMG_0170.jpeg)
 
 Too deep to cross, and need to climb up that mountain next
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8o0tP99vrw_ni93BvYjU_FeX8w98o3wQ2uJvEMMNKQhDWjua5alTo69Wx5mXhD0LECBy_kW8gHm3fdbjp9Q9zT7TmDzOXjTSt-6DGmj9kW7YNPK2AGSMHwX_fTWchLWPkvsSFPD2doEkI/w640-h480/IMG_0171.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8o0tP99vrw_ni93BvYjU_FeX8w98o3wQ2uJvEMMNKQhDWjua5alTo69Wx5mXhD0LECBy_kW8gHm3fdbjp9Q9zT7TmDzOXjTSt-6DGmj9kW7YNPK2AGSMHwX_fTWchLWPkvsSFPD2doEkI/s2048/IMG_0171.jpeg)
+[![](IMG_0171.jpeg)](IMG_0171.jpeg)
 
 Much easier when out of the bush, but still pretty steep
 
@@ -157,21 +151,13 @@ Much easier when out of the bush, but still pretty steep
 
   
 
-  
-
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmlYM8NZOH2yAFRZ_AIpt1Glh0tfnGrFTkIIQYb03NmnzDBugWs9Z2O0ka0_RK56f8o32MBvXmKhrdeTyK8Pb1wZO19QSHIMzmGpyGzTlqF4A89ILp9PUx1-iLTRAL77qcTxbpFcXOL4wj/w480-h640/IMG_0174.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmlYM8NZOH2yAFRZ_AIpt1Glh0tfnGrFTkIIQYb03NmnzDBugWs9Z2O0ka0_RK56f8o32MBvXmKhrdeTyK8Pb1wZO19QSHIMzmGpyGzTlqF4A89ILp9PUx1-iLTRAL77qcTxbpFcXOL4wj/s2048/IMG_0174.jpeg)
-
-Some climbing. I think I went up the wrong hill.
-
-  
-
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgB9A7BmyUl3ktgUjdN1KzoUipsBgN8Ku6t4GmYv7rObI4wdGw-q5WUMrRGJCC28yF4luWXDQgTnqBMDvn3FebSCBakrPcv2uxYlct1MkApJpLBE16oVOuPr7e4QRp1qIpZO5Q3oUrYJsEj/w640-h480/IMG_0175.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgB9A7BmyUl3ktgUjdN1KzoUipsBgN8Ku6t4GmYv7rObI4wdGw-q5WUMrRGJCC28yF4luWXDQgTnqBMDvn3FebSCBakrPcv2uxYlct1MkApJpLBE16oVOuPr7e4QRp1qIpZO5Q3oUrYJsEj/s2048/IMG_0175.jpeg)
+[![](IMG_0175.jpeg)](IMG_0175.jpeg)
 
 That's where I came from
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiCBx4A9FPywNn5h3h04o1ePYYdGDsPuh3eORoRNWPkAYZIpOIB0wjziSXbNvN31tl_Ru-KaA7psRONvVUoZsnV2pBDbGFCsquzQBQIxcLbfnf4UruelrLys7L-COb3hh_keqLLpQmc9NN/w640-h480/IMG_0176.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiiCBx4A9FPywNn5h3h04o1ePYYdGDsPuh3eORoRNWPkAYZIpOIB0wjziSXbNvN31tl_Ru-KaA7psRONvVUoZsnV2pBDbGFCsquzQBQIxcLbfnf4UruelrLys7L-COb3hh_keqLLpQmc9NN/s2048/IMG_0176.jpeg)
+[![](IMG_0176.jpeg)](IMG_0176.jpeg)
 
 I think that green area is where I camped
 
@@ -187,7 +173,7 @@ I think that green area is where I camped
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvt2dZMKrMCrMkpQmF4zUu52e8L0jgDo7RZ37Fpkf1GYKiuqe6KHgktsPQRu3qMQWCv_9nzxf64isk4oTyM1S1ZbjG0_xSVr3scdMpiME5UZfQBanZsdpJyhdhzShPnO9e9ofB2lfvC4is/w640-h480/IMG_0181.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvt2dZMKrMCrMkpQmF4zUu52e8L0jgDo7RZ37Fpkf1GYKiuqe6KHgktsPQRu3qMQWCv_9nzxf64isk4oTyM1S1ZbjG0_xSVr3scdMpiME5UZfQBanZsdpJyhdhzShPnO9e9ofB2lfvC4is/s2048/IMG_0181.jpeg)
+[![](IMG_0181.jpeg)](IMG_0181.jpeg)
 
 At least it isn't raining
 
@@ -237,13 +223,13 @@ Photos: [https://imgur.com/a/L2Sf7UJ](https://imgur.com/a/L2Sf7UJ)
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjljeFYaBEPtkF1yIC7B624QaK6KDm_G59AORIPYB1dBTuORQ3qoo0hqdBG2sjLzmDqRVEycZQDjtdB76UazLLf9CrwlgRZm-9rLt2hxrLtaqH-qHSI_HhW6LAwZSfxCmNIRjbWKlmU1898/w640-h480/IMG_0185.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjljeFYaBEPtkF1yIC7B624QaK6KDm_G59AORIPYB1dBTuORQ3qoo0hqdBG2sjLzmDqRVEycZQDjtdB76UazLLf9CrwlgRZm-9rLt2hxrLtaqH-qHSI_HhW6LAwZSfxCmNIRjbWKlmU1898/s2048/IMG_0185.jpeg)
+[![](IMG_0185.jpeg)](IMG_0185.jpeg)
 
 That's where I slept
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8c26WYTtay51tGIXxogCzt_xjT2bPk4Z70GhDvexQpqi5sBHKqLBbRwEzhb60NozuQ2xEknyQ47N2Fw3Q3Ke2LLljLGNeOetIGaYH1pTWaj6AHAVdXHFwIbu9k3W1ZD6UJqD6_wWELltn/w640-h480/IMG_0186.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8c26WYTtay51tGIXxogCzt_xjT2bPk4Z70GhDvexQpqi5sBHKqLBbRwEzhb60NozuQ2xEknyQ47N2Fw3Q3Ke2LLljLGNeOetIGaYH1pTWaj6AHAVdXHFwIbu9k3W1ZD6UJqD6_wWELltn/s2048/IMG_0186.jpeg)
+[![](IMG_0186.jpeg)](IMG_0186.jpeg)
 
 That way!
 
@@ -253,13 +239,13 @@ That way!
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzMeJEaqV03olionon9ZV-CC-s0mt3g9y5Cv_e4Ir1b-FCo38Z41I7HGIbQAlyP8Lvpk0ZIaiEoVeI3T42TEX5g5MAUFbrkqnFTsviYoOCOuolgcq-7tUkIIfWufy1gHZnvXZrPjfed8iC/w640-h218/IMG_0188.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzMeJEaqV03olionon9ZV-CC-s0mt3g9y5Cv_e4Ir1b-FCo38Z41I7HGIbQAlyP8Lvpk0ZIaiEoVeI3T42TEX5g5MAUFbrkqnFTsviYoOCOuolgcq-7tUkIIfWufy1gHZnvXZrPjfed8iC/s2048/IMG_0188.jpeg)
+[![](IMG_0188.jpeg)](IMG_0188.jpeg)
 
 Under maintenance
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjauRZdFPU8mPdsg2AnZ9URP1C0gU285YkU2PVAyBmQ5cJqI6oEfMgvYS9Ncf8YmD8SRVgrTHIAuXMT0Q9QmSayPrYUrgXooDB0ej3wfo_awAKxjivHaBE1wEdxsJ6AKwkEITPjUbaeMkB/w640-h480/IMG_0189.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhjauRZdFPU8mPdsg2AnZ9URP1C0gU285YkU2PVAyBmQ5cJqI6oEfMgvYS9Ncf8YmD8SRVgrTHIAuXMT0Q9QmSayPrYUrgXooDB0ej3wfo_awAKxjivHaBE1wEdxsJ6AKwkEITPjUbaeMkB/s2048/IMG_0189.jpeg)
+[![](IMG_0189.jpeg)](IMG_0189.jpeg)
 
 Yerranderie (Under maintenance this week)
 
@@ -268,7 +254,7 @@ Yerranderie (Under maintenance this week)
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLxOJOG0ypU6jCeLL9aXlL1dVaGCZaLfSHVzaEy2IjCrCtuNPW0_e0WsNca1M9ohRQRU-x6DNvR3d4KXWlttJf5ZLOeprttZWS8vGM5xPG_ikf5siPG8jSYRPORWqYx5VRADyG2ewLeUTM/w640-h480/IMG_0198.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhLxOJOG0ypU6jCeLL9aXlL1dVaGCZaLfSHVzaEy2IjCrCtuNPW0_e0WsNca1M9ohRQRU-x6DNvR3d4KXWlttJf5ZLOeprttZWS8vGM5xPG_ikf5siPG8jSYRPORWqYx5VRADyG2ewLeUTM/s2048/IMG_0198.jpeg)
+[![](IMG_0198.jpeg)](IMG_0198.jpeg)
 
 Nope, not going to go that way
 
@@ -282,37 +268,37 @@ Nope, not going to go that way
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6a8z0fE_DF2raSJ8IsOjFTJj6P7pcSGKlnclWfrAXcnF6A1YP_MTarVrCV8ykwIMCp7AN7AIBSBQ9pnlk6xTkF3JAnMKTSWwJGB4Hts8H6mfRBMn-VEc86LgB9Z603wWlllHmYzRAIbNA/w640-h480/IMG_0201.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj6a8z0fE_DF2raSJ8IsOjFTJj6P7pcSGKlnclWfrAXcnF6A1YP_MTarVrCV8ykwIMCp7AN7AIBSBQ9pnlk6xTkF3JAnMKTSWwJGB4Hts8H6mfRBMn-VEc86LgB9Z603wWlllHmYzRAIbNA/s2048/IMG_0201.jpeg)
+[![](IMG_0201.jpeg)](IMG_0201.jpeg)
 
 Spirits still high
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkq-rlmx6qVuwb7NkJ1rzi7oGDq2UW1rKOqjBVcRloRlOYfphAVOhjdBSPQ0MdxFrhsdB6moZlEV0UfPk_Cm7zB2cTR-c4NULN5-JRJuPApXUN1IYmRFAl0Poo2rWmhMhJbRzA4GwLDzw1/w640-h480/IMG_0202.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgkq-rlmx6qVuwb7NkJ1rzi7oGDq2UW1rKOqjBVcRloRlOYfphAVOhjdBSPQ0MdxFrhsdB6moZlEV0UfPk_Cm7zB2cTR-c4NULN5-JRJuPApXUN1IYmRFAl0Poo2rWmhMhJbRzA4GwLDzw1/s2048/IMG_0202.jpeg)
+[![](IMG_0202.jpeg)](IMG_0202.jpeg)
 
 Beautiful remote views. Lots of roos and emus
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgquEWrslMnpi5E1FaUq0EezaGL9QGS1VxnXAUiheHS5GdaBGK_-u4efvPyfQ9TNhe0HirQClGTdkyPwvVGRkjKQPZ_3M2Mmqt53YSvjIdtB4doevVkGX1iIFjnlWqU2yzwO-_0ee753Iz7/w640-h480/IMG_0203.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgquEWrslMnpi5E1FaUq0EezaGL9QGS1VxnXAUiheHS5GdaBGK_-u4efvPyfQ9TNhe0HirQClGTdkyPwvVGRkjKQPZ_3M2Mmqt53YSvjIdtB4doevVkGX1iIFjnlWqU2yzwO-_0ee753Iz7/s2048/IMG_0203.jpeg)
+[![](IMG_0203.jpeg)](IMG_0203.jpeg)
 
 One of my favourite stretches of road
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnnYEtrtGbuVUdXoXvUHfpz-GC894IS6bhQY4Wv6eFlrS4g7zvqDwaa_EBB-1KuqZpkCOTbjbpwAvEInjH6WBe0TdRdHw-p74nVrgUNERLad43UW7zaTbxuOCdlKuTdgGlcsqyuujoR7qo/w640-h480/IMG_0205.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnnYEtrtGbuVUdXoXvUHfpz-GC894IS6bhQY4Wv6eFlrS4g7zvqDwaa_EBB-1KuqZpkCOTbjbpwAvEInjH6WBe0TdRdHw-p74nVrgUNERLad43UW7zaTbxuOCdlKuTdgGlcsqyuujoR7qo/s2048/IMG_0205.jpeg)
+[![](IMG_0205.jpeg)](IMG_0205.jpeg)
 
 May be subject to flooding. You don't say.
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIyQwvwVwMyDJjVHLbQMYXp3Pqn8OXR-S2vNO3f_xsONPflQFxcy-soenF5UznVRjbQU3FR_JBafQNaBDrfthvXG2eUJLPE54esPCNd-jFudl3nX44H7cTPgF6ciLPUNmfG-bn-b04KJPy/w640-h480/IMG_0208.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIyQwvwVwMyDJjVHLbQMYXp3Pqn8OXR-S2vNO3f_xsONPflQFxcy-soenF5UznVRjbQU3FR_JBafQNaBDrfthvXG2eUJLPE54esPCNd-jFudl3nX44H7cTPgF6ciLPUNmfG-bn-b04KJPy/s2048/IMG_0208.jpeg)
+[![](IMG_0208.jpeg)](IMG_0208.jpeg)
 
 Survived.
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSWTa6LHbaHvkf4C52TBbVWz7KCuVDtGOgr4mCOleGXCUt1EjYsti3aoOVOWRMA0njAoNubfJJHFRu2NxT7aZgyKKaoU0jCqyYIIjR80nYtjOVq_IxHZHJv4sWf2sntU4h8V_vpj5Lj2l8/w640-h480/IMG_0209.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhSWTa6LHbaHvkf4C52TBbVWz7KCuVDtGOgr4mCOleGXCUt1EjYsti3aoOVOWRMA0njAoNubfJJHFRu2NxT7aZgyKKaoU0jCqyYIIjR80nYtjOVq_IxHZHJv4sWf2sntU4h8V_vpj5Lj2l8/s2048/IMG_0209.jpeg)
+[![](IMG_0209.jpeg)](IMG_0209.jpeg)
 
 Easy off track
 
@@ -322,15 +308,15 @@ Easy off track
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7ePVSddgMvKnqEpQdr0iyyiWtZHYQBqgGAohr9PrXQsY-JZiZzcZBGSHs3fz_HtePOZqTJlbKcO6CM1yHgcL2uCTtsZjMa1cbKZiBSn1bFXnEbB4eZ3NE6ubw26fxkQkGhyphenhyphennEhqUics9m/w640-h480/IMG_0211.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7ePVSddgMvKnqEpQdr0iyyiWtZHYQBqgGAohr9PrXQsY-JZiZzcZBGSHs3fz_HtePOZqTJlbKcO6CM1yHgcL2uCTtsZjMa1cbKZiBSn1bFXnEbB4eZ3NE6ubw26fxkQkGhyphenhyphennEhqUics9m/s2048/IMG_0211.jpeg)
+[![](IMG_0211.jpeg)](IMG_0211.jpeg)
 
 That's a problem
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiinEK3RhSlKsSNSE5mos0fHb0kYrPxHzA0JR_Qsfx2DOgiRl_vXfOcH_1Ga4dptIjtL3xheIC4-1eC8siT4tni94mPMo4WP8TWCoA-jpmVi7VQDDEXBNxo0jfYhw-vV3yO6fXpOoA5jAhM/s2048/IMG_0212.jpeg)](abc)
+[![](IMG_0212.jpeg)](abc)
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhU3bvbdJqjBG9zBcw01s2lJQOumjlxSXmgUaWjrqPy8FUawrSOjQKc3kpSMUjWkaUVG4oS3j1CV4CHwgrv_3_xvcQyTZlmSkFDbL3GAdHUvSYmg_w4kodNRnQytNYlmvltS_tVrOKHPNpz/w480-h640/IMG_0213.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhU3bvbdJqjBG9zBcw01s2lJQOumjlxSXmgUaWjrqPy8FUawrSOjQKc3kpSMUjWkaUVG4oS3j1CV4CHwgrv_3_xvcQyTZlmSkFDbL3GAdHUvSYmg_w4kodNRnQytNYlmvltS_tVrOKHPNpz/s2048/IMG_0213.jpeg)
+[![](IMG_0213.jpeg)](IMG_0213.jpeg)
 
 Made it
 
@@ -340,19 +326,19 @@ Made it
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQbihPOs0zTb4cswM_VN9hb-qyZcWJ0JYLMWHm8j88YAYmKCwQEeNKX3H-pNiHMLQft3-kGxDcTlZI7pcJMcmQeJaZs0KbzaEMJgAScHxRl2VE5sa3NHAYojIUxzrzIdFQc9ztaU4dJRGC/w640-h480/IMG_0215.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQbihPOs0zTb4cswM_VN9hb-qyZcWJ0JYLMWHm8j88YAYmKCwQEeNKX3H-pNiHMLQft3-kGxDcTlZI7pcJMcmQeJaZs0KbzaEMJgAScHxRl2VE5sa3NHAYojIUxzrzIdFQc9ztaU4dJRGC/s2048/IMG_0215.jpeg)
+[![](IMG_0215.jpeg)](IMG_0215.jpeg)
 
 Only took 90 minutes to get down the gully, but a lot of effort
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFW9GteOj5emMZIRqANZVq_Kd9UfzJVVjU6-rx-4wLQ5JqWnJ6f6NAnt5ZeIiCv4o46m20rOmquHgIX0eyDtQ5HWzfgQvD1UTzXeAeuBTkeHsJFcXl1i0GAeSs8OoHjWtS10al1biZeymp/w640-h218/IMG_0216.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFW9GteOj5emMZIRqANZVq_Kd9UfzJVVjU6-rx-4wLQ5JqWnJ6f6NAnt5ZeIiCv4o46m20rOmquHgIX0eyDtQ5HWzfgQvD1UTzXeAeuBTkeHsJFcXl1i0GAeSs8OoHjWtS10al1biZeymp/s2048/IMG_0216.jpeg)
+[![](IMG_0216.jpeg)](IMG_0216.jpeg)
 
 Nattai river
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXBcy5rpnlknmbxldVgtiPz_PFmgs9rvw5oPPYTdBjNMifbVrlqeeALEc0OSVCgt9KU8Hem5y4tN_bEgzuB6MojsfIRMCbnbuKJ_2NeQS0Mk0Q7gN0lTXIQXTb4Czf-uqF_5dExdRwCLVT/w640-h480/IMG_0217.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXBcy5rpnlknmbxldVgtiPz_PFmgs9rvw5oPPYTdBjNMifbVrlqeeALEc0OSVCgt9KU8Hem5y4tN_bEgzuB6MojsfIRMCbnbuKJ_2NeQS0Mk0Q7gN0lTXIQXTb4Czf-uqF_5dExdRwCLVT/s2048/IMG_0217.jpeg)
+[![](IMG_0217.jpeg)](IMG_0217.jpeg)
 
 Bush whacking time
 
@@ -379,25 +365,25 @@ Photos: [https://imgur.com/a/Ul2yLJ7](https://imgur.com/a/Ul2yLJ7)
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUNf1_itkgvDPRQplg4YJto0VcSLcfuicoN4kVzvBSEmZhfV2EYTe3ikQ7z7NYZxQuLDKcu2PcJMckJQriZcETIbRAGAfTP-PCOUS0TG1Rte151GmcJUkMRJK_949m_SxOyfYyru4PsWbX/w480-h640/IMG_0218.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiUNf1_itkgvDPRQplg4YJto0VcSLcfuicoN4kVzvBSEmZhfV2EYTe3ikQ7z7NYZxQuLDKcu2PcJMckJQriZcETIbRAGAfTP-PCOUS0TG1Rte151GmcJUkMRJK_949m_SxOyfYyru4PsWbX/s2048/IMG_0218.jpeg)
+[![](IMG_0218.jpeg)](IMG_0218.jpeg)
 
 That's not a real trail - wombat tracks.
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPvzRuobdebstdgtf4lgOQst0MhEy-y-j9c09xXQQfTcQrZXg5O87RYmeu7ZQF5e_bhUFNTRr7ZW3A_k9al-5X7Q-nIvOv0Jh0vQyEhKoOd_TKBbexPbX8oZMmD_p377-WVHqD7bnmsT12/w480-h640/IMG_0219.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPvzRuobdebstdgtf4lgOQst0MhEy-y-j9c09xXQQfTcQrZXg5O87RYmeu7ZQF5e_bhUFNTRr7ZW3A_k9al-5X7Q-nIvOv0Jh0vQyEhKoOd_TKBbexPbX8oZMmD_p377-WVHqD7bnmsT12/s2048/IMG_0219.jpeg)
+[![](IMG_0219.jpeg)](IMG_0219.jpeg)
 
 CIVILISATION!!!!
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2IGk_5Yc_tuTJHiHmTp2lObEnQ13KX9H7nzuBqPx-jmnf2NwncWWcWw4cLi7mbeBGXjJZAfckimrYBPFTq54F1Mi2q6VJVCzIfd_haFkVp4gtzpcTykenQwDBwHeK5k2dug52LJ8fdhfu/w480-h640/IMG_0220.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg2IGk_5Yc_tuTJHiHmTp2lObEnQ13KX9H7nzuBqPx-jmnf2NwncWWcWw4cLi7mbeBGXjJZAfckimrYBPFTq54F1Mi2q6VJVCzIfd_haFkVp4gtzpcTykenQwDBwHeK5k2dug52LJ8fdhfu/s2048/IMG_0220.jpeg)
+[![](IMG_0220.jpeg)](IMG_0220.jpeg)
 
 MORE CIVILISATION!!!
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNf0HWdZyHTm8ehyphenhyphenroVJ3yFa6tu7pJ8j6PiBewC30xKStzfzoQVP3RV2WfZX7jmqvmOBQuS7-Qc56mYvFkQQwd6fttLxucYmQ3My8jluz-5L2bLOzPEHd_acshUzHTlabUsq9sVMAsO_LT/w308-h640/IMG_0221.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNf0HWdZyHTm8ehyphenhyphenroVJ3yFa6tu7pJ8j6PiBewC30xKStzfzoQVP3RV2WfZX7jmqvmOBQuS7-Qc56mYvFkQQwd6fttLxucYmQ3My8jluz-5L2bLOzPEHd_acshUzHTlabUsq9sVMAsO_LT/s2048/IMG_0221.jpeg)
+[![](IMG_0221.jpeg)](IMG_0221.jpeg)
 
 No longer see through
 
@@ -405,7 +391,7 @@ No longer see through
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMnxKZ-ms91QfMyYA7HcunRZlTvYRlpiH5sGIjPw8wwAjBIu2u4quQEd5eyi3F2KD_haoaT0YgzyujkfmeN8TuXTw2dRkrujAjgBVer0859CnGw5h-6LRg43vNezLv4URlQerXNdVe6lUa/w480-h640/IMG_0226.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMnxKZ-ms91QfMyYA7HcunRZlTvYRlpiH5sGIjPw8wwAjBIu2u4quQEd5eyi3F2KD_haoaT0YgzyujkfmeN8TuXTw2dRkrujAjgBVer0859CnGw5h-6LRg43vNezLv4URlQerXNdVe6lUa/s2048/IMG_0226.jpeg)
+[![](IMG_0226.jpeg)](IMG_0226.jpeg)
 
 Gear malfunction
 

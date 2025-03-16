@@ -19,14 +19,14 @@ As a kid I never really learned about electronics. I took apart anything broken 
   
 I soon realised I forgot to order a few resistors needed for the various sensors I purchased. This morning before work I stopped by the local electronics store, and like a kid in a candy shop, ordered $1.60 worth of resistors and LEDs.  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi9aGnpVsYFCvX_eDS2xdoGrwAqxlHjxESlPKtgiWtsPkXLnPNZ5awjyj-evmbnad6D1Q5VibWNtCwyRviSJip4uKDos8YM_uJybO_rvKtj6q4Amggs7xJ27DZ6lyTynzn3Da5f6uTLp9PA/s400/tempcode.jpg)](http://picasaweb.google.com/lh/photo/bQknpoVRSuBRuA6fRpHGqQ?feat=embedwebsite)  
+[![](tempcode.jpg)](tempcode.jpg)  
   
 Just after coming home and eating insanely good Indian with YS, I set out to get an LED blinking. Without too many troubles, [success](http://www.kelvinism.com/howtos/simple-arduino-led-tutorial/)! I graduated myself to the next grade and pulled out the temperature sensor. I looked at the 'special' wires I bought to connect to the sensor and the breadboard, and I soon realised I actually purchased the M->F wires instead of the assorted pack. I started looking around for cables I could cut.  
   
 Spare USB cable, no. Telephone cable, maybe. I realised I could just slice up one of the cables and see if it worked. The cables were braided instead of solid coper, which sort of made my hopes sink, but it was too late now.  
   
 I soon wired everything together as the various forum posts suggest, plugged it in to my laptop, started the Arduino software, and loaded the [Dallas Temperature Library](http://milesburton.com/wiki/index.php?title=Dallas_Temperature_Control_Library), and - "Invalid CRC". I pulled the wires off, stripped a little more cabling off, plugged it back in, and tried again. It worked! I don't really know if the temperature is correct or not - we don't have any other way to measure it - but at this point, until I put in some more robust wires, I don't really even care.  
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcGg4UbKOnexsGAxg-zxeSWpiF6o8z7oo2BGMcwzkQQ5ymggVqZhZWsXw2dlsWu_0jlCqVUfW3hncFswy8dHmRbqmlwobEGAjy1ffbs5Gn8AH6oSAYC7rEw9XIe-ITBIs1RLBNsxcoDACy/s400/arduino.jpg)](http://picasaweb.google.com/lh/photo/l1LM6Vq2tOQdvCD7HErEew?feat=embedwebsite)  
+[![](arduino.jpg)](arduino.jpg)  
   
 Overall, I'm happy. I've created two simple physical computing missions, and wrote two blog entries, in well under two hours. This has been quite a relaxing break from the other duties in life. I plan to make the little system 'proper' (more robust), and link it to my [mini server](http://www.kelvinism.com/tech-blog/true-consolidation). I'll then create a simple chart (via Google's API) to display on this website.  
 OK, fun over, back to work.

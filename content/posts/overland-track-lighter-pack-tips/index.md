@@ -25,7 +25,7 @@ The track was likely especially scary for newcomers given the weather we encount
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhm0Mgrv8Ar92ho2go3BgsNLgOllPYRQxdt97y4g6FTnV-FqvWqmyabvABz86yCSC3KsIyQYysk_b9p89NeaHWOV8H9USe1KjyxOfF3usYH0oE6yYCECSnW0-YM3UMV1Uo8oKS4BCAoq0Mq/w640-h574/Overland.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhm0Mgrv8Ar92ho2go3BgsNLgOllPYRQxdt97y4g6FTnV-FqvWqmyabvABz86yCSC3KsIyQYysk_b9p89NeaHWOV8H9USe1KjyxOfF3usYH0oE6yYCECSnW0-YM3UMV1Uo8oKS4BCAoq0Mq/s2944/Overland.png)
+[![](Overland.png)](Overland.png)
 
 The Overland Track. Plan ahead and say goodbye to mobile reception.
 
@@ -92,7 +92,7 @@ On my first multi-day hike several years ago with this hiking companion my shopp
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnAZ7YTMY2IPOiJ9Rp9vP2TD50Y2IqEgzXPuhDdkytuSLqqN5k0n2jnTy0FJBmkvD4rjvrSzzbNifYGTB9564QNDi_5x-jS8RpOchUDGeMqw3MKc80qB6heI5_Wp09ue3Qen4huqah9gdA/w640-h372/Food.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnAZ7YTMY2IPOiJ9Rp9vP2TD50Y2IqEgzXPuhDdkytuSLqqN5k0n2jnTy0FJBmkvD4rjvrSzzbNifYGTB9564QNDi_5x-jS8RpOchUDGeMqw3MKc80qB6heI5_Wp09ue3Qen4huqah9gdA/s2028/Food.png)
+[![](Food.png)](Food.png)
 
 Initial food planning for two  
 

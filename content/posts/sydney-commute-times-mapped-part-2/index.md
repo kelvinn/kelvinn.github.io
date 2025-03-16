@@ -20,7 +20,7 @@ I decided to find out.
 Thanks to the release of GTFS data by 131500 it is possible to visualise how long it takes via public transport to commute to the nearest "centre".  
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDc0IriO971A2BQ7F9Nu1zYVZ_uO5OEwv8n0Z9vpPB1IElGYMI0r5bzCah9UCv5fqNzthkaHnPFBN6Pd5PD32GL_xXUJDAYKvXdx3OK8DwtotghU_PDA_Mc_qWYa8gUEKiJxj8Uos4mYbk/s1600/CItyOfCities.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhDc0IriO971A2BQ7F9Nu1zYVZ_uO5OEwv8n0Z9vpPB1IElGYMI0r5bzCah9UCv5fqNzthkaHnPFBN6Pd5PD32GL_xXUJDAYKvXdx3OK8DwtotghU_PDA_Mc_qWYa8gUEKiJxj8Uos4mYbk/s1600/CItyOfCities.png)
+[![](CItyOfCities.png)](CItyOfCities.png)
 
 Cities and Corridors - [Metropolitan Strategy for Sydney to 2031](http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf)
 
@@ -43,6 +43,6 @@ The first map I created was simply to indicate how long it would take to the nea
   
 My next map shows what areas are within 30 minutes.  
   
-These maps were both created using open data and open source tools, which I find quite neat. In that spirit, I have exported the database (probably a bit hard for most to work with) to a Shapefile. You can open this in TileMill and experiment, if you wish. Download it from [here](http://cdn.kelvinism.com/mb_2011_nsw_transport.zip) (note: 250MB zip file):  
+These maps were both created using open data and open source tools, which I find quite neat.  
   
 I have been interested in mapping traffic for a number of years, maybe ever since arriving in Sydney. It is sort of a hobby; I find making maps relaxing. My first little map was way back in 2008, where I [visualised speed](http://www.kelvinism.com/2008/04/baby-steps-at-graphing-traffic_522.html) from a GPS unit. A little later I added [some colour to the visualisations](http://www.kelvinism.com/2008/04/another-baby-step_1340.html), and then used this as an excuse to create a little [GUI for driving speed](http://www.kelvinism.com/2008/05/gui-to-plot-driving-speed_6997.html). My interest in visualising individual vehicles has decreased recently, as it has now shifted to the mapping wider systems. Have an idea you would like to see mapped? Leave a note in the comments.

@@ -15,13 +15,13 @@ Then I stumbled across the [Sonoff](http://sonoff.itead.cc/en/) devices by Itea
 The first bottleneck was discovering that the units I received did not have any headers. A little quick soldering later, and we had headers.  
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzXxcHLSh3p-9YEHjtC6rnj6mJO17whJj92HUsJts2ZxD9umE7b7Rb-KUL6yFe2Ppu3ckOaoFhBmDr5yX915j97AKICugRNSOTQ-RI9dK90n6zR9J_0HnftlSFtzP-tXW0o7Q0pCrdWL1K/s640/20180502_200103.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzXxcHLSh3p-9YEHjtC6rnj6mJO17whJj92HUsJts2ZxD9umE7b7Rb-KUL6yFe2Ppu3ckOaoFhBmDr5yX915j97AKICugRNSOTQ-RI9dK90n6zR9J_0HnftlSFtzP-tXW0o7Q0pCrdWL1K/s1600/20180502_200103.jpg)
+[![](20180502_200103.jpg)](20180502_200103.jpg)
 
 No headers mom :(
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxcIKHmY3Z3RMOShYMEGg92Tyd9QG6ENDpfn7QiDMiUtLbWhkm8smrsGYHTc7wNlkGv0f8T760LOqsISTPu7XEVetkuuIuzGOpqWQkjFOmUVo8mAyMBFju8GHWN-VLs1mCPzvdpNogJhd9/s640/20180502_163741.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxcIKHmY3Z3RMOShYMEGg92Tyd9QG6ENDpfn7QiDMiUtLbWhkm8smrsGYHTc7wNlkGv0f8T760LOqsISTPu7XEVetkuuIuzGOpqWQkjFOmUVo8mAyMBFju8GHWN-VLs1mCPzvdpNogJhd9/s1600/20180502_163741.jpg)
+[![](20180502_163741.jpg)](20180502_163741.jpg)
 
 Now we have headers!
 

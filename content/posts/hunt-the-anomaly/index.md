@@ -28,7 +28,7 @@ Almost immediately after setting up monitoring I noticed something strange occur
 
 **Find the anomaly:**
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEht1z52ODlLDYwvk3Qs7QjPyqiYJ40MqI3OofGwdIbQN0NV777mdsavvaIws6OhuyygoaMKVfQ3kRqLUzvL8eQm9_cVqzw3AqGL3iG_9RjU2QH7zwZbleEvgna69GNOwET-dpNjkUJZSRM8/s400/wtf_1.png)](http://picasaweb.google.com/lh/photo/cC1U7SU-l0edQ--5UNBdSg?feat=embedwebsite)  
+[![](wtf_1.png)](wtf_1.png)  
 
   
   
@@ -38,7 +38,7 @@ So, let's try to find out what is going on. Indeed, there are some analyzers of 
 
 We can now take a look at what is going on. Let's next just take a look at the statistics offered:
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAMfNADISoL8MMmd1gkafmD6dVu4fQZHXVUzbLFHAq7W1genNGQ80VzyBMo8yW5fZB1di5O4BKv5PQ2cxaJHr-CjEOzeE8cr7hwIKvz0qk3XTxjWy3w56YlEI6zFKlgoQlFt8n8rknGfYE/s400/wtf_2.png)](http://picasaweb.google.com/lh/photo/RhLbE6lb-P7TDTe4PMQ0pg?feat=embedwebsite)  
+[![](wtf_2.png)](wtf_2.png)  
 
   
   
@@ -50,7 +50,7 @@ Now that we know it is UDP related, let's find out more. I've filtered by UDP in
 
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnSY5uFvnRoJF-k1m3esaeLA2yxBflKa_gV7l3vA5Ono-M6j0fO9sD8yeFVWf0eCpkn0373iY38im6ezl_i9mTY6eNzwoX3dT2MKa3ogKq4TvXyhyphenhyphen9ANj2HVbS-HNZgGnX3j4FAhFWxhpa/s400/wtf_3.png)](http://picasaweb.google.com/lh/photo/151anHEmB6D6I0GNP1WXJA?feat=embedwebsite)  
+[![](wtf_3.png)](wtf_3.png)  
 
   
   
@@ -61,7 +61,7 @@ Then we select the right side, and we have a pretty green highlighted section.
   
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWf7WYWZ2z4l_cp9Uv3pelrgTiONwncNva6jij5te_u6DuYl8KT9CuoW-YKv1UYWh__hV0vuYQ_txaNXXXKm6BaYQrfBXv-A0_g7Ib0cc8tGNgE8aeyWM_c-UXBx4iWuB2QqUGxoQCfzju/s400/wtf_4.png)](http://picasaweb.google.com/lh/photo/Aur3YXp5XZzJP1yOaP9w6w?feat=embedwebsite)  
+[![](wtf_4.png)](wtf_4.png)  
 
   
   
@@ -72,7 +72,7 @@ Now it is time to hunt the person down. Using NFSEN's built-in filtering capabil
 
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEict48l3J3IqI3WOw1NBgxzRg0wUukWYNy-tkJRaeRYNJGqlPlKL-DwYDLQx-O6LuptQUO5bFG-9V056KKl-bQzzmLTEg_wTsQVAWZOgW9iX0LlArhkOmAO5tatrxjZG5FbyLaLrju3GR5D/s400/wtf_5.png)](http://picasaweb.google.com/lh/photo/mHOFaXkMUXc7bLcjDAi-Qg?feat=embedwebsite)  
+[![](wtf_5.png)](wtf_5.png)  
 
   
   
@@ -82,7 +82,7 @@ Then could see the obvious place to look next:
 
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjWGYjMkv2unx4qO6CM94BQSfRoflsfwIvyCZDbAAs9hx2WFuQKz29PCXN5cygx16i2tdAOYx_h886jXTQhjes7uC0d324rZKnO-WbJsYvfEF6fqBnlXP6yIxKpp8PJnFBg6UQKQX6jgDYQ/s400/wtf_6.png)](http://picasaweb.google.com/lh/photo/OvmjUcP50lyFRu1Vn2grIQ?feat=embedwebsite)  
+[![](wtf_6.png)](wtf_6.png)  
 
   
   

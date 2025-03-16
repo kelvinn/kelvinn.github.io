@@ -7,7 +7,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status: ✅  
   
 
 Kuala Lumpur represents a new adventure for me, and a new project. The goals were simple: update/clean the systems, upgrade the internet connection, give pseudo-voip capability and try to get them on the VPN.

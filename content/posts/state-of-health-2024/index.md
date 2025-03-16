@@ -45,7 +45,7 @@ My main form of cardio is running, so let's start there. You can clearly see whe
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBuWLwxHeDom5D46JypAhzFb5_cLVmGMsHnsUy7pKp7aLMxNvMereKRwqtTRl9VRNWNlXg7OfDoYaSBHdjS0uNsMmlt-cuhia4xblvwPnwD9w_Gr_eO32mIrR0ePXp4Hl0NSgWOwCl6hhPRiA7oS8ny-EHpZ35wvglDrL0OXQD4mNyd54xNJWVxvDDAzAB/w640-h365/Screenshot%202025-01-31%20at%208.10.15%E2%80%AFam.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjBuWLwxHeDom5D46JypAhzFb5_cLVmGMsHnsUy7pKp7aLMxNvMereKRwqtTRl9VRNWNlXg7OfDoYaSBHdjS0uNsMmlt-cuhia4xblvwPnwD9w_Gr_eO32mIrR0ePXp4Hl0NSgWOwCl6hhPRiA7oS8ny-EHpZ35wvglDrL0OXQD4mNyd54xNJWVxvDDAzAB/s1798/Screenshot%202025-01-31%20at%208.10.15%E2%80%AFam.png)
+[![](Screenshot2025-01-31at8.10.15 am.png)](Screenshot2025-01-31at8.10.15 am.png)
 
   
 
@@ -65,7 +65,7 @@ In addition to cardio I've been trying to increase the amount of time I spend re
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhicmKAEovuwBe6ZfHkQV3H2hSqavikRpcNfzyStTCeyiwTXQ384nXiNNcdyZA1ShhoHj-NasqR7IL86dK2O1v2ixPSiC8SIR537tpIwbqgRjOiGWFeU7fv72CSTe3WXx20ube_sc3Khdv6nQsqo3G0iZMqeLN3lv93V4fVM6PQZGj4epYZhiU2ZXVk_vC8/w640-h406/Screenshot%202025-01-31%20at%208.24.37%E2%80%AFam.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhicmKAEovuwBe6ZfHkQV3H2hSqavikRpcNfzyStTCeyiwTXQ384nXiNNcdyZA1ShhoHj-NasqR7IL86dK2O1v2ixPSiC8SIR537tpIwbqgRjOiGWFeU7fv72CSTe3WXx20ube_sc3Khdv6nQsqo3G0iZMqeLN3lv93V4fVM6PQZGj4epYZhiU2ZXVk_vC8/s1790/Screenshot%202025-01-31%20at%208.24.37%E2%80%AFam.png)
+[![](Screenshot2025-01-31at8.24.37 am.png)](Screenshot2025-01-31at8.24.37 am.png)
 
   
 
@@ -77,25 +77,19 @@ My diet continues to be whole foods plant based, but with exceptions when travel
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYjT6E1OgC81Y1pFusEVo0kAz9Eepur2Kx-140q5l6FHIPEM0Uotr8ydyGcGbCJpBcTbSL5eD_XTAlWTtDdOdJaBNjIIBQPbgJJJmRBD_NkWancfokKTACJ8ViGzbS3OsKd3nb7fsthdHpW2wTv7Z_LL2kGctp1zKbSrKhbyWjoiSVXA-ry_8VvYFTdXSJ/w360-h640/76A29232-46FB-4D43-86A6-04A8E5787845.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYjT6E1OgC81Y1pFusEVo0kAz9Eepur2Kx-140q5l6FHIPEM0Uotr8ydyGcGbCJpBcTbSL5eD_XTAlWTtDdOdJaBNjIIBQPbgJJJmRBD_NkWancfokKTACJ8ViGzbS3OsKd3nb7fsthdHpW2wTv7Z_LL2kGctp1zKbSrKhbyWjoiSVXA-ry_8VvYFTdXSJ/s1280/76A29232-46FB-4D43-86A6-04A8E5787845.jpeg)
-
-Spinach, Raisins, and Tofu
-
-  
-
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvlyUdXtOhgezbmKMqsly1N9MMFLMUy6NGB2UeIVejqnTDazm1GUW_-5_D62YBMWl7C83gLdyOC5CLDnORiGUn3QG1NHd9GdpHmpC3FiN4Gqe-4qv_E3_-7BO6PWs41M7b0IXwMiplx0TZ4rhgifI0YGenZfecUcODd4SnkZgGvRYe-sVPGNr4qb8HgL9b/w360-h640/8BA6F666-FB59-48E9-A630-99C356E42454.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvlyUdXtOhgezbmKMqsly1N9MMFLMUy6NGB2UeIVejqnTDazm1GUW_-5_D62YBMWl7C83gLdyOC5CLDnORiGUn3QG1NHd9GdpHmpC3FiN4Gqe-4qv_E3_-7BO6PWs41M7b0IXwMiplx0TZ4rhgifI0YGenZfecUcODd4SnkZgGvRYe-sVPGNr4qb8HgL9b/s1280/8BA6F666-FB59-48E9-A630-99C356E42454.jpeg)
+[![](sv.jpg)](sv.jpg)
 
 Super Veggie
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOJjErj0ovTsl2voxEwDx_Ucmsc0K5N-oR-fbutYngtWt7LK82Y3ViHnmno7BPJzth1wILWZYvE6UqbpVfPQZJeQvKOtTANldyPm_dGmE2HUmQ0mUgG-pqc6sefPaj8CfwoORLkYVWIQSRMblxSmOfC3ToKaSQpTho-iiU53OGWxOGdpotYvDA0CxaE-iL/w480-h640/IMG_2799.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOJjErj0ovTsl2voxEwDx_Ucmsc0K5N-oR-fbutYngtWt7LK82Y3ViHnmno7BPJzth1wILWZYvE6UqbpVfPQZJeQvKOtTANldyPm_dGmE2HUmQ0mUgG-pqc6sefPaj8CfwoORLkYVWIQSRMblxSmOfC3ToKaSQpTho-iiU53OGWxOGdpotYvDA0CxaE-iL/s1280/IMG_2799.jpeg)
+[![](IMG_2799.jpeg)](IMG_2799.jpeg)
 
 Fishbowl (when I need to eat out)
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhB6DRLIrGLBLmNvDR_sGCWH1wR-YtFIPKtB2vp3f1z07J_yf3t8gsSVlKbND96vU80dF4QR3DRJBHODdEKoLK4TwgLV3XyykEcyNYhvuxym4zy9kbvYcQxdSNoSyjEURiiwIHL-rTKS9MkoXsjl4JDpnQrlaMsKaU8atDFbZQBaqynmoZqYcTqQCpnHt_d/w360-h640/D780B530-FE23-4591-825A-74B4A58CF7D3.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhB6DRLIrGLBLmNvDR_sGCWH1wR-YtFIPKtB2vp3f1z07J_yf3t8gsSVlKbND96vU80dF4QR3DRJBHODdEKoLK4TwgLV3XyykEcyNYhvuxym4zy9kbvYcQxdSNoSyjEURiiwIHL-rTKS9MkoXsjl4JDpnQrlaMsKaU8atDFbZQBaqynmoZqYcTqQCpnHt_d/s1280/D780B530-FE23-4591-825A-74B4A58CF7D3.jpeg)
+[![](D780B530-FE23-4591-825A-74B4A58CF7D3.jpeg)](D780B530-FE23-4591-825A-74B4A58CF7D3.jpeg)
 
 Nutty Pudding
 
@@ -105,7 +99,7 @@ How do we track how well nutrition is working? For now, let's just look at my we
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj63SEMgerqdTVGPWZYNvMAvRxoLBaMo4iRU1K1rCdj4l99eRf60u_Ze04vukY6333TBUtR8qwdWaNngS1vDLWwb_sClG-TNek1WFkriKaRpsc90QDJAUkwTpDq4H3WvEzJ0QbKfFrlkidXcRKYF7qBK3qoQMe1wy4CM3qUPp-WYAV9jh553BuclfKhoJmg/w640-h302/Screenshot%202025-01-31%20at%208.49.30%E2%80%AFpm.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj63SEMgerqdTVGPWZYNvMAvRxoLBaMo4iRU1K1rCdj4l99eRf60u_Ze04vukY6333TBUtR8qwdWaNngS1vDLWwb_sClG-TNek1WFkriKaRpsc90QDJAUkwTpDq4H3WvEzJ0QbKfFrlkidXcRKYF7qBK3qoQMe1wy4CM3qUPp-WYAV9jh553BuclfKhoJmg/s2280/Screenshot%202025-01-31%20at%208.49.30%E2%80%AFpm.png)
+[![](Screenshot2025-01-31at8.49.30 pm.png)](Screenshot2025-01-31at8.49.30 pm.png)
 
   
 
@@ -135,7 +129,7 @@ However, my sleep in in 2024 was less consistent than in 2023, unfortunately. My
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwX5byKLg6GY5dbv5sDm13qOeDF1DveRIHRthBy6P3nBOV6sJw0PTCEyl6yvI2laBR63vk7dB1Vra6TYN6nmsSLtwG1w6qun3f5kcK2Xg5jblPiwWAN8BC_vMYzwUZvTRp81SdUVaAnCJ60qbzzKGDjLdEvqz87pfvF8aBVJRAoFV-CjoPOjliBOUc1WpF/w640-h304/Screenshot%202025-01-31%20at%209.03.55%E2%80%AFam.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjwX5byKLg6GY5dbv5sDm13qOeDF1DveRIHRthBy6P3nBOV6sJw0PTCEyl6yvI2laBR63vk7dB1Vra6TYN6nmsSLtwG1w6qun3f5kcK2Xg5jblPiwWAN8BC_vMYzwUZvTRp81SdUVaAnCJ60qbzzKGDjLdEvqz87pfvF8aBVJRAoFV-CjoPOjliBOUc1WpF/s2034/Screenshot%202025-01-31%20at%209.03.55%E2%80%AFam.png)
+[![](Screenshot2025-01-31at9.03.55 am.png)](Screenshot2025-01-31at9.03.55 am.png)
 
   
 
@@ -169,7 +163,7 @@ Here is a snapshot of my biomarkers.
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBwa-umgqVVmOUw_sFhpaBIglxvtkonotsP1SaS-1kEXVFKVkJ2waohtu-m5Sqd5Q5YDOBoKWHJMAXXBLAHaTLy9O-jgTi19-DIi5peGoI2sWF0DPMBc61DYodZ9mGzZ7VEjIecGGykrdAlg9B7cFAm5PgyOayN4LBCB6boTdiOyS6bHWDaAWA_1B2dQmZ/w640-h448/Screenshot%202025-01-31%20at%209.10.04%E2%80%AFpm.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgBwa-umgqVVmOUw_sFhpaBIglxvtkonotsP1SaS-1kEXVFKVkJ2waohtu-m5Sqd5Q5YDOBoKWHJMAXXBLAHaTLy9O-jgTi19-DIi5peGoI2sWF0DPMBc61DYodZ9mGzZ7VEjIecGGykrdAlg9B7cFAm5PgyOayN4LBCB6boTdiOyS6bHWDaAWA_1B2dQmZ/s1446/Screenshot%202025-01-31%20at%209.10.04%E2%80%AFpm.png)
+[![](Screenshot2025-01-31at9.10.04 pm.png)](Screenshot2025-01-31at9.10.04 pm.png)
 
   
 
@@ -189,7 +183,7 @@ Let's look at Stress.
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifG6yZmV-qRvdrZ3Z4CAwoXlntvAWWGPplFJQcI-0SESj6jQlByHDVCKBmTV22cAWXWYbYlZl67c95puxWTS48IM-I7fgM4-9pCW7UDpSYwcd9vdcrnjUpYVcwJS5Caw7s_j9RhLBokIAjO92-5SpwZPHITYLkcKe3f6ZzmVdF9Ix8akALeQPi2mz0zoZ0/w640-h364/Screenshot%202025-01-31%20at%209.28.45%E2%80%AFpm.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEifG6yZmV-qRvdrZ3Z4CAwoXlntvAWWGPplFJQcI-0SESj6jQlByHDVCKBmTV22cAWXWYbYlZl67c95puxWTS48IM-I7fgM4-9pCW7UDpSYwcd9vdcrnjUpYVcwJS5Caw7s_j9RhLBokIAjO92-5SpwZPHITYLkcKe3f6ZzmVdF9Ix8akALeQPi2mz0zoZ0/s2152/Screenshot%202025-01-31%20at%209.28.45%E2%80%AFpm.png)
+[![](Screenshot2025-01-31at9.28.45 pm.png)](Screenshot2025-01-31at9.28.45 pm.png)
 
   
 
@@ -207,7 +201,7 @@ My resting heart rate hovered around 50-51 for the year, and ultimately I would 
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZLb3F-pAEH3MQP1GOSvyRxwhxTtqL6NLyczxdcPQRbqAfkm452sHHwOx_LnWmmY1nbuceeNiRGiLyN3T70HMIFvlagJkM3aac0akgW11AETTCmeKVKUR5P_LOMd4spuFaajIevu5jRpfhvA_NnjS1m84D1z-GfUtQD5QQEMgAbJ8Pg_2eXuaacx3Q_Ize/w640-h300/Screenshot%202025-01-31%20at%209.33.37%E2%80%AFpm.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZLb3F-pAEH3MQP1GOSvyRxwhxTtqL6NLyczxdcPQRbqAfkm452sHHwOx_LnWmmY1nbuceeNiRGiLyN3T70HMIFvlagJkM3aac0akgW11AETTCmeKVKUR5P_LOMd4spuFaajIevu5jRpfhvA_NnjS1m84D1z-GfUtQD5QQEMgAbJ8Pg_2eXuaacx3Q_Ize/s2206/Screenshot%202025-01-31%20at%209.33.37%E2%80%AFpm.png)
+[![](Screenshot2025-01-31at9.33.37 pm.png)](Screenshot2025-01-31at9.33.37 pm.png)
 
   
 

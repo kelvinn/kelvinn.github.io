@@ -11,7 +11,7 @@ tags:
 
 Yesterday I was sort of curious if I could use my 3 Skypephone in a pinch if I got lost, which here in Sydney, happens quite often. Luckily 3's Skypephone has both Bluetooth, and supports j2me apps. Mobile GPS unit, here I come.
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjExWMS7zKJdGCG_1MHdpb900yTseLCrbHerf2PlfzwSouqfnmJHr5V1jiIcDcbMrEul2OZUFlCYOQhTgrq_3C-cYDWmxkx-yDOr6NNwokX8P-gUikt3DSjxRi11qJrMuP4_aSRLpjhLPax/s288/DSC03368.jpg)](http://picasaweb.google.com/lh/photo/3AY6h-qKwGk9NpnB9hrwsw?feat=embedwebsite)  
+[![](DSC03368.jpg)](DSC03368.jpg)  
   
 
 The recipe to get maps on your Skypephone is pretty darn easy. You'll need one dash bluetooth GPS receiver (I have the [Qstarz BT-Q1000](http://www.qstarz.com/Products/GPS%20Products/BT-Q1000.html)), [TrekBuddy](http://linuxtechs.net/kruch/tb/forum/index.php), a TrekBuddy acceptable map ([easily downloadable](http://osm.bandnet.org/browse/?1,1,1,0)), and one dab computer -- but since you're reading this, I figure you've got that part taken care of.

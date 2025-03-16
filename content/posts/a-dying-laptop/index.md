@@ -9,7 +9,7 @@ tags:
 - laptop
 ---
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPyeU1z0m7gaaj64mfwy7XuGBUjkaYy3JG97vvrPx3Y2WjByfT5jz4quQqRw4-YCKFmEAhD2giX4VuwWgR2fx4Ok7hkDj1yvS2h_T5GoVreUWT6y-An287kxWhRGQXy8zaRumLvb1egW9k/s400/DSC01613.jpg)](http://picasaweb.google.com/lh/photo/pGNVNaArTEVlfi8xjhsPYA?feat=embedwebsite)  
+[![](DSC01613.jpg)](DSC01613.jpg)  
   
 
 I have the pleasure of owning an old T23 laptop. To show you how old this puppy is, the current T series is at _T60_, and those have been out for over a year. This laptop was made in 2012, and I picked it up somewhat discounted late in 2003. It is now March 2007, and this puppy is still rock solid.

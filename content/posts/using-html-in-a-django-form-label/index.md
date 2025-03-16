@@ -22,7 +22,7 @@ class AccountForm(forms.Form):
 ```  
   
 However, when I displayed it, the form was autoescaped.  
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhvsLvb6I4SDBB3NKptLZzGLGnwUZK0KmYlx7X9UC2_fzyQCNTkeFiKz5-4_3BmKArYZhRwU8TNEIhrGAMsb039N47hxcY8BIMEJjfK1UafYCRvAPzY18c8ceq3QFOOsp_oGO6SavZ1LmGR/s800/accountsform.jpg)](http://picasaweb.google.com/lh/photo/PyGNXDrpXtrgBNnoOLlfLA?feat=embedwebsite)  
+[![](accountsform.jpg)](accountsform.jpg)  
   
 This is generally a good thing, except my form obviously didn't display correctly. I tried autoescaping it in the template, but that didn't work. To resolve this you'll need to mark that _individual label_ as safe. Thus:  
 

@@ -35,7 +35,7 @@ The system works like this: a new sheet gets made and we play a little game wher
 
   
 
-[![Learning New Words](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgj_K68MBmpwxT2waW41XAw6j2FSwUtV_u7bQuOhCYhrtgEg9YegVuQ0N0jWKnBththUEW3Xt-n-Tv4yiSEHRQh1oYqZEPQcD3OUeycFnwg_CWBtzLAEuSqAMyAlOHrCyKDX2qeHQoknyp8/w625-h469/IMG_4893.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgj_K68MBmpwxT2waW41XAw6j2FSwUtV_u7bQuOhCYhrtgEg9YegVuQ0N0jWKnBththUEW3Xt-n-Tv4yiSEHRQh1oYqZEPQcD3OUeycFnwg_CWBtzLAEuSqAMyAlOHrCyKDX2qeHQoknyp8/s640/IMG_4893.jpeg)
+[![Learning New Words](IMG_4893.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgj_K68MBmpwxT2waW41XAw6j2FSwUtV_u7bQuOhCYhrtgEg9YegVuQ0N0jWKnBththUEW3Xt-n-Tv4yiSEHRQh1oYqZEPQcD3OUeycFnwg_CWBtzLAEuSqAMyAlOHrCyKDX2qeHQoknyp8/s640/IMG_4893.jpeg)
 
 Learning New Words  
 
@@ -45,7 +45,7 @@ This is pretty easy for her, for example, if I say "give" then she knows only on
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjc5NQYQfgo36Y1dTMvcNn5m-FYoPjYgeQ8Hbwsq97MWxptuFDG8rAXd9CrDyXPTANxjavYTnaYk2tbLSr4BG_55hA7jBTY8olf0LRkLxe186msI0IOXVxPFnxMHwK5hPxgWPLhLx1aFz8C/w625-h469/IMG_4892.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjc5NQYQfgo36Y1dTMvcNn5m-FYoPjYgeQ8Hbwsq97MWxptuFDG8rAXd9CrDyXPTANxjavYTnaYk2tbLSr4BG_55hA7jBTY8olf0LRkLxe186msI0IOXVxPFnxMHwK5hPxgWPLhLx1aFz8C/s640/IMG_4892.jpeg)
+[![](IMG_4892.jpeg)](IMG_4892.jpeg)
 
 Getting Mastery  
 

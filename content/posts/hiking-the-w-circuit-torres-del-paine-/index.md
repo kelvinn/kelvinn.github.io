@@ -8,7 +8,7 @@ tags:
 - travel
 ---
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmKGA0j5Z25NkCby3nEWwQeIyj5RZwDF-CmNKR3asVKlojpdpPc2TtR8ISaevfODn3BwaRpEB60SbTegfb7-VDUMq2pIOWhMPRLKRFfzoKy8XjJ3oghEt0mSLeHQL8t80G3QmkDCGOdFFV/s640/IMG_2686.JPG)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmKGA0j5Z25NkCby3nEWwQeIyj5RZwDF-CmNKR3asVKlojpdpPc2TtR8ISaevfODn3BwaRpEB60SbTegfb7-VDUMq2pIOWhMPRLKRFfzoKy8XjJ3oghEt0mSLeHQL8t80G3QmkDCGOdFFV/s1600/IMG_2686.JPG)
+[![](IMG_2686.JPG)](IMG_2686.JPG)
 
 I have just returned from hiking the "W", a famous circuit through the Torres del Paine, in Patagonia. Although I did some research before doing the trek, it turns out I made a number of assumptions that turned out to be incorrect. I will detail in this entry what I learned, a few things that worked well, and a few things that did not work so well.  
   
@@ -32,7 +32,7 @@ This naturally depends where you are coming from. I were in Santiago, so flew to
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsmxhnusOi1UD3OiYOIyKj6DegRZHov_YopVNjmTKY9onKiVGGM9YWRGn8ejebqILTbg_v8i8paf6Tz9nlvwT5cQ1ynY7Y9cHSZ4t0ljXGROrDxTzXLi4VA5ntRU7Y39pF36ZMs3QetwCv/s640/IMG_2754.JPG)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsmxhnusOi1UD3OiYOIyKj6DegRZHov_YopVNjmTKY9onKiVGGM9YWRGn8ejebqILTbg_v8i8paf6Tz9nlvwT5cQ1ynY7Y9cHSZ4t0ljXGROrDxTzXLi4VA5ntRU7Y39pF36ZMs3QetwCv/s1600/IMG_2754.JPG)
+[![](IMG_2754.JPG)](IMG_2754.JPG)
 
 One of the first decisions you will need to make is if you should camp, or just stay in a refugio? It was obvious the people who were staying in refugios, as their packs were usually quite small, and they smelled really clean. It was obvious the people doing the full trek, as they usually looked tired, and not terribly clean. I were in the later group. Base Camp, right next to Erratic Rock, where the 3PM talk is held, offers gear rental. The [prices](http://www.erraticrock.com/equipment/) are reasonable. Equipment needs to be reserved before you arrive during high season.
 
@@ -78,7 +78,7 @@ Hike from Los Cuernos to Campamento Torres. About 9KM out of Los Cuernos you wil
   
 Wake up quit early and depart for the Base de las Torres for sunrise. Most people leave Campamento Torres by about 6:15am, but when I went it was overcast, and the sun didn't actually hit the mountain until almost 7:50. The walk takes about 45 minutes. Take your photos, hike back down to camp, pack up, and get back to Hotel Los Torres by 14:00. I ate breakfast at sunrise at the Base de las Torres (trail mix), but had a hot lunch at Campamento Chileno. A mini bus will pick you up by Hotel Los Torres at 14:00 and take you back to Laguna Amarga. This mini bus costs 2500CLP. Your bus will depart back to Puerto Natales at 14:30. Please shower and do laundry as soon as you get back - you probably smell like you're homeless.  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghTzCYUBEO6YCmbA_IaXsadCSSvSWir9qx1K0VeE_FILscI-cvn2KoEn9lgV45OkynQmG3OMqyTvxl7c3xTC7jMn6gd3JrYUg2uTFGmCDm9dnldiuipVOpyVwd2kGeop9b7XV04MQ7Htfl/s640/IMG_2791.JPG)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghTzCYUBEO6YCmbA_IaXsadCSSvSWir9qx1K0VeE_FILscI-cvn2KoEn9lgV45OkynQmG3OMqyTvxl7c3xTC7jMn6gd3JrYUg2uTFGmCDm9dnldiuipVOpyVwd2kGeop9b7XV04MQ7Htfl/s1600/IMG_2791.JPG)
+[![](IMG_2791.JPG)](IMG_2791.JPG)
 
 
 So, what are some things that worked really well for me?  
@@ -109,7 +109,7 @@ Other suggestions of things that  worked well for me include:
 However, there were a few things that did not work that well, or not work as well as expected. The worst thing was a growing pain in my right knee. I've always had some pain in my knee after hiking, but by day two I was starting to have severe pain. The trails have quite steep ascends/descends. This destroyed my knee. On day four another walker who knew about my knee passed by and said "I have some trekking poles - I tried them, tripped over myself, and haven't used them since. Wanna try?" I had never used poles before, thinking they were only for old people with bad knees... Needless to say, I'll be buying a pair when I get back to Sydney, and I finished the day 4 hike without any pain. If you ever, even once, have had pain in your knees, then rent trekking poles. I had to skip the French Valley because my knees were hurting too much (I guess technically I hiked the "U", not the "W"). If my pack was not so light, I do not think I would have been able to go up to the Torres.  
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMc375uOJ094b_h83P9Go4DYiU8ZMGIwnRIQj_DJp2e3Nssln2c5nOKB4bBqz6OMifVawpGgCyzWvCH0WOG8UaBm79SCuw3LElLFhiaQv20vqajj-KiF4hB6eqFRH9klIwB1VtEP4dVzHS/s640/IMG_2835.JPG)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjMc375uOJ094b_h83P9Go4DYiU8ZMGIwnRIQj_DJp2e3Nssln2c5nOKB4bBqz6OMifVawpGgCyzWvCH0WOG8UaBm79SCuw3LElLFhiaQv20vqajj-KiF4hB6eqFRH9klIwB1VtEP4dVzHS/s1600/IMG_2835.JPG)
+[![](IMG_2835.JPG)](IMG_2835.JPG)
 
 The second mistake I made was not bringing a flashlight. My logic was I would just go to bed when it got dark, and rise when it got light. This is what I have always done before when trekking. Unfortunately, this does not work that well when you want to be up before the sun rises, e.g. to see the Base de las Torres. I followed (closely) some people with torches, so made it, but came close to tripping quite a few times, and it generally wasn't that enjoyable. Most people had those LED lights that go on your forehead - that would be advisable.  
   

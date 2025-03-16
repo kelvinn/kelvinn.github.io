@@ -13,6 +13,6 @@ Luckily this is all quick to do using an only service called [ifttt](http://www.
 
 This example could be extended for other purposes, e.g. searching for the word "discount" on some suppliers Twitter stream.
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9Xfom6wP98Yvf6jLdln-G1Pn-BE7-bzuhwgbxOA1UXaozsqANwxeldbmFVNA8y2Igl3Y0cyMjoJewdsUf-wfVt9-laeQsXMcN4JvZAh5WjKYohJJObc7qQjgcU-zy9Oaw1M6uosJ1aZmX/s400/ifttt131500trains.jpg)](https://picasaweb.google.com/lh/photo/8h-kPAUWTOnkLEqguXAjPtMTjNZETYmyPJy0liipFm0?feat=embedwebsite)  
+[![](ifttt131500trains.jpg)](ifttt131500trains.jpg)  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjp_IqO0pCcccUfWeS8NMSs1IQ0qu3IN-q6CUJUrBjPUvZFEp8oVkb8c_pL7H02ZZO9Q1Q3IrXAGcNZAptqYjiy53LwIMGLhcsibQXrygycJH5jgN4enwhPegaKmIp1mvS-tHYNMqU0xZ9P/s400/screenshot-1336481752845.jpg)](https://picasaweb.google.com/lh/photo/pWjijYYAgM-ERMpFtAi4mdMTjNZETYmyPJy0liipFm0?feat=embedwebsite)
+[![](screenshot-1336481752845.jpg)](screenshot-1336481752845.jpg)

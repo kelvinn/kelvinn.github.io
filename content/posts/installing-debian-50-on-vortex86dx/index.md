@@ -25,7 +25,7 @@ http://cdn.kelvinism.com/ebox/linux-headers-2.6.29.3-vortex86dx.deb
 http://cdn.kelvinism.com/ebox/linux-image-2.6.29.3-vortex86dx.deb
 
 ```  
-  
+EDIT 16-03-2025: I've since removed these files.
 
 2. Download an i386 netinst iso:
 
@@ -59,10 +59,6 @@ append initrd=initrd.gz root=/dev/rd/0 devfs=mount,dall rw DEBCONF_PRIORITY=medi
 ```  
   
 
-It should look like this:
-
-![Ebox files](http://cdn.kelvinism.com/images/ebox3300files.png)  
-  
 7. Unmount the USB, and put it in your eBox-3300. When the system boots up initially, hit F11. Select your USB device. Depending how you created the MBR it might come up as saying "MBR FA:". Press "A". When 1234F comes up, press "1". Press enter at the SYSLINUX "boot:" screen.
 8. Proceed as normal through the menu. It will search for an ISO image, and should detect the netinst image you inserted earlier. When you get to the "Load installer components" section, it will complain about no kernel modules found. Select YES. On the next screen you shouldn't need to load any components, so hit continue. Proceed as normal.
 9. If you are ever asked about starting PC card services, hit NO. Proceed as normal.
@@ -121,6 +117,7 @@ then quit qemu, put the SD card in the box and reboot. You are done!
 
 ```  
   
+EDIT 16-03-2025: I have since removed these files.
 
 If you want the source file for the above kernels, you can get it from here: [2.6.29-3 source](http://cdn.kelvinism.com/ebox/linux-source-2.6.29.3-vortex86dx.deb). I recently recompiled the kernel with some extra modules enabled (e.g. ecryptfs), so if you would like to try a newer kernel, you can download my updated kernels too:
 
@@ -129,7 +126,9 @@ http://cdn.kelvinism.com/ebox/linux-headers-2.6.30.4-vortex86dx.deb
 http://cdn.kelvinism.com/ebox/linux-image-2.6.30.4-vortex86dx_2.6.30.4.deb
 
 ```  
-  
+
+EDIT 16-03-2025: I have since removed these files.
+
 
 **Contribution 2**: Trent L has also recompiled a 2.6.28 kernel with wireless extensions built into it, which is what was needed for his wireless card. He has kindly allowed me to distribute them; you can find them here:
 
@@ -140,6 +139,8 @@ http://cdn.kelvinism.com/ebox/linux-headers-2.6.28.10_vortex86dx.deb
 http://cdn.kelvinism.com/ebox/2.6.28.config
 
 ```  
+
+EDIT 16-03-2025: I have since removed these files.
 
 **Contribution 3**: If you have the ebox-3310, you can still read through this, but you may also want to see a [suggested installation method and kernels](http://kelvinism.com/howtos/lenny-ebox-3310a/) from Stefan.
 

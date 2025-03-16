@@ -12,7 +12,7 @@ tags:
 ---
 
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigBFNcFKSB9lKhJPiSiwDlp9q9SmO2yEu9v343B1M-2NFN5s2cJ-cUji8qR3LW1CmmitKztwUh3QxLAIjkSMYio5lIwhX1GszzhfZnufjrxugrWTNSZLH06e-qxV4ldttqBMDRBPWfXlc4/s800/zenityss.jpg)](http://picasaweb.google.com/lh/photo/whbV2vHNOr5d7pvO8qsgRw?feat=embedwebsite)  
+[![](zenityss.jpg)](zenityss.jpg)  
   
 
 I have to admit, I'm pretty lazy. I don't (ironically) like to type, and I really don't like typing the same command over and over. I found myself switching between my external monitor and laptop quite frequently, and decided to somewhat automate the task. Although I know there are other programs out there that allow this, they either had too many features, or crashed. Xrandr works just fine, but like I said, I'm lazy...

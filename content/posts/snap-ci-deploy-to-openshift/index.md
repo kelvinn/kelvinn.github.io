@@ -18,7 +18,7 @@ You will need to add your private SSH key (i.e. id_rsa) to Snap, and your public
   
 You can create the keys on another machine with the ssh-keygen command, and copy them into them into the corresponding places. In OpenShift, this is under Settings -> Add a new key. Once open, paste in the contents of your id_rsa.pub key  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmL4dE8VgbPKgFDflwiA3-oPHDGrFOd78PatxOxxjTH-j2r5HTmgKlelJpZbVN-9ye1dENz4GQSnIIKqDP0WzlXBbzMFluNn_U3s_z98W4iRYVVKp1PEwW1NDAGFe604gFoSRRnMj-C2uq/s320/openshift.tiff)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmL4dE8VgbPKgFDflwiA3-oPHDGrFOd78PatxOxxjTH-j2r5HTmgKlelJpZbVN-9ye1dENz4GQSnIIKqDP0WzlXBbzMFluNn_U3s_z98W4iRYVVKp1PEwW1NDAGFe604gFoSRRnMj-C2uq/s1600/openshift.tiff)  
+[![](openshift.tiff)](openshift.tiff)  
   
 
   
@@ -26,7 +26,7 @@ You can create the keys on another machine with the ssh-keygen command, and copy
   
 In Snap, edit your configuration, navigate to your Deploy step, and look for "Secure Files" and "Add new"  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnLe0T3zGNxp5K4gbrAXmVBJBLDM88nxeuifqbu4ssmcUYUOsv3ZdKnekpLIle3l6GRblomcU-q0q4o4GcWRHStJs4PCvGI7100RKNLpc9j0mHaKsD-R3iV_TV33KmBab1rhtS_IL1oYdA/s320/AddFiles.tiff)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjnLe0T3zGNxp5K4gbrAXmVBJBLDM88nxeuifqbu4ssmcUYUOsv3ZdKnekpLIle3l6GRblomcU-q0q4o4GcWRHStJs4PCvGI7100RKNLpc9j0mHaKsD-R3iV_TV33KmBab1rhtS_IL1oYdA/s1600/AddFiles.tiff)  
+[![](AddFiles.tiff)](AddFiles.tiff)  
   
 
   
@@ -34,7 +34,7 @@ In Snap, edit your configuration, navigate to your Deploy step, and look for "Se
   
 Get the content of the id_rsa key you generated earlier and post it in the content box. It should look like this, with "/var/go" as the file location, except with a real key:  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA8Ox5iz27x-HNT2QVWG8prydd6lMfbcrDa6YPAkU8zTSECO0ZDK_4e4KLP_-1zPt8dtRVPQPgP6hWMmffFPEmTmci13SBYL2azquQkelAouMa-s9xsmVqCLDCz_Yfthh4Zz53TsbJ9BNF/s400/AddIdRSA.tiff)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgA8Ox5iz27x-HNT2QVWG8prydd6lMfbcrDa6YPAkU8zTSECO0ZDK_4e4KLP_-1zPt8dtRVPQPgP6hWMmffFPEmTmci13SBYL2azquQkelAouMa-s9xsmVqCLDCz_Yfthh4Zz53TsbJ9BNF/s1600/AddIdRSA.tiff)  
+[![](AddIdRSA.tiff)](AddIdRSA.tiff)  
   
 
   
@@ -80,7 +80,7 @@ git "$@"
 ```  
 Give this script the name "git.sh", set the file permissions to "0755", and update the file location to "/var/go".  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjthfqPh0zrFJs5C7xyUwe0MV-89R4IMcJv2h4hG1d_YXqyoD4PjKiHlvlHI2BmhqgPCVfaNBjJjKXc5zJeERK2BOdNF9EuHWO0dc_DeqrjokZ4NsiTvninQPtEHCTo_NWl10KfSthWDlHS/s400/gitsh.tiff)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjthfqPh0zrFJs5C7xyUwe0MV-89R4IMcJv2h4hG1d_YXqyoD4PjKiHlvlHI2BmhqgPCVfaNBjJjKXc5zJeERK2BOdNF9EuHWO0dc_DeqrjokZ4NsiTvninQPtEHCTo_NWl10KfSthWDlHS/s1600/gitsh.tiff)  
+[![](gitsh.tiff)](gitsh.tiff)  
   
 
   

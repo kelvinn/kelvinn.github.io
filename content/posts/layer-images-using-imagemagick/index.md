@@ -16,14 +16,14 @@ The great [ImageMagick](http://www.imagemagick.org/) toolkit comes to the rescue
 
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9DtidDx_8lHusK9vq-3mkIcKg0JVjCMnyYy4DjZjap556Hb8z2kl3eVTnK-Mz-yBv0D_AG-DYTg2IhIy6Zxluvhe1iv7bbB6JbhmcQKwOL8bDQNqheRmrUN3WMdPjv_s_WgOW3XvCunUQ/s400/world.jpg)](http://picasaweb.google.com/lh/photo/qQpq_rmGDyoXcID-MUKJRA?feat=embedwebsite)  
+[![](world.jpg)](world.jpg)  
   
 
 #### And add it to this:
 
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfXQwFtbAJUa7qcRPpCBny5h188YpMglxSc-uUZPQcp4iCyKZRJddY3MUkmzRNTbE4rd0ueQzxJJyAevjiVOVar7mQPhoExM4E-z_OxXWxEnd5AoyUkWKqaAvDjqm4tjmh76oroizz4UFH/s400/bg.jpg)](http://picasaweb.google.com/lh/photo/FHDY48lASCafTiMXXbYbtA?feat=embedwebsite)  
+[![](bg.jpg)](bg.jpg)  
   
 I first tried to use the following technique:  
 ```bash
@@ -51,4 +51,4 @@ This also yielded an acceptable resource usage.
 
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgZdMmBEvPgAYTaDp7y4Lh-wEoTDZafQCGDo6cfh2vPmtpr714ioNsddZViGiIhfydnqbtXEfjYP8nDoq_bK_1SZQQxvsHYlGpo5FSfPnJwuDw7M7rW3rDA__jUOFtZ-Ijghda78yaiyX1/s400/output.jpg)](http://picasaweb.google.com/lh/photo/UCqOBQ2ohdqcBCZXrkHZzg?feat=embedwebsite)
+[![](output.jpg)](output.jpg)

@@ -53,7 +53,7 @@ If I chart the days of the week I like to drink coffee over the last 18 months, 
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizhWBMSzyyjd6pBQIO6Xl_HxHDrs0FL1BrTR0cCaiA5m13VPD6aA9Z5jtnAcnd_InEad5Hc2ea3RL5-jJFfONPXXi4LeYSRRX1q0ImuM-d4zgEUJ4kR9_mcNr1a0FD3TDH8x-1zT0NL8w9/s400/Coffees+Consumed.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizhWBMSzyyjd6pBQIO6Xl_HxHDrs0FL1BrTR0cCaiA5m13VPD6aA9Z5jtnAcnd_InEad5Hc2ea3RL5-jJFfONPXXi4LeYSRRX1q0ImuM-d4zgEUJ4kR9_mcNr1a0FD3TDH8x-1zT0NL8w9/s1600/Coffees+Consumed.png)
+[![](Coffees+Consumed.png)](Coffees+Consumed.png)
 
   
 
@@ -66,7 +66,7 @@ If I chart the days of the week I like to drink coffee over the last 18 months, 
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjR5ykT5bhy_ad8S8JoI6EUQ0RCzM2gZ5s5tW5un-KLyHDmgN36wHpK6jMpnp48Xivsr6A419_mGIalt3JH0f765uTe1tPNwf4dwFFy4eR0F0cI5hc5KwKrqRiuVb5IzWfvvSTa-5JeCW60/s640/DrinksPerMonth.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjR5ykT5bhy_ad8S8JoI6EUQ0RCzM2gZ5s5tW5un-KLyHDmgN36wHpK6jMpnp48Xivsr6A419_mGIalt3JH0f765uTe1tPNwf4dwFFy4eR0F0cI5hc5KwKrqRiuVb5IzWfvvSTa-5JeCW60/s1600/DrinksPerMonth.png)
+[![](DrinksPerMonth.png)](DrinksPerMonth.png)
 
   
 
@@ -77,7 +77,7 @@ I track both beer and wine consumption. I have managed to cut back on wine, but 
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYLivknCrrbpipLuzJ3PzD2PQ0ybjrYtauWcccp-n84eW7EkRVQ1NEMrjKBK5z1Fn_7cObH7jrw8EKENoMLiGjYQGXfLfMM2ExURZvOIOnMoolGExYLmgG5uvck6YM5q0mZYGh6JJfRf__/s400/WineVsBeer.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYLivknCrrbpipLuzJ3PzD2PQ0ybjrYtauWcccp-n84eW7EkRVQ1NEMrjKBK5z1Fn_7cObH7jrw8EKENoMLiGjYQGXfLfMM2ExURZvOIOnMoolGExYLmgG5uvck6YM5q0mZYGh6JJfRf__/s1600/WineVsBeer.png)
+[![](WineVsBeer.png)](WineVsBeer.png)
 
   
 
@@ -91,7 +91,7 @@ For the last two years I have been wearing a [FitBit](http://www.fitbit.com/), u
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhS2LBzZFHnIDgkYNEP_eRfl1Bbsh5Hs3TiSenJzRIAvWPDnGRW6wc3dpS38XK7FFCGvlFAqyW5dVGiBsuFHlWXdShzo-g3MxpGnShMWr80QXnkyXTcmK9GXL9I0a3l4iT2SRAvgdHL7i-/s400/StepsPerWeek.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhhS2LBzZFHnIDgkYNEP_eRfl1Bbsh5Hs3TiSenJzRIAvWPDnGRW6wc3dpS38XK7FFCGvlFAqyW5dVGiBsuFHlWXdShzo-g3MxpGnShMWr80QXnkyXTcmK9GXL9I0a3l4iT2SRAvgdHL7i-/s1600/StepsPerWeek.png)
+[![](StepsPerWeek.png)](StepsPerWeek.png)
 
   
 
@@ -107,7 +107,7 @@ I should also sleep more. It appears as though maybe, just maybe, I am starting 
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcuFmtvrfu2PrU7u50G8mZiI5BQKlBwrxH4VZW2gxRKKshnF8hG73r4x_OPrlDT9IjmSuzbsYbxaN8gNlTcHBU56Gt0v2qdb9ggvqmfUdaAjdx6XR_ZmzmX2uw0zvGo5khqZpaEpKT8fBQ/s400/MinutesAsleep.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhcuFmtvrfu2PrU7u50G8mZiI5BQKlBwrxH4VZW2gxRKKshnF8hG73r4x_OPrlDT9IjmSuzbsYbxaN8gNlTcHBU56Gt0v2qdb9ggvqmfUdaAjdx6XR_ZmzmX2uw0zvGo5khqZpaEpKT8fBQ/s1600/MinutesAsleep.png)
+[![](MinutesAsleep.png)](MinutesAsleep.png)
 
   
 
@@ -123,7 +123,7 @@ This graph shows my average happiness on a weekly basis for the last ~8 months. 
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaPNyvwROBXvcUDbvmWjXQNkdoUtbIS1d5WNiYe4gY_k89yQ7TD_zX24Xx6IRQ3tauBiScGxlCl_Pl7HueBsj5vHCKMdBBG6c_JxvNDa_AhNn_WoAtlstQPjqpPOF5wEHg-2lj4Jg7g9lt/s400/HappinessLevels.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiaPNyvwROBXvcUDbvmWjXQNkdoUtbIS1d5WNiYe4gY_k89yQ7TD_zX24Xx6IRQ3tauBiScGxlCl_Pl7HueBsj5vHCKMdBBG6c_JxvNDa_AhNn_WoAtlstQPjqpPOF5wEHg-2lj4Jg7g9lt/s1600/HappinessLevels.png)
+[![](HappinessLevels.png)](HappinessLevels.png)
 
   
 
@@ -131,7 +131,7 @@ This graph shows my average happiness on a weekly basis for the last ~8 months. 
 And here we have my happiness levels when grouped by day of the week. We could conclude that I am, on average, the most content on a Sunday. I would like to believe it is just a coincidence that I am most content on a Sunday, and drink the least amount of coffee.  
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZSPSAIcShizGYihxqq8sUEBuym3QKmjW5MzqLG2UDYhTNq4dPnnULLbnNk6XN66CoxRQKDCbpe-R5C2Ei6ZYW3sXvpUweHLIqLkUEJ9copLPBYMVsWSWDjUKKbqGERORa6vIFRvYClUpi/s400/HappinessLevelsByWeekday.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZSPSAIcShizGYihxqq8sUEBuym3QKmjW5MzqLG2UDYhTNq4dPnnULLbnNk6XN66CoxRQKDCbpe-R5C2Ei6ZYW3sXvpUweHLIqLkUEJ9copLPBYMVsWSWDjUKKbqGERORa6vIFRvYClUpi/s1600/HappinessLevelsByWeekday.png)
+[![](HappinessLevelsByWeekday.png)](HappinessLevelsByWeekday.png)
 
   
 
@@ -145,7 +145,7 @@ This is the standard deviation of my happiness tracking on a monthly basis. It l
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH1tHZVTIM1VKrYUelpM8MuNwxtVirH2sSetHMvo_ZeBrU3hX-Hxy8m5Pr5W87HRmdmbGWv9ltCn4YwN_haNDRCVz7DZT6ZAwbq9IkqkiBaLG4N2L1KQgRu2bK7txg2aeRtN1m7DsDjUTC/s400/StdDevHappiness.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjH1tHZVTIM1VKrYUelpM8MuNwxtVirH2sSetHMvo_ZeBrU3hX-Hxy8m5Pr5W87HRmdmbGWv9ltCn4YwN_haNDRCVz7DZT6ZAwbq9IkqkiBaLG4N2L1KQgRu2bK7txg2aeRtN1m7DsDjUTC/s1600/StdDevHappiness.png)
+[![](StdDevHappiness.png)](StdDevHappiness.png)
 
   
 
@@ -159,7 +159,7 @@ And finally, weight. Nothing interesting here. I need to get back down to 77KG, 
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjc37Tdd2wc3vLwfhPtKvYtY8mtVN0tV2pbbq7sjaqqBEOS9UGr0VzLC1fGY_PyI1SA8g3Y3TQOcqOAIyIUsByoNzsL_9pBDEdyjlk7n48RVZd-P3tdVWNZ_7h2M2gwZVcsESRkPj-YdAM1/s640/Weight.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjc37Tdd2wc3vLwfhPtKvYtY8mtVN0tV2pbbq7sjaqqBEOS9UGr0VzLC1fGY_PyI1SA8g3Y3TQOcqOAIyIUsByoNzsL_9pBDEdyjlk7n48RVZd-P3tdVWNZ_7h2M2gwZVcsESRkPj-YdAM1/s1600/Weight.png)
+[![](Weight.png)](Weight.png)
 
   
 

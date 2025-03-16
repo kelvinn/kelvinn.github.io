@@ -7,7 +7,7 @@ tags:
 - projects
 ---
 
-Status:  
+Status:  ✅ 
   
 
 Initially all CSRs were hired as temps, which means they had their own timesheets. Some new people have been hired as full/part-time employees, so we need to handle their timesheets -- plus, several people (including myself) are paid on an hourly basis. Perfect time to setup a Timesheet.

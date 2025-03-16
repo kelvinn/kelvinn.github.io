@@ -26,7 +26,7 @@ So, what's it in my kit? Let's start with the drugs.
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3V5DxeTIeYhvGDYEHLqhZnmzT0yQsIMDT5bPyN6J1AYXNk-80-BVQG-c-pP625AYbtJm28QtK90J7GKA__Xxg7MeqO8kPtg3pvUxAGrkjhDGW6IFjZYisBTrRF5y5fYbqWoGZlMdvRiUI/w640-h480/IMG_4728.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3V5DxeTIeYhvGDYEHLqhZnmzT0yQsIMDT5bPyN6J1AYXNk-80-BVQG-c-pP625AYbtJm28QtK90J7GKA__Xxg7MeqO8kPtg3pvUxAGrkjhDGW6IFjZYisBTrRF5y5fYbqWoGZlMdvRiUI/s4032/IMG_4728.jpg)
+[![](IMG_4728.jpg)](IMG_4728.jpg)
 
 Lots of drugs  
 
@@ -56,7 +56,7 @@ Let's move on to the other stuff.
 
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3AoTm19iwsD8h-FDNvaH3k3CSl1m17IQ6R4zZ7w81CiizXfmF2EsYDdLfgKDF3OUom1tlztXsgY0HVjJToml2IHBCjk4I1pF5MZPGGW9D7fEgdr5iIpIJ1f-95q_OIOAg2NkocqYRhdxF/w640-h480/IMG_4727.jpg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3AoTm19iwsD8h-FDNvaH3k3CSl1m17IQ6R4zZ7w81CiizXfmF2EsYDdLfgKDF3OUom1tlztXsgY0HVjJToml2IHBCjk4I1pF5MZPGGW9D7fEgdr5iIpIJ1f-95q_OIOAg2NkocqYRhdxF/s4032/IMG_4727.jpg)
+[![](IMG_4727.jpg)](IMG_4727.jpg)
 
 All the other stuff  
 

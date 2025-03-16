@@ -24,15 +24,15 @@ ssh -oPort=1234 user@damon.com -D 1080
 Remember ports below 1024 are reserved, and you would need root access. Now it is time to configure the different programs to use the newly created tunnel.  
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5MWWeIZYH4RZuL3binMtkPHLDyvU5HRdNdJCtBdH5IYYrdEqk95ROxmFMKWJTjFxY267VFVw-_eohgpwD4K-RVRM4X9m80Mv1Gv6HxJJAO7T57eV7y_hZF_9RWEWKnDUp0d5pcr52Nq9S/s400/gnome-settings.jpg)](https://picasaweb.google.com/lh/photo/QH-jPk3gHgigKtmQcrhoig?feat=embedwebsite)
+[![](gnome-settings.jpg)](gnome-settings.jpg)
 
 #### Setting up Gnome (optional)
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRsef8lcC6qNZh2vdPbGZ1t8cL91ibwCeuHwy1hwZMlqQpNDKw7MRh7zBMmxvRfsFcL6iYe7xKv_Mdnqsn_394B_buuZlRoApNOT7z9vgwOChr6x2yByWue3Awgo-NHtPmI7aecOXTlg4F/s400/msn-settings.jpg)](https://picasaweb.google.com/lh/photo/USO3dEudCNgJGvNOh8IAQA?feat=embedwebsite)
+[![](msn-settings.jpg)](msn-settings.jpg)
 
 #### Tunneling Pidgen
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7xGVXjZDHSQlReX7mAad4ko6zk7Lf7JWyIe6TYj2yrIAk7L8jCpo0mypVrNP0DqU4OTPEPX2TuEbOo8ySZgdzkexVU7V_hnBguhfg_ACbXfjTM_KNvtdj-gLDmiqMzIoCpKEvYWXhifSN/s400/xchat-settings.jpg)](https://picasaweb.google.com/lh/photo/HX-kbMnfI3fwpbUyRf17FA?feat=embedwebsite)
+[![](xchat-settings.jpg)](xchat-settings.jpg)
 
 #### Tunneling XChat
 
@@ -40,11 +40,11 @@ Remember ports below 1024 are reserved, and you would need root access. Now it i
 _Note_: I'm going to list two examples, one is with FoxyProxy and the other is with the ordinary proxy settings.  
   
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjGCLf_YOke30XnQgqrLAW_6aRGAm1INIHSEzcA7NZitNF4CMpOADpfBRmnhZ3UcLGhGNUiFj6BnJc66DDA8CnhE1GaSrh-mTFzFXXS7OsiviFdYNKH4o-yTnZIjl8hW4NMR4biKUvC0ws8/s400/foxyproxy-settings.jpg)](https://picasaweb.google.com/lh/photo/iKYUjPKEnU6WWq5ytUlftg?feat=embedwebsite)
+[![](foxyproxy-settings.jpg)](foxyproxy-settings.jpg)
 
 #### FoxyProxy
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3N60K_2L5EX61zgiQG42vWxG-0oiEU0gNQE_M5JYd9ulZBx9p-NW4jBmk6sRYPG4U4VQIOelYAktI3WPT1UGztDyAJ1jSEVAaHn1HBfzG-L-Mw-WyAIA53StGCrV8SoIAiYnk_VyiwNpJ/s400/firefox-settings.jpg)](https://picasaweb.google.com/lh/photo/gCoCFhGSNBf2T0vGhHoSrA?feat=embedwebsite)
+[![](firefox-settings.jpg)](firefox-settings.jpg)
 
 #### Normal Proxy
 

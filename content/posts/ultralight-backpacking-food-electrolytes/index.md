@@ -99,7 +99,7 @@ More notes:
 - Reminder that to monitor water intake, urine frequency and colour is the way to go.
 - Condition most likely to encounter on the trail is "exercise-associated hyponatremia", aka drinking plenty of fluids, but not enough electrolytes. One symptom of hyponatremia is swelling, in particular in hands and feet. Ring is a sensitive instrument... "snug fit, time to start taking on electrolytes with water. Loosey goosey? No need to supplement beyond what already get from trail snacks."
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtHf82oGqG2xU1eUNict6W9p4CA8cnXqJ6ktLJIJKsjL3wflDGseJl5KB8ydS3bdeALcJNuawMXV-Rv9CPjqxuThpFM31we2qCvvNJxFQ_SlL0S3QU2U_R2bjL06zGHAThPRQGGZcz5pab/s16000/electrolyte+chart+diagram.jpeg)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjtHf82oGqG2xU1eUNict6W9p4CA8cnXqJ6ktLJIJKsjL3wflDGseJl5KB8ydS3bdeALcJNuawMXV-Rv9CPjqxuThpFM31we2qCvvNJxFQ_SlL0S3QU2U_R2bjL06zGHAThPRQGGZcz5pab/s474/electrolyte+chart+diagram.jpeg)
+[![](electrolyte+chart+diagram.jpeg)](electrolyte+chart+diagram.jpeg)
 
 Lots of sodium - 4,500mg would be for long days hiking in the heat  
 

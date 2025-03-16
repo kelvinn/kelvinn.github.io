@@ -21,18 +21,18 @@ So photos for nostalgic sake.
 
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiXp_m4SvvN8PbAymlRJs2ZvT7KrZzCbqf4WAVWs-lt0Y41x9VUbhOjxEtvezbZAqKtmna3GW5g-uVXpkBa95u1uMV5yShzQZ6x0qalpOM8zmMqQ9WWl5g6wSAhqkCIVAdThIKDH9ozpYLM/s288/blogmozaic_front.jpg)](http://picasaweb.google.com/lh/photo/LYDLBv2SkTJV-5barb0UzA?feat=embedwebsite)  
+[![](blogmozaic_front.jpg)](blogmozaic_front.jpg)  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjUt2b5shCscp12lVUUBXnlC3GcWfaU83m2Ew4V7RRSq530tgGcUoiCT0sdA8C-3596klcwP2tedeshlYmdtizgPiVcv5HxNTmpYilEJ3mMxS3Vtol9mDBF23TlSN_YhbP4MQBXP9r06Um/s400/blogmozaic_list.jpg)](http://picasaweb.google.com/lh/photo/ueEvQfTqKLwCSvK9CsQAqA?feat=embedwebsite)  
-  
-  
+[![](blogmozaic_list.jpg)](blogmozaic_list.jpg)  
   
   
   
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYGMzQAzewL7jfYamv0CrDPIk97PyzteH0asEOqtODMpFiU_AiaU0TIgnc3uO1vlFFkv3OOGNH0GdiYqy-5kEgIr2rQVN-b5ka6WSyXMoIIBh0_jsj9zLDGq11cqs7RTMFHbL4CE7EfaZ_/s400/ducktracker_front.jpg)](http://picasaweb.google.com/lh/photo/PcPXbQv6iUwLlDcw8w6CxA?feat=embedwebsite)  
   
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3EzUKR873JiXy3kXp4Ic4u4T4vSzc3KJz9XXhq4V5HN5mVA1cx8uvQCbgRO7JejPEDB18731_c_BltqOkWoD7-si6q-ELuT3xEjoP20nD7R-RCcCM7nDKJsKKpL6-5Dre3ESBuznzjO5F/s400/ducktracker_details.jpg)](http://picasaweb.google.com/lh/photo/n4aEWCTxpy02ZN529pLKnw?feat=embedwebsite)  
+  
+[![](ducktracker_front.jpg)](ducktracker_front.jpg)  
+  
+[![](ducktracker_details.jpg)](ducktracker_details.jpg)  
 
   
   

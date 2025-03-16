@@ -10,7 +10,7 @@ tags:
 - articles
 ---
 
-[![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhidCIsvAamk9SjeJxqIcMmNA_hjCUOzREgxQ3hJuSXhU4RIHXuQO6WXMZZ1Eu34jI3exx0F8JwVX4Fu2iO_jBIazNkArv21u4OSbo3GFY_YcTScbA_kC0u5p0iiE_YyhAOl85Ze-742pB6/s1600/SplunkOpenShift.png)](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhidCIsvAamk9SjeJxqIcMmNA_hjCUOzREgxQ3hJuSXhU4RIHXuQO6WXMZZ1Eu34jI3exx0F8JwVX4Fu2iO_jBIazNkArv21u4OSbo3GFY_YcTScbA_kC0u5p0iiE_YyhAOl85Ze-742pB6/s1600/SplunkOpenShift.png)
+[![](SplunkOpenShift.png)](SplunkOpenShift.png)
 
 I first used Splunk about 10 years ago after an old colleague installed it on a computer in the corner, and ever since then I have preached about it. If you have log data, of any kind, I'd recommend you give it a go.  
 

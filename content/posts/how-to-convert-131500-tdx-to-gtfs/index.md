@@ -26,6 +26,9 @@ wget http://ec2-175-41-139-176.ap-southeast-1.compute.amazonaws.com/Data20110127
 wget http://cdn.kelvinism.com/transxchange2GoogleTransit.jar
 
 ```  
+
+EDIT 16-03-2025: I've since removed these files.
+
 6) Install Sun JRE.  
 
 ```bash

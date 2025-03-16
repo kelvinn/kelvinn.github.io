@@ -11,14 +11,17 @@ tags:
 - ebox
 ---
 
-As a preface, I take absolutely no credit for the below instructions. Stefan L kindly sent these through these instructions on installing Debian on the 3310A. I need to send a special thanks to Stefan, as I receive a lot of emails about the 3310 - but I don't have one, so I can't really do much:(  
+As a preface, I take absolutely no credit for the below instructions. Stefan L kindly sent these through these instructions on installing Debian on the 3310A. I need to send a special thanks to Stefan, as I receive a lot of emails about the 3310 - but I don't have one, so I can't really do much:
+
 The only edit I've done is change out the links to my files on S3. If you find these helpful, or want to suggest an alteration, please leave a comment.  
+
 Download these files first:  
 
 *   [2.6.31.5 kernel image](http://cdn.kelvinism.com/ebox/linux-image-2.6.31.5-vortex86-sl3_2.6.31.5-vortex86-sl3-10.00.Custom_i386.deb)
 *   [2.6.31.5 kernel headers](http://cdn.kelvinism.com/ebox/linux-headers-2.6.31.5-vortex86-sl3_2.6.31.5-vortex86-sl3-10.00.Custom_i386.deb)
 *   [2.6.31-14 custom pata_rdc module](http://cdn.kelvinism.com/ebox/initrd.img-2.6.31-14-generic-pata_rdc)
 
+EDIT 16-03-2025: I have since removed these files.
   
   
 The steps to install Lenny to CF in brief is:  
@@ -33,20 +36,21 @@ title           Debian GNU/Linux, kernel 2.6.31.5-vortex86-sl3
 root            (hd0,0)
 kernel          /boot/vmlinuz-2.6.31.5-vortex86-sl3 root=/dev/sdb1 ro verbose
 
-```bash
+```
 5. Probably need to change /boot/grub/device.map
 
 ```bash
 (hd1)   /dev/sda
 (hd0)   /dev/sdb
 
-```bash
+```
 
 With no micro sd it would be:
 
 ```bash
 (hd0) /dev/sda
 
-```bash
+```
+
 6. delete the section below "# PCI device ...." in /etc/udev/rules.d/70-persistent-net.rules (Otherwise the eBox network gets remapped to eth1 and may not appear if only eth0 is specified in the network settings) 
 7. **Reboot & pray** The next one is a revised initrd for the current Ubuntu 9.10: http://staff.washington.edu/lombaard/initrd.img-2.6.31-14-generic-pata_rdc. (EDIT 12-03-2025: Lost my image that was linked from here). The two changes are: blacklist dm_raid45 & add pata-rdc.ko "blacklist dm_raid45" needs to be added to /etc/modprobe.d/blacklist.conf I managed to boot into gnome desktop without any further problems. I have enabled PCI IDE Bus Mastering, plug&play and IDE native mode in the bios. Hope this saves someone else a few hours of frustration.

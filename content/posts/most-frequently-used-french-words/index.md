@@ -25,7 +25,7 @@ My desire was to have a PDF of the top few thousand most used French words. With
 
 I've also found 100s of sites with 50 words or so - not exactly what I wanted. This spawned a question for me: if I were to search a popular French newspaper website, what words would be the most frequent? I would want to learn those first. A few hours later, and I've compiled that list. I'll write the details of how I did it at the end, but just know I collected over 16,000 unique words, and "read" over 80,000 words from a variety of articles. Below is a PDF of the most popular words, ranked in order, with (maybe incorrect) English translations.  
   
-[The 3216 Most Unofficially Frequent French Words](http://cdn.kelvinism.com/files/wordlist.pdf) (or [download as ODS format](http://cdn.kelvinism.com/files/wordlist.ods))  
+[The 625 Most Unofficially Frequent French Words](https://github.com/kelvinn/the-625-list/blob/master/625-words-fluent-forever.csv)
   
 More to come...! I'm going to continue building the database to make sure the ranking is correct, and will make some pretty graphs when I have time. I will also likely modify things to include what type of word it is, and an example in a sentence.  
   
