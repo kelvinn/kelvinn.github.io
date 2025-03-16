@@ -102,7 +102,7 @@ To solve this, you need to edit /etc/apache2/mods-enabled/proxy.conf or your htt
 </IfModule>
 
 ```
-Now, open up your httpd-vhosts.conf or httpd.conf or wherever your site configuration is stored, and add the following inside the <virtualhost> directive:  
+Now, open up your httpd-vhosts.conf or httpd.conf or wherever your site configuration is stored, and add the following inside the `virtualhost` directive:  
   
 ```bash
 #DocumentRoot is just for reference, I assume you know how to setup virtualhosts.

@@ -21,9 +21,9 @@ This post gives a technical description how to migrate a site running Django, bu
 1. **Create Blogger Template**  
 I wanted to keep my design, so I hacked it to support Blogger. Take one of the existing templates, edit the HTML, and adjust it for your design. If you've worked with templates before this shouldn't be too difficult.  
 2. **Generate Sample XML**  
-The first step was to generate a sample XML file from Blogger to see what would be needed for import. Create a sample post with a unique name and a few labels, and location. In Blogger, go to Settings->Other and click Export Blog. The first 90% of the file will be for your template and other settings, but eventually you will find a section with <entry> elements in it. Copy this sample element out - this will become your template.  
+The first step was to generate a sample XML file from Blogger to see what would be needed for import. Create a sample post with a unique name and a few labels, and location. In Blogger, go to Settings->Other and click Export Blog. The first 90% of the file will be for your template and other settings, but eventually you will find a section with `entry` elements in it. Copy this sample element out - this will become your template.  
 3. **Format Template**  
-Using the sample section from the blog export, format it so the view you will create populates it correctly. A note of caution: the template needs time in ISO 8601 format, you need the <id> element, and the location element needs coordinates if there is a name. It won't import later if there is a name with no coordinates. My template looks like this:  
+Using the sample section from the blog export, format it so the view you will create populates it correctly. A note of caution: the template needs time in ISO 8601 format, you need the `id` element, and the location element needs coordinates if there is a name. It won't import later if there is a name with no coordinates. My template looks like this:  
 
 
 #### feeds/rss.html
@@ -92,7 +92,7 @@ I did a filter on the model to not include "blog" entries - these are my travel 
   
 5. **Download Entries**  
 
-Visit the URL you mapped to the "show_rss" function in urls.py, it should generate your list of entries. Copy and paste those entries into the exported XML from Blogger where you took out the original <entry> element.  
+Visit the URL you mapped to the "show_rss" function in urls.py, it should generate your list of entries. Copy and paste those entries into the exported XML from Blogger where you took out the original `entry` element.  
   
 6. **Import Entries**  
 
