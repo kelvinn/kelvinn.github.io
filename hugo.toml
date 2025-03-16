@@ -11,6 +11,7 @@ disableSpecial1stPost = true
 ShowReadingTime = true
 ShowBreadCrumbs = false
 defaultTheme = "light"
+ShowPostNavLinks = false
 
 [markup.goldmark.renderHooks.image]
 enableDefault = true
