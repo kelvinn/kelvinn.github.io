@@ -38,7 +38,7 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1/2 tsp mustard seeds
 - 500mg TMG powder
 - 1 scoop pea protein powder
-- 1 tsp wheat germ
+- 2 Tbsp wheat germ
 - 1/2 tsp turmeric
 - 1 tsp of creatine
 
