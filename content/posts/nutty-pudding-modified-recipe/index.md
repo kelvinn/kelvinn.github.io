@@ -37,6 +37,7 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1/2 - 1 cup frozen mixed berries
 - 1/2 tsp mustard seeds
 - 500mg TMG powder
+- 1 Tbsp HCP
 - 1 scoop (25g) pea protein powder
 - 2 Tbsp wheat germ
 - 1/2 tsp turmeric
@@ -54,7 +55,8 @@ Almost all of this is just from Woolies or Coles, but I did buy the TMG from iHe
 8. **Turmeric** is for it's active component **curcumin**, which is anti-inflammatory. This is from How Not To Age.
 9. **Creatine** is to increase ATP production and hopefully allow me to build muscle faster. Apparently there are also some studies indicating it may be helpful to push back Alzheimer’s and Parkinson’s.
 10. Removed **Macadamia Nut Milk**, as I just use water. Macadamia Nut Milk is expensive in Australia.
-11. **Pea Protein Powder** to slightly up my protein intake. I'm currently 77kg and aim for around 125g per day, but don't track macros anymore. As we know, protein is a double edged sword: on one side we build muscle to fend off sarcopenia, an on the other side we activate MTOR which inhibits autophagy.
+11. **HCP** for skin health, muscle recovery (glycine) and joint/bone support. I'm on the fence if there is enough evidence to show efficacy here.
+12. **Pea Protein Powder** to slightly up my protein intake. I'm currently 77kg and aim for around 125g per day, but don't track macros anymore. As we know, protein is a double edged sword: on one side we build muscle to fend off sarcopenia, an on the other side we activate MTOR which inhibits autophagy.
 
 ### Prep and Storage
 
