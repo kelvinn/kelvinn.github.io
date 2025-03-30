@@ -1,7 +1,7 @@
 ---
 title: 2025 Q1 Health Review
 date: 2025-03-27T21:30:00.002+11:00
-draft: false
+draft: true
 url: /2025/03/2025-q1-health-review.html
 tags:
   - longevity
@@ -28,12 +28,11 @@ This quarter
 
 Here is what my 'intensity minutes' look like for the previous 12 months, and you can clearly see the impact of travelling in Dec/Jan:
 
-![[Screenshot 2025-03-28 at 5.18.39 pm.png]]
+[![](Screenshot 2025-03-28 at 5.18.39 pm.png)](Screenshot 2025-03-28 at 5.18.39 pm.png)  
 
 And then the previous 3 months in intervals.icu. My goal is to get to 80 Fitness and stick there for the rest of the season.
 
-![[Screenshot 2025-03-28 at 5.22.21 pm.png]]
-
+[![](Screenshot 2025-03-28 at 5.22.21 pm.png)](Screenshot 2025-03-28 at 5.22.21 pm.png)  
 My target fitness routine remains the following:
 
 ##### Monday
@@ -71,7 +70,8 @@ One observation I made is that for two evenings I played a computer game until c
 
 Speaking of circadian rhythm, given it is soon winter here in Sydney, I wanted to get a light to trigger cortisol production first thing in the morning. Given it is an experiment I purchased some LED lights in the right wavelength from AliExpress, taped it in a metal mixing bowel, and put a plastic bag over it. I had the 12v PSU already. I think it is helping, and I start getting pretty tired by 9pm, and I'm often lights out by 9:30pm. I usually wake up around 5:30am, but sometimes when my "body battery" is full at 5am or earlier I'm wide awake and ready to go.
 
-![[IMG_4481.jpeg]]
+[![](IMG_4481.jpeg)](IMG_4481.jpeg)  
+
 
 ### Results
 
@@ -89,20 +89,23 @@ Speaking of circadian rhythm, given it is soon winter here in Sydney, I wanted t
 
 **Sleep:** Usually I wake up with a 100 "body battery" according to Garmin, which might be a better indicator than my sleep score. My average sleep score since coming back from travelling was 87, but the best indicator is that my sleep scores are relative stable and only dipping below 75 4 times since returning.
 
-![[Screenshot 2025-03-28 at 5.39.26 pm.png]]
+[![](Screenshot 2025-03-28 at 5.39.26 pm.png)](Screenshot 2025-03-28 at 5.39.26 pm.png)  
 
 **Vo2Max/RHR:** My average resting heart rate was 49. My Vo2Max according to Garmin is now slightly above 52.
 
 **LDL:** After the sudden increase while travelling my LDL has dropped back down to normal levels. I'd like to get it down below 2 mmol/L.
 
-![[IMG_13EACB6549C5-1.jpeg]]
+[![](IMG_13EACB6549C5-1.jpeg)](IMG_13EACB6549C5-1.jpeg)  
+
 
 ### Focus For Next Quarter
 
 I think the main focus for next quarter will be relatively similar to this one. I am unlikely to change my supplements that much, and I think my main goal should remain to add muscle. One other potential area of exploration might be to look at stress levels, and see if I can correlate Garmin's stress score with other events. For example, here is my stress graph for today, where I wasn't able to run or go to the gym. My average "stress score" is 26", which is higher than my quarterly average of 21.
 
-![[Screenshot 2025-03-28 at 6.01.18 pm.png]] 
+[![](Screenshot 2025-03-28 at 6.01.18 pm.png)](Screenshot 2025-03-28 at 6.01.18 pm.png)  
+
 This becomes obvious when compared to my score from a few days ago, when I did 4x4s in the morning and a hard(ish) leg day at lunch. 
 
-![[Screenshot 2025-03-28 at 6.00.59 pm.png]]
+[![](Screenshot 2025-03-28 at 6.00.59 pm.png)](Screenshot 2025-03-28 at 6.00.59 pm.png)  
+
 I need to figure out how to better overlay my daily activities before I can solve this one, so I might explore this over the next quarter.
