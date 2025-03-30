@@ -1,12 +1,12 @@
 ---
-title: '2025 Q1 Health Review'
+title: 2025 Q1 Health Review
 date: 2025-03-27T21:30:00.002+11:00
-draft: true
+draft: false
 url: /2025/03/2025-q1-health-review.html
 tags:
-- longevity
-- health
-- articles
+  - longevity
+  - health
+  - articles
 ---
 ### Background
 
@@ -79,19 +79,29 @@ Speaking of circadian rhythm, given it is soon winter here in Sydney, I wanted t
 * Increase muscle ❌
 * Increase BMD ✅
 * Improve sleep quality ✅
-* Improve LDL ✅
 * Improve Vo2Max ✅
 * Decrease RHR ✅
+* Improve LDL ✅
 
-Unfortunately, I had mixed results. My DEXA scan results showed that while my body fat % decreased from 18.5% to 17.7%, my lean mass also decreased. This is a bit puzzling given my weight has remained stable and I'm strength seems to have increased since a year ago, but perhaps this is all neuromuscular. My main takeaway from the DEXA is that I need to eat more, which is hard, because I feel like I'm already always eating. This will be a goal for the next quarter.
+**Weight/Muscle:** Unfortunately, I had mixed results. My DEXA scan results showed that while my body fat % decreased from 18.5% to 17.7%, my lean mass also decreased. This is a bit puzzling given my weight has remained stable and I'm strength seems to have increased since a year ago, but perhaps this is all neuromuscular. My main takeaway from the DEXA is that I need to eat more, which is hard, because I feel like I'm already always eating. This will be a goal for the next quarter.
 
-My average resting heart rate was 49. My Vo2Max according to Garmin is now slightly above 52.
+**BMD:** Increased from 1.116g/cm^2 to 1.130. I'm not certain the machine's variance in accuracy, but I'll count this as a win.
 
-Usually I wake up with a 100 "body battery" according to Garmin, which might be a better indicator than my sleep score. My average sleep score since coming back from travelling was 87, but the best indicator is that my sleep scores are relative stable and only dipping below 75 4 times since returning.
+**Sleep:** Usually I wake up with a 100 "body battery" according to Garmin, which might be a better indicator than my sleep score. My average sleep score since coming back from travelling was 87, but the best indicator is that my sleep scores are relative stable and only dipping below 75 4 times since returning.
+
 ![[Screenshot 2025-03-28 at 5.39.26 pm.png]]
+
+**Vo2Max/RHR:** My average resting heart rate was 49. My Vo2Max according to Garmin is now slightly above 52.
+
+**LDL:** After the sudden increase while travelling my LDL has dropped back down to normal levels. I'd like to get it down below 2 mmol/L.
+
+![[IMG_13EACB6549C5-1.jpeg]]
+
 ### Focus For Next Quarter
 
-I think the main focus for next quarter will be relatively similar to this one. I am unlikely to change my supplements that much, and I think my main goal should remain to add muscle. One other potential area of exploration might be to look at stress levels, and see if I can correlate Garmin's stress score with other events. For example, here is my stress graph for today, where I wasn't able to run or go to the gym. My average "stress score" is 26", which is higher than my quarterly average of 21.![[Screenshot 2025-03-28 at 6.01.18 pm.png]] 
+I think the main focus for next quarter will be relatively similar to this one. I am unlikely to change my supplements that much, and I think my main goal should remain to add muscle. One other potential area of exploration might be to look at stress levels, and see if I can correlate Garmin's stress score with other events. For example, here is my stress graph for today, where I wasn't able to run or go to the gym. My average "stress score" is 26", which is higher than my quarterly average of 21.
+
+![[Screenshot 2025-03-28 at 6.01.18 pm.png]] 
 This becomes obvious when compared to my score from a few days ago, when I did 4x4s in the morning and a hard(ish) leg day at lunch. 
 
 ![[Screenshot 2025-03-28 at 6.00.59 pm.png]]
