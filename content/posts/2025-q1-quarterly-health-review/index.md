@@ -16,6 +16,29 @@ Recently I wrote about my [health journey in 2024](/2025/01/state-of-health-2024
 
 Now that I have returned from some travels in India I have been able to focus more on my health. I have returned to a diet lower in saturated fat, and been able to generally increase the amount of exercise that I have been doing.
 
+### Supplements
+
+Some principles that I try to follow:
+
+- Avoid bill burden
+- Wait until a supplement is on the ITP supported interventions page
+- Have a biomarker in mind that a certain supplement will change.
+
+And here's what is currently in my stack:
+
+| Morning                 | Ad Hoc / Evening |
+| ----------------------- | ---------------- |
+| Fish Oil (TBCmg)        | Magnesium        |
+| Niacin (50mg)           | Iron (10mg)      |
+| Calcium (333mg)         | Glycine (5-10g)  |
+| Vitamin D (8.3mcg)      |                  |
+| Vitamin K2 mk7 (100mcg) |                  |
+| B Complete              |                  |
+| Lysine (1g)             |                  |
+| Zinc (5mg)              |                  |
+
+My [Nutty Pudding](nutty-pudding-modified-recipe/index.md) also has TMG, Creatine, Pea Protein, and HCP.
+
 ### Experiments
 
 This quarter I had a few experiments.
