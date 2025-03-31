@@ -26,16 +26,17 @@ Some principles that I try to follow:
 
 And here's what is currently in my stack:
 
-| Morning                 | Ad Hoc / Evening |
-| ----------------------- | ---------------- |
-| Fish Oil (TBCmg)        | Magnesium        |
-| Niacin (50mg)           | Iron (10mg)      |
-| Calcium (333mg)         | Glycine (5-10g)  |
-| Vitamin D (8.3mcg)      |                  |
-| Vitamin K2 mk7 (100mcg) |                  |
-| B Complete              |                  |
-| Lysine (1g)             |                  |
-| Zinc (5mg)              |                  |
+| Morning                 | Ad Hoc / Evening  |
+| ----------------------- | ----------------- |
+| Fish Oil (6g)           | Magnesium Taurate |
+| Niacin (50mg)           | Iron (10mg)       |
+| Calcium (333mg)         | Glycine (5-10g)   |
+| Vitamin D (33mcg)       | Astaxanthin (7mg) |
+| Vitamin K2 mk7 (100mcg) |                   |
+| B Complete              |                   |
+| Lysine (1g)             |                   |
+| Zinc (5mg)              |                   |
+| Hyaluronic Acid (200mg) |                   |
 
 My [Nutty Pudding](nutty-pudding-modified-recipe/index.md) also has TMG, Creatine, Pea Protein, and HCP.
 

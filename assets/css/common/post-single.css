@@ -145,6 +145,14 @@
     text-align: start;
 }
 
+.post-entry tr, td, th {
+    border-color: grey;
+    border-width: 0.5px;
+    border-style: solid;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .post-content table:not(.highlighttable) td code:only-child {
     margin: auto 0;
 }
