@@ -102,7 +102,7 @@ And here's what is currently in my stack:
 | Zinc (5mg)              |                   |
 | Hyaluronic Acid (200mg) |                   |
 
-My [Nutty Pudding](nutty-pudding-modified-recipe/index.md) also has TMG, Creatine, Pea Protein, and HCP.
+My [Nutty Pudding](nutty-pudding-modified-recipe/index.md) also has TMG, Creatine, Pea Protein, Taurine, and HCP.
 ### Results
 
 * Increase weight ❌
