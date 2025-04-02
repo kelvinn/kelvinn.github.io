@@ -101,6 +101,7 @@ And here's what is currently in my stack:
 | Lysine (1g)             |                   |
 | Zinc (5mg)              |                   |
 | Hyaluronic Acid (200mg) |                   |
+| Fenugreek (1000mg)      |                   |
 
 My [Nutty Pudding](nutty-pudding-modified-recipe/index.md) also has TMG, Creatine, Pea Protein, Taurine, and HCP.
 ### Results
