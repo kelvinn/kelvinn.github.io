@@ -64,7 +64,7 @@ Almost all of this is just from Woolies or Coles, but I did buy the TMG from iHe
 9. **Turmeric** is for it's active component **curcumin**, which is anti-inflammatory. This is from How Not To Age.
 10. **Creatine** is to increase ATP production and hopefully allow me to build muscle faster. Apparently there are also some studies indicating it may be helpful to push back Alzheimer’s and Parkinson’s.
 11. Removed **Macadamia Nut Milk**, as I just use water. Macadamia Nut Milk is expensive in Australia.
-12. **HCP** for skin health, muscle recovery (glycine) and joint/bone support. I'm on the fence if there is enough evidence to show efficacy here.
+12. **HCP** for skin health, muscle recovery (glycine) and joint/bone support. I'm on the fence if there is enough evidence to show efficacy here, and then there is the fear of contamination during the manufacturing process.
 13. **Pea Protein Powder** to slightly up my protein intake. I'm currently 77kg and aim for around 125g per day, but don't track macros anymore. As we know, protein is a double edged sword: on one side we build muscle to fend off sarcopenia, an on the other side we activate MTOR which inhibits autophagy.
 
 ### Prep and Storage
