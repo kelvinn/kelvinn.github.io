@@ -16,3 +16,8 @@ content/.DS_Store
 content/posts/.DS_Store
 .DS_Store
 content/posts/.DS_Store
+/notebooks/.ipynb_checkpoints
+*.pyc
+/notebooks/pyaging_data
+notebooks/weekly.log
+notebooks/garmindb.log
