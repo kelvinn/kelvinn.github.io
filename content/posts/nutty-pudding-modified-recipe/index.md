@@ -49,7 +49,7 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 
 - 1 cup frozen mixed berries
 - 1-2 cups of frozen spinach
-- Water
+- 400ml of water
 
 Almost all of this is just from Woolies or Coles, but I did buy the TMG from iHerb, the Creatine from Bulk Nutrients, and the cacao powder and ceylon cinnamon from Amazon. Here is my justification for the adjustments.
 
