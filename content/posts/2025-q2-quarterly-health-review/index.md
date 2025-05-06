@@ -16,16 +16,15 @@ I finished some more Longevity-related books, like *Longevity Leap*, and then al
 
 ### Experiments / Focus Areas
 
-This quarter I had a few experiments.
+This quarter I had a four areas I wanted to focus on:
 
 1. **Improve fitness** by training more. My goal is to get above a 75 fitness score on intervals.icu, and still maintain 3+ gym sessions per week.
-2. **Sleep better** by improving my sleep hygiene (starting wind down by 8pm, in bed by 9pm, wearing red light glasses at night, and increasing glycine consumption before bed). I also experimented with taking Magnesium Glycinate before bed.
-3. **Gain weight** by starting to track my food in Cronometer, again, and not eating out anymore. 
+2. 3. **Gain weight** by starting to track my food in Cronometer, again, and not eating out anymore. 
+3. **Sleep better** by improving my sleep hygiene (starting wind down by 8pm, in bed by 9pm, wearing red light glasses at night, and increasing glycine consumption before bed). I also experimented with taking Magnesium Glycinate before bed.
 4. **Reduce Stress** by TBC
 
+Let's go through what I experimented with, and the result.
 #### Improve Fitness
-
-##### Plan
 
 My main forms of exercise remain running and strength training. There are two tools I use:
 
@@ -75,7 +74,8 @@ TBC
 
 ##### Plan
 
-TBC
+* Become more strict with when I eat breakfast and dinner. Breakfast between 5:30am and 6:30am, and dinner between 5:00pm and 6:00pm. Do not deviate.
+* A small complex carb snack before bed? Chickpeas?
 
 ##### Results
 
