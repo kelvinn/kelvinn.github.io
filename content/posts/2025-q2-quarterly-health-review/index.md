@@ -58,12 +58,23 @@ My fitness routine remains similar to the previous quarter.
 
 ##### Plan
 
-My previous DEXA saw me decrease body fat %, but also decrease lean muscle mass. This is somewhat confusing to me, as I'm lifting heavier than ever before, but apparently that can be purely neuromuscular.
+My previous DEXA saw body fat % decrease, but also a decrease in lean muscle mass. This is somewhat confusing to me, as I'm lifting heavier than ever before, but apparently that can be purely neuromuscular.
 
-Regardless, this simply means consuming more calories than I expend, and making sure my protein consumption is adequate. I still wished to remain on a whole foods plant based diet wherever possible. Unfortunately, I'm not really driven by food, and I don't believe my mood is negatively impacted by being in a slight calorie deficit. This means that without tracking my consumption it is difficult for me to be in a surplus.
+I'm also confused because my weight hovered between 76 and 78kg for the previous 12 months.
 
-Enter Cronometer. I used this tool previously to look at my micronutrient profile, and seeing where there might be gaps that I would fill with supplementation, so I resumed using it this quarter.
+![](Pasted%20image%2020250510071012.png)
 
+Regardless, to increase muscle I need to be in a calorie surplus, and I suspect that when things get busy, given I try to avoid eating out (as well as how expensive it is!), I sometimes don't get enough calories. 
+
+Enter Cronometer. I had previous used this tool to look at my micronutrient profile, so I could fill those gaps with supplementation, so I resumed using it this quarter.
+
+![](Pasted%20image%2020250510075624.png)
+
+Here's an example from a random day of food tracking from Cronometer, and this is even after trying to focus more on increasing calorie consumption!
+
+![](Pasted%20image%2020250510071520.png)
+
+We can see from this that my protein consumption is adequate. I still wished to remain on a whole foods plant based diet wherever possible. Unfortunately, I'm not really driven by food, and I don't believe my mood is negatively impacted by being in a slight calorie deficit; in fact, I generally don't even notice besides perhaps my runs being harder, or potentially not sleeping as well. This means that without tracking my consumption it is difficult for me to be in a surplus.
 ##### Results
 
 * Increase weight  ✅
@@ -73,6 +84,8 @@ TBC
 #### Sleep better
 
 ##### Plan
+
+Although 
 
 * Become more strict with when I eat breakfast and dinner. Breakfast between 5:30am and 6:30am, and dinner between 5:00pm and 6:00pm. Do not deviate.
 * A small complex carb snack before bed? Chickpeas?
