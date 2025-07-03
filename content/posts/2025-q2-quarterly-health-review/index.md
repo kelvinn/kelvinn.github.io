@@ -131,9 +131,11 @@ Overall, I fall asleep quickly each evening. However, the challenge that I need 
 
 One observations I had is that I might get in to a vicious cycle: I wake up early, eat food, and then the night night wake up again... hungry. Repeat. One thing I changed this quarter was eating at the same time every morning even if I woke up early.
 
+A note about glycine: I think I need to have a routine where I have it just after dinner, as otherwise I get pretty sleepy during the day. More experiments needed.
+
 ##### Results
 
-* Improve sleep quality ✅
+* Improve sleep quality ❌
 
 It looks like sleep duration is worse across the board.
 
@@ -147,7 +149,7 @@ It looks like sleep duration is worse across the board.
 | Friday    | 7.920641 | 6.988376 |
 | Saturday  | 7.701432 | 7.45453  |
 
-We can also see this with the Body Battery stats
+We can also see this with the Body Battery stats.
 
 ![](Pasted%20image%2020250702113636.png)
 
@@ -228,6 +230,6 @@ I consume a daily [Nutty Pudding](nutty-pudding-modified-recipe/index.md), which
 
 ### Focus For Next Quarter
 
-TBC
+I think the next quarter will remain the same as this one. Cronometer is working really well for me to be able to control my calories, and to force me to eat from a list of known 'good' food. For example, if someone offers me some kind of snack, then I'll probably skip it purely because of the pain of needing to try and keep a record.
 
 ![](Pasted%20image%2020250702114349.png)
