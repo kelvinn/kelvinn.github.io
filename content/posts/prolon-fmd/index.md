@@ -27,6 +27,8 @@ https://www.nature.com/articles/s41467-024-45260-9
 ##### **Day 1**
 I skipped breakfast, already knowing I would prefer to bunch my calories and lunch and dinner, and waited until about 11:00am to open the box. Everything is laid out nicely, and it is pretty clear what to do. If you've ever made soup before, then you can do this!
 
+![](Pasted%20image%2020250711192532.png)
+
 Feeling for the day was pretty good. I was in a calorie deficit from both days over the weekend, due to being quite active, which I think helped ease me in to a real fast. It helps being at least a little fat adapted, so you might want to ease back on the carbs the week prior and instead swap in more fat.
 
 ![](Pasted%20image%2020250711151830.png)
@@ -60,13 +62,19 @@ Did it work? What does work even mean? Can I even measure autophagy?
 
 I don't know the answers, but in two weeks I'll get my blood checked to see if my biomarkers improved.
 
+My weight did decrease, which you can see in this chart:
+
+![](Pasted%20image%2020250711192219.png)
 #### Tips
 
 Are you thinking of doing the FMD? Here are some tips
 
-1) If using ProLon, add water to your soup as per the instructions, and use a whisk to mix it. Then let it sit for 30 minutes, and use a whisk again. This makes sure it is totally mixed.
+1) If using ProLon, add water to your soup as per the instructions, and *use a whisk* to mix it. Then let it sit for at least 15 minutes, and use a whisk again. This makes sure it is totally mixed.
 2) Give yourself permission to take it easy. I stopped running entirely, not because I couldn't, but because I don't want to burn those calories. If I had excess weight to lose then I would consider exercising.
 3) Consider having most of the calories around dinner time, as this will prevent you from feeling too hungry when you fall asleep, which for me is a feeling I don't love.
 4) It is possible to DIY FMD, which I'd consider doing next time. I actually think that might be an easier way to have food with more volume, which might help with satiety.
 5) Stop drinking water/tea relatively early. For some reason even though I stopped around 7pm on Day 2, I ended up needing to pee in the middle of the night *twice*.
-6) Make sure you've got the right mindset going in to this thing. Be fully bought in to why you're doing this, and remind yourself that the discomfort is an opportunity to teach yourself more resilience. *Embrace the suck*.
+6) Make sure you've got the right mindset going in to this thing. Be fully bought in to why you're doing this, and remind yourself that the discomfort is an opportunity to teach yourself more resilience. *Embrace the suck*. 
+7) It is only five days. Take a photo of your accomplishment! You got this.
+
+![](Pasted%20image%2020250711192356.png)
