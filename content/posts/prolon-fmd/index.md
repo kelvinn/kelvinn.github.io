@@ -75,7 +75,6 @@ My weight did decrease, which you can see in this chart (my goal was to get to 8
 
 Day 2's morning weight measurement was 77.1, and Day 6's morning measurement was 75. I suspect that when I weight myself tonight it will be around 76 - 76.5.
 
-One of the really 
 #### Tips
 
 Are you thinking of doing the FMD? Here are some tips:
