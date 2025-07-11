@@ -37,7 +37,7 @@ Feeling for the day was pretty good. I was in a calorie deficit from both days o
 
 ![](Pasted%20image%2020250711151830.png)
 ##### **Day 2**
-Slept amazing the night before; according to garmin it was the best sleep I've ever had! I even got Garmin's "mythical sleep" badge. I don't know if I would say it is the best sleep I've ever had, but it was very very good. Mildly hungry. Went to the gym and did a light leg day, burning about 200 calories while working out.
+Slept amazing the night before; according to Garmin it was the best sleep I've ever had; they even gave me the "mythical sleep" badge! I don't know if I would say it is the best sleep I've ever had, but it was very very good. Mildly hungry. Went to the gym and did a light leg day, burning about 200 calories while working out.
 
 ![](Pasted%20image%2020250711151935.png)
 ##### **Day 3**
