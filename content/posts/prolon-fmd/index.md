@@ -1,7 +1,7 @@
 ---
 title: Prolon FMD
 date: 2025-07-10T18:14:07+10:00
-draft: true
+draft: false
 tags:
   - longevity
   - health
@@ -24,6 +24,8 @@ https://www.nature.com/articles/s41467-024-45260-9
 
 *Based on a validated measure of biological age predictive of morbidity and mortality, 3 FMD cycles were associated with a decrease of 2.5 years in median biological age, independent of weight loss*
 
+#### Journal
+
 ##### **Day 1**
 I skipped breakfast, already knowing I would prefer to bunch my calories and lunch and dinner, and waited until about 11:00am to open the box. Everything is laid out nicely, and it is pretty clear what to do. If you've ever made soup before, then you can do this!
 
@@ -33,7 +35,7 @@ Feeling for the day was pretty good. I was in a calorie deficit from both days o
 
 ![](Pasted%20image%2020250711151830.png)
 ##### **Day 2**
-Slept amazing the night before; according to garmin it was the best sleep I've ever had! I don't know about that. but it was very good sleep. Mildly hungry. Went to the gym and did a light leg day, burning about 200 calories while working out.
+Slept amazing the night before; according to garmin it was the best sleep I've ever had! I even got Garmin's "mythical sleep" badge. I don't know if I would say it is the best sleep I've ever had, but it was very very good. Mildly hungry. Went to the gym and did a light leg day, burning about 200 calories while working out.
 
 ![](Pasted%20image%2020250711151935.png)
 ##### **Day 3**
@@ -49,25 +51,29 @@ Felt like I slept OK, and long, but back got a little sore and it woke me up a f
 
 ![](Pasted%20image%2020250711151727.png)
 ##### **Day 6**
-TBC
+Slept OK. Wasn't hungry when I woke up, but excited to be able to start training again! The transition day seems to be aimed at getting one's body ready for whole foods again, and trying to get people to eat healthy. My regular diet is pretty good, so I am opting to skip the soups and generally resume eating as normal. I had a giant salad for breakfast.
 
-I had the privilege to be able to use a glucose/ketone meter to track my progress. You can see how I did in this chart:
+#### Reflections
 
-(insert chart)
+I had the privilege to be able to use a glucose/ketone meter to track my progress, and wish I had recorded it on the first morning so I could see it rise. It looks like I was in ketosis on every measurement. You can see how I did in this chart:
 
-Overall the fast went well, and I don't think I burned any bridges by being too grumpy! I stopped running during the five days, but I continued going to the gym to prevent muscle loss.
+![](Pasted%20image%2020250712083031.png)
 
+
+Overall the fast went well, and I don't think I burned any bridges by being too grumpy! I stopped running during the five days, but I tried to do some strength training to prevent muscle loss.
 
 Did it work? What does work even mean? Can I even measure autophagy?
 
 I don't know the answers, but in two weeks I'll get my blood checked to see if my biomarkers improved.
 
-My weight did decrease, which you can see in this chart:
+My weight did decrease, which you can see in this chart (my goal was to get to 80kg before starting the fast):
 
-![](Pasted%20image%2020250711192219.png)
+![](Pasted%20image%2020250712083135.png)
+
+Day 2's morning weight measurement was 77.1, and Day 6's morning measurement was 75. I suspect that when I weight myself tonight it will be around 76 - 76.5
 #### Tips
 
-Are you thinking of doing the FMD? Here are some tips
+Are you thinking of doing the FMD? Here are some tips:
 
 1) If using ProLon, add water to your soup as per the instructions, and *use a whisk* to mix it. Then let it sit for at least 15 minutes, and use a whisk again. This makes sure it is totally mixed.
 2) Give yourself permission to take it easy. I stopped running entirely, not because I couldn't, but because I don't want to burn those calories. If I had excess weight to lose then I would consider exercising.
