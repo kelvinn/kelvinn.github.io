@@ -2,7 +2,7 @@
 title: 2025 Q2 Health Review
 date: 2025-06-27T21:30:00.002+11:00
 draft: true
-url: /2025/03/2025-q2-health-review.html
+url: /2025/06/2025-q2-health-review.html
 tags:
   - longevity
   - health
@@ -93,27 +93,9 @@ I gained weight almost exactly as Cronometer predicted, which is exciting.
 
 I didn't need to do any major tweaks to my diet, just a few extra calories per day. I have a hypothesis that too many extra calories (e.g. 300+) starts to impact my sleep, so sticking in the 100-200 extra calorie range seems to be the right zone to build muscle, but also still be able to sleep well.
 
-#### Experiment: Fasting Mimicking Diet
 
-About three years ago I read Longo's Longevity Diet, and it helped me form a foundation about nutrition. Ever since reading it I have been wishing to do a FMD, but training, travel, or life always got in the way. I decided it might be a good match to try and eat slightly in surplus, and then do the fast once I hit the goal weight. 
 
-Exactly as per the plan I added about 2-3kg by the end of June, so decided to go ahead with the fast. Coincidentally ProLon, the company that helps make FMD kits, had a 30% sale, so I got my kit and chose the week to give it a go.
-
-I did a 14 day fast when I was a teenager _based on a dare_, so somewhat knew what to expect: the first few days aren't great, but then your body adapts and things are easier. However, this time the fast was actually backed by science, and I had the privilege to be able to use a glucose/ketone meter to track my progress. You can see how I did in this chart:
-
-(insert chart)
-
-Overall the fast went well, and I don't think I burned any bridges by being too moody! I stopped running during the five days, but I continued going to the gym to prevent muscle loss.
-
-Did it work? What does work even mean? Can I even measure autophagy?
-
-I don't know the answers, but we can at least look at biomarkers to see if they got worse. How soon should I test after a thing like this without screwing up the results? I remember reading that people after Ramadan had significantly increased biomarkers, so I found the paper and in their methodology the researchers waited 8-12 days before testing.
-
-After waiting 8 days I was able to take my blood test, and discovered that my PhenoAge (what I found out)!
-
-(insert graph here)
-
-(discuss my findings)
+#### 
 
 #### Sleep better
 
@@ -133,11 +115,26 @@ One observations I had is that I might get in to a vicious cycle: I wake up earl
 
 A note about glycine: I think I need to have a routine where I have it just after dinner, as otherwise I get pretty sleepy during the day. More experiments needed.
 
+
+##### Experiments
+
+I conducted one experiment this quarter: the[ Fasting Mimicking Diet](https://valterlongo.com/fasting-mimicking-program-and-longevity/).
+
+You can read more about my experience here: https://www.kelvinism.com/2025/07/prolon-fmd.html
+
+Did my biomarkers get better? There are so many variables this quarter that it is hard to point to this one experiment calling out if things got better or worse, but it helps to at least look. How soon should I test after a thing like this without screwing up the results? According to one of the FMD studies linked above, and another study that I vaguely remember about testing after Ramadan, I seem to remember in their methodology the researchers waiting 8-12 days before testing.
+
+After waiting 8 days I was able to take my blood test, and discovered that my PhenoAge (what I found out)!
+
+(insert graph here)
+
+(discuss my findings)
+
 ##### Results
 
 * Improve sleep quality ❌
 
-It looks like sleep duration is worse across the board.
+It looks like sleep duration was worse across the board. Note: this is not time in bed, but what Garmin records. I'm especially confused by the one on Tuesday, and that will require additional exploration.
 
 |           | Q1 2025  | Q2 2025  |
 | --------- | -------- | -------- |
@@ -149,7 +146,7 @@ It looks like sleep duration is worse across the board.
 | Friday    | 7.920641 | 6.988376 |
 | Saturday  | 7.701432 | 7.45453  |
 
-We can also see this with the Body Battery stats.
+We can also see this with the Body Battery stats; whatever I was doing in February and March seemed to be helpful.
 
 ![](Pasted%20image%2020250702113636.png)
 
@@ -175,7 +172,7 @@ Overall it looks like I was more stressed this quarter than last quarter, but th
 | Thursday  | 20.25     | 22.538462 |
 | Friday    | 23.625    | 23.538462 |
 | Saturday  | 21.444444 | 22.692308 |
-The graph below is a great way to see how the quarter played out.
+The chart below is a great way to see how the quarter played out.
 
 - Week 15 is when I flew to Europe (the Thursday)
 - Week 18 is when I arrived home (the Sunday)
@@ -192,7 +189,7 @@ I still have more work to do when it comes to reducing stress levels.
 
 ##### Plan
 
-And then what really matters - improving biomarkers. This is ultimately an outcome of achieve a number of the above items.
+And then what really matters - improving biomarkers. This is ultimately an outcome of achieve a number of the above items as well nutrition. One area that I think I've done really well on since returning from Europe was eating well; sufficient protein, lots of fibre, avoiding dairy, and minimising saturated fats.
 ##### Results
 
 I'm going to start tracking PhenoAge on a quarterly basis, as long as I can keep getting tested without too much drama. Here are the results.
