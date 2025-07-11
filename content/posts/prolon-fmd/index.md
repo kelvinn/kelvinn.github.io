@@ -14,6 +14,8 @@ About three years ago I read Longo's [Longevity Diet](https://valterlongo.com/da
 
 Exactly as per the plan I added about 2.5kg by the end of June, so decided to go ahead with the fast. Coincidentally ProLon, the company that helps make FMD kits, had a 30% sale, so I got my kit and chose the week to give it a go.
 
+![](Pasted%20image%2020250712085139.png)
+
 I did a 14 day fast when I was a teenager _based on a dare_, so somewhat knew what to expect: the first few days aren't great, but then your body adapts and things are easier. I also knew that *after* the fast appetite would be surprised for a few days. Unlike when I did the dare as a teenage this fast was actually backed by evidence:
 
 https://www.science.org/doi/full/10.1126/scitranslmed.aai8700
