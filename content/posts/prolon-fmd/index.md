@@ -55,6 +55,7 @@ Felt like I slept OK, and long, but back got a little sore and it woke me up a f
 ##### **Day 6**
 Slept OK. Wasn't hungry when I woke up, but excited to be able to start training again! The transition day seems to be aimed at getting one's body ready for whole foods again, and trying to get people to eat healthy. My regular diet is pretty good, so I am opting to skip the soups and generally resume eating as normal. I had a giant salad for breakfast.
 
+![](Pasted%20image%2020250712085734.png)
 #### Reflections
 
 I had the privilege to be able to use a glucose/ketone meter to track my progress, and wish I had recorded it on the first morning so I could see it rise. It looks like I was in ketosis on every measurement. You can see how I did in this chart:
@@ -72,7 +73,9 @@ My weight did decrease, which you can see in this chart (my goal was to get to 8
 
 ![](Pasted%20image%2020250712083135.png)
 
-Day 2's morning weight measurement was 77.1, and Day 6's morning measurement was 75. I suspect that when I weight myself tonight it will be around 76 - 76.5
+Day 2's morning weight measurement was 77.1, and Day 6's morning measurement was 75. I suspect that when I weight myself tonight it will be around 76 - 76.5.
+
+One of the really 
 #### Tips
 
 Are you thinking of doing the FMD? Here are some tips:
@@ -83,6 +86,7 @@ Are you thinking of doing the FMD? Here are some tips:
 4) It is possible to DIY FMD, which I'd consider doing next time. I actually think that might be an easier way to have food with more volume, which might help with satiety.
 5) Stop drinking water/tea relatively early. For some reason even though I stopped around 7pm on Day 2, I ended up needing to pee in the middle of the night *twice*.
 6) Make sure you've got the right mindset going in to this thing. Be fully bought in to why you're doing this, and remind yourself that the discomfort is an opportunity to teach yourself more resilience. *Embrace the suck*. 
-7) It is only five days. Take a photo of your accomplishment! You got this.
+7) Stop drinking liquids really early - even earlier than you normally would. I was stopping 3hr before bed, as I normally would, and I still had to pee almost every night, I think, which is pretty unusual. One night I had to pee *twice*.
+8) It is only five days. Take a photo of your accomplishment! You got this.
 
 ![](Pasted%20image%2020250711192356.png)
