@@ -1,5 +1,5 @@
 ---
-title: ProLon FMD
+title: ProLon Fasting Mimicking Diet (FMD)
 date: 2025-07-10T18:14:07+10:00
 draft: false
 tags:
