@@ -56,6 +56,10 @@ Felt like I slept OK, and long, but back got a little sore and it woke me up a f
 Slept OK. Wasn't hungry when I woke up, but excited to be able to start training again! The transition day seems to be aimed at getting one's body ready for whole foods again, and trying to get people to eat healthy. My regular diet is pretty good, so I am opting to skip the soups and generally resume eating as normal. I had a giant salad for breakfast.
 
 ![](Pasted%20image%2020250712085734.png)
+
+We can see the dramatic drop in calories by this chart (from 21-July-2025):
+![](Pasted%20image%2020250721113245.png)
+
 #### Reflections
 
 I had the privilege to be able to use a glucose/ketone meter to track my progress, and wish I had recorded it on the first morning so I could see it rise. It looks like I was in ketosis on every measurement. You can see how I did in this chart:
@@ -69,9 +73,9 @@ Did it work? What does work even mean? Can I even measure autophagy?
 
 I don't know the answers, but in two weeks I'll get my blood checked to see if my biomarkers improved.
 
-My weight did decrease, which you can see in this chart (my goal was to get to 80kg before starting the fast):
+My weight did decrease, which you can see in this chart (my goal was to get to 80kg before starting the fast), but then quickly rebounded, I presume from resuming creatine consumption and getting water in my muscles again.
 
-![](Pasted%20image%2020250712083135.png)
+![](Pasted%20image%2020250721113656.png)
 
 Day 2's morning weight measurement was 77.1, and Day 6's morning measurement was 75. I suspect that when I weight myself tonight it will be around 76 - 76.5.
 
