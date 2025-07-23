@@ -128,6 +128,11 @@ My [Nutty Pudding](nutty-pudding-modified-recipe/index.md) also has TMG, Creatin
 
 ![LDL getting back in range](IMG_13EACB6549C5-1.jpeg)
 
+**PhenoAge:** I'm going to start tracking PhenoAge more regularly as part of these quarterly posts, so here is the first one. Lots to improve on! I calculated one using my data from 01-2024 and it was almost 11 years difference, so it seems like I'm going backwards.
+
+![](Pasted%20image%2020250723201530.png)
+
+
 ### Focus For Next Quarter
 
 I think the main focus for next quarter will be relatively similar to this one. I am unlikely to change my supplements that much, and I think my main goal should remain to add muscle. One other potential area of exploration might be to look at stress levels, and see if I can correlate Garmin's stress score with other events. For example, here is my stress graph for today, where I wasn't able to run or go to the gym. My average "stress score" is 26", which is higher than my quarterly average of 21.
