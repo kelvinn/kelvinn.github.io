@@ -191,10 +191,10 @@ Some principles that I tried to follow:
 
 And here's what is currently in my stack:
 
-| Morning                    | Ad Hoc / Evening            | Ad Hoc         |
+| Morning                    | Evening                     | Ad Hoc         |
 | -------------------------- | --------------------------- | -------------- |
 | Fish Oil (6g)              | Magnesium Glycinate (150mg) | B Complete     |
-| Niacin (50mg)              | Glycine (5-10g)             | Iron (20mg)    |
+| Niacin (50mg)              | Glycine (3g)                | Iron (20mg)    |
 | Calcium (333mg)            | NAC (1g)                    | Vitamin C (1g) |
 | Vitamin D (33mcg)          | Astaxanthin (7mg)           |                |
 | Vitamin K2 mk7 (100mcg)    |                             |                |
@@ -204,12 +204,13 @@ And here's what is currently in my stack:
 | Zinc (5mg)                 |                             |                |
 | Hyaluronic Acid (200mg)    |                             |                |
 | Iodine (150mcg)            |                             |                |
+| Creatine (3g)              |                             |                |
+| TMG (500mg)                |                             |                |
+| HCP (15g)                  |                             |                |
 
 I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination. I've added in iodine (via kelp) now, too, given I'm essentially on a vegan diet and don't eat much salt.
 
 When looking at Cronometer the only vitamin that I am routinely shot on is Vitamin A, so I need to figure out a way to get that in my diet. If possible I prefer to get it via food instead of supplement.
-
-I consume a daily [Nutty Pudding](nutty-pudding-modified-recipe/index.md), which also has TMG (500mg), Creatine (3g), and and HCP (15-25g). I removed the pea protein for now, and consume that separately when required.
 
 ### Experiments 
 ##### Fasting Mimicking Diet

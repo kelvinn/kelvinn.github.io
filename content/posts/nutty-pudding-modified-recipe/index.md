@@ -24,7 +24,7 @@ It has now been quite some time since I've been making [Blueprint's](https://pro
 
 ### My Tweaks
 
-Some of these items are a little hard to get in Australia, or have (in my opinion) below average value-to-benefit ratios, and I've decided to swap them out. Instead, this is the recipe I am currently (19-03-2025) using:
+Some of these items are a little hard to get in Australia, or have (in my opinion) below average value-to-benefit ratios, and I've decided to swap them out. Instead, this is the recipe I am currently (24-07-2025) using:
 
 ##### Powders / Base
 
@@ -34,21 +34,22 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1 tsp whole linseed/flaxseed
 - 1/4 brazil nut
 - 1 tbsp cacao powder (that's CACAO, not COCOA)
-- 1 tsp sunflower or soy lecithin granules
+- 1 tbsp soy lecithin granules
 - 1/2 tsp ceylon cinnamon
 - 1/2 tsp mustard seeds
-- 500mg TMG powder
-- 1/2 tsp taurine
+- 2g TMG powder
+- 1 tsp taurine
 - 1 tbsp HCP
-- 1 scoop (25g) pea protein powder
 - 2 tbsp wheat germ
-- 1/2 tsp turmeric
+- 2 tsp turmeric
+- 1/4 tsp ground ginger
+- 1/8th of a tsp black pepper
 - 1 tsp of creatine
+- 1 tsp inulin
 
 ##### Liquids / Add Consumption
 
-- 1 cup frozen mixed berries
-- 1-2 cups of frozen spinach
+- 200g frozen mixed berries
 - 400ml of water
 
 Almost all of this is just from Woolies or Coles, but I did buy the TMG from iHerb, the Creatine from Bulk Nutrients, and the cacao powder and ceylon cinnamon from Amazon. Here is my justification for the adjustments.

@@ -208,8 +208,3 @@ My resting heart rate hovered around 50-51 for the year, and ultimately I would 
 
   
   
-
-### Experiments
-
-*   Convert garmin's intensity minutes to MET, so can compare to papers
-*   TBC
