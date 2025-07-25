@@ -40,7 +40,6 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 2g TMG powder
 - 1 tsp matcha powder
 - 1 tsp taurine
-- 1 tbsp HCP
 - 2 tbsp wheat germ
 - 2 tsp turmeric
 - 1/4 tsp ground ginger
@@ -64,10 +63,11 @@ Almost all of this is just from Woolies or Coles, but I did buy the TMG from iHe
 7. I've added **taurine** because it is apparently harder to get from a whole foods plant based diet.
 8. **Wheat germ** is for **spermidine**, which is a compound linked to **autophagy**. This is from How Not To Age.
 9. **Turmeric** is for it's active component **curcumin**, which is anti-inflammatory. This is from How Not To Age.
-10. **Creatine** is to increase ATP production and hopefully allow me to build muscle faster. Apparently there are also some studies indicating it may be helpful to push back Alzheimer’s and Parkinson’s.
-11. Removed **Macadamia Nut Milk**, as I just use water. Macadamia Nut Milk is expensive in Australia.
-12. **HCP** for skin health, muscle recovery (glycine) and joint/bone support. I'm on the fence if there is enough evidence to show efficacy here, and then there is the fear of contamination during the manufacturing process.
-13. **Pea Protein Powder** to slightly up my protein intake. I'm currently 77kg and aim for around 125g per day, but don't track macros anymore. As we know, protein is a double edged sword: on one side we build muscle to fend off sarcopenia, an on the other side we activate MTOR which inhibits autophagy.
+10. **Black Pepper** to increase absorption of turmeric.
+11. **Creatine** is to increase ATP production and hopefully allow me to build muscle faster. Apparently there are also some studies indicating it may be helpful to push back Alzheimer’s and Parkinson’s.
+12. Removed **Macadamia Nut Milk**, as I just use water. Macadamia Nut Milk is expensive in Australia.
+13. **HCP** for skin health, muscle recovery (glycine) and joint/bone support. I'm on the fence if there is enough evidence to show efficacy here, and then there is the fear of contamination during the manufacturing process. Edit: I've taken out in an effort to try and decrease my IGF-1.
+14. **Pea Protein Powder** to slightly up my protein intake. I'm currently 77kg and aim for around 125g per day, but don't track macros anymore. As we know, protein is a double edged sword: on one side we build muscle to fend off sarcopenia, an on the other side we activate MTOR which inhibits autophagy.  Edit: I've taken out in an effort to try and decrease my IGF-1.
 
 ### Prep and Storage
 
