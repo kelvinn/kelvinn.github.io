@@ -240,6 +240,12 @@ To corroborate these I also did a Hair Tissue Mineral Analysis test via ToxTest,
 From what I could research none of this should actually cause me to lose any sleep, and HTMA isn't really that proven as a diagnostic tool. The Uranium and Thorium level are a worry though, but given my blood results were acceptable I am just assuming I went somewhere hiking that had higher levels radioactive elements.
 ### Focus For Next Quarter
 
-I think the next quarter will remain the same as this one. Cronometer is working really well for me to be able to control my calories, and to force me to eat from a list of known 'good' food. For example, if someone offers me some kind of snack, then I'll probably skip it purely because of the pain of needing to try and keep a record.
+I think the next quarter will remain similar to this one. Cronometer is working really well for me to be able to control my calories, and to force me to eat from a list of known 'good' food. For example, if someone offers me some kind of snack, then I'll probably skip it purely because of the pain of needing to try and keep a record.
 
 ![](Pasted%20image%2020250702114349.png)
+
+The biomarkers that I will specifically target include:
+
+**IGF-1**: This is potentially from eating too much protein. I've removed pea protein from my smoothie, as well has the HCP.
+
+**hsCRP**: 

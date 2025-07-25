@@ -41,7 +41,7 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1 tsp matcha powder
 - 1 tsp taurine
 - 2 tbsp wheat germ
-- 2 tsp turmeric
+- 1 tsp turmeric
 - 1/4 tsp ground ginger
 - 1/8th of a tsp black pepper
 - 1 tsp of creatine
