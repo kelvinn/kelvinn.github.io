@@ -27,7 +27,7 @@ It has now been quite some time since I've been making [Blueprint's](https://pro
 Some of these items are a little hard to get in Australia, or have (in my opinion) below average value-to-benefit ratios, and I've decided to swap them out. Instead, this is the recipe I am currently (24-07-2025) using:
 
 
-##### Powders / Base
+#### Powders / Base
 
 - 30g whole macadamia nuts
 - 15g whole walnuts
@@ -49,7 +49,7 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1 tsp inulin
 
 
-##### Liquids / Add Consumption
+#### Liquids / Add Consumption
 
 - 200g frozen mixed berries
 - 400ml of water
