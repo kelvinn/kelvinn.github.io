@@ -191,22 +191,22 @@ Some principles that I tried to follow:
 
 And here's what is currently in my stack:
 
-| Morning                    | Evening                     | Ad Hoc         |
-| -------------------------- | --------------------------- | -------------- |
-| Fish Oil (6g)              | Magnesium Glycinate (150mg) | B Complete     |
-| Niacin (50mg)              | Glycine (3g)                | Iron (20mg)    |
-| Calcium (333mg)            | NAC (1g)                    | Vitamin C (1g) |
-| Vitamin D (33mcg)          | Astaxanthin (7mg)           |                |
-| Vitamin K2 mk7 (100mcg)    |                             |                |
-| B12 (1000 mcg)             |                             |                |
-| L-Methylfolate  (1000 mcg) |                             |                |
-| Lysine (1g)                |                             |                |
-| Zinc (5mg)                 |                             |                |
-| Hyaluronic Acid (200mg)    |                             |                |
-| Iodine (150mcg)            |                             |                |
-| Creatine (3g)              |                             |                |
-| TMG (500mg)                |                             |                |
-| HCP (15g)                  |                             |                |
+| Morning                     | Evening                     | Ad Hoc         |
+| --------------------------- | --------------------------- | -------------- |
+| Fish Oil (6g)               | Magnesium Glycinate (150mg) | B Complete     |
+| Niacin (50mg)               | Glycine (3g)                | Iron (20mg)    |
+| Calcium (333mg)             | NAC (1g)                    | Vitamin C (1g) |
+| Vitamin D (33mcg)           | Astaxanthin (7mg)           |                |
+| Vitamin K2 mk7 (100mcg)     |                             |                |
+| B12 (1000 mcg)              |                             |                |
+| L-Methylfolate  (1000 mcg)  |                             |                |
+| Lysine (1g)                 |                             |                |
+| Zinc (5mg)                  |                             |                |
+| Hyaluronic Acid (200mg)     |                             |                |
+| Iodine (150mcg)             |                             |                |
+| Creatine (3g - in smoothie) |                             |                |
+| TMG (2g - in smoothie)      |                             |                |
+| HCP (15g - in smoothi)      |                             |                |
 
 I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination. I've added in iodine (via kelp) now, too, given I'm essentially on a vegan diet and don't eat much salt.
 

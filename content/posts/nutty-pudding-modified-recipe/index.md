@@ -26,6 +26,7 @@ It has now been quite some time since I've been making [Blueprint's](https://pro
 
 Some of these items are a little hard to get in Australia, or have (in my opinion) below average value-to-benefit ratios, and I've decided to swap them out. Instead, this is the recipe I am currently (24-07-2025) using:
 
+
 ##### Powders / Base
 
 - 30g whole macadamia nuts
@@ -40,12 +41,13 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 2g TMG powder
 - 1 tsp matcha powder
 - 1 tsp taurine
-- 2 tbsp wheat germ
+- 1 tbsp wheat germ
 - 1 tsp turmeric
 - 1/4 tsp ground ginger
-- 1/8th of a tsp black pepper
+- 1/8 tsp black pepper
 - 1 tsp of creatine
 - 1 tsp inulin
+
 
 ##### Liquids / Add Consumption
 
