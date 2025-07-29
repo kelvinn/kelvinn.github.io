@@ -263,10 +263,10 @@ The biomarkers that I will specifically target include:
 
 **IGF-1**: This is potentially from eating too much protein. I've removed pea protein from my smoothie, as well has the HCP.
 
-**hsCRP**: I've had it at 0.3 several times before, so I know I can get it that low.
+**hsCRP**: I've had it at 0.3 several times before, so I know I can get it that low. Potentially related to FMD.
 
-**MCV & RDW**: Seem related. I've got an experiment in mind.
+**MCV & RDW**: Seem potentially related to being slightly off. I've got an experiment in mind, too.
 
-**Albumin**: TBD
+**Albumin**: Potentially related to FMD.
 
-**Creatinine**: TBD
+**Creatinine**: I've got an experiment in mind. Potentially related to FMD, but unlikely.
