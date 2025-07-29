@@ -1,7 +1,7 @@
 ---
 title: 2025 Q2 Health Review
 date: 2025-06-27T21:30:00.002+11:00
-draft: true
+draft: false
 url: /2025/06/2025-q2-health-review.html
 tags:
   - longevity
@@ -259,14 +259,12 @@ I think the next quarter will remain similar to this one. Cronometer is working 
 
 ![](Pasted%20image%2020250702114349.png)
 
-The biomarkers that I will specifically target include:
+The biomarkers that I will specifically target include, in order of priority:
 
-**IGF-1**: This is potentially from eating too much protein. I've removed pea protein from my smoothie, as well has the HCP.
-
-**hsCRP**: I've had it at 0.3 several times before, so I know I can get it that low. Potentially related to FMD.
+**IGF-1**: This is potentially from eating too much protein. I've removed pea protein from my smoothie, as well has the HCP. Let's see if it drops.
 
 **MCV & RDW**: Seem potentially related to being slightly off. I've got an experiment in mind, too.
 
 **Albumin**: Potentially related to FMD.
 
-**Creatinine**: I've got an experiment in mind. Potentially related to FMD, but unlikely.
+**hsCRP**: I've had it at 0.3 several times before, so I know I can get it that low. Potentially related to FMD.
