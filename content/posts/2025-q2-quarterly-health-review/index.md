@@ -1,7 +1,7 @@
 ---
 title: 2025 Q2 Health Review
 date: 2025-06-27T21:30:00.002+11:00
-draft: true
+draft: false
 url: /2025/06/2025-q2-health-review.html
 tags:
   - longevity
@@ -221,11 +221,27 @@ You can read more about my experience here: https://www.kelvinism.com/2025/07/pr
 
 Did my biomarkers get better? There are so many variables this quarter that it is hard to point to this one experiment calling out if things got better or worse, but it helps to at least look. How soon should I test after a thing like this without screwing up the results? According to one of the FMD studies linked above, and another study that I vaguely remember about testing after Ramadan, I seem to remember in their methodology the researchers waiting 8-12 days before testing.
 
-After waiting 8 days I was able to take my blood test, and discovered that my PhenoAge (what I found out)!
+After waiting 8 days I was able to take my blood test, and discovered that my PhenoAge... got worse! Let's dive in to that.
 
-(insert graph here)
+![](Pasted%20image%2020250729150218.png)
 
-(discuss my findings)
+![](Pasted%20image%2020250729151036.png)
+
+Compared to my previous test we can see that:
+
+* Albumin: 4.53 → 4.00 🔴
+* Creatinine: 0.76 → 0.81  🔴
+* Glucose: 88 → 88  ⚪️
+* CRP: 0.3 → 0.7  🔴
+* Lymphocyte: 27.4 → 44 🟢 (*however*, I had to calculate the % from the absolute value, so this might be entirely wrong)
+* MCV: 93  → 95 🔴
+* RDW: 12.6 → 12.8 🔴
+* Alkaline Phosphatase: 75 → 60 🟢
+* WBC: 6.6 → 4.1 🟢
+
+Although none of these changes are significant, it is absolutely the wrong direction. There are two explanations: (1) I did the blood draw too soon after finishing my FMD cycle, and (2) I had been feeling a little under the weather the week before.
+
+I'm reminding myself that this isn't a sprint, but a marathon, so we can keep refining as we go along. Next round of testing will hopefully be better!
 
 ##### Heavy Metals Testing
 
