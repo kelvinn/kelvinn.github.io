@@ -263,4 +263,10 @@ The biomarkers that I will specifically target include:
 
 **IGF-1**: This is potentially from eating too much protein. I've removed pea protein from my smoothie, as well has the HCP.
 
-**hsCRP**: 
+**hsCRP**: I've had it at 0.3 several times before, so I know I can get it that low.
+
+**MCV & RDW**: Seem related. I've got an experiment in mind.
+
+**Albumin**: TBD
+
+**Creatinine**: TBD
