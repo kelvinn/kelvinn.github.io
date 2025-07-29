@@ -263,7 +263,7 @@ The biomarkers that I will specifically target include, in order of priority:
 
 **IGF-1**: This is potentially from eating too much protein. I've removed pea protein from my smoothie, as well has the HCP. Let's see if it drops.
 
-**MCV & RDW**: Seem potentially related to being slightly off. I've got an experiment in mind, too.
+**MCV & RDW**: Seem potentially related to being slightly off. I've got an experiment in mind, too. Need to optimise b12 levels, I think.
 
 **Albumin**: Potentially related to FMD.
 
