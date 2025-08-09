@@ -186,8 +186,10 @@ h3:hover a.para { background:#333; }
 
 h1, h2, h3, h4, h5, h6, p {
   position:relative;
-  margin:0px 0px 25px;
-  padding:0px;
+  margin:5px 5px 25px 5px;
+  padding: 5px 5px 5px 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-weight:normal;
   }
 

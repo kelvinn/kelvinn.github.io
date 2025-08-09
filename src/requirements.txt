@@ -1,0 +1,8 @@
+garmindb>=3.6.3
+snakemd==2.2.0
+ipykernel
+ipywidgets
+ipyleaflet
+pandas==2.2.3
+numpy==2.2.4
+pandas-gbq
