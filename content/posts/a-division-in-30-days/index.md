@@ -7,12 +7,9 @@ tags:
 - projects
 ---
 
-Status:  ✅ 
+Status:  ✅
   
-
 On a Friday I was told we might purchase a division from another company. Monday I heard that we purchased the division, and that we needed to have a website taking orders and a call center, capable of handling 500+/day (and not short calls); by the end of the month. Not to mention that the products wouldn't even ship out of the same warehouse that held the call center, but a warehouse half-way across the country. And that a recall was occurring, which had additional requirements. On Tuesday the CEO, and my boss, left for Asia.
-
-  
 
 There are basically two of us that handle IT at this company, yet the "other half" of the IT department is in China working remotely and studying. So, the goal: take a small company handling almost solely distribute orders to a company that can handle 500+ lengthy calls a day, with an e-commerce website. And the recall, so we have to process, replace and ship these additional products.
 

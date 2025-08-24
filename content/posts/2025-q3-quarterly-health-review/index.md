@@ -22,8 +22,6 @@ As usual, there are four areas that I wanted to focus on:
 - *Reduce Stress* by examining meal composition and avoiding anything that might impact my sleep
 - *Improve Biomarkers* by looking at my nutrition, as well as the above items.
 
-Let’s go through how I did this quarter and what I experimented with.
-
 Overall most metrics are improving, as we can see with the following key metrics.
   ![Summary Chart](summary.png)
 
@@ -38,6 +36,8 @@ We can see correlations for the quarter with the below correlation matrix.
   ![Correlation Matrix](correlation_matrix.png)
 
 One observation that I found interesting this quarter was that vigorous_activity_time had a positive correlation to resting heart rate (rhr), while moderate_activity_time did not. One theory could be that long runs often, but I have not analysed this, result in a higher RHR than any other type of run.
+
+Let’s go through how I did this quarter and what I experimented with.
 #### Improve Fitness
 
 ##### Goals  
@@ -172,6 +172,7 @@ And here's what is currently in my stack:
 | Iodine (150mcg)             |                   |        |
 | Creatine (3g - in smoothie) |                   |        |
 | TMG (2g - in smoothie)      |                   |        |
+
 Here are the changes that I made this quarter:
 
 * Increased **TMG** from 500mg to 2g to try and better support methylation and decrease homocysteine.

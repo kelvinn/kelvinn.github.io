@@ -22,8 +22,6 @@ As usual, there are four areas that I wanted to focus on:
 - *Reduce Stress* by {add summary of any experiments}.
 - *Improve Biomarkers* by looking at my nutrition, as well as the above items.
 
-Let’s go through how I did this quarter and what I experimented with.
-
 Overall most metrics are improving, as we can see with the following key metrics.
 
 ![Summary Chart](summary.png)
@@ -38,7 +36,9 @@ Over the previous year we can see that:
 We can see correlations for the quarter with the below correlation matrix.
   ![Correlation Matrix](correlation_matrix.png)
 
-{INSERT ANY CORRMATRIX OBSERVATIONS}
+{INSERT ANY CORRMATRIX OBSERVATIONS
+
+Let’s go through how I did this quarter and what I experimented with.
 #### Improve Fitness
 
 ##### Goals  
