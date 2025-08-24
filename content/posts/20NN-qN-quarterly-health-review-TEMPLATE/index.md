@@ -35,8 +35,10 @@ Over the previous year we can see that:
 * Steps are **maintaining** ✅
 * Body Battery (max/day) is increasing ✅
 
-Let's see what can contribute to these.
+We can see correlations for the quarter with the below correlation matrix.
+  ![Correlation Matrix](correlation_matrix.png)
 
+{INSERT ANY CORRMATRIX OBSERVATIONS}
 #### Improve Fitness
 
 ##### Goals  
@@ -51,8 +53,6 @@ I look at intensity minutes as a way to make sure I'm getting enough fitness, re
 
 I hit my intensity target {INSERT PERCENTAGE} of the weeks this quarter.
 
-
-
 In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient training. We can see that my RHR continues to trend downwards.
   ![Average Resting HR Per Month](average_resting_hr_per_month.png)
 ##### Experiments
@@ -63,7 +63,7 @@ I didn't have any fitness-related experiments this quarter; just rinse and repea
 - Improve sleep quality ❌
 ##### Analysis
 
-Let's have a look at my sleep scores for the previous few years, averaged per month:
+Let's have a look at my sleep scores for the previous few years, averaged per quarter:
 
   ![Average Sleep Score Per Month](average_sleep_score_per_month.png)
 
@@ -107,23 +107,15 @@ No stress-related experiments for the quarter.
 
 [INSERT CHART FROM PHENOAGE]:
 
-We can see that...
+{INSERT ANY PHENOAGE OBSERVATIONS}
 ##### Experiments
 
 I did have a fair amount of experimentation here, including:
 
 - {INSERT ANY BIOMARKER-RELATED EXPERIMENTS}
 
-Because of subscribing to Cronometer I'm able to get more reports, such as my Nutrient Balances and Nutrient Targets, which have encouraged me to tweak the food I eat.
 
-For example, here are my Nutrient Targets (without supplementation):
-
-[NUTRIENT TARGETS CHART]:
-
-And here are my Balances (with supplementation):
-
-[NUTRIENT BALANCES CHART]:
-### This Quarter's Supplement Stack
+### Supplement Stack
 
 Some principles that I tried to follow:
 
@@ -139,8 +131,9 @@ And here's what is currently in my stack:
 | Niacin (50mg)               | Glycine (5g)      |        |
 | Calcium (333mg)             | NAC (1g)          |        |
 | Vitamin D (4000 IU)         | Iron (20mg)       |        |
-| Vitamin K2 mk7 (100mcg)     | Vitamin C (1g)    |        |
+| Vitamin K2 mk7 (100mcg)     | Vitamin C (500mg) |        |
 | B12 Methyl (1000 mcg)       |                   |        |
+| B12 (Liposomal, 1000 mcg)   |                   |        |
 | L-Methylfolate  (1000 mcg)  |                   |        |
 | Lysine (1g)                 |                   |        |
 | Zinc (5mg)                  |                   |        |
@@ -148,12 +141,14 @@ And here's what is currently in my stack:
 | Iodine (150mcg)             |                   |        |
 | Creatine (3g - in smoothie) |                   |        |
 | TMG (2g - in smoothie)      |                   |        |
-| HCP (15g - in smoothie)     |                   |        |
+Here are the changes that I made this quarter:
 
-### Other Random Charts
+* {DISCUSS ANY CHANGES}
 
-We can see correlations for the quarter with this chart. I would like to supplement this with additional data at some point, because most of these metrics are fairly obvious how they are correlated. For example, steps and distance, or floors_up and floors_down. 
-  ![Correlation Matrix](correlation_matrix.png)
+If we're going to discuss supplements, then we should probably also discuss nutrition!
+### Nutrition
+
+{INSERT SOMETHING ABOUT NUTRITION HERE?}
 
 ### Focus For Next Quarter
 

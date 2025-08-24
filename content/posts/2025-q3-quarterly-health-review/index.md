@@ -34,7 +34,10 @@ Over the previous year we can see that:
 * Steps are **maintaining** ✅
 * Body Battery (max/day) is increasing ✅
 
-Let's see what can contribute to these.
+We can see correlations for the quarter with the below correlation matrix.
+  ![Correlation Matrix](correlation_matrix.png)
+
+One observation that I found interesting this quarter was that vigorous_activity_time had a positive correlation to resting heart rate (rhr), while moderate_activity_time did not. One theory could be that long runs often, but I have not analysed this, result in a higher RHR than any other type of run.
 #### Improve Fitness
 
 ##### Goals  
@@ -52,16 +55,17 @@ For example, on one of my trips to China I only managed 348 minutes. Part of thi
 
 I hit my intensity target {INSERT PERCENTAGE} of the weeks this year.
 
-We can also see this represented in my yearly chart from intervals:
-
-[INSERT INTERVALS CHART HERE]: 
-
-In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient training.
-  
+In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient recovery.
   ![Average Resting HR Per Month](average_resting_hr_per_month.png)
 ##### Experiments
 
-I didn't have any fitness-related experiments this quarter; just rinse and repeat.
+Towards the end of August I decided to make one big change to my fitness routine: trying to get both my run and strength training session completed before work. There are two reasons for this: 
+
+* Firstly, I sometimes run out of time to go to the gym at lunch, or I have to cut workouts short.
+* Secondly, to group all my exercise together. If doing a significant amount of exercise this could be a problem, but a 60min run and 30min strength session isn't really that much. What I am about to say is my opinion only, and I haven't read any research to substantiate. Here goes... due to my splitting of running and strength training, I'm activating mTOR twice per day, and sometimes consuming extra protein at lunch for the gym session. Additionally, when going to lunch, my Garmin highlights a significant amount of stress, which is why I avoid going to the gym at night (plus it being logistically challenging).  
+ 
+My experiment was to wake up, have a protein shake supplemented with EAA, and go run straight away, and when returning home doing a strength session immediately afterwards. Then I'll have an extra large Nutty Pudding + LF yogurt + granola with my morning supplements, then shower. If I can turn this in to a long term habit I should be able to save some time each day, as it will cut down on the extra shower at lunch.
+
 #### Improve Sleep
 ##### Goals
 - Improve sleep quality ❌
@@ -142,7 +146,7 @@ For example, here are my Nutrient Targets (without supplementation):
 And here are my Balances (with supplementation):
 
 [NUTRIENT BALANCES CHART]:
-### This Quarter's Supplement Stack
+### Supplement Stack
 
 Some principles that I tried to follow:
 
@@ -158,8 +162,9 @@ And here's what is currently in my stack:
 | Niacin (50mg)               | Glycine (5g)      |        |
 | Calcium (333mg)             | NAC (1g)          |        |
 | Vitamin D (4000 IU)         | Iron (20mg)       |        |
-| Vitamin K2 mk7 (100mcg)     | Vitamin C (1g)    |        |
+| Vitamin K2 mk7 (100mcg)     | Vitamin C (500mg) |        |
 | B12 Methyl (1000 mcg)       |                   |        |
+| B12 (Liposomal, 1000 mcg)   |                   |        |
 | L-Methylfolate  (1000 mcg)  |                   |        |
 | Lysine (1g)                 |                   |        |
 | Zinc (5mg)                  |                   |        |
@@ -167,13 +172,15 @@ And here's what is currently in my stack:
 | Iodine (150mcg)             |                   |        |
 | Creatine (3g - in smoothie) |                   |        |
 | TMG (2g - in smoothie)      |                   |        |
-| HCP (15g - in smoothie)     |                   |        |
+Here are the changes that I made this quarter:
 
-### Other Random Charts
+* Increased **TMG** from 500mg to 2g to try and better support methylation and decrease homocysteine.
+* Removed **HCP** in order to try and decrease IGF-1.
+* Added a **liposomal form of B12**, just in case I have absorption issues. 
+* Moved **iron** from being ad hoc to every evening, and taken alongside **vitamin C**.
+* Removed **magnesium glycinate** from evening stack, as getting enough from diet.
 
-We can see correlations for the quarter with this chart. I would like to supplement this with additional data at some point, because most of these metrics are fairly obvious how they are correlated. For example, steps and distance, or floors_up and floors_down. 
-  ![Correlation Matrix](correlation_matrix.png)
-
+If we're going to discuss supplements, then we should probably also discuss nutrition!
 ### Focus For Next Quarter
 
 I think the next quarter will remain similar to this one. I've subscribed to Cronometer, so I'm getting some additional insight from that. I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:

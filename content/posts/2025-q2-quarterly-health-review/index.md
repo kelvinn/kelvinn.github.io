@@ -228,7 +228,7 @@ And here's what is currently in my stack:
 | Hyaluronic Acid (200mg)     |                             |                |
 | Iodine (150mcg)             |                             |                |
 | Creatine (3g - in smoothie) |                             |                |
-| TMG (2g - in smoothie)      |                             |                |
+| TMG (500mg - in smoothie)   |                             |                |
 | HCP (15g - in smoothi)      |                             |                |
 
 I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination. I've added in iodine (via kelp) now, too, given I'm essentially on a vegan diet and don't eat much salt.
@@ -265,9 +265,9 @@ I think the next quarter will remain similar to this one. Cronometer is working 
 
 The biomarkers that I will specifically target include, in order of priority:
 
-**IGF-1**: This is potentially from eating too much protein. I've removed pea protein from my smoothie, as well has the HCP. Let's see if it drops.
+**IGF-1**: This is potentially from eating too much protein. I'm going to remove pea protein from my smoothie, as well has the HCP. Let's see if it drops.
 
-**MCV & RDW**: Seem potentially related to being slightly off. I've got an experiment in mind, too. Need to optimise b12 levels, I think.
+**MCV & RDW**: Seem potentially related to being slightly off. I've got an experiment in mind, too. Need to optimise B12 levels.
 
 **Albumin**: Potentially related to FMD.
 
