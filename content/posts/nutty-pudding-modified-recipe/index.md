@@ -39,6 +39,7 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1/2 tsp ceylon cinnamon
 - 1/2 tsp mustard seeds
 - 2g TMG powder
+- 1g Boron
 - 1 tsp matcha powder
 - 1 tsp taurine
 - 1 tbsp wheat germ
@@ -47,7 +48,6 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1/8 tsp black pepper
 - 1 tsp of creatine
 - 1 tsp inulin
-
 
 #### Liquids / Add Consumption
 
