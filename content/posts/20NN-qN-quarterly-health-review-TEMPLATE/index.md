@@ -125,22 +125,22 @@ Some principles that I tried to follow:
 
 And here's what is currently in my stack:
 
-| Morning                     | Evening           | Ad Hoc |
-| --------------------------- | ----------------- | ------ |
-| Fish Oil (6g)               | Astaxanthin (7mg) |        |
-| Niacin (50mg)               | Glycine (5g)      |        |
-| Calcium (333mg)             | NAC (1g)          |        |
-| Vitamin D (4000 IU)         | Iron (20mg)       |        |
-| Vitamin K2 mk7 (100mcg)     | Vitamin C (500mg) |        |
-| B12 Methyl (1000 mcg)       |                   |        |
-| B12 (Liposomal, 1000 mcg)   |                   |        |
-| L-Methylfolate  (1000 mcg)  |                   |        |
-| Lysine (1g)                 |                   |        |
-| Zinc (5mg)                  |                   |        |
-| Hyaluronic Acid (200mg)     |                   |        |
-| Iodine (150mcg)             |                   |        |
-| Creatine (3g - in smoothie) |                   |        |
-| TMG (2g - in smoothie)      |                   |        |
+| Morning                     | Evening           | Ad Hoc            |
+| --------------------------- | ----------------- | ----------------- |
+| Niacin (50mg)               | Astaxanthin (7mg) | Iron (20mg)       |
+| Calcium (333mg)             | Glycine (5g)      | Vitamin C (500mg) |
+| Vitamin D (4000 IU)         | NAC (1g)          |                   |
+| Vitamin K2 mk7 (100mcg)     | Fish Oil (6g)     |                   |
+| B12 Methyl (1000 mcg)       |                   |                   |
+| B12 (Liposomal, 1000 mcg)   |                   |                   |
+| L-Methylfolate  (1000 mcg)  |                   |                   |
+| Lysine (1g)                 |                   |                   |
+| Zinc (5mg)                  |                   |                   |
+| Hyaluronic Acid (200mg)     |                   |                   |
+| Iodine (150mcg)             |                   |                   |
+| Creatine (3g - in smoothie) |                   |                   |
+| TMG (2g - in smoothie)      |                   |                   |
+|                             |                   |                   |
 Here are the changes that I made this quarter:
 
 * {DISCUSS ANY CHANGES}

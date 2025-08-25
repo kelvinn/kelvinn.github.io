@@ -132,7 +132,7 @@ I did have a fair amount of experimentation here, including:
 - After my biomarkers showed that I remain low on B12, Iron, and Vitamin D, I opted to focus on getting those in to better ranges. I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination, which I hope will increase absorption. I have also started to take a sublingual B12 every morning.
 - I've added in iodine (via kelp) now, too, given I'm essentially on a vegan diet and don't eat much salt.
 - Updated my smoothie to have a carrot to try and increase my vitamin A intake without supplementing.
-- Started taking 20mg iron every night.
+- Started taking 20mg iron every night for 30 days instead of ad hoc as my ferritin levels were on the low side.
 - Increased Vitamin D from 1,000 IU to 4,000 IU
 - Started eating sardines. Ideally I would like to drop the fish oil, as this has shown no impact on health or life span via the ITP.
 - Started eating watermelon for the lycopene
