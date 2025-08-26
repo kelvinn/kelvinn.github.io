@@ -48,11 +48,14 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1/8 tsp black pepper
 - 1 tsp of creatine
 - 1 tsp inulin
+- 1 large carrot
+- 50g of spinach
+- 30g pea protein
 
 #### Liquids / Add Consumption
 
 - 200g frozen mixed berries
-- 400ml of water
+- 500ml of water
 
 Almost all of this is just from Woolies or Coles, but I did buy the TMG from iHerb, the Creatine from Bulk Nutrients, and the cacao powder and ceylon cinnamon from Amazon. Here is my justification for the adjustments.
 

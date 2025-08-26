@@ -131,11 +131,11 @@ I did have a fair amount of experimentation here, including:
 
 - After my biomarkers showed that I remain low on B12, Iron, and Vitamin D, I opted to focus on getting those in to better ranges. I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination, which I hope will increase absorption. I have also started to take a sublingual B12 every morning.
 - I've added in iodine (via kelp) now, too, given I'm essentially on a vegan diet and don't eat much salt.
-- Updated my smoothie to have a carrot to try and increase my vitamin A intake without supplementing.
-- Started taking 20mg iron every night for 30 days instead of ad hoc as my ferritin levels were on the low side.
-- Increased Vitamin D from 1,000 IU to 4,000 IU
-- Started eating sardines. Ideally I would like to drop the fish oil, as this has shown no impact on health or life span via the ITP.
-- Started eating watermelon for the lycopene
+- Updated my daily smoothie to have a carrot to try and increase my beta-carotene (vitamin A) intake without supplementing.
+- Started taking 20mg iron every night for 30 days instead of ad hoc as my ferritin levels were on the low side of optimal in Dec 2024 and again in July 2025.
+- Increased Vitamin D from 1,000 IU to 4,000 IU because my vitamin D levels have been deficient all year.
+- Started eating sardines. Ideally I would like to drop or reduce the fish oil, as this has shown no impact on health or life span via the ITP.
+- Started eating watermelon for the lycopene.
 
 Because of subscribing to Cronometer I'm able to get more reports, such as my Nutrient Balances and Nutrient Targets, which have encouraged me to tweak the food I eat.
 
@@ -186,7 +186,9 @@ If we're going to discuss supplements, then we should probably also discuss nutr
 
 I think the next quarter will remain similar to this one. I've subscribed to Cronometer, so I'm getting some additional insight from that. I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:
 
-* Calcium
-* Fish oil
-* Lysine
+* Calcium - remove
+* Fish oil - move to evening pills
+* Lysine - remove
+* Zinc - remove
+* Iron - remove
 
