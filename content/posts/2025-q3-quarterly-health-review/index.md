@@ -129,13 +129,13 @@ We can see that...
 
 I did have a fair amount of experimentation here, including:
 
-- After my biomarkers showed that I remain low on B12, Iron, and Vitamin D, I opted to focus on getting those in to better ranges. I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination, which I hope will increase absorption. I have also started to take a sublingual B12 every morning.
+- **MCV & RDW**: After my biomarkers showed that I remain low on B12, Iron, and Vitamin D, I opted to focus on getting those in to better ranges. I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination, which I hope will increase absorption. I have also started to take a sublingual B12 every morning. There's also a need to optimise my iron balance by increasing my ferritin levels from 41 µg/L to somewhere between 60-80 µg/L; I've increased my frequency of taking a 20mg iron supplement.
 - I've added in iodine (via kelp) now, too, given I'm essentially on a vegan diet and don't eat much salt.
 - Updated my daily smoothie to have a carrot to try and increase my beta-carotene (vitamin A) intake without supplementing.
-- Started taking 20mg iron every night for 30 days instead of ad hoc as my ferritin levels were on the low side of optimal in Dec 2024 and again in July 2025.
 - Increased Vitamin D from 1,000 IU to 4,000 IU because my vitamin D levels have been deficient all year.
 - Started eating sardines. Ideally I would like to drop or reduce the fish oil, as this has shown no impact on health or life span via the ITP.
 - Started eating watermelon for the lycopene.
+- Albumin: Potentially related to the FMD, or perhaps I just need more protein due to higher levels of training. I have contemplated cutting down on my protein consumption to lower IGF-1, but I think I'll keep the pea protein in my daily smoothie.
 
 Because of subscribing to Cronometer I'm able to get more reports, such as my Nutrient Balances and Nutrient Targets, which have encouraged me to tweak the food I eat.
 
@@ -156,22 +156,22 @@ Some principles that I tried to follow:
 
 And here's what is currently in my stack:
 
-| Morning                     | Evening           | Ad Hoc |
-| --------------------------- | ----------------- | ------ |
-| Fish Oil (6g)               | Astaxanthin (7mg) |        |
-| Niacin (50mg)               | Glycine (5g)      |        |
-| Calcium (333mg)             | NAC (1g)          |        |
-| Vitamin D (4000 IU)         | Iron (20mg)       |        |
-| Vitamin K2 mk7 (100mcg)     | Vitamin C (500mg) |        |
-| B12 Methyl (1000 mcg)       |                   |        |
-| B12 (Liposomal, 1000 mcg)   |                   |        |
-| L-Methylfolate  (1000 mcg)  |                   |        |
-| Lysine (1g)                 |                   |        |
-| Zinc (5mg)                  |                   |        |
-| Hyaluronic Acid (200mg)     |                   |        |
-| Iodine (150mcg)             |                   |        |
-| Creatine (3g - in smoothie) |                   |        |
-| TMG (2g - in smoothie)      |                   |        |
+| Morning                     | Evening           | Ad Hoc            |
+| --------------------------- | ----------------- | ----------------- |
+| Fish Oil (6g)               | Astaxanthin (7mg) | Iron (20mg)       |
+| Niacin (50mg)               | Glycine (5g)      | Vitamin C (500mg) |
+| Calcium (333mg)             | NAC (1g)          |                   |
+| Vitamin D (4000 IU)         |                   |                   |
+| Vitamin K2 mk7 (100mcg)     |                   |                   |
+| B12 Methyl (1000 mcg)       |                   |                   |
+| B12 (Liposomal, 1000 mcg)   |                   |                   |
+| L-Methylfolate  (1000 mcg)  |                   |                   |
+| Lysine (1g)                 |                   |                   |
+| Zinc (5mg)                  |                   |                   |
+| Hyaluronic Acid (200mg)     |                   |                   |
+| Iodine (150mcg)             |                   |                   |
+| Creatine (3g - in smoothie) |                   |                   |
+| TMG (2g - in smoothie)      |                   |                   |
 
 Here are the changes that I made this quarter:
 
