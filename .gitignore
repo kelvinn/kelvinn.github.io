@@ -21,3 +21,4 @@ content/posts/.DS_Store
 /notebooks/pyaging_data
 notebooks/weekly.log
 notebooks/garmindb.log
+/notebooks/images
