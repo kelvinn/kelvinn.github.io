@@ -45,10 +45,24 @@ df['intensity_minutes'] = df['moderate_mins'] + 2 * df['vigorous_mins']
 df.set_index('date', inplace=True)
 weekly_summary = df['intensity_minutes'].resample('W-SUN').sum()
 
+# Calculate averages and stats
+average_weekly_intensity = weekly_summary.mean()
+q3_start = pd.Timestamp('2025-07-01')
+q3_end = pd.Timestamp('2025-09-30')
+q3_data = weekly_summary.loc[q3_start:q3_end]
+q3_average = q3_data.mean()
+weeks_above_target = len(weekly_summary[weekly_summary >= 800])
+q3_weeks_above_target = len(q3_data[q3_data >= 800])
+
+print(f"Overall average weekly intensity minutes: {average_weekly_intensity:.2f}")
+print(f"Q3 average weekly intensity minutes: {q3_average:.2f}")
+print(f"Weeks above target (800) in Q3: {q3_weeks_above_target} out of {len(q3_data)}")
+
 # Create plot
 plt.figure(figsize=(16, 6))
 weekly_summary.plot(kind='bar', width=0.8, color='#69b3a2', align='center')
 plt.axhline(y=800, color='r', linestyle='--', label='Weekly Target (800)')
+plt.axhline(y=average_weekly_intensity, color='g', linestyle='--', label=f'Weekly Average ({average_weekly_intensity:.0f})')
 
 # Format plot
 plt.title('Weekly Intensity Minutes for 2025')

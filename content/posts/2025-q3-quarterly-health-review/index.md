@@ -23,6 +23,7 @@ As usual, there are four areas that I wanted to focus on:
 - *Improve Biomarkers* by looking at my nutrition, as well as the above items.
 
 Overall most metrics are improving, as we can see with the following key metrics.
+
   ![Summary Chart](summary.png)
 
 Over the previous year we can see that:
@@ -35,7 +36,26 @@ Over the previous year we can see that:
 We can see correlations for the quarter with the below correlation matrix.
   ![Correlation Matrix](correlation_matrix.png)
 
-One observation that I found interesting this quarter was that vigorous_activity_time had a positive correlation to resting heart rate (rhr), while moderate_activity_time did not. One theory could be that long runs often, but I have not analysed this, result in a higher RHR than any other type of run.
+Looking at the correlations, here's an analysis of the relationships and whether they make intuitive sense:
+##### Activity-Related Correlations (Very Strong)
+* Calories Active & Vigorous Activity (0.949): ✅ Makes perfect sense - vigorous activity is the primary driver of active calorie burn
+* Steps & Vigorous Activity (0.939): ✅ Logical - more steps often mean more intense activity
+* Calories Active & Steps (0.937): ✅ Expected - walking/running are major calorie-burning activities
+* Moderate activity shows surprisingly weak correlations across the board
+* Stress has stronger correlations with recovery metrics (Body Battery) than with activity metrics, which suggests psychological stress might impact recovery more than physical activity does
+##### Recovery Metrics
+* Stress vs Body Battery Min (-0.701): ✅ Very intuitive - higher stress depletes body battery more
+* Body Battery Max vs Min (0.682): ✅ Natural correlation - good recovery leads to both higher max and min levels
+* RHR Min vs Body Battery Max (-0.679): ✅ Makes sense - lower resting heart rate indicates better recovery potential
+##### Sleep and Recovery
+* Sleep Average vs Body Battery Max (0.673): ✅ Strongly intuitive - better sleep leads to better recovery
+* Sleep Average vs Stress (-0.433): ✅ Expected - better sleep typically reduces stress levels (or lower stress means better sleep)
+* Sleep average has relatively weak correlations with activity metrics, which might suggest daily activity doesn't impact sleep as much as commonly thought
+##### Physical Activity Metrics
+* Floors vs Steps (0.685): ✅ Logical - climbing floors naturally involves steps
+* HR Max vs Calories Active (0.679): ✅ Expected - more intense activity raises heart rate and burns calories 
+##### Weight Correlations
+* The correlations with weight are generally weaker, which makes sense as weight is a longer-term metric that doesn't change significantly day-to-day
 
 Let’s go through how I did this quarter and what I experimented with.
 #### Improve Fitness
