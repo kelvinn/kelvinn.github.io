@@ -139,6 +139,3 @@ os.makedirs('images', exist_ok=True)
 # Save the plot
 plt.savefig('images/sleep_score_per_day.png', dpi=300, bbox_inches='tight')
 print("Heatmap saved as 'images/sleep_score_per_day.png'")
-
-# Display the plot
-plt.show()

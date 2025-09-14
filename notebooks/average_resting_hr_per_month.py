@@ -102,9 +102,6 @@ os.makedirs('images', exist_ok=True)
 plt.savefig('images/average_resting_hr_per_month.png', dpi=300, bbox_inches='tight')
 print("Line plot saved as 'images/average_resting_hr_per_month.png'")
 
-# Display the plot
-plt.show()
-
 print(f"\nSummary:")
 print(f"Total months with data: {len(monthly_averages)}")
 print(f"Overall average resting HR: {np.mean(monthly_averages):.1f} BPM")

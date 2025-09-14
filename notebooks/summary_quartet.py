@@ -128,8 +128,8 @@ def create_quartet_map():
                 y_valid = np.array(data)[valid_indices]
                 
                 try:
-                    # Fit polynomial (degree 1 for linear trend, or 2 if enough points)
-                    degree = min(2, valid_count - 1) if valid_count > 3 else 1
+                    # Fit polynomial (degree 1 for linear trend, or 3 if enough points)
+                    degree = min(3, valid_count - 1) if valid_count > 3 else 1
                     poly_coeffs = np.polyfit(x_numeric, y_valid, degree)
                     poly_func = np.poly1d(poly_coeffs)
                     
@@ -233,9 +233,7 @@ def create_quartet_map():
     # Save the plot
     plt.savefig('images/summary.png', dpi=300, bbox_inches='tight')
     print("Quartet map saved as 'images/summary.png'")
-    
-    # Display the plot
-    plt.show()
+
     
     # Print summary statistics
     print(f"\nSummary Statistics:")

@@ -138,8 +138,7 @@ def create_stress_heatmap_12weeks():
     # Save the plot
     plt.savefig('images/stress_level_per_week.png', dpi=300, bbox_inches='tight')
     print("Heatmap saved as 'images/stress_level_per_week.png'")
-    
-    plt.show()
+
     
     # Print summary statistics
     print(f"\nSummary Statistics:")

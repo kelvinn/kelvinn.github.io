@@ -105,9 +105,6 @@ os.makedirs('images', exist_ok=True)
 plt.savefig('images/average_sleep_score_per_month.png', dpi=300, bbox_inches='tight')
 print("Plot saved as 'images/average_sleep_score_per_month.png'")
 
-# Display the plot
-plt.show()
-
 # Print some summary statistics
 print(f"\nSummary Statistics:")
 print(f"Total months with data: {len(months)}")

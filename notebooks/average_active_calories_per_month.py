@@ -111,9 +111,6 @@ os.makedirs('images', exist_ok=True)
 plt.savefig('images/average_active_calories_per_month.png', dpi=300, bbox_inches='tight')
 print("Line plot saved as 'images/average_active_calories_per_month.png'")
 
-# Display the plot
-plt.show()
-
 print(f"\nSummary:")
 print(f"Total months with data: {len(monthly_averages)}")
 print(f"Overall average active calories: {np.mean(monthly_averages):.1f}")

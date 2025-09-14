@@ -62,7 +62,6 @@ Let’s go through how I did this quarter and what I experimented with.
 
 ##### Goals  
 
-- Fitness score (intervals.icu) of 75 or above ❌
 - Average intensity minutes (Garmin) of 800 or above ✅
 - Improve Vo2Max ✅
 - Decrease RHR ✅
@@ -88,7 +87,7 @@ My experiment was to wake up, have a protein shake supplemented with EAA, and go
 
 #### Improve Sleep
 ##### Goals
-- Improve sleep quality ❌
+- Improve sleep quality ✅
 ##### Analysis
 
 Let's have a look at my sleep scores since buying my Garmin:

@@ -150,8 +150,6 @@ def create_quarterly_stress_heatmap():
     plt.savefig('images/stress_level_per_day.png', dpi=300, bbox_inches='tight')
     print(f"\nHeatmap saved as 'images/stress_level_per_day.png'")
     
-    plt.show()
-    
     # Print summary statistics
     print(f"\nSummary Statistics:")
     print(f"Quarters analyzed: {len(quarters)}")
