@@ -65,7 +65,7 @@ plt.axhline(y=800, color='r', linestyle='--', label='Weekly Target (800)')
 plt.axhline(y=average_weekly_intensity, color='g', linestyle='--', label=f'Weekly Average ({average_weekly_intensity:.0f})')
 
 # Format plot
-plt.title('Weekly Intensity Minutes for 2025')
+plt.title('Weekly Intensity Minutes for 2025', fontsize=20, fontweight='bold', pad=20)
 plt.xlabel('Week Ending')
 plt.ylabel('Total Intensity Minutes')
 plt.xticks(rotation=45, ha='right')

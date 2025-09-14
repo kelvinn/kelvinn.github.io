@@ -27,7 +27,7 @@ quarters = {
 }
 
 # Day names in order (Monday to Sunday)
-day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+day_names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 # Initialize data structure
 quarter_data = {}
@@ -99,36 +99,37 @@ for quarter in ['Q1', 'Q2', 'Q3', 'Q4']:
         quarter_labels.append(quarter)
 
 # Create DataFrame
-columns = day_names + ['Weekly Average']
+columns = day_names + ['Avg']
 df = pd.DataFrame(df_data, index=quarter_labels, columns=columns)
 
 print("DataFrame created:")
 print(df)
 
 # Create the heatmap
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(12, 4))  # Adjusted figure size for abbreviated day names
 
 # Create custom colormap
 cmap = sns.cm.rocket_r
 
-# Create the heatmap
-ax = sns.heatmap(df, 
-                 annot=True, 
-                 fmt='.1f', 
-                 cmap=cmap,
-                 cbar_kws={'label': 'Average Sleep Score'},
-                 linewidths=0.5,
-                 linecolor='white',
-                 xticklabels=columns,
-                 yticklabels=True)
+# # Create the heatm
+ax = sns.heatmap(df,
+                    xticklabels=columns,
+                    yticklabels=True,
+                    annot=True,
+                    fmt='.1f',
+                    cmap='YlOrRd',
+                    cbar_kws={'label': 'Average Sleep Score'},
+                    linewidths=0.5,
+                    square=True,  # Make cells square
+                    cbar=True)
 
 # Customize the plot
-plt.title('Average Sleep Score per Day of Week by Quarter (2025)', fontsize=16, fontweight='bold', pad=40)
-plt.xlabel('Day of Week', fontsize=12, fontweight='bold')
-plt.ylabel('Quarter', fontsize=12, fontweight='bold')
+plt.title('Average Sleep Score per Day of Week by Quarter (2025)', fontsize=16, fontweight='bold', pad=20)
+plt.xlabel('Day of Week', fontsize=14)
+plt.ylabel('Quarter', fontsize=14)
 
-# Rotate x-axis labels for better readability
-plt.xticks(rotation=90, ha='center')
+# Set horizontal x-axis labels
+plt.xticks(rotation=0, ha='center')
 
 # Adjust layout to prevent label cutoff
 plt.tight_layout()

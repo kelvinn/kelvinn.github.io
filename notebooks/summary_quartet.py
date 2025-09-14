@@ -102,7 +102,7 @@ def create_quartet_map():
     # Create the quartet map
     fig, axes = plt.subplots(2, 2, figsize=(16, 12))
     fig.suptitle('Health Metrics - Monthly Averages (Previous 12 Months)', 
-                 fontsize=16, fontweight='bold', y=0.95)
+                 fontsize=20, fontweight='bold')
     
     # Define colors for each subplot
     colors = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D']

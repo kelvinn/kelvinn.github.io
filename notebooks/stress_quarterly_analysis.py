@@ -97,14 +97,12 @@ def create_quarterly_stress_heatmap():
         for day_values in quarter_stress_data.values():
             all_quarter_values.extend(day_values)
         
-        if all_quarter_values:
+        if all_quarter_values:  # Only include quarters that have data
             quarter_avg = np.mean(all_quarter_values)
             quarter_values.append(quarter_avg)
-        else:
-            quarter_values.append(np.nan)
-        
-        heatmap_matrix.append(quarter_values)
-        quarter_labels.append(quarter_info['name'])
+            # Only add to matrix if there's data
+            heatmap_matrix.append(quarter_values)
+            quarter_labels.append(quarter_info['name'])
         
         # Print summary for this quarter
         valid_values = [v for v in quarter_values[:-1] if not np.isnan(v)]
@@ -121,8 +119,11 @@ def create_quarterly_stress_heatmap():
     column_labels = day_names + ['Avg']
     
     # Create the heatmap
-    fig_height = max(8, len(quarters) * 1.5)
-    plt.figure(figsize=(12, fig_height))
+    # Calculate figure size to maintain square cells (8 columns including average)
+    cell_size = 1.5  # Size of each cell in inches
+    fig_width = cell_size * 8  # 7 days + 1 average column
+    fig_height = cell_size * len(quarter_labels)
+    plt.figure(figsize=(fig_width, fig_height))
     
     # Create heatmap
     ax = sns.heatmap(heatmap_array,
@@ -133,7 +134,7 @@ def create_quarterly_stress_heatmap():
                      cmap='YlOrRd',
                      cbar_kws={'label': 'Average Stress Level'},
                      linewidths=0.5,
-                     square=False,
+                     square=True,  # Make cells square
                      cbar=True,
                      mask=np.isnan(heatmap_array))
     

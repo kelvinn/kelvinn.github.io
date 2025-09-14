@@ -182,7 +182,7 @@ def create_correlation_matrix():
                 cbar_kws={"shrink": .8},
                 annot_kws={"size": 8})
 
-    plt.title('Garmin Health Metrics Correlation Matrix\nQ3 2025 Analysis', fontsize=16, pad=20)
+    plt.title('Garmin Health Metrics Correlation Matrix\nQ3 2025 Analysis', fontsize=16, fontweight='bold', pad=20)
     
     # Rotate labels for better readability
     plt.xticks(rotation=45, ha='right', fontsize=11)
