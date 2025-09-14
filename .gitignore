@@ -22,3 +22,4 @@ content/posts/.DS_Store
 notebooks/weekly.log
 notebooks/garmindb.log
 /notebooks/images
+.DS_Store
