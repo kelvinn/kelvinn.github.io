@@ -8,16 +8,16 @@ tags:
   - outdoor
   - exercise
 ---
-# Background
+### Background
 
 I typically don't do many races, but signed up for the Coastal Classic - my first race in a year. There were some things that worked well, and others that could have been improved. This isn't meant to be a recount of the event, and instead notes for next time.
 
-# The Course and Result
+### The Course and Result
 
 It was a new course this year, so roughly the same distance, but more elevation; around 31km, with 1000m of elevation gain. I've done this route quite a few times, so was pretty familiar with the entire course. Great atmosphere, and a feeling of community.
 
 ![](Pasted%20image%2020250908161744.png)
-# What worked well
+### What worked well
 
 There were quite a few things that seemed to work well:
 
@@ -30,7 +30,7 @@ There were quite a few things that seemed to work well:
 * I tried to take a lot of the pressure off for the race by not setting a goal time, and instead just aiming to have an average HR of 160 or higher.
 * Foot preparation: trimmed my toenails quite close, as usual.
 
-# What didn't work so well
+### What didn't work so well
 
 * Similar to my previous two marathons, my stress levels climbed significantly the day before the race. While I think this time was better, and the increase could have been due to stress at work, it might also have been due to the race. It might might have also have been due to changing my diet: for both marathons and this race I tried to carb load, and I don't think that is working well for me. Even outside of taper I notice that when I eat high carb meals my stress levels go off, and I specifically avoid eating carbs prior to bed because I think they make me feel anxious. This makes me sound like I'm low-carb, but I'm certainly not. Timing is everything?
 * The night before the race I had half a bowl of noodles, which I think was a mistake. I shouldn't have. Because...
@@ -45,7 +45,7 @@ There were quite a few things that seemed to work well:
 
 ![](Pasted%20image%2020250908161844.png)
 
-# Focus for next time
+### Focus for next time
 
 Although I do not have any races in mind, I'm sure I'll do one at some point, so here
 
