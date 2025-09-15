@@ -5,3 +5,4 @@ ipywidgets
 ipyleaflet
 pandas==2.2.3
 numpy==2.2.4
+garmin_fit_sdk
