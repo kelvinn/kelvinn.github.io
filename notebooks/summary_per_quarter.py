@@ -21,6 +21,8 @@ from garmindb.garmindb import (
     GarminDb, Activities, StepsActivities, ActivitiesDb
 )
 from garmindb.summarydb import DaysSummary, SummaryDb
+from sqlalchemy.orm import sessionmaker
+from vo2max_db import Vo2MaxActivities, engine
 
 # Set up seaborn theme
 sns.set_theme(style="whitegrid")
@@ -47,29 +49,22 @@ def get_quarter_data(quarter, year=2025):
         end_date = datetime(year, end_month + 1, 1) - timedelta(days=1)
     return start_date, end_date
 
-def get_vo2max_max(activities_db, start_date, end_date):
-    """Get maximum VO2Max value from running activities within a date range."""
-    # Get running activities
-    activities = Activities.get_by_sport(activities_db, "running")
-    if not activities:
+def get_vo2max_95th_percentile(activities_db, start_date, end_date):
+    """Get the 95th percentile VO2Max value for running activities within the quarter's date range."""
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    results = session.query(Activities, Vo2MaxActivities) \
+        .join(Activities, Activities.activity_id == Vo2MaxActivities.activity_id) \
+        .filter(Activities.start_time >= start_date, Activities.start_time <= end_date) \
+        .all()
+
+    vo2_values = [vo2.vo2_max for activity, vo2 in results if vo2 is not None and vo2.vo2_max is not None]
+
+    if not vo2_values:
         return np.nan
-    
-    # Get corresponding VO2Max values from StepsActivities, filtering for 2025 and the specific quarter
-    vo2max_values = []
-    for activity in activities:
-        # Check if activity is within the date range (2025 and specific quarter)
-        if (hasattr(activity, 'start_time') and 
-            activity.start_time and 
-            start_date <= activity.start_time <= end_date):
-            
-            steps_activity = StepsActivities.get(activities_db, activity.activity_id)
-            if steps_activity and steps_activity.vo2_max is not None:
-                vo2max_values.append(steps_activity.vo2_max)
-    
-    if not vo2max_values:
-        return np.nan
-    
-    return max(vo2max_values)
+
+    return np.percentile(vo2_values, 95)
 
 def calculate_weekly_intensity_minutes(data_period):
     """Calculate weekly averages of intensity minutes."""
@@ -92,8 +87,7 @@ def calculate_weekly_intensity_minutes(data_period):
     return np.median(weekly_avg)
 
 def create_quarterly_metrics_heatmap():
-    """Create heatmap showing quarterly health metrics."""
-    
+    """Create quarterly metrics table (raw, non-normalized) and print it instead of a heatmap."""
     # Create images directory if it doesn't exist
     os.makedirs('images', exist_ok=True)
     
@@ -150,62 +144,21 @@ def create_quarterly_metrics_heatmap():
         quarter_metrics.append(intensity_median)
         
         # VO2Max (maximum value from running activities)
-        vo2max_value = get_vo2max_max(activities_db, start_date, end_date)
+        vo2max_value = get_vo2max_95th_percentile(activities_db, start_date, end_date)
         quarter_metrics.append(vo2max_value)
         
         data_matrix.append(quarter_metrics)
         
         print(f"Q{quarter} metrics:", dict(zip(metrics.keys(), quarter_metrics)))
     
-    # Convert to numpy array
-    data_array = np.array(data_matrix)
+    # Build DataFrame for raw metrics (no normalization)
+    df = pd.DataFrame(data_matrix, columns=list(metrics.keys()), index=[f'Q{q}' for q in quarters])
+    print("\nQuarterly Metrics Table (raw):")
+    print(df.to_string(index=True))
     
-    # Create the heatmap
-    plt.figure(figsize=(12, 8))
+    # Optional: If you want to save this as a CSV for external viewing:
+    # df.to_csv('images/quarterly_metrics_2025_raw.csv')
     
-    # Create heatmap with custom formatting
-    ax = sns.heatmap(data_array,
-                     xticklabels=list(metrics.keys()),
-                     yticklabels=[f'Q{q}' for q in quarters],
-                     annot=True,
-                     fmt='.1f',
-                     cmap='YlOrRd',
-                     cbar_kws={'label': 'Value'},
-                     linewidths=0.5)
-    
-    plt.title('Quarterly Health Metrics (2025)', fontsize=16, fontweight='bold', pad=20)
-    plt.xlabel('Metrics', fontsize=12)
-    plt.ylabel('Quarter', fontsize=12)
-    
-    # Rotate x-axis labels for better readability
-    plt.xticks(rotation=45, ha='right')
-    
-    # Add metrics descriptions as footnote
-    footnote = "Metrics Calculation Methods:\n"
-    for metric, desc in metrics.items():
-        footnote += f"• {metric}: {desc}\n"
-    
-    plt.figtext(0.1, -0.2, footnote, wrap=True, fontsize=8)
-    
-    # Adjust layout to prevent label cutoff and accommodate footnote
-    plt.tight_layout()
-    plt.subplots_adjust(bottom=0.3)  # Make room for footnote
-    
-    # Save the plot
-    plt.savefig('images/quarterly_metrics_2025.png', dpi=300, bbox_inches='tight')
-    print("\nHeatmap saved as 'images/quarterly_metrics_2025.png'")
-    
-    # Print summary statistics for each metric
-    print("\nSummary Statistics:")
-    for i, metric in enumerate(metrics.keys()):
-        values = data_array[:, i]
-        valid_values = values[~np.isnan(values)]
-        if len(valid_values) > 0:
-            print(f"\n{metric}:")
-            print(f"  Min: {np.min(valid_values):.1f}")
-            print(f"  Max: {np.max(valid_values):.1f}")
-            print(f"  Mean: {np.mean(valid_values):.1f}")
-            print(f"  Available quarters: {len(valid_values)}/4")
-
+    # End of function
 if __name__ == "__main__":
     create_quarterly_metrics_heatmap()
