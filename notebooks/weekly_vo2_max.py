@@ -35,13 +35,10 @@ print(f"Querying VO2 Max data from {start_date.strftime('%Y-%m-%d')} to {end_dat
 # activities = Activities.get_by_sport(activities_db, "running")
 # vo2max_values = Vo2MaxActivities.get_all(vo2_max_activities_db)
 
-activity_id = 9938139204
-activity = Activities.get(activities_db, activity_id)
-print(activity)
+
+vo2_all_activities = Vo2MaxActivities.get_all(activities_db)
 
 
-laps = Vo2MaxActivities.get(activities_db, 9938139204)
-print(laps)
 # v = Vo2MaxActivities.get_all(activities_db)
 # print(str(laps['vo2_max']))
 
