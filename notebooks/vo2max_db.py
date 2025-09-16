@@ -2,7 +2,9 @@ from sqlalchemy import Column, String, Float, ForeignKey, PrimaryKeyConstraint
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from garmindb.garmindb import SportActivities, ActivitiesDb
+from sqlalchemy.ext.declarative import declared_attr
+from sqlalchemy.orm import relationship
+from garmindb.garmindb import SportActivities, ActivitiesDb, Activities
 from garmindb.garmindb.activities_db import ActivitiesCommon
 import fitfile
 import idbutils
@@ -30,24 +32,32 @@ class Vo2MaxActivities(ActivitiesDb.Base, idbutils.DbObject):
 
     activity_id = Column(String, ForeignKey('activities.activity_id'), primary_key=True)
     vo2_max = Column(Float)
+    # activity = relationship("Activities", foreign_keys="Vo2MaxActivities.activity_id")
 
     __table_args__ = (PrimaryKeyConstraint("activity_id"),)
 
-    def __repr__(self):
-        return f"<Vo2MaxActivities(activity_id='{self.activity_id}', vo2_max={self.vo2_max})>"
+    # def __repr__(self):
+    #     return f"<Vo2MaxActivities(activity_id='{self.activity_id}', vo2_max={self.vo2_max})>"
 
     def add_vo2_max_activity(session, activity_id_val, vo2_max_val):
         new_record = Vo2MaxActivities(activity_id=activity_id_val, vo2_max=vo2_max_val)
         session.add(new_record)
     
-    @classmethod
-    def _view_selectable(cls):
-        # The query fails to generate sql when using the func.round clause.
-        selectable = [
-            Vo2MaxActivities.activity_id.label('activity_id'),
-            Vo2MaxActivities.vo2_max.label('vo2_max')
-        ]
+    # @classmethod
+    # def _view_selectable(cls):
+    #     # The query fails to generate sql when using the func.round clause.
+    #     selectable = [
+    #         Vo2MaxActivities.activity_id.label('activity_id'),
+    #         Vo2MaxActivities.vo2_max.label('vo2_max')
+    #         # Activities.Activities.start_time.label('activity_date')
+    #     ]
+    #     return selectable  # Ensure this line is properly indented
 
+    @classmethod
+    def s_get_from_dict(cls, session, values_dict):
+        """Return a single activity instance for the given id."""
+        return cls.s_get(session, values_dict['activity_id'], values_dict['vo2_max'])
+    
     @classmethod
     def s_get(cls, session, activity_id, default=None):
         """Return a single instance for the given id."""
@@ -58,19 +68,26 @@ class Vo2MaxActivities(ActivitiesDb.Base, idbutils.DbObject):
     
     @classmethod
     def s_get_activity(cls, session, activity_id):
-        """Return all laps for a given activity_id."""
-        return session.query(cls).filter(cls.activity_id == activity_id)
-    
+        """Return all activity vo2_max records for a given activity_id."""
+        return session.query(cls).filter(cls.activity_id == activity_id).all()
+
     @classmethod
     def get_activity(cls, db, activity_id):
-        """Return vo2_max for a given activity_id."""
+        """Return all activity vo2_max records for a given activity_id."""
         with db.managed_session() as session:
             return cls.s_get_activity(session, activity_id)
+        
         
 # Create the database engine
 engine = create_engine(DATABASE_URL)
 
+# # Test function to verify selectable fields
+# def test_view_selectable():
+#     selectable_fields = Vo2MaxActivities._view_selectable()
+#     print("Selectable fields:", selectable_fields)
+
 # Create the table in the database
 ActivitiesDb.Base.metadata.create_all(engine)
 
+# test_view_selectable()  # Call the test function to verify selectable fields
 print("Table 'vo2max_activities' created successfully in garmin_activities.db")

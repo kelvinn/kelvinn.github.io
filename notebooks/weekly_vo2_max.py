@@ -10,7 +10,8 @@ from collections import defaultdict
 from garmindb import GarminConnectConfigManager
 from garmindb.garmindb import GarminSummaryDb, DaysSummary, MonitoringDb, MonitoringHeartRate, Sleep, GarminDb, RestingHeartRate, Activities, ActivitiesDb
 from garmindb.summarydb import DaysSummary, SummaryDb
-from vo2max_db import Vo2MaxActivities
+from sqlalchemy.orm import sessionmaker
+from vo2max_db import Vo2MaxActivities, engine
 
 # Set up seaborn theme
 sns.set_theme(style="whitegrid")
@@ -37,6 +38,41 @@ print(f"Querying VO2 Max data from {start_date.strftime('%Y-%m-%d')} to {end_dat
 
 
 vo2_all_activities = Vo2MaxActivities.get_all(activities_db)
+
+print("Count of vo2_max_activities: %s" % len(vo2_all_activities))
+# print(vo2_all_activities)
+
+# one = vo2_all_activities[50]
+# print(one)
+
+activities = Activities.get_all(activities_db)
+activity_obj = activities[50]
+
+Session = sessionmaker(bind=engine)
+session = Session()
+
+
+# activities_with_vo2_max = session.query(Vo2MaxActivities).join(Activities).all() 
+# print(activities_with_vo2_max[:5])
+
+users_with_addresses = session.query(Vo2MaxActivities).join(Activities).all() 
+print(users_with_addresses[1])
+
+
+# Querying all columns from both tables using a join
+results = session.query(Activities, Vo2MaxActivities).join(Activities, Activities.activity_id == Vo2MaxActivities.activity_id).all()
+
+# # Printing the results
+# # for company, buyer in results:
+# #     print(f"Company ID: {company.activity_id}, Company Name: {company.start_time}, Buyer ID: {buyer.activity_id}, Buyer Name: {buyer.vo2_max}")
+
+# print(results[10])
+
+# users_left_join = session.query(Activities).outerjoin(Vo2MaxActivities).all() 
+
+# print(users_left_join[:5][0])
+
+# laps = ActivityLaps.get_activity(garmin_act_db, activity_obj.id)
 
 
 # v = Vo2MaxActivities.get_all(activities_db)
