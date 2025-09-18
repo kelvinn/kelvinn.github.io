@@ -6,7 +6,6 @@ Cells have vertical padding for better visualization.
 """
 
 import matplotlib.pyplot as plt
-import matplotlib.dates as dates
 import numpy as np
 import datetime as dt
 import pandas as pd
@@ -115,11 +114,9 @@ def create_stress_heatmap_12weeks():
                      mask=np.isnan(heatmap_array))
     
     # Add vertical padding by adjusting the aspect ratio
-    # This creates more vertical space between rows
     ax.set_aspect('auto')
     
     # Add extra vertical padding by adjusting the spacing
-    # Increase the spacing between cells
     ax.figure.subplots_adjust(left=0.15, right=0.85, top=0.95, bottom=0.1)
     
     plt.title(f'Daily Stress Level per Week (Previous 12 Weeks)\n({start_date.strftime("%Y-%m-%d")} to {end_date.strftime("%Y-%m-%d")})', 
@@ -138,7 +135,6 @@ def create_stress_heatmap_12weeks():
     # Save the plot
     plt.savefig('images/stress_level_per_week.png', dpi=300, bbox_inches='tight')
     print("Heatmap saved as 'images/stress_level_per_week.png'")
-
     
     # Print summary statistics
     print(f"\nSummary Statistics:")

@@ -112,6 +112,31 @@ def create_quarterly_stress_heatmap():
         else:
             print(f"  No data available for this quarter")
     
+    # --- NEW EXPORT BLOCK: export per-quarter data to CSV ---
+    export_rows = []
+    for i, q in enumerate(quarter_labels):
+        row = heatmap_matrix[i]
+        days_vals = row[:7]
+        avg_val = row[7]
+        export_rows.append({
+            'quarter': q,
+            'Mon': days_vals[0],
+            'Tue': days_vals[1],
+            'Wed': days_vals[2],
+            'Thu': days_vals[3],
+            'Fri': days_vals[4],
+            'Sat': days_vals[5],
+            'Sun': days_vals[6],
+            'Avg': avg_val
+        })
+    
+    df_export = pd.DataFrame(export_rows)
+    os.makedirs('data', exist_ok=True)
+    csv_path = os.path.join('data', 'stress_quarterly_per_quarter.csv')
+    df_export.to_csv(csv_path, index=False)
+    print(f"Exported quarterly stress data to {csv_path}")
+    # -------------------------------------------
+
     # Convert to numpy array
     heatmap_array = np.array(heatmap_matrix)
     
@@ -119,19 +144,14 @@ def create_quarterly_stress_heatmap():
     column_labels = day_names + ['Avg']
     
     # Create the heatmap
-    # Calculate figure size to maintain square cells (8 columns including average)
-    cell_size = 1.5  # Size of each cell in inches
-    fig_width = cell_size * 8  # 7 days + 1 average column
-    fig_height = cell_size * len(quarter_labels)
-    plt.figure(figsize=(fig_width, fig_height))
+    plt.figure(figsize=(8, 4))
     
-    # Create heatmap
     ax = sns.heatmap(heatmap_array,
                      xticklabels=column_labels,
                      yticklabels=quarter_labels,
                      annot=True,
                      fmt='.1f',
-                     cmap='YlOrRd',
+                     cmap='viridis',
                      cbar_kws={'label': 'Average Stress Level'},
                      linewidths=0.5,
                      square=True,  # Make cells square
@@ -139,9 +159,9 @@ def create_quarterly_stress_heatmap():
                      mask=np.isnan(heatmap_array))
     
     plt.title('Average Stress Level per Day of Week by Quarter (2025)', 
-              fontsize=16, fontweight='bold', pad=20)
-    plt.xlabel('Day of Week', fontsize=14)
-    plt.ylabel('Quarter', fontsize=14)
+              fontsize=14, fontweight='bold', pad=20)
+    plt.xlabel('Day of Week', fontsize=12)
+    plt.ylabel('Quarter', fontsize=12)
     plt.xticks(rotation=0)
     plt.yticks(rotation=0)
     

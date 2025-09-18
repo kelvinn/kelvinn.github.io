@@ -28,14 +28,14 @@ sns.set_theme(style="whitegrid")
 
 def create_quartet_map():
     """Create a quartet map with 4 subplots for health metrics."""
-    
+
     # Create images directory if it doesn't exist
     os.makedirs('images', exist_ok=True)
-    
+
     # Calculate date range for previous 12 months
     end_date = datetime.now()
     start_date = end_date - timedelta(days=365)  # 12 months back
-    
+
     print(f"Creating quartet map for data from {start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}")
     
     # Initialize database connection
@@ -90,15 +90,35 @@ def create_quartet_map():
         month_labels.append(month)
         
         for metric in metrics_data.keys():
-            if monthly_data[month][metric]:
-                avg_value = np.mean(monthly_data[month][metric])
-                metrics_data[metric].append(avg_value)
+            values = monthly_data[month][metric]
+            if values:
+                metrics_data[metric].append(np.mean(values))
             else:
                 metrics_data[metric].append(np.nan)
     
-    # Convert month labels to datetime for proper x-axis formatting
+    # Export per-month data to CSV
+    export_rows = []
+    for m in sorted_months:
+        vals = monthly_data[m]
+        rhr_vals = vals['rhr']
+        stress_vals = vals['stress']
+        steps_vals = vals['steps']
+        bb_vals = vals['bb_max']
+        year = int(m.split('-')[0]); mon = int(m.split('-')[1])
+        rhr_avg = float(np.mean(rhr_vals)) if len(rhr_vals) > 0 else np.nan
+        stress_avg = float(np.mean(stress_vals)) if len(stress_vals) > 0 else np.nan
+        steps_avg = float(np.mean(steps_vals)) if len(steps_vals) > 0 else np.nan
+        bb_avg = float(np.mean(bb_vals)) if len(bb_vals) > 0 else np.nan
+        export_rows.append({'year': year, 'month': mon, 'rhr_avg': rhr_avg, 'stress_avg': stress_avg, 'steps': steps_avg, 'bb_max': bb_avg})
+
+    df_export = pd.DataFrame(export_rows)
+    os.makedirs('data', exist_ok=True)
+    csv_path = os.path.join('data', 'summary_quartet_per_month.csv')
+    df_export.to_csv(csv_path, index=False)
+    print(f"Exported monthly quartet data to {csv_path}")
+
     month_dates = [datetime.strptime(month, '%Y-%m') for month in month_labels]
-    
+
     # Create the quartet map
     fig, axes = plt.subplots(2, 2, figsize=(16, 12))
     fig.suptitle('Health Metrics - Monthly Averages (Previous 12 Months)', 

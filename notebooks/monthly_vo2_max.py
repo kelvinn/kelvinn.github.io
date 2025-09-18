@@ -57,6 +57,17 @@ df.set_index('date', inplace=True)
 
 monthly_95th_percentile = df.resample('ME').quantile(0.95)
 
+# Export per-month VO2 max 95th percentile data
+export_df = monthly_95th_percentile.reset_index()
+export_df.columns = ['date','vo2_max_95th']
+export_df['year'] = export_df['date'].dt.year
+export_df['month'] = export_df['date'].dt.month
+export_df = export_df[['year','month','vo2_max_95th']]
+os.makedirs('data', exist_ok=True)
+csv_path = os.path.join('data', 'monthly_vo2_max_per_month.csv')
+export_df.to_csv(csv_path, index=False)
+print(f"Exported monthly VO2 max data to {csv_path}")
+
 # Plotting
 plt.figure(figsize=(12, 6))
 
@@ -72,5 +83,4 @@ plt.grid()
 plt.legend()
 
 plt.tight_layout()
-plt.savefig('monthly_vo2_max.png')
-
+plt.savefig('images/monthly_vo2_max.png')

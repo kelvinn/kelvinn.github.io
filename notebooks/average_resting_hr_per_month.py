@@ -64,6 +64,21 @@ for month in sorted_months:
         print(f"{month}: {len(hr_values)} records, avg={avg_hr:.1f}, std={std_hr:.1f}")
 
 # Create the line plot
+
+# Prepare export data for CSV (new loop)
+export_rows = []
+for month in sorted_months:
+    hr_values = monthly_data[month]
+    if len(hr_values) > 0:
+        year = int(month.split('-')[0])
+        mon = int(month.split('-')[1])
+        export_rows.append({'year': year, 'month': mon, 'average_resting_hr': float(np.mean(hr_values)), 'count': len(hr_values), 'std_dev': float(np.std(hr_values))})
+
+df_export = pd.DataFrame(export_rows)
+os.makedirs('data', exist_ok=True)
+csv_path = os.path.join('data', 'average_resting_hr_per_month.csv')
+df_export.to_csv(csv_path, index=False)
+print(f"Exported monthly resting HR data to {csv_path}")
 plt.figure(figsize=(15, 8))
 
 # Convert month labels to datetime for proper x-axis formatting

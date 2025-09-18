@@ -76,6 +76,9 @@ I hit my intensity target {INSERT PERCENTAGE} of the weeks this year.
 
 In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient recovery.
   ![Average Resting HR Per Month](average_resting_hr_per_month.png)
+
+And let's look at Vo2Max, which stayed roughly the same this quarter.
+  ![Monthly Vo2Max Values](monthly_vo2_max.png)
 ##### Experiments
 
 Towards the end of August I decided to make one big change to my fitness routine: trying to get both my run and strength training session completed before work. There are two reasons for this: 

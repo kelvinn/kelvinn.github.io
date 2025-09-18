@@ -59,6 +59,21 @@ for month in sorted_months:
         std_devs.append(np.std(scores))
 
 print(f"Calculated statistics for {len(months)} months")
+# Export per-month data to CSV
+# Build export data
+export_rows = []
+for month in sorted_months:
+    scores = monthly_data[month]
+    if len(scores) > 0:
+        year = int(month.split('-')[0])
+        mon = int(month.split('-')[1])
+        export_rows.append({'year': year, 'month': mon, 'average_sleep_score': float(np.mean(scores)), 'count': len(scores), 'std_dev': float(np.std(scores))})
+
+df_export = pd.DataFrame(export_rows)
+os.makedirs('data', exist_ok=True)
+csv_path = os.path.join('data', 'average_sleep_score_per_month.csv')
+df_export.to_csv(csv_path, index=False)
+print(f"Exported monthly sleep score data to {csv_path}")
 
 # Create the plot
 plt.figure(figsize=(14, 8))

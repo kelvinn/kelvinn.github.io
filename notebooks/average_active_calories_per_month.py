@@ -59,6 +59,7 @@ sorted_months = sorted(monthly_data.keys())
 monthly_averages = []
 monthly_stds = []
 month_labels = []
+export_rows = []
 
 for month in sorted_months:
     calories_values = monthly_data[month]
@@ -71,6 +72,21 @@ for month in sorted_months:
         month_labels.append(month)
         
         print(f"{month}: {len(calories_values)} records, avg={avg_calories:.1f}, std={std_calories:.1f}")
+
+# Prepare export for CSV (insert)
+export_rows = []
+for month in sorted_months:
+    calories_values = monthly_data[month]
+    if len(calories_values) > 0:
+        year = int(month.split('-')[0])
+        mon = int(month.split('-')[1])
+        export_rows.append({'year': year, 'month': mon, 'average_active_calories': float(np.mean(calories_values)), 'count': len(calories_values), 'std_dev': float(np.std(calories_values))})
+
+df_export = pd.DataFrame(export_rows)
+os.makedirs('data', exist_ok=True)
+csv_path = os.path.join('data', 'average_active_calories_per_month.csv')
+df_export.to_csv(csv_path, index=False)
+print(f"Exported monthly active calories data to {csv_path}")
 
 # Create the line plot
 plt.figure(figsize=(15, 8))

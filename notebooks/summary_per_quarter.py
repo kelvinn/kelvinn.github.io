@@ -82,7 +82,7 @@ def calculate_weekly_intensity_minutes(data_period):
     # Convert to DataFrame for weekly resampling
     df = pd.DataFrame(daily_minutes)
     df.set_index('date', inplace=True)
-    weekly_avg = df['minutes'].resample('W').mean()
+    weekly_avg = df['minutes'].resample('W').sum()
     
     return np.median(weekly_avg)
 
@@ -133,7 +133,7 @@ def create_quarterly_metrics_heatmap():
         
         # Steps (Average of daily sum)
         steps_values = [day.steps for day in data_period if day.steps is not None]
-        quarter_metrics.append(np.mean(steps_values) if steps_values else np.nan)
+        quarter_metrics.append(int(np.mean(steps_values)) if steps_values else np.nan)
         
         # Body Battery (Median of daily max)
         bb_values = [day.bb_max for day in data_period if day.bb_max is not None]
@@ -145,7 +145,7 @@ def create_quarterly_metrics_heatmap():
         
         # VO2Max (maximum value from running activities)
         vo2max_value = get_vo2max_95th_percentile(activities_db, start_date, end_date)
-        quarter_metrics.append(vo2max_value)
+        quarter_metrics.append(round(vo2max_value, 2))
         
         data_matrix.append(quarter_metrics)
         
@@ -157,7 +157,7 @@ def create_quarterly_metrics_heatmap():
     print(df.to_string(index=True))
     
     # Optional: If you want to save this as a CSV for external viewing:
-    # df.to_csv('images/quarterly_metrics_2025_raw.csv')
+    df.to_csv('data/quarterly_metrics_2025_raw.csv')
     
     # End of function
 if __name__ == "__main__":

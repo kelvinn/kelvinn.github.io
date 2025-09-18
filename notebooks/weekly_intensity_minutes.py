@@ -43,7 +43,15 @@ df['intensity_minutes'] = df['moderate_mins'] + 2 * df['vigorous_mins']
 
 # Resample by week
 df.set_index('date', inplace=True)
+# Export per-week data to CSV
 weekly_summary = df['intensity_minutes'].resample('W-SUN').sum()
+
+export_df = weekly_summary.reset_index()
+export_df.columns = ['week_end', 'intensity_minutes']
+os.makedirs('data', exist_ok=True)
+csv_path = os.path.join('data', 'weekly_intensity_minutes_per_week.csv')
+export_df.to_csv(csv_path, index=False)
+print(f"Exported weekly intensity data to {csv_path}")
 
 # Calculate averages and stats
 average_weekly_intensity = weekly_summary.mean()
@@ -80,4 +88,3 @@ plt.savefig(output_path)
 plt.close()
 
 print(f"Chart saved to {output_path}")
-

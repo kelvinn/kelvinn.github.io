@@ -102,6 +102,13 @@ for quarter in ['Q1', 'Q2', 'Q3', 'Q4']:
 columns = day_names + ['Avg']
 df = pd.DataFrame(df_data, index=quarter_labels, columns=columns)
 
+# Export per-quarter data to CSV
+export_df = df.reset_index()
+export_df = export_df.rename(columns={'index': 'Quarter'})
+csv_path = os.path.join('data', 'sleep_score_per_day_per_quarter.csv')
+export_df.to_csv(csv_path, index=False)
+print(f"Exported per-quarter sleep score data to {csv_path}")
+
 print("DataFrame created:")
 print(df)
 
