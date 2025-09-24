@@ -69,7 +69,9 @@ Let’s go through how I did this quarter and what I experimented with.
 
 I look at intensity minutes as a way to make sure I'm getting enough fitness, regardless if I'm running or at the gym or kayaking. My goal is 800 minutes per week 80% of the weeks, which is significantly higher than the commonly recommended 150 minutes per week. The reason I've chosen to say "80% of the weeks" is because there are some weeks when I need to travel for work, and it is harder to reach this target.
 
-For example, on one of my trips to China I only managed 348 minutes. Part of this was due to accidentally leaving my running it in my check-in bag, but there was no way I was going to hit 800 minutes: I was working 12 - 16 hour days every day, and it was 40C outside, so could only run on a treadmill.
+For example, on one of my trips to China I only managed 348 minutes. Part of this was due to accidentally leaving my running kit in my check-in bag, but there was no way I was going to hit 800 minutes: I was working 12 - 16 hour days every day, and it was 40C outside, so could only run on a treadmill.
+
+Similarly, I had a bit of a drop when I traveled to Singapore on a Monday, and back on Thursday. I did manage more intensity minutes, but did not meet my 800 minute goal.
   ![Weekly Intensity Minutes](weekly_intensity_minutes.png)
 
 I hit my intensity target {INSERT PERCENTAGE} of the weeks this year.
@@ -134,6 +136,43 @@ We can see an overall decrease in stress, and the lowest for the year. My stress
 Week 31 appears to have been fairly stressful, and coincidentally I started feeling like I was fighting something the week after. At the end of Week 32 I travelled to China, and then was there for all of Week 33. The days were quite long, and I had less control over my nutrition than I normally would.
 ##### Experiments
 No stress-related experiments for the quarter.
+
+#### Improve Nutrition
+
+##### Goals
+- Stick below 20g of saturated fat per day ❌
+- Get between 110 and 125g of protein per day ✅
+- Get over 70g of fibre per day ✅
+- Meet 100% coverage of micronutrients ❌
+
+
+![](Pasted%20image%2020250925075523.png)
+
+![](Pasted%20image%2020250925075628.png)
+
+So, why am I not at 100%? Let's look at areas where I'm a bit deficient.
+
+**Metabolism Support**
+
+![](Pasted%20image%2020250925080253.png)
+
+I'm probably close enough here to not worry about it.
+
+**Antioxidants**
+
+![](Pasted%20image%2020250925080347.png)
+
+I now add a single carrot to my Nutty Pudding, so I expect that to slowly increase my beta-carotene levels this next quarter, and I've started eating "Melonballs", basically just small watermelons, so lycopene may increase. Ultimately I need to eat more tomatoes. This is an area of focus. 
+
+For Lutein & Zeaxanthin, I believe my values are actually a little higher than this, but missing in some of the nutrient values in certain foods that I've added.
+
+**Men's Health**
+
+![](Pasted%20image%2020250925080615.png)
+
+I'm OK with 112g. Cronometer does % for targets, so unless I can do a fixed target and combine that with % for fat and carbs, then this will be hard to always meet.
+
+That's it. Everything else is where I want it to be.
 #### Improve Biomarkers
 
 ##### Goals
