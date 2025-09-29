@@ -204,6 +204,22 @@ Although none of these changes are significant, it is absolutely the wrong direc
 
 I'm reminding myself that this isn't a sprint, but a marathon, so we can keep refining as we go along. Next round of testing will hopefully be better!
 
+If I use a tool like Bortz Blood Age calculator, [my blood age and chronological age](https://www.longevity-tools.com/humanitys-bortz-blood-age#age=42.6_years&S-cystatin-C=0.79_mg%2FL&RDW=12.8_%25&S-GGT=12.6_IU%2FL&S-SHBG=68_nmol%2FL&B-HbA1c=5.7_%25&NEUabs=1.8_x10%5E9%2FL&S-hsCRP=0.5_mg%2FL&MCV=95_fL&MONOabs=0.4_x10%5E9%2FL&MCH=32.4_pg&S-ALP=60_IU%2FL&S-glucose=5.1_mmol%2FL&S-albumin=4.0_g%2FdL&S-urea=4.6_mmol%2FL&S-ApoA1=139_mg%2FdL&LYM=44_%25&S-cholesterol=3.8_mmol%2FL&RBC=4.41_x10%5E12%2FL&S-25-OH-D=36_nmol%2FL&S-ALT=25_IU%2FL&S-creatinine=81_%C2%B5mol%2FL) are unfortunately almost the same. One nice thing about Longevity Tools is that it tells you some areas of focus, for example:
+
+- [Increasing Vitamin D - 25(OH)D](https://www.longevity-tools.com/biomarker/S-25-OH-D#S-25-OH-D=36_nmol/L) from 36 -> 174.72 nmol/L would decrease Bortz Blood Age by 4.1 years.
+- [Lowering Cystatin C](https://www.longevity-tools.com/biomarker/S-cystatin-C#S-cystatin-C=0.79_mg/L) from 0.79 -> 0.62 mg/L would decrease Bortz Blood Age by 3.1 years.
+- [Increasing RBC](https://www.longevity-tools.com/biomarker/RBC#RBC=4.41_x10^12/L) from 4.41 -> 5.3 x10^12/L would decrease Bortz Blood Age by 1.8 years.
+- [Increasing Creatinine](https://www.longevity-tools.com/biomarker/S-creatinine#S-creatinine=81_%C2%B5mol/L) from 81 -> 95 µmol/L would decrease Bortz Blood Age by 1.5 years.  
+    Increasing muscle mass to 80% should reach optimal creatinine levels.
+- [Lowering MCV](https://www.longevity-tools.com/biomarker/MCV#MCV=95_fL) from 95 -> 86 fL would decrease Bortz Blood Age by 1.5 years.
+- [Lowering SHBG](https://www.longevity-tools.com/biomarker/S-SHBG#S-SHBG=68_nmol/L) from 68 -> 45 nmol/L would decrease Bortz Blood Age by 1.2 years.
+- [Lowering HbA1c](https://www.longevity-tools.com/biomarker/B-HbA1c#B-HbA1c=5.7_%) from 5.7 -> 5.2 % would decrease Bortz Blood Age by 0.9 years.
+- [Lowering MCH](https://www.longevity-tools.com/biomarker/MCH#MCH=32.4_pg) from 32.4 -> 29 pg would decrease Bortz Blood Age by 0.9 years.
+- [Increasing ApoA1](https://www.longevity-tools.com/biomarker/S-ApoA1#S-ApoA1=139_mg/dL) from 139 -> 190 mg/dL would decrease Bortz Blood Age by 0.9 years.
+- Increasing Cholesterol (Total) from 3.8 -> 4.9 mmol/L would decrease Bortz Blood Age by 0.8 years.
+
+I believe the top 3 can be improved via supplements (D, B, and Iron). Creatinine will require increasing muscle mass, which might take some time. SHBG I'm experimenting with adding some boron to my stack.
+
 ### This Quarter's Supplement Stack
 
 Some principles that I tried to follow:
