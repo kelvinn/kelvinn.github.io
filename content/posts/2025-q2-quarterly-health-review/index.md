@@ -213,10 +213,11 @@ If I use a tool like Bortz Blood Age calculator, [my blood age and chronological
     Increasing muscle mass to 80% should reach optimal creatinine levels.
 - [Lowering MCV](https://www.longevity-tools.com/biomarker/MCV#MCV=95_fL) from 95 -> 86 fL would decrease Bortz Blood Age by 1.5 years.
 - [Lowering SHBG](https://www.longevity-tools.com/biomarker/S-SHBG#S-SHBG=68_nmol/L) from 68 -> 45 nmol/L would decrease Bortz Blood Age by 1.2 years.
-- [Lowering HbA1c](https://www.longevity-tools.com/biomarker/B-HbA1c#B-HbA1c=5.7_%) from 5.7 -> 5.2 % would decrease Bortz Blood Age by 0.9 years.
+- Lowering HbA1c from 5.7 -> 5.2 % would decrease Bortz Blood Age by 0.9 years.
 - [Lowering MCH](https://www.longevity-tools.com/biomarker/MCH#MCH=32.4_pg) from 32.4 -> 29 pg would decrease Bortz Blood Age by 0.9 years.
 - [Increasing ApoA1](https://www.longevity-tools.com/biomarker/S-ApoA1#S-ApoA1=139_mg/dL) from 139 -> 190 mg/dL would decrease Bortz Blood Age by 0.9 years.
 - Increasing Cholesterol (Total) from 3.8 -> 4.9 mmol/L would decrease Bortz Blood Age by 0.8 years.
+
 
 I believe the top 3 can be improved via supplements (D, B, and Iron). Creatinine will require increasing muscle mass, which might take some time. SHBG I'm experimenting with adding some boron to my stack.
 
