@@ -250,6 +250,6 @@ I think the next quarter will remain similar to this one. I've subscribed to Cro
 * Calcium - remove
 * Fish oil - move to evening pills
 * Lysine - remove
-* Zinc - remove
 * Iron - remove
 
+Check lymphoctes increasing because mot takimg niacin?
