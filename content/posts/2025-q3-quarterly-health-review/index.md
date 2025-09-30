@@ -1,18 +1,16 @@
 ---
 title: 2025 Q3 Health Review
-date: 2025-09-01T21:30:00.002+11:00
-draft: true
+date: 2025-09-30T01:30:00.002+11:00
+draft: false
 url: /2025/10/2025-q3-health-review.html
 tags:
   - longevity
   - health
   - articles
 ---
-  
+  ### Reflection
 
-### Reflection
-
-Add a reflection here.
+Add a reflection here. TBC.
 ### Focus Areas
 
 As usual, there are four areas that I wanted to focus on:
@@ -23,7 +21,6 @@ As usual, there are four areas that I wanted to focus on:
 - *Improve Biomarkers* by looking at my nutrition, as well as the above items.
 
 Overall most metrics are improving, as we can see with the following key metrics.
-
   ![Summary Chart](summary.png)
 
 Over the previous year we can see that:
@@ -37,25 +34,11 @@ We can see correlations for the quarter with the below correlation matrix.
   ![Correlation Matrix](correlation_matrix.png)
 
 Looking at the correlations, here's an analysis of the relationships and whether they make intuitive sense:
-##### Activity-Related Correlations (Very Strong)
-* Calories Active & Vigorous Activity (0.949): ✅ Makes perfect sense - vigorous activity is the primary driver of active calorie burn
-* Steps & Vigorous Activity (0.939): ✅ Logical - more steps often mean more intense activity
-* Calories Active & Steps (0.937): ✅ Expected - walking/running are major calorie-burning activities
-* Moderate activity shows surprisingly weak correlations across the board
-* Stress has stronger correlations with recovery metrics (Body Battery) than with activity metrics, which suggests psychological stress might impact recovery more than physical activity does
-##### Recovery Metrics
-* Stress vs Body Battery Min (-0.701): ✅ Very intuitive - higher stress depletes body battery more
-* Body Battery Max vs Min (0.682): ✅ Natural correlation - good recovery leads to both higher max and min levels
-* RHR Min vs Body Battery Max (-0.679): ✅ Makes sense - lower resting heart rate indicates better recovery potential
-##### Sleep and Recovery
-* Sleep Average vs Body Battery Max (0.673): ✅ Strongly intuitive - better sleep leads to better recovery
-* Sleep Average vs Stress (-0.433): ✅ Expected - better sleep typically reduces stress levels (or lower stress means better sleep)
-* Sleep average has relatively weak correlations with activity metrics, which might suggest daily activity doesn't impact sleep as much as commonly thought
-##### Physical Activity Metrics
-* Floors vs Steps (0.685): ✅ Logical - climbing floors naturally involves steps
-* HR Max vs Calories Active (0.679): ✅ Expected - more intense activity raises heart rate and burns calories 
-##### Weight Correlations
-* The correlations with weight are generally weaker, which makes sense as weight is a longer-term metric that doesn't change significantly day-to-day
+
+- Sleep is the most powerful driver of recovery (Body Battery), not activity volume.
+- More movement predictably raises calorie burn but also nudges up stress and lowers recovery by bedtime.
+- Heart rate measures (min HR, resting HR) are excellent indicators of stress load.
+- Weight is largely independent from short-term fluctuations in activity, sleep, or stress.
 
 Let’s go through how I did this quarter and what I experimented with.
 #### Improve Fitness
@@ -74,7 +57,7 @@ For example, on one of my trips to China I only managed 348 minutes. Part of thi
 Similarly, I had a bit of a drop when I traveled to Singapore on a Monday, and back on Thursday. I did manage more intensity minutes, but did not meet my 800 minute goal.
   ![Weekly Intensity Minutes](weekly_intensity_minutes.png)
 
-I hit my intensity target {INSERT PERCENTAGE} of the weeks this year.
+My average intensity minutes for Q3 was 846 per week.
 
 In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient recovery.
   ![Average Resting HR Per Month](average_resting_hr_per_month.png)
@@ -135,6 +118,7 @@ We can see an overall decrease in stress, and the lowest for the year. My stress
 
 Week 31 appears to have been fairly stressful, and coincidentally I started feeling like I was fighting something the week after. At the end of Week 32 I travelled to China, and then was there for all of Week 33. The days were quite long, and I had less control over my nutrition than I normally would.
 ##### Experiments
+
 No stress-related experiments for the quarter.
 
 #### Improve Nutrition
@@ -150,7 +134,7 @@ No stress-related experiments for the quarter.
 
 ![](Pasted%20image%2020250925075628.png)
 
-So, why am I not at 100%? Let's look at areas where I'm a bit deficient.
+So, why am I not at 100%? Let's look at areas where I can improve.
 
 **Metabolism Support**
 
@@ -176,16 +160,16 @@ That's it. Everything else is where I want it to be.
 #### Improve Biomarkers
 
 ##### Goals
-- Decrease IGF-1 ❌
-- Decrease MCV ✅
-- Decrease RDW ✅
-- Increase Albumin ✅
-- Decrease hsCRP ✅
+- Decrease IGF-1 ❓
+- Decrease MCV ❓
+- Decrease RDW ❓
+- Increase Albumin ❓
+- Decrease hsCRP ❓
 ##### Analysis
 
 [INSERT CHART FROM PHENOAGE]:
 
-We can see that...
+(Blood panels still to be taken)
 ##### Experiments
 
 I did have a fair amount of experimentation here, including:
@@ -200,56 +184,56 @@ I did have a fair amount of experimentation here, including:
 
 Because of subscribing to Cronometer I'm able to get more reports, such as my Nutrient Balances and Nutrient Targets, which have encouraged me to tweak the food I eat.
 
-For example, here are my Nutrient Targets (without supplementation):
-
-[NUTRIENT TARGETS CHART]:
-
-And here are my Balances (with supplementation):
-
-[NUTRIENT BALANCES CHART]:
 ### Supplement Stack
 
 Some principles that I tried to follow:
 
 - Avoid bill burden; prefer food over pills.
-- Wait until a supplement is on the ITP supported interventions page
+- Wait until a supplement is on the ITP supported interventions page, or has significant evidence behind it
 - Have a biomarker in mind that a certain supplement will change
 
-And here's what is currently in my stack:
+And here's what was in my stack for Q3:
 
 | Morning                     | Evening           | Ad Hoc            |
 | --------------------------- | ----------------- | ----------------- |
 | Fish Oil (6g)               | Astaxanthin (7mg) | Iron (20mg)       |
 | Niacin (50mg)               | Glycine (5g)      | Vitamin C (500mg) |
 | Calcium (333mg)             | NAC (1g)          |                   |
-| Vitamin D (4000 IU)         |                   |                   |
+| Vitamin D (4000 IU)         | Tart Cheery       |                   |
 | Vitamin K2 mk7 (100mcg)     |                   |                   |
 | B12 Methyl (1000 mcg)       |                   |                   |
 | B12 (Liposomal, 1000 mcg)   |                   |                   |
 | L-Methylfolate  (1000 mcg)  |                   |                   |
+| B5 P-5-P (50mg)             |                   |                   |
 | Lysine (1g)                 |                   |                   |
 | Zinc (5mg)                  |                   |                   |
 | Hyaluronic Acid (200mg)     |                   |                   |
 | Iodine (150mcg)             |                   |                   |
-| Creatine (3g - in smoothie) |                   |                   |
-| TMG (2g - in smoothie)      |                   |                   |
+| Creatine (5g - in smoothie) |                   |                   |
+| TMG (1.5g - in smoothie)    |                   |                   |
+| Boron (1mg - in smoothie)   |                   |                   |
+| Taurine (3g - in smoothie)  |                   |                   |
 
 Here are the changes that I made this quarter:
 
-* Increased **TMG** from 500mg to 2g to try and better support methylation and decrease homocysteine.
+* Increased **TMG** from 500mg to 1.5g to try and better support methylation and decrease homocysteine.
 * Removed **HCP** in order to try and decrease IGF-1.
 * Added a **liposomal form of B12**, just in case I have absorption issues. 
 * Moved **iron** from being ad hoc to every evening, and taken alongside **vitamin C**.
 * Removed **magnesium glycinate** from evening stack, as getting enough from diet.
 
-If we're going to discuss supplements, then we should probably also discuss nutrition!
+I may add some of these back in at a later date.
 ### Focus For Next Quarter
 
-I think the next quarter will remain similar to this one. I've subscribed to Cronometer, so I'm getting some additional insight from that. I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:
+I'll keep experimenting with Cronometer to refine my nutrition, and I've found great insight so far. Really really valuable increase to my understanding and approach to nutrition.
+
+I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:
 
 * Calcium - remove
 * Fish oil - move to evening pills
 * Lysine - remove
-* Iron - remove
+* Iron - every evening
+* Vitamin C - every evening
+* Zinc - increase to 15mg from 5mg
 
-Check lymphoctes increasing because mot takimg niacin?
+Wish me luck!

@@ -16,7 +16,7 @@ My primary goal here is to boost Omega 3, B12, and Calcium. This is generally th
 - 2 large garlic cloves, minced
 - ½ tsp dried oregano
 - Pinch of low sodium salt
-- Ground paper
+- Ground pepper
 
 ## Directions
 
