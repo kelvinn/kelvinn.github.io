@@ -15,4 +15,5 @@ python3 average_sleep_score_per_day.py
 python3 monthly_vo2_max.py
 deactivate
 
-mv images/*.png ../content/posts/2025-q3-quarterly-health-review/
+mv images/*.png ../content/posts/2025-q4-quarterly-health-review/
+mv data/*.csv ../content/posts/2025-q4-quarterly-health-review/data/
