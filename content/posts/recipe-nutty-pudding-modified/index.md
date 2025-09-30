@@ -1,11 +1,14 @@
-+++
-date = '2025-03-19T06:35:20+11:00'
-draft = false
-title = 'Nutty Pudding Modified Recipe (Australia)'
-tags = ['articles', 'longevity']
-+++
-
-### OG
+---
+title: Nutty Pudding Modified Recipe (Australia)
+date: 2025-09-01T21:30:00.002+11:00
+draft: false
+url: /recipes/nutty-pudding.html
+tags:
+  - health
+  - articles
+  - recipes
+---
+### Background (OG)
 
 It has now been quite some time since I've been making [Blueprint's](https://protocol.bryanjohnson.com/Step-1-Step-2-Step-3) [Nutty Pudding](https://www.youtube.com/watch?v=8eb_41ZpyOQ). For future reference, in case the Blueprint site stops showing recipes, here is the OG:
 
@@ -24,12 +27,11 @@ It has now been quite some time since I've been making [Blueprint's](https://pro
 
 ### My Tweaks
 
-Some of these items are a little hard to get in Australia, or have (in my opinion) below average value-to-benefit ratios, and I've decided to swap them out. Instead, this is the recipe I am currently (24-07-2025) using:
-
-
+Some of these items are a little hard to get in Australia, or have (in my opinion) below average value-to-benefit ratios, and I've decided to swap them out. Instead, this is the recipe I am currently using:
 #### Powders / Base
 
-- 30g whole macadamia nuts
+- 10g whole macadamia nuts
+- 10g cashews
 - 15g whole walnuts
 - 2 tbsp chia seeds
 - 1 tsp whole linseed/flaxseed
@@ -38,24 +40,24 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1 tbsp soy lecithin granules
 - 1/2 tsp ceylon cinnamon
 - 1/2 tsp mustard seeds
-- 2g TMG powder
+- 1.5g TMG powder
 - 1mg Boron
 - 1 tsp matcha powder
 - 1 tsp taurine
 - 1 tbsp wheat germ
 - 1 tsp turmeric
 - 1/4 tsp ground ginger
-- 1/8 tsp black pepper
 - 1 tsp of creatine
 - 1 tsp inulin
-- 1 large carrot
-- 50g of spinach
-- 30g pea protein
+-  A dash black pepper
 
-#### Liquids / Add Consumption
+#### Liquids / At Consumption Time
 
 - 200g frozen mixed berries
 - 500ml of water
+- 1 large carrot
+- 50g of spinach
+- 30g pea protein
 
 Almost all of this is just from Woolies or Coles, but I did buy the TMG from iHerb, the Creatine from Bulk Nutrients, and the cacao powder and ceylon cinnamon from Amazon. Here is my justification for the adjustments.
 
@@ -85,3 +87,12 @@ I prepare about 15 days worth of dry powders ahead of time. I typically add some
 I make mine rather liquid-y, and use a metal boba straw to drink it. These are large peanut butter jars that I've stocked up on and re-use.
 
 ![](0867C9DA-7505-4231-A9DF-6F53505297B1_1_201_a.jpeg)
+
+
+| Number | Change                                      | Date         |
+| ------ | ------------------------------------------- | ------------ |
+| v5     | Added spinach                               | 30-Sept-2025 |
+| v4     | Removed HCP. Added pea protein powder       | 01-Jan-2025  |
+| v3     |                                             |              |
+| v2     | Added TMG, mustard seeds, turmeric, taurine |              |
+| v1     | Removed unused items from OG recipe         |              |

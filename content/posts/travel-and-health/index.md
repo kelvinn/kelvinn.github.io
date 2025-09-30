@@ -6,6 +6,7 @@ url: /2025/08/travel-and-health.html
 tags:
   - articles
   - longevity
+  - travel
 ---
 ### Background
 
