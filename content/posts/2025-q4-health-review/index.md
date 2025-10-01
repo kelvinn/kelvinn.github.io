@@ -1,14 +1,14 @@
 ---
-title: 20NN QN Health Review
-date: 2025-08-01T21:30:00.002+11:00
+title: 2025 Q4 Health Review
+date: 2025-12-31T21:30:00.002+11:00
 draft: true
-url: /20NN/NN/20NN-qN-health-review.html
+url: /2025/12/2025-q4-health-review.html
 tags:
   - longevity
   - health
   - articles
 ---
-### Reflection
+  Reflection
 
 Add a reflection here. 
 ### Focus Areas
@@ -21,14 +21,14 @@ As usual, there are four areas that I wanted to focus on:
 - *Improve Biomarkers* by looking at my nutrition, as well as the above items.
 
 Overall most metrics are improving, as we can see with the following key metrics.
-  ![Summary Chart](2025-q3-quarterly-health-review/summary.png)
+  ![Summary Chart](2025-q3-health-review/summary.png)
 
 Over the previous year we can see that:
 
 * [Insert trends for the year]
 
 We can see correlations for the quarter with the below correlation matrix.
-  ![Correlation Matrix](2025-q3-quarterly-health-review/correlation_matrix.png)
+  ![Correlation Matrix](2025-q3-health-review/correlation_matrix.png)
 
 Looking at the correlations, here's an analysis of the relationships and whether they make intuitive sense:
 
@@ -45,15 +45,15 @@ Let’s go through how I did this quarter and what I experimented with.
 ##### Analysis
 
 I look at intensity minutes as a way to make sure I'm getting enough fitness, regardless if I'm running or at the gym or kayaking. My goal is 800 minutes per week 80% of the weeks, which is significantly higher than the commonly recommended 150 minutes per week. The reason I've chosen to say "80% of the weeks" is because there are some weeks when I need to travel for work, and it is harder to reach this target.
-  ![Weekly Intensity Minutes](2025-q3-quarterly-health-review/weekly_intensity_minutes.png)
+  ![Weekly Intensity Minutes](2025-q3-health-review/weekly_intensity_minutes.png)
 
 My average intensity minutes for the quarter was was [INSERT AVERAGE INTENSITY MINUTES] per week.
 
 In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient recovery.
-  ![Average Resting HR Per Month](2025-q3-quarterly-health-review/average_resting_hr_per_month.png)
+  ![Average Resting HR Per Month](2025-q3-health-review/average_resting_hr_per_month.png)
 
 And let's look at Vo2Max, which stayed roughly the same this quarter.
-  ![Monthly Vo2Max Values](monthly_vo2_max.png)
+  ![Monthly Vo2Max Values](2025-q4-health-review/monthly_vo2_max.png)
 ##### Experiments
 
 [INSERT ANY EXPERIMENTS]
@@ -64,11 +64,11 @@ And let's look at Vo2Max, which stayed roughly the same this quarter.
 ##### Analysis
 
 Let's have a look at my sleep scores since buying my Garmin:
-  ![Average Sleep Score Per Month](2025-q3-quarterly-health-review/average_sleep_score_per_month.png)
+  ![Average Sleep Score Per Month](2025-q3-health-review/average_sleep_score_per_month.png)
 
 And then when comparing each quarter this year we can see some trends with each day of the week. 
 
-![Average Sleep Score Per Month](2025-q3-quarterly-health-review/sleep_score_per_day.png)
+![Average Sleep Score Per Month](2025-q3-health-review/sleep_score_per_day.png)
 
 [INSERT ANY OBSERVATIONS]
 ##### Experiments
@@ -85,12 +85,12 @@ Overall I'd consider these experiments a success.
 ##### Analysis
 Let's have a look at stress per quarter grouped by day of the week:
 
-![Average Stress per DoW per QTR](2025-q3-quarterly-health-review/stress_level_per_day.png)
+![Average Stress per DoW per QTR](2025-q3-health-review/stress_level_per_day.png)
 
 [INSERT OBSERVATION ABOUT STRESS]
 
   
-![Average Stress Level Per Week QTR](2025-q3-quarterly-health-review/stress_level_per_week.png)
+![Average Stress Level Per Week QTR](2025-q3-health-review/stress_level_per_week.png)
 
 [INSERT OBSERVATIONS ABOUT STRESS]
 ##### Experiments
