@@ -68,9 +68,9 @@ def import_csv_to_sqlite_idempotent(csv_path, db_path, table_name):
 
 if __name__ == '__main__':
     # Daily summary: idempotent import
-    csv_daily = os.path.join(os.path.dirname(__file__), 'data', 'DailySummary_Q3_2025.csv')
-    db_path = os.path.expanduser('~/HealthData/DBs/Nutrition.db')
+    csv_daily = os.path.join(os.path.dirname(__file__), 'data', 'dailysummary.csv')
+    db_path = os.path.expanduser('~/HealthData/DBs/nutrition.db')
     import_csv_to_sqlite_idempotent(csv_daily, db_path, "daily_summary")
     # Servings: idempotent import
-    csv_servings = os.path.join(os.path.dirname(__file__), 'data', 'Servings_Q3_2025.csv')
+    csv_servings = os.path.join(os.path.dirname(__file__), 'data', 'servings.csv')
     import_csv_to_sqlite_idempotent(csv_servings, db_path, "servings")

@@ -124,7 +124,7 @@ No stress-related experiments for the quarter.
 #### Improve Nutrition
 
 ##### Goals
-- Stick below 20g of saturated fat per day ❌
+- Stick below 20g of saturated fat per day ✅
 - Get between 110 and 125g of protein per day ✅
 - Get over 70g of fibre per day ✅
 - Meet 100% coverage of micronutrients ❌
@@ -157,6 +157,23 @@ For Lutein & Zeaxanthin, I believe my values are actually a little higher than t
 I'm OK with 112g. Cronometer does % for targets, so unless I can do a fixed target and combine that with % for fat and carbs, then this will be hard to always meet.
 
 That's it. Everything else is where I want it to be.
+###### Macronutrients
+
+Let's see some other trends from Cronometer. We can see my energy consumption decreased in Q3, as I was doing less exercise, so my weight has remained stable. Saturated fats have decreased which is good, but that could just be due to eating less.
+
+| Year | Quarter | QuarterLabel | Energy (kcal) | Carbs (g) | Protein (g) | Fiber (g) | Fat (g) | Saturated (g) |
+| ---- | ------- | ------------ | ------------- | --------- | ----------- | --------- | ------- | ------------- |
+| 2025 | 2       | 2025-Q2      | 3279.5        | 444.4     | 142.0       | 84.7      | 124.2   | 21.5          |
+| 2025 | 3       | 2025-Q3      | 2839.2        | 380.9     | 111.4       | 76.0      | 114.4   | 19.9          |
+###### Vitamins and Minerals
+
+Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leucine and Methionine also increased despite fewer calories, which could be because I am eating more sardines and travelled more.
+
+| Year | Quarter | QuarterLabel | B1 (Thiamine) (mg) | B2 (Riboflavin) (mg) | B3 (Niacin) (mg) | B5 (Pantothenic Acid) (mg) | B6 (Pyridoxine) (mg) | Vitamin D (IU) | Iron (mg) | Zinc (mg) | Leucine (g) | Lysine (g) | Methionine (g) | B12 (Cobalamin) (µg) |
+| ---- | ------- | ------------ | ------------------ | -------------------- | ---------------- | -------------------------- | -------------------- | -------------- | --------- | --------- | ----------- | ---------- | -------------- | -------------------- |
+| 2025 | 2       | 2025-Q2      | 5.1                | 3.1                  | 56.4             | 9.5                        | 5.0                  | 816.2          | 29.6      | 20.5      | 5.7         | 4.7        | 1.2            | 924.2                |
+| 2025 | 3       | 2025-Q3      | 2.7                | 2.1                  | 50.7             | 8.2                        | 63.2                 | 2933.4         | 33.0      | 21.7      | 5.9         | 5.5        | 1.3            | 1216.3               |
+
 #### Improve Biomarkers
 
 ##### Goals
