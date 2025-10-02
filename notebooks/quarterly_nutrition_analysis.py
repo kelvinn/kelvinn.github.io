@@ -63,7 +63,7 @@ def load_vitamins_from_db():
             '[B1 (Thiamine) (mg)]', '[B2 (Riboflavin) (mg)]', '[B3 (Niacin) (mg)]',
             '[B5 (Pantothenic Acid) (mg)]', '[B6 (Pyridoxine) (mg)]', '[B12 (Cobalamin) (mcg)]',
             '[Folate (mcg)]', '[Vitamin D (IU)]', '[Iron (mg)]', '[Zinc (mg)]',
-            '[Leucine (g)]', '[Lysine (g)]', '[Methionine (g)]', 'Completed'
+            '[Leucine (g)]', '[Lysine (g)]', '[Methionine (g)]'
         ]
         # Load all vitamin-related columns if possible
         df = pd.read_sql_query("SELECT Date, " + ", ".join(vit_candidates) + " FROM daily_summary", conn)
@@ -109,14 +109,14 @@ def print_vitamins_markdown(df):
         print("Vitamins: no 2025 vitamin data available.")
         return
 
-    vit_cols = [c for c in df.columns if c not in ['Year','Quarter','QuarterLabel','Date']]
-    headers = ['Year', 'Quarter', 'QuarterLabel'] + vit_cols
+    vit_cols = [c for c in df.columns if c not in ['Year','Quarter','Date','Completed']]
+    headers = ['Year','Quarter'] + vit_cols
     header = "| " + " | ".join(headers) + " |"
     sep = "| " + " | ".join(['---'] * len(headers)) + " |"
     print(header)
     print(sep)
     for _, row in df.iterrows():
-        vals = [str(int(row['Year'])), str(int(row['Quarter'])), row['QuarterLabel']]
+        vals = [str(int(row['Year'])), str(int(row['Quarter']))]
         for c in vit_cols:
             v = row[c]
             try:
@@ -133,6 +133,16 @@ def compute_macro_means(df, value_cols):
     grouped = df.groupby(['Year','Quarter'], as_index=False)[value_cols].mean()
     return grouped
 
+def compute_vitamin_quarterly_means(df, value_cols=None):
+    if df is None or df.empty:
+        return None
+    if value_cols is None:
+        value_cols = [c for c in df.columns if c not in ['Year','Quarter','Date']]
+    for c in value_cols:
+        df[c] = pd.to_numeric(df[c], errors='coerce')
+    grouped = df.groupby(['Year','Quarter'], as_index=False)[value_cols].mean()
+    return grouped
+
 def main():
     macros_df = load_macros_from_db()
 
@@ -143,16 +153,14 @@ def main():
             macros_df = compute_macro_means(macros_df, macro_cols)
         else:
             macros_df = macros_df.copy()
-    if macros_df is not None:
-        if not macros_df.empty:
-            pass
     print_macros_markdown(macros_df)
 
     print()
 
     vitamins_df = load_vitamins_from_db()
     if vitamins_df is not None:
-        print(vitamins_df.head())
+        vitamins_df = compute_vitamin_quarterly_means(vitamins_df)
+        print_vitamins_markdown(vitamins_df)
 
 if __name__ == "__main__":
     main()
