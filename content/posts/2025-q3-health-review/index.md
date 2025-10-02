@@ -157,10 +157,9 @@ For Lutein & Zeaxanthin, I believe my values are actually a little higher than t
 I'm OK with 112g. Cronometer does % for targets, so unless I can do a fixed target and combine that with % for fat and carbs, then this will be hard to always meet.
 
 That's it. Everything else is where I want it to be.
-###### Macronutrients
+##### Macronutrients
 
 Let's see some other trends from Cronometer. We can see my energy consumption decreased in Q3, as I was doing less exercise, so my weight has remained stable. Saturated fats have decreased which is good, but that could just be due to eating less.
-
 
 | Year | Quarter | Energy (kcal) | Carbs (g) | Protein (g) | Fiber (g) | Fat (g) | Saturated (g) |
 | ---- | ------- | ------------- | --------- | ----------- | --------- | ------- | ------------- |
@@ -168,16 +167,14 @@ Let's see some other trends from Cronometer. We can see my energy consumption de
 | 2025 | 3       | 2875.1        | 380.9     | 111.4       | 76.0      | 114.4   | 19.9          |
 
 
-
-###### Vitamins and Minerals
+##### Vitamins and Minerals
 
 Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leucine and Methionine also increased despite fewer calories, which could be because I am eating more sardines and travelled more.
 
 | Year | Quarter | B1 (Thiamine) (mg) | B2 (Riboflavin) (mg) | B3 (Niacin) (mg) | B5 (Pantothenic Acid) (mg) | B6 (Pyridoxine) (mg) | B12 (Cobalamin) (mcg) | Folate (mcg) | Vitamin D (IU) | Iron (mg) | Zinc (mg) | Leucine (g) | Lysine (g) | Methionine (g) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2024 | 2 | 1.2 | 6.6 | 23.8 | 3.2 | 4.3 | 3.0 | 397.9 | 54.2 | 14.6 | 11.3 | 4.7 | 3.5 | 1.0 |
-| 2025 | 2 | 5.1 | 3.1 | 56.4 | 9.5 | 5.0 | 924.2 | 1025.3 | 816.2 | 29.6 | 20.5 | 5.7 | 4.7 | 1.2 |
-| 2025 | 3 | 2.7 | 2.1 | 51.4 | 8.2 | 64.1 | 1232.8 | 1792.6 | 3171.2 | 35.0 | 22.0 | 5.9 | 5.6 | 1.3 |
+| ---- | ------- | ------------------ | -------------------- | ---------------- | -------------------------- | -------------------- | --------------------- | ------------ | -------------- | --------- | --------- | ----------- | ---------- | -------------- |
+| 2025 | 2       | 5.1                | 3.1                  | 56.4             | 9.5                        | 5.0                  | 924.2                 | 1025.3       | 816.2          | 29.6      | 20.5      | 5.7         | 4.7        | 1.2            |
+| 2025 | 3       | 2.7                | 2.1                  | 51.4             | 8.2                        | 64.1                 | 1232.8                | 1792.6       | 3171.2         | 35.0      | 22.0      | 5.9         | 5.6        | 1.3            |
 
 #### Improve Biomarkers
 
