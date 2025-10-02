@@ -19,16 +19,6 @@ import sqlite3
 from pathlib import Path
 import pandas as pd
 
-def load_macros_from_csv():
-    path = Path('data/quarterly_macros_2025.csv')
-    if path.exists():
-        df = pd.read_csv(path)
-        df['Year'] = df['Year'].astype(int)
-        df['Quarter'] = df['Quarter'].astype(int)
-        df['QuarterLabel'] = df['Year'].astype(str) + "-Q" + df['Quarter'].astype(str)
-        return df
-    return None
-
 def load_macros_from_db():
     db_path = Path(os.path.expanduser('~/HealthData/DBs/nutrition.db'))
     if not db_path.exists():
@@ -43,29 +33,28 @@ def load_macros_from_db():
             FROM daily_summary
             """
             df = pd.read_sql_query(query, conn)
+  
             if df.empty:
                 return None
             df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
             df = df.dropna(subset=['Date'])
+
+            df = df[df['Year'] == 2025]
             df['Year'] = df['Date'].dt.year
             df['Quarter'] = df['Date'].dt.quarter
             df['QuarterLabel'] = df['Year'].astype(str) + "-Q" + df['Quarter'].astype(str)
+            
             cols = ['Year','Quarter','QuarterLabel','Energy (kcal)','Carbs (g)',
                     'Protein (g)','Fiber (g)','Fat (g)','Saturated (g)']
             df = df[cols]
+            df = df.drop_duplicates(subset=['Year','Quarter','QuarterLabel'])
+            # Drop Date if present in the final macro dataframe
+            
+            if 'Date' in df.columns:
+                df = df.drop(columns=['Date'])
             return df
     except Exception:
         return None
-
-def load_vitamins_from_csv():
-    path = Path('data/quarterly_vitamins_2025.csv')
-    if path.exists():
-        df = pd.read_csv(path)
-        df['Year'] = df['Year'].astype(int)
-        df['Quarter'] = df['Quarter'].astype(int)
-        df['QuarterLabel'] = df['Year'].astype(str) + "-Q" + df['Quarter'].astype(str)
-        return df
-    return None
 
 def load_vitamins_from_db():
     db_path = Path(os.path.expanduser('~/HealthData/DBs/nutrition.db'))
@@ -73,35 +62,28 @@ def load_vitamins_from_db():
         return None
     with sqlite3.connect(str(db_path)) as conn:
         vit_candidates = [
-            'B1 (Thiamine) (mg)', 'B2 (Riboflavin) (mg)', 'B3 (Niacin) (mg)',
-            'B5 (Pantothenic Acid) (mg)', 'B6 (Pyridoxine) (mg)', 'B12 (Cobalamin) (Âľg)',
-            'Folate (Âľg)', 'Vitamin D (IU)', 'Iron (mg)', 'Zinc (mg)',
-            'Leucine (g)', 'Lysine (g)', 'Methionine (g)'
+            '[B1 (Thiamine) (mg)]', '[B2 (Riboflavin) (mg)]', '[B3 (Niacin) (mg)]',
+            '[B5 (Pantothenic Acid) (mg)]', '[B6 (Pyridoxine) (mg)]', '[B12 (Cobalamin) (mcg)]',
+            '[Folate (mcg)]', '[Vitamin D (IU)]', '[Iron (mg)]', '[Zinc (mg)]',
+            '[Leucine (g)]', '[Lysine (g)]', '[Methionine (g)]'
         ]
         # Load all vitamin-related columns if possible
         df = pd.read_sql_query("SELECT Date, " + ", ".join(vit_candidates) + " FROM daily_summary", conn)
         if df.empty:
             return None
+        
         df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
         df['Year'] = df['Date'].dt.year
         df['Quarter'] = df['Date'].dt.quarter
-        present_v = [c for c in vit_candidates if c in df.columns]
-        if not present_v:
-            # Try to infer B12 variants
-            for col in df.columns:
-                if 'b12' in str(col).lower() or 'cobalamin' in str(col).lower():
-                    present_v.append(col)
-                    break
-        if not present_v:
-            return None
-        summary = df.groupby(['Year','Quarter'])[present_v].mean().reset_index()
-        summary['QuarterLabel'] = summary['Year'].astype(str) + "-Q" + summary['Quarter'].astype(str)
-        cols = ['Year','Quarter','QuarterLabel'] + present_v
-        summary = summary[cols]
-        return summary
-    return None
+        df['QuarterLabel'] = df['Year'].astype(str) + "-Q" + df['Quarter'].astype(str)
+
+        df = df[df['Year'] == 2025]
+
+        return df
+ 
 
 def print_macros_markdown(df):
+    
     if df is None or df.empty:
         print("Macros: no 2025 macro data available.")
         return
@@ -130,7 +112,8 @@ def print_vitamins_markdown(df):
     if df is None or df.empty:
         print("Vitamins: no 2025 vitamin data available.")
         return
-    vit_cols = [c for c in df.columns if c not in ['Year','Quarter','QuarterLabel']]
+
+    vit_cols = [c for c in df.columns if c not in ['Year','Quarter','QuarterLabel','Date']]
     headers = ['Year', 'Quarter', 'QuarterLabel'] + vit_cols
     header = "| " + " | ".join(headers) + " |"
     sep = "| " + " | ".join(['---'] * len(headers)) + " |"
@@ -147,28 +130,30 @@ def print_vitamins_markdown(df):
         print("| " + " | ".join(vals) + " |")
 
 def main():
-    macros_df = load_macros_from_csv()
-    if macros_df is None:
-        macros_df = load_macros_from_db()
+    macros_df = load_macros_from_db()
     if macros_df is not None and 'Year' in macros_df.columns:
         macros_df = macros_df[macros_df['Year'] == 2025]
         macro_cols = [c for c in ['Energy (kcal)','Carbs (g)','Protein (g)','Fiber (g)','Fat (g)','Saturated (g)'] if c in macros_df.columns]
         if macro_cols:
             for c in macro_cols:
                 macros_df[c] = pd.to_numeric(macros_df[c], errors='coerce')
-            macros_df = macros_df.groupby(['Year','Quarter','QuarterLabel'], as_index=False).agg({c: 'mean' for c in macro_cols})
+        macros_df = macros_df.groupby(['Year','Quarter','QuarterLabel'], as_index=False).agg({c: 'mean' for c in macro_cols})
+    macros_df = macros_df.drop_duplicates(subset=['Year','Quarter','QuarterLabel'])
     print_macros_markdown(macros_df)
 
     print()
-    vitamins_df = load_vitamins_from_csv()
-    if vitamins_df is None:
-        vitamins_df = load_vitamins_from_db()
-    if vitamins_df is not None and 'Year' in vitamins_df.columns:
-        vitamins_df = vitamins_df[vitamins_df['Year'] == 2025]
-        vit_cols = [c for c in vitamins_df.columns if c not in ['Year','Quarter','QuarterLabel']]
-        if vit_cols:
-            vitamins_df = vitamins_df.groupby(['Year','Quarter','QuarterLabel'])[vit_cols].mean().reset_index()
-    print_vitamins_markdown(vitamins_df)
+
+    vitamins_df = load_vitamins_from_db()
+    print(vitamins_df.head())
+    # if vitamins_df is not None and 'Year' in vitamins_df.columns:
+
+    #     vitamins_df = vitamins_df[(vitamins_df['Year'] == 2025)]
+    #     # Exclude non-vitamin columns from aggregation, notably 'Date'
+    #     vit_cols = [c for c in vitamins_df.columns if c not in ['Year','Quarter','QuarterLabel','Date']]
+    #     if vit_cols:
+    #         vitamins_df = vitamins_df.groupby(['Year','Quarter','QuarterLabel'])[vit_cols].mean().reset_index()
+    #         vitamins_df = vitamins_df.drop_duplicates(subset=['Year','Quarter','QuarterLabel'])
+    #     print_vitamins_markdown(vitamins_df)
 
 if __name__ == "__main__":
     main()

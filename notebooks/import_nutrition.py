@@ -12,7 +12,14 @@ def load_csv(csv_path):
         rows = [row for row in reader]
         return headers, rows
 
+
+def normalize_headers(headers):
+    # Replace any header containing "µg" with "mcg"
+    return [h.replace('µg','mcg') for h in headers]
+
+
 def ensure_table(conn, table_name, headers):
+    # headers are already normalized (e.g., "mcg" instead of "µg")
     quoted_cols = [f'"{h}"' for h in headers]
     create_sql = (
         f'CREATE TABLE IF NOT EXISTS "{table_name}" (\n'
@@ -30,10 +37,15 @@ def import_csv_to_sqlite_idempotent(csv_path, db_path, table_name):
     os.makedirs(db_dir, exist_ok=True)
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
-    ensure_table(cur, table_name, headers)
+
+    # Normalize headers for DB usage
+    db_headers = normalize_headers(headers)
+    ensure_table(cur, table_name, db_headers)
+
     # determine date column value set
     date_col = headers[0]
-    date_col_quoted = f'"{date_col}"'
+    date_col_quoted = f'"{db_headers[0]}"'
+
     # collect unique dates from rows
     dates = []
     for r in rows:
@@ -45,8 +57,9 @@ def import_csv_to_sqlite_idempotent(csv_path, db_path, table_name):
         delete_sql = f'DELETE FROM "{table_name}" WHERE {date_col_quoted} IN ({placeholders})'
         cur.execute(delete_sql, unique_dates)
         conn.commit()
+
     # Insert all rows
-    col_list = ", ".join([f'"{h}"' for h in headers])
+    col_list = ", ".join([f'"{h}"' for h in db_headers])
     placeholders = ", ".join(["?"] * len(headers))
     insert_sql = f'INSERT INTO "{table_name}" ({col_list}) VALUES ({placeholders})'
     row_count = 0
