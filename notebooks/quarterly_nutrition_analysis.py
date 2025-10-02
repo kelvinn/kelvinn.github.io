@@ -50,7 +50,6 @@ def load_macros_from_db():
             
             if 'Date' in df.columns:
                 df = df.drop(columns=['Date'])
-            print(df.tail())
             return df
     except Exception:
         return None
@@ -76,20 +75,12 @@ def load_vitamins_from_db():
         df['Quarter'] = df['Date'].dt.quarter
         df['QuarterLabel'] = df['Year'].astype(str) + "-Q" + df['Quarter'].astype(str)
 
-        df = df[df['Year'] == 2025]
-
+        # Do not filter to 2025 anymore
         return df
  
-def calculate_quarterly_means(df, value_cols):
-    if df is None or df.empty:
-        return None
-    grouped = df.groupby(['Year', 'Quarter'], as_index=False)[value_cols].mean()
-    return grouped
 
 def print_macros_markdown(df):
     
-    # df = calculate_quarterly_means(df, ['Energy (kcal)','Carbs (g)','Protein (g)','Fiber (g)','Fat (g)','Saturated (g)'])
-
     if df is None or df.empty:
         print("Macros: no 2025 macro data available.")
         return
@@ -134,36 +125,27 @@ def print_vitamins_markdown(df):
                 vals.append("NaN" if pd.isna(v) else str(v))
         print("| " + " | ".join(vals) + " |")
 
+def compute_macro_means(df, value_cols):
+    if df is None or df.empty:
+        return None
+    for c in value_cols:
+        df[c] = pd.to_numeric(df[c], errors='coerce')
+    grouped = df.groupby(['Year','Quarter'], as_index=False)[value_cols].mean()
+    return grouped
+
 def main():
     macros_df = load_macros_from_db()
+
     macro_cols = []
     if macros_df is not None and 'Year' in macros_df.columns:
         macro_cols = [c for c in ['Energy (kcal)','Carbs (g)','Protein (g)','Fiber (g)','Fat (g)','Saturated (g)'] if c in macros_df.columns]
         if macro_cols:
-            for c in macro_cols:
-                macros_df[c] = pd.to_numeric(macros_df[c], errors='coerce')
-            macros_df = macros_df.groupby(['Year','Quarter'], as_index=False).agg({c: 'mean' for c in macro_cols})
+            macros_df = compute_macro_means(macros_df, macro_cols)
         else:
-            # No macro columns found; keep as is
             macros_df = macros_df.copy()
-    # If we have data, ensure Q2-Q4 are present for 2025
     if macros_df is not None:
         if not macros_df.empty:
-            existing_quarters = sorted([int(q) for q in macros_df['Quarter'].astype('Int64').tolist() if not pd.isna(q)])
-        else:
-            existing_quarters = []
-        missing_rows = []
-        for q in [2,3,4]:
-            if q not in existing_quarters:
-                row = {'Year': 2025, 'Quarter': q}
-                for mc in macro_cols:
-                    row[mc] = pd.NA
-                missing_rows.append(row)
-        if missing_rows:
-            placeholders_df = pd.DataFrame(missing_rows)
-            macros_df = pd.concat([macros_df, placeholders_df], ignore_index=True)
-    if macros_df is not None:
-        macros_df = macros_df.drop_duplicates(subset=['Year','Quarter'])
+            pass
     print_macros_markdown(macros_df)
 
     print()
@@ -171,7 +153,6 @@ def main():
     vitamins_df = load_vitamins_from_db()
     if vitamins_df is not None:
         print(vitamins_df.head())
-
 
 if __name__ == "__main__":
     main()
