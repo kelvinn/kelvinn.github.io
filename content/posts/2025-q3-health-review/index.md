@@ -165,23 +165,20 @@ Let's see some other trends from Cronometer. We can see my energy consumption de
 | Year | Quarter | Energy (kcal) | Carbs (g) | Protein (g) | Fiber (g) | Fat (g) | Saturated (g) |
 | ---- | ------- | ------------- | --------- | ----------- | --------- | ------- | ------------- |
 | 2025 | 2       | 3279.5        | 444.4     | 142.0       | 84.7      | 124.2   | 21.5          |
-| 2025 | 3       | 2839.2        | 380.9     | 111.4       | 76.0      | 114.4   | 19.9          |
+| 2025 | 3       | 2875.1        | 380.9     | 111.4       | 76.0      | 114.4   | 19.9          |
+
 
 
 ###### Vitamins and Minerals
 
 Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leucine and Methionine also increased despite fewer calories, which could be because I am eating more sardines and travelled more.
 
-| Year | Quarter | QuarterLabel | B1 (Thiamine) (mg) | B2 (Riboflavin) (mg) | B3 (Niacin) (mg) | B5 (Pantothenic Acid) (mg) | B6 (Pyridoxine) (mg) | Vitamin D (IU) | Iron (mg) | Zinc (mg) | Leucine (g) | Lysine (g) | Methionine (g) | B12 (Cobalamin) (µg) |
-| ---- | ------- | ------------ | ------------------ | -------------------- | ---------------- | -------------------------- | -------------------- | -------------- | --------- | --------- | ----------- | ---------- | -------------- | -------------------- |
-| 2025 | 2       | 2025-Q2      | 5.1                | 3.1                  | 56.4             | 9.5                        | 5.0                  | 816.2          | 29.6      | 20.5      | 5.7         | 4.7        | 1.2            | 924.2                |
-| 2025 | 3       | 2025-Q3      | 2.7                | 2.1                  | 50.7             | 8.2                        | 63.2                 | 2933.4         | 33.0      | 21.7      | 5.9         | 5.5        | 1.3            | 1216.3               |
-
-| Year | Quarter | QuarterLabel | B1 (Thiamine) (mg) | B2 (Riboflavin) (mg) | B3 (Niacin) (mg) | B5 (Pantothenic Acid) (mg) | B6 (Pyridoxine) (mg) | Vitamin D (IU) | Iron (mg) | Zinc (mg) | Leucine (g) | Lysine (g) | Methionine (g) | B12 (Cobalamin) (µg) |
+| Year | Quarter | B1 (Thiamine) (mg) | B2 (Riboflavin) (mg) | B3 (Niacin) (mg) | B5 (Pantothenic Acid) (mg) | B6 (Pyridoxine) (mg) | B12 (Cobalamin) (mcg) | Folate (mcg) | Vitamin D (IU) | Iron (mg) | Zinc (mg) | Leucine (g) | Lysine (g) | Methionine (g) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2025 | 1 | 2025-Q1 | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan | nan |
-| 2025 | 2 | 2025-Q2 | 5.1 | 3.1 | 56.4 | 9.5 | 5.0 | 816.2 | 29.6 | 20.5 | 5.7 | 4.7 | 1.2 | 924.2 |
-| 2025 | 3 | 2025-Q3 | 2.7 | 2.1 | 50.7 | 8.2 | 63.2 | 2933.4 | 33.0 | 21.7 | 5.9 | 5.5 | 1.3 | 1216.3 |
+| 2024 | 2 | 1.2 | 6.6 | 23.8 | 3.2 | 4.3 | 3.0 | 397.9 | 54.2 | 14.6 | 11.3 | 4.7 | 3.5 | 1.0 |
+| 2025 | 2 | 5.1 | 3.1 | 56.4 | 9.5 | 5.0 | 924.2 | 1025.3 | 816.2 | 29.6 | 20.5 | 5.7 | 4.7 | 1.2 |
+| 2025 | 3 | 2.7 | 2.1 | 51.4 | 8.2 | 64.1 | 1232.8 | 1792.6 | 3171.2 | 35.0 | 22.0 | 5.9 | 5.6 | 1.3 |
+
 #### Improve Biomarkers
 
 ##### Goals
