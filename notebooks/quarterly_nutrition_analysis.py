@@ -63,7 +63,7 @@ def load_vitamins_from_db():
             '[B1 (Thiamine) (mg)]', '[B2 (Riboflavin) (mg)]', '[B3 (Niacin) (mg)]',
             '[B5 (Pantothenic Acid) (mg)]', '[B6 (Pyridoxine) (mg)]', '[B12 (Cobalamin) (mcg)]',
             '[Folate (mcg)]', '[Vitamin D (IU)]', '[Iron (mg)]', '[Zinc (mg)]',
-            '[Leucine (g)]', '[Lysine (g)]', '[Methionine (g)]'
+            '[Leucine (g)]', '[Lysine (g)]', '[Methionine (g)]', 'Completed'
         ]
         # Load all vitamin-related columns if possible
         df = pd.read_sql_query("SELECT Date, " + ", ".join(vit_candidates) + " FROM daily_summary", conn)
@@ -73,9 +73,9 @@ def load_vitamins_from_db():
         df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
         df['Year'] = df['Date'].dt.year
         df['Quarter'] = df['Date'].dt.quarter
-        df['QuarterLabel'] = df['Year'].astype(str) + "-Q" + df['Quarter'].astype(str)
+        df = df.dropna(subset=['Date', 'B1 (Thiamine) (mg)'])  # Ensure at least one vitamin is present
+        df = df[df['Completed'] == 'true'] if 'Completed' in df.columns else df
 
-        # Do not filter to 2025 anymore
         return df
  
 
