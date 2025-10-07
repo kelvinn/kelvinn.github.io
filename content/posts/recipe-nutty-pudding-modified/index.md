@@ -7,6 +7,8 @@ tags:
   - health
   - articles
   - recipes
+aliases:
+  - /2025/03/nutty-pudding-modified-recipe-australia/
 ---
 ### Background (OG)
 

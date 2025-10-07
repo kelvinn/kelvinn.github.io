@@ -171,9 +171,9 @@ Let's see some other trends from Cronometer. We can see my energy consumption de
 Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leucine and Methionine also increased despite fewer calories, which could be because I am eating more sardines and travelled more.
 
 | Year | Quarter | B1 (Thiamine) (mg) | B2 (Riboflavin) (mg) | B3 (Niacin) (mg) | B5 (Pantothenic Acid) (mg) | B6 (Pyridoxine) (mg) | B12 (Cobalamin) (mcg) | Folate (mcg) | Vitamin D (IU) | Iron (mg) | Zinc (mg) | Leucine (g) | Lysine (g) | Methionine (g) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2025 | 2 | 5.1 | 3.1 | 56.4 | 9.5 | 5.0 | 924.2 | 1025.3 | 816.2 | 29.6 | 20.5 | 5.7 | 4.7 | 1.2 |
-| 2025 | 3 | 2.8 | 2.1 | 51.5 | 8.2 | 64.1 | 1232.8 | 1795.0 | 3171.2 | 35.0 | 22.1 | 5.9 | 5.6 | 1.3 |
+| ---- | ------- | ------------------ | -------------------- | ---------------- | -------------------------- | -------------------- | --------------------- | ------------ | -------------- | --------- | --------- | ----------- | ---------- | -------------- |
+| 2025 | 2       | 5.1                | 3.1                  | 56.4             | 9.5                        | 5.0                  | 924.2                 | 1025.3       | 816.2          | 29.6      | 20.5      | 5.7         | 4.7        | 1.2            |
+| 2025 | 3       | 2.8                | 2.1                  | 51.5             | 8.2                        | 64.1                 | 1232.8                | 1795.0       | 3171.2         | 35.0      | 22.1      | 5.9         | 5.6        | 1.3            |
 
 #### Improve Biomarkers
 
