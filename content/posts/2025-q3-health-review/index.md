@@ -162,23 +162,22 @@ That's it. Everything else is where I want it to be.
 Let's see some other trends from Cronometer. We can see my energy consumption decreased in Q3, as I was doing less exercise, so my weight has remained stable. Saturated fats have decreased which is good, but that could just be due to eating less.
 
 | Year | Quarter | Energy (kcal) | Carbs (g) | Protein (g) | Fiber (g) | Fat (g) | Saturated (g) |
-|---|---|---|---|---|---|---|---|
-| 2025 | 2 | 3279.5 | 444.4 | 142.0 | 84.7 | 124.2 | 21.5 |
-| 2025 | 3 | 2880.7 | 381.2 | 111.6 | 76.1 | 114.9 | 20.0 |
-
+| ---- | ------- | ------------- | --------- | ----------- | --------- | ------- | ------------- |
+| 2025 | 2       | 3279.5        | 444.4     | 142.0       | 84.7      | 124.2   | 21.5          |
+| 2025 | 3       | 2881.2        | 381.1     | 112.1       | 76.0      | 114.8   | 19.9          |
 ##### Vitamins and Minerals
 
 Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leucine and Methionine also increased despite fewer calories, which could be because I am eating more sardines and travelled more.
 
 | Year | Quarter | B1 (Thiamine) (mg) | B2 (Riboflavin) (mg) | B3 (Niacin) (mg) | B5 (Pantothenic Acid) (mg) | B6 (Pyridoxine) (mg) | B12 (Cobalamin) (mcg) | Folate (mcg) | Vitamin D (IU) | Iron (mg) | Zinc (mg) | Leucine (g) | Lysine (g) | Methionine (g) |
-| ---- | ------- | ------------------ | -------------------- | ---------------- | -------------------------- | -------------------- | --------------------- | ------------ | -------------- | --------- | --------- | ----------- | ---------- | -------------- |
-| 2025 | 2       | 5.1                | 3.1                  | 56.4             | 9.5                        | 5.0                  | 924.2                 | 1025.3       | 816.2          | 29.6      | 20.5      | 5.7         | 4.7        | 1.2            |
-| 2025 | 3       | 2.8                | 2.1                  | 51.5             | 8.2                        | 64.1                 | 1232.8                | 1795.0       | 3171.2         | 35.0      | 22.1      | 5.9         | 5.6        | 1.3            |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2025 | 2 | 5.1 | 3.1 | 56.4 | 9.5 | 5.0 | 924.2 | 1025.3 | 816.2 | 29.6 | 20.5 | 5.7 | 4.7 | 1.2 |
+| 2025 | 3 | 2.8 | 2.1 | 51.5 | 8.2 | 64.1 | 1232.8 | 1795.0 | 3171.2 | 35.6 | 22.1 | 6.4 | 6.0 | 1.4 |
 
 #### Improve Biomarkers
 
 ##### Goals
-- Decrease IGF-1 ❓
+- Decrease IGF-1  ❌
 - Decrease MCV ❓
 - Decrease RDW ❓
 - Increase Albumin ❓
@@ -188,6 +187,34 @@ Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leu
 [INSERT CHART FROM PHENOAGE]:
 
 (Blood panels still to be taken)
+
+Here's what ChatGPT says about contributors to my IGF-1 levels:
+
+| Cause                                          | Explanation                                                                 | Likelihood for You                                   |
+| ---------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Total protein intake                           | Higher protein increases liver IGF-1 production, especially animal protein. | High (130 g/day plus yogurt) 🎯🎯🎯                  |
+| Animal protein                                 | Rich in leucine and methionine, strongly stimulates IGF-1.                  | Moderate (mostly plant protein, plus yogurt)         |
+| Dairy                                          | Contains bioactive IGF-1 and stimulates endogenous IGF-1.                   | Moderate (150 g low-fat yogurt/day)                  |
+| Leucine                                        | Stimulates mTOR and IGF-1 secretion.                                        | High (5–6 g/day from plants plus yogurt) 🎯🎯🎯      |
+| Methionine                                     | Sulfur amino acid that upregulates IGF-1.                                   | Moderate (1.2 g/day from plants plus dairy) 🎯🎯🎯   |
+| Energy intake (calories)                       | Chronic caloric surplus increases IGF-1, while restriction lowers it.       | Moderate (mostly maintenance)                        |
+| Carbohydrates                                  | High glycemic carbs can increase IGF-1 through insulin.                     | Low–moderate (mostly low glycemic, berries, legumes) |
+| Fat intake                                     | Adequate healthy fats support IGF-1; very low fat may decrease it.          | Moderate (nuts, seeds, olive oil)                    |
+| Omega-3s                                       | High omega-3 intake may slightly lower IGF-1.                               | High (6 g fish oil/day)                              |
+| Zinc                                           | Required for IGF-1 synthesis.                                               | High (supplemented 5 mg/day)                         |
+| Vitamin D                                      | Low vitamin D may lower IGF-1; supplementation normalizes it.               | High (4000 IU/day)                                   |
+| Vitamin A / Retinoids                          | Stimulate IGF-1 in the liver.                                               | Low (mostly plant-based carotenoids)                 |
+| Calcium                                        | May modestly increase IGF-1 via dairy or fortified foods.                   | Moderate (333 mg supplement + yogurt calcium)        |
+| Sugar-sweetened foods                          | Promote insulin spikes, increasing IGF-1.                                   | Very low (rarely consumed)                           |
+| Intermittent fasting / time-restricted feeding | Fasting lowers IGF-1 transiently.                                           | High (4 pm–6 am fast most days)                      |
+| Alcohol                                        | Increases IGF-1 indirectly via liver effects.                               | None (you don’t drink)                               |
+Here are my items that contribute to leucine:
+
+![](Pasted%20image%2020251015190217.png)
+
+Besides the sardines and yogurt, all leucine is from plant sources; the high amount in Nutty Pudding is due to plant protein. 
+
+What's my plan? [INSERT PLAN HERE]
 ##### Experiments
 
 I did have a fair amount of experimentation here, including:
@@ -197,7 +224,7 @@ I did have a fair amount of experimentation here, including:
 - Updated my daily smoothie to have a carrot to try and increase my beta-carotene (vitamin A) intake without supplementing.
 - Increased Vitamin D from 1,000 IU to 4,000 IU because my vitamin D levels have been deficient all year.
 - Started eating sardines. Ideally I would like to drop or reduce the fish oil, as this has shown no impact on health or life span via the ITP.
-- Started eating watermelon for the lycopene.
+- Started eating watermelon and Chana Masala for the lycopene.
 - Albumin: Potentially related to the FMD, or perhaps I just need more protein due to higher levels of training. I have contemplated cutting down on my protein consumption to lower IGF-1, but I think I'll keep the pea protein in my daily smoothie.
 
 Because of subscribing to Cronometer I'm able to get more reports, such as my Nutrient Balances and Nutrient Targets, which have encouraged me to tweak the food I eat.
@@ -245,13 +272,18 @@ I may add some of these back in at a later date.
 
 I'll keep experimenting with Cronometer to refine my nutrition, and I've found great insight so far. Really really valuable increase to my understanding and approach to nutrition.
 
-I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:
+##### Nutrition
+
+I'll update my Nutty Putting to remove the pea protein in an attempt to get my IGF-1 under control.
+##### Supplements
+
+I'll make the following changes my supplement stack, as it appears as though I am getting enough from food:
 
 * Calcium - remove
 * Fish oil - move to evening pills
 * Lysine - remove
-* Iron - every evening
-* Vitamin C - every evening
-* Zinc - increase to 15mg from 5mg
+* Iron - switch to every evening
+* Vitamin C - switch to every evening
+* Zinc - increase to 15mg from 5mg 
 
 Wish me luck!
