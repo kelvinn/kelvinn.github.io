@@ -10,17 +10,18 @@ tags:
 ---
 ### Reflection
 
-Add a reflection here. TBC.
+An overall successful quarter, with most metrics moving in the right direction, despite being challenging for external reasons (work and travel).
 ### Focus Areas
 
 As usual, there are four areas that I wanted to focus on:
 
-- *Improve fitness* by training more. My goal is to get above a 75 fitness score on intervals.icu
+- *Improve fitness* by training more. My goal is to maintain 800 intensity minutes on average per week.
 - *Sleep better* by improving my sleep hygiene and experimenting with meal timing.
 - *Reduce Stress* by examining meal composition and avoiding anything that might impact my sleep
 - *Improve Biomarkers* by looking at my nutrition, as well as the above items.
 
 Overall most metrics are improving, as we can see with the following key metrics.
+
 ![Summary Chart](summary.png)
 
 Over the previous year we can see that:
@@ -66,12 +67,7 @@ And let's look at Vo2Max, which stayed roughly the same this quarter.
   ![Monthly Vo2Max Values](monthly_vo2_max.png)
 ##### Experiments
 
-Towards the end of August I decided to make one big change to my fitness routine: trying to get both my run and strength training session completed before work. There are two reasons for this: 
-
-* Firstly, I sometimes run out of time to go to the gym at lunch, or I have to cut workouts short.
-* Secondly, to group all my exercise together. If doing a significant amount of exercise this could be a problem, but a 60min run and 30min strength session isn't really that much. What I am about to say is my opinion only, and I haven't read any research to substantiate. Here goes... due to my splitting of running and strength training, I'm activating mTOR twice per day, and sometimes consuming extra protein at lunch for the gym session. Additionally, when going to lunch, my Garmin highlights a significant amount of stress, which is why I avoid going to the gym at night (plus it being logistically challenging).  
- 
-My experiment was to wake up, have a protein shake supplemented with EAA, and go run straight away, and when returning home doing a strength session immediately afterwards. Then I'll have an extra large Nutty Pudding + LF yogurt + granola with my morning supplements, then shower. If I can turn this in to a long term habit I should be able to save some time each day, as it will cut down on the extra shower at lunch.
+None
 
 #### Improve Sleep
 ##### Goals
@@ -111,7 +107,7 @@ Let's have a look at stress per quarter grouped by day of the week:
 
 ![Average Stress per DoW per QTR](stress_level_per_day.png)
 
-We can see an overall decrease in stress, and the lowest for the year. My stress levels on Tuesdays have decreased on average, but I think that is more likely because I slowed down going to the gym due to injury. Monday is the least stressful day of the week; my guess here is because that is when I tend to have a rest day.
+We can see an overall increase in stress, and the highest for the year. My stress levels on Tuesdays have decreased on average, but I think that is more likely because I slowed down going to the gym due to injury. Monday remains the least stressful day of the week; my guess here is because that is when I tend to have a rest day.
 
   
 ![Average Stress Level Per Week QTR](stress_level_per_week.png)
@@ -119,7 +115,7 @@ We can see an overall decrease in stress, and the lowest for the year. My stress
 Week 31 appears to have been fairly stressful, and coincidentally I started feeling like I was fighting something the week after. At the end of Week 32 I travelled to China, and then was there for all of Week 33. The days were quite long, and I had less control over my nutrition than I normally would.
 ##### Experiments
 
-No stress-related experiments for the quarter.
+No stress-related experiments for the quarter beyond irregular breathwork before bed.
 
 #### Improve Nutrition
 
@@ -127,14 +123,14 @@ No stress-related experiments for the quarter.
 - Stick below 20g of saturated fat per day ✅
 - Get between 110 and 125g of protein per day ✅
 - Get over 70g of fibre per day ✅
-- Meet 100% coverage of micronutrients ❌
+- Meet 100% coverage of micronutrients ✅
 
 
 ![](Pasted%20image%2020250925075523.png)
 
-![](Pasted%20image%2020250925075628.png)
+![](Pasted%20image%2020251018095224.png)
 
-So, why am I not at 100%? Let's look at areas where I can improve.
+So, what can I focus on next? Let's look at areas where I can improve.
 
 **Metabolism Support**
 
@@ -146,7 +142,7 @@ I'm probably close enough here to not worry about it.
 
 ![](Pasted%20image%2020250925080347.png)
 
-I now add a single carrot to my Nutty Pudding, so I expect that to slowly increase my beta-carotene levels this next quarter, and I've started eating "Melonballs", basically just small watermelons, so lycopene may increase. Ultimately I need to eat more tomatoes. This is an area of focus. 
+Midway through the quarter I started adding a single carrot to my Nutty Pudding, so I expect that to slowly increase my beta-carotene levels this next quarter, and I've started eating "Melonballs", basically just small watermelons, so lycopene may increase. Ultimately I need to eat more tomatoes, so will rotate in a chana masala recipe. This is an area of focus. 
 
 For Lutein & Zeaxanthin, I believe my values are actually a little higher than this, but missing in some of the nutrient values in certain foods that I've added.
 
@@ -178,54 +174,42 @@ Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leu
 
 ##### Goals
 - Decrease IGF-1  ❌
-- Decrease MCV ❓
-- Decrease RDW ❓
-- Increase Albumin ❓
-- Decrease hsCRP ❓
+- Decrease MCV ✅
+- Decrease RDW ✅
+- Increase Albumin ✅
+- Decrease hsCRP ✅
 ##### Analysis
 
-[INSERT CHART FROM PHENOAGE]:
+![](Pasted%20image%2020251017200533.png)
 
-(Blood panels still to be taken)
+Several minor improvements here, with the most outstanding one being CRP. Great to see that get low again. Most things slightly improved across the board, but with the exception of my White Blood Cells and Lymphocyte %, which doesn't surprise me as the weeks leading up to my blood draw were fairly stressful, and I wasn't feeling 100%.
 
-Here's what ChatGPT says about contributors to my IGF-1 levels:
+IGF-1 remains a mystery as to the increase, especially given my protein consumption _decreased_.
 
-| Cause                                          | Explanation                                                                 | Likelihood for You                                   |
-| ---------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------- |
-| Total protein intake                           | Higher protein increases liver IGF-1 production, especially animal protein. | High (130 g/day plus yogurt) 🎯🎯🎯                  |
-| Animal protein                                 | Rich in leucine and methionine, strongly stimulates IGF-1.                  | Moderate (mostly plant protein, plus yogurt)         |
-| Dairy                                          | Contains bioactive IGF-1 and stimulates endogenous IGF-1.                   | Moderate (150 g low-fat yogurt/day)                  |
-| Leucine                                        | Stimulates mTOR and IGF-1 secretion.                                        | High (5–6 g/day from plants plus yogurt) 🎯🎯🎯      |
-| Methionine                                     | Sulfur amino acid that upregulates IGF-1.                                   | Moderate (1.2 g/day from plants plus dairy) 🎯🎯🎯   |
-| Energy intake (calories)                       | Chronic caloric surplus increases IGF-1, while restriction lowers it.       | Moderate (mostly maintenance)                        |
-| Carbohydrates                                  | High glycemic carbs can increase IGF-1 through insulin.                     | Low–moderate (mostly low glycemic, berries, legumes) |
-| Fat intake                                     | Adequate healthy fats support IGF-1; very low fat may decrease it.          | Moderate (nuts, seeds, olive oil)                    |
-| Omega-3s                                       | High omega-3 intake may slightly lower IGF-1.                               | High (6 g fish oil/day)                              |
-| Zinc                                           | Required for IGF-1 synthesis.                                               | High (supplemented 5 mg/day)                         |
-| Vitamin D                                      | Low vitamin D may lower IGF-1; supplementation normalizes it.               | High (4000 IU/day)                                   |
-| Vitamin A / Retinoids                          | Stimulate IGF-1 in the liver.                                               | Low (mostly plant-based carotenoids)                 |
-| Calcium                                        | May modestly increase IGF-1 via dairy or fortified foods.                   | Moderate (333 mg supplement + yogurt calcium)        |
-| Sugar-sweetened foods                          | Promote insulin spikes, increasing IGF-1.                                   | Very low (rarely consumed)                           |
-| Intermittent fasting / time-restricted feeding | Fasting lowers IGF-1 transiently.                                           | High (4 pm–6 am fast most days)                      |
-| Alcohol                                        | Increases IGF-1 indirectly via liver effects.                               | None (you don’t drink)                               |
-Here are my items that contribute to leucine:
+Leucine is a contributor, so here are my items that contribute to leucine:
 
 ![](Pasted%20image%2020251015190217.png)
 
 Besides the sardines and yogurt, all leucine is from plant sources; the high amount in Nutty Pudding is due to plant protein. 
 
-What's my plan? [INSERT PLAN HERE]
+What's my plan?
+
+* IGF-1: Remove pea protein from my Nutty Pudding recipe (to try and reduce IGF-1)
+* IGF-1: TBD if I'll lower my yogurt consumption or keep as is.
+* Vitamin D: Optimal levels now, so will drop to 2,000 IU to maintain.
+* B12: Optimal levels now, so will drop the morning liposomal spray.
+* RBC & Platelets: start taking iron 3x per week to increase ferritin levels, and increase zinc to ~15 mg/day.
 ##### Experiments
 
 I did have a fair amount of experimentation here, including:
 
-- **MCV & RDW**: After my biomarkers showed that I remain low on B12, Iron, and Vitamin D, I opted to focus on getting those in to better ranges. I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination, which I hope will increase absorption. I have also started to take a sublingual B12 every morning. There's also a need to optimise my iron balance by increasing my ferritin levels from 41 µg/L to somewhere between 60-80 µg/L; I've increased my frequency of taking a 20mg iron supplement.
+- **MCV & RDW**: After my biomarkers showed that I remain low on B12, Iron, and Vitamin D, I opted to focus on getting those in to better ranges. I swapped out the B Complete with a B12 (methylcobalamin) and L-Methylfolate combination, which I hope will increase absorption. I have also started to take a sublingual B12 every morning. There's also a need to optimise my iron balance by increasing my ferritin levels from 41 µg/L to somewhere between 60-80 µg/L; I've increased my frequency of taking a 20mg iron supplement. Partial success here (B vitamins are solid, but iron remains low)
 - I've added in iodine (via kelp) now, too, given I'm essentially on a vegan diet and don't eat much salt.
 - Updated my daily smoothie to have a carrot to try and increase my beta-carotene (vitamin A) intake without supplementing.
-- Increased Vitamin D from 1,000 IU to 4,000 IU because my vitamin D levels have been deficient all year.
+- Increased Vitamin D from 1,000 IU to 4,000 IU because my vitamin D levels have been deficient all year. Success.
 - Started eating sardines. Ideally I would like to drop or reduce the fish oil, as this has shown no impact on health or life span via the ITP.
 - Started eating watermelon and Chana Masala for the lycopene.
-- Albumin: Potentially related to the FMD, or perhaps I just need more protein due to higher levels of training. I have contemplated cutting down on my protein consumption to lower IGF-1, but I think I'll keep the pea protein in my daily smoothie.
+- Albumin: My Q2 results were potentially related to the FMD.
 
 Because of subscribing to Cronometer I'm able to get more reports, such as my Nutrient Balances and Nutrient Targets, which have encouraged me to tweak the food I eat.
 
@@ -244,7 +228,7 @@ And here's what was in my stack for Q3:
 | Fish Oil (6g)               | Astaxanthin (7mg) | Iron (20mg)       |
 | Niacin (50mg)               | Glycine (5g)      | Vitamin C (500mg) |
 | Calcium (333mg)             | NAC (1g)          |                   |
-| Vitamin D (4000 IU)         | Tart Cheery       |                   |
+| Vitamin D (4000 IU)         | Tart Cherry       |                   |
 | Vitamin K2 mk7 (100mcg)     |                   |                   |
 | B12 Methyl (1000 mcg)       |                   |                   |
 | B12 (Liposomal, 1000 mcg)   |                   |                   |
@@ -264,7 +248,6 @@ Here are the changes that I made this quarter:
 * Increased **TMG** from 500mg to 1.5g to try and better support methylation and decrease homocysteine.
 * Removed **HCP** in order to try and decrease IGF-1.
 * Added a **liposomal form of B12**, just in case I have absorption issues. 
-* Moved **iron** from being ad hoc to every evening, and taken alongside **vitamin C**.
 * Removed **magnesium glycinate** from evening stack, as getting enough from diet.
 
 I may add some of these back in at a later date.
@@ -282,8 +265,7 @@ I'll make the following changes my supplement stack, as it appears as though I a
 * Calcium - remove
 * Fish oil - move to evening pills
 * Lysine - remove
-* Iron - switch to every evening
-* Vitamin C - switch to every evening
+* Iron - increase from ad hoc to 3x per week
 * Zinc - increase to 15mg from 5mg 
 
 Wish me luck!

@@ -25,3 +25,4 @@ notebooks/garmindb.log
 .DS_Store
 notebooks/checkup.log
 .continue/assistants/new-assistant.yaml
+/.idea
