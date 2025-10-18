@@ -180,6 +180,8 @@ Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leu
 - Decrease hsCRP ✅
 ##### Analysis
 
+![](Pasted%20image%2020251018110157.png)
+
 ![](Pasted%20image%2020251017200533.png)
 
 Several minor improvements here, with the most outstanding one being CRP. Great to see that get low again. Most things slightly improved across the board, but with the exception of my White Blood Cells and Lymphocyte %, which doesn't surprise me as the weeks leading up to my blood draw were fairly stressful, and I wasn't feeling 100%.

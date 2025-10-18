@@ -135,7 +135,7 @@ We can also see this with the Body Battery stats; whatever I was doing in Februa
 
 ![](Pasted%20image%2020250702113636.png)
 
-It looks like upon returning from my travels to India at the end of January I had two months where I balanced sleep and exercise quite well, but that started to erode in the lead-up to travelling to Europe. 
+It looks like upon returning from my travels to India at the end of January I had two months where I balanced sleep and exercise quite well, but that started to erode in the lead-up to travelling to Europe. I'll need to improve how this graph is presented in the future.
 #### Decrease Stress
 
 ##### Plan
@@ -183,6 +183,8 @@ And then what really matters - improving biomarkers. This is ultimately an outco
 ##### Results
 
 I'm going to start tracking PhenoAge on a quarterly basis, as long as I can keep getting tested without too much drama. Here are the results.
+
+
 
 ![](Pasted%20image%2020250729150218.png)
 
