@@ -19,6 +19,7 @@ Lots of fibre.
 - 1/2 tsp turmeric, ground
 - 1/2 tsp cinnamon, ground
 - 1/4 tsp ginger, ground
+- 1 dash of lite salt
 ## Directions
 
 1. Put in a jar
