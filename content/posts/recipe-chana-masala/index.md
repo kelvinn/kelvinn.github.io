@@ -25,7 +25,7 @@ The primary goal here is to increase my lycopene consumption, as I was noticing 
 - 2 tsp turmeric
 - 2 tsp garam masala
 - 1 tsp chili powder (optional, adjust to spice tolerance)
-- 1 tsp black pepper (enhances absorption of antioxidants)
+- 1/2 tsp black pepper (enhances absorption of antioxidants)
 - 1 tsp lite salt
 - Fresh coriander (cilantro), chopped (folate boost)
 
@@ -33,8 +33,9 @@ The primary goal here is to increase my lycopene consumption, as I was noticing 
 
 * Heat olive oil in a pan. Add cumin seeds and let them sizzle. Add onions, cook until golden.  Stir in garlic + ginger. Cook 1–2 min until fragrant.  
 * Add tomato paste, crushed tomatoes, and spices (coriander, turmeric, garam masala, chilli, black pepper). Simmer ~10 min → this cooking step boosts lycopene bioavailability.  
+* Add 1/2 cup water.
 * Use an immersion blender to blend
-* Stir in chickpeas and 1/2 cup water. Simmer 15–20 min, stirring occasionally, until thickened.  
+* Stir in chickpeas. Simmer 15–20 min, stirring occasionally, until thickened.  
 * Finish with lemon juice and lots of fresh coriander.
 * Divide in to 6 servings.
 
