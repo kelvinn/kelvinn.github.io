@@ -33,7 +33,7 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 #### Powders / Base
 
 - 10g whole macadamia nuts
-- 10g cashews
+- 20g cashews
 - 15g whole walnuts
 - 2 tbsp chia seeds
 - 1 tsp whole linseed/flaxseed
