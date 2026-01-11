@@ -65,7 +65,7 @@ Technical Implementation Guide:
 
 7. Usage:
    - Ensure GarminDB is populated with recent data
-   - Adjust date range as needed (default: Q3 2025)
+   - Adjust date range as needed (default: Q4 2025)
    - Results saved in both data/ and images/ directories
 """
 
@@ -75,11 +75,14 @@ import seaborn as sns
 import numpy as np
 import os
 import pickle
-from datetime import datetime
+from datetime import datetime, timedelta
+from constants import end_date
 
 from garmindb import GarminConnectConfigManager
 from garmindb.summarydb import DaysSummary, SummaryDb
 from garmindb.garmindb import Sleep
+
+start_date = end_date - timedelta(days=84)  # Exactly 12 weeks
 
 def time_to_minutes(t):
     """Convert time object to minutes since midnight."""
@@ -96,11 +99,8 @@ def create_correlation_matrix():
     db_params_dict = gc_config.get_db_params()
     sum_db = SummaryDb(db_params_dict, False)
 
-    # Define date range for Q3 2025
-    start_date = datetime(2025, 7, 1)
-    end_date = datetime(2025, 9, 30)
 
-    print(f"Querying health metrics for Q3 2025 ({start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')})...")
+    print(f"Querying health metrics for Q4 2025 ({start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')})...")
 
     # Query daily summaries
     data_period = DaysSummary.get_for_period(sum_db, start_date, end_date, DaysSummary)
@@ -182,7 +182,7 @@ def create_correlation_matrix():
                 cbar_kws={"shrink": .8},
                 annot_kws={"size": 8})
 
-    plt.title('Garmin Health Metrics Correlation Matrix\nQ3 2025 Analysis', fontsize=16, fontweight='bold', pad=20)
+    plt.title('Garmin Health Metrics Correlation Matrix\nQ4 2025 Analysis', fontsize=16, fontweight='bold', pad=20)
     
     # Rotate labels for better readability
     plt.xticks(rotation=45, ha='right', fontsize=11)

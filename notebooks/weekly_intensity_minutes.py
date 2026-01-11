@@ -1,9 +1,9 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 import seaborn as sns
 import os
-from datetime import datetime
-
+import matplotlib.pyplot as plt
+from datetime import datetime, timedelta
+from constants import end_date
 from garmindb import GarminConnectConfigManager
 from garmindb.summarydb import DaysSummary, SummaryDb
 
@@ -14,17 +14,17 @@ sns.set_theme(style="whitegrid")
 gc_config = GarminConnectConfigManager()
 db_params_dict = gc_config.get_db_params()
 
-# Get data for 2025
-start_date = datetime(2025, 1, 1)
-end_date = datetime(2025, 12, 31)
+# Calculate date range for previous 12 months
+start_date = end_date - timedelta(days=365)  # 12 months back
+
 
 # Query daily summaries
 sum_db = SummaryDb(db_params_dict, False)
 data_period = DaysSummary.get_for_period(sum_db, start_date, end_date, DaysSummary)
 
 # Filter for days with intensity data
-intensity_data = [entry for entry in data_period if entry.intensity_time is not None]
-print(f"Found {len(intensity_data)} days with intensity data in 2025")
+intensity_data = [entry for entry in data_period if getattr(entry, 'intensity_time', None) is not None]
+print(f"Found {len(intensity_data)} days with intensity data between {start_date.date()} and {end_date.date()}")
 
 # Convert to DataFrame
 df = pd.DataFrame([vars(s) for s in intensity_data])
@@ -43,10 +43,14 @@ df['intensity_minutes'] = df['moderate_mins'] + 2 * df['vigorous_mins']
 
 # Resample by week
 df.set_index('date', inplace=True)
-# Export per-week data to CSV
 weekly_summary = df['intensity_minutes'].resample('W-SUN').sum()
 
-export_df = weekly_summary.reset_index()
+# Ensure full weekly coverage across the date range
+full_week_index = pd.date_range(start=start_date, end=end_date, freq='W-SUN')
+weekly_summary_full = weekly_summary.reindex(full_week_index, fill_value=0)
+
+# Export per-week data to CSV
+export_df = weekly_summary_full.reset_index()
 export_df.columns = ['week_end', 'intensity_minutes']
 os.makedirs('data', exist_ok=True)
 csv_path = os.path.join('data', 'weekly_intensity_minutes_per_week.csv')
@@ -54,27 +58,22 @@ export_df.to_csv(csv_path, index=False)
 print(f"Exported weekly intensity data to {csv_path}")
 
 # Calculate averages and stats
-average_weekly_intensity = weekly_summary.mean()
-q3_start = pd.Timestamp('2025-07-01')
-q3_end = pd.Timestamp('2025-09-30')
-q3_data = weekly_summary.loc[q3_start:q3_end]
-q3_average = q3_data.mean()
-weeks_above_target = len(weekly_summary[weekly_summary >= 800])
-q3_weeks_above_target = len(q3_data[q3_data >= 800])
+average_weekly_intensity = weekly_summary_full.mean()
 
-print(f"Overall average weekly intensity minutes: {average_weekly_intensity:.2f}")
-print(f"Q3 average weekly intensity minutes: {q3_average:.2f}")
-print(f"Weeks above target (800) in Q3: {q3_weeks_above_target} out of {len(q3_data)}")
+# Quarterly averages (print only, no graph)
+quarterly_mean = weekly_summary_full.resample('Q').mean()
+print("Quarterly average intensity minutes:")
+for quarter_end, value in quarterly_mean.items():
+    print(f"  Quarter ending {quarter_end.date()}: {value:.2f} minutes")
 
-# Create plot
-plt.figure(figsize=(16, 6))
-weekly_summary.plot(kind='bar', width=0.8, color='#69b3a2', align='center')
+# Graphing: weekly bars, one bar per week
+plt.figure(figsize=(18, 6))
+weekly_summary_full.plot(kind='bar', width=0.8, color='#69b3a2', align='center')
 plt.axhline(y=800, color='r', linestyle='--', label='Weekly Target (800)')
 plt.axhline(y=average_weekly_intensity, color='g', linestyle='--', label=f'Weekly Average ({average_weekly_intensity:.0f})')
 
-# Format plot
 plt.title('Weekly Intensity Minutes for 2025', fontsize=20, fontweight='bold', pad=20)
-plt.xlabel('Week Ending')
+plt.xlabel('Week End Date')
 plt.ylabel('Total Intensity Minutes')
 plt.xticks(rotation=45, ha='right')
 plt.legend()

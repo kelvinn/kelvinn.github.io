@@ -6,6 +6,7 @@ import seaborn as sns
 import os
 from datetime import datetime, timedelta
 from collections import defaultdict
+from constants import start_date, end_date
 
 from garmindb import GarminConnectConfigManager
 from garmindb.garmindb import GarminSummaryDb, DaysSummary, MonitoringDb, MonitoringHeartRate, Sleep, GarminDb
@@ -19,9 +20,6 @@ gc_config = GarminConnectConfigManager()
 db_params_dict = gc_config.get_db_params()
 garmin_db = GarminDb(db_params_dict)
 
-# Define start date (2019) and end date (current)
-start_date = datetime(2019, 1, 1)
-end_date = datetime.now()
 
 print(f"Querying sleep data from {start_date.date()} to {end_date.date()}...")
 

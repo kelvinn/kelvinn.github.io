@@ -27,3 +27,4 @@ notebooks/checkup.log
 .continue/assistants/new-assistant.yaml
 /.idea
 content/posts/.obsidian/graph.json
+notebooks/data/correlation_data.pkl

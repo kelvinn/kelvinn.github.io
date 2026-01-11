@@ -18,6 +18,7 @@ import os
 from datetime import datetime, timedelta
 from collections import defaultdict
 # Using numpy polyfit instead of scipy
+from constants import end_date
 
 from garmindb import GarminConnectConfigManager
 from garmindb.garmindb import GarminSummaryDb, DaysSummary, MonitoringDb, MonitoringHeartRate, Sleep, GarminDb
@@ -33,7 +34,6 @@ def create_quartet_map():
     os.makedirs('images', exist_ok=True)
 
     # Calculate date range for previous 12 months
-    end_date = datetime.now()
     start_date = end_date - timedelta(days=365)  # 12 months back
 
     print(f"Creating quartet map for data from {start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}")

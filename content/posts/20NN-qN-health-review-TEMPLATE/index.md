@@ -150,7 +150,7 @@ And here's what was in my stack for Q3:
 | Fish Oil (6g)               | Astaxanthin (7mg) | Iron (20mg)       |
 | Niacin (50mg)               | Glycine (5g)      | Vitamin C (500mg) |
 | Calcium (333mg)             | NAC (1g)          |                   |
-| Vitamin D (4000 IU)         | Tart Cheery       |                   |
+| Vitamin D (4000 IU)         | Tart Cherry       |                   |
 | Vitamin K2 mk7 (100mcg)     |                   |                   |
 | B12 Methyl (1000 mcg)       |                   |                   |
 | B12 (Liposomal, 1000 mcg)   |                   |                   |
