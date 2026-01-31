@@ -1,0 +1,94 @@
+name: Air Quality Monitor
+
+on:
+  # Run every 30 minutes
+  schedule:
+    - cron: '*/30 * * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+  # Also run on push to main (for testing)
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/scripts/air_quality_monitor.py'
+      - '.github/workflows/air-quality-monitor.yaml'
+
+permissions:
+  contents: read
+
+jobs:
+  monitor-air-quality:
+    runs-on: ubuntu-latest
+    env:
+      WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run air quality monitor
+        id: monitor
+        run: python .github/scripts/air_quality_monitor.py
+        continue-on-error: true
+
+      - name: Check for alerts
+        id: check_alerts
+        run: |
+          if [ -f .context/air_quality_alert.json ]; then
+            echo "alert_detected=true" >> $GITHUB_OUTPUT
+            echo "::warning::Air quality alert detected!"
+          else
+            echo "alert_detected=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send Pushover notification
+        if: steps.check_alerts.outputs.alert_detected == 'true'
+        run: |
+          if [ -n "${{ secrets.PUSHOVER_API_KEY }}" ] && [ -n "${{ secrets.PUSHOVER_USER_KEY }}" ]; then
+            # Read the alert data
+            ALERT_DATA=$(cat .context/air_quality_alert.json)
+
+            # Build the message
+            TITLE="Air Quality Alert - Sydney"
+            MESSAGE="Risk detected: Smoke from hazard reduction burns may affect Sydney.
+
+Wind forecast: $(echo "$ALERT_DATA" | jq -r '.wind_directions | join(", ")')"
+
+            # Count risks
+            RISK_COUNT=$(echo "$ALERT_DATA" | jq -r '.risk_count')
+            MESSAGE="$MESSAGE
+
+Risks found: $RISK_COUNT"
+
+            # Add details for each risk
+            echo "$ALERT_DATA" | jq -r '.risks[] | "- \(.burn.title) (\(.burn.direction_from_sydney) of Sydney)"' >> /tmp/risk_details.txt
+            if [ -s /tmp/risk_details.txt ]; then
+              MESSAGE="$MESSAGE
+
+Details:
+$(cat /tmp/risk_details.txt)"
+            fi
+
+            # Send to Pushover
+            curl -X POST "https://api.pushover.net/1/messages.json" \
+              -d "token=${{ secrets.PUSHOVER_API_KEY }}" \
+              -d "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+              -d "title=$TITLE" \
+              -d "message=$MESSAGE" \
+              -d "priority=1"
+          else
+            echo "PUSHOVER_API_KEY or PUSHOVER_USER_KEY not set, skipping Pushover notification"
+          fi
