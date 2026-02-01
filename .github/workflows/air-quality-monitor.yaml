@@ -25,6 +25,7 @@ jobs:
     env:
       WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
       PURPLEAIR_API_KEY: ${{ secrets.PURPLEAIR_API_KEY }}
+      REDIS_URL: ${{ secrets.REDIS_URL }}
 
     steps:
       - name: Checkout repository
@@ -38,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests
+          pip install requests redis
 
       - name: Run air quality monitor
         id: monitor
