@@ -76,15 +76,7 @@ jobs:
               AQI_DESC=$(echo "$ALERT_DATA" | jq -r '.current_aqi.aqi_description // "Unknown"')
               PM25=$(echo "$ALERT_DATA" | jq -r '.current_aqi.pm2_5 // 0')
 
-              MESSAGE=$(cat <<EOF
-🚨 CURRENT AIR QUALITY ALERT
-
-$AQI_REASON
-
-AQI: $AQI ($AQI_DESC)
-PM2.5: $PM25 µg/m³
-EOF
-)
+              MESSAGE=$(printf "🚨 CURRENT AIR QUALITY ALERT\n\n%s\n\nAQI: %s (%s)\nPM2.5: %s µg/m³\n" "$AQI_REASON" "$AQI" "$AQI_DESC" "$PM25")
             fi
 
             if [ "$FORECAST_RISK" = "true" ]; then
