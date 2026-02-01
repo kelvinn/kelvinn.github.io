@@ -82,29 +82,20 @@ jobs:
             if [ "$FORECAST_RISK" = "true" ]; then
               # Forecast risk alert
               if [ -n "$MESSAGE" ]; then
-                MESSAGE="$MESSAGE
-
----
-"
+                MESSAGE="${MESSAGE}"$'\n\n---\n'
               fi
 
-              MESSAGE="${MESSAGE}🔥 FORECAST RISK: Smoke from hazard reduction burns may affect Sydney
-
-Wind forecast: $(echo "$ALERT_DATA" | jq -r '.wind_directions | join(", ")')"
+              WIND_FORECAST=$(echo "$ALERT_DATA" | jq -r '.wind_directions | join(", ")')
+              MESSAGE="${MESSAGE}🔥 FORECAST RISK: Smoke from hazard reduction burns may affect Sydney\n\nWind forecast: ${WIND_FORECAST}"
 
               # Count risks
               RISK_COUNT=$(echo "$ALERT_DATA" | jq -r '.forecast_risks | length')
-              MESSAGE="$MESSAGE
-
-Risks found: $RISK_COUNT"
+              MESSAGE="${MESSAGE}"$'\n\nRisks found: '"${RISK_COUNT}"
 
               # Add details for each risk
               echo "$ALERT_DATA" | jq -r '.forecast_risks[]? | "- \(.burn.title) (\(.burn.direction_from_sydney) of Sydney)"' >> /tmp/risk_details.txt
               if [ -s /tmp/risk_details.txt ]; then
-                MESSAGE="$MESSAGE
-
-Details:
-$(cat /tmp/risk_details.txt)"
+                MESSAGE="${MESSAGE}"$'\n\nDetails:\n'"$(cat /tmp/risk_details.txt)"
               fi
             fi
 
