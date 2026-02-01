@@ -30,9 +30,7 @@ NORTH_SYDNEY_LON = 151.2069
 AQI_THRESHOLD = 35
 
 # NSW RFS API endpoints
-NSW_RFS_BASE_URL = "https://www.rfs.nsw.gov.au/api/feeds"
-NSW_RFS_INCIDENTS_URL = f"{NSW_RFS_BASE_URL}/majorIncidents.json"
-NSW_RFS_BURNS_URL = f"{NSW_RFS_BASE_URL}/incidentUpdates.json"
+NSW_RFS_INCIDENTS_URL = "https://www.rfs.nsw.gov.au/feeds/majorIncidents.json"
 
 # OpenWeatherMap API (for wind forecast only)
 WEATHER_API_BASE = "https://api.openweathermap.org/data/3.0/onecall"
@@ -45,8 +43,9 @@ PURPLEAIR_API_BASE = "https://api.purpleair.com/v1"
 # North Sydney PurpleAir sensor IDs (you can add more sensors here)
 # Find sensors at: https://map.purpleair.com/
 NORTH_SYDNEY_SENSORS = [
-    # Example sensors - replace with actual North Sydney sensor IDs
-    # You can find sensor IDs by looking at the PurpleAir map
+    # Sydney area sensors - add more as needed
+    # You can find sensor IDs by clicking on sensors in the PurpleAir map
+    # and extracting the ID from the URL
 ]
 
 
@@ -132,38 +131,8 @@ def fetch_nsw_rfs_incidents() -> List[Burn]:
 
 def fetch_nsw_rfs_burns() -> List[Burn]:
     """Fetch hazard reduction burns from NSW RFS."""
-    logger.info("Fetching NSW RFS incident updates (for burns)...")
-
-    burns = []
-
-    try:
-        # Try incident updates RSS feed
-        response = requests.get(NSW_RFS_BURNS_URL, timeout=30)
-        response.raise_for_status()
-        data = response.json()
-
-        if isinstance(data, dict) and "features" in data:
-            for feature in data["features"]:
-                props = feature.get("properties", {})
-                geometry = feature.get("geometry", {})
-                if geometry and "coordinates" in geometry:
-                    props["longitude"] = geometry["coordinates"][0]
-                    props["latitude"] = geometry["coordinates"][1]
-                burn = Burn(props)
-                if burn.is_burn:
-                    burns.append(burn)
-        elif isinstance(data, list):
-            for item in data:
-                burn = Burn(item)
-                if burn.is_burn:
-                    burns.append(burn)
-
-        logger.info(f"Found {len(burns)} hazard reduction burns")
-        return burns
-
-    except requests.RequestException as e:
-        logger.error(f"Error fetching NSW RFS burns: {e}")
-        return []
+    # The major incidents feed includes all incidents, we filter for burns in the main function
+    return []
 
 
 def get_wind_forecast(lat: float = SYDNEY_LAT, lon: float = SYDNEY_LON) -> List[Dict]:
@@ -236,23 +205,21 @@ def get_current_aqi(lat: float = NORTH_SYDNEY_LAT, lon: float = NORTH_SYDNEY_LON
     logger.info(f"Fetching current AQI for North Sydney ({lat}, {lon})...")
 
     try:
-        # Step 1: Find nearby sensors
+        # Step 1: Find nearby sensors using location-based search
+        # Note: Using max_distance parameter which seems to work better than bounding box
         headers = {"X-API-Key": api_key}
         search_params = {
-            "nwlat": lat + 0.1,
-            "nwlon": lon - 0.1,
-            "selat": lat - 0.1,
-            "selon": lon + 0.1,
             "fields": "name,pm2.5_atm,latitude,longitude,last_seen",
             "location_type": 0  # Outdoor sensors only
         }
 
-        response = requests.get(
-            f"{PURPLEAIR_API_BASE}/sensors",
-            headers=headers,
-            params=search_params,
-            timeout=30
-        )
+        # Try using max_distance search with center point
+        url = f"{PURPLEAIR_API_BASE}/sensors"
+        search_params["lat"] = lat
+        search_params["lon"] = lon
+        search_params["max_distance"] = 50000  # 50km radius
+
+        response = requests.get(url, headers=headers, params=search_params, timeout=30)
         response.raise_for_status()
         data = response.json()
 
@@ -261,14 +228,33 @@ def get_current_aqi(lat: float = NORTH_SYDNEY_LAT, lon: float = NORTH_SYDNEY_LON
             return None
 
         # Step 2: Get readings from all nearby sensors
-        sensors = data["data"]
+        sensors = data.get("data", [])
+        fields = data.get("fields", [])
+
+        # Map field names to indices
+        field_index = {field: i for i, field in enumerate(fields)}
+
         pm25_readings = []
 
         for sensor in sensors:
-            sensor_id = sensor.get("sensor_index")
-            name = sensor.get("name", "Unknown")
-            pm25 = sensor.get("pm2.5_atm")
-            last_seen = sensor.get("last_seen")
+            # Parse sensor data based on field positions
+            sensor_id = sensor[field_index.get("sensor_index", 0)] if len(sensor) > 0 else None
+            name = sensor[field_index.get("name", 2)] if len(sensor) > 2 else "Unknown"
+            pm25 = sensor[field_index.get("pm2.5_atm", 5)] if "pm2.5_atm" in field_index and len(sensor) > field_index["pm2.5_atm"] else None
+            sensor_lat = sensor[field_index.get("latitude", 3)] if len(sensor) > 3 else None
+            sensor_lon = sensor[field_index.get("longitude", 4)] if len(sensor) > 4 else None
+            last_seen = sensor[field_index.get("last_seen", 1)] if len(sensor) > 1 else None
+
+            # Filter by actual distance (in case API doesn't filter correctly)
+            if sensor_lat is not None and sensor_lon is not None:
+                # Calculate distance using simple approximation
+                lat_diff = sensor_lat - lat
+                lon_diff = sensor_lon - lon
+                distance_km = ((lat_diff * 111) ** 2 + (lon_diff * 111 * abs(lat / 90)) ** 2) ** 0.5 * 100
+
+                # Only include sensors within 50km
+                if distance_km > 50:
+                    continue
 
             # Skip sensors without recent data (older than 1 hour)
             if last_seen:
@@ -282,8 +268,8 @@ def get_current_aqi(lat: float = NORTH_SYDNEY_LAT, lon: float = NORTH_SYDNEY_LON
                     "sensor_id": sensor_id,
                     "name": name,
                     "pm2_5": pm25,
-                    "latitude": sensor.get("latitude"),
-                    "longitude": sensor.get("longitude")
+                    "latitude": sensor_lat,
+                    "longitude": sensor_lon
                 })
 
         if not pm25_readings:
@@ -444,6 +430,18 @@ def check_air_quality_risk(burns: List[Burn], wind_forecast: List[Dict]) -> Dict
     }
 
 
+def serialize_for_json(obj):
+    """Convert datetime objects to ISO format strings for JSON serialization."""
+    if isinstance(obj, datetime):
+        return obj.isoformat()
+    elif isinstance(obj, dict):
+        return {k: serialize_for_json(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [serialize_for_json(item) for item in obj]
+    else:
+        return obj
+
+
 def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
     """
     Send notification if air quality risk is detected.
@@ -470,7 +468,7 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
     # Add forecast risk details
     if forecast_at_risk:
         output["wind_directions"] = risk_data.get("wind_directions_forecast", [])
-        output["forecast_risks"] = risk_data.get("risks", [])
+        output["forecast_risks"] = serialize_for_json(risk_data.get("risks", []))
 
     # Add current AQI details
     if aqi_at_risk and aqi_risk_data:
