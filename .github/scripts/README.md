@@ -7,7 +7,8 @@ This script monitors NSW hazard reduction burns, current air quality, and weathe
 The script runs every 30 minutes via GitHub Actions and checks two types of risks:
 
 ### 1. Current Air Quality Alert
-- Gets real-time air quality data for North Sydney from OpenWeatherMap
+- Gets real-time air quality data for North Sydney from **PurpleAir** sensors
+- Averages readings from nearby outdoor sensors
 - Alerts if PM2.5 exceeds **35 µg/m³**
 - **Higher priority** notifications (priority=2) for immediate action
 
@@ -34,7 +35,16 @@ Add the following secrets to your GitHub repository (Settings → Secrets and va
    - `PUSHOVER_API_KEY` - Your application's API token
    - `PUSHOVER_USER_KEY` - Your user key
 
-#### Required for AQI and Forecast: `WEATHER_API_KEY`
+#### For Current Air Quality: `PURPLEAIR_API_KEY`
+
+Get an API key from [PurpleAir](https://develop.purpleair.com/api/keys):
+1. Sign up or log in at purpleair.com
+2. Go to your account settings and create an API key
+3. Add it as a secret named `PURPLEAIR_API_KEY`
+
+**This is required for current AQI checks.** Without this key, the script will skip AQI monitoring.
+
+#### For Wind Forecast: `WEATHER_API_KEY` (Optional)
 
 Get a free API key from [OpenWeatherMap](https://openweathermap.org/api):
 1. Sign up at openweathermap.org
@@ -42,7 +52,7 @@ Get a free API key from [OpenWeatherMap](https://openweathermap.org/api):
 3. Copy your API key
 4. Add it as a secret named `WEATHER_API_KEY`
 
-**This is required for both current AQI checks and wind forecasts.** Without this key, the script will not function properly.
+This is only used for wind forecasts. Without this key, the script will skip forecast risk checks.
 
 ### Testing
 
@@ -59,8 +69,9 @@ To run the script locally:
 # Install dependencies
 pip install requests
 
-# Set the weather API key (required)
-export WEATHER_API_KEY="your-key-here"
+# Set the API keys
+export PURPLEAIR_API_KEY="your-purpleair-key"
+export WEATHER_API_KEY="your-openweathermap-key"
 
 # Run the script
 python .github/scripts/air_quality_monitor.py
@@ -69,7 +80,7 @@ python .github/scripts/air_quality_monitor.py
 ## Data Sources
 
 - **NSW RFS API**: `https://www.rfs.nsw.gov.au/api/feeds/`
-- **Air Quality**: OpenWeatherMap Air Pollution API
+- **Air Quality**: PurpleAir Sensor Network API
 - **Weather Forecast**: OpenWeatherMap 5-day/3-hour forecast API
 
 ## Alert Output
@@ -84,3 +95,7 @@ When a risk is detected, the script:
 ## AQI Threshold
 
 The default threshold for PM2.5 is **35 µg/m³** in North Sydney. You can modify this by changing the `AQI_THRESHOLD` constant in `air_quality_monitor.py`.
+
+## Finding PurpleAir Sensors
+
+To see what sensors are available in your area, visit [PurpleAir Map](https://map.purpleair.com/). The script automatically finds all outdoor sensors within the search radius around North Sydney.

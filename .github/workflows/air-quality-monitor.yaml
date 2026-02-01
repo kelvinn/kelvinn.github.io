@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+      PURPLEAIR_API_KEY: ${{ secrets.PURPLEAIR_API_KEY }}
 
     steps:
       - name: Checkout repository

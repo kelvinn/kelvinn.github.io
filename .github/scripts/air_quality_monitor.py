@@ -34,9 +34,20 @@ NSW_RFS_BASE_URL = "https://www.rfs.nsw.gov.au/api/feeds"
 NSW_RFS_INCIDENTS_URL = f"{NSW_RFS_BASE_URL}/majorIncidents.json"
 NSW_RFS_BURNS_URL = f"{NSW_RFS_BASE_URL}/incidentUpdates.json"
 
-# OpenWeatherMap API
+# OpenWeatherMap API (for wind forecast only)
 WEATHER_API_BASE = "https://api.openweathermap.org/data/3.0/onecall"
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
+
+# PurpleAir API (for AQI)
+PURPLEAIR_API_KEY = os.getenv("PURPLEAIR_API_KEY")
+PURPLEAIR_API_BASE = "https://api.purpleair.com/v1"
+
+# North Sydney PurpleAir sensor IDs (you can add more sensors here)
+# Find sensors at: https://map.purpleair.com/
+NORTH_SYDNEY_SENSORS = [
+    # Example sensors - replace with actual North Sydney sensor IDs
+    # You can find sensor IDs by looking at the PurpleAir map
+]
 
 
 class Burn:
@@ -205,54 +216,130 @@ def get_wind_forecast(lat: float = SYDNEY_LAT, lon: float = SYDNEY_LON) -> List[
         return []
 
 
-def get_current_aqi(lat: float = NORTH_SYDNEY_LAT, lon: float = NORTH_SYDNEY_LON) -> Optional[Dict]:
+def get_current_aqi(lat: float = NORTH_SYDNEY_LAT, lon: float = NORTH_SYDNEY_LON, search_radius_km: int = 10) -> Optional[Dict]:
     """
-    Get current air quality data from OpenWeatherMap Air Pollution API.
+    Get current air quality data from PurpleAir sensors.
+
+    Args:
+        lat: Latitude for search center
+        lon: Longitude for search center
+        search_radius_km: Search radius in kilometers
 
     Returns dict with AQI data or None if unavailable.
     """
-    if not WEATHER_API_KEY:
-        logger.warning("WEATHER_API_KEY not set, skipping AQI check")
+    api_key = PURPLEAIR_API_KEY
+
+    if not api_key:
+        logger.warning("PURPLEAIR_API_KEY not set, skipping AQI check")
         return None
 
     logger.info(f"Fetching current AQI for North Sydney ({lat}, {lon})...")
 
     try:
-        url = "https://api.openweathermap.org/data/2.5/air_pollution"
-        params = {
-            "lat": lat,
-            "lon": lon,
-            "appid": WEATHER_API_KEY
+        # Step 1: Find nearby sensors
+        headers = {"X-API-Key": api_key}
+        search_params = {
+            "nwlat": lat + 0.1,
+            "nwlon": lon - 0.1,
+            "selat": lat - 0.1,
+            "selon": lon + 0.1,
+            "fields": "name,pm2.5_atm,latitude,longitude,last_seen",
+            "location_type": 0  # Outdoor sensors only
         }
 
-        response = requests.get(url, params=params, timeout=30)
+        response = requests.get(
+            f"{PURPLEAIR_API_BASE}/sensors",
+            headers=headers,
+            params=search_params,
+            timeout=30
+        )
         response.raise_for_status()
         data = response.json()
 
-        if "list" not in data or len(data["list"]) == 0:
-            logger.warning("No air quality data returned")
+        if "data" not in data or len(data["data"]) == 0:
+            logger.warning("No PurpleAir sensors found in area")
             return None
 
-        # Get current air quality data
-        aq_data = data["list"][0]
-        components = aq_data.get("components", {})
+        # Step 2: Get readings from all nearby sensors
+        sensors = data["data"]
+        pm25_readings = []
 
-        # OpenWeatherMap AQI scale: 1=Good, 2=Fair, 3=Moderate, 4=Poor, 5=Very Poor
-        aqi = aq_data.get("main", {}).get("aqi", 1)
+        for sensor in sensors:
+            sensor_id = sensor.get("sensor_index")
+            name = sensor.get("name", "Unknown")
+            pm25 = sensor.get("pm2.5_atm")
+            last_seen = sensor.get("last_seen")
+
+            # Skip sensors without recent data (older than 1 hour)
+            if last_seen:
+                last_seen_time = datetime.fromtimestamp(last_seen)
+                if datetime.now() - last_seen_time > timedelta(hours=1):
+                    logger.debug(f"Skipping {name}: data too old ({last_seen_time})")
+                    continue
+
+            if pm25 is not None:
+                pm25_readings.append({
+                    "sensor_id": sensor_id,
+                    "name": name,
+                    "pm2_5": pm25,
+                    "latitude": sensor.get("latitude"),
+                    "longitude": sensor.get("longitude")
+                })
+
+        if not pm25_readings:
+            logger.warning("No recent PurpleAir data available")
+            return None
+
+        # Calculate average PM2.5
+        avg_pm25 = sum(r["pm2_5"] for r in pm25_readings) / len(pm25_readings)
+
+        # Calculate AQI from PM2.5 using US EPA formula
+        # PM2.5 breakpoints for AQI calculation
+        def pm25_to_aqi(pm25):
+            if pm25 <= 12.0:
+                return (50 / 12.0) * pm25
+            elif pm25 <= 35.4:
+                return 50 + ((49 / 23.4) * (pm25 - 12))
+            elif pm25 <= 55.4:
+                return 100 + ((49 / 20.0) * (pm25 - 35.4))
+            elif pm25 <= 150.4:
+                return 150 + ((49 / 95.0) * (pm25 - 55.4))
+            elif pm25 <= 250.4:
+                return 200 + ((99 / 100.0) * (pm25 - 150.4))
+            else:
+                return 300 + ((199 / 100.0) * (pm25 - 250.4))
+
+        aqi = int(pm25_to_aqi(avg_pm25))
+
+        # Get AQI description
+        if aqi <= 50:
+            aqi_desc = "Good"
+        elif aqi <= 100:
+            aqi_desc = "Moderate"
+        elif aqi <= 150:
+            aqi_desc = "Unhealthy for Sensitive Groups"
+        elif aqi <= 200:
+            aqi_desc = "Unhealthy"
+        elif aqi <= 300:
+            aqi_desc = "Very Unhealthy"
+        else:
+            aqi_desc = "Hazardous"
 
         result = {
             "aqi": aqi,
-            "aqi_description": ["Good", "Fair", "Moderate", "Poor", "Very Poor"][aqi - 1] if 1 <= aqi <= 5 else "Unknown",
-            "pm2_5": components.get("pm2_5", 0),  # PM2.5 in µg/m³
-            "pm10": components.get("pm10", 0),    # PM10 in µg/m³
-            "checked_at": datetime.now().isoformat()
+            "aqi_description": aqi_desc,
+            "pm2_5": round(avg_pm25, 1),  # PM2.5 in µg/m³
+            "sensor_count": len(pm25_readings),
+            "sensors": pm25_readings,
+            "checked_at": datetime.now().isoformat(),
+            "source": "PurpleAir"
         }
 
-        logger.info(f"Current AQI: {result['aqi']} ({result['aqi_description']}), PM2.5: {result['pm2_5']} µg/m³")
+        logger.info(f"PurpleAir AQI: {aqi} ({aqi_desc}), PM2.5: {avg_pm25:.1f} µg/m³ from {len(pm25_readings)} sensor(s)")
         return result
 
     except requests.RequestException as e:
-        logger.error(f"Error fetching AQI data: {e}")
+        logger.error(f"Error fetching PurpleAir data: {e}")
         return None
 
 
