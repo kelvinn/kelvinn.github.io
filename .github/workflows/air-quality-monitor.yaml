@@ -1,0 +1,131 @@
+name: Air Quality Monitor
+
+on:
+  # Run every 30 minutes
+  schedule:
+    - cron: '*/30 * * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+  # Also run on push to main (for testing)
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/scripts/air_quality_monitor.py'
+      - '.github/workflows/air-quality-monitor.yaml'
+
+permissions:
+  contents: read
+
+jobs:
+  monitor-air-quality:
+    runs-on: ubuntu-latest
+    env:
+      WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+      PURPLEAIR_API_KEY: ${{ secrets.PURPLEAIR_API_KEY }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run air quality monitor
+        id: monitor
+        run: python .github/scripts/air_quality_monitor.py
+        continue-on-error: true
+
+      - name: Check for alerts
+        id: check_alerts
+        run: |
+          if [ -f .context/air_quality_alert.json ]; then
+            echo "alert_detected=true" >> $GITHUB_OUTPUT
+            echo "::warning::Air quality alert detected!"
+          else
+            echo "alert_detected=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send Pushover notification
+        if: steps.check_alerts.outputs.alert_detected == 'true'
+        run: |
+          if [ -n "${{ secrets.PUSHOVER_API_KEY }}" ] && [ -n "${{ secrets.PUSHOVER_USER_KEY }}" ]; then
+            # Read the alert data
+            ALERT_DATA=$(cat .context/air_quality_alert.json)
+
+            # Check which type of alert
+            CURRENT_AQI_RISK=$(echo "$ALERT_DATA" | jq -r '.current_aqi_risk // false')
+            FORECAST_RISK=$(echo "$ALERT_DATA" | jq -r '.forecast_risk // false')
+
+            # Build the message based on alert type
+            TITLE="Air Quality Alert - Sydney"
+
+            if [ "$CURRENT_AQI_RISK" = "true" ]; then
+              # Current AQI alert
+              AQI_REASON=$(echo "$ALERT_DATA" | jq -r '.aqi_reason // "Unknown"')
+              AQI=$(echo "$ALERT_DATA" | jq -r '.current_aqi.aqi // "N/A"')
+              AQI_DESC=$(echo "$ALERT_DATA" | jq -r '.current_aqi.aqi_description // "Unknown"')
+              PM25=$(echo "$ALERT_DATA" | jq -r '.current_aqi.pm2_5 // 0')
+
+              MESSAGE="🚨 CURRENT AIR QUALITY ALERT
+
+$AQI_REASON
+
+AQI: $AQI ($AQI_DESC)
+PM2.5: $PM25 µg/m³"
+            fi
+
+            if [ "$FORECAST_RISK" = "true" ]; then
+              # Forecast risk alert
+              if [ -n "$MESSAGE" ]; then
+                MESSAGE="$MESSAGE
+
+---
+"
+              fi
+
+              MESSAGE="${MESSAGE}🔥 FORECAST RISK: Smoke from hazard reduction burns may affect Sydney
+
+Wind forecast: $(echo "$ALERT_DATA" | jq -r '.wind_directions | join(", ")')"
+
+              # Count risks
+              RISK_COUNT=$(echo "$ALERT_DATA" | jq -r '.forecast_risks | length')
+              MESSAGE="$MESSAGE
+
+Risks found: $RISK_COUNT"
+
+              # Add details for each risk
+              echo "$ALERT_DATA" | jq -r '.forecast_risks[]? | "- \(.burn.title) (\(.burn.direction_from_sydney) of Sydney)"' >> /tmp/risk_details.txt
+              if [ -s /tmp/risk_details.txt ]; then
+                MESSAGE="$MESSAGE
+
+Details:
+$(cat /tmp/risk_details.txt)"
+              fi
+            fi
+
+            # Set priority based on alert type
+            PRIORITY=1
+            if [ "$CURRENT_AQI_RISK" = "true" ]; then
+              PRIORITY=2  # Higher priority for current AQI alerts
+            fi
+
+            # Send to Pushover
+            curl -X POST "https://api.pushover.net/1/messages.json" \
+              -d "token=${{ secrets.PUSHOVER_API_KEY }}" \
+              -d "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+              -d "title=$TITLE" \
+              -d "message=$MESSAGE" \
+              -d "priority=$PRIORITY"
+          else
+            echo "PUSHOVER_API_KEY or PUSHOVER_USER_KEY not set, skipping Pushover notification"
+          fi

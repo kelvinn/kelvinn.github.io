@@ -28,3 +28,4 @@ notebooks/checkup.log
 /.idea
 content/posts/.obsidian/graph.json
 notebooks/data/correlation_data.pkl
+.context/
