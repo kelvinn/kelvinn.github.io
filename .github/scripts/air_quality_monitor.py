@@ -7,9 +7,16 @@ Checks planned hazard reduction burns and wind direction to predict poor air qua
 import os
 import json
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 from typing import Dict, List, Optional
 import requests
+
+try:
+    import redis
+    REDIS_AVAILABLE = True
+except ImportError:
+    REDIS_AVAILABLE = False
+    redis = None
 
 # Configure logging
 logging.basicConfig(
@@ -44,6 +51,115 @@ PURPLEAIR_API_BASE = "https://api.purpleair.com/v1"
 PUSHOVER_API_KEY = os.getenv("PUSHOVER_API_KEY")
 PUSHOVER_USER_KEY = os.getenv("PUSHOVER_USER_KEY")
 PUSHOVER_API_URL = "https://api.pushover.net/1/messages.json"
+
+# Redis configuration (for rate limiting)
+REDIS_URL = os.getenv("REDIS_URL")
+REDIS_NOTIFICATION_KEY = "air_quality_monitor:last_notification"
+
+# Rate limiting: minimum hours between notifications
+NOTIFICATION_COOLDOWN_HOURS = 12
+
+# Blackout period: no notifications between these hours (24-hour format)
+BLACKOUT_START_HOUR = 22  # 10:00 PM
+BLACKOUT_END_HOUR = 6     # 6:00 AM
+
+# Initialize Redis client
+_redis_client = None
+
+def get_redis_client():
+    """Get or create Redis client."""
+    global _redis_client
+    if _redis_client is not None:
+        return _redis_client
+
+    if not REDIS_AVAILABLE:
+        logger.warning("redis package not installed, rate limiting disabled")
+        return None
+
+    if not REDIS_URL:
+        logger.info("REDIS_URL not set, rate limiting disabled")
+        return None
+
+    try:
+        _redis_client = redis.from_url(REDIS_URL, decode_responses=True)
+        # Test connection
+        _redis_client.ping()
+        logger.info("Redis connection established")
+        return _redis_client
+    except Exception as e:
+        logger.warning(f"Failed to connect to Redis: {e}, rate limiting disabled")
+        return None
+
+
+def is_in_blackout_period() -> bool:
+    """
+    Check if current time is within the blackout period.
+    Blackout: 10:00 PM to 6:00 AM.
+    """
+    now = datetime.now()
+    current_hour = now.hour
+
+    if BLACKOUT_START_HOUR > BLACKOUT_END_HOUR:
+        # Blackout spans midnight (e.g., 22:00 to 06:00)
+        return current_hour >= BLACKOUT_START_HOUR or current_hour < BLACKOUT_END_HOUR
+    else:
+        # Blackout within same day (e.g., 02:00 to 06:00)
+        return BLACKOUT_START_HOUR <= current_hour < BLACKOUT_END_HOUR
+
+
+def can_send_notification() -> tuple[bool, str]:
+    """
+    Check if a notification can be sent based on rate limiting and blackout period.
+
+    Returns:
+        tuple: (can_send: bool, reason: str)
+    """
+    # Check blackout period first
+    if is_in_blackout_period():
+        return False, f"Blackout period (between {BLACKOUT_START_HOUR}:00 and {BLACKOUT_END_HOUR}:00)"
+
+    # Check rate limiting with Redis
+    client = get_redis_client()
+    if client is None:
+        # No Redis, allow notification (degraded mode)
+        return True, "Rate limiting disabled (Redis unavailable)"
+
+    try:
+        last_notification_str = client.get(REDIS_NOTIFICATION_KEY)
+        if last_notification_str is None:
+            # Never sent before, allow
+            return True, "First notification"
+
+        last_notification = datetime.fromisoformat(last_notification_str)
+        time_since_last = datetime.now() - last_notification
+        hours_since_last = time_since_last.total_seconds() / 3600
+
+        if hours_since_last >= NOTIFICATION_COOLDOWN_HOURS:
+            return True, f"Cooldown elapsed ({hours_since_last:.1f}h since last)"
+        else:
+            remaining_hours = NOTIFICATION_COOLDOWN_HOURS - hours_since_last
+            return False, f"Rate limit cooldown ({remaining_hours:.1f}h remaining, minimum {NOTIFICATION_COOLDOWN_HOURS}h)"
+
+    except Exception as e:
+        logger.warning(f"Error checking rate limit: {e}, allowing notification")
+        return True, "Rate limiting bypassed (error)"
+
+
+def record_notification_sent():
+    """Record that a notification was sent."""
+    client = get_redis_client()
+    if client is None:
+        return
+
+    try:
+        client.setex(
+            REDIS_NOTIFICATION_KEY,
+            timedelta(hours=NOTIFICATION_COOLDOWN_HOURS * 2),  # Keep key longer than cooldown
+            datetime.now().isoformat()
+        )
+        logger.info("Notification recorded in Redis")
+    except Exception as e:
+        logger.warning(f"Failed to record notification: {e}")
 
 # North Sydney PurpleAir sensor IDs (you can add more sensors here)
 # Find sensors at: https://map.purpleair.com/
@@ -503,6 +619,14 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
         logger.info("No air quality risk detected")
         return
 
+    # Check rate limiting and blackout period before sending
+    can_send, reason = can_send_notification()
+    if not can_send:
+        logger.info(f"Notification skipped: {reason}")
+        return
+
+    logger.info(f"Notification allowed: {reason}")
+
     # Build alert output
     output = {
         "alert": "Air Quality Alert",
@@ -574,7 +698,9 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
         message = "\n".join(message_parts)
         # Set priority based on alert type
         priority = 2 if aqi_at_risk else 1  # Emergency for current AQI, high for forecast
-        send_pushover_notification(title, message, priority)
+        if send_pushover_notification(title, message, priority):
+            # Only record if notification was actually sent
+            record_notification_sent()
 
 
 def main():
