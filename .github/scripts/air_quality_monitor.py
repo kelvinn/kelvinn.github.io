@@ -40,6 +40,11 @@ WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 PURPLEAIR_API_KEY = os.getenv("PURPLEAIR_API_KEY")
 PURPLEAIR_API_BASE = "https://api.purpleair.com/v1"
 
+# Pushover API (for notifications)
+PUSHOVER_API_KEY = os.getenv("PUSHOVER_API_KEY")
+PUSHOVER_USER_KEY = os.getenv("PUSHOVER_USER_KEY")
+PUSHOVER_API_URL = "https://api.pushover.net/1/messages.json"
+
 # North Sydney PurpleAir sensor IDs (you can add more sensors here)
 # Find sensors at: https://map.purpleair.com/
 NORTH_SYDNEY_SENSORS = [
@@ -442,6 +447,47 @@ def serialize_for_json(obj):
         return obj
 
 
+def send_pushover_notification(title: str, message: str, priority: int = 0) -> bool:
+    """
+    Send a notification via Pushover.
+
+    Args:
+        title: Notification title
+        message: Notification message
+        priority: Priority level (0=normal, 1=high, 2=emergency)
+
+    Returns:
+        bool: True if notification was sent successfully
+    """
+    if not PUSHOVER_API_KEY or not PUSHOVER_USER_KEY:
+        logger.warning("PUSHOVER_API_KEY or PUSHOVER_USER_KEY not set, skipping Pushover notification")
+        return False
+
+    try:
+        response = requests.post(
+            PUSHOVER_API_URL,
+            data={
+                "token": PUSHOVER_API_KEY,
+                "user": PUSHOVER_USER_KEY,
+                "title": title,
+                "message": message,
+                "priority": priority
+            },
+            timeout=30
+        )
+        response.raise_for_status()
+        result = response.json()
+        if result.get("status") == 1:
+            logger.info(f"Pushover notification sent: {title}")
+            return True
+        else:
+            logger.error(f"Pushover notification failed: {result}")
+            return False
+    except requests.RequestException as e:
+        logger.error(f"Error sending Pushover notification: {e}")
+        return False
+
+
 def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
     """
     Send notification if air quality risk is detected.
@@ -503,6 +549,32 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
             print(f"::warning::Risk: {burn['title']} ({burn['direction_from_sydney']} of Sydney)")
             for reason in risk["reasons"]:
                 print(f"::notice::  - {reason}")
+
+    # Build and send Pushover notification
+    title = "Air Quality Alert - Sydney"
+    message_parts = []
+
+    if aqi_at_risk and aqi_risk_data:
+        aqi_data = aqi_risk_data.get("aqi_data", {})
+        message_parts.append("🚨 CURRENT AIR QUALITY ALERT")
+        message_parts.append(aqi_risk_data.get('reason', ''))
+        message_parts.append(f"AQI: {aqi_data.get('aqi', 'N/A')} ({aqi_data.get('aqi_description', 'N/A')})")
+        message_parts.append(f"PM2.5: {aqi_data.get('pm2_5', 0):.1f} µg/m³")
+
+    if forecast_at_risk:
+        message_parts.append("🔥 FORECAST RISK: Smoke from hazard reduction burns may affect Sydney")
+        message_parts.append(f"Wind forecast: {', '.join(risk_data.get('wind_directions_forecast', []))}")
+        message_parts.append(f"Risks found: {len(risk_data.get('risks', []))}")
+        message_parts.append("Details:")
+        for risk in risk_data.get("risks", []):
+            burn = risk["burn"]
+            message_parts.append(f"- {burn['title']} ({burn['direction_from_sydney']} of Sydney)")
+
+    if message_parts:
+        message = "\n".join(message_parts)
+        # Set priority based on alert type
+        priority = 2 if aqi_at_risk else 1  # Emergency for current AQI, high for forecast
+        send_pushover_notification(title, message, priority)
 
 
 def main():

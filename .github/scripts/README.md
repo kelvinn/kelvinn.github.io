@@ -63,7 +63,7 @@ You can test the workflow manually:
 
 ## Local Development
 
-To run the script locally:
+To run the script locally with Pushover notifications:
 
 ```bash
 # Install dependencies
@@ -72,10 +72,16 @@ pip install requests
 # Set the API keys
 export PURPLEAIR_API_KEY="your-purpleair-key"
 export WEATHER_API_KEY="your-openweathermap-key"
+export PUSHOVER_API_KEY="your-pushover-api-key"
+export PUSHOVER_USER_KEY="your-pushover-user-key"
 
 # Run the script
 python .github/scripts/air_quality_monitor.py
 ```
+
+The script will send Pushover notifications directly when:
+1. Current PM2.5 in North Sydney exceeds 35 µg/m³ (priority=2 - emergency)
+2. Fires + wind direction predict smoke reaching Sydney (priority=1 - high)
 
 ## Data Sources
 
