@@ -1,18 +1,23 @@
 # Air Quality Monitor
 
-This script monitors NSW hazard reduction burns and combines them with weather forecasts to predict potential poor air quality days in Sydney.
+This script monitors NSW hazard reduction burns, current air quality, and weather forecasts to predict and detect poor air quality in Sydney.
 
 ## How it works
 
-The script runs every 30 minutes via GitHub Actions and:
+The script runs every 30 minutes via GitHub Actions and checks two types of risks:
 
-1. Fetches current hazard reduction burns from NSW RFS (Rural Fire Service)
-2. Gets the 24-hour wind forecast for Sydney
-3. Applies a heuristic to determine if smoke will blow toward Sydney:
-   - Fire in the west + eastern winds → risk
-   - Fire in the south + northern winds → risk
-   - Fire in the north + southern winds → risk
-4. Sends a Pushover notification if risk conditions are met
+### 1. Current Air Quality Alert
+- Gets real-time air quality data for North Sydney from OpenWeatherMap
+- Alerts if PM2.5 exceeds **35 µg/m³**
+- **Higher priority** notifications (priority=2) for immediate action
+
+### 2. Forecast Risk Alert
+- Fetches current hazard reduction burns from NSW RFS (Rural Fire Service)
+- Gets the 24-hour wind forecast for Sydney
+- Applies a heuristic to determine if smoke will blow toward Sydney:
+  - Fire in the west + eastern winds → risk
+  - Fire in the south + northern winds → risk
+  - Fire in the north + southern winds → risk
 
 ## Setup
 
@@ -29,7 +34,7 @@ Add the following secrets to your GitHub repository (Settings → Secrets and va
    - `PUSHOVER_API_KEY` - Your application's API token
    - `PUSHOVER_USER_KEY` - Your user key
 
-#### Optional (Recommended): `WEATHER_API_KEY`
+#### Required for AQI and Forecast: `WEATHER_API_KEY`
 
 Get a free API key from [OpenWeatherMap](https://openweathermap.org/api):
 1. Sign up at openweathermap.org
@@ -37,7 +42,7 @@ Get a free API key from [OpenWeatherMap](https://openweathermap.org/api):
 3. Copy your API key
 4. Add it as a secret named `WEATHER_API_KEY`
 
-Without this key, the script will use mock wind data for testing.
+**This is required for both current AQI checks and wind forecasts.** Without this key, the script will not function properly.
 
 ### Testing
 
@@ -54,7 +59,7 @@ To run the script locally:
 # Install dependencies
 pip install requests
 
-# Set the weather API key (optional)
+# Set the weather API key (required)
 export WEATHER_API_KEY="your-key-here"
 
 # Run the script
@@ -64,11 +69,18 @@ python .github/scripts/air_quality_monitor.py
 ## Data Sources
 
 - **NSW RFS API**: `https://www.rfs.nsw.gov.au/api/feeds/`
-- **Weather**: OpenWeatherMap API (or mock data if no key)
+- **Air Quality**: OpenWeatherMap Air Pollution API
+- **Weather Forecast**: OpenWeatherMap 5-day/3-hour forecast API
 
 ## Alert Output
 
 When a risk is detected, the script:
 1. Creates a JSON alert file in `.context/air_quality_alert.json`
 2. Prints GitHub Actions annotations (visible in workflow logs)
-3. Sends a Pushover notification with priority=1 (high priority)
+3. Sends a Pushover notification:
+   - **Priority 2** (emergency) for current AQI alerts
+   - **Priority 1** (high) for forecast risk alerts
+
+## AQI Threshold
+
+The default threshold for PM2.5 is **35 µg/m³** in North Sydney. You can modify this by changing the `AQI_THRESHOLD` constant in `air_quality_monitor.py`.

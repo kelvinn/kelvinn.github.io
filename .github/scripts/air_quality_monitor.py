@@ -22,6 +22,13 @@ logger = logging.getLogger(__name__)
 SYDNEY_LAT = -33.8688
 SYDNEY_LON = 151.2093
 
+# North Sydney coordinates for AQI checking
+NORTH_SYDNEY_LAT = -33.8391
+NORTH_SYDNEY_LON = 151.2069
+
+# AQI threshold for North Sydney (PM2.5 in µg/m³)
+AQI_THRESHOLD = 35
+
 # NSW RFS API endpoints
 NSW_RFS_BASE_URL = "https://www.rfs.nsw.gov.au/api/feeds"
 NSW_RFS_INCIDENTS_URL = f"{NSW_RFS_BASE_URL}/majorIncidents.json"
@@ -198,6 +205,90 @@ def get_wind_forecast(lat: float = SYDNEY_LAT, lon: float = SYDNEY_LON) -> List[
         return []
 
 
+def get_current_aqi(lat: float = NORTH_SYDNEY_LAT, lon: float = NORTH_SYDNEY_LON) -> Optional[Dict]:
+    """
+    Get current air quality data from OpenWeatherMap Air Pollution API.
+
+    Returns dict with AQI data or None if unavailable.
+    """
+    if not WEATHER_API_KEY:
+        logger.warning("WEATHER_API_KEY not set, skipping AQI check")
+        return None
+
+    logger.info(f"Fetching current AQI for North Sydney ({lat}, {lon})...")
+
+    try:
+        url = "https://api.openweathermap.org/data/2.5/air_pollution"
+        params = {
+            "lat": lat,
+            "lon": lon,
+            "appid": WEATHER_API_KEY
+        }
+
+        response = requests.get(url, params=params, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+
+        if "list" not in data or len(data["list"]) == 0:
+            logger.warning("No air quality data returned")
+            return None
+
+        # Get current air quality data
+        aq_data = data["list"][0]
+        components = aq_data.get("components", {})
+
+        # OpenWeatherMap AQI scale: 1=Good, 2=Fair, 3=Moderate, 4=Poor, 5=Very Poor
+        aqi = aq_data.get("main", {}).get("aqi", 1)
+
+        result = {
+            "aqi": aqi,
+            "aqi_description": ["Good", "Fair", "Moderate", "Poor", "Very Poor"][aqi - 1] if 1 <= aqi <= 5 else "Unknown",
+            "pm2_5": components.get("pm2_5", 0),  # PM2.5 in µg/m³
+            "pm10": components.get("pm10", 0),    # PM10 in µg/m³
+            "checked_at": datetime.now().isoformat()
+        }
+
+        logger.info(f"Current AQI: {result['aqi']} ({result['aqi_description']}), PM2.5: {result['pm2_5']} µg/m³")
+        return result
+
+    except requests.RequestException as e:
+        logger.error(f"Error fetching AQI data: {e}")
+        return None
+
+
+def check_current_aqi_risk(aqi_data: Optional[Dict], threshold: float = AQI_THRESHOLD) -> Dict:
+    """
+    Check if current AQI in North Sydney exceeds threshold.
+
+    Args:
+        aqi_data: AQI data from get_current_aqi()
+        threshold: PM2.5 threshold in µg/m³ (default: 35)
+
+    Returns:
+        Dict with risk information
+    """
+    if not aqi_data:
+        return {
+            "at_risk": False,
+            "reason": "AQI data unavailable"
+        }
+
+    pm2_5 = aqi_data.get("pm2_5", 0)
+
+    if pm2_5 > threshold:
+        return {
+            "at_risk": True,
+            "reason": f"Current PM2.5 ({pm2_5:.1f} µg/m³) exceeds threshold ({threshold} µg/m³)",
+            "aqi_data": aqi_data
+        }
+
+    return {
+        "at_risk": False,
+        "reason": f"Current PM2.5 ({pm2_5:.1f} µg/m³) below threshold ({threshold} µg/m³)",
+        "aqi_data": aqi_data
+    }
+
+
 def check_air_quality_risk(burns: List[Burn], wind_forecast: List[Dict]) -> Dict:
     """
     Check if there's a risk of poor air quality based on burn locations and wind direction.
@@ -266,19 +357,38 @@ def check_air_quality_risk(burns: List[Burn], wind_forecast: List[Dict]) -> Dict
     }
 
 
-def send_notification(risk_data: Dict):
-    """Send notification if air quality risk is detected."""
-    if not risk_data["at_risk"]:
+def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
+    """
+    Send notification if air quality risk is detected.
+
+    Args:
+        risk_data: Forecast risk data from check_air_quality_risk()
+        aqi_risk_data: Current AQI risk data from check_current_aqi_risk()
+    """
+    forecast_at_risk = risk_data.get("at_risk", False)
+    aqi_at_risk = aqi_risk_data.get("at_risk", False) if aqi_risk_data else False
+
+    if not forecast_at_risk and not aqi_at_risk:
         logger.info("No air quality risk detected")
         return
 
-    # Create GitHub Actions compatible output
+    # Build alert output
     output = {
-        "alert": "Air Quality Risk Detected",
-        "timestamp": risk_data["checked_at"],
-        "wind_directions": risk_data["wind_directions_forecast"],
-        "risks": risk_data["risks"]
+        "alert": "Air Quality Alert",
+        "timestamp": datetime.now().isoformat(),
+        "forecast_risk": forecast_at_risk,
+        "current_aqi_risk": aqi_at_risk
     }
+
+    # Add forecast risk details
+    if forecast_at_risk:
+        output["wind_directions"] = risk_data.get("wind_directions_forecast", [])
+        output["forecast_risks"] = risk_data.get("risks", [])
+
+    # Add current AQI details
+    if aqi_at_risk and aqi_risk_data:
+        output["current_aqi"] = aqi_risk_data.get("aqi_data", {})
+        output["aqi_reason"] = aqi_risk_data.get("reason", "")
 
     # Write to output file for GitHub Actions
     output_dir = os.path.join(os.path.dirname(__file__), "..", "..", ".context")
@@ -291,21 +401,39 @@ def send_notification(risk_data: Dict):
     logger.info(f"Alert written to {output_file}")
 
     # Also print to stdout for GitHub Actions to capture
-    print("::warning::Air Quality Risk Detected!")
-    print(f"::notice::Wind directions forecast: {', '.join(risk_data['wind_directions_forecast'])}")
+    print("::warning::Air Quality Alert Detected!")
 
-    for risk in risk_data["risks"]:
-        burn = risk["burn"]
-        print(f"::warning::Risk: {burn['title']} ({burn['direction_from_sydney']} of Sydney)")
-        for reason in risk["reasons"]:
-            print(f"::notice::  - {reason}")
+    if aqi_at_risk and aqi_risk_data:
+        aqi_data = aqi_risk_data.get("aqi_data", {})
+        print(f"::warning::CURRENT AQI ALERT: {aqi_risk_data.get('reason', '')}")
+        print(f"::notice::AQI: {aqi_data.get('aqi', 'N/A')} ({aqi_data.get('aqi_description', 'N/A')})")
+        print(f"::notice::PM2.5: {aqi_data.get('pm2_5', 0):.1f} µg/m³")
+
+    if forecast_at_risk:
+        print(f"::warning::FORECAST RISK: Smoke from burns may reach Sydney")
+        print(f"::notice::Wind directions forecast: {', '.join(risk_data.get('wind_directions_forecast', []))}")
+
+        for risk in risk_data.get("risks", []):
+            burn = risk["burn"]
+            print(f"::warning::Risk: {burn['title']} ({burn['direction_from_sydney']} of Sydney)")
+            for reason in risk["reasons"]:
+                print(f"::notice::  - {reason}")
 
 
 def main():
     """Main execution function."""
     logger.info("Starting Air Quality Monitor check...")
 
-    # Fetch data
+    # Check current AQI in North Sydney
+    current_aqi = get_current_aqi()
+    aqi_risk_data = check_current_aqi_risk(current_aqi)
+
+    if aqi_risk_data["at_risk"]:
+        logger.warning(f"Current AQI risk: {aqi_risk_data['reason']}")
+    else:
+        logger.info(f"Current AQI OK: {aqi_risk_data['reason']}")
+
+    # Fetch data for forecast risk
     all_burns = []
 
     # Get burns from multiple sources
@@ -323,11 +451,16 @@ def main():
     # Get wind forecast
     wind_forecast = get_wind_forecast()
 
-    # Check for risk
+    # Check for forecast risk
     risk_data = check_air_quality_risk(list(unique_burns), wind_forecast)
 
-    # Send notification if needed
-    send_notification(risk_data)
+    if risk_data["at_risk"]:
+        logger.warning(f"Forecast risk detected: {risk_data['risk_count']} risks")
+    else:
+        logger.info("No forecast risk detected")
+
+    # Send notification if needed (either risk type)
+    send_notification(risk_data, aqi_risk_data)
 
     logger.info("Air Quality Monitor check complete")
 
