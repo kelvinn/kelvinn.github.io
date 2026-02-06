@@ -49,6 +49,7 @@ No surprises here.
 - Average intensity minutes (Garmin) of 800 or above ❌
 - Improve Vo2Max ❌
 - Decrease RHR ❌
+
 ##### Analysis
 
 I look at intensity minutes as a way to make sure I'm getting enough fitness, regardless if I'm running or at the gym or kayaking. My goal is 800 minutes per week 80% of the weeks, which is significantly higher than the commonly recommended 150 minutes per week. The reason I've chosen to say "80% of the weeks" is because there are some weeks when I need to travel for work, and it is harder to reach this target.
@@ -108,19 +109,41 @@ Garmin's method of displaying stress has a delineation between low (blue, <25), 
 #### Improve Biomarkers
 
 ##### Goals
-- Decrease IGF-1 ❓
-- Decrease MCV ❓
-- Decrease RDW ❓
-- Increase Albumin ❓
-- Decrease hsCRP ❓
+- Decrease IGF-1 ❌
+- Decrease MCV ❌
+- Decrease RDW ✅
+- Increase Albumin ✅
+- Decrease hsCRP ✅
 ##### Analysis
 
-![](Pasted%20image%2020260206192440.png)
+Comparing my Q4 biomarkers to Q3, here's how things changed:
+
+| Biomarker | July 2025 (Q3) | Oct 2025 | Jan 2026 | Trend | Status |
+|-----------|---------------|----------|----------|-------|--------|
+| **IGF-1** | 30.9 nmol/L | 35 nmol/L | - | Increased | Above range |
+| **MCV** | 95 fL | 94 fL | 101 fL | Now HIGH | Above range |
+| **RDW** | 12.8% | 12.6% | 12.5% | Decreased | In range |
+| **Albumin** | 40 g/L | 43 g/L | 45 g/L | Increased | In range |
+| **hsCRP** | 0.7 mg/L | 0.2 mg/L | <4.0 mg/L | Mixed | In range |
+
+**Key Findings:**
+
+**Concerns (❌):**
+- **IGF-1 increased to 35 nmol/L** (above reference 7.6-28.5). This is concerning for longevity as lower IGF-1 is associated with increased lifespan. Despite removing pea protein from my Nutty Pudding, IGF-1 still increased. The upper note suggests keeping "well below 45-50 nmol/L" so I'm still under that threshold, but trending wrong direction.
+- **MCV jumped to 101 fL in January** (above reference 79-99). This is a new concern - elevated MCV can indicate B12 or folate deficiency (though B12 came back at 435 pmol/L), liver issues, or hypothyroidism. The increase from 94 → 101 fL warrants investigation.
+
+**Wins (✅):**
+- **Albumin increased to 43 → 45 g/L**. Higher albumin is associated with better longevity and overall health.
+- **RDW decreased to 12.6 → 12.5%**. Lower RDW correlates with reduced mortality risk.
+
 ##### Experiments
 
 I did have a fair amount of experimentation here, including:
 
-- [INSERT ANY EXPERIMENtS]
+- **IGF-1**: Removed pea protein from my Nutty Pudding recipe to reduce IGF-1. Unfortunately, IGF-1 still increased from 30.9 → 35 nmol/L.
+- **Vitamin D**: Increased from 1,000 IU to 4,000 IU, which successfully brought levels from deficient (36 nmol/L) to optimal (107 nmol/L).
+- **B12**: Continued B12 methylcobalamin and L-Methylfolate combination. B12 improved from 271 → 435 pmol/L.
+- **Iron**: Continued taking iron 3x per week, though ferritin remains below target.
 
 Because of subscribing to Cronometer I'm able to get more reports, such as my Nutrient Balances and Nutrient Targets, which have encouraged me to tweak the food I eat.
 
@@ -165,10 +188,13 @@ Here are the changes that I made this quarter:
 I may add some of these back in at a later date.
 ### Focus For Next Quarter
 
-[INSERT GENERAL COMMENTS]
+Q4 was challenging - injury, illness, and work stress all took their toll. My fitness metrics regressed, sleep became more variable, and stress increased. However, I maintained my philosophy of making "better decisions, not worse decisions" and continued to track and optimize where possible.
 
-I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:
+For Q1 2026, my focus areas remain consistent:
 
-- [INSERT SUPPLEMENT CHANGES]
+- *Improve fitness* - Now that my ankle is healing, gradually rebuild intensity minutes. Swimming will remain part of my routine while I ease back into running. Desperately need to put on muscle.
+- *Sleep better* - Re-commit to early, light dinners and the 3-2-1 wind-down routine that was slipping late in Q4.
+- *Reduce stress* - Being injured is stressful; I need to be mindful of this and prioritize recovery. Oct-Dec was terrible from a stress perspective, and January isn't looking much better.
+- *Improve biomarkers* - Investigate the elevated MCV (101 fL) and continue working on IGF-1 reduction.
 
 Wish me luck!
