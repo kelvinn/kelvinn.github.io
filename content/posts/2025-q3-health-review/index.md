@@ -17,8 +17,8 @@ As usual, there are four areas that I wanted to focus on:
 
 - *Improve fitness* by training more. My goal is to maintain 800 intensity minutes on average per week.
 - *Sleep better* by improving my sleep hygiene and experimenting with meal timing.
-- *Reduce Stress* by examining meal composition and avoiding anything that might impact my sleep
-- *Improve Biomarkers* by looking at my nutrition, as well as the above items.
+- *Reduce stress* by examining meal composition and avoiding anything that might impact my sleep
+- *Improve biomarkers* by looking at my nutrition, as well as the above items.
 
 Overall most metrics are improving, as we can see with the following key metrics.
 
@@ -259,15 +259,9 @@ I'll keep experimenting with Cronometer to refine my nutrition, and I've found g
 
 ##### Nutrition
 
-I'll update my Nutty Putting to remove the pea protein in an attempt to get my IGF-1 under control.
+* Play around with sprouting
 ##### Supplements
 
-I'll make the following changes my supplement stack, as it appears as though I am getting enough from food:
-
-* Calcium - remove
-* Fish oil - move to evening pills
-* Lysine - remove
-* Iron - increase from ad hoc to 3x per week
-* Zinc - increase to 15mg from 5mg 
+TBC
 
 Wish me luck!

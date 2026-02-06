@@ -19,10 +19,10 @@ One part of the test is flipping what could be so many negative thoughts into po
 
 As usual, there are four areas that I wanted to focus on:
 
-- *Improve fitness* by training more. My goal is to get above a 75 fitness score on intervals.icu
+- *Improve fitness* by training more. My goal is to maintain 800 intensity minutes on average per week.
 - *Sleep better* by improving my sleep hygiene and experimenting with meal timing.
-- *Reduce Stress* by examining meal composition and avoiding anything that might impact my sleep
-- *Improve Biomarkers* by looking at my nutrition, as well as the above items.
+- *Reduce stress* by examining meal composition and avoiding anything that might impact my sleep
+- *Improve biomarkers* by looking at my nutrition, as well as the above items.
 
 Overall most metrics saw a decrease in Q4, as we can see with the following key metrics.
   ![Summary Chart](2025-q4-health-review/summary.png)
@@ -38,13 +38,10 @@ Looking at the correlations, a few stood out:
 
 I've also used some of Garmin's new Lifelogging feature, and for the quarter the correlations that it picked up were:
 
-Overnight stress: the largest negative impact is being _injured_, and then _illness_, rounded out by _high work stress_
-
-Overnight sleep: the largest positive impact is having a _good wind down_, while the largest negative impact was _being injured_
+* Overnight stress: the largest negative impact is being _injured_, and then _illness_, rounded out by _high work stress_
+* Overnight sleep: the largest positive impact is having a _good wind down_, while the largest negative impact was _being injured_
 
 No surprises here.
-
-Let’s go through how I did this quarter and what I experimented with.
 #### Improve Fitness
 
 ##### Goals  
@@ -58,17 +55,16 @@ I look at intensity minutes as a way to make sure I'm getting enough fitness, re
   ![Weekly Intensity Minutes](2025-q4-health-review/weekly_intensity_minutes.png)
   
 
-My average intensity minutes for the quarter was was 610 minutes per week, which unfortunately is the only quarter in 2025 where I didn't reach my goal.
+My average intensity minutes for the quarter was was 610 minutes per week, which unfortunately is the only quarter in 2025 where I didn't reach my 800 minute goal.
 
-In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient recovery.
+In addition to load we can have a look at Resting Heart Rate, as that is often related to both load and sufficient recovery.
   ![Average Resting HR Per Month](2025-q4-health-review/average_resting_hr_per_month.png)
 
-And let's look at Vo2Max, which stayed roughly the same this quarter.
+And let's look at Vo2Max, which stayed roughly the same this quarter, but will crash when I start running again. I believe my high was 53 for a few weeks, but falling to 51 eventually as I couldn't make time (or have the discipline?) for my regular levels of fitness.
   ![Monthly Vo2Max Values](2025-q4-health-review/monthly_vo2_max.png)
 ##### Experiments
 
-* No major experiments.
-
+* In week 49-50 I managed to break my ankle, so wasn't able to run much in December. However, I've been meaning to pick up swimming, and while I'm not getting the same cardio effect as I got from running, at least I'm still exercising. I keep reminding myself that this isn't about good/bad, but better/worse. Plus, I'm learning a new skill, which is probably a good thing!
 #### Improve Sleep
 ##### Goals
 - Keep average sleep score about 80 ✅
@@ -81,7 +77,7 @@ And then when comparing each quarter this year we can see some trends with each 
 
 ![Average Sleep Score Per Month](2025-q4-health-review/sleep_score_per_day.png)
 
-Q4 was absolutely a challenging quarter for me from a sleep perspective, in particular in October.
+Q4 was absolutely a challenging quarter for me from a sleep perspective, in particular in October and November. December was more hit and miss, where some nights I would get high 80s, and other nights get 70s. One bad habit that I started to develop was cooking less meal prep, which resulted in both eating out more, and eating later. I think, for me, it really is best to eat a lightish lower carb meal between 4:00pm and 5:00pm.
 ##### Experiments
 
 I conducted a few sleep-related experiments this quarter, including:
@@ -119,9 +115,7 @@ Garmin's method of displaying stress has a delineation between low (blue, <25), 
 - Decrease hsCRP ❓
 ##### Analysis
 
-[INSERT CHART FROM PHENOAGE]:
-
-(Blood panels still to be taken)
+![](Pasted%20image%2020260206192440.png)
 ##### Experiments
 
 I did have a fair amount of experimentation here, including:

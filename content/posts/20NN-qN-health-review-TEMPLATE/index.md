@@ -15,10 +15,11 @@ Add a reflection here.
 
 As usual, there are four areas that I wanted to focus on:
 
-- *Improve fitness* by training more. My goal is to get above a 75 fitness score on intervals.icu
+- *Improve fitness* by training more. My goal is to maintain 800 intensity minutes on average per week.
 - *Sleep better* by improving my sleep hygiene and experimenting with meal timing.
-- *Reduce Stress* by examining meal composition and avoiding anything that might impact my sleep
-- *Improve Biomarkers* by looking at my nutrition, as well as the above items.
+- *Reduce stress* by examining meal composition and avoiding anything that might impact my sleep
+- *Improve biomarkers* by looking at my nutrition, as well as the above items.
+
 
 Overall most metrics are improving, as we can see with the following key metrics.
   ![Summary Chart](2025-q3-health-review/summary.png)
@@ -60,7 +61,7 @@ And let's look at Vo2Max, which stayed roughly the same this quarter.
 
 #### Improve Sleep
 ##### Goals
-- Improve sleep quality ✅
+- Keep average sleep score about 80 ✅
 ##### Analysis
 
 Let's have a look at my sleep scores since buying my Garmin:

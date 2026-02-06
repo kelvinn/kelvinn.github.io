@@ -28,11 +28,14 @@ def create_stress_heatmap_12weeks():
     # Create images directory if it doesn't exist
     os.makedirs('images', exist_ok=True)
     
-    # Calculate date range for previous 12 weeks (84 days)
-    start_date = end_date - timedelta(days=84)  # Exactly 12 weeks
+    # Normalize end_date to a date object to avoid mixed datetime/date arithmetic
+    end_date_obj = end_date.date() if isinstance(end_date, dt.datetime) else end_date
+    days_since_sunday = (end_date_obj.weekday() + 1) % 7
+    end_of_last_complete_week = end_date_obj - timedelta(days=days_since_sunday)
+    start_date = end_of_last_complete_week - timedelta(days=83)
     
-    print(f"Creating heatmap for stress levels from {start_date} to {end_date}")
-    print(f"Date range: {end_date - start_date} days (12 weeks)")
+    print(f"Creating heatmap for stress levels from {start_date} to {end_of_last_complete_week}")
+    # print(f"Date range: {end_of_last_complete_week - start_date} days (12 weeks)")
     
     # Initialize Garmin database connection
     gc_config = GarminConnectConfigManager()
@@ -40,7 +43,7 @@ def create_stress_heatmap_12weeks():
     
     # Query stress data for the previous 12 weeks
     start_ts = datetime.combine(start_date, datetime.min.time())
-    end_ts = datetime.combine(end_date, datetime.max.time())
+    end_ts = datetime.combine(end_of_last_complete_week, datetime.max.time())
     
     # Get daily summary data for the period
     sum_db = SummaryDb(db_params_dict, False)
@@ -61,10 +64,12 @@ def create_stress_heatmap_12weeks():
     
     # Populate the matrix by relative week index (0 = oldest week, 11 = most recent)
     for entry in stress_data:
-        diff_days = (entry.day - start_date).days
+        # Ensure we compare dates, not datetimes
+        entry_day = entry.day.date() if isinstance(entry.day, dt.datetime) else entry.day
+        diff_days = (entry_day - start_date).days
         if 0 <= diff_days < 12 * 7:
             week_idx = diff_days // 7
-            day_of_week = entry.day.weekday()  # 0=Monday, 6=Sunday
+            day_of_week = entry_day.weekday()  # 0=Monday, 6=Sunday
             heatmap_matrix[week_idx][day_of_week] = entry.stress_avg
     
     # Week labels (1-12)
@@ -102,7 +107,7 @@ def create_stress_heatmap_12weeks():
     # Add extra vertical padding by adjusting the spacing
     ax.figure.subplots_adjust(left=0.15, right=0.85, top=0.95, bottom=0.1)
     
-    plt.title(f'Daily Stress Level per Week (Previous 12 Weeks)\n({start_date.strftime("%Y-%m-%d")} to {end_date.strftime("%Y-%m-%d")})', 
+    plt.title(f'Daily Stress Level per Week (Previous 12 Weeks)\n({start_date.strftime("%Y-%m-%d")} to {end_of_last_complete_week.strftime("%Y-%m-%d")})', 
               fontsize=16, fontweight='bold', pad=20)
     plt.xlabel('Day of Week', fontsize=14)
     plt.ylabel('Week of Year', fontsize=14)
