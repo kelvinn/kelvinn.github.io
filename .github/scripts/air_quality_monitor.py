@@ -56,8 +56,8 @@ PUSHOVER_API_URL = "https://api.pushover.net/1/messages.json"
 REDIS_URL = os.getenv("REDIS_URL")
 REDIS_NOTIFICATION_KEY = "air_quality_monitor:last_notification"
 
-# Rate limiting: minimum hours between notifications
-NOTIFICATION_COOLDOWN_HOURS = 12
+# Rate limiting: once per calendar day
+NOTIFICATION_COOLDOWN_HOURS = 24  # Fallback to 24h if Redis unavailable
 
 # Blackout period: no notifications between these hours (24-hour format)
 BLACKOUT_START_HOUR = 22  # 10:00 PM
@@ -109,7 +109,7 @@ def is_in_blackout_period() -> bool:
 
 def can_send_notification() -> tuple[bool, str]:
     """
-    Check if a notification can be sent based on rate limiting and blackout period.
+    Check if a notification can be sent based on rate limiting (once per day) and blackout period.
 
     Returns:
         tuple: (can_send: bool, reason: str)
@@ -125,20 +125,17 @@ def can_send_notification() -> tuple[bool, str]:
         return True, "Rate limiting disabled (Redis unavailable)"
 
     try:
-        last_notification_str = client.get(REDIS_NOTIFICATION_KEY)
+        today = datetime.now().date().isoformat()
+        daily_key = f"{REDIS_NOTIFICATION_KEY}:{today}"
+
+        last_notification_str = client.get(daily_key)
         if last_notification_str is None:
-            # Never sent before, allow
-            return True, "First notification"
+            # No notification sent today, allow
+            return True, "First notification today"
 
+        # Already sent a notification today
         last_notification = datetime.fromisoformat(last_notification_str)
-        time_since_last = datetime.now() - last_notification
-        hours_since_last = time_since_last.total_seconds() / 3600
-
-        if hours_since_last >= NOTIFICATION_COOLDOWN_HOURS:
-            return True, f"Cooldown elapsed ({hours_since_last:.1f}h since last)"
-        else:
-            remaining_hours = NOTIFICATION_COOLDOWN_HOURS - hours_since_last
-            return False, f"Rate limit cooldown ({remaining_hours:.1f}h remaining, minimum {NOTIFICATION_COOLDOWN_HOURS}h)"
+        return False, f"Already sent notification today at {last_notification.strftime('%H:%M')}"
 
     except Exception as e:
         logger.warning(f"Error checking rate limit: {e}, allowing notification")
@@ -146,18 +143,23 @@ def can_send_notification() -> tuple[bool, str]:
 
 
 def record_notification_sent():
-    """Record that a notification was sent."""
+    """Record that a notification was sent (once per calendar day)."""
     client = get_redis_client()
     if client is None:
         return
 
     try:
+        today = datetime.now().date().isoformat()
+        daily_key = f"{REDIS_NOTIFICATION_KEY}:{today}"
+
+        # Set key to expire at end of day (roughly 24 hours from now)
+        # This ensures the key is available for the rest of today and expires tomorrow
         client.setex(
-            REDIS_NOTIFICATION_KEY,
-            timedelta(hours=NOTIFICATION_COOLDOWN_HOURS * 2),  # Keep key longer than cooldown
+            daily_key,
+            timedelta(hours=48),  # Keep for 48 hours to cover edge cases
             datetime.now().isoformat()
         )
-        logger.info("Notification recorded in Redis")
+        logger.info(f"Notification recorded in Redis for {today}")
     except Exception as e:
         logger.warning(f"Failed to record notification: {e}")
 
