@@ -709,6 +709,26 @@ def main():
     """Main execution function."""
     logger.info("Starting Air Quality Monitor check...")
 
+    # Check Redis connectivity first - fail fast if unavailable
+    if not REDIS_URL:
+        error_msg = "REDIS_URL environment variable not set. Redis is required for rate limiting."
+        logger.error(error_msg)
+        print(f"::error::{error_msg}")
+        raise SystemExit(f"Redis configuration error: {error_msg}")
+
+    if not REDIS_AVAILABLE:
+        error_msg = "redis package not installed. Install with: pip install redis"
+        logger.error(error_msg)
+        print(f"::error::{error_msg}")
+        raise SystemExit(f"Redis dependency error: {error_msg}")
+
+    redis_client = get_redis_client()
+    if redis_client is None:
+        error_msg = f"Failed to connect to Redis at {REDIS_URL}. Check that Redis is accessible."
+        logger.error(error_msg)
+        print(f"::error::{error_msg}")
+        raise SystemExit(f"Redis connection error: {error_msg}")
+
     # Check current AQI in North Sydney
     current_aqi = get_current_aqi()
     aqi_risk_data = check_current_aqi_risk(current_aqi)
