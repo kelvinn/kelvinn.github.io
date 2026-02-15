@@ -98,6 +98,12 @@ jobs:
               if [ -s /tmp/risk_details.txt ]; then
                 MESSAGE="${MESSAGE}"$'\n\nDetails:\n'"$(cat /tmp/risk_details.txt)"
               fi
+
+              # Add regional validation info if available
+              VALIDATION_SUMMARY=$(echo "$ALERT_DATA" | jq -r '.forecast_risks[0].regional_validation.validation_summary // empty')
+              if [ -n "$VALIDATION_SUMMARY" ]; then
+                MESSAGE="${MESSAGE}"$'\n\nRegional Validation: '"${VALIDATION_SUMMARY}"
+              fi
             fi
 
             # Set priority based on alert type
