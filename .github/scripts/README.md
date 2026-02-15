@@ -19,6 +19,27 @@ The script runs every 30 minutes via GitHub Actions and checks two types of risk
   - Fire in the west + eastern winds → risk
   - Fire in the south + northern winds → risk
   - Fire in the north + southern winds → risk
+  - **Now supports all 8 directions**: N, NE, E, SE, S, SW, W, NW
+- Uses trigonometry for precise directional calculations (not just N/S/E/W)
+
+### 3. Regional AQI Validation (New)
+- When a fire + wind combination indicates risk, validates that smoke is actually being detected
+- Checks AQI sensors in the expected affected region (outskirts of Sydney)
+- Uses **PurpleAir** sensors at 8 key locations surrounding Sydney:
+  - **North**: Brooklyn/Central Coast area
+  - **South**: Wollongong area
+  - **East**: Northern Beaches/Coast
+  - **West**: Blue Mountains
+  - **Northeast**: Newport/Avalon
+  - **Southeast**: Royal National Park area
+  - **Northwest**: Hawkesbury
+  - **Southwest**: Campbelltown/Wollondilly
+- Threshold: **AQI > 50** indicates smoke is present in the expected region
+
+This validation reduces false positives by confirming that:
+- A fire in SE Sydney with northerly winds actually shows elevated AQI in SE Sydney
+- A fire in the Blue Mountains with easterly winds actually shows elevated AQI in western Sydney
+- Etc.
 
 ## Setup
 
@@ -98,9 +119,18 @@ When a risk is detected, the script:
    - **Priority 2** (emergency) for current AQI alerts
    - **Priority 1** (high) for forecast risk alerts
 
-## AQI Threshold
+## AQI Thresholds
 
-The default threshold for PM2.5 is **35 µg/m³** in North Sydney. You can modify this by changing the `AQI_THRESHOLD` constant in `air_quality_monitor.py`.
+The script uses two different AQI thresholds:
+
+1. **Current AQI Alert**: PM2.5 > **35 µg/m³** in North Sydney
+   - This is the immediate alert threshold for Sydney metro area
+   - Modify with `AQI_THRESHOLD` constant
+
+2. **Regional Validation**: AQI > **50** in outskirts
+   - Used to validate smoke detection based on fire location + wind direction
+   - This confirms that smoke is actually present where expected
+   - Modify with `REGIONAL_AQI_THRESHOLD` constant
 
 ## Finding PurpleAir Sensors
 
