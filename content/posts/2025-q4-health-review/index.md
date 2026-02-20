@@ -188,7 +188,7 @@ Here are the changes that I made this quarter:
 I may add some of these back in at a later date.
 ### Focus For Next Quarter
 
-Q4 was challenging - injury, illness, and work stress all took their toll. My fitness metrics regressed, sleep became more variable, and stress increased. However, I maintained my philosophy of making "better decisions, not worse decisions" and continued to track and optimize where possible.
+Q4 was challenging - injury, illness, and work stress all took their toll. My fitness metrics regressed, sleep became more variable, and stress increased. However, I maintained my philosophy of making "better decisions, not worse decisions" and continued to track and optimise where possible.
 
 For Q1 2026, my focus areas remain consistent:
 
