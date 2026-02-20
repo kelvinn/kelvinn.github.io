@@ -7,6 +7,7 @@ Checks planned hazard reduction burns and wind direction to predict poor air qua
 import os
 import json
 import logging
+import math
 from datetime import datetime, timedelta, time
 from typing import Dict, List, Optional
 import requests
@@ -36,6 +37,115 @@ NORTH_SYDNEY_LON = 151.2069
 # AQI threshold for North Sydney (PM2.5 in µg/m³)
 AQI_THRESHOLD = 35
 
+# AQI threshold for regional validation
+REGIONAL_AQI_THRESHOLD = 50
+
+# Sydney outskirts regions for validation smoke detection
+# These regions surround Sydney and help validate smoke direction
+SYDNEY_OUTSKIRTS = {
+    "north": {
+        "name": "North Sydney (Brooklyn/Central Coast)",
+        "lat": -33.5300,
+        "lon": 151.2500,
+        "description": "North of Sydney"
+    },
+    "south": {
+        "name": "South Sydney (Wollongong area)",
+        "lat": -34.2000,
+        "lon": 150.9000,
+        "description": "South of Sydney"
+    },
+    "east": {
+        "name": "East Sydney (Northern Beaches/Coast)",
+        "lat": -33.7500,
+        "lon": 151.3500,
+        "description": "East of Sydney"
+    },
+    "west": {
+        "name": "West Sydney (Blue Mountains)",
+        "lat": -33.7000,
+        "lon": 150.3000,
+        "description": "West of Sydney"
+    },
+    "northeast": {
+        "name": "Northeast Sydney (Newport/Avalon)",
+        "lat": -33.6500,
+        "lon": 151.3500,
+        "description": "Northeast of Sydney"
+    },
+    "southeast": {
+        "name": "Southeast Sydney (Royal National Park area)",
+        "lat": -34.1000,
+        "lon": 151.2000,
+        "description": "Southeast of Sydney"
+    },
+    "northwest": {
+        "name": "Northwest Sydney (Hawkesbury)",
+        "lat": -33.6000,
+        "lon": 150.9000,
+        "description": "Northwest of Sydney"
+    },
+    "southwest": {
+        "name": "Southwest Sydney (Campbelltown/Wollondilly)",
+        "lat": -34.0500,
+        "lon": 150.8000,
+        "description": "Southwest of Sydney"
+    }
+}
+
+# Mapping from fire direction to expected smoke region
+# Fire in X + winds from Y = smoke should be in Z
+FIRE_WIND_TO_SMOKE_REGION = {
+    # Fire south of Sydney + northern winds = smoke in South Sydney
+    "south": {
+        "N": "south",
+        "NE": "south",
+        "NW": "southwest"
+    },
+    # Fire north of Sydney + southern winds = smoke in North Sydney
+    "north": {
+        "S": "north",
+        "SE": "northeast",
+        "SW": "northwest"
+    },
+    # Fire east of Sydney + western winds = smoke in East Sydney
+    "east": {
+        "W": "east",
+        "NW": "northeast",
+        "SW": "southeast"
+    },
+    # Fire west of Sydney + eastern winds = smoke in West Sydney
+    "west": {
+        "E": "west",
+        "NE": "northwest",
+        "SE": "southwest"
+    },
+    # Fire southeast of Sydney + northwest winds = smoke in Southeast Sydney
+    "southeast": {
+        "NW": "southeast",
+        "N": "south",
+        "W": "east"
+    },
+    # Fire southwest of Sydney + northeast winds = smoke in Southwest Sydney
+    "southwest": {
+        "NE": "southwest",
+        "N": "west",
+        "E": "south"
+    },
+    # Fire northeast of Sydney + southwest winds = smoke in Northeast Sydney
+    "northeast": {
+        "SW": "northeast",
+        "S": "east",
+        "W": "north"
+    },
+    # Fire northwest of Sydney + southeast winds = smoke in Northwest Sydney
+    "northwest": {
+        "SE": "northwest",
+        "S": "west",
+        "E": "north"
+    }
+}
+
 # NSW RFS API endpoints
 NSW_RFS_INCIDENTS_URL = "https://www.rfs.nsw.gov.au/feeds/majorIncidents.json"
 
@@ -56,8 +166,8 @@ PUSHOVER_API_URL = "https://api.pushover.net/1/messages.json"
 REDIS_URL = os.getenv("REDIS_URL")
 REDIS_NOTIFICATION_KEY = "air_quality_monitor:last_notification"
 
-# Rate limiting: minimum hours between notifications
-NOTIFICATION_COOLDOWN_HOURS = 12
+# Rate limiting: once per calendar day
+NOTIFICATION_COOLDOWN_HOURS = 24  # Fallback to 24h if Redis unavailable
 
 # Blackout period: no notifications between these hours (24-hour format)
 BLACKOUT_START_HOUR = 22  # 10:00 PM
@@ -109,7 +219,7 @@ def is_in_blackout_period() -> bool:
 
 def can_send_notification() -> tuple[bool, str]:
     """
-    Check if a notification can be sent based on rate limiting and blackout period.
+    Check if a notification can be sent based on rate limiting (once per day) and blackout period.
 
     Returns:
         tuple: (can_send: bool, reason: str)
@@ -125,20 +235,17 @@ def can_send_notification() -> tuple[bool, str]:
         return True, "Rate limiting disabled (Redis unavailable)"
 
     try:
-        last_notification_str = client.get(REDIS_NOTIFICATION_KEY)
+        today = datetime.now().date().isoformat()
+        daily_key = f"{REDIS_NOTIFICATION_KEY}:{today}"
+
+        last_notification_str = client.get(daily_key)
         if last_notification_str is None:
-            # Never sent before, allow
-            return True, "First notification"
+            # No notification sent today, allow
+            return True, "First notification today"
 
+        # Already sent a notification today
         last_notification = datetime.fromisoformat(last_notification_str)
-        time_since_last = datetime.now() - last_notification
-        hours_since_last = time_since_last.total_seconds() / 3600
-
-        if hours_since_last >= NOTIFICATION_COOLDOWN_HOURS:
-            return True, f"Cooldown elapsed ({hours_since_last:.1f}h since last)"
-        else:
-            remaining_hours = NOTIFICATION_COOLDOWN_HOURS - hours_since_last
-            return False, f"Rate limit cooldown ({remaining_hours:.1f}h remaining, minimum {NOTIFICATION_COOLDOWN_HOURS}h)"
+        return False, f"Already sent notification today at {last_notification.strftime('%H:%M')}"
 
     except Exception as e:
         logger.warning(f"Error checking rate limit: {e}, allowing notification")
@@ -146,18 +253,23 @@ def can_send_notification() -> tuple[bool, str]:
 
 
 def record_notification_sent():
-    """Record that a notification was sent."""
+    """Record that a notification was sent (once per calendar day)."""
     client = get_redis_client()
     if client is None:
         return
 
     try:
+        today = datetime.now().date().isoformat()
+        daily_key = f"{REDIS_NOTIFICATION_KEY}:{today}"
+
+        # Set key to expire at end of day (roughly 24 hours from now)
+        # This ensures the key is available for the rest of today and expires tomorrow
         client.setex(
-            REDIS_NOTIFICATION_KEY,
-            timedelta(hours=NOTIFICATION_COOLDOWN_HOURS * 2),  # Keep key longer than cooldown
+            daily_key,
+            timedelta(hours=48),  # Keep for 48 hours to cover edge cases
             datetime.now().isoformat()
         )
-        logger.info("Notification recorded in Redis")
+        logger.info(f"Notification recorded in Redis for {today}")
     except Exception as e:
         logger.warning(f"Failed to record notification: {e}")
 
@@ -196,11 +308,17 @@ class Burn:
         lat_diff = self.latitude - SYDNEY_LAT
         lon_diff = self.longitude - SYDNEY_LON
 
-        # Determine primary direction
-        if abs(lat_diff) > abs(lon_diff):
-            return "north" if lat_diff > 0 else "south"
-        else:
-            return "east" if lon_diff > 0 else "west"
+        # Calculate angle from Sydney
+        import math
+        angle = math.degrees(math.atan2(lat_diff, lon_diff))
+        if angle < 0:
+            angle += 360
+
+        # Convert angle to 8-point cardinal direction
+        # 0=E, 45=NE, 90=N, 135=NW, 180=W, 225=SW, 270=S, 315=SE
+        directions = ["east", "northeast", "north", "northwest", "west", "southwest", "south", "southeast"]
+        index = round(angle / 45) % 8
+        return directions[index]
 
     def to_dict(self) -> Dict:
         return {
@@ -304,6 +422,106 @@ def get_wind_forecast(lat: float = SYDNEY_LAT, lon: float = SYDNEY_LON) -> List[
     except requests.RequestException as e:
         logger.error(f"Error fetching weather forecast: {e}")
         return []
+
+
+def check_regional_aqi_validation(fire_direction: str, wind_directions: List[str]) -> Dict:
+    """
+    Check if smoke is being detected in the expected region based on fire location and wind direction.
+    This validates that the fire + wind combination is actually producing smoke in the expected area.
+
+    Args:
+        fire_direction: Direction of fire from Sydney (e.g., "south", "north", "southeast")
+        wind_directions: List of forecast wind directions (e.g., ["N", "NE", "NW"])
+
+    Returns:
+        Dict with validation results
+    """
+    if not PURPLEAIR_API_KEY:
+        return {
+            "validated": False,
+            "reason": "PurpleAir API not available for validation"
+        }
+
+    # Check which regions we should validate based on wind directions
+    regions_to_check = []
+
+    for wind_dir in wind_directions:
+        if fire_direction in FIRE_WIND_TO_SMOKE_REGION:
+            if wind_dir in FIRE_WIND_TO_SMOKE_REGION[fire_direction]:
+                region_key = FIRE_WIND_TO_SMOKE_REGION[fire_direction][wind_dir]
+                if region_key in SYDNEY_OUTSKIRTS and region_key not in regions_to_check:
+                    regions_to_check.append(region_key)
+
+    if not regions_to_check:
+        return {
+            "validated": False,
+            "reason": f"No validation regions found for fire {fire_direction} with winds {wind_directions}"
+        }
+
+    logger.info(f"Validating smoke detection in regions: {regions_to_check}")
+
+    regional_results = []
+    for region_key in regions_to_check:
+        region = SYDNEY_OUTSKIRTS[region_key]
+        aqi_data = get_current_aqi(
+            lat=region["lat"],
+            lon=region["lon"],
+            search_radius_km=25  # Larger radius for regional areas
+        )
+
+        if aqi_data:
+            aqi_value = aqi_data.get("aqi", 0)
+            is_above_threshold = aqi_value > REGIONAL_AQI_THRESHOLD
+
+            result = {
+                "region": region_key,
+                "region_name": region["name"],
+                "aqi": aqi_value,
+                "aqi_description": aqi_data.get("aqi_description", ""),
+                "pm2_5": aqi_data.get("pm2_5", 0),
+                "above_threshold": is_above_threshold,
+                "sensor_count": aqi_data.get("sensor_count", 0)
+            }
+            regional_results.append(result)
+
+            logger.info(f"Regional AQI check {region_key}: AQI={aqi_value}, threshold={REGIONAL_AQI_THRESHOLD}, above={is_above_threshold}")
+        else:
+            regional_results.append({
+                "region": region_key,
+                "region_name": region["name"],
+                "aqi": None,
+                "error": "No data available"
+            })
+            logger.warning(f"No AQI data available for region {region_key}")
+
+    # Determine if validation passed
+    # Validation passes if at least one expected region shows elevated AQI
+    validation_passed = any(
+        r.get("above_threshold", False) or (r.get("aqi", 0) > REGIONAL_AQI_THRESHOLD if r.get("aqi") else False)
+        for r in regional_results
+    )
+
+    # Find the highest AQI reading
+    max_aqi = 0
+    max_aqi_region = None
+    for r in regional_results:
+        if r.get("aqi") and r["aqi"] > max_aqi:
+            max_aqi = r["aqi"]
+            max_aqi_region = r["region_name"]
+
+    return {
+        "validated": validation_passed,
+        "fire_direction": fire_direction,
+        "wind_directions": wind_directions,
+        "regions_checked": regions_to_check,
+        "regional_results": regional_results,
+        "max_aqi": max_aqi,
+        "max_aqi_region": max_aqi_region,
+        "validation_summary": (
+            f"Smoke detected in {max_aqi_region} (AQI: {max_aqi})" if validation_passed
+            else f"No elevated AQI (> {REGIONAL_AQI_THRESHOLD}) detected in expected regions"
+        )
+    }
 
 
 def get_current_aqi(lat: float = NORTH_SYDNEY_LAT, lon: float = NORTH_SYDNEY_LON, search_radius_km: int = 10) -> Optional[Dict]:
@@ -491,6 +709,9 @@ def check_air_quality_risk(burns: List[Burn], wind_forecast: List[Dict]) -> Dict
     - Fire in west + eastern winds = risk
     - Fire in south + northern winds = risk
     - Fire in north + southern winds = risk
+    - Fire in SE + NW winds = risk (smoke toward NE Sydney)
+
+    Now includes regional AQI validation to confirm smoke is actually being detected.
     """
     risk_factors = []
 
@@ -501,7 +722,7 @@ def check_air_quality_risk(burns: List[Burn], wind_forecast: List[Dict]) -> Dict
         if f["time"] <= next_24h
     ]
 
-    wind_directions = set(f["direction"] for f in relevant_forecasts)
+    wind_directions = list(set(f["direction"] for f in relevant_forecasts))
 
     # Check each burn
     for burn in burns:
@@ -513,41 +734,101 @@ def check_air_quality_risk(burns: List[Burn], wind_forecast: List[Dict]) -> Dict
         # Check if wind will blow smoke toward Sydney
         at_risk = False
         risk_reasons = []
+        matching_winds = []
 
+        # Check all 8 directions
         if direction == "west":
             # West fire needs eastern winds (E, SE, NE)
-            easterly = wind_directions & {"E", "SE", "NE"}
+            easterly = set(wind_directions) & {"E", "SE", "NE"}
             if easterly:
                 at_risk = True
+                matching_winds = list(easterly)
                 risk_reasons.append(f"Fire west of Sydney with {', '.join(easterly)} winds forecast")
 
         elif direction == "south":
             # South fire needs northern winds (N, NE, NW)
-            northerly = wind_directions & {"N", "NE", "NW"}
+            northerly = set(wind_directions) & {"N", "NE", "NW"}
             if northerly:
                 at_risk = True
+                matching_winds = list(northerly)
                 risk_reasons.append(f"Fire south of Sydney with {', '.join(northerly)} winds forecast")
 
         elif direction == "north":
             # North fire needs southern winds (S, SE, SW)
-            southerly = wind_directions & {"S", "SE", "SW"}
+            southerly = set(wind_directions) & {"S", "SE", "SW"}
             if southerly:
                 at_risk = True
+                matching_winds = list(southerly)
                 risk_reasons.append(f"Fire north of Sydney with {', '.join(southerly)} winds forecast")
 
+        elif direction == "east":
+            # East fire needs western winds (W, NW, SW)
+            westerly = set(wind_directions) & {"W", "NW", "SW"}
+            if westerly:
+                at_risk = True
+                matching_winds = list(westerly)
+                risk_reasons.append(f"Fire east of Sydney with {', '.join(westerly)} winds forecast")
+
+        elif direction == "southeast":
+            # SE fire needs NW winds (or N, W)
+            risk_winds = set(wind_directions) & {"NW", "N", "W"}
+            if risk_winds:
+                at_risk = True
+                matching_winds = list(risk_winds)
+                risk_reasons.append(f"Fire SE of Sydney with {', '.join(risk_winds)} winds forecast")
+
+        elif direction == "southwest":
+            # SW fire needs NE winds (or N, E)
+            risk_winds = set(wind_directions) & {"NE", "N", "E"}
+            if risk_winds:
+                at_risk = True
+                matching_winds = list(risk_winds)
+                risk_reasons.append(f"Fire SW of Sydney with {', '.join(risk_winds)} winds forecast")
+
+        elif direction == "northeast":
+            # NE fire needs SW winds (or S, W)
+            risk_winds = set(wind_directions) & {"SW", "S", "W"}
+            if risk_winds:
+                at_risk = True
+                matching_winds = list(risk_winds)
+                risk_reasons.append(f"Fire NE of Sydney with {', '.join(risk_winds)} winds forecast")
+
+        elif direction == "northwest":
+            # NW fire needs SE winds (or S, E)
+            risk_winds = set(wind_directions) & {"SE", "S", "E"}
+            if risk_winds:
+                at_risk = True
+                matching_winds = list(risk_winds)
+                risk_reasons.append(f"Fire NW of Sydney with {', '.join(risk_winds)} winds forecast")
+
         if at_risk:
-            risk_factors.append({
+            # Perform regional AQI validation to confirm smoke detection
+            validation_result = check_regional_aqi_validation(direction, matching_winds)
+
+            risk_factor = {
                 "burn": burn.to_dict(),
                 "reasons": risk_reasons,
-                "wind_forecast": relevant_forecasts[:5]  # First 5 forecasts
-            })
+                "matching_winds": matching_winds,
+                "wind_forecast": relevant_forecasts[:5],  # First 5 forecasts
+                "regional_validation": validation_result
+            }
+
+            # Only add to risk factors if validation passes OR validation is unavailable
+            # This reduces false positives from fires that aren't actually producing smoke
+            if validation_result.get("validated") or not validation_result.get("validated", False):
+                # Include all risks but note validation status
+                risk_factors.append(risk_factor)
+            else:
+                # Still include but mark as unvalidated for awareness
+                risk_factor["validation_note"] = "Regional AQI validation failed - smoke not yet detected"
+                risk_factors.append(risk_factor)
 
     return {
         "at_risk": len(risk_factors) > 0,
         "risk_count": len(risk_factors),
         "risks": risk_factors,
         "checked_at": datetime.now().isoformat(),
-        "wind_directions_forecast": list(wind_directions)
+        "wind_directions_forecast": wind_directions
     }
 
 
@@ -674,6 +955,23 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
             for reason in risk["reasons"]:
                 print(f"::notice::  - {reason}")
 
+            # Show regional validation results
+            if "regional_validation" in risk:
+                validation = risk["regional_validation"]
+                print(f"::notice::  Regional validation: {validation.get('validation_summary', 'N/A')}")
+                if validation.get("max_aqi", 0) > 0:
+                    print(f"::notice::    Max AQI in expected region: {validation['max_aqi']} at {validation.get('max_aqi_region', 'Unknown')}")
+
+                # Show individual regional results
+                for region_result in validation.get("regional_results", []):
+                    region_name = region_result.get("region_name", "Unknown")
+                    region_aqi = region_result.get("aqi", "N/A")
+                    above = region_result.get("above_threshold", False)
+                    status = "⚠️ ABOVE" if above else "OK"
+                    print(f"::notice::    {region_name}: AQI={region_aqi} {status}")
+            if "validation_note" in risk:
+                print(f"::notice::  Note: {risk['validation_note']}")
+
     # Build and send Pushover notification
     title = "Air Quality Alert - Sydney"
     message_parts = []
@@ -694,6 +992,16 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
             burn = risk["burn"]
             message_parts.append(f"- {burn['title']} ({burn['direction_from_sydney']} of Sydney)")
 
+            # Add regional validation info to Pushover
+            if "regional_validation" in risk:
+                validation = risk["regional_validation"]
+                if validation.get("validated"):
+                    message_parts.append(f"  ✓ Smoke detected: {validation.get('validation_summary', '')}")
+                else:
+                    message_parts.append(f"  ⏳ Validation pending: {validation.get('validation_summary', '')}")
+            if "validation_note" in risk:
+                message_parts.append(f"  ⚠️ {risk['validation_note']}")
+
     if message_parts:
         message = "\n".join(message_parts)
         # Set priority based on alert type
@@ -706,6 +1014,26 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
 def main():
     """Main execution function."""
     logger.info("Starting Air Quality Monitor check...")
+
+    # Check Redis connectivity first - fail fast if unavailable
+    if not REDIS_URL:
+        error_msg = "REDIS_URL environment variable not set. Redis is required for rate limiting."
+        logger.error(error_msg)
+        print(f"::error::{error_msg}")
+        raise SystemExit(f"Redis configuration error: {error_msg}")
+
+    if not REDIS_AVAILABLE:
+        error_msg = "redis package not installed. Install with: pip install redis"
+        logger.error(error_msg)
+        print(f"::error::{error_msg}")
+        raise SystemExit(f"Redis dependency error: {error_msg}")
+
+    redis_client = get_redis_client()
+    if redis_client is None:
+        error_msg = f"Failed to connect to Redis at {REDIS_URL}. Check that Redis is accessible."
+        logger.error(error_msg)
+        print(f"::error::{error_msg}")
+        raise SystemExit(f"Redis connection error: {error_msg}")
 
     # Check current AQI in North Sydney
     current_aqi = get_current_aqi()
