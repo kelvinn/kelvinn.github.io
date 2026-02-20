@@ -25,11 +25,11 @@ As usual, there are four areas that I wanted to focus on:
 - *Improve biomarkers* by looking at my nutrition, as well as the above items.
 
 Overall most metrics saw a decrease in Q4, as we can see with the following key metrics.
-  ![Summary Chart](2025-q4-health-review/summary.png)
+  ![Summary Chart](summary.png)
 
 
 We can see correlations for the quarter with the below correlation matrix.
-  ![Correlation Matrix](2025-q4-health-review/correlation_matrix.png)
+  ![Correlation Matrix](correlation_matrix.png)
 
 Looking at the correlations, a few stood out:
 
@@ -53,16 +53,16 @@ No surprises here.
 ##### Analysis
 
 I look at intensity minutes as a way to make sure I'm getting enough fitness, regardless if I'm running or at the gym or kayaking. My goal is 800 minutes per week 80% of the weeks, which is significantly higher than the commonly recommended 150 minutes per week. The reason I've chosen to say "80% of the weeks" is because there are some weeks when I need to travel for work, and it is harder to reach this target.
-  ![Weekly Intensity Minutes](2025-q4-health-review/weekly_intensity_minutes.png)
+  ![Weekly Intensity Minutes](weekly_intensity_minutes.png)
   
 
 My average intensity minutes for the quarter was was 610 minutes per week, which unfortunately is the only quarter in 2025 where I didn't reach my 800 minute goal.
 
 In addition to load we can have a look at Resting Heart Rate, as that is often related to both load and sufficient recovery.
-  ![Average Resting HR Per Month](2025-q4-health-review/average_resting_hr_per_month.png)
+  ![Average Resting HR Per Month](average_resting_hr_per_month.png)
 
 And let's look at Vo2Max, which stayed roughly the same this quarter, but will crash when I start running again. I believe my high was 53 for a few weeks, but falling to 51 eventually as I couldn't make time (or have the discipline?) for my regular levels of fitness.
-  ![Monthly Vo2Max Values](2025-q4-health-review/monthly_vo2_max.png)
+  ![Monthly Vo2Max Values](monthly_vo2_max.png)
 ##### Experiments
 
 * In week 49-50 I managed to break my ankle, so wasn't able to run much in December. However, I've been meaning to pick up swimming, and while I'm not getting the same cardio effect as I got from running, at least I'm still exercising. I keep reminding myself that this isn't about good/bad, but better/worse. Plus, I'm learning a new skill, which is probably a good thing!
@@ -72,11 +72,11 @@ And let's look at Vo2Max, which stayed roughly the same this quarter, but will c
 ##### Analysis
 
 Let's have a look at my sleep scores since buying my Garmin:
-  ![Average Sleep Score Per Month](2025-q4-health-review/average_sleep_score_per_month.png)
+  ![Average Sleep Score Per Month](average_sleep_score_per_month.png)
 
 And then when comparing each quarter this year we can see some trends with each day of the week. 
 
-![Average Sleep Score Per Month](2025-q4-health-review/sleep_score_per_day.png)
+![Average Sleep Score Per Month](sleep_score_per_day.png)
 
 Q4 was absolutely a challenging quarter for me from a sleep perspective, in particular in October and November. December was more hit and miss, where some nights I would get high 80s, and other nights get 70s. One bad habit that I started to develop was cooking less meal prep, which resulted in both eating out more, and eating later. I think, for me, it really is best to eat a lightish lower carb meal between 4:00pm and 5:00pm.
 ##### Experiments
@@ -94,12 +94,12 @@ Overall mostly a success, but having to work hard to keep up good habits.
 ##### Analysis
 Let's have a look at stress per quarter grouped by day of the week:
 
-![Average Stress per DoW per QTR](2025-q4-health-review/stress_level_per_day.png)
+![Average Stress per DoW per QTR](stress_level_per_day.png)
 
 Garmin's method of displaying stress has a delineation between low (blue, <25), medium (orange, >25), or high (red). Usually I'm all blue, and now I'm all orange - especially in December. Much of this is work related, directly and indirectly, but I'm not certain the breakdown.
 
   
-![Average Stress Level Per Week QTR](2025-q4-health-review/stress_level_per_week.png)
+![Average Stress Level Per Week QTR](stress_level_per_week.png)
 
 
 ##### Experiments
