@@ -1,7 +1,7 @@
 ---
 title: 2025 Q4 Health Review
 date: 2025-12-31T21:30:00.002+11:00
-draft: true
+draft: false
 url: /2025/12/2025-q4-health-review.html
 tags:
   - longevity
@@ -132,27 +132,27 @@ Some principles that I tried to follow:
 - Wait until a supplement is on the ITP supported interventions page, or has significant evidence behind it
 - Have a biomarker in mind that a certain supplement will change
 
-And here's what was in my stack for Q3:
+And here's what was in my stack for Q4:
 
-| Morning                     | Evening       | Ad Hoc            |
-| --------------------------- | ------------- | ----------------- |
-| Vitamin D (4000 IU)         | Glycine (10g) | Iron (20mg)       |
-| Vitamin K2 mk7 (100mcg)     | NAC (1g)      | Vitamin C (500mg) |
-| B12 Methyl (1000 mcg)       | Tart Cherry   | Fish Oil (6g)     |
-| L-Methylfolate  (1000 mcg)  |               |                   |
-| B5 P-5-P (50mg)             |               |                   |
-| Zinc (15mg)                 |               |                   |
-| Hyaluronic Acid (200mg)     |               |                   |
-| Iodine (150mcg)             |               |                   |
-| Creatine (5g - in smoothie) |               |                   |
-| TMG (1.5g - in smoothie)    |               |                   |
-| Boron (1mg - in smoothie)   |               |                   |
-| Taurine (3g - in smoothie)  |               |                   |
-| Astaxanthin (7mg)           |               |                   |
-|                             |               |                   |
-|                             |               |                   |
-|                             |               |                   |
-|                             |               |                   |
+| Morning                     | Evening            | Ad Hoc            |
+| --------------------------- | ------------------ | ----------------- |
+| Vitamin D (4000 IU)         | Glycine (10g)      | Iron (20mg)       |
+| Vitamin K2 mk7 (100mcg)     | NAC (1g)           | Vitamin C (500mg) |
+| B12 Methyl (1000 mcg)       | Tart Cherry        | Fish Oil (6g)     |
+| L-Methylfolate  (1000 mcg)  | Melatonin (300mcg) | B5 P-5-P (50mg)   |
+| B6 (25mg)                   |                    |                   |
+| Zinc (15mg)                 |                    |                   |
+| Hyaluronic Acid (200mg)     |                    |                   |
+| Iodine (150mcg)             |                    |                   |
+| Creatine (5g - in smoothie) |                    |                   |
+| TMG (1.5g - in smoothie)    |                    |                   |
+| Boron (1mg - in smoothie)   |                    |                   |
+| Taurine (3g - in smoothie)  |                    |                   |
+| Astaxanthin (7mg)           |                    |                   |
+|                             |                    |                   |
+|                             |                    |                   |
+|                             |                    |                   |
+|                             |                    |                   |
 
 Here are the changes that I made this quarter:
 
@@ -165,10 +165,6 @@ Here are the changes that I made this quarter:
 I may add some of these back in at a later date.
 ### Focus For Next Quarter
 
-[INSERT GENERAL COMMENTS]
-
-I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:
-
-- [INSERT SUPPLEMENT CHANGES]
+Normally focus is about what to improve, but I think my focus for the next quarter will be to build back my habits: meal prep, consistent sleep, and exercise; in particular strength training at home.
 
 Wish me luck!
