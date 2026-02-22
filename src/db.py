@@ -25,11 +25,17 @@ def _get_engine():
 
     database_url = _get_database_url()
     if database_url:
-        # Set server_version_info for CockroachDB compatibility
-        dialect_options = {}
-        if database_url.startswith("postgresql://") or database_url.startswith("postgres://"):
-            dialect_options["postgresql"] = {"server_version_info": (15, 1)}
-        _engine = create_engine(database_url, pool_pre_ping=True, dialect_options=dialect_options)
+        _engine = create_engine(database_url, pool_pre_ping=True)
+
+        # For CockroachDB: set server_version_info after first connection
+        from sqlalchemy import event
+
+        @event.listens_for(_engine, "connect")
+        def set_server_version(dbapi_conn, connection_record):
+            try:
+                dbapi_conn.server_version_info = (15, 1)
+            except Exception:
+                pass
     else:
         logger.warning("DATABASE_URL not set, using in-memory SQLite")
         _engine = create_engine(

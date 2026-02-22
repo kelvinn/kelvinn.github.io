@@ -45,16 +45,21 @@ def run_migrations_offline() -> None:
 
 def run_migrations_online() -> None:
     """Run migrations in 'online' mode."""
-    from sqlalchemy import create_engine
+    from sqlalchemy import create_engine, event
 
     url = config.get_main_option("sqlalchemy.url")
 
-    # Set server_version_info for CockroachDB compatibility
-    dialect_options = {}
-    if url and (url.startswith("postgresql://") or url.startswith("postgres://")):
-        dialect_options["postgresql"] = {"server_version_info": (15, 1)}
+    # Create engine
+    connectable = create_engine(url, poolclass=pool.NullPool)
 
-    connectable = create_engine(url, poolclass=pool.NullPool, dialect_options=dialect_options)
+    # For CockroachDB: set server_version_info after first connection
+    @event.listens_for(connectable, "connect")
+    def set_server_version(dbapi_conn, connection_record):
+        # CockroachDB version string isn't recognized, set version manually
+        try:
+            dbapi_conn.server_version_info = (15, 1)
+        except Exception:
+            pass
 
     with connectable.connect() as connection:
         context.configure(
