@@ -28,23 +28,25 @@ jobs:
 
       - name: Test database connection
         run: |
-          # Extract host from DATABASE_URL
-          HOST=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@([^/:]+).*|\1|')
-          PORT=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@[^:]+:([0-9]+).*|\1|' || echo "5432")
-          USER=$(echo "$DATABASE_URL" | sed -E 's|.*://([^@]+)@.*|\1|')
-          PASSWORD=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+:([^@]+)@.*|\1|')
-
-          echo "Testing connection to $HOST:$PORT..."
-
-          # Try to connect using psql with SSL (required for CockroachDB Cloud)
-          # Use both defaultdb and postgres as some services use different default DBs
-          if PGPASSWORD="$PASSWORD" PGSSLMODE=require psql -h "$HOST" -p "$PORT" -U "$USER" -d defaultdb -c "SELECT 1" > /dev/null 2>&1 || \
-             PGPASSWORD="$PASSWORD" PGSSLMODE=require psql -h "$HOST" -p "$PORT" -U "$USER" -d postgres -c "SELECT 1" > /dev/null 2>&1; then
-            echo "SUCCESS: Database connection successful"
-          else
-            echo "FAILED: Could not connect to database"
-            exit 1
-          fi
+          # Test connection using Python (works with CockroachDB)
+          python -c "
+          import os
+          import psycopg2
+          from urllib.parse import urlparse
+          db_url = os.getenv('DATABASE_URL')
+          parsed = urlparse(db_url)
+          print(f'Connecting to {parsed.hostname}:{parsed.port}...')
+          conn = psycopg2.connect(
+              host=parsed.hostname,
+              port=parsed.port,
+              user=parsed.username,
+              password=parsed.password,
+              dbname='defaultdb',
+              sslmode='require'
+          )
+          conn.close()
+          print('SUCCESS: Database connection successful')
+          "
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
