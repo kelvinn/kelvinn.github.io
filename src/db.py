@@ -27,20 +27,19 @@ def _get_engine():
     if database_url:
         _engine = create_engine(database_url, pool_pre_ping=True)
 
-        # For CockroachDB: patch psycopg2 to handle non-standard version string
-        import psycopg2
+        # For CockroachDB: patch dialect to handle non-standard version string
+        from sqlalchemy.dialects.postgresql import base as pg_base
 
-        original_connect = psycopg2.connect
+        original_get_version = pg_base.PGDialect._get_server_version_info
 
-        def patched_connect(*args, **kwargs):
-            conn = original_connect(*args, **kwargs)
-            # Override the version info CockroachDB returns
-            if hasattr(conn, 'server_version'):
-                conn.server_version = 150001
-                conn.server_version_info = (15, 0, 1)
-            return conn
+        def patched_get_version_info(self, connection):
+            try:
+                return original_get_version(self, connection)
+            except AssertionError:
+                # CockroachDB has non-standard version string
+                return (15, 0, 0)
 
-        psycopg2.connect = patched_connect
+        pg_base.PGDialect._get_server_version_info = patched_get_version_info
     else:
         logger.warning("DATABASE_URL not set, using in-memory SQLite")
         _engine = create_engine(

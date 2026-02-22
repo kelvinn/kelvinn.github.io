@@ -49,23 +49,22 @@ def run_migrations_online() -> None:
 
     url = config.get_main_option("sqlalchemy.url")
 
-    # For CockroachDB: patch psycopg2 to handle non-standard version string
-    import psycopg2
-
-    original_connect = psycopg2.connect
-
-    def patched_connect(*args, **kwargs):
-        conn = original_connect(*args, **kwargs)
-        # Override the version info CockroachDB returns
-        if hasattr(conn, 'server_version'):
-            conn.server_version = 150001
-            conn.server_version_info = (15, 0, 1)
-        return conn
-
-    psycopg2.connect = patched_connect
-
     # Create engine
     connectable = create_engine(url, poolclass=pool.NullPool)
+
+    # For CockroachDB: patch dialect to handle non-standard version string
+    from sqlalchemy.dialects.postgresql import base as pg_base
+
+    original_get_version = pg_base.PGDialect._get_server_version_info
+
+    def patched_get_version_info(self, connection):
+        try:
+            return original_get_version(self, connection)
+        except AssertionError:
+            # CockroachDB has non-standard version string
+            return (15, 0, 0)
+
+    pg_base.PGDialect._get_server_version_info = patched_get_version_info
 
     with connectable.connect() as connection:
         context.configure(
