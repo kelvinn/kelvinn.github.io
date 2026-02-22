@@ -1,0 +1,44 @@
+name: Check PostgreSQL Connection
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  check-database:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client
+
+      - name: Check DATABASE_URL is set
+        run: |
+          if [ -z "$DATABASE_URL" ]; then
+            echo "ERROR: DATABASE_URL is not set"
+            exit 1
+          fi
+        env:
+          DATABASE_URL: ${{ vars.DATABASE_URL }}
+
+      - name: Test PostgreSQL connection
+        run: |
+          # Extract host from DATABASE_URL to use with pg_isready
+          HOST=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@([^/:]+).*|\1|')
+          PORT=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@[^:]+:([0-9]+).*|\1|' || echo "5432")
+
+          echo "Testing connection to $HOST:$PORT..."
+
+          # Try to connect using pg_isready
+          if pg_isready -h "$HOST" -p "$PORT" -U "$(echo $DATABASE_URL | sed -E 's|.*://([^@]+)@.*|\1|')"; then
+            echo "SUCCESS: PostgreSQL connection successful"
+          else
+            echo "FAILED: Could not connect to PostgreSQL"
+            exit 1
+          fi
+        env:
+          DATABASE_URL: ${{ vars.DATABASE_URL }}
