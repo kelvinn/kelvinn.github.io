@@ -13,3 +13,4 @@ alembic
 pytest
 ruff
 requests
+psycopg2-binary
