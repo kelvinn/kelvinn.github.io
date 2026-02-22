@@ -19,7 +19,14 @@ config = context.config
 
 # Override sqlalchemy.url from environment if set
 if os.getenv("DATABASE_URL"):
-    config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
+    db_url = os.getenv("DATABASE_URL")
+    # CockroachDB accepts PostgreSQL protocol but needs cockroachdb dialect
+    # to avoid version detection issues
+    if db_url.startswith("postgresql://"):
+        db_url = db_url.replace("postgresql://", "cockroachdb://", 1)
+    elif db_url.startswith("postgres://"):
+        db_url = db_url.replace("postgres://", "cockroachdb://", 1)
+    config.set_main_option("sqlalchemy.url", db_url)
 
 # Interpret the config file for Python logging
 if config.config_file_name is not None:

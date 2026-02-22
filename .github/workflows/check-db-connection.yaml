@@ -1,4 +1,4 @@
-name: Check PostgreSQL Connection
+name: Check Database Connection
 
 on:
   push:
@@ -26,19 +26,20 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
-      - name: Test PostgreSQL connection
+      - name: Test database connection
         run: |
-          # Extract host from DATABASE_URL to use with pg_isready
+          # Extract host from DATABASE_URL
           HOST=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@([^/:]+).*|\1|')
           PORT=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@[^:]+:([0-9]+).*|\1|' || echo "5432")
+          USER=$(echo "$DATABASE_URL" | sed -E 's|.*://([^@]+)@.*|\1|')
 
           echo "Testing connection to $HOST:$PORT..."
 
-          # Try to connect using pg_isready
-          if pg_isready -h "$HOST" -p "$PORT" -U "$(echo $DATABASE_URL | sed -E 's|.*://([^@]+)@.*|\1|')"; then
-            echo "SUCCESS: PostgreSQL connection successful"
+          # Try to connect using psql (works with both PostgreSQL and CockroachDB)
+          if PGPASSWORD=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+:([^@]+)@.*|\1|') psql -h "$HOST" -p "$PORT" -U "$USER" -d postgres -c "SELECT 1" > /dev/null 2>&1; then
+            echo "SUCCESS: Database connection successful"
           else
-            echo "FAILED: Could not connect to PostgreSQL"
+            echo "FAILED: Could not connect to database"
             exit 1
           fi
         env:

@@ -12,7 +12,15 @@ logger = logging.getLogger(__name__)
 
 # Database URL from environment - use lazy evaluation to handle tests
 def _get_database_url():
-    return os.getenv("DATABASE_URL")
+    db_url = os.getenv("DATABASE_URL")
+    if db_url:
+        # CockroachDB accepts PostgreSQL protocol but needs cockroachdb dialect
+        # to avoid version detection issues
+        if db_url.startswith("postgresql://"):
+            db_url = db_url.replace("postgresql://", "cockroachdb://", 1)
+        elif db_url.startswith("postgres://"):
+            db_url = db_url.replace("postgres://", "cockroachdb://", 1)
+    return db_url
 
 # Engine is created lazily
 _engine = None
