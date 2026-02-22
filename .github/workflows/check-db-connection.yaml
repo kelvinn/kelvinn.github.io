@@ -24,7 +24,7 @@ jobs:
             exit 1
           fi
         env:
-          DATABASE_URL: ${{ vars.DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
       - name: Test PostgreSQL connection
         run: |
@@ -42,4 +42,4 @@ jobs:
             exit 1
           fi
         env:
-          DATABASE_URL: ${{ vars.DATABASE_URL }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
