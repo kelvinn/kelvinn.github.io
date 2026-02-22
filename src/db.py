@@ -25,7 +25,11 @@ def _get_engine():
 
     database_url = _get_database_url()
     if database_url:
-        _engine = create_engine(database_url, pool_pre_ping=True)
+        # Set server_version_info for CockroachDB compatibility
+        dialect_options = {}
+        if database_url.startswith("postgresql://") or database_url.startswith("postgres://"):
+            dialect_options["postgresql"] = {"server_version_info": (15, 1)}
+        _engine = create_engine(database_url, pool_pre_ping=True, dialect_options=dialect_options)
     else:
         logger.warning("DATABASE_URL not set, using in-memory SQLite")
         _engine = create_engine(
