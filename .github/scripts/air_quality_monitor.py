@@ -802,26 +802,23 @@ def check_air_quality_risk(burns: List[Burn], wind_forecast: List[Dict]) -> Dict
                 risk_reasons.append(f"Fire NW of Sydney with {', '.join(risk_winds)} winds forecast")
 
         if at_risk:
-            # Perform regional AQI validation to confirm smoke detection
+            # Perform regional AQI validation to confirm smoke is actually being detected
             validation_result = check_regional_aqi_validation(direction, matching_winds)
 
-            risk_factor = {
-                "burn": burn.to_dict(),
-                "reasons": risk_reasons,
-                "matching_winds": matching_winds,
-                "wind_forecast": relevant_forecasts[:5],  # First 5 forecasts
-                "regional_validation": validation_result
-            }
-
-            # Only add to risk factors if validation passes OR validation is unavailable
-            # This reduces false positives from fires that aren't actually producing smoke
-            if validation_result.get("validated") or not validation_result.get("validated", False):
-                # Include all risks but note validation status
+            # Only add to risk factors if regional validation passes (AQI > 50 in expected region)
+            # This ensures we have both: fire reported AND elevated AQI in the outer region
+            if validation_result.get("validated"):
+                risk_factor = {
+                    "burn": burn.to_dict(),
+                    "reasons": risk_reasons,
+                    "matching_winds": matching_winds,
+                    "wind_forecast": relevant_forecasts[:5],  # First 5 forecasts
+                    "regional_validation": validation_result
+                }
                 risk_factors.append(risk_factor)
             else:
-                # Still include but mark as unvalidated for awareness
-                risk_factor["validation_note"] = "Regional AQI validation failed - smoke not yet detected"
-                risk_factors.append(risk_factor)
+                # Log but don't add to risk factors - no notification needed
+                logger.info(f"Skipping risk factor for {burn.title}: {validation_result.get('validation_summary', 'Validation failed')}")
 
     return {
         "at_risk": len(risk_factors) > 0,
@@ -889,8 +886,12 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
     """
     Send notification if air quality risk is detected.
 
+    Notifications are sent when:
+    1. Current AQI in North Sydney exceeds threshold (35), OR
+    2. A fire is reported AND wind would blow smoke toward Sydney AND regional AQI > 50
+
     Args:
-        risk_data: Forecast risk data from check_air_quality_risk()
+        risk_data: Forecast risk data from check_air_quality_risk() - requires regional AQI validation
         aqi_risk_data: Current AQI risk data from check_current_aqi_risk()
     """
     forecast_at_risk = risk_data.get("at_risk", False)
