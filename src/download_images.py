@@ -38,7 +38,7 @@ def download_images_from_markdown(md_file, output_folder):
     
     for img_url in matches:
         try:
-            # Get the original image
+            # Get the original image URL
             orig_img_url = modify_blogger_url(img_url)
 
             # Parse filename from URL
@@ -48,7 +48,7 @@ def download_images_from_markdown(md_file, output_folder):
             local_path = os.path.join(output_folder, slug_img_name)
             time.sleep(1) # I don't know if this is needed, but trying to prevent being rate limited.
             # Download image
-            response = requests.get(modify_blogger_url(img_url), stream=True)
+            response = requests.get(orig_img_url, stream=True)
             if response.status_code == 200:
                 with open(local_path, 'wb') as img_file:
                     for chunk in response.iter_content(1024):

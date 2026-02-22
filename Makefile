@@ -31,10 +31,10 @@ clean:
 	find . -type d -name ".ruff_cache" -exec rm -rf {} + 2>/dev/null || true
 
 migrate:
-	cd alembic && alembic upgrade head
+	alembic upgrade head
 
 migrate-create:
-	cd alembic && alembic revision --autogenerate -m "$(MESSAGE)"
+	alembic revision --autogenerate -m "$(MESSAGE)"
 
 run-air-quality:
 	python .github/scripts/air_quality_monitor.py

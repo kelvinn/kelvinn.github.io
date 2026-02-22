@@ -25,6 +25,6 @@ jobs:
 
       - name: Run database migrations
         run: |
-          cd alembic && alembic upgrade head
+          alembic upgrade head
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
