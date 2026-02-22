@@ -1,8 +1,7 @@
 import datetime
 from garmindb import GarminConnectConfigManager
-from garmindb.garmindb import GarminSummaryDb, DaysSummary, MonitoringDb, MonitoringHeartRate, Sleep, GarminDb, Stress, Attributes, Device, DeviceInfo, File, Weight, RestingHeartRate, DailySummary, MonitoringDb, MonitoringInfo, MonitoringHeartRate, MonitoringIntensity, MonitoringClimb, Monitoring, \
+from garmindb.garmindb import Sleep, GarminDb, Stress, Attributes, Device, DeviceInfo, Weight, RestingHeartRate, DailySummary, MonitoringDb, MonitoringInfo, MonitoringHeartRate, MonitoringIntensity, MonitoringClimb, Monitoring, \
     MonitoringRespirationRate, MonitoringPulseOx
-from garmindb.summarydb import DaysSummary, SummaryDb
 import pandas as pd
 from pandas_gbq import to_gbq
 
