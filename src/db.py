@@ -25,11 +25,7 @@ def _get_engine():
 
     database_url = _get_database_url()
     if database_url:
-        # Set server_version to avoid detection issues with CockroachDB
-        connect_args = {}
-        if database_url.startswith("postgresql://") or database_url.startswith("postgres://"):
-            connect_args["server_version"] = (15, 1)
-        _engine = create_engine(database_url, pool_pre_ping=True, connect_args=connect_args)
+        _engine = create_engine(database_url, pool_pre_ping=True)
     else:
         logger.warning("DATABASE_URL not set, using in-memory SQLite")
         _engine = create_engine(

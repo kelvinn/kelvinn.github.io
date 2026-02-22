@@ -49,12 +49,7 @@ def run_migrations_online() -> None:
 
     url = config.get_main_option("sqlalchemy.url")
 
-    # Add server_version to connect_args for CockroachDB compatibility
-    connect_args = {}
-    if url and (url.startswith("postgresql://") or url.startswith("postgres://")):
-        connect_args["server_version"] = (15, 1)
-
-    connectable = create_engine(url, poolclass=pool.NullPool, connect_args=connect_args)
+    connectable = create_engine(url, poolclass=pool.NullPool)
 
     with connectable.connect() as connection:
         context.configure(
