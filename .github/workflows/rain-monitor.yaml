@@ -1,0 +1,120 @@
+name: Rain Monitor
+
+on:
+  # Run every 10 minutes from 7:00am to 6:50pm (hour 7-18)
+  schedule:
+    - cron: '*/10 7-18 * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+  # Also run on push to main (for testing)
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/scripts/rain_monitor.py'
+      - '.github/workflows/rain-monitor.yaml'
+
+permissions:
+  contents: read
+
+jobs:
+  monitor-rain:
+    runs-on: ubuntu-latest
+    env:
+      WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+      WEATHERSTACK_API_KEY: ${{ secrets.WEATHERSTACK_API_KEY }}
+      REDIS_URL: ${{ secrets.REDIS_URL }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests redis
+
+      - name: Run rain monitor
+        id: monitor
+        run: python .github/scripts/rain_monitor.py
+        continue-on-error: true
+
+      - name: Check for alerts
+        id: check_alerts
+        run: |
+          if [ -f .context/rain_alert.json ]; then
+            echo "alert_detected=true" >> $GITHUB_OUTPUT
+            echo "::warning::Rain alert detected!"
+          else
+            echo "alert_detected=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send Pushover notification
+        if: steps.check_alerts.outputs.alert_detected == 'true'
+        run: |
+          if [ -n "${{ secrets.PUSHOVER_API_KEY }}" ] && [ -n "${{ secrets.PUSHOVER_USER_KEY }}" ]; then
+            # Read the alert data
+            ALERT_DATA=$(cat .context/rain_alert.json)
+
+            # Get probabilities
+            PROB_4H=$(echo "$ALERT_DATA" | jq -r '.probability_4h // 0')
+            PROB_90M=$(echo "$ALERT_DATA" | jq -r '.probability_90m // 0')
+            ALERT_4H=$(echo "$ALERT_DATA" | jq -r '.alert_4h // false')
+            ALERT_90M=$(echo "$ALERT_DATA" | jq -r '.alert_90m // false')
+
+            # Build the message based on alert type
+            TITLE="Rain Alert - Neutral Bay"
+
+            if [ "$ALERT_90M" = "true" ]; then
+              MESSAGE="🌧️ HIGH PRIORITY: ${PROB_90M}% chance of rain in the next 90 minutes!"
+            elif [ "$ALERT_4H" = "true" ]; then
+              MESSAGE="🌂 Rain likely: ${PROB_4H}% chance in the next 4 hours"
+            fi
+
+            # Add source details
+            MESSAGE="${MESSAGE}"$'\n\n'"Probabilities:"
+            MESSAGE="${MESSAGE}"$'\n'"  Next 90 min: ${PROB_90M}%"
+            MESSAGE="${MESSAGE}"$'\n'"  Next 4 hours: ${PROB_4H}%"
+
+            # Add source readings
+            SOURCE_COUNT=$(echo "$ALERT_DATA" | jq -r '.sources | length')
+            if [ "$SOURCE_COUNT" -gt 0 ]; then
+              MESSAGE="${MESSAGE}"$'\n\n'"Source readings:"
+
+              # Loop through sources
+              for i in $(seq 0 $((SOURCE_COUNT - 1))); do
+                SOURCE=$(echo "$ALERT_DATA" | jq -r ".sources[$i].source // \"Unknown\"")
+                SRC_4H=$(echo "$ALERT_DATA" | jq -r ".sources[$i].probability_4h // 0")
+                SRC_90M=$(echo "$ALERT_DATA" | jq -r ".sources[$i].probability_90m // 0")
+                CURRENT=$(echo "$ALERT_DATA" | jq -r ".sources[$i].current_condition // \"Unknown\"")
+                MESSAGE="${MESSAGE}"$'\n'"  ${SOURCE}: 4h=${SRC_4H}%, 90m=${SRC_90M}% (current: ${CURRENT})"
+              done
+            fi
+
+            # Add BOM radar URL
+            BOM_RADAR="https://radar.bom.gov.au/radar/IDR713.png"
+            MESSAGE="${MESSAGE}"$'\n\n'"BOM Radar: ${BOM_RADAR}"
+
+            # Set priority based on alert type
+            PRIORITY=1
+            if [ "$ALERT_90M" = "true" ]; then
+              PRIORITY=2  # Higher priority for 90min alert
+            fi
+
+            # Send to Pushover
+            curl -X POST "https://api.pushover.net/1/messages.json" \
+              -d "token=${{ secrets.PUSHOVER_API_KEY }}" \
+              -d "user=${{ secrets.PUSHOVER_USER_KEY }}" \
+              -d "title=$TITLE" \
+              -d "message=$MESSAGE" \
+              -d "priority=$PRIORITY"
+          else
+            echo "PUSHOVER_API_KEY or PUSHOVER_USER_KEY not set, skipping Pushover notification"
+          fi
