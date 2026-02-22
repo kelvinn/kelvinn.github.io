@@ -50,9 +50,9 @@ def run_migrations_online() -> None:
     url = config.get_main_option("sqlalchemy.url")
 
     # For CockroachDB: patch psycopg2 to handle non-standard version string
-    import psycopg2.extensions
+    import psycopg2
 
-    original_connect = psycopg2.extensions.connect
+    original_connect = psycopg2.connect
 
     def patched_connect(*args, **kwargs):
         conn = original_connect(*args, **kwargs)
@@ -62,7 +62,7 @@ def run_migrations_online() -> None:
             conn.server_version_info = (15, 0, 1)
         return conn
 
-    psycopg2.extensions.connect = patched_connect
+    psycopg2.connect = patched_connect
 
     # Create engine
     connectable = create_engine(url, poolclass=pool.NullPool)

@@ -28,9 +28,9 @@ def _get_engine():
         _engine = create_engine(database_url, pool_pre_ping=True)
 
         # For CockroachDB: patch psycopg2 to handle non-standard version string
-        import psycopg2.extensions
+        import psycopg2
 
-        original_connect = psycopg2.extensions.connect
+        original_connect = psycopg2.connect
 
         def patched_connect(*args, **kwargs):
             conn = original_connect(*args, **kwargs)
@@ -40,7 +40,7 @@ def _get_engine():
                 conn.server_version_info = (15, 0, 1)
             return conn
 
-        psycopg2.extensions.connect = patched_connect
+        psycopg2.connect = patched_connect
     else:
         logger.warning("DATABASE_URL not set, using in-memory SQLite")
         _engine = create_engine(
