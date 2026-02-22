@@ -12,15 +12,7 @@ logger = logging.getLogger(__name__)
 
 # Database URL from environment - use lazy evaluation to handle tests
 def _get_database_url():
-    db_url = os.getenv("DATABASE_URL")
-    if db_url:
-        # CockroachDB accepts PostgreSQL protocol but needs cockroachdb dialect
-        # to avoid version detection issues
-        if db_url.startswith("postgresql://"):
-            db_url = db_url.replace("postgresql://", "cockroachdb://", 1)
-        elif db_url.startswith("postgres://"):
-            db_url = db_url.replace("postgres://", "cockroachdb://", 1)
-    return db_url
+    return os.getenv("DATABASE_URL")
 
 # Engine is created lazily
 _engine = None
@@ -33,7 +25,11 @@ def _get_engine():
 
     database_url = _get_database_url()
     if database_url:
-        _engine = create_engine(database_url, pool_pre_ping=True)
+        # Set server_version to avoid detection issues with CockroachDB
+        connect_args = {}
+        if database_url.startswith("postgresql://") or database_url.startswith("postgres://"):
+            connect_args["server_version"] = (15, 1)
+        _engine = create_engine(database_url, pool_pre_ping=True, connect_args=connect_args)
     else:
         logger.warning("DATABASE_URL not set, using in-memory SQLite")
         _engine = create_engine(

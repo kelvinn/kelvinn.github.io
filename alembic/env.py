@@ -19,14 +19,7 @@ config = context.config
 
 # Override sqlalchemy.url from environment if set
 if os.getenv("DATABASE_URL"):
-    db_url = os.getenv("DATABASE_URL")
-    # CockroachDB accepts PostgreSQL protocol but needs cockroachdb dialect
-    # to avoid version detection issues
-    if db_url.startswith("postgresql://"):
-        db_url = db_url.replace("postgresql://", "cockroachdb://", 1)
-    elif db_url.startswith("postgres://"):
-        db_url = db_url.replace("postgres://", "cockroachdb://", 1)
-    config.set_main_option("sqlalchemy.url", db_url)
+    config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
 
 # Interpret the config file for Python logging
 if config.config_file_name is not None:
@@ -52,11 +45,16 @@ def run_migrations_offline() -> None:
 
 def run_migrations_online() -> None:
     """Run migrations in 'online' mode."""
-    connectable = engine_from_config(
-        config.get_section(config.config_ini_section, {}),
-        prefix="sqlalchemy.",
-        poolclass=pool.NullPool,
-    )
+    from sqlalchemy import create_engine
+
+    url = config.get_main_option("sqlalchemy.url")
+
+    # Add server_version to connect_args for CockroachDB compatibility
+    connect_args = {}
+    if url and (url.startswith("postgresql://") or url.startswith("postgres://")):
+        connect_args["server_version"] = (15, 1)
+
+    connectable = create_engine(url, poolclass=pool.NullPool, connect_args=connect_args)
 
     with connectable.connect() as connection:
         context.configure(

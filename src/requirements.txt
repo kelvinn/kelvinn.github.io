@@ -14,4 +14,3 @@ pytest
 ruff
 requests
 psycopg2-binary
-cockroachdb-sqlalchemy
