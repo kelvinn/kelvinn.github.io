@@ -5,19 +5,18 @@ Checks planned hazard reduction burns and wind direction to predict poor air qua
 """
 
 import os
+import sys
 import json
 import logging
 import math
-from datetime import datetime, timedelta, time
+from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 import requests
 
-try:
-    import redis
-    REDIS_AVAILABLE = True
-except ImportError:
-    REDIS_AVAILABLE = False
-    redis = None
+# Add src directory to path for db modules
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
+
+from db_notification import can_send_notification_db, record_notification_db, is_database_available
 
 # Configure logging
 logging.basicConfig(
@@ -162,43 +161,15 @@ PUSHOVER_API_KEY = os.getenv("PUSHOVER_API_KEY")
 PUSHOVER_USER_KEY = os.getenv("PUSHOVER_USER_KEY")
 PUSHOVER_API_URL = "https://api.pushover.net/1/messages.json"
 
-# Redis configuration (for rate limiting)
-REDIS_URL = os.getenv("REDIS_URL")
-REDIS_NOTIFICATION_KEY = "air_quality_monitor:last_notification"
+# Notification source name for database
+NOTIFICATION_SOURCE = "aqi"
 
 # Rate limiting: once per calendar day
-NOTIFICATION_COOLDOWN_HOURS = 24  # Fallback to 24h if Redis unavailable
+NOTIFICATION_COOLDOWN_HOURS = 24
 
 # Blackout period: no notifications between these hours (24-hour format)
 BLACKOUT_START_HOUR = 22  # 10:00 PM
 BLACKOUT_END_HOUR = 6     # 6:00 AM
-
-# Initialize Redis client
-_redis_client = None
-
-def get_redis_client():
-    """Get or create Redis client."""
-    global _redis_client
-    if _redis_client is not None:
-        return _redis_client
-
-    if not REDIS_AVAILABLE:
-        logger.warning("redis package not installed, rate limiting disabled")
-        return None
-
-    if not REDIS_URL:
-        logger.info("REDIS_URL not set, rate limiting disabled")
-        return None
-
-    try:
-        _redis_client = redis.from_url(REDIS_URL, decode_responses=True)
-        # Test connection
-        _redis_client.ping()
-        logger.info("Redis connection established")
-        return _redis_client
-    except Exception as e:
-        logger.warning(f"Failed to connect to Redis: {e}, rate limiting disabled")
-        return None
 
 
 def is_in_blackout_period() -> bool:
@@ -217,9 +188,12 @@ def is_in_blackout_period() -> bool:
         return BLACKOUT_START_HOUR <= current_hour < BLACKOUT_END_HOUR
 
 
-def can_send_notification() -> tuple[bool, str]:
+def can_send_notification(alert_type: Optional[str] = None) -> tuple[bool, str]:
     """
     Check if a notification can be sent based on rate limiting (once per day) and blackout period.
+
+    Args:
+        alert_type: Optional specific alert type (e.g., "current_aqi", "forecast_risk")
 
     Returns:
         tuple: (can_send: bool, reason: str)
@@ -228,50 +202,13 @@ def can_send_notification() -> tuple[bool, str]:
     if is_in_blackout_period():
         return False, f"Blackout period (between {BLACKOUT_START_HOUR}:00 and {BLACKOUT_END_HOUR}:00)"
 
-    # Check rate limiting with Redis
-    client = get_redis_client()
-    if client is None:
-        # No Redis, allow notification (degraded mode)
-        return True, "Rate limiting disabled (Redis unavailable)"
-
-    try:
-        today = datetime.now().date().isoformat()
-        daily_key = f"{REDIS_NOTIFICATION_KEY}:{today}"
-
-        last_notification_str = client.get(daily_key)
-        if last_notification_str is None:
-            # No notification sent today, allow
-            return True, "First notification today"
-
-        # Already sent a notification today
-        last_notification = datetime.fromisoformat(last_notification_str)
-        return False, f"Already sent notification today at {last_notification.strftime('%H:%M')}"
-
-    except Exception as e:
-        logger.warning(f"Error checking rate limit: {e}, allowing notification")
-        return True, "Rate limiting bypassed (error)"
+    # Check rate limiting with database
+    return can_send_notification_db(NOTIFICATION_SOURCE, alert_type)
 
 
-def record_notification_sent():
-    """Record that a notification was sent (once per calendar day)."""
-    client = get_redis_client()
-    if client is None:
-        return
-
-    try:
-        today = datetime.now().date().isoformat()
-        daily_key = f"{REDIS_NOTIFICATION_KEY}:{today}"
-
-        # Set key to expire at end of day (roughly 24 hours from now)
-        # This ensures the key is available for the rest of today and expires tomorrow
-        client.setex(
-            daily_key,
-            timedelta(hours=48),  # Keep for 48 hours to cover edge cases
-            datetime.now().isoformat()
-        )
-        logger.info(f"Notification recorded in Redis for {today}")
-    except Exception as e:
-        logger.warning(f"Failed to record notification: {e}")
+def record_notification_sent(alert_type: Optional[str] = None, message: str = ""):
+    """Record that a notification was sent in the database."""
+    record_notification_db(NOTIFICATION_SOURCE, message, alert_type)
 
 # North Sydney PurpleAir sensor IDs (you can add more sensors here)
 # Find sensors at: https://map.purpleair.com/
@@ -309,7 +246,6 @@ class Burn:
         lon_diff = self.longitude - SYDNEY_LON
 
         # Calculate angle from Sydney
-        import math
         angle = math.degrees(math.atan2(lat_diff, lon_diff))
         if angle < 0:
             angle += 360
@@ -387,7 +323,7 @@ def get_wind_forecast(lat: float = SYDNEY_LAT, lon: float = SYDNEY_LON) -> List[
     logger.info(f"Fetching weather forecast for {lat}, {lon}...")
 
     try:
-        url = f"https://api.openweathermap.org/data/2.5/forecast"
+        url = "https://api.openweathermap.org/data/2.5/forecast"
         params = {
             "lat": lat,
             "lon": lon,
@@ -882,7 +818,7 @@ def send_pushover_notification(title: str, message: str, priority: int = 0) -> b
         return False
 
 
-def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
+def send_notification(risk_data: Dict, aqi_risk_data: Dict = None, db_available: bool = True):
     """
     Send notification if air quality risk is detected.
 
@@ -893,6 +829,7 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
     Args:
         risk_data: Forecast risk data from check_air_quality_risk() - requires regional AQI validation
         aqi_risk_data: Current AQI risk data from check_current_aqi_risk()
+        db_available: Whether the database is available
     """
     forecast_at_risk = risk_data.get("at_risk", False)
     aqi_at_risk = aqi_risk_data.get("at_risk", False) if aqi_risk_data else False
@@ -902,6 +839,11 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
         return
 
     # Check rate limiting and blackout period before sending
+    # If database is unavailable, skip notification entirely
+    if not db_available:
+        logger.warning("Database unavailable - skipping notification")
+        return
+
     can_send, reason = can_send_notification()
     if not can_send:
         logger.info(f"Notification skipped: {reason}")
@@ -947,7 +889,7 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
         print(f"::notice::PM2.5: {aqi_data.get('pm2_5', 0):.1f} µg/m³")
 
     if forecast_at_risk:
-        print(f"::warning::FORECAST RISK: Smoke from burns may reach Sydney")
+        print("::warning::FORECAST RISK: Smoke from burns may reach Sydney")
         print(f"::notice::Wind directions forecast: {', '.join(risk_data.get('wind_directions_forecast', []))}")
 
         for risk in risk_data.get("risks", []):
@@ -1007,34 +949,29 @@ def send_notification(risk_data: Dict, aqi_risk_data: Dict = None):
         message = "\n".join(message_parts)
         # Set priority based on alert type
         priority = 2 if aqi_at_risk else 1  # Emergency for current AQI, high for forecast
+
+        # Determine alert type
+        alert_type = None
+        if aqi_at_risk and forecast_at_risk:
+            alert_type = "both"
+        elif aqi_at_risk:
+            alert_type = "current_aqi"
+        elif forecast_at_risk:
+            alert_type = "forecast_risk"
+
         if send_pushover_notification(title, message, priority):
             # Only record if notification was actually sent
-            record_notification_sent()
+            record_notification_sent(alert_type=alert_type, message=message[:500])
 
 
 def main():
     """Main execution function."""
     logger.info("Starting Air Quality Monitor check...")
 
-    # Check Redis connectivity first - fail fast if unavailable
-    if not REDIS_URL:
-        error_msg = "REDIS_URL environment variable not set. Redis is required for rate limiting."
-        logger.error(error_msg)
-        print(f"::error::{error_msg}")
-        raise SystemExit(f"Redis configuration error: {error_msg}")
-
-    if not REDIS_AVAILABLE:
-        error_msg = "redis package not installed. Install with: pip install redis"
-        logger.error(error_msg)
-        print(f"::error::{error_msg}")
-        raise SystemExit(f"Redis dependency error: {error_msg}")
-
-    redis_client = get_redis_client()
-    if redis_client is None:
-        error_msg = f"Failed to connect to Redis at {REDIS_URL}. Check that Redis is accessible."
-        logger.error(error_msg)
-        print(f"::error::{error_msg}")
-        raise SystemExit(f"Redis connection error: {error_msg}")
+    # Check database availability - if unavailable, skip notification
+    db_available = is_database_available()
+    if not db_available:
+        logger.warning("Database unavailable - notifications will be skipped")
 
     # Check current AQI in North Sydney
     current_aqi = get_current_aqi()
@@ -1072,7 +1009,7 @@ def main():
         logger.info("No forecast risk detected")
 
     # Send notification if needed (either risk type)
-    send_notification(risk_data, aqi_risk_data)
+    send_notification(risk_data, aqi_risk_data, db_available)
 
     logger.info("Air Quality Monitor check complete")
 

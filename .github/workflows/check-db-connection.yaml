@@ -1,9 +1,9 @@
-name: Check PostgreSQL Connection
+name: Check Database Connection
 
 on:
   push:
     branches:
-      - '**'
+      - "**"
   pull_request:
   workflow_dispatch:
 
@@ -26,20 +26,42 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
-      - name: Test PostgreSQL connection
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
         run: |
-          # Extract host from DATABASE_URL to use with pg_isready
-          HOST=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@([^/:]+).*|\1|')
-          PORT=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@[^:]+:([0-9]+).*|\1|' || echo "5432")
+          python -m pip install --upgrade pip
+          pip install -r src/requirements.txt
 
-          echo "Testing connection to $HOST:$PORT..."
+      - name: Test database connection
+        run: |
+          # Test connection using Python (works with CockroachDB)
+          python -c "
+          import os
+          import psycopg2
+          from urllib.parse import urlparse
+          db_url = os.getenv('DATABASE_URL')
+          parsed = urlparse(db_url)
+          print(f'Connecting to {parsed.hostname}:{parsed.port}...')
+          conn = psycopg2.connect(
+              host=parsed.hostname,
+              port=parsed.port,
+              user=parsed.username,
+              password=parsed.password,
+              dbname='neondb',
+              sslmode='require'
+          )
+          conn.close()
+          print('SUCCESS: Database connection successful')
+          "
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
-          # Try to connect using pg_isready
-          if pg_isready -h "$HOST" -p "$PORT" -U "$(echo $DATABASE_URL | sed -E 's|.*://([^@]+)@.*|\1|')"; then
-            echo "SUCCESS: PostgreSQL connection successful"
-          else
-            echo "FAILED: Could not connect to PostgreSQL"
-            exit 1
-          fi
+      - name: Run database migrations
+        run: |
+          alembic upgrade head
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}

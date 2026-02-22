@@ -5,18 +5,17 @@ Checks multiple weather sources for rain probability and sends notifications.
 """
 
 import os
+import sys
 import json
 import logging
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional
+from datetime import datetime
+from typing import Dict, Optional
 import requests
 
-try:
-    import redis
-    REDIS_AVAILABLE = True
-except ImportError:
-    REDIS_AVAILABLE = False
-    redis = None
+# Add src directory to path for db modules
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
+
+from db_notification import can_send_notification_db, record_notification_db, is_database_available
 
 # Configure logging
 logging.basicConfig(
@@ -42,9 +41,8 @@ PUSHOVER_API_KEY = os.getenv("PUSHOVER_API_KEY")
 PUSHOVER_USER_KEY = os.getenv("PUSHOVER_USER_KEY")
 PUSHOVER_API_URL = "https://api.pushover.net/1/messages.json"
 
-# Redis configuration (for rate limiting)
-REDIS_URL = os.getenv("REDIS_URL")
-REDIS_NOTIFICATION_KEY = "rain_monitor:last_notification"
+# Notification source name for database
+NOTIFICATION_SOURCE = "rain"
 
 # Rate limiting: once per calendar day
 NOTIFICATION_COOLDOWN_HOURS = 24
@@ -61,33 +59,6 @@ BOM_RADAR_URLS = {
     "256km": f"https://radar.bom.gov.au/radar/TAF/{BOM_RADAR_ID}.png",
 }
 
-# Initialize Redis client
-_redis_client = None
-
-
-def get_redis_client():
-    """Get or create Redis client."""
-    global _redis_client
-    if _redis_client is not None:
-        return _redis_client
-
-    if not REDIS_AVAILABLE:
-        logger.warning("redis package not installed, rate limiting disabled")
-        return None
-
-    if not REDIS_URL:
-        logger.info("REDIS_URL not set, rate limiting disabled")
-        return None
-
-    try:
-        _redis_client = redis.from_url(REDIS_URL, decode_responses=True)
-        _redis_client.ping()
-        logger.info("Redis connection established")
-        return _redis_client
-    except Exception as e:
-        logger.warning(f"Failed to connect to Redis: {e}, rate limiting disabled")
-        return None
-
 
 def is_in_blackout_period() -> bool:
     """Check if current time is outside operating hours (7am-6pm)."""
@@ -97,9 +68,12 @@ def is_in_blackout_period() -> bool:
     return current_hour < BLACKOUT_START_HOUR or current_hour >= BLACKOUT_END_HOUR
 
 
-def can_send_notification() -> tuple[bool, str]:
+def can_send_notification(alert_type: Optional[str] = None) -> tuple[bool, str]:
     """
     Check if a notification can be sent based on rate limiting (once per day) and blackout period.
+
+    Args:
+        alert_type: Optional specific alert type (e.g., "rain_4h", "rain_90m")
 
     Returns:
         tuple: (can_send: bool, reason: str)
@@ -108,46 +82,13 @@ def can_send_notification() -> tuple[bool, str]:
     if is_in_blackout_period():
         return False, f"Outside operating hours ({BLACKOUT_START_HOUR}:00-{BLACKOUT_END_HOUR}:00)"
 
-    # Check rate limiting with Redis
-    client = get_redis_client()
-    if client is None:
-        # No Redis, allow notification (degraded mode)
-        return True, "Rate limiting disabled (Redis unavailable)"
-
-    try:
-        today = datetime.now().date().isoformat()
-        daily_key = f"{REDIS_NOTIFICATION_KEY}:{today}"
-
-        last_notification_str = client.get(daily_key)
-        if last_notification_str is None:
-            return True, "First notification today"
-
-        last_notification = datetime.fromisoformat(last_notification_str)
-        return False, f"Already sent notification today at {last_notification.strftime('%H:%M')}"
-
-    except Exception as e:
-        logger.warning(f"Error checking rate limit: {e}, allowing notification")
-        return True, "Rate limiting bypassed (error)"
+    # Check rate limiting with database
+    return can_send_notification_db(NOTIFICATION_SOURCE, alert_type)
 
 
-def record_notification_sent():
-    """Record that a notification was sent (once per calendar day)."""
-    client = get_redis_client()
-    if client is None:
-        return
-
-    try:
-        today = datetime.now().date().isoformat()
-        daily_key = f"{REDIS_NOTIFICATION_KEY}:{today}"
-
-        client.setex(
-            daily_key,
-            timedelta(hours=48),
-            datetime.now().isoformat()
-        )
-        logger.info(f"Notification recorded in Redis for {today}")
-    except Exception as e:
-        logger.warning(f"Failed to record notification: {e}")
+def record_notification_sent(alert_type: Optional[str] = None, message: str = ""):
+    """Record that a notification was sent in the database."""
+    record_notification_db(NOTIFICATION_SOURCE, message, alert_type)
 
 
 def get_openweather_rain_probability() -> Optional[Dict]:
@@ -438,14 +379,29 @@ def send_pushover_notification(title: str, message: str, priority: int = 0, atta
         return False
 
 
-def send_rain_notification(risk_data: Dict):
-    """Send notification if rain risk is detected."""
+def send_rain_notification(risk_data: Dict, db_available: bool = True):
+    """Send notification if rain risk is detected.
+
+    Args:
+        risk_data: The risk data from check_rain_risk()
+        db_available: Whether the database is available
+    """
     if not risk_data.get("at_risk", False):
         logger.info("No rain risk detected")
         return
 
+    # If database is unavailable, skip notification
+    if not db_available:
+        logger.warning("Database unavailable - skipping notification")
+        return
+
     # Check rate limiting and blackout period
-    can_send, reason = can_send_notification()
+    # Determine alert type
+    alert_4h = risk_data.get("alert_4h", False)
+    alert_90m = risk_data.get("alert_90m", False)
+    alert_type = "rain_90m" if alert_90m else "rain_4h"
+
+    can_send, reason = can_send_notification(alert_type)
     if not can_send:
         logger.info(f"Notification skipped: {reason}")
         return
@@ -454,8 +410,6 @@ def send_rain_notification(risk_data: Dict):
 
     prob_4h = risk_data.get("probability_4h", 0)
     prob_90m = risk_data.get("probability_90m", 0)
-    alert_4h = risk_data.get("alert_4h", False)
-    alert_90m = risk_data.get("alert_90m", False)
 
     # Build alert output
     output_dir = os.path.join(os.path.dirname(__file__), "..", "..", ".context")
@@ -468,7 +422,7 @@ def send_rain_notification(risk_data: Dict):
     logger.info(f"Alert written to {output_file}")
 
     # Print to stdout for GitHub Actions
-    print(f"::warning::Rain Alert Detected for Neutral Bay!")
+    print("::warning::Rain Alert Detected for Neutral Bay!")
     print(f"::notice::4-hour probability: {prob_4h:.1f}% (threshold: {RAIN_PROBABILITY_4H_THRESHOLD}%)")
     print(f"::notice::90-minute probability: {prob_90m:.1f}% (threshold: {RAIN_PROBABILITY_90M_THRESHOLD}%)")
 
@@ -488,11 +442,11 @@ def send_rain_notification(risk_data: Dict):
     elif alert_4h:
         message_parts.append(f"🌂 Rain likely: {prob_4h:.0f}% chance in the next 4 hours")
 
-    message_parts.append(f"\nProbabilities:")
+    message_parts.append("\nProbabilities:")
     message_parts.append(f"  Next 90 min: {prob_90m:.1f}%")
     message_parts.append(f"  Next 4 hours: {prob_4h:.1f}%")
 
-    message_parts.append(f"\nSource readings:")
+    message_parts.append("\nSource readings:")
     for source in risk_data.get("sources", []):
         src_name = source.get("source", "Unknown")
         src_4h = source.get("probability_4h", 0)
@@ -508,24 +462,23 @@ def send_rain_notification(risk_data: Dict):
     priority = 2 if alert_90m else 1
 
     if send_pushover_notification(title, message, priority):
-        record_notification_sent()
+        record_notification_sent(alert_type=alert_type, message=message[:500])
 
 
 def main():
     """Main execution function."""
     logger.info("Starting Rain Monitor check for Neutral Bay...")
 
-    # Check Redis connectivity
-    if REDIS_URL and REDIS_AVAILABLE:
-        redis_client = get_redis_client()
-        if redis_client is None:
-            logger.warning("Failed to connect to Redis, continuing with rate limiting disabled")
+    # Check database availability - if unavailable, skip notification
+    db_available = is_database_available()
+    if not db_available:
+        logger.warning("Database unavailable - notifications will be skipped")
 
     # Check rain risk
     risk_data = check_rain_risk()
 
     # Send notification if needed
-    send_rain_notification(risk_data)
+    send_rain_notification(risk_data, db_available)
 
     logger.info("Rain Monitor check complete")
 
