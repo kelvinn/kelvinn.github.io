@@ -32,11 +32,14 @@ jobs:
           HOST=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@([^/:]+).*|\1|')
           PORT=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+@[^:]+:([0-9]+).*|\1|' || echo "5432")
           USER=$(echo "$DATABASE_URL" | sed -E 's|.*://([^@]+)@.*|\1|')
+          PASSWORD=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+:([^@]+)@.*|\1|')
 
           echo "Testing connection to $HOST:$PORT..."
 
-          # Try to connect using psql (works with both PostgreSQL and CockroachDB)
-          if PGPASSWORD=$(echo "$DATABASE_URL" | sed -E 's|.*://[^@]+:([^@]+)@.*|\1|') psql -h "$HOST" -p "$PORT" -U "$USER" -d postgres -c "SELECT 1" > /dev/null 2>&1; then
+          # Try to connect using psql with SSL (required for CockroachDB Cloud)
+          # Use both defaultdb and postgres as some services use different default DBs
+          if PGPASSWORD="$PASSWORD" PGSSLMODE=require psql -h "$HOST" -p "$PORT" -U "$USER" -d defaultdb -c "SELECT 1" > /dev/null 2>&1 || \
+             PGPASSWORD="$PASSWORD" PGSSLMODE=require psql -h "$HOST" -p "$PORT" -U "$USER" -d postgres -c "SELECT 1" > /dev/null 2>&1; then
             echo "SUCCESS: Database connection successful"
           else
             echo "FAILED: Could not connect to database"
