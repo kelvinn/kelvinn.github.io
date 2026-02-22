@@ -27,10 +27,10 @@ def _get_engine():
     if database_url:
         _engine = create_engine(database_url, pool_pre_ping=True)
 
-        # For CockroachDB: set server_version_info after first connection
+        # For CockroachDB: set server_version_info before dialect initialization
         from sqlalchemy import event
 
-        @event.listens_for(_engine, "connect")
+        @event.listens_for(_engine, "dbapi_connect")
         def set_server_version(dbapi_conn, connection_record):
             try:
                 dbapi_conn.server_version_info = (15, 1)

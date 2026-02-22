@@ -52,8 +52,8 @@ def run_migrations_online() -> None:
     # Create engine
     connectable = create_engine(url, poolclass=pool.NullPool)
 
-    # For CockroachDB: set server_version_info after first connection
-    @event.listens_for(connectable, "connect")
+    # For CockroachDB: set server_version_info before dialect initialization
+    @event.listens_for(connectable, "dbapi_connect")
     def set_server_version(dbapi_conn, connection_record):
         # CockroachDB version string isn't recognized, set version manually
         try:
