@@ -3,7 +3,7 @@ name: Rain Monitor
 on:
   # Run every 10 minutes from 7:00am to 6:50pm (hour 7-18)
   schedule:
-    - cron: "*/10 20-2 * * *"
+    - cron: "*/10 * * * *"
 
   # Allow manual trigger
   workflow_dispatch:
