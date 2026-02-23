@@ -3,7 +3,7 @@ name: Rain Monitor
 on:
   # Run every 10 minutes from 7:00am to 6:50pm (hour 7-18)
   schedule:
-    - cron: '*/10 7-18 * * *'
+    - cron: "*/10 20-2 * * *"
 
   # Allow manual trigger
   workflow_dispatch:
@@ -13,8 +13,8 @@ on:
     branches:
       - main
     paths:
-      - '.github/scripts/rain_monitor.py'
-      - '.github/workflows/rain-monitor.yaml'
+      - ".github/scripts/rain_monitor.py"
+      - ".github/workflows/rain-monitor.yaml"
 
 permissions:
   contents: read
@@ -34,7 +34,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
