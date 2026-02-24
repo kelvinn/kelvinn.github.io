@@ -1,6 +1,7 @@
 baseURL = 'https://www.kelvinism.com/'
 languageCode = 'en-us'
 title = "Kelvin Nicholson"
+ignoreLogs = ['warning-partial-superfluous-prefix']
 
 [permalinks]
 posts = "/:year/:month/:title"
@@ -14,7 +15,7 @@ defaultTheme = "light"
 ShowPostNavLinks = false
 
 [markup.goldmark.renderHooks.image]
-enableDefault = true
+  useEmbedded = "never"
 
 [markup.goldmark.renderHooks.link]
-enableDefault = true
+  useEmbedded = "never"
