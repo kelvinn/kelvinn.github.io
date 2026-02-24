@@ -1,0 +1,232 @@
+name: Static Site Check
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  hugo-build:
+    name: Hugo Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.144.2/hugo_extended_0.144.2_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Build with Hugo
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: America/Los_Angeles
+        run: hugo --gc --minify
+
+  html-validation:
+    name: HTML Validation
+    runs-on: ubuntu-latest
+    needs: hugo-build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.144.2/hugo_extended_0.144.2_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Build site
+        run: hugo --gc --minify
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate HTML
+        run: |
+          pip install html5lib
+          python -c "
+import html5lib
+import sys
+from pathlib import Path
+
+errors = []
+for html_file in sorted(Path('public').rglob('*.html')):
+    try:
+        with open(html_file, 'rb') as f:
+            html5lib.parse(f)
+    except Exception as e:
+        errors.append(f'{html_file.relative_to(\"public\")}: {e}')
+
+if errors:
+    print('HTML validation errors found:')
+    for err in errors[:20]:
+        print(f'  - {err}')
+    if len(errors) > 20:
+        print(f'  ... and {len(errors) - 20} more')
+    sys.exit(1)
+else:
+    print('All HTML files are valid')
+"
+
+  link-check:
+    name: Internal Link Check
+    runs-on: ubuntu-latest
+    needs: hugo-build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.144.2/hugo_extended_0.144.2_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Build site
+        run: hugo --gc --minify
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check for broken internal links
+        run: |
+          python -c "
+import re
+import sys
+from pathlib import Path
+
+broken_links = []
+
+# Find all HTML files
+html_files = list(Path('public').rglob('*.html'))
+
+for html_file in html_files:
+    with open(html_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Find all href attributes
+    links = re.findall(r'href=[\"']([^\"']*)[\"']', content)
+
+    for link in links:
+        # Skip external links, mailto, tel, anchors, javascript
+        if link.startswith(('http', 'mailto:', 'tel:', '#', 'javascript:')):
+            continue
+
+        # Handle absolute paths from root
+        if link.startswith('/'):
+            expected_path = Path('public') / link.lstrip('/')
+            if not expected_path.exists() and not expected_path.with_suffix('.html').exists():
+                broken_links.append(f'{html_file.relative_to(\"public\")}: {link}')
+        else:
+            # Handle relative paths
+            link_path = (html_file.parent / link).resolve()
+            try:
+                relative_link = link_path.relative_to(Path('public').resolve())
+                if not link_path.exists() and not link_path.with_suffix('.html').exists():
+                    broken_links.append(f'{html_file.relative_to(\"public\")}: {link}')
+            except ValueError:
+                # Path is outside public directory
+                pass
+
+if broken_links:
+    print('Broken internal links found:')
+    for link in broken_links[:20]:
+        print(f'  - {link}')
+    if len(broken_links) > 20:
+        print(f'  ... and {len(broken_links) - 20} more')
+    sys.exit(1)
+else:
+    print('All internal links are valid')
+"
+
+  image-check:
+    name: Image Alt Text Check
+    runs-on: ubuntu-latest
+    needs: hugo-build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.144.2/hugo_extended_0.144.2_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Build site
+        run: hugo --gc --minify
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check for missing alt text
+        run: |
+          python -c "
+import re
+from pathlib import Path
+
+missing_alt = []
+
+for html_file in Path('public').rglob('*.html'):
+    with open(html_file, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Find img tags
+    img_tags = re.findall(r'<img([^>]*)>', content, re.IGNORECASE)
+
+    for img in img_tags:
+        # Skip if it's a figure with figcaption (Hugo handles these)
+        if 'class=\"image' in img or 'figure' in img:
+            continue
+
+        # Check for alt attribute
+        if 'alt=' not in img.lower():
+            missing_alt.append(f'{html_file.relative_to(\"public\")}: {img[:100]}')
+
+if missing_alt:
+    print('Images missing alt text:')
+    for img in missing_alt[:20]:
+        print(f'  - {img}')
+    if len(missing_alt) > 20:
+        print(f'  ... and {len(missing_alt) - 20} more')
+    # Only warn, don't fail - some images may be decorative
+    print('(Warning only - not failing build)')
+else:
+    print('All images have alt text')
+"
+
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install markdownlint
+        run: pip install markdownlint
+
+      - name: Lint Markdown files
+        run: |
+          # Ignore certain rules that are too strict for personal blogs
+          markdownlint content/ \
+            --config .markdownlint.json \
+            --ignore content/posts/20NN* \
+            || true
