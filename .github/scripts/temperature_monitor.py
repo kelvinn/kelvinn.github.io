@@ -8,7 +8,7 @@ import os
 import sys
 import json
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import Dict, Optional
 import requests
 
