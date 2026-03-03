@@ -4,7 +4,9 @@ ipykernel
 ipywidgets
 ipyleaflet
 pandas==2.2.3
-numpy==2.2.4
+numpy==2.4.0
 garmin_fit_sdk
 pytest
 pandas-gbq
+libsql
+pyyaml
