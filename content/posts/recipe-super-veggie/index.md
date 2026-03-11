@@ -22,8 +22,7 @@ Inspired from Bryan Johnson's OG "Super Veggie" recipe, this is my version with 
 - ½ tsp black pepper, ground
 - 125g of EVOO
 - 2 tsp of turmeric
-- ½ tsp of black pepper, ground
-- ½ tsp Lite sale
+- ½ tsp Lite salt
 - ½ tsp ginger, ground
 - 1 tsp mustard powder
 - 1 tsp garlic powder
