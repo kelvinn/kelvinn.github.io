@@ -10,3 +10,6 @@ pytest
 pandas-gbq
 libsql
 pyyaml
+matplotlib==3.10.1
+matplotlib-inline
+seaborn
