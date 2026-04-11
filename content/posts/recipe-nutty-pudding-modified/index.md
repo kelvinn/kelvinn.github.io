@@ -51,6 +51,7 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1/4 tsp ground ginger
 - 1 tsp of creatine
 - 1 tsp inulin
+- 2 tbsp (~30g) green banana powder
 -  A dash black pepper
 
 #### Liquids / At Consumption Time
@@ -77,6 +78,7 @@ Almost all of this is just from Woolies or Coles, but I did buy the TMG from iHe
 12. Removed **Macadamia Nut Milk**, as I just use water. Macadamia Nut Milk is expensive in Australia.
 13. **HCP** for skin health, muscle recovery (glycine) and joint/bone support. I'm on the fence if there is enough evidence to show efficacy here, and then there is the fear of contamination during the manufacturing process. Edit: I've taken out in an effort to try and decrease my IGF-1.
 14. **Pea Protein Powder** to slightly up my protein intake. I'm currently 77kg and aim for around 125g per day, but don't track macros anymore. As we know, protein is a double edged sword: on one side we build muscle to fend off sarcopenia, an on the other side we activate MTOR which inhibits autophagy.  Edit: I've taken out in an effort to try and decrease my IGF-1.
+15. **Green Banana Powder** to try and change my gut bacteria to more butyrate producing type.
 
 ### Prep and Storage
 
@@ -91,8 +93,10 @@ I make mine rather liquid-y, and use a metal boba straw to drink it. These are l
 ![](0867C9DA-7505-4231-A9DF-6F53505297B1_1_201_a.jpeg)
 
 
+
 | Number | Change                                      | Date         |
 | ------ | ------------------------------------------- | ------------ |
+| v6     | Added green banana powder                   | 11-Apr-2026  |
 | v5     | Added spinach                               | 30-Sept-2025 |
 | v4     | Removed HCP. Added pea protein powder       | 01-Jan-2025  |
 | v3     |                                             |              |
