@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Create a heatmap showing daily stress level per week for the previous 12 weeks from today.
+Create a heatmap showing daily stress level per week for the previous 12 weeks from quarter end.
 Week of year on vertical axis, day of week on horizontal axis.
 Cells have vertical padding for better visualization.
 """

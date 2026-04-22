@@ -91,7 +91,12 @@ lower_bound = [avg - std for avg, std in zip(averages, std_devs)]
 plt.fill_between(month_dates, lower_bound, upper_bound, alpha=0.3, color='lightblue')
 
 # Customize the plot
-plt.title('Average Sleep Score per Month (2023-Present)', fontsize=16, fontweight='bold', pad=20)
+plt.title(
+    f'Average Sleep Score per Month ({start_date.strftime("%Y-%m-%d")} to {end_date.strftime("%Y-%m-%d")})',
+    fontsize=16,
+    fontweight='bold',
+    pad=20,
+)
 plt.xlabel('Month', fontsize=12, fontweight='bold')
 plt.ylabel('Average Sleep Score', fontsize=12, fontweight='bold')
 

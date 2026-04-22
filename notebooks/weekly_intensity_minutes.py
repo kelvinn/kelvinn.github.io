@@ -61,7 +61,7 @@ print(f"Exported weekly intensity data to {csv_path}")
 average_weekly_intensity = weekly_summary_full.mean()
 
 # Quarterly averages (print only, no graph)
-quarterly_mean = weekly_summary_full.resample('Q').mean()
+quarterly_mean = weekly_summary_full.resample('QE').mean()
 print("Quarterly average intensity minutes:")
 for quarter_end, value in quarterly_mean.items():
     print(f"  Quarter ending {quarter_end.date()}: {value:.2f} minutes")
@@ -72,7 +72,12 @@ weekly_summary_full.plot(kind='bar', width=0.8, color='#69b3a2', align='center')
 plt.axhline(y=800, color='r', linestyle='--', label='Weekly Target (800)')
 plt.axhline(y=average_weekly_intensity, color='g', linestyle='--', label=f'Weekly Average ({average_weekly_intensity:.0f})')
 
-plt.title('Weekly Intensity Minutes for 2025', fontsize=20, fontweight='bold', pad=20)
+plt.title(
+    f"Weekly Intensity Minutes ({start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')})",
+    fontsize=20,
+    fontweight='bold',
+    pad=20,
+)
 plt.xlabel('Week End Date')
 plt.ylabel('Total Intensity Minutes')
 plt.xticks(rotation=45, ha='right')
