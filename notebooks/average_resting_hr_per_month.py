@@ -88,8 +88,12 @@ plt.errorbar(month_dates, monthly_averages, yerr=monthly_stds,
              color='#2E86AB', ecolor='#A23B72', alpha=0.8)
 
 # Customize the plot
-plt.title('Average Resting Heart Rate per Month (2019-Present)', 
-          fontsize=20, fontweight='bold', pad=20)
+plt.title(
+    f'Average Resting Heart Rate per Month ({start_date.strftime("%Y-%m-%d")} to {end_date.strftime("%Y-%m-%d")})',
+    fontsize=20,
+    fontweight='bold',
+    pad=20,
+)
 plt.xlabel('Month', fontsize=12, fontweight='bold')
 plt.ylabel('Resting Heart Rate (BPM)', fontsize=12, fontweight='bold')
 
