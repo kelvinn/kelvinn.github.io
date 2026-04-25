@@ -1,14 +1,12 @@
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
-import datetime as dt
 import pandas as pd
 import seaborn as sns
-import os
-from datetime import datetime, timedelta
-
+from constants import quarter_end_ts, quarter_label, quarter_start_ts
 from garmindb import GarminConnectConfigManager
-from garmindb.garmindb import GarminSummaryDb, DaysSummary, MonitoringDb, MonitoringHeartRate, Sleep, GarminDb
-from garmindb.summarydb import DaysSummary, SummaryDb
+from garmindb.garmindb import GarminDb, Sleep
 
 # Set up seaborn theme
 sns.set_theme(style="whitegrid")
@@ -18,94 +16,45 @@ gc_config = GarminConnectConfigManager()
 db_params_dict = gc_config.get_db_params()
 garmin_db = GarminDb(db_params_dict)
 
-# Define quarters for 2025
-quarters = {
-    'Q1': (datetime(2025, 1, 1), datetime(2025, 3, 31)),
-    'Q2': (datetime(2025, 4, 1), datetime(2025, 6, 30)),
-    'Q3': (datetime(2025, 7, 1), datetime(2025, 9, 30)),
-    'Q4': (datetime(2025, 10, 1), datetime(2025, 12, 31))
-}
-
 # Day names in order (Monday to Sunday)
-day_names = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
-# Initialize data structure
-quarter_data = {}
+print(
+    f"Querying sleep data for {quarter_label} "
+    f"({quarter_start_ts.strftime('%Y-%m-%d')} to {quarter_end_ts.strftime('%Y-%m-%d')})..."
+)
 
-# First, let's examine the sleep data structure to find the correct attributes
-print("Examining sleep data structure...")
-start_ts = datetime(2025, 1, 1)
-end_ts = datetime(2025, 1, 7)  # Just get a week to examine structure
-sample_sleep_data = Sleep.get_for_period(garmin_db, start_ts, end_ts, Sleep)
+sleep_data = Sleep.get_for_period(garmin_db, quarter_start_ts, quarter_end_ts, Sleep)
 
-if sample_sleep_data:
-    sample_sleep = sample_sleep_data[0]
-    print(f"Sample sleep record attributes: {[attr for attr in dir(sample_sleep) if not attr.startswith('_')]}")
-    
-    # Use the correct attributes based on the output
-    date_attr = 'day'  # datetime.date object
-    score_attr = 'score'  # int value
-    
-    print(f"Using date attribute: {date_attr}")
-    print(f"Using score attribute: {score_attr}")
-else:
-    print("No sleep data found for 2025")
-    exit(1)
+if not sleep_data:
+    print("No sleep data found for configured quarter")
+    raise SystemExit(1)
 
-# Query sleep data for each quarter
-for quarter_name, (start_date, end_date) in quarters.items():
-    print(f"Querying sleep data for {quarter_name} 2025...")
-    
-    # Get sleep data for the quarter
-    sleep_data = Sleep.get_for_period(garmin_db, start_date, end_date, Sleep)
-    
-    # Initialize day of week data
-    day_scores = {day: [] for day in day_names}
-    
-    # Process each sleep record
-    for sleep_record in sleep_data:
-        sleep_score = getattr(sleep_record, score_attr, None)
-        if sleep_score is not None:
-            # Get the day of the week (0=Monday, 6=Sunday)
-            sleep_date = getattr(sleep_record, date_attr)
-            day_of_week = sleep_date.weekday()
-            day_name = day_names[day_of_week]
-            day_scores[day_name].append(sleep_score)
-    
-    # Calculate averages for each day
-    quarter_data[quarter_name] = {}
-    for day in day_names:
-        if day_scores[day]:
-            quarter_data[quarter_name][day] = np.mean(day_scores[day])
-        else:
-            quarter_data[quarter_name][day] = np.nan
-    
-    print(f"Found {len(sleep_data)} sleep records for {quarter_name}")
+# Aggregate by day of week
+day_scores = {day: [] for day in day_names}
+for sleep_record in sleep_data:
+    sleep_score = getattr(sleep_record, "score", None)
+    sleep_date = getattr(sleep_record, "day", None)
+    if sleep_score is None or sleep_date is None:
+        continue
+    day_name = day_names[sleep_date.weekday()]
+    day_scores[day_name].append(sleep_score)
 
-print("Sleep data query completed.")
+row = []
+for day in day_names:
+    values = day_scores[day]
+    row.append(np.mean(values) if values else np.nan)
 
-# Create DataFrame for heatmap - only include quarters with data
-df_data = []
-quarter_labels = []
-for quarter in ['Q1', 'Q2', 'Q3', 'Q4']:
-    row = [quarter_data[quarter][day] for day in day_names]
-    # Calculate weekly average (excluding NaN values)
-    weekly_avg = np.nanmean(row)
-    
-    # Only include quarters that have at least some data (not all NaN)
-    if not np.isnan(weekly_avg):
-        row.append(weekly_avg)
-        df_data.append(row)
-        quarter_labels.append(quarter)
+weekly_avg = np.nanmean(row)
+row.append(weekly_avg)
 
-# Create DataFrame
-columns = day_names + ['Avg']
-df = pd.DataFrame(df_data, index=quarter_labels, columns=columns)
+columns = day_names + ["Avg"]
+df = pd.DataFrame([row], index=[quarter_label], columns=columns)
 
 # Export per-quarter data to CSV
-export_df = df.reset_index()
-export_df = export_df.rename(columns={'index': 'Quarter'})
-csv_path = os.path.join('data', 'sleep_score_per_day_per_quarter.csv')
+os.makedirs("data", exist_ok=True)
+export_df = df.reset_index().rename(columns={"index": "Quarter"})
+csv_path = os.path.join("data", "sleep_score_per_day_per_quarter.csv")
 export_df.to_csv(csv_path, index=False)
 print(f"Exported per-quarter sleep score data to {csv_path}")
 
@@ -113,37 +62,31 @@ print("DataFrame created:")
 print(df)
 
 # Create the heatmap
-plt.figure(figsize=(12, 4))  # Adjusted figure size for abbreviated day names
+plt.figure(figsize=(12, 2.6))
+sns.heatmap(
+    df,
+    xticklabels=columns,
+    yticklabels=True,
+    annot=True,
+    fmt=".1f",
+    cmap="YlOrRd",
+    cbar_kws={"label": "Average Sleep Score"},
+    linewidths=0.5,
+    square=True,
+    cbar=True,
+)
 
-# Create custom colormap
-cmap = sns.cm.rocket_r
+plt.title(
+    f"Average Sleep Score per Day of Week ({quarter_label})",
+    fontsize=16,
+    fontweight="bold",
+    pad=20,
+)
+plt.xlabel("Day of Week", fontsize=14)
+plt.ylabel("Quarter", fontsize=14)
+plt.xticks(rotation=0, ha="center")
 
-# # Create the heatm
-ax = sns.heatmap(df,
-                    xticklabels=columns,
-                    yticklabels=True,
-                    annot=True,
-                    fmt='.1f',
-                    cmap='YlOrRd',
-                    cbar_kws={'label': 'Average Sleep Score'},
-                    linewidths=0.5,
-                    square=True,  # Make cells square
-                    cbar=True)
-
-# Customize the plot
-plt.title('Average Sleep Score per Day of Week by Quarter (2025)', fontsize=16, fontweight='bold', pad=20)
-plt.xlabel('Day of Week', fontsize=14)
-plt.ylabel('Quarter', fontsize=14)
-
-# Set horizontal x-axis labels
-plt.xticks(rotation=0, ha='center')
-
-# Adjust layout to prevent label cutoff
 plt.tight_layout()
-
-# Create images directory if it doesn't exist
-os.makedirs('images', exist_ok=True)
-
-# Save the plot
-plt.savefig('images/sleep_score_per_day.png', dpi=300, bbox_inches='tight')
+os.makedirs("images", exist_ok=True)
+plt.savefig("images/sleep_score_per_day.png", dpi=300, bbox_inches="tight")
 print("Heatmap saved as 'images/sleep_score_per_day.png'")

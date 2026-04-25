@@ -98,8 +98,12 @@ plt.errorbar(month_dates, monthly_averages, yerr=monthly_stds,
              color='#2E86AB', ecolor='#A23B72', alpha=0.8)
 
 # Customize the plot
-plt.title('Average Active Calories per Month (2019-Present)', 
-          fontsize=16, fontweight='bold', pad=20)
+plt.title(
+    f'Average Active Calories per Month ({start_date.strftime("%Y-%m-%d")} to {end_date.strftime("%Y-%m-%d")})',
+    fontsize=16,
+    fontweight='bold',
+    pad=20,
+)
 plt.xlabel('Month', fontsize=12, fontweight='bold')
 plt.ylabel('Active Calories', fontsize=12, fontweight='bold')
 
