@@ -10,138 +10,198 @@ tags:
 ---
 ### Reflection
 
-Add a reflection here. 
+- What defined this quarter overall?
+- What worked better than expected?
+- What was harder than expected?
+- What mindset or principle helped most?
+
 ### Focus Areas
 
-As usual, there are four areas that I wanted to focus on:
+As usual, there are five areas that I wanted to focus on:
 
-- *Improve fitness* by training more. My goal is to maintain 800 intensity minutes on average per week.
-- *Sleep better* by improving my sleep hygiene and experimenting with meal timing.
-- *Reduce stress* by examining meal composition and avoiding anything that might impact my sleep
-- *Improve biomarkers* by looking at my nutrition, as well as the above items.
+- *Improve fitness* by training more and maintaining consistent weekly load.
+- *Sleep better* by improving sleep hygiene and meal timing.
+- *Reduce stress* by reinforcing daily recovery habits.
+- *Improve biomarkers* by focusing on measurable lab outcomes.
+- *Improve nutrition* by making food choices that support all of the above.
 
-Overall most metrics are improving, as we can see with the following key metrics.
-  ![Summary Chart](2025-q3-health-review/summary.png)
+Overall quarter snapshot:
+![Summary Chart](summary.png)
 
-Over the previous year we can see that:
+Quarter-over-quarter highlights:
 
-* {INSERT TREND ANALYSIS FOR THE YEAR}
+- Which 3-5 metrics changed the most versus last quarter?
+- Which changes were improvements, and which were regressions?
+- What likely explains those shifts?
 
-We can see correlations for the quarter with the below correlation matrix.
-  ![Correlation Matrix](2025-q3-health-review/correlation_matrix.png)
+Correlations for the quarter:
+![Correlation Matrix](correlation_matrix.png)
 
-Looking at the correlations, here's an analysis of the relationships and whether they make intuitive sense:
+Correlation notes:
 
-- {INSERT ANY CORRELATION FINDINGS}
+- Which 2-3 correlations stood out most?
+- Which relationships felt intuitive vs surprising?
+- What should be tested next quarter based on these correlations?
 
-Let’s go through how I did this quarter and what I experimented with.
+Let us go through how the quarter looked by focus area.
+
 #### Improve Fitness
 
 ##### Goals  
+- Decrease RHR ❓
 
-- Average intensity minutes (Garmin) of 800 or above ✅
-- Improve Vo2Max ✅
-- Decrease RHR ✅
 ##### Analysis
 
-I look at intensity minutes as a way to make sure I'm getting enough fitness, regardless if I'm running or at the gym or kayaking. My goal is 800 minutes per week 80% of the weeks, which is significantly higher than the commonly recommended 150 minutes per week. The reason I've chosen to say "80% of the weeks" is because there are some weeks when I need to travel for work, and it is harder to reach this target.
-  ![Weekly Intensity Minutes](2025-q3-health-review/weekly_intensity_minutes.png)
+How did load, recovery, and output trend this quarter?
+![Weekly Intensity Minutes](weekly_intensity_minutes.png)
 
-My average intensity minutes for the quarter was was [INSERT AVERAGE INTENSITY MINUTES] per week.
+- What were average and median weekly intensity minutes?
+- How many weeks met the target threshold?
 
-In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient recovery.
-  ![Average Resting HR Per Month](2025-q3-health-review/average_resting_hr_per_month.png)
+How did resting heart rate trend?
+![Average Resting HR Per Month](average_resting_hr_per_month.png)
 
-And let's look at Vo2Max, which stayed roughly the same this quarter.
-  ![Monthly Vo2Max Values](2025-q3-health-review/monthly_vo2_max.png)
+- What changed compared with last quarter, and what may have driven it?
+- If VO2 max data exists, summarize how it moved and why.
+
 ##### Experiments
 
-[INSERT ANY EXPERIMENTS]
+- What fitness experiments or adjustments were run?
+- What was the observed effect of each?
+- What will be kept, changed, or dropped next quarter?
 
 #### Improve Sleep
+
 ##### Goals
+
 - Keep average sleep score about 80 ❓
+
 ##### Analysis
 
-Let's have a look at my sleep scores since buying my Garmin:
-  ![Average Sleep Score Per Month](2025-q3-health-review/average_sleep_score_per_month.png)
+How did sleep trend across the quarter?
+![Average Sleep Score Per Month](average_sleep_score_per_month.png)
 
-And then when comparing each quarter this year we can see some trends with each day of the week. 
+Day-of-week sleep pattern:
+![Average Sleep Score Per Day of Week](sleep_score_per_day.png)
 
-![Average Sleep Score Per Month](2025-q3-health-review/sleep_score_per_day.png)
+- What were the best and weakest days?
+- What patterns appeared around bedtime routine, meals, or schedule?
 
-{INSERT ANY SLEEP SCORE OBSERVATIONS}
 ##### Experiments
 
-I conducted a few sleep-related experiments this quarter, including:
+- What sleep-related experiments were tried?
+- Which appeared helpful, neutral, or unhelpful?
+- What sleep protocol will continue next quarter?
 
-- {INSERT ANY SLEEP EXPERIMENTS}
-
-Overall I'd consider these experiments a success.
 #### Decrease Stress
 
 ##### Goals
-- Decrease stress ❌
+
+- Decrease stress ❓
+
 ##### Analysis
-Let's have a look at stress per quarter grouped by day of the week:
 
-![Average Stress per DoW per QTR](2025-q3-health-review/stress_level_per_day.png)
+How did stress levels trend this quarter?
+![Average Stress per Day of Week](stress_level_per_day.png)
 
-[INSERT OBSERVATION ABOUT STRESS]
+Weekly stress trend:
+![Average Stress Level per Week](stress_level_per_week.png)
 
-  
-![Average Stress Level Per Week QTR](2025-q3-health-review/stress_level_per_week.png)
-
-{INSERT OBSERVATIONS ABOUT STRESS}
-##### Experiments
-
-No stress-related experiments for the quarter.
-
-#### Improve Nutrition
+- Which days or periods were highest stress?
+- Was stress elevated consistently or concentrated in specific weeks?
+- What likely drivers showed up this quarter?
 
 ##### Experiments
 
-{ADD ANY EXPERIMENTS}
+- What stress interventions were attempted?
+- What changed after each intervention?
+- What stress-management habits will carry forward?
+
 #### Improve Biomarkers
 
 ##### Goals
-- {TOP 3 BIOMARKERS TO FOCUS ON FROM PREVIOUS QTR}
+
+- Which biomarkers were priorities this quarter?
+- For each: target direction (increase/decrease/maintain) and reason.
+
 ##### Analysis
 
-{INSERT CHART FROM PHENOAGE}
+How did priority biomarkers change?
+
+| Biomarker | Prior | Latest | Trend | Status |
+| --- | --- | --- | --- | --- |
+| **[Biomarker 1]** | [Prior result + date] | [Latest result + date] | [Direction] | [In range / Out of range] |
+| **[Biomarker 2]** | [Prior result + date] | [Latest result + date] | [Direction] | [In range / Out of range] |
+| **[Biomarker 3]** | [Prior result + date] | [Latest result + date] | [Direction] | [In range / Out of range] |
+
+Optional biological age / risk view:
+![PhenoAge or Similar](phenoage.png)
+
+Key interpretation:
+
+- Wins: Which biomarker changes were most meaningful?
+- Concerns: Which markers worsened or remain out of range?
+- Follow-ups: Which tests need rechecking next quarter?
+
 ##### Experiments
 
-I did have a fair amount of experimentation here, including:
+- What interventions were linked to biomarker changes?
+- Which interventions likely contributed positively?
+- Which interventions should be revised or stopped?
 
-- {INSERT ANY EXPERIMENTS}
+#### Improve Nutrition
+
+##### Goals
+
+- What nutrition goals were set this quarter?
+- What intake or behavior targets supported those goals?
+
+##### Analysis
+
+- What eating patterns were most consistent this quarter?
+- Which nutrition habits were easiest vs hardest to maintain?
+- Which choices likely supported or hindered sleep, stress, and biomarkers?
+
+##### Experiments
+
+- What nutrition experiments were run?
+- What outcomes were observed?
+- What nutrition changes should continue next quarter?
 
 ### Supplement Stack
 
 Some principles that I tried to follow:
 
-- Avoid bill burden; prefer food over pills.
-- Wait until a supplement is on the ITP supported interventions page, or has significant evidence behind it
-- Have a biomarker in mind that a certain supplement will change
+- Avoid pill burden; prefer food over pills.
+- Wait until a supplement is on the ITP supported interventions page, or has significant evidence behind it.
+- Have a biomarker in mind that a certain supplement will change.
 
-And here's what was in my stack for Q3:
+Current stack:
 
-{INSERT SUPPLEMENT STACK TABLE}
+| Morning | Evening | Ad Hoc |
+| --- | --- | --- |
+| [Supplement + dose] | [Supplement + dose] | [Supplement + dose] |
+| [Supplement + dose] | [Supplement + dose] | [Supplement + dose] |
+| [Supplement + dose] | [Supplement + dose] | [Supplement + dose] |
 
-Here are the changes that I made this quarter:
+##### Experiments
 
-{INSERT ANY SUPPLEMENT CHANGES}
+- Which supplements were added, removed, or dose-adjusted this quarter?
+- What motivated each change?
+- Which changes appeared beneficial, neutral, or negative?
 
-I may add some of these back in at a later date.
 ### Focus For Next Quarter
 
-{INSERT GENERAL COMMENTS}
+Priorities for next quarter:
 
-I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:
+- Which 3-5 priorities matter most, and why?
+- What specific habits or actions will support each priority?
+- What might block execution, and how will that be managed?
 
-- {INSERT SUPPLEMENT CHANGES}
+Biomarker retest checklist:
 
-When it comes to focussing on specific biomarkers, here's what is on my mind:
-
-{TOP BIOMARKERS TO FOCUS ON}
+- Which biomarkers need retesting?
+- What date window is targeted for each retest?
+- What result would count as improvement for each marker?
 
 Wish me luck!
