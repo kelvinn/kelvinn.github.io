@@ -20,20 +20,19 @@ As usual, there are four areas that I wanted to focus on:
 - *Reduce stress* by examining meal composition and avoiding anything that might impact my sleep
 - *Improve biomarkers* by looking at my nutrition, as well as the above items.
 
-
 Overall most metrics are improving, as we can see with the following key metrics.
   ![Summary Chart](2025-q3-health-review/summary.png)
 
 Over the previous year we can see that:
 
-* [Insert trends for the year]
+* {INSERT TREND ANALYSIS FOR THE YEAR}
 
 We can see correlations for the quarter with the below correlation matrix.
   ![Correlation Matrix](2025-q3-health-review/correlation_matrix.png)
 
 Looking at the correlations, here's an analysis of the relationships and whether they make intuitive sense:
 
-- [Insert correlatoins]
+- {INSERT ANY CORRELATION FINDINGS}
 
 Let’s go through how I did this quarter and what I experimented with.
 #### Improve Fitness
@@ -61,7 +60,7 @@ And let's look at Vo2Max, which stayed roughly the same this quarter.
 
 #### Improve Sleep
 ##### Goals
-- Keep average sleep score about 80 ✅
+- Keep average sleep score about 80 ❓
 ##### Analysis
 
 Let's have a look at my sleep scores since buying my Garmin:
@@ -71,12 +70,12 @@ And then when comparing each quarter this year we can see some trends with each 
 
 ![Average Sleep Score Per Month](2025-q3-health-review/sleep_score_per_day.png)
 
-[INSERT ANY OBSERVATIONS]
+{INSERT ANY SLEEP SCORE OBSERVATIONS}
 ##### Experiments
 
 I conducted a few sleep-related experiments this quarter, including:
 
-- [INSERT ANY SLEEP EXPERIMENTS]
+- {INSERT ANY SLEEP EXPERIMENTS}
 
 Overall I'd consider these experiments a success.
 #### Decrease Stress
@@ -93,48 +92,28 @@ Let's have a look at stress per quarter grouped by day of the week:
   
 ![Average Stress Level Per Week QTR](2025-q3-health-review/stress_level_per_week.png)
 
-[INSERT OBSERVATIONS ABOUT STRESS]
+{INSERT OBSERVATIONS ABOUT STRESS}
 ##### Experiments
 
 No stress-related experiments for the quarter.
 
 #### Improve Nutrition
 
-##### Goals
-- Stick below 20g of saturated fat per day ❌
-- Get between 110 and 125g of protein per day ✅
-- Get over 70g of fibre per day ✅
-- Meet 100% coverage of micronutrients ❌
+##### Experiments
 
-
-![](Pasted%20image%2020250925075523.png)
-
-![](Pasted%20image%2020250925075628.png)
-
-So, why am I not at 100%? Let's look at areas where I can improve.
-
-[LOOK AT AREAS TO IMPROVE]
-
+{ADD ANY EXPERIMENTS}
 #### Improve Biomarkers
 
 ##### Goals
-- Decrease IGF-1 ❓
-- Decrease MCV ❓
-- Decrease RDW ❓
-- Increase Albumin ❓
-- Decrease hsCRP ❓
+- {TOP 3 BIOMARKERS TO FOCUS ON FROM PREVIOUS QTR}
 ##### Analysis
 
-[INSERT CHART FROM PHENOAGE]:
-
-(Blood panels still to be taken)
+{INSERT CHART FROM PHENOAGE}
 ##### Experiments
 
 I did have a fair amount of experimentation here, including:
 
-- [INSERT ANY EXPERIMENtS]
-
-Because of subscribing to Cronometer I'm able to get more reports, such as my Nutrient Balances and Nutrient Targets, which have encouraged me to tweak the food I eat.
+- {INSERT ANY EXPERIMENTS}
 
 ### Supplement Stack
 
@@ -146,37 +125,23 @@ Some principles that I tried to follow:
 
 And here's what was in my stack for Q3:
 
-| Morning                     | Evening           | Ad Hoc            |
-| --------------------------- | ----------------- | ----------------- |
-| Fish Oil (6g)               | Astaxanthin (7mg) | Iron (20mg)       |
-| Niacin (50mg)               | Glycine (5g)      | Vitamin C (500mg) |
-| Calcium (333mg)             | NAC (1g)          |                   |
-| Vitamin D (4000 IU)         | Tart Cherry       |                   |
-| Vitamin K2 mk7 (100mcg)     |                   |                   |
-| B12 Methyl (1000 mcg)       |                   |                   |
-| B12 (Liposomal, 1000 mcg)   |                   |                   |
-| L-Methylfolate  (1000 mcg)  |                   |                   |
-| B5 P-5-P (50mg)             |                   |                   |
-| Lysine (1g)                 |                   |                   |
-| Zinc (5mg)                  |                   |                   |
-| Hyaluronic Acid (200mg)     |                   |                   |
-| Iodine (150mcg)             |                   |                   |
-| Creatine (5g - in smoothie) |                   |                   |
-| TMG (1.5g - in smoothie)    |                   |                   |
-| Boron (1mg - in smoothie)   |                   |                   |
-| Taurine (3g - in smoothie)  |                   |                   |
+{INSERT SUPPLEMENT STACK TABLE}
 
 Here are the changes that I made this quarter:
 
-* [INSERT ANY CHANGES]
+{INSERT ANY SUPPLEMENT CHANGES}
 
 I may add some of these back in at a later date.
 ### Focus For Next Quarter
 
-[INSERT GENERAL COMMENTS]
+{INSERT GENERAL COMMENTS}
 
 I'm contemplating dropping the following supplements, as it appears as though I am getting enough from food:
 
-- [INSERT SUPPLEMENT CHANGES]
+- {INSERT SUPPLEMENT CHANGES}
+
+When it comes to focussing on specific biomarkers, here's what is on my mind:
+
+{TOP BIOMARKERS TO FOCUS ON}
 
 Wish me luck!
