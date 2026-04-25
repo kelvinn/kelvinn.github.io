@@ -135,18 +135,39 @@ Nutrition exports were not part of the generated `2026-q1-health-review/data` ou
 ##### Goals
 
 - Decrease IGF-1 ❓
-- Decrease MCV ❓
-- Decrease RDW ❓
+- Decrease MCV ✅
+- Decrease RDW ⚠️
 - Increase Albumin ❓
-- Decrease hsCRP ❓
+- Decrease hsCRP ✅
 
 ##### Analysis
 
-No blood biomarker data was included in the generated files for this quarter. Add updated panel results and interpretation when available.
+The latest biomarker follow-up happened after quarter-end, so the April 22-23, 2026 results are compared against the most recent prior available result for each marker.
+
+| Biomarker | Prior | Latest | Trend | Status |
+|-----------|-------|--------|-------|--------|
+| **IGF-1** | 35 nmol/L (2025-10-10) | Not retested in Apr 2026 | No update | Previously above range |
+| **MCV** | 101 fL (2026-01-17) | 95 fL (2026-04-22) | Decreased | Back in range |
+| **RDW** | 12.5% (2026-01-17) | 12.8% (2026-04-22) | Increased slightly | Still in range |
+| **Albumin** | 45 g/L (2026-01-17) | Not retested in Apr 2026 | No update | Previously in range |
+| **hsCRP** | 0.2 mg/L (2025-10-10) | <0.2 mg/L (2026-04-22) | Stable to slightly improved | Excellent / in range |
+
+- **MCV** was the clearest win, dropping from 101 fL on January 17, 2026 to 95 fL on April 22, 2026 and returning to the normal range.
+- **hsCRP** remained very low, improving slightly from 0.2 mg/L on October 10, 2025 to <0.2 mg/L on April 22, 2026.
+- **RDW** moved slightly in the wrong direction from 12.5% to 12.8%, but it still sits comfortably within range.
+- **IGF-1** still needs retesting, since the latest result on file remains the elevated 35 nmol/L result from October 10, 2025.
+- **Albumin** cannot be reassessed yet because it was not rerun in the April 2026 follow-up.
+
+Additional April follow-up items also stood out:
+
+- Free testosterone fell from 260 pmol/L on March 28, 2025 to 183 pmol/L on April 23, 2026 and is now below range.
+- SHBG improved from 68 nmol/L on March 28, 2025 to 57 nmol/L on April 23, 2026, but it remains above range.
+- FSH increased from 7.7 IU/L on March 28, 2025 to 10 IU/L on April 23, 2026, putting it slightly above range.
+- Total testosterone fell from 20.5 nmol/L on March 28, 2025 to 13.1 nmol/L on April 23, 2026, though it remains in range.
 
 ##### Experiments
 
-No biomarker-linked experiment notes were captured in this dataset.
+The CSV captures lab results rather than a structured intervention log, so there is less context here on what changed between draws. What the follow-up does show is that the earlier MCV issue improved materially, while the April hormone panel created a new area to keep an eye on in the next cycle.
 
 ### Supplement Stack
 
@@ -166,4 +187,4 @@ Based on Q1 2026 data, key priorities for Q2 2026 are:
 - Recover average daily steps back into 10k+ territory.
 - Prioritize stress-reduction habits on mid-week days (especially Wed/Thu).
 - Bring average sleep score back above 80 consistently.
-- Re-run nutrition and biomarker workflows so those sections can be quantified.
+- Re-test IGF-1 and Albumin, confirm that the MCV improvement holds, and follow up the Free Testosterone / SHBG / FSH pattern.
