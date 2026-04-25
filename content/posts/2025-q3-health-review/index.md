@@ -22,7 +22,7 @@ As usual, there are four areas that I wanted to focus on:
 
 Overall most metrics are improving, as we can see with the following key metrics.
 
-![Summary Chart](summary.png)
+![Summary Chart](content/posts/2025-q3-health-review/summary.png)
 
 Over the previous year we can see that:
 
@@ -32,7 +32,7 @@ Over the previous year we can see that:
 * Body Battery (max/day) is increasing ✅
 
 We can see correlations for the quarter with the below correlation matrix.
-  ![Correlation Matrix](correlation_matrix.png)
+  ![Correlation Matrix](content/posts/2025-q3-health-review/correlation_matrix.png)
 
 Looking at the correlations, here's an analysis of the relationships and whether they make intuitive sense:
 
@@ -56,12 +56,12 @@ I look at intensity minutes as a way to make sure I'm getting enough fitness, re
 For example, on one of my trips to China I only managed 348 minutes. Part of this was due to accidentally leaving my running kit in my check-in bag, but there was no way I was going to hit 800 minutes: I was working 12 - 16 hour days every day, and it was 40C outside, so could only run on a treadmill.
 
 Similarly, I had a bit of a drop when I traveled to Singapore on a Monday, and back on Thursday. I did manage more intensity minutes, but did not meet my 800 minute goal.
-  ![Weekly Intensity Minutes](weekly_intensity_minutes.png)
+  ![Weekly Intensity Minutes](content/posts/2025-q3-health-review/weekly_intensity_minutes.png)
 
 My average intensity minutes for Q3 was 846 per week.
 
 In addition to load we can have a look at Resting Heart Rate, as that is often related to sufficient recovery.
-  ![Average Resting HR Per Month](average_resting_hr_per_month.png)
+  ![Average Resting HR Per Month](content/posts/2025-q3-health-review/average_resting_hr_per_month.png)
 
 And let's look at Vo2Max, which stayed roughly the same this quarter.
   ![Monthly Vo2Max Values](monthly_vo2_max.png)
@@ -76,13 +76,13 @@ None
 
 Let's have a look at my sleep scores since buying my Garmin:
 
-  ![Average Sleep Score Per Month](average_sleep_score_per_month.png)
+  ![Average Sleep Score Per Month](content/posts/2025-q3-health-review/average_sleep_score_per_month.png)
 
 
 And then when comparing each quarter this year we can see some trends with each day of the week. Although this quarter has seen an improvement, it looks like something happens midweek that knocks me off my sleep game.
 
 
-![Average Sleep Score Per Month](sleep_score_per_day.png)
+![Average Sleep Score Per Month](content/posts/2025-q3-health-review/sleep_score_per_day.png)
 
 My trip to China was also challenging for my sleep, even though I managed to avoid an overnight flight. My hotel room the first night was too close to the elevators and kept me up - until I requested to change rooms at 11PM - but even then I never really got back to sleep.
 
@@ -105,12 +105,12 @@ Overall I'd consider these experiments a success.
 ##### Analysis
 Let's have a look at stress per quarter grouped by day of the week:
 
-![Average Stress per DoW per QTR](stress_level_per_day.png)
+![Average Stress per DoW per QTR](content/posts/2025-q3-health-review/stress_level_per_day.png)
 
 We can see an overall increase in stress, and the highest for the year. My stress levels on Tuesdays have decreased on average, but I think that is more likely because I slowed down going to the gym due to injury. Monday remains the least stressful day of the week; my guess here is because that is when I tend to have a rest day.
 
   
-![Average Stress Level Per Week QTR](stress_level_per_week.png)
+![Average Stress Level Per Week QTR](content/posts/2025-q3-health-review/stress_level_per_week.png)
 
 Week 31 appears to have been fairly stressful, and coincidentally I started feeling like I was fighting something the week after. At the end of Week 32 I travelled to China, and then was there for all of Week 33. The days were quite long, and I had less control over my nutrition than I normally would.
 ##### Experiments
