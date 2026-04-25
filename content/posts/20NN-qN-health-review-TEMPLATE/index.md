@@ -47,7 +47,10 @@ Let us go through how the quarter looked by focus area.
 
 #### Improve Fitness
 
-##### Goals  
+##### Goals
+
+- Average intensity minutes (Garmin) of 800 or above ❓
+- Improve Vo2Max ❓
 - Decrease RHR ❓
 
 ##### Analysis
