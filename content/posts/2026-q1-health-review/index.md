@@ -157,8 +157,7 @@ Additional April follow-up items also stood out:
 
 When plugging this into PhenoAge we get a view like this:
 
-![[Pasted image 20260428065308.png]]
-
+![](Pasted%20image%2020260428065308.png)
 This is a slight improvement from my previous test, but a slight decrease from two tests ago.
 
 ##### Experiments
