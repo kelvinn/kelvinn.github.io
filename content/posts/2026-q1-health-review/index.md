@@ -142,8 +142,10 @@ The latest biomarker follow-up happened after quarter-end, so the April 22, 2026
 | **Albumin** | 45 g/L (2026-01-17)    | Not retested in Apr 2026 | No update                   | Previously in range    |
 | **hsCRP**   | 0.2 mg/L (2025-10-10)  | <0.2 mg/L (2026-04-22)   | Stable to slightly improved | Excellent / in range   |
 
+Successes and focus:
+
 - **MCV** was the clearest win, dropping from 101 fL on January 17, 2026 to 95 fL on April 22, 2026 and returning to the normal range.
-- **hsCRP** remained very low, improving slightly from 0.2 mg/L on October 10, 2025 to <0.2 mg/L on April 22, 2026.
+- **hsCRP** remained very low
 - **RDW** moved slightly in the wrong direction from 12.5% to 12.8%, but it still sits comfortably within range.
 - **IGF-1** still needs retesting, since the latest result on file remains the elevated 35 nmol/L result from October 10, 2025.
 - **Albumin** cannot be reassessed yet because it was not rerun in the April 2026 follow-up.
