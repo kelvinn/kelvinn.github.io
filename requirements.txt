@@ -1,4 +1,4 @@
-garmindb>=3.6.3
+git+https://github.com/kelvinn/GarminDB.git
 snakemd==2.2.0
 ipykernel
 ipywidgets
