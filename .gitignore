@@ -31,3 +31,4 @@ notebooks/checkup.log
 content/posts/.obsidian/graph.json
 notebooks/data/correlation_data.pkl
 .context/
+notebooks/turso_sync.env
