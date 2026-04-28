@@ -1,0 +1,18 @@
+{
+  "name": "healthdata-turso-sync",
+  "private": true,
+  "type": "module",
+  "description": "Node runtime for Turso sync runner",
+  "scripts": {
+    "turso-sync": "tsx turso_sync.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tursodatabase/sync": "^0.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
