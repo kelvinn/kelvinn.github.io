@@ -207,16 +207,35 @@ Some principles that I tried to follow:
 
 ### Focus For Next Quarter
 
+
 Based on Q1 2026 data, key priorities for Q2 2026 are:
+
+##### General
+
+* Prioritise stress-reduction habits on mid-week days (especially Wed/Thu).
+- Bring average sleep score back above 80 consistently.
+
+##### Exercise
 
 - Rebuild weekly training volume gradually toward the 800-minute target.
 - Recover average daily steps back into 10k+ territory.
-- Prioritise stress-reduction habits on mid-week days (especially Wed/Thu).
-- Bring average sleep score back above 80 consistently.
-- Re-test IGF-1 and Albumin, confirm that the MCV improvement holds, and follow up the Free Testosterone / SHBG / FSH pattern.
+- Re-introduce strength training. Although I've got some international travel coming up, the schedule I plan to follow for the quarter is as follows:
 
-From a supplement perspective, next quarter I'll be changing:
+	- Monday: Recovery run
+	- Tuesday: [DFW](https://www.strongfirst.com/dry-fighting-weight/) + 4x4
+	- Wednesday: BSS + Swings + Easy
+	- Thursday: DFW + Easy
+	- **Friday: Rings + Easy**
+	- Saturday: DFW + Threshold
+	- Sunday: Long run
+##### Biomarkers
+
+- Re-test IGF-1 and Albumin, confirm that the MCV improvement holds, and follow up the Free Testosterone / SHBG / FSH pattern.
+##### Supplements
 
 * Dropping Astaxanthin, as evidence seems to indicate it is most beneficial for skin health, and I'd rather use the money to buy sunscreen. I may change if my inflammation levels rise, but they have historically been low.
-* I'm combining my B-vitamins into a single pill to reduce burden.
+* I'm combining my B-vitamins into a single pill to reduce burden. The combined pill I've found does have some niacin in it, so I'll be keeping an eye on my sleep scores after starting to take it.
 * Dropping Tart Cherry and Melatonin from my night time ritual - I don't think they're significantly helping with sleep quality.
+
+
+
