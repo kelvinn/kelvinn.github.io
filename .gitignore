@@ -23,6 +23,8 @@ content/posts/.DS_Store
 notebooks/weekly.log
 notebooks/garmindb.log
 notebooks/credentials.yaml
+notebooks/turso_sync.env
+/notebooks/node_modules
 /notebooks/images
 .DS_Store
 notebooks/checkup.log
