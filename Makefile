@@ -1,4 +1,4 @@
-.PHONY: help install test lint format clean migrate run-air-quality run-rain check-db
+.PHONY: help install test lint format clean migrate check-db
 
 help:
 	@echo "Available commands:"
@@ -8,8 +8,6 @@ help:
 	@echo "  make format           - Format code (ruff)"
 	@echo "  make clean            - Clean up cache files"
 	@echo "  make migrate          - Run database migrations"
-	@echo "  make run-air-quality  - Run air quality monitor"
-	@echo "  make run-rain         - Run rain monitor"
 	@echo "  make check-db         - Check database connection"
 
 install:
@@ -35,12 +33,6 @@ migrate:
 
 migrate-create:
 	alembic revision --autogenerate -m "$(MESSAGE)"
-
-run-air-quality:
-	python .github/scripts/air_quality_monitor.py
-
-run-rain:
-	python .github/scripts/rain_monitor.py
 
 check-db:
 	@echo "Checking database connection..."

@@ -1,137 +1,22 @@
-# Air Quality Monitor
+# Weather Monitor Scripts
 
-This script monitors NSW hazard reduction burns, current air quality, and weather forecasts to predict and detect poor air quality in Sydney.
+This directory contains scripts used by GitHub Actions weather alerts.
 
-## How it works
+## Active script
 
-The script runs every 30 minutes via GitHub Actions and checks two types of risks:
+- `temperature_monitor.py`: checks Neutral Bay forecast temperatures and emits an alert when tomorrow's max is above the configured threshold.
 
-### 1. Current Air Quality Alert
-- Gets real-time air quality data for North Sydney from **PurpleAir** sensors
-- Averages readings from nearby outdoor sensors
-- Alerts if PM2.5 exceeds **35 µg/m³**
-- **Higher priority** notifications (priority=2) for immediate action
+## Required GitHub Secrets
 
-### 2. Forecast Risk Alert
-- Fetches current hazard reduction burns from NSW RFS (Rural Fire Service)
-- Gets the 24-hour wind forecast for Sydney
-- Applies a heuristic to determine if smoke will blow toward Sydney:
-  - Fire in the west + eastern winds → risk
-  - Fire in the south + northern winds → risk
-  - Fire in the north + southern winds → risk
-  - **Now supports all 8 directions**: N, NE, E, SE, S, SW, W, NW
-- Uses trigonometry for precise directional calculations (not just N/S/E/W)
+Add these secrets in repository Actions settings:
 
-### 3. Regional AQI Validation (New)
-- When a fire + wind combination indicates risk, validates that smoke is actually being detected
-- Checks AQI sensors in the expected affected region (outskirts of Sydney)
-- Uses **PurpleAir** sensors at 8 key locations surrounding Sydney:
-  - **North**: Brooklyn/Central Coast area
-  - **South**: Wollongong area
-  - **East**: Northern Beaches/Coast
-  - **West**: Blue Mountains
-  - **Northeast**: Newport/Avalon
-  - **Southeast**: Royal National Park area
-  - **Northwest**: Hawkesbury
-  - **Southwest**: Campbelltown/Wollondilly
-- Threshold: **AQI > 50** indicates smoke is present in the expected region
+- `PUSHOVER_API_KEY`
+- `PUSHOVER_USER_KEY`
+- `WEATHER_API_KEY`
+- `WEATHERSTACK_API_KEY` (optional fallback provider)
 
-This validation reduces false positives by confirming that:
-- A fire in SE Sydney with northerly winds actually shows elevated AQI in SE Sydney
-- A fire in the Blue Mountains with easterly winds actually shows elevated AQI in western Sydney
-- Etc.
-
-## Setup
-
-### Required GitHub Secrets
-
-Add the following secrets to your GitHub repository (Settings → Secrets and variables → Actions):
-
-#### For Notifications: `PUSHOVER_API_KEY` and `PUSHOVER_USER_KEY`
-
-1. Sign up at [Pushover.net](https://pushover.net)
-2. Create an application to get your API Token
-3. Find your User Key on the Pushover dashboard
-4. Add them as secrets:
-   - `PUSHOVER_API_KEY` - Your application's API token
-   - `PUSHOVER_USER_KEY` - Your user key
-
-#### For Current Air Quality: `PURPLEAIR_API_KEY`
-
-Get an API key from [PurpleAir](https://develop.purpleair.com/api/keys):
-1. Sign up or log in at purpleair.com
-2. Go to your account settings and create an API key
-3. Add it as a secret named `PURPLEAIR_API_KEY`
-
-**This is required for current AQI checks.** Without this key, the script will skip AQI monitoring.
-
-#### For Wind Forecast: `WEATHER_API_KEY` (Optional)
-
-Get a free API key from [OpenWeatherMap](https://openweathermap.org/api):
-1. Sign up at openweathermap.org
-2. Navigate to API keys
-3. Copy your API key
-4. Add it as a secret named `WEATHER_API_KEY`
-
-This is only used for wind forecasts. Without this key, the script will skip forecast risk checks.
-
-### Testing
-
-You can test the workflow manually:
-1. Go to Actions tab in GitHub
-2. Select "Air Quality Monitor"
-3. Click "Run workflow"
-
-## Local Development
-
-To run the script locally with Pushover notifications:
+## Local run
 
 ```bash
-# Install dependencies
-pip install requests
-
-# Set the API keys
-export PURPLEAIR_API_KEY="your-purpleair-key"
-export WEATHER_API_KEY="your-openweathermap-key"
-export PUSHOVER_API_KEY="your-pushover-api-key"
-export PUSHOVER_USER_KEY="your-pushover-user-key"
-
-# Run the script
-python .github/scripts/air_quality_monitor.py
+python .github/scripts/temperature_monitor.py
 ```
-
-The script will send Pushover notifications directly when:
-1. Current PM2.5 in North Sydney exceeds 35 µg/m³ (priority=2 - emergency)
-2. Fires + wind direction predict smoke reaching Sydney (priority=1 - high)
-
-## Data Sources
-
-- **NSW RFS API**: `https://www.rfs.nsw.gov.au/api/feeds/`
-- **Air Quality**: PurpleAir Sensor Network API
-- **Weather Forecast**: OpenWeatherMap 5-day/3-hour forecast API
-
-## Alert Output
-
-When a risk is detected, the script:
-1. Creates a JSON alert file in `.context/air_quality_alert.json`
-2. Prints GitHub Actions annotations (visible in workflow logs)
-3. Sends a Pushover notification:
-   - **Priority 2** (emergency) for current AQI alerts
-   - **Priority 1** (high) for forecast risk alerts
-
-## AQI Thresholds
-
-The script uses two different AQI thresholds:
-
-1. **Current AQI Alert**: PM2.5 > **35 µg/m³** in North Sydney
-   - This is the immediate alert threshold for Sydney metro area
-   - Modify with `AQI_THRESHOLD` constant
-
-2. **Regional Validation**: AQI > **50** in outskirts
-   - Used to validate smoke detection based on fire location + wind direction
-   - This confirms that smoke is actually present where expected
-   - Modify with `REGIONAL_AQI_THRESHOLD` constant
-
-## Finding PurpleAir Sensors
-
-To see what sensors are available in your area, visit [PurpleAir Map](https://map.purpleair.com/). The script automatically finds all outdoor sensors within the search radius around North Sydney.
