@@ -1,8 +1,8 @@
 ---
-title: 20NN QN Health Review
+title: 2026 Q2 Health Review
 date: 2026-06-30T00:00:00+10:00
 draft: true
-url: /20NN/NN/20NN-qN-health-review.html
+url: /2026/06/2026-q2-health-review.html
 tags:
   - longevity
   - health
