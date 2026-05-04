@@ -4,7 +4,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from constants import quarter_end_ts, quarter_label, quarter_start_ts
+from constants import (
+    day_of_week_quarter_range_label,
+    day_of_week_quarter_start_ts,
+    day_of_week_quarter_windows,
+    quarter_end_ts,
+)
 from garmindb import GarminConnectConfigManager
 from garmindb.garmindb import GarminDb, Sleep
 
@@ -18,38 +23,62 @@ garmin_db = GarminDb(db_params_dict)
 
 # Day names in order (Monday to Sunday)
 day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+columns = day_names + ["Avg"]
+
+
+def quarter_index_for_date(value):
+    return (value.year * 4) + ((value.month - 1) // 3)
+
+
+def mean_or_nan(values):
+    return np.mean(values) if values else np.nan
+
+
+quarter_by_index = {
+    quarter_index_for_date(window.start_dt): window
+    for window in day_of_week_quarter_windows
+}
 
 print(
-    f"Querying sleep data for {quarter_label} "
-    f"({quarter_start_ts.strftime('%Y-%m-%d')} to {quarter_end_ts.strftime('%Y-%m-%d')})..."
+    f"Querying sleep data for {day_of_week_quarter_range_label} "
+    f"({day_of_week_quarter_start_ts.strftime('%Y-%m-%d')} to "
+    f"{quarter_end_ts.strftime('%Y-%m-%d')})..."
 )
 
-sleep_data = Sleep.get_for_period(garmin_db, quarter_start_ts, quarter_end_ts, Sleep)
+sleep_data = Sleep.get_for_period(
+    garmin_db, day_of_week_quarter_start_ts, quarter_end_ts, Sleep
+)
 
 if not sleep_data:
-    print("No sleep data found for configured quarter")
+    print("No sleep data found for configured quarter range")
     raise SystemExit(1)
 
-# Aggregate by day of week
-day_scores = {day: [] for day in day_names}
+# Aggregate by quarter and day of week.
+quarter_day_scores = {
+    window.label: {day: [] for day in day_names}
+    for window in day_of_week_quarter_windows
+}
 for sleep_record in sleep_data:
     sleep_score = getattr(sleep_record, "score", None)
     sleep_date = getattr(sleep_record, "day", None)
     if sleep_score is None or sleep_date is None:
         continue
+    quarter_window = quarter_by_index.get(quarter_index_for_date(sleep_date))
+    if quarter_window is None:
+        continue
     day_name = day_names[sleep_date.weekday()]
-    day_scores[day_name].append(sleep_score)
+    quarter_day_scores[quarter_window.label][day_name].append(sleep_score)
 
-row = []
-for day in day_names:
-    values = day_scores[day]
-    row.append(np.mean(values) if values else np.nan)
+rows = []
+quarter_labels = []
+for window in day_of_week_quarter_windows:
+    row = [mean_or_nan(quarter_day_scores[window.label][day]) for day in day_names]
+    weekly_avg = np.nanmean(row) if not np.isnan(row).all() else np.nan
+    row.append(weekly_avg)
+    rows.append(row)
+    quarter_labels.append(window.label)
 
-weekly_avg = np.nanmean(row)
-row.append(weekly_avg)
-
-columns = day_names + ["Avg"]
-df = pd.DataFrame([row], index=[quarter_label], columns=columns)
+df = pd.DataFrame(rows, index=quarter_labels, columns=columns)
 
 # Export per-quarter data to CSV
 os.makedirs("data", exist_ok=True)
@@ -62,7 +91,7 @@ print("DataFrame created:")
 print(df)
 
 # Create the heatmap
-plt.figure(figsize=(12, 2.6))
+plt.figure(figsize=(12, 8.5))
 sns.heatmap(
     df,
     xticklabels=columns,
@@ -74,10 +103,11 @@ sns.heatmap(
     linewidths=0.5,
     square=True,
     cbar=True,
+    mask=df.isna(),
 )
 
 plt.title(
-    f"Average Sleep Score per Day of Week ({quarter_label})",
+    f"Average Sleep Score per Day of Week ({day_of_week_quarter_range_label})",
     fontsize=16,
     fontweight="bold",
     pad=20,
