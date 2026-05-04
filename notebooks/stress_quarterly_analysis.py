@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Create a heatmap showing average stress level per day of the week for the configured quarter.
-Quarter on y-axis (single row), days of week on x-axis, with average column.
+Create a heatmap showing average stress level per day of the week by quarter.
+Quarter on y-axis, days of week on x-axis, with average column.
 """
 
 import os
@@ -10,7 +10,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-from constants import quarter_end_ts, quarter_label, quarter_start_ts
+from constants import (
+    day_of_week_quarter_range_label,
+    day_of_week_quarter_start_ts,
+    day_of_week_quarter_windows,
+    quarter_end_ts,
+)
 from garmindb import GarminConnectConfigManager
 from garmindb.summarydb import DaysSummary, SummaryDb
 
@@ -18,15 +23,24 @@ from garmindb.summarydb import DaysSummary, SummaryDb
 sns.set_theme(style="whitegrid")
 
 
+def quarter_index_for_date(value):
+    return (value.year * 4) + ((value.month - 1) // 3)
+
+
+def mean_or_nan(values):
+    return np.mean(values) if values else np.nan
+
+
 def create_quarterly_stress_heatmap():
-    """Create a heatmap for configured-quarter average stress levels per day of week."""
+    """Create a heatmap for average stress levels per day of week by quarter."""
 
     os.makedirs("images", exist_ok=True)
     os.makedirs("data", exist_ok=True)
 
     print(
-        f"Creating quarterly stress analysis for {quarter_label} "
-        f"({quarter_start_ts.strftime('%Y-%m-%d')} to {quarter_end_ts.strftime('%Y-%m-%d')})..."
+        f"Creating quarterly stress analysis for {day_of_week_quarter_range_label} "
+        f"({day_of_week_quarter_start_ts.strftime('%Y-%m-%d')} to "
+        f"{quarter_end_ts.strftime('%Y-%m-%d')})..."
     )
 
     gc_config = GarminConnectConfigManager()
@@ -34,54 +48,57 @@ def create_quarterly_stress_heatmap():
     sum_db = SummaryDb(db_params_dict, False)
 
     day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    column_labels = day_names + ["Avg"]
+    quarter_by_index = {
+        quarter_index_for_date(window.start_dt): window
+        for window in day_of_week_quarter_windows
+    }
 
-    data_period = DaysSummary.get_for_period(sum_db, quarter_start_ts, quarter_end_ts, DaysSummary)
+    data_period = DaysSummary.get_for_period(
+        sum_db, day_of_week_quarter_start_ts, quarter_end_ts, DaysSummary
+    )
     stress_data = [entry for entry in data_period if entry.stress_avg is not None]
 
     print(f"Found {len(stress_data)} days with stress data")
     if not stress_data:
-        print("No stress data available for configured quarter")
+        print("No stress data available for configured quarter range")
         return None, [], []
 
-    stress_by_day = {day: [] for day in range(7)}
+    stress_by_quarter_day = {
+        window.label: {day: [] for day in range(7)}
+        for window in day_of_week_quarter_windows
+    }
     for entry in stress_data:
-        stress_by_day[entry.day.weekday()].append(entry.stress_avg)
+        quarter_window = quarter_by_index.get(quarter_index_for_date(entry.day))
+        if quarter_window is None:
+            continue
+        stress_by_quarter_day[quarter_window.label][entry.day.weekday()].append(
+            entry.stress_avg
+        )
 
-    quarter_values = []
-    for day in range(7):
-        values = stress_by_day[day]
-        quarter_values.append(np.mean(values) if values else np.nan)
-
-    all_values = [value for values in stress_by_day.values() for value in values]
-    quarter_avg = np.mean(all_values) if all_values else np.nan
-    quarter_values.append(quarter_avg)
-
-    heatmap_matrix = [quarter_values]
-    quarter_labels = [quarter_label]
-
-    export_df = pd.DataFrame(
-        [
-            {
-                "quarter": quarter_label,
-                "Mon": quarter_values[0],
-                "Tue": quarter_values[1],
-                "Wed": quarter_values[2],
-                "Thu": quarter_values[3],
-                "Fri": quarter_values[4],
-                "Sat": quarter_values[5],
-                "Sun": quarter_values[6],
-                "Avg": quarter_values[7],
-            }
+    heatmap_matrix = []
+    quarter_labels = []
+    for window in day_of_week_quarter_windows:
+        quarter_day_values = stress_by_quarter_day[window.label]
+        quarter_values = [mean_or_nan(quarter_day_values[day]) for day in range(7)]
+        all_values = [
+            value
+            for values in quarter_day_values.values()
+            for value in values
         ]
-    )
+        quarter_values.append(mean_or_nan(all_values))
+        heatmap_matrix.append(quarter_values)
+        quarter_labels.append(window.label)
+
+    export_df = pd.DataFrame(heatmap_matrix, columns=column_labels)
+    export_df.insert(0, "quarter", quarter_labels)
     csv_path = os.path.join("data", "stress_quarterly_per_quarter.csv")
     export_df.to_csv(csv_path, index=False)
     print(f"Exported quarterly stress data to {csv_path}")
 
     heatmap_array = np.array(heatmap_matrix)
-    column_labels = day_names + ["Avg"]
 
-    plt.figure(figsize=(8, 3.5))
+    plt.figure(figsize=(12, 8.5))
     sns.heatmap(
         heatmap_array,
         xticklabels=column_labels,
@@ -97,13 +114,13 @@ def create_quarterly_stress_heatmap():
     )
 
     plt.title(
-        f"Average Stress Level per Day of Week ({quarter_label})",
-        fontsize=14,
+        f"Average Stress Level per Day of Week ({day_of_week_quarter_range_label})",
+        fontsize=16,
         fontweight="bold",
         pad=20,
     )
-    plt.xlabel("Day of Week", fontsize=12)
-    plt.ylabel("Quarter", fontsize=12)
+    plt.xlabel("Day of Week", fontsize=14)
+    plt.ylabel("Quarter", fontsize=14)
     plt.xticks(rotation=0)
     plt.yticks(rotation=0)
 
