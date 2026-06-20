@@ -62,6 +62,8 @@ For Q1 2026:
 - Median weekly intensity minutes: **209**
 - Weeks >= 800 minutes: **0 of 13**
 
+We can see that Q1 was an absolutely terrible month from an exercise perspective, given my injury. I found that swimming seemingly didn't move the needle from a load perspective, which could very well be because my HR wasn't detected well.
+
 In addition to load, resting heart rate is useful for interpreting adaptation and recovery.
   ![Average Resting HR Per Month](average_resting_hr_per_month.png)
 
