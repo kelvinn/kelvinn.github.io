@@ -13,17 +13,19 @@ tags:
 The primary goal here is to increase my lycopene consumption, as I was noticing this is one of the antioxidants that Cronometer reported as me needing to focus on.
 ### Ingredients
 
-* 2 cans chickpeas, drained & rinsed
+* Olive oil (a lot)
+* 4 cans chickpeas, drained & rinsed
 - 2 large onions, finely chopped
 - 6 cloves garlic, minced
-- 2-inch piece ginger, grated
 - 140g tomato paste (concentrated lycopene hit)
 - 2 cans (400g) crushed tomatoes
 - 2–4 tbsp extra virgin olive oil (for absorption)
+- 1 bay leaf
 - 2 tsp cumin seeds
 - 2 tsp ground coriander
 - 2 tsp turmeric
 - 2 tsp garam masala
+- ½ tsp ginger powder
 - 1 tsp chili powder (optional, adjust to spice tolerance)
 - 1/2 tsp black pepper (enhances absorption of antioxidants)
 - 1 tsp lite salt
@@ -31,11 +33,12 @@ The primary goal here is to increase my lycopene consumption, as I was noticing 
 
 ## Directions
 
-* Heat olive oil in a pan. Add cumin seeds and let them sizzle. Add onions, cook until golden.  Stir in garlic + ginger. Cook 1–2 min until fragrant.  
+* Take out immersion blender so you don't forget to blend it.
+* Heat olive oil in a pan. Add cumin seeds and let them sizzle. Add onions, cook until golden.  Stir in garlic. Cook 1–2 min until fragrant.  
 * Add tomato paste, crushed tomatoes, and spices (coriander, turmeric, garam masala, chilli, black pepper). Simmer ~10 min → this cooking step boosts lycopene bioavailability.  
-* Add 1/2 cup water.
+* Add 1 cup water.
 * Use an immersion blender to blend
-* Stir in chickpeas. Simmer 15–20 min, stirring occasionally, until thickened.  
+* Stir in chickpeas and bay leaf. Simmer 15–20 min, stirring occasionally, until thickened.  Remove bay leaf.
 * Finish with lemon juice and lots of fresh coriander.
 * Divide in to 6 servings.
 
