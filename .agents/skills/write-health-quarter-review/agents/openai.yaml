@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Health Quarter Review"
+  short_description: "Write quarterly health review posts"
+  default_prompt: "Use $write-health-quarter-review to write or update the current quarterly health review post."
