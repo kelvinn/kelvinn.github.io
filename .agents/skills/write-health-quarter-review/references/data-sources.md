@@ -42,6 +42,7 @@ Expected generated CSVs under `data/`:
 ## LifeDB MCP
 
 Use LifeDB for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, and activity data.
+Use only LifeDB MCP for Garmin data. Do not read GarminDB SQLite files or `~/HealthData/DBs` directly.
 
 Default workflow:
 
@@ -57,6 +58,8 @@ where calendar_date >= '2026-04-01'
 ```
 
 Include row counts in aggregate answers.
+
+For chart and CSV generation, follow `lifedb-mcp-export.md`: query LifeDB MCP, save `data/lifedb_export.json`, then render local assets from that export.
 
 ## Biomarker Google Sheet
 

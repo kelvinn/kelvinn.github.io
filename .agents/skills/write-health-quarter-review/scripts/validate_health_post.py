@@ -35,9 +35,11 @@ REQUIRED_IMAGES = [
 EXPECTED_CSVS = [
     "quarterly_metrics_raw.csv",
     "weekly_intensity_minutes_per_week.csv",
+    "average_active_calories_per_month.csv",
     "average_sleep_score_per_month.csv",
     "average_resting_hr_per_month.csv",
     "correlation_matrix.csv",
+    "monthly_vo2_max_per_month.csv",
     "stress_quarterly_per_quarter.csv",
     "sleep_score_per_day_per_quarter.csv",
     "summary_quartet_per_month.csv",

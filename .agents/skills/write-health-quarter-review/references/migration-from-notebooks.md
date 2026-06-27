@@ -1,6 +1,6 @@
 # Migration From Notebooks
 
-The current analysis pipeline lives in `notebooks/`. Treat it as the behavior source while migrating toward skill-owned scripts.
+The old analysis pipeline lives in `notebooks/`. Treat it as historical behavior reference only. New Garmin data access must use LifeDB MCP.
 
 Current wrapper:
 
@@ -29,11 +29,11 @@ Important scripts to preserve or port:
 - `average_sleep_score_per_day.py`
 - `monthly_vo2_max.py`
 
-Migration phases:
+Migration status:
 
-1. Keep using `notebooks/go.sh` through `scripts/generate_health_assets.py`.
-2. Port chart/data generation into skill scripts while matching filenames and CSV schemas.
-3. Replace direct GarminDB dependencies with LifeDB queries where possible.
-4. Delete `notebooks/` only after generated assets and validation match the old pipeline.
+1. Chart/data rendering has moved into `scripts/generate_health_assets.py`.
+2. Garmin data extraction is defined in `lifedb-mcp-export.md` and must be done through LifeDB MCP.
+3. Direct GarminDB dependencies should not be used by this skill.
+4. `notebooks/` can be deleted for this skill once the MCP export/render path has been verified for the target quarter.
 
 When changing chart generation, keep output filenames stable so existing markdown image references continue to work.
