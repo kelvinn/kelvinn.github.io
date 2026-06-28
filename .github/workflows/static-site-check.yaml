@@ -55,29 +55,29 @@ jobs:
       - name: Validate HTML
         run: |
           pip install html5lib
-          python -c "
-import html5lib
-import sys
-from pathlib import Path
+          python - <<'PY'
+          import html5lib
+          import sys
+          from pathlib import Path
 
-errors = []
-for html_file in sorted(Path('public').rglob('*.html')):
-    try:
-        with open(html_file, 'rb') as f:
-            html5lib.parse(f)
-    except Exception as e:
-        errors.append(f'{html_file.relative_to(\"public\")}: {e}')
+          errors = []
+          for html_file in sorted(Path("public").rglob("*.html")):
+              try:
+                  with open(html_file, "rb") as f:
+                      html5lib.parse(f)
+              except Exception as e:
+                  errors.append(f"{html_file.relative_to('public')}: {e}")
 
-if errors:
-    print('HTML validation errors found:')
-    for err in errors[:20]:
-        print(f'  - {err}')
-    if len(errors) > 20:
-        print(f'  ... and {len(errors) - 20} more')
-    sys.exit(1)
-else:
-    print('All HTML files are valid')
-"
+          if errors:
+              print("HTML validation errors found:")
+              for err in errors[:20]:
+                  print(f"  - {err}")
+              if len(errors) > 20:
+                  print(f"  ... and {len(errors) - 20} more")
+              sys.exit(1)
+          else:
+              print("All HTML files are valid")
+          PY
 
   link-check:
     name: Internal Link Check
@@ -102,54 +102,48 @@ else:
 
       - name: Check for broken internal links
         run: |
-          python -c "
-import re
-import sys
-from pathlib import Path
+          python - <<'PY'
+          import re
+          import sys
+          from pathlib import Path
 
-broken_links = []
+          broken_links = []
 
-# Find all HTML files
-html_files = list(Path('public').rglob('*.html'))
+          html_files = list(Path("public").rglob("*.html"))
 
-for html_file in html_files:
-    with open(html_file, 'r', encoding='utf-8') as f:
-        content = f.read()
+          for html_file in html_files:
+              with open(html_file, "r", encoding="utf-8") as f:
+                  content = f.read()
 
-    # Find all href attributes
-    links = re.findall(r'href=[\"']([^\"']*)[\"']', content)
+              links = re.findall(r'href=["\']([^"\']*)["\']', content)
 
-    for link in links:
-        # Skip external links, mailto, tel, anchors, javascript
-        if link.startswith(('http', 'mailto:', 'tel:', '#', 'javascript:')):
-            continue
+              for link in links:
+                  if link.startswith(("http", "mailto:", "tel:", "#", "javascript:")):
+                      continue
 
-        # Handle absolute paths from root
-        if link.startswith('/'):
-            expected_path = Path('public') / link.lstrip('/')
-            if not expected_path.exists() and not expected_path.with_suffix('.html').exists():
-                broken_links.append(f'{html_file.relative_to(\"public\")}: {link}')
-        else:
-            # Handle relative paths
-            link_path = (html_file.parent / link).resolve()
-            try:
-                relative_link = link_path.relative_to(Path('public').resolve())
-                if not link_path.exists() and not link_path.with_suffix('.html').exists():
-                    broken_links.append(f'{html_file.relative_to(\"public\")}: {link}')
-            except ValueError:
-                # Path is outside public directory
-                pass
+                  if link.startswith("/"):
+                      expected_path = Path("public") / link.lstrip("/")
+                      if not expected_path.exists() and not expected_path.with_suffix(".html").exists():
+                          broken_links.append(f"{html_file.relative_to('public')}: {link}")
+                  else:
+                      link_path = (html_file.parent / link).resolve()
+                      try:
+                          link_path.relative_to(Path("public").resolve())
+                          if not link_path.exists() and not link_path.with_suffix(".html").exists():
+                              broken_links.append(f"{html_file.relative_to('public')}: {link}")
+                      except ValueError:
+                          pass
 
-if broken_links:
-    print('Broken internal links found:')
-    for link in broken_links[:20]:
-        print(f'  - {link}')
-    if len(broken_links) > 20:
-        print(f'  ... and {len(broken_links) - 20} more')
-    sys.exit(1)
-else:
-    print('All internal links are valid')
-"
+          if broken_links:
+              print("Broken internal links found:")
+              for link in broken_links[:20]:
+                  print(f"  - {link}")
+              if len(broken_links) > 20:
+                  print(f"  ... and {len(broken_links) - 20} more")
+              sys.exit(1)
+          else:
+              print("All internal links are valid")
+          PY
 
   image-check:
     name: Image Alt Text Check
@@ -174,39 +168,35 @@ else:
 
       - name: Check for missing alt text
         run: |
-          python -c "
-import re
-from pathlib import Path
+          python - <<'PY'
+          import re
+          from pathlib import Path
 
-missing_alt = []
+          missing_alt = []
 
-for html_file in Path('public').rglob('*.html'):
-    with open(html_file, 'r', encoding='utf-8') as f:
-        content = f.read()
+          for html_file in Path("public").rglob("*.html"):
+              with open(html_file, "r", encoding="utf-8") as f:
+                  content = f.read()
 
-    # Find img tags
-    img_tags = re.findall(r'<img([^>]*)>', content, re.IGNORECASE)
+              img_tags = re.findall(r"<img([^>]*)>", content, re.IGNORECASE)
 
-    for img in img_tags:
-        # Skip if it's a figure with figcaption (Hugo handles these)
-        if 'class=\"image' in img or 'figure' in img:
-            continue
+              for img in img_tags:
+                  if 'class="image' in img or "figure" in img:
+                      continue
 
-        # Check for alt attribute
-        if 'alt=' not in img.lower():
-            missing_alt.append(f'{html_file.relative_to(\"public\")}: {img[:100]}')
+                  if "alt=" not in img.lower():
+                      missing_alt.append(f"{html_file.relative_to('public')}: {img[:100]}")
 
-if missing_alt:
-    print('Images missing alt text:')
-    for img in missing_alt[:20]:
-        print(f'  - {img}')
-    if len(missing_alt) > 20:
-        print(f'  ... and {len(missing_alt) - 20} more')
-    # Only warn, don't fail - some images may be decorative
-    print('(Warning only - not failing build)')
-else:
-    print('All images have alt text')
-"
+          if missing_alt:
+              print("Images missing alt text:")
+              for img in missing_alt[:20]:
+                  print(f"  - {img}")
+              if len(missing_alt) > 20:
+                  print(f"  ... and {len(missing_alt) - 20} more")
+              print("(Warning only - not failing build)")
+          else:
+              print("All images have alt text")
+          PY
 
   markdown-lint:
     name: Markdown Lint
