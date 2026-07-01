@@ -41,7 +41,7 @@ Expected generated CSVs under `data/`:
 
 ## LifeDB MCP
 
-Use LifeDB for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, and activity data.
+Use the `lifedb` MCP server at `https://lifedb.fly.dev/mcp` for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, and activity data.
 Use only LifeDB MCP for Garmin data. Do not read GarminDB SQLite files or `~/HealthData/DBs` directly.
 
 Default workflow:
