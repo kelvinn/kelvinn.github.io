@@ -1,6 +1,6 @@
 ---
 name: write-health-quarter-review
-description: Create, update, or complete quarterly personal health review blog posts in this repo. Use when asked to write a quarterly health post, fill a health-review template, generate Garmin/LifeDB health analysis, update health-review charts or CSVs, or compare quarterly biomarkers from the Life Planning Google Sheet.
+description: Create, update, or complete quarterly personal health review blog posts in this repo. Use when asked to write a quarterly health post, fill a health-review template, generate Garmin health analysis from the `lifedb` MCP server, update health-review charts or CSVs, or compare quarterly biomarkers from the Life Planning Google Sheet.
 ---
 
 # Write Health Quarter Review
@@ -18,7 +18,7 @@ Read these before editing a post:
 2. `references/post-style.md` for the expected post structure and voice.
 3. `references/data-sources.md` for asset, CSV, LifeDB, and Google Sheet sources.
 4. `references/biomarker-rules.md` before writing the biomarkers section.
-5. `references/lifedb-mcp-export.md` before generating Garmin-derived assets.
+5. `references/lifedb-mcp-export.md` before generating Garmin-derived assets from the `lifedb` MCP server.
 6. `references/migration-from-notebooks.md` before changing chart or analysis generation.
 
 Also read:
