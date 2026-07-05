@@ -17,7 +17,7 @@ My form first just had the HTML in the form label as so:
 from django import forms
  
 class AccountForm(forms.Form):
-    name = forms.CharField(widget=forms.TextInput(), max_length=15, label='Your Name (<a href="//www.blogger.com/questions/whyname/" target="_blank">why</a>?')
+    name = forms.CharField(widget=forms.TextInput(), max_length=15, label='Your Name (why?')
 
 ```  
   
@@ -32,7 +32,7 @@ from django.utils.safestring import mark_safe
 from django import forms
  
 class AccountForm(forms.Form):
-    name = forms.CharField(widget=forms.TextInput(), max_length=15, label=mark_safe('Your Name (<a href="//www.blogger.com/questions/whyname/" target="_blank">why</a>?)'))
+    name = forms.CharField(widget=forms.TextInput(), max_length=15, label=mark_safe('Your Name (why?)'))
     
 ```  
   
@@ -44,7 +44,7 @@ In [2]: form = AccountForm()
  
 In [3]: form.as_ul()
 Out[3]: u'
-<li><label for="id_name">Your Name (<a href="//www.blogger.com/questions/whyname/" target="_blank">why</a>?):</label> <input id="id_name" maxlength="15" name="name" type="text"></li>
+<li><label for="id_name">Your Name (why?):</label> <input id="id_name" maxlength="15" name="name" type="text"></li>
 '
 
 ```  
