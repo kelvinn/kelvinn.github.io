@@ -215,18 +215,17 @@ else:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: '20'
 
-      - name: Install markdownlint
-        run: pip install markdownlint
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
 
       - name: Lint Markdown files
         run: |
-          # Ignore certain rules that are too strict for personal blogs
-          markdownlint content/ \
-            --config .markdownlint.json \
-            --ignore content/posts/20NN* \
+          markdownlint "content/" \
+            --config ".markdownlint.json" \
+            --ignore "content/posts/20**" \
             || true

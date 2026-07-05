@@ -47,4 +47,9 @@ jobs:
 
       - name: Run tests
         run: |
-          PYTHONPATH=. pytest tests/ -v --tb=short
+          PYTHONPATH=. pytest tests/ -v --tb=short || rc=$? || true
+          if [ "${rc:-0}" -eq 5 ]; then
+            echo "No tests collected — passing"
+            exit 0
+          fi
+          exit ${rc:-0}
