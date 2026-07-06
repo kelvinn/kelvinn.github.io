@@ -12,7 +12,7 @@ tags:
 ---
 
 I've started to get into Google's App Engine again, and have started developing a simple product that I had a use for. The initial first draft was a quick 200 lines in webapp, and it worked great. However, I'm starting to find certain things quite cumbersome. I'm a huge fan of Django, and but also about keeping things as simple as possible, which is why I picked webapp to begin with.  
-I'm now considering making a swap to Django, but there are some development issues; namely, I'm using Ubuntu 10.04, Python 2.6, and Django 1.2. This setup presents several setbacks, as GAE has the requirement of Django 1.1 and Python 2.5. There are two solutions that I found: a) use virtualenv, which [I've detailed](http://www.blogger.com/blogger.g?blogID=3439832858234004835#), or b) chroot. This document will hopefully show how to configure a chroot environment of Ubuntu 9.10 and prepare it for Django on GAE. Using a jailed environment should allow you to edit your code with your normal IDE and VCS, but use Django 1.1 and Python 2.5.  
+I'm now considering making a swap to Django, but there are some development issues; namely, I'm using Ubuntu 10.04, Python 2.6, and Django 1.2. This setup presents several setbacks, as GAE has the requirement of Django 1.1 and Python 2.5. There are two solutions that I found: a) use virtualenv, which [I've detailed](http://www.blogger.com/blogger.g?blogID=3439832858234004835), or b) chroot. This document will hopefully show how to configure a chroot environment of Ubuntu 9.10 and prepare it for Django on GAE. Using a jailed environment should allow you to edit your code with your normal IDE and VCS, but use Django 1.1 and Python 2.5.  
 First, I installed schroot and debootstrap.  
 
 ```bash

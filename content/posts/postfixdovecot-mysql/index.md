@@ -7,7 +7,7 @@ tags:
 - howtos
 ---
 
-As you can see by [another post](http://www.blogger.com/tech-blog/gentoo-test/), I decided to reinstall the server. This isn't really a problem, I have pretty good backups. I've installed apache and friends a bagillion times. However, Postfix(chroot)+Dovecot authenticating from MySQl, that doesn't install quite so smoothly.  
+As you can see by [another post](http://www.blogger.com/tech-blog/gentoo-test), I decided to reinstall the server. This isn't really a problem, I have pretty good backups. I've installed apache and friends a bagillion times. However, Postfix(chroot)+Dovecot authenticating from MySQl, that doesn't install quite so smoothly.  
 Just for my future reference, and maybe helpful for somebody, someday. Clearly not a tutorial. The postfix chroot = /var/spool/postfix  
 
 #### cannot connect to saslauthd server: No such file or directory
