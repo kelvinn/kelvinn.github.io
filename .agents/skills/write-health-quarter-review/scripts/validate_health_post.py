@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import re
 from pathlib import Path
+import csv
 
 
 REQUIRED_SECTIONS = [
@@ -85,6 +86,12 @@ def main() -> int:
         for csv_name in EXPECTED_CSVS:
             if not (data_dir / csv_name).exists():
                 warnings.append(f"Missing expected CSV: {csv_name}")
+        vo2_csv = data_dir / "monthly_vo2_max_per_month.csv"
+        if vo2_csv.exists():
+            with vo2_csv.open(newline="") as handle:
+                vo2_rows = list(csv.DictReader(handle))
+            if vo2_rows and not (post_dir / "monthly_vo2_max.png").exists():
+                errors.append("Missing image: monthly_vo2_max.png")
 
     for pattern in PLACEHOLDER_PATTERNS:
         if re.search(pattern, text):

@@ -20,12 +20,14 @@ os.environ.setdefault("MPLBACKEND", "Agg")
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.dates as mdates
+from matplotlib.colors import BoundaryNorm, ListedColormap
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
 
 DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+TIME_METRICS = ["moderate_activity_time", "vigorous_activity_time", "intensity_minutes"]
 CORRELATION_METRICS = [
     "hr_min",
     "hr_max",
@@ -58,14 +60,44 @@ def add_quarters(value: date, offset: int) -> date:
     return date(year, target_quarter * 3 + 1, 1)
 
 
-def quarter_windows(focus_start: date, previous_quarters: int = 13) -> list[tuple[str, date, date]]:
-    first = add_quarters(focus_start, -previous_quarters)
+def quarter_start_for(value: date) -> date:
+    return date(value.year, ((value.month - 1) // 3) * 3 + 1, 1)
+
+
+def quarter_windows(first_start: date, focus_start: date) -> list[tuple[str, date, date]]:
+    first = quarter_start_for(first_start)
+    focus = quarter_start_for(focus_start)
     windows = []
-    for offset in range(previous_quarters + 1):
+    offset = 0
+    while True:
         start = add_quarters(first, offset)
+        if start > focus:
+            break
         end = add_quarters(start, 1) - timedelta(days=1)
         windows.append((quarter_label_for(start), start, end))
+        offset += 1
     return windows
+
+
+def time_to_minutes(value: object) -> float:
+    if value is None or pd.isna(value):
+        return np.nan
+    if isinstance(value, (int, float)):
+        return float(value)
+    text = str(value).strip()
+    if not text:
+        return np.nan
+    parts = text.split(":")
+    try:
+        if len(parts) == 3:
+            hours, minutes, seconds = parts
+            return int(hours) * 60 + int(minutes) + float(seconds) / 60
+        if len(parts) == 2:
+            minutes, seconds = parts
+            return int(minutes) + float(seconds) / 60
+        return float(text)
+    except ValueError:
+        return np.nan
 
 
 def load_export(path: Path) -> dict:
@@ -82,6 +114,11 @@ def to_daily_frame(rows: list[dict]) -> pd.DataFrame:
     if df.empty:
         return pd.DataFrame(columns=["date"])
     df["date"] = pd.to_datetime(df["date"])
+    for metric in TIME_METRICS:
+        if metric in df.columns:
+            df[metric] = df[metric].map(time_to_minutes)
+    if "intensity_minutes" not in df.columns or df["intensity_minutes"].isna().all():
+        df["intensity_minutes"] = df.get("moderate_activity_time", 0).fillna(0) + 2 * df.get("vigorous_activity_time", 0).fillna(0)
     for metric in CORRELATION_METRICS:
         if metric not in df.columns:
             df[metric] = np.nan
@@ -110,30 +147,30 @@ def month_export(df: pd.DataFrame, metric: str, output_column: str) -> pd.DataFr
     return export
 
 
-def plot_monthly_line(export: pd.DataFrame, value_col: str, title: str, ylabel: str, output_path: Path) -> None:
+def plot_monthly_line(export: pd.DataFrame, value_col: str, title: str, ylabel: str, output_path: Path, *, band: bool = False) -> None:
     plt.figure(figsize=(14, 8))
     if export.empty:
         plt.text(0.5, 0.5, "No data available", ha="center", va="center", fontsize=18)
         plt.axis("off")
     else:
         dates = pd.to_datetime(export["year"].astype(str) + "-" + export["month"].astype(str) + "-01")
-        plt.errorbar(
-            dates,
-            export[value_col],
-            yerr=export.get("std_dev", 0),
-            fmt="o-",
-            linewidth=2,
-            markersize=6,
-            capsize=5,
-            alpha=0.85,
-            color="#2E86AB",
-            ecolor="#A23B72",
-        )
+        std_dev = pd.to_numeric(export.get("std_dev", 0), errors="coerce").fillna(0)
+        values = pd.to_numeric(export[value_col], errors="coerce")
+        if band:
+            plt.fill_between(dates, values - std_dev, values + std_dev, alpha=0.25, color="#8ecae6", label="Monthly range")
+            yerr = None
+            capsize = 0
+        else:
+            yerr = std_dev
+            capsize = 5
+        plt.errorbar(dates, values, yerr=yerr, fmt="o-", linewidth=2, markersize=6, capsize=capsize, alpha=0.85, color="#2E86AB", ecolor="#8ecae6")
         plt.title(title, fontsize=16, fontweight="bold", pad=20)
         plt.xlabel("Month", fontsize=12, fontweight="bold")
         plt.ylabel(ylabel, fontsize=12, fontweight="bold")
         plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
-        plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=3))
+        interval = 6 if len(export) > 36 else 3
+        plt.gca().xaxis.set_major_locator(mdates.MonthLocator(interval=interval))
+        plt.xlim(dates.min() - pd.Timedelta(days=15), dates.max() + pd.Timedelta(days=15))
         plt.xticks(rotation=45, ha="right")
         plt.grid(True, alpha=0.3)
         plt.gca().spines["top"].set_visible(False)
@@ -144,7 +181,6 @@ def plot_monthly_line(export: pd.DataFrame, value_col: str, title: str, ylabel: 
 
 
 def create_monthly_charts(df: pd.DataFrame, metadata: dict, image_dir: Path, data_dir: Path) -> None:
-    start = metadata["query_start_date"]
     end = metadata["quarter_end_date"]
     specs = [
         ("sleep_avg", "average_sleep_score", "Average Sleep Score per Month", "Average Sleep Score", "average_sleep_score_per_month"),
@@ -154,18 +190,24 @@ def create_monthly_charts(df: pd.DataFrame, metadata: dict, image_dir: Path, dat
     for metric, value_col, title, ylabel, stem in specs:
         export = month_export(df, metric, value_col)
         export.to_csv(data_dir / f"{stem}.csv", index=False)
+        if export.empty:
+            start = metadata["query_start_date"]
+        else:
+            start = f"{int(export.iloc[0]['year']):04d}-{int(export.iloc[0]['month']):02d}-01"
         plot_monthly_line(
             export,
             value_col,
             f"{title} ({start} to {end})",
             ylabel,
             image_dir / f"{stem}.png",
+            band=(stem == "average_sleep_score_per_month"),
         )
 
 
 def create_summary_chart(df: pd.DataFrame, metadata: dict, image_dir: Path, data_dir: Path) -> None:
     end = parse_day(metadata["quarter_end_date"])
-    start = end - timedelta(days=365)
+    end_month = date(end.year, end.month, 1)
+    start = (pd.Timestamp(end_month) - pd.DateOffset(months=11)).date()
     recent = df[(df["date"].dt.date >= start) & (df["date"].dt.date <= end)].copy()
     rows = []
     if not recent.empty:
@@ -203,8 +245,20 @@ def create_summary_chart(df: pd.DataFrame, metadata: dict, image_dir: Path, data
             ax.set_title(name, fontsize=12, fontweight="bold")
             ax.set_xlabel("Month", fontsize=10)
             ax.set_ylabel(name.split("(")[0].strip(), fontsize=10)
+            if export[col].notna().sum() >= 2:
+                x_values = np.arange(len(export))
+                y_values = pd.to_numeric(export[col], errors="coerce")
+                valid = y_values.notna()
+                slope, intercept = np.polyfit(x_values[valid], y_values[valid], 1)
+                ax.plot(dates, slope * x_values + intercept, color="black", linestyle="--", linewidth=1.5, alpha=0.7)
+            for x_value, y_value in zip(dates, export[col]):
+                if pd.notna(y_value):
+                    label = f"{y_value:.0f}" if abs(y_value) >= 100 else f"{y_value:.1f}"
+                    ax.text(x_value, y_value, label, ha="center", va="bottom", fontsize=8, rotation=90)
             ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
-            ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
+            tick_dates = dates.iloc[::2] if len(dates) > 8 else dates
+            ax.set_xticks(tick_dates)
+            ax.set_xlim(dates.min() - pd.Timedelta(days=15), dates.max() + pd.Timedelta(days=15))
             plt.setp(ax.xaxis.get_majorticklabels(), rotation=45, ha="right")
             ax.grid(True, alpha=0.3)
             ax.spines["top"].set_visible(False)
@@ -240,24 +294,31 @@ def create_weekly_intensity(df: pd.DataFrame, metadata: dict, image_dir: Path, d
     start = parse_day(metadata["quarter_end_date"]) - timedelta(days=365)
     end = parse_day(metadata["quarter_end_date"])
     series_df = df[(df["date"].dt.date >= start) & (df["date"].dt.date <= end)].copy()
-    if "intensity_minutes" not in series_df:
+    if "intensity_minutes" not in series_df or series_df["intensity_minutes"].isna().all():
         series_df["intensity_minutes"] = series_df["moderate_activity_time"].fillna(0) + 2 * series_df["vigorous_activity_time"].fillna(0)
-    weekly = series_df.set_index("date")["intensity_minutes"].resample("W-SUN").sum()
-    full_index = pd.date_range(start=start, end=end, freq="W-SUN")
+    series_df["week_start"] = series_df["date"].dt.date.map(lambda value: value - timedelta(days=value.weekday()))
+    weekly = series_df.groupby("week_start")["intensity_minutes"].sum().sort_index()
+    first_week = start - timedelta(days=start.weekday())
+    full_index = pd.date_range(start=first_week, end=end, freq="W-MON").date
     weekly = weekly.reindex(full_index, fill_value=0)
-    export = weekly.reset_index()
-    export.columns = ["week_end", "intensity_minutes"]
+    week_end = [min(value + timedelta(days=6), end) for value in weekly.index]
+    export = pd.DataFrame({"week_start": weekly.index, "week_end": week_end, "intensity_minutes": weekly.values})
     export.to_csv(data_dir / "weekly_intensity_minutes_per_week.csv", index=False)
 
     plt.figure(figsize=(18, 6))
-    weekly.plot(kind="bar", width=0.8, color="#69b3a2", align="center")
+    labels = [value.isoformat() for value in export["week_end"]]
+    plt.bar(range(len(export)), export["intensity_minutes"], width=0.8, color="#69b3a2", align="center")
     avg = weekly.mean() if len(weekly) else 0
     plt.axhline(y=800, color="r", linestyle="--", label="Weekly Target (800)")
     plt.axhline(y=avg, color="g", linestyle="--", label=f"Weekly Average ({avg:.0f})")
     plt.title(f"Weekly Intensity Minutes ({start} to {end})", fontsize=20, fontweight="bold", pad=20)
     plt.xlabel("Week End Date")
     plt.ylabel("Total Intensity Minutes")
-    plt.xticks(rotation=45, ha="right")
+    tick_step = max(1, len(labels) // 18)
+    tick_positions = list(range(0, len(labels), tick_step))
+    if labels and tick_positions[-1] != len(labels) - 1:
+        tick_positions.append(len(labels) - 1)
+    plt.xticks(tick_positions, [labels[idx] for idx in tick_positions], rotation=45, ha="right")
     plt.legend()
     plt.tight_layout()
     plt.savefig(image_dir / "weekly_intensity_minutes.png", dpi=300, bbox_inches="tight")
@@ -303,11 +364,13 @@ def create_correlation_matrix(df: pd.DataFrame, metadata: dict, image_dir: Path,
 
 def create_day_of_week_heatmaps(df: pd.DataFrame, metadata: dict, image_dir: Path, data_dir: Path) -> None:
     q_start = parse_day(metadata["quarter_start_date"])
-    windows = quarter_windows(q_start)
     for metric, csv_name, image_name, title, cmap, first_col in [
         ("sleep_avg", "sleep_score_per_day_per_quarter.csv", "sleep_score_per_day.png", "Average Sleep Score per Day of Week", "YlOrRd", "Quarter"),
         ("stress_avg", "stress_quarterly_per_quarter.csv", "stress_level_per_day.png", "Average Stress Level per Day of Week", "viridis", "quarter"),
     ]:
+        usable = df.dropna(subset=[metric])
+        first_data_day = usable["date"].dt.date.min() if not usable.empty else q_start
+        windows = quarter_windows(first_data_day, q_start)
         rows = []
         labels = []
         for label, start, end in windows:
@@ -323,8 +386,34 @@ def create_day_of_week_heatmaps(df: pd.DataFrame, metadata: dict, image_dir: Pat
         export.insert(0, first_col, labels)
         export.to_csv(data_dir / csv_name, index=False)
         plot_df = export.set_index(first_col)
-        plt.figure(figsize=(12, 8.5))
-        sns.heatmap(plot_df, annot=True, fmt=".1f", cmap=cmap, linewidths=0.5, square=True, mask=plot_df.isna())
+        plt.figure(figsize=(12, max(8.5, len(labels) * 0.45)))
+        if metric == "sleep_avg":
+            values = np.array([
+                "#b30000",  # <= 60
+                "#d7301f",  # 60-70
+                "#fc8d59",  # 70-75
+                "#fdbb84",  # 75-80
+                "#a6d96a",  # 80-85
+                "#7fc97f",  # 85-90
+                "#4daf4a",  # 90-95
+                "#1a9850",  # 95-100
+            ])
+            cmap = ListedColormap(values)
+            bounds = [0, 60, 70, 75, 80, 85, 90, 95, 100]
+            norm = BoundaryNorm(bounds, cmap.N)
+            sns.heatmap(
+                plot_df,
+                annot=True,
+                fmt=".1f",
+                cmap=cmap,
+                norm=norm,
+                linewidths=0.5,
+                square=True,
+                mask=plot_df.isna(),
+                cbar_kws={"label": "Average Sleep Score"},
+            )
+        else:
+            sns.heatmap(plot_df, annot=True, fmt=".1f", cmap=cmap, linewidths=0.5, square=True, mask=plot_df.isna())
         plt.title(f"{title} ({labels[0]} to {labels[-1]})", fontsize=16, fontweight="bold", pad=20)
         plt.xlabel("Day of Week", fontsize=14)
         plt.ylabel("Quarter", fontsize=14)
@@ -374,9 +463,10 @@ def create_vo2(vo2_rows: list[dict], metadata: dict, image_dir: Path, data_dir: 
         export.to_csv(data_dir / "monthly_vo2_max_per_month.csv", index=False)
         return pd.DataFrame(columns=["date", "vo2_max"])
     vo2_df["date"] = pd.to_datetime(vo2_df["date"])
+    direct = pd.to_numeric(vo2_df.get("vo2_max", pd.Series(index=vo2_df.index)), errors="coerce")
     generic = pd.to_numeric(vo2_df.get("vo2_max_generic", pd.Series(index=vo2_df.index)), errors="coerce")
     cycling = pd.to_numeric(vo2_df.get("vo2_max_cycling", pd.Series(index=vo2_df.index)), errors="coerce")
-    vo2_df["vo2_max"] = generic.fillna(cycling)
+    vo2_df["vo2_max"] = direct.fillna(generic).fillna(cycling)
     start = parse_day(metadata["query_start_date"])
     end = parse_day(metadata["quarter_end_date"])
     vo2_df = vo2_df[(vo2_df["date"].dt.date >= start) & (vo2_df["date"].dt.date <= end)].dropna(subset=["vo2_max"])
@@ -389,19 +479,23 @@ def create_vo2(vo2_rows: list[dict], metadata: dict, image_dir: Path, data_dir: 
         export["month"] = export["date"].dt.month
         export = export.rename(columns={"vo2_max": "vo2_max_95th"})[["year", "month", "vo2_max_95th"]]
     export.to_csv(data_dir / "monthly_vo2_max_per_month.csv", index=False)
+    plt.figure(figsize=(12, 6))
     if not export.empty:
         dates = pd.to_datetime(export["year"].astype(str) + "-" + export["month"].astype(str) + "-01")
-        plt.figure(figsize=(12, 6))
         plt.plot(dates, export["vo2_max_95th"], marker="o", label="95th Percentile VO2 Max")
-        plt.title(f"Monthly 95th Percentile VO2 Max ({metadata['query_start_date']} to {metadata['quarter_end_date']})")
-        plt.xlabel("Date")
-        plt.ylabel("VO2 Max")
-        plt.xticks(rotation=45)
-        plt.grid()
         plt.legend()
-        plt.tight_layout()
-        plt.savefig(image_dir / "monthly_vo2_max.png", dpi=300, bbox_inches="tight")
-        plt.close()
+        data_start = dates.min()
+        plt.xlim(data_start - pd.Timedelta(days=15), dates.max() + pd.Timedelta(days=15))
+    else:
+        plt.text(0.5, 0.5, "No VO2 Max data available", ha="center", va="center", fontsize=16)
+    plt.title(f"Monthly 95th Percentile VO2 Max ({metadata['query_start_date']} to {metadata['quarter_end_date']})")
+    plt.xlabel("Date")
+    plt.ylabel("VO2 Max")
+    plt.xticks(rotation=45)
+    plt.grid()
+    plt.tight_layout()
+    plt.savefig(image_dir / "monthly_vo2_max.png", dpi=300, bbox_inches="tight")
+    plt.close()
     return vo2_df[["date", "vo2_max"]]
 
 
@@ -418,7 +512,7 @@ def main() -> int:
     df = to_daily_frame(payload["daily_metrics"])
     if df.empty:
         raise SystemExit("No daily metrics in MCP export.")
-    if "intensity_minutes" not in df.columns:
+    if "intensity_minutes" not in df.columns or df["intensity_minutes"].isna().all():
         df["intensity_minutes"] = df["moderate_activity_time"].fillna(0) + 2 * df["vigorous_activity_time"].fillna(0)
     else:
         df["intensity_minutes"] = pd.to_numeric(df["intensity_minutes"], errors="coerce")

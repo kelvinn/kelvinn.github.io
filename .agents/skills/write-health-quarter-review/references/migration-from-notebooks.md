@@ -37,3 +37,11 @@ Migration status:
 4. `notebooks/` can be deleted for this skill once the MCP export/render path has been verified for the target quarter.
 
 When changing chart generation, keep output filenames stable so existing markdown image references continue to work.
+
+Visual compatibility notes:
+
+- The MCP renderer should match the completed Q1 2026 notebook outputs unless a post explicitly asks for a new format.
+- Keep `summary.png` as the Q1-style 2x2 trailing-12-month bar grid with trendlines and value labels.
+- Keep day-of-week sleep and stress charts as quarter-by-day heatmaps from data start through the target quarter, not target-quarter-only heatmaps.
+- Keep the 12-week stress heatmap ending on the last complete Sunday on or before quarter end.
+- Prefer actual data start dates for long-range monthly charts; do not show empty leading ranges just because `REPORT_QUERY_START_DATE` is earlier than the first available metric.

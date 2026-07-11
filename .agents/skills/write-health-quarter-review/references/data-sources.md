@@ -26,6 +26,18 @@ Optional image when VO2 max data exists:
 
 - `monthly_vo2_max.png`
 
+## Chart Format Rules
+
+Use the completed Q1 2026 health review images as the visual baseline for future quarters.
+
+- `summary.png`: 2x2 monthly bar grid for the trailing 12 calendar months ending in the quarter-end month. Do not include partial pre-window months or any month after the quarter end. Add dashed trendlines and value labels on bars.
+- `weekly_intensity_minutes.png`: trailing 12-month weekly bar chart with Sunday-ended bins, a red 800-minute target line, and a green average line. Convert LifeDB `TIME` fields to minutes before summing; do not coerce `HH:MM:SS` strings directly to numbers.
+- `average_sleep_score_per_month.png`: start at the first month with sleep-score data, not at a configured historical query date with empty leading space. Use a blue line plus a translucent blue range band for variability.
+- `sleep_score_per_day.png`: heatmap with one row per quarter from the first quarter with sleep-score data through the target quarter, columns Monday through Sunday plus `Avg`. Use a green-to-amber-to-red scale where higher scores are greener, and scores at or below 60 are clearly red.
+- `stress_level_per_day.png`: same quarter-by-day heatmap structure as sleep, from the first quarter with daily stress data through the target quarter.
+- `stress_level_per_week.png`: 12x7 trailing-week heatmap ending on the last complete Sunday on or before quarter end. For example, Q2 2026 ends on Tuesday, June 30, 2026, so this chart ends on Sunday, June 28, 2026.
+- `monthly_vo2_max.png`: render when `monthly_vo2_max_per_month.csv` has rows. Use actual data months only and never include post-quarter readings.
+
 Expected generated CSVs under `data/`:
 
 - `quarterly_metrics_raw.csv`

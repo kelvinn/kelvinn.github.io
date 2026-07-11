@@ -46,14 +46,14 @@ python .agents/skills/write-health-quarter-review/scripts/generate_health_assets
   "vo2_max": [
     {
       "date": "2026-04-01",
-      "vo2_max_generic": 51.0,
-      "vo2_max_cycling": null
+      "vo2_max": 51.0
     }
   ]
 }
 ```
 
 Use displayed `null` for unavailable metrics. `calories_active_avg` and `weight_avg` may be null when LifeDB does not expose equivalent daily data.
+LifeDB `TIME` fields such as `moderate_activity_time`, `vigorous_activity_time`, and `intensity_time` are usually returned as `HH:MM:SS` strings; renderers must parse them into minutes before summing or plotting.
 
 ## MCP Workflow
 
@@ -74,109 +74,43 @@ Set:
 - `:query_start` to `REPORT_QUERY_START_DATE`
 - `:query_end_exclusive` to the day after quarter end
 
-Use this SQL as the default, adjusting only when table schemas differ:
+Use this SQL as the default for the current LifeDB MCP schema, adjusting only when table schemas differ:
 
 ```sql
-with recursive dates(day) as (
-  select date(:query_start)
-  union all
-  select date(day, '+1 day') from dates where day < date(:query_end_exclusive, '-1 day')
-),
-sleep_daily as (
-  select
-    calendar_date as day,
-    avg(score_overall_value) as sleep_avg,
-    min(resting_heart_rate) as rhr_min
-  from sleep
-  where calendar_date >= :query_start
-    and calendar_date < :query_end_exclusive
-  group by calendar_date
-),
-stress_daily as (
-  select date(timestamp) as day, avg(value) as stress_avg
-  from stress
-  where timestamp >= :query_start
-    and timestamp < :query_end_exclusive
-    and value >= 0
-  group by date(timestamp)
-),
-body_battery_daily as (
-  select date(timestamp) as day, max(value) as bb_max, min(value) as bb_min
-  from body_battery
-  where timestamp >= :query_start
-    and timestamp < :query_end_exclusive
-  group by date(timestamp)
-),
-steps_daily as (
-  select date(timestamp) as day, sum(value) as steps
-  from steps
-  where timestamp >= :query_start
-    and timestamp < :query_end_exclusive
-  group by date(timestamp)
-),
-heart_rate_daily as (
-  select date(timestamp) as day, min(value) as hr_min, max(value) as hr_max
-  from heart_rate
-  where timestamp >= :query_start
-    and timestamp < :query_end_exclusive
-    and value > 0
-  group by date(timestamp)
-),
-floors_daily as (
-  select date(timestamp) as day, sum(ascended) as floors
-  from floors
-  where timestamp >= :query_start
-    and timestamp < :query_end_exclusive
-  group by date(timestamp)
-),
-training_daily as (
-  select
-    date as day,
-    sum(moderate_minutes) as moderate_activity_time,
-    sum(vigorous_minutes) as vigorous_activity_time,
-    sum(total_intensity_minutes) as intensity_minutes
-  from training_load
-  where date >= :query_start
-    and date < :query_end_exclusive
-  group by date
-)
 select
-  d.day as date,
-  hr.hr_min,
-  hr.hr_max,
-  s.rhr_min,
-  bb.bb_max,
-  bb.bb_min,
-  sl.sleep_avg,
-  st.steps,
-  fl.floors,
-  tr.moderate_activity_time,
-  tr.vigorous_activity_time,
-  tr.intensity_minutes,
-  null as calories_active_avg,
-  stress.stress_avg,
-  null as weight_avg
-from dates d
-left join heart_rate_daily hr on hr.day = d.day
-left join sleep_daily s on s.day = d.day
-left join sleep_daily sl on sl.day = d.day
-left join body_battery_daily bb on bb.day = d.day
-left join steps_daily st on st.day = d.day
-left join floors_daily fl on fl.day = d.day
-left join training_daily tr on tr.day = d.day
-left join stress_daily stress on stress.day = d.day
-order by d.day;
+  date(ds.day) as date,
+  ds.hr_min,
+  ds.hr_max,
+  ds.rhr as rhr_min,
+  ds.bb_max,
+  ds.bb_min,
+  s.score as sleep_avg,
+  ds.steps,
+  ds.floors_up as floors,
+  ds.moderate_activity_time,
+  ds.vigorous_activity_time,
+  null as intensity_minutes,
+  ds.calories_active as calories_active_avg,
+  ds.stress_avg,
+  w.weight as weight_avg
+from daily_summary ds
+left join sleep s on date(s.day) = date(ds.day)
+left join weight w on date(w.day) = date(ds.day)
+where ds.day >= :query_start
+  and ds.day < :query_end_exclusive
+order by ds.day;
 ```
 
 ## VO2 Max Query
 
 ```sql
 select
-  date,
-  vo2_max_generic,
-  vo2_max_cycling
-from vo2_max
-where date >= :query_start
-  and date < :query_end_exclusive
-order by date;
+  date(a.start_time) as date,
+  s.vo2_max
+from activities a
+join steps_activities s on s.activity_id = a.activity_id
+where a.start_time >= :query_start
+  and a.start_time < :query_end_exclusive
+  and s.vo2_max is not null
+order by a.start_time;
 ```

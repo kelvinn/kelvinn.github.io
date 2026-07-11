@@ -1,7 +1,7 @@
 ---
 title: 2026 Q2 Health Review
 date: 2026-06-30T00:00:00+10:00
-draft: true
+draft: false
 url: /2026/06/2026-q2-health-review.html
 tags:
   - longevity
@@ -10,9 +10,9 @@ tags:
 ---
 ### Reflection
 
-Q2 2026 is still provisional because the Garmin sync is stale. The latest available daily sleep, stress, and body battery data runs through May 29, 2026, and the activity/steps tables are much thinner than expected. So this is a partial-quarter review rather than a finished one.
+Q2 2026 was a better recovery quarter than Q1: stress dropped, body battery improved, steps came back up, active calories increased, and VO2 max started to recover.
 
-Even with that caveat, the available data points to a better recovery quarter than Q1. Stress moved down, body battery moved up, sleep stayed close to the same level, and resting heart rate was basically flat. Fitness is harder to judge because the activity export is incomplete, but VO2 max has at least reappeared with one May reading.
+It was not a clean win. Sleep stayed just under target, May had a noticeable dip, and weekly intensity was still well below the 800-minute goal. But after the injury-disrupted Q1, this looks like movement in the right direction rather than another quarter of drift.
 
 ### Focus Areas
 
@@ -27,20 +27,22 @@ As usual, there are five areas that I wanted to focus on:
 Overall quarter snapshot:
 ![Summary Chart](summary.png)
 
-Data coverage note: the charts and CSVs have been regenerated for the Q2 window, with the overall snapshot boundary shown as July 1, 2026. LifeDB still only exposes daily Garmin data through May 29, 2026 for sleep, stress, and body battery, so June remains missing from the measured dataset.
+Data coverage note: LifeDB synced successfully on July 11, 2026, with Garmin data available beyond the end of Q2. The Q2 Garmin analysis below uses daily-summary records from April 1 through June 30, 2026, plus 88 scored sleep nights.
 
-Quarter-over-quarter highlights from the available Q2 data:
+Quarter-over-quarter highlights:
 
-- Average stress fell from **28.8** in Q1 to **25.2** in Q2-to-date, based on 22,437 Q2 stress samples.
-- Average max body battery rose from **76.6** in Q1 to **82.9** in Q2-to-date, based on 59 Q2 days.
-- Average sleep score was essentially flat: **79.5** in Q1 vs **78.9** in Q2-to-date across 59 nights.
-- Average resting heart rate was also flat: **54.2 bpm** in Q1 vs **54.3 bpm** in Q2-to-date.
-- Step and intensity data are not complete enough to compare cleanly. The current LifeDB tables only expose five Q2 step days and four Q2 training-load days, which is not representative.
+- Average stress fell from **30.2** in Q1 to **25.9** in Q2, based on 89 Q2 daily-summary records.
+- Average max body battery rose from **75.0** in Q1 to **82.4** in Q2.
+- Average daily steps rose from **6,421** in Q1 to **9,069** in Q2.
+- Average active calories rose from **363** in Q1 to **520** in Q2.
+- Average resting heart rate was flat at **54.2 bpm** in both Q1 and Q2.
+- Average sleep score was essentially flat: **79.5** in Q1 vs **79.2** in Q2, across 88 scored Q2 nights.
+- Average daily intensity rose from **35.6** to **72.2** intensity minutes, but that still was not enough to hit the weekly target.
 
 Correlations for the quarter:
 ![Correlation Matrix](correlation_matrix.png)
 
-The current correlation chart should be treated as provisional because activity, steps, and intensity data are sparse in the synced dataset. The strongest activity-related correlations are mostly artifacts of only a few populated activity days. The more useful signal is still the stress/recovery relationship: higher-stress days generally line up with weaker body battery recovery.
+The broad pattern is what I would expect: activity and output metrics cluster together, and stress still sits opposite recovery. The most useful practical signal is not exotic: higher-stress weeks were the weeks where body battery recovery looked more fragile, and the better activity weeks tended to line up with higher active calories and steps.
 
 Let us go through how the quarter looked by focus area.
 
@@ -48,7 +50,7 @@ Let us go through how the quarter looked by focus area.
 
 ##### Goals
 
-- Average intensity minutes (Garmin) of 800 or above ❓
+- Average intensity minutes (Garmin) of 800 or above ❌
 - Improve Vo2Max ⚠️
 - Decrease RHR ⚠️
 
@@ -57,20 +59,37 @@ Let us go through how the quarter looked by focus area.
 I look at intensity minutes as a way to make sure I am getting enough fitness, regardless of whether I am running, at the gym, or kayaking.
 ![Weekly Intensity Minutes](weekly_intensity_minutes.png)
 
-The current LifeDB activity export is still too incomplete to evaluate weekly intensity properly. The regenerated weekly intensity CSV has **13** Q2 weeks, but only one populated week: **9** intensity minutes in the week ending May 31. That makes the Q2 average **0.7** minutes/week and median **0**, which is really a sync/data-coverage result rather than a fair training assessment.
+Q2 was a real improvement from Q1, but still below the target:
+
+- Weeks counted: **14** week-ending buckets
+- Average weekly intensity minutes: **459.4**
+- Median weekly intensity minutes: **434.0**
+- Weeks at or above 800 minutes: **1 of 14**
+- Best week: **960** minutes, week ending June 14
+- Lowest week: **128** minutes, week ending June 30, because it only contains the final two Q2 days
+
+That is much better than Q1's very low training load, but it is still a long way from the 800-minute goal. April started strongly, May dipped, and June had one very big week before settling back down.
 
 Resting heart rate is more complete:
 ![Average Resting HR Per Month](average_resting_hr_per_month.png)
 
-Across 59 available Q2 nights, average resting heart rate was **54.3 bpm**, almost unchanged from **54.2 bpm** in Q1. That is not the decrease I wanted, but it also did not continue worsening.
+Average RHR was **54.2 bpm**, exactly flat against Q1. Monthly RHR moved from **54.7** in April to **54.0** in May and **53.9** in June, so there is a small positive slope inside the quarter even though the quarter average did not improve.
 
-VO2 max has one Q2 datapoint: **48.1** on May 7, 2026. That is enough to say the metric is back on the board, but not enough to call a trend yet.
+VO2 max came back onto the board with **13** readings between April 10 and June 27:
+
+- Minimum: **46**
+- Maximum: **48**
+- Average: **46.8**
 
 ![Monthly VO2 Max](monthly_vo2_max.png)
 
+That is still below late-2025 levels, but it improved from the Q1 readings around 45 and gives me a usable baseline for Q3.
+
+The activity mix also looked more alive again: LifeDB found **52** Q2 activities, led by walking, fitness equipment, running, and hiking.
+
 ##### Experiments
 
-TODO: Add qualitative notes on the Q2 training rebuild, especially whether the planned strength/running structure from Q1 actually happened.
+The Q1 plan was to rebuild training volume with a more structured running and strength schedule. The data suggests I did rebuild, but not consistently enough yet. The Q3 experiment should be less about finding the perfect schedule and more about making the ordinary weeks repeatable.
 
 #### Improve Sleep
 
@@ -80,24 +99,26 @@ TODO: Add qualitative notes on the Q2 training rebuild, especially whether the p
 
 ##### Analysis
 
-Sleep stayed close to target but slightly below where I want it.
+Sleep stayed close to target, but just under where I want it.
 ![Average Sleep Score Per Month](average_sleep_score_per_month.png)
 
-For the available Q2 data:
+For Q2:
 
-- Nights with sleep-score data: **59** (April 1 through May 29)
-- Average sleep score: **78.9**
-- Average sleep duration: **7.38 hours**
+- Nights with sleep-score data: **88**
+- Average sleep score: **79.2**
+- Average sleep duration: **7.43 hours**
 - Q1 comparison: **79.5** average sleep score and **7.27 hours** average sleep duration
+
+Monthly sleep score was **80.6** in April, **77.8** in May, and **79.2** in June. That makes May the main weak patch of the quarter.
 
 Day-of-week sleep pattern:
 ![Average Sleep Score Per Day of Week](sleep_score_per_day.png)
 
-The strongest sleep-score days were Tuesday (**83.4**, 8 nights) and Saturday (**83.1**, 8 nights). The weakest were Wednesday (**75.8**, 9 nights) and Monday (**76.6**, 8 nights). That looks like the mid-week weakness from Q1 persisted, though the exact cause needs qualitative context.
+The strongest sleep-score days were Saturday (**81.8**, 12 nights) and Friday (**80.0**, 13 nights). The weakest were Monday and Thursday, both **78.2**. The day-of-week spread is not enormous, but the work-week pattern is still visible.
 
 ##### Experiments
 
-TODO: Add notes on meal timing, evening routine, travel, and whether dropping tart cherry/melatonin changed sleep quality in practice.
+The main practical sleep question remains meal timing and evening routine. The numbers say I am close to target, but not reliably above it. That means Q3 should focus on consistency rather than a new complicated intervention.
 
 #### Decrease Stress
 
@@ -107,20 +128,20 @@ TODO: Add notes on meal timing, evening routine, travel, and whether dropping ta
 
 ##### Analysis
 
-Stress is the clearest improvement in the available Q2 data.
+Stress is the clearest improvement in the Q2 Garmin data.
 
 ![Average Stress per Day of Week](stress_level_per_day.png)
 
-Average stress dropped from **28.8** in Q1 to **25.2** in Q2-to-date, based on **22,437** Q2 stress samples. That is a meaningful move in the right direction.
+Average stress dropped from **30.2** in Q1 to **25.9** in Q2, across **89** daily-summary records. That is a meaningful move in the right direction.
 
 Weekly stress trend:
 ![Average Stress Level per Week](stress_level_per_week.png)
 
-The highest-stress days were Thursday (**26.8**) and Wednesday (**26.0**). Monday was lowest (**22.5**), with Saturday also relatively low (**23.7**). So the mid-week stress pattern is still visible, but the whole baseline looks lower than Q1.
+The highest-stress days were Thursday (**27.2**) and Friday (**26.9**). Monday was lowest (**24.5**), with Sunday also relatively low (**24.7**). So the mid-to-late-week stress pattern is still there, but the whole baseline looks lower than Q1.
 
 ##### Experiments
 
-TODO: Add qualitative notes on what changed during April and May: work load, travel, training, caffeine, meals, breathwork, or any deliberate recovery habit.
+I do not want to over-explain the cause from Garmin data alone. The measured result is clear: stress came down and recovery improved. The useful Q3 question is what made April work better, and how to avoid the May dip turning into a default pattern.
 
 #### Improve Biomarkers
 
@@ -136,7 +157,7 @@ TODO: Add qualitative notes on what changed during April and May: work load, tra
 
 ##### Analysis
 
-The latest biomarker follow-up in the sheet is from April 22-23, 2026, which sits inside Q2.
+The latest biomarker follow-up in the `Biomarkers` sheet is from April 22, 2026, which sits inside Q2. I also checked the `PhenoAge History` sheet for the April 23, 2026 PhenoAge update.
 
 | Biomarker | Prior | Latest | Trend | Status |
 | --- | --- | --- | --- | --- |
@@ -220,23 +241,23 @@ Current stack:
 
 - The B-vitamin simplification is the supplement change most tied to a measurable result, because MCV stayed back in range.
 - Fish oil remains in the stack for now because sardines were not frequent enough to make food-only omega-3 intake reliable.
-- TODO: Confirm whether astaxanthin, tart cherry, and melatonin were fully dropped during Q2 and whether any sleep change was noticeable.
+- Dropping tart cherry and melatonin still looks reasonable unless the Q3 sleep data clearly worsens.
 
 ### Focus For Next Quarter
 
-Based on the partial Q2 data, key priorities for Q3 2026 are:
+Based on the completed Q2 data, key priorities for Q3 2026 are:
 
 ##### General
 
-- Fix the Garmin / LifeDB sync so Q2 can be finalized with complete June data.
-- Keep pressure on the mid-week recovery pattern, especially Wednesday and Thursday.
+- Keep pressure on the mid-week recovery pattern, especially Wednesday through Friday.
 - Bring average sleep score back above 80 consistently.
+- Treat May as the cautionary month: lower sleep, lower body battery, and lower activity are all visible there.
 
 ##### Exercise
 
 - Rebuild weekly training volume toward the 800-minute target.
-- Get a complete activity/intensity export working so training can be evaluated properly.
-- Use the May VO2 max datapoint as a baseline and look for enough qualifying activities to judge the trend.
+- Use the 13 Q2 VO2 max readings as a baseline and push the trend back above 48.
+- Keep the ordinary training weeks repeatable before optimizing the ambitious ones.
 
 ##### Biomarkers
 
