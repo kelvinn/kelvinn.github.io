@@ -29,7 +29,7 @@ As usual, there are four areas that I wanted to focus on:
 - *Improve biomarkers* by looking at my nutrition, as well as the above items.
 
 Overall most metrics saw a decrease in Q4, as we can see with the following key metrics.
-  ![Summary Chart](content/posts/2025-q4-health-review/summary.png)
+  ![Summary Chart](summary.png)
 
 
 We can see correlations for the quarter with the below correlation matrix.
