@@ -3,15 +3,37 @@
     margin: 24px auto var(--content-gap) auto;
 }
 
-.post-title {
-    margin-bottom: 2px;
-    font-size: 22px;
+.post-single .post-title {
+    display: block;
+    max-width: 17ch;
+    margin-bottom: 8px;
+    font-size: 40px;
+    line-height: 1.08;
+    letter-spacing: 0;
+    text-wrap: balance;
+}
+
+.post-single .post-title a {
+    color: var(--primary);
+}
+
+.post-single .post-title a:hover,
+.post-single .post-title a:focus-visible {
+    color: var(--accent);
+}
+
+@media (max-width: 520px) {
+    .post-single .post-title {
+        max-width: 100%;
+        font-size: 34px;
+        line-height: 1.12;
+    }
 }
 
 .post-single .entry-content {
     color: var(--content);
-    font-size: 17px;
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.78;
     display: block;
 }
 
@@ -21,12 +43,16 @@
 }
 
 .post-single .entry-content p {
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
 .post-description {
+    max-width: 64ch;
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    color: var(--secondary);
+    font-size: 18px;
+    line-height: 1.55;
 }
 
 .post-meta,
@@ -35,6 +61,8 @@
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
+    gap: 4px;
+    line-height: 1.45;
 }
 
 .post-meta .i18n_list li {
@@ -56,33 +84,47 @@
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    margin: 24px 0 16px;
+    max-width: 68ch;
+    margin: 34px 0 16px;
+    text-wrap: balance;
 }
 
 .post-content h1 {
-    margin: 40px auto 32px;
-    font-size: 22px;
+    max-width: 18ch;
+    margin: 52px 0 28px;
+    font-size: 34px;
+    line-height: 1.15;
+    text-wrap: balance;
 }
 
 .post-content h2 {
-    margin: 32px auto 24px;
-    font-size: 22px;
+    max-width: 24ch;
+    margin: 44px 0 22px;
+    font-size: 28px;
+    line-height: 1.18;
+    text-wrap: balance;
 }
 
 .post-content h3 {
-    font-size: 20px;
+    font-size: 23px;
+    line-height: 1.25;
 }
 
 .post-content h4 {
-    font-size: 16px;
+    font-size: 19px;
+    line-height: 1.3;
 }
 
 .post-content h5 {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.35;
 }
 
 .post-content h6 {
-    font-size: 12px;
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.35;
+    text-transform: uppercase;
 }
 
 .post-content a,
@@ -90,6 +132,12 @@
     box-shadow: 0 1px 0;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+    color: var(--accent);
+}
+
+.post-content a:hover,
+.post-content a:focus-visible {
+    box-shadow: 0 2px 0;
 }
 
 .post-content a code {
@@ -161,7 +209,9 @@
     text-align: start;
 }
 
-.post-entry tr, td, th {
+.post-entry tr,
+.post-entry td,
+.post-entry th {
     border-color: grey;
     border-width: 0.5px;
     border-style: solid;
@@ -234,9 +284,13 @@
 }
 
 .post-content blockquote {
-    margin: 20px 0;
-    padding: 0 14px;
-    border-inline-start: 3px solid var(--primary);
+    max-width: 66ch;
+    margin: 28px 0;
+    padding: 4px 18px;
+    color: var(--secondary);
+    border-inline-start: 4px solid var(--accent-soft);
+    background: var(--accent-bg);
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .post-content hr {
@@ -252,11 +306,88 @@
 
 .post-content img {
     border-radius: 4px;
-    margin: 1rem 0;
+    height: auto;
+    margin: 1.5rem 0;
+    background: var(--code-bg);
 }
 
 .post-content img[src*="#center"] {
     margin: 1rem auto;
+}
+
+.post-single .entry-content h1,
+.post-single .entry-content h2,
+.post-single .entry-content h3,
+.post-single .entry-content h4,
+.post-single .entry-content h5,
+.post-single .entry-content h6 {
+    max-width: 68ch;
+    margin: 34px 0 16px;
+    text-wrap: balance;
+}
+
+.post-single .entry-content h1 {
+    max-width: 18ch;
+    margin: 52px 0 28px;
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+.post-single .entry-content h2 {
+    max-width: 24ch;
+    margin: 44px 0 22px;
+    font-size: 28px;
+    line-height: 1.18;
+}
+
+.post-single .entry-content h3 {
+    font-size: 23px;
+    line-height: 1.25;
+}
+
+.post-single .entry-content h4 {
+    font-size: 19px;
+    line-height: 1.3;
+}
+
+.post-single .entry-content h5 {
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.post-single .entry-content h6 {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.post-single .entry-content a {
+    color: var(--accent);
+    box-shadow: 0 1px 0;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.post-single .entry-content a:hover,
+.post-single .entry-content a:focus-visible {
+    box-shadow: 0 2px 0;
+}
+
+.post-single .entry-content blockquote {
+    max-width: 66ch;
+    margin: 28px 0;
+    padding: 4px 18px;
+    color: var(--secondary);
+    border-inline-start: 4px solid var(--accent-soft);
+    background: var(--accent-bg);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.post-single .entry-content img {
+    height: auto;
+    margin: 1.5rem 0;
+    background: var(--code-bg);
 }
 
 .post-content figure.align-center {

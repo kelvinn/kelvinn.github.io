@@ -40,17 +40,24 @@
 {{- end }}
 
 
+{{- $current := .RelPermalink -}}
+{{- $nav := slice
+    (dict "label" "Travel" "url" "/tags/travel/")
+    (dict "label" "Longevity" "url" "/tags/longevity/")
+    (dict "label" "Recipes" "url" "/tags/recipes/")
+    (dict "label" "Projects" "url" "/tags/projects/")
+    (dict "label" "Tutorials" "url" "/tags/howtos/")
+    (dict "label" "Who" "url" "/about/")
+-}}
+
 <header class="header">
-    <a class="site-logo" href='/' aria-label="Kelvinism home"><span id='logo'></span><span class="sr-only">Kelvinism</span></a>
+    <a class="site-logo" href="/" aria-label="Kelvinism home"><span id="logo"></span><span class="sr-only">Kelvinism</span></a>
     <nav class="site-nav" aria-label="Primary">
     <ul>
-        <li><a href='/tags/travel/'>Travel</a></li>
-        <li><a href='/tags/longevity/'>Longevity</a></li>
-        <li><a href='/tags/recipes/'>Recipes</a></li>
-        <li><a href='/tags/projects/'>Projects</a></li>
-        <li><a href='/tags/howtos/'>Tutorials</a></li>
-        <li><a href='/about/'>Who</a></li>
+        {{- range $nav }}
+        {{- $isActive := or (eq $current .url) (and (ne .url "/about/") (hasPrefix $current .url)) -}}
+        <li><a href="{{ .url }}"{{ if $isActive }} aria-current="page"{{ end }}>{{ .label }}</a></li>
+        {{- end }}
     </ul>
     </nav>
-
 </header>

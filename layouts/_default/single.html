@@ -3,7 +3,7 @@
 <article class="post-entry post-single">
   <header class="entry-header">
 
-    <h2 class="post-title entry-hint-parent">
+    <h1 class="post-title entry-hint-parent">
       <a aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">{{ .Title }} </a>
 
       {{- if .Draft }}
@@ -14,7 +14,7 @@
         </svg>
       </span>
       {{- end }}
-    </h2>
+    </h1>
     {{- if .Description }}
     <div class="post-description">
       {{ .Description }}

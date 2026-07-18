@@ -80,8 +80,9 @@ select:focus-visible,
 textarea:focus-visible,
 summary:focus-visible,
 [tabindex]:focus-visible {
-    outline: 2px solid #96513c;
-    outline-offset: 3px;
+    outline: 3px solid var(--focus);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 body,
