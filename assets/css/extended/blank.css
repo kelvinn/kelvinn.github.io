@@ -3,3 +3,27 @@ This is just a placeholder blank stylesheet so as to support adding custom style
 
 Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-css-with-themes-assets for more info
 */
+
+.entry-content figure.about-profile-photo {
+    float: left;
+    width: 45%;
+    max-width: 285px;
+    min-width: 140px;
+    margin: 0 1.5rem 1rem 0;
+}
+
+.entry-content figure.about-profile-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+    .entry-content figure.about-profile-photo {
+        float: none;
+        display: block;
+        width: 45%;
+        min-width: 0;
+        margin: 0 auto 1rem;
+    }
+}

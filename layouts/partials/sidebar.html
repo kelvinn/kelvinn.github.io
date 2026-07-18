@@ -1,0 +1,92 @@
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $groups := slice
+  (dict "title" "Longevity" "tags" (slice "longevity" "health") "all" "/tags/longevity/")
+  (dict "title" "Travel / Outdoors" "tags" (slice "travel" "outdoor") "all" "/tags/travel/")
+  (dict "title" "Projects / Maps" "tags" (slice "projects" "gis" "postgis" "osm" "tilemill") "all" "/tags/projects/")
+-}}
+
+<aside class="sidebar" aria-label="Related site sections">
+  <div class="sidebar-inner">
+    {{- if .IsPage }}
+    {{- $current := . }}
+    {{- $threadTags := slice }}
+    {{- range .Params.tags }}
+      {{- if ne . "articles" }}
+        {{- $threadTags = $threadTags | append . }}
+      {{- end }}
+    {{- end }}
+    {{- $related := where $posts "Params.tags" "intersect" $threadTags }}
+    {{- $related = where $related "RelPermalink" "ne" $current.RelPermalink }}
+
+    {{- if $threadTags }}
+    <section class="sidebar-section">
+      <h4>Tagged</h4>
+      <ul class="sidebar-tags">
+        {{- range .GetTerms "tags" }}
+        {{- if ne (.LinkTitle | lower) "articles" }}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+        {{- end }}
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+
+    {{- if $related }}
+    <section class="sidebar-section">
+      <h4>Related Posts</h4>
+      <ul class="sidebar-links">
+        {{- range first 5 (sort $related "Date" "desc") }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{- if not .Date.IsZero }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>
+          {{- end }}
+        </li>
+        {{- end }}
+      </ul>
+    </section>
+    {{- end }}
+    {{- else }}
+    <h3>More Like This</h3>
+
+    {{- range $groups }}
+    {{- $pages := where $posts "Params.tags" "intersect" .tags }}
+    {{- if $pages }}
+    <section class="sidebar-section">
+      <h4>{{ .title }}</h4>
+      <ul class="sidebar-links">
+        {{- range first 3 (sort $pages "Date" "desc") }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{- if not .Date.IsZero }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>
+          {{- end }}
+        </li>
+        {{- end }}
+      </ul>
+      <a class="sidebar-more" href="{{ .all }}">Browse {{ lower .title }}</a>
+    </section>
+    {{- end }}
+    {{- end }}
+
+    {{- $archivePages := where $posts "Date" "lt" (time "2012-01-01") }}
+    {{- $archivePages = where $archivePages "RelPermalink" "ne" "/about/" }}
+    {{- if $archivePages }}
+    <section class="sidebar-section">
+      <h4>From the Archive</h4>
+      <ul class="sidebar-links">
+        {{- range first 4 (sort $archivePages "Date" "asc") }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{- if not .Date.IsZero }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>
+          {{- end }}
+        </li>
+        {{- end }}
+      </ul>
+      <a class="sidebar-more" href="/archives/">Browse archives</a>
+    </section>
+    {{- end }}
+    {{- end }}
+  </div>
+</aside>

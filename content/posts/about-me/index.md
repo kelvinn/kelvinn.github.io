@@ -5,12 +5,16 @@ draft: false
 url: /about/
 ---
 
-Let's get some personal information out of the way first: I currently live in Sydney, Australia.
+{{< figure src="kelvin-nicholson.jpg" alt="Kelvin Nicholson" class="about-profile-photo" >}}
 
-You will likely find me pretty friendly, or "unreasonably reasonable", as I am sometimes called, so offer to catch up in the CBD and I will probably be game.
+I live in Sydney, Australia, and work across software delivery, systems thinking, and technology-enabled operations.
 
-My background is in project management, software delivery, systems engineering and network engineering; I have delivered projects in the transport, manufacturing, logistics, education, lending, government, and banking industry. Over the previous 20 years I have had the pleasure of living in five countries, including Taiwan, France, New Zealand (twice!), Australia, and the United States. 
+My background spans project management, software delivery, systems engineering, and network engineering. Over the last two decades I have delivered work across transport, manufacturing, logistics, education, lending, government, and banking. I am especially interested in practical systems: the kind where people, data, infrastructure, process, and constraints all have to meet in the real world.
 
-I studied Information Systems at Portland State University, and completed a Masters of Transport Management from the University of Sydney. I received the Sir Hudson Fysh Award for achieving a high level of academic merit.
+I studied Information Systems at Portland State University and completed a Master of Transport Management at the University of Sydney, where I received the Sir Hudson Fysh Award for academic merit.
 
-My hobbies include travelling, reading, programming, being outdoors, and running. I have a daughter, and she is the most beautiful little side kick I could have hoped for.
+This site is a long-running notebook for things I learn, build, test, and occasionally over-measure. I write about software, infrastructure, transport, mapping, health, longevity, travel, running, parenting, language learning, and the odd practical experiment that seemed worth documenting.
+
+Outside work, I like being outdoors, travelling light, reading, programming, running, and finding ways to make data useful without making life smaller. I have lived in five countries, including Taiwan, France, New Zealand, Australia, and the United States.
+
+People have sometimes described me as "unreasonably reasonable", which I have decided to accept as a compliment. If you are in Sydney and want to catch up, there is a decent chance I will be game.

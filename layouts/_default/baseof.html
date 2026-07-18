@@ -28,6 +28,8 @@
         {{- block "main" . }}{{ end }}
     </main>
 
+    {{- partial "sidebar.html" . }}
+
     </div>
     
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
