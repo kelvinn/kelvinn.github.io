@@ -3,8 +3,8 @@
 <article class="post-entry post-single">
   <header class="entry-header">
 
-    <h1 class="post-title entry-hint-parent">
-      <a aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">{{ .Title }} </a>
+    <h2 class="post-title entry-hint-parent">
+      <a aria-label="post link to {{ .Title | plainify }}" href="{{ .RelPermalink }}">{{ .Title }} </a>
 
       {{- if .Draft }}
       <span class="entry-hint" title="Draft">
@@ -14,7 +14,7 @@
         </svg>
       </span>
       {{- end }}
-    </h1>
+    </h2>
     {{- if .Description }}
     <div class="post-description">
       {{ .Description }}
@@ -46,15 +46,7 @@
   {{- end }}
 
   <footer class="post-footer">
-    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
-    <ul class="post-tags">
-      {{- range ($.GetTerms $tags) }}
-      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
-      {{- end }}
-    </ul>
-    {{- if (.Param "ShowPostNavLinks") }}
-    {{- partial "post_nav_links.html" . }}
-    {{- end }}
+    {{- partial "mobile_related.html" . }}
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
     {{- partial "share_icons.html" . -}}
     {{- end }}

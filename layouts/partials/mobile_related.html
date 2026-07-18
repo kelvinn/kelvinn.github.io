@@ -1,0 +1,27 @@
+{{- $current := . -}}
+{{- $threadTags := slice -}}
+{{- range .Params.tags -}}
+  {{- if ne . "articles" -}}
+    {{- $threadTags = $threadTags | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- if $threadTags -}}
+  {{- $posts := where site.RegularPages "Section" "posts" -}}
+  {{- $related := where $posts "Params.tags" "intersect" $threadTags -}}
+  {{- $related = where $related "RelPermalink" "ne" $current.RelPermalink -}}
+  {{- if $related -}}
+  <section class="mobile-related" aria-labelledby="mobile-related-title">
+    <h2 id="mobile-related-title">Related Posts</h2>
+    <ul>
+      {{- range first 4 (sort $related "Date" "desc") -}}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{- if not .Date.IsZero -}}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006" }}</time>
+        {{- end -}}
+      </li>
+      {{- end -}}
+    </ul>
+  </section>
+  {{- end -}}
+{{- end -}}

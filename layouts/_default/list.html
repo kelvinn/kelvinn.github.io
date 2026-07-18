@@ -43,7 +43,7 @@
   <header class="entry-header">
     <h2 class="post-title entry-hint-parent">
       <!-- {{- .Title }} -->
-      <a aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}">{{ .Title }} </a>
+      <a aria-label="post link to {{ .Title | plainify }}" href="{{ .RelPermalink }}">{{ .Title }} </a>
       
       <!-- <a href="/">{{ .Title }}</a> -->
       {{- if .Draft }}
@@ -69,13 +69,13 @@
   {{- if (ne (.Param "hideSummary") true) }}
 
   <div class="entry-content post-summary">
-    {{ .Summary | plainify | truncate 720 }}
+    {{ .Summary | replaceRE "(?s)<h[1-6][^>]*>.*?</h[1-6]>" "" | plainify | strings.TrimSpace | truncate 720 }}
   </div>
-  <a class="read-more" href="{{ .Permalink }}" aria-label="Read more about {{ .Title | plainify }}">Read more</a>
+  <a class="read-more" href="{{ .RelPermalink }}" aria-label="Read more about {{ .Title | plainify }}">Read more</a>
 
   {{- end }}
 
-  <!-- <a aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a> -->
+  <!-- <a aria-label="post link to {{ .Title | plainify }}" href="{{ .RelPermalink }}"></a> -->
 </article>
 {{- end }}
 
@@ -83,7 +83,7 @@
 <footer class="page-footer">
   <nav class="pagination">
     {{- if $paginator.HasPrev }}
-    <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">
+    <a class="prev" href="{{ $paginator.Prev.URL | relURL }}">
       «&nbsp;{{ i18n "prev_page" }}&nbsp;
       {{- if (.Param "ShowPageNums") }}
       {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
@@ -91,7 +91,7 @@
     </a>
     {{- end }}
     {{- if $paginator.HasNext }}
-    <a class="next" href="{{ $paginator.Next.URL | absURL }}">
+    <a class="next" href="{{ $paginator.Next.URL | relURL }}">
       {{- i18n "next_page" }}&nbsp;
       {{- if (.Param "ShowPageNums") }}
       {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}

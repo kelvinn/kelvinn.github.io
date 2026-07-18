@@ -101,6 +101,27 @@ body.list {
         var(--theme);
 }
 
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1000;
+    transform: translateY(-140%);
+    border: 2px solid var(--focus);
+    border-radius: var(--radius);
+    background: var(--entry);
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    padding: 10px 12px;
+    box-shadow: 0 10px 24px rgba(30, 30, 30, 0.16);
+}
+
+.skip-link:focus-visible {
+    transform: translateY(0);
+}
+
 .container {
     display: grid;
     grid-template-areas:
@@ -419,7 +440,8 @@ header a:hover {
     color: #555555;
 }
 
-.post-list li ul, li ol {
+.post-list li ul,
+.post-list li ol {
     margin-left: 40px;
     list-style-position: inside;
 }

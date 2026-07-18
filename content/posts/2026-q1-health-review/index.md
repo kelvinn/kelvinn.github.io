@@ -219,9 +219,9 @@ Based on Q1 2026 data, key priorities for Q2 2026 are:
 
 ##### Exercise
 
-- Rebuild weekly training volume gradually toward the 800-minute target.
-- Recover average daily steps back into 10k+ territory.
-- Re-introduce strength training. Although I've got some international travel coming up, the schedule I plan to follow for the quarter is as follows:
+* Rebuild weekly training volume gradually toward the 800-minute target.
+* Recover average daily steps back into 10k+ territory.
+* Re-introduce strength training. Although I've got some international travel coming up, the schedule I plan to follow for the quarter is as follows:
 
 	- Monday: Recovery run
 	- Tuesday: [DFW](https://www.strongfirst.com/dry-fighting-weight/) + 4x4

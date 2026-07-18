@@ -18,13 +18,14 @@
 {{- print " dark" }}
 {{- end -}}
 " id="top">
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div id='redbar'></div>
 <div id='greenbar'></div>
 
 <div class="container">
     {{- partialCached "header.html" . .Page -}}
 
-    <main class="main">
+    <main class="main" id="main-content">
         {{- block "main" . }}{{ end }}
     </main>
 
