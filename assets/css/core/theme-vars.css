@@ -6,7 +6,7 @@
     --header-height: 60px;
     --footer-height: 60px;
     --radius: 8px;
-    --theme: rgb(255, 255, 255);
+    --theme: rgb(250, 249, 247);
     --entry: rgb(255, 255, 255);
     --primary: rgb(30, 30, 30);
     --secondary: rgb(108, 108, 108);
@@ -19,6 +19,8 @@
     --accent-soft: rgb(179, 196, 157);
     --accent-bg: rgb(250, 246, 243);
     --focus: rgb(150, 81, 60);
+    --surface: rgb(255, 255, 255);
+    --surface-muted: rgb(247, 244, 241);
 }
 
 .dark {
@@ -35,6 +37,8 @@
     --accent-soft: rgb(164, 186, 137);
     --accent-bg: rgb(51, 43, 39);
     --focus: rgb(222, 151, 129);
+    --surface: rgb(46, 46, 51);
+    --surface-muted: rgb(39, 39, 43);
 }
 
 .list {
