@@ -133,6 +133,8 @@ body.list {
     gap: 10px;
     max-width: 1200px; /* Prevents content from getting too wide */
     margin: 0 auto; /* Centers the layout */
+    position: relative;
+    z-index: 1;
 }
 
 .header {
@@ -144,11 +146,16 @@ body.list {
     padding: 0 20px 14px;
     font-size: 1.2rem;
     min-width: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .site-logo {
     display: inline-flex;
     flex: 0 0 auto;
+    margin-top: -5px;
+    position: relative;
+    z-index: 1;
 }
 
 #logo {
@@ -159,7 +166,8 @@ body.list {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
-    margin-top: -5px;
+    position: relative;
+    z-index: 1;
 }
 
 .site-nav {
@@ -346,6 +354,7 @@ header a:hover {
             "sidebar"
             "footer";
         grid-template-columns: 1fr;
+        margin: -5px auto 0;
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
@@ -357,6 +366,14 @@ header a:hover {
         padding-right: 14px;
         width: 100%;
         max-width: 100%;
+    }
+
+    .site-logo {
+        margin-top: 0;
+    }
+
+    .site-nav {
+        margin-top: 5px;
     }
 
     .main {
@@ -378,7 +395,6 @@ header a:hover {
     #logo {
         width: 176px;
         height: 40px;
-        margin-top: 0;
     }
 
     .site-nav ul {
