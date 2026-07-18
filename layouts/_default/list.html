@@ -68,9 +68,10 @@
 
   {{- if (ne (.Param "hideSummary") true) }}
 
-  <div class="entry-content">
-    {{ .Content  }}
+  <div class="entry-content post-summary">
+    {{ .Summary }}
   </div>
+  <a class="read-more" href="{{ .Permalink }}" aria-label="Read more about {{ .Title | plainify }}">Read more</a>
 
   {{- end }}
 

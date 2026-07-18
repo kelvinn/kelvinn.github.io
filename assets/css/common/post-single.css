@@ -8,6 +8,21 @@
     font-size: 22px;
 }
 
+.post-single .entry-content {
+    color: var(--content);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.post-single .entry-content p,
+.post-single .entry-content li {
+    max-width: 68ch;
+}
+
+.post-single .entry-content p {
+    margin-bottom: 18px;
+}
+
 .post-description {
     margin-top: 10px;
     margin-bottom: 5px;
@@ -298,7 +313,29 @@
 }
 
 .toc summary:focus {
-    outline: 0;
+    outline: 2px solid #96513c;
+    outline-offset: 3px;
+}
+
+.anchor {
+    margin-left: 0.25em;
+    opacity: 0;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.anchor::before {
+    content: "#";
+}
+
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor,
+.anchor:focus-visible {
+    opacity: 0.75;
 }
 
 .post-footer {

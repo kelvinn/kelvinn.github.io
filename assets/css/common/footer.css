@@ -56,5 +56,6 @@
 
 .top-link:focus,
 #theme-toggle:focus {
-    outline: 0;
+    outline: 2px solid #96513c;
+    outline-offset: 3px;
 }
