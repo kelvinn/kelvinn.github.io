@@ -378,6 +378,7 @@ header a:hover {
     #logo {
         width: 176px;
         height: 40px;
+        margin-top: 0;
     }
 
     .site-nav ul {
@@ -394,7 +395,7 @@ header a:hover {
 
 @media (max-width: 430px) {
     .header {
-        align-items: center;
+        align-items: flex-start;
         flex-direction: column;
     }
 
