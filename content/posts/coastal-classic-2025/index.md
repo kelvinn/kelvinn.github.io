@@ -16,7 +16,7 @@ I typically don't do many races, but signed up for the Coastal Classic - my firs
 
 It was a new course this year, so roughly the same distance, but more elevation; around 31km, with 1000m of elevation gain. I've done this route quite a few times, so was pretty familiar with the entire course. Great atmosphere, and a feeling of community.
 
-![](Pasted%20image%2020250908161744.png)
+![](pasted-image-20250908161744.png)
 ### What worked well
 
 There were quite a few things that seemed to work well:
@@ -39,11 +39,11 @@ There were quite a few things that seemed to work well:
 * Overall my equipment worked well, *except for my shoes*. The foam is great, and the tread was great, however, I think they were just 1/2 a size too small. I had a feeling this might be the case from just some shakeout runs, and even pre-taped my right ankle. Unfortunately, I needed to tape a little lower, and needed to tape my left ankle. And tape my left pinky toe. And probably elsewhere. Oh, and my toenails on each big toe were aching, which I haven't felt since I had a pair of Superiors that were a little too small.
 * And my heart was uncooperative. My average HR for the race was 163bpm, but there were times in the beginning where my HR was surprisingly high for the speed I was going. Despite having a decent resting heart rate that week, two nights before and the night before it went up significantly.
 
-![](Pasted%20image%2020250908161659.png)
+![](pasted-image-20250908161659.png)
 
-![](Pasted%20image%2020250908161809.png)
+![](pasted-image-20250908161809.png)
 
-![](Pasted%20image%2020250908161844.png)
+![](pasted-image-20250908161844.png)
 
 ### Focus for next time
 

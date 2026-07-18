@@ -53,7 +53,7 @@ If I chart the days of the week I like to drink coffee over the last 18 months, 
 
   
 
-[![](Coffees+Consumed.png)](Coffees+Consumed.png)
+[![](coffees-consumed.png)](coffees-consumed.png)
 
   
 

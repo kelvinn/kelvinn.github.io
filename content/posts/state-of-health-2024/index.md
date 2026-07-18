@@ -46,7 +46,7 @@ My main form of cardio is running, so let's start there. You can clearly see whe
 
   
 
-[![](Screenshot2025-01-31at8.10.15 am.png)](Screenshot2025-01-31at8.10.15 am.png)
+[![](screenshot2025-01-31at8-10-15-am.png)](screenshot2025-01-31at8-10-15-am.png)
 
   
 
@@ -66,7 +66,7 @@ In addition to cardio I've been trying to increase the amount of time I spend re
 
   
 
-[![](Screenshot2025-01-31at8.24.37 am.png)](Screenshot2025-01-31at8.24.37 am.png)
+[![](screenshot2025-01-31at8-24-37-am.png)](screenshot2025-01-31at8-24-37-am.png)
 
   
 
@@ -100,7 +100,7 @@ How do we track how well nutrition is working? For now, let's just look at my we
 
   
 
-[![](Screenshot2025-01-31at8.49.30 pm.png)](Screenshot2025-01-31at8.49.30 pm.png)
+[![](screenshot2025-01-31at8-49-30-pm.png)](screenshot2025-01-31at8-49-30-pm.png)
 
   
 
@@ -130,7 +130,7 @@ However, my sleep in in 2024 was less consistent than in 2023, unfortunately. My
 
   
 
-[![](Screenshot2025-01-31at9.03.55 am.png)](Screenshot2025-01-31at9.03.55 am.png)
+[![](screenshot2025-01-31at9-03-55-am.png)](screenshot2025-01-31at9-03-55-am.png)
 
   
 
@@ -164,7 +164,7 @@ Here is a snapshot of my biomarkers.
 
   
 
-[![](Screenshot2025-01-31at9.10.04 pm.png)](Screenshot2025-01-31at9.10.04 pm.png)
+[![](screenshot2025-01-31at9-10-04-pm.png)](screenshot2025-01-31at9-10-04-pm.png)
 
   
 
@@ -184,7 +184,7 @@ Let's look at Stress.
 
   
 
-[![](Screenshot2025-01-31at9.28.45 pm.png)](Screenshot2025-01-31at9.28.45 pm.png)
+[![](screenshot2025-01-31at9-28-45-pm.png)](screenshot2025-01-31at9-28-45-pm.png)
 
   
 
@@ -202,7 +202,7 @@ My resting heart rate hovered around 50-51 for the year, and ultimately I would 
 
   
 
-[![](Screenshot2025-01-31at9.33.37 pm.png)](Screenshot2025-01-31at9.33.37 pm.png)
+[![](screenshot2025-01-31at9-33-37-pm.png)](screenshot2025-01-31at9-33-37-pm.png)
 
   
 

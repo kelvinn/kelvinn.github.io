@@ -16,9 +16,9 @@ However, I treated this quarter as a test: perhaps there wasn't an improvement, 
 
 One part of the test is flipping what could be so many negative thoughts into positive experiences. For example, with my ankle, I used this as an excuse to dedicate more time to learning how to swim.
 
-![[Pasted image 20260425153051.png]]
+![Leaving emergency with crutches after breaking my ankle](broken-ankle-emergency.png)
 
-![[Pasted image 20260425152943.png]]
+![Practicing swimming at the outdoor pool](swimming-practice.png)
 ### Focus Areas
 
 As usual, there are four areas that I wanted to focus on:

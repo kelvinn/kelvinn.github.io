@@ -30,11 +30,11 @@ The first area I focussed was on nutrition, but you might be critical with what 
 
 Luckily I operate under more of a 'flexitarian' model when it comes to nutrition, so while I am almost entirely plant based while home, I will still have chicken and eggs while travelling. However, I will still aim to avoid foods high in saturated fats (in particular coconut oils and full cream dairy), or heavily processed foods (e.g. baked goods, or certain meats like sausage or bacon). This does change how I participate in shared meals, and does mean missing out on some absolutely fantastic food!
 
-![](Pasted%20image%2020250824130341.png)
+![](pasted-image-20250824130341.png)
 
 Sometimes I can get in a situation where I need to try something, but only after trying it realise that finishing the item is incompatible with my longevity goals. For example, the below drink came out on a recent trip and I thought it was going to be a rose-flavoured tea, but it was more like juice. Given it was 8PM, after having a single sip I opted to skip the rest. While extremely tasty, I am experimenting with avoiding carbs in the afternoon and especially evening. Previously I might have felt it would be rude to not finish everything, but now I'm OK skipping items.
 
-![](Pasted%20image%2020250824122048.png)
+![](pasted-image-20250824122048.png)
 
 Here is what my supplies look like for 8 days (ignore the TimTams and Vegemite - they're a gift!). That is 1KG of oats.
 
@@ -62,7 +62,7 @@ Finally, I maintain my glycine intake, which is especially important if my methi
 
 After a previous trip to India I realised that staying in a hotel with a fitness centre is crucial, so unless visiting somewhere where I can run outside, such an amenity is now non-negotiable. I will usually travel wearing a pair of trainers, and will pack my HRM as well as a headband; the headband is essential if using a treadmill!
 
-![](Pasted%20image%2020250824131039.png)
+![](pasted-image-20250824131039.png)
 
 It would be easy to bring too much clothing, but what I've found is that I can get away with 2x running shorts, 1x lightweight tank, and 3x running socks. I wash every evening in the hotel sink, and bring a Sea-To-Summit clothing line to let it try.
 

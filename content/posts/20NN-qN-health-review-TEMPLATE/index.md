@@ -137,8 +137,7 @@ How did priority biomarkers change?
 | **[Biomarker 2]** | [Prior result + date] | [Latest result + date] | [Direction] | [In range / Out of range] |
 | **[Biomarker 3]** | [Prior result + date] | [Latest result + date] | [Direction] | [In range / Out of range] |
 
-Optional biological age / risk view:
-![PhenoAge or Similar](phenoage.png)
+Optional biological age / risk view: [Add chart if available]
 
 Key interpretation:
 

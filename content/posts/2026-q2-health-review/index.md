@@ -211,7 +211,7 @@ The CGM experiment made this less abstract. Some regular meals looked fine, incl
 
 The main experiment that I ran this quarter was around fasting glucose. While not terrible, I wanted to try and drive this number down. I decided to re-visit getting a CGM and see which foods spike my levels. The first day was relatively uneventful: toast with peanut butter and fig jam was fine, as was my "Nutty Pudding"-inspired smoothie, same with some pasta and vegetables. On day two though I decided to try a new laksa place, which isn't a type of food I even typically eat that often, and stood back as I could see my fasting glucose levels soar. When I saw them raise I immediately went on a walk, but even that didn't help.
 
-![](Pasted%20image%2020260502111803.png)
+![](pasted-image-20260502111803.png)
 
 ### Supplement Stack
 

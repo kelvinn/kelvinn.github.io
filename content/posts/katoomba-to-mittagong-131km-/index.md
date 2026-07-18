@@ -57,7 +57,7 @@ Photos: [https://imgur.com/a/Q6Fl4fR](https://imgur.com/a/Q6Fl4fR)
 
   
 
-[![](IMG_0156.jpeg =100x20)](IMG_0156.jpeg)
+[![](IMG_0156.jpeg){width="100" height="20"}](IMG_0156.jpeg)
 
 Looking Fresh
 
