@@ -11,6 +11,7 @@ tags:
 - python
 - xml
 - hacking
+- tutorial
 ---
 
 I rank OSSEC as one of my favorite pieces of open source software, and finally decided to play around with it more in my own free time. (Yup, I do this sort of stuff for _fun_). My goal was quite simple: send syslog packets from my Cisco to my "proxy" server, running OSSEC. I found that, although OSSEC supports Cisco IOS logging, it didn't really work. In fact, I couldn't find any examples or articles of anybody actually getting it to work.

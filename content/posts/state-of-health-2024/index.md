@@ -7,6 +7,7 @@ ShowToc: false
 tags: 
 - articles
 - longevity
+- outdoors
 ---
 
 ### Background

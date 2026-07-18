@@ -5,6 +5,7 @@ draft: false
 url: /2008/04/notes-on-installing-modtile-for-mapnik_168.html
 tags: 
 - howtos
+- tutorial
 ---
 
 I have no idea if these notes on how to install mod_tile will be useful for anybody. The current readme states that you need to edit the source code, but never actually where. Well, this is where, at least until the code can either take switches or can auto-configure itself. This is quite brief, so if you need more details, shoot me an email or leave a comment. I have repeated this process on two Ubuntu 7.10 machines.

@@ -9,6 +9,7 @@ tags:
 - amazon
 - python
 - api
+- tutorial
 ---
 
 For one of my projects I need to generate thumbnails for a page. And lots and lots and lots of them. Even though I can generate them via a python script and a very light "gtk browser", I would prefer to mitigate the server load. To do this I've decided to tap into the Alexa Thumbnail Service. They allow two methods: REST and SOAP. After several hours of testing things out, I've decided to toss in the towel and settle on REST. If you can spot the error with my SOAP setup, I owe you a beer.  

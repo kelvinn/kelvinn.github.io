@@ -6,6 +6,7 @@ url: /2013/07/some-qs-numbers.html
 tags: 
 - articles
 - quantified self
+- outdoors
 ---
 
 There is the possibility I will be giving an interview on the [Quantified Self](http://en.wikipedia.org/wiki/Quantified_Self) "movement". What follows is a brief summary of QS, the things I track, and some pretty charts.  

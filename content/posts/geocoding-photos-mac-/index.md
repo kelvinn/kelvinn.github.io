@@ -7,6 +7,7 @@ tags:
 - photography
 - howtos
 - mac
+- tutorial
 ---
 
 I've recently started using OSX (again), and am really enjoying it (again). One Windows-only tool that I found really useful is [Geosetter](http://www.geosetter.de/en/), which allows you to add geo coordinates into photos. There don't appear to be any free geocoding tools that work to my satisfaction to do this, so the next best thing was geocode like you would using Linux. Here's how.  

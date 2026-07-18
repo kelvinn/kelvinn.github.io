@@ -7,6 +7,7 @@ tags:
 - tips and tricks
 - cisco
 - howtos
+- tutorial
 ---
 
 Recently I tried editing my Cisco's ACL at home on the train. It went something like this:  

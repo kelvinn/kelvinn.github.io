@@ -5,6 +5,7 @@ draft: false
 url: /2006/11/resize-xen-image_3704.html
 tags: 
 - howtos
+- tutorial
 ---
 
 So, you've got a few Xen images around, and they are starting to fill up. How do you add a few more gigs to 'em?

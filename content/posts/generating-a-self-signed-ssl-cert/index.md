@@ -5,6 +5,7 @@ draft: false
 url: /2007/05/generating-self-signed-ssl-cert_2490.html
 tags: 
 - howtos
+- tutorial
 ---
 
 I have the need to generate an SSL cert (Apache2) about once every 3 months. And since I'm cheap, I don't ever actually *buy* one, I just self-sign it. And every time I forget the commands needed. So, here they are, for my reference only.  

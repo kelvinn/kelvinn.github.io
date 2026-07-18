@@ -7,6 +7,7 @@ tags:
 - tdx
 - howtos
 - gtfs
+- tutorial
 ---
 
 TDX data has been available for a number of years on 131500.info, but many tools are GTFS specific. I also find GTFS easier to work with.  

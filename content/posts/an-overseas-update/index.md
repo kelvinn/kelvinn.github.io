@@ -5,6 +5,7 @@ draft: false
 url: /2005/09/an-overseas-update_1045.html
 tags: 
 - projects
+- outdoors
 ---
 
 Status: ✅  

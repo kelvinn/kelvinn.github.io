@@ -5,6 +5,7 @@ draft: false
 url: /2007/05/png-transparency-and-ie_2740.html
 tags: 
 - howtos
+- tutorial
 ---
 
 I've vowed to not use transparent PNGs until almost everybody has switched to IE7, where they are actually supported (despite being supported by every other major browser). I've done the hacks, and have had good results. I like using PNGs, I'll admit it. [Inkscape](http://www.inkscape.org/) exports them directly, however one slight problem: transparency still exists. This isn't really a problem since I'm not layering images, or is it?  

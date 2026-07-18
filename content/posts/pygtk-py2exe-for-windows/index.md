@@ -7,6 +7,7 @@ tags:
 - windows
 - python
 - howtos
+- tutorial
 ---
 
 I'm writing down these quick notes so I can remember the steps for getting py2exe to work with GTK.

@@ -5,6 +5,7 @@ draft: false
 url: /2008/04/setting-up-mapnik-server-on-ubuntu_118.html
 tags: 
 - howtos
+- tutorial
 ---
 
 First, we go ahead and install the needed packages. I've tried to include "my" list of packages that were needed to get a vanilla 7.10 image up to steam.

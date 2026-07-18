@@ -6,6 +6,7 @@ url: /2008/11/backup-openfiler-to-s3_9140.html
 tags: 
 - howtos
 - openfiler
+- tutorial
 ---
 
 Backing up your Openfiler box to S3  

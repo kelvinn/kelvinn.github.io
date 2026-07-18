@@ -5,6 +5,7 @@ draft: false
 url: /2006/12/make-dynamic-sites-static_7513.html
 tags: 
 - howtos
+- tutorial
 ---
 
 Let's say one page on your site is getting hit hard. And I mean, it was digg'd or something. If the page resides on some CMS or blog, and each request is being processed by PHP and resulting in requests to your database, which, as they say, crap is gonna hit the fan. Well, at least if you're cheap like me, you'll try to squeeze every penny out of what you've got.  

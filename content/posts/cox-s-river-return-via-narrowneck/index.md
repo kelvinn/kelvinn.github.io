@@ -5,6 +5,7 @@ draft: false
 url: /2020/08/coxs-river-return-via-narrowneck.html
 tags: 
 - backpacking
+- outdoors
 ---
 
  Read below for a long list of warnings. After reading some of the comments below, e.g. from Des, it seems like the track can vary significantly depending on when you do it.

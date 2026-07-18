@@ -7,6 +7,7 @@ tags:
   - health
   - articles
   - recipes
+  - tutorial
 aliases:
   - /2025/03/nutty-pudding-modified-recipe-australia/
 ---

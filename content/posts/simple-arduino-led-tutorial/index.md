@@ -6,6 +6,7 @@ url: /2009/07/simple-arduino-led-tutorial_319.html
 tags: 
 - arduino
 - howtos
+- tutorial
 ---
 
 For this you'll need: an Arduino, an LED, a USB cable, and the Arduino software.  

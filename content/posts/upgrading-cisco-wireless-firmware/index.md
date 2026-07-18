@@ -8,6 +8,7 @@ tags:
 - articles
 - wireless
 - cisco
+- tutorial
 ---
 
 I'm always forgetting the exact string to enter at the CLI for updating the IOS on a wireless Cisco AP, so I'll just put it here to end my future searches:

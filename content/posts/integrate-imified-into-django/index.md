@@ -8,6 +8,7 @@ tags:
 - python
 - howtos
 - xmpp
+- tutorial
 ---
 
 I recently had the desire to send small updates to my so called [lifestream](http://www.blogger.com/about-me/) page via XMPP/GTalk. I played around with Twisted Words and several other Python XMPP clients, but I didn't really want to keep a daemon running if unnecessary. It turns out imified took a lot of the pain out of it. The steps for me were as follows:  

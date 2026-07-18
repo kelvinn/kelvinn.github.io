@@ -8,6 +8,7 @@ tags:
 - articles
 - colddirt
 - newforms
+- tutorial
 ---
 
 I hear many complaints and questions about newforms, but I've personally found it rather easy and logical to use. There are numerous ways for you to use do forms in Django, and most likely the best way to see them all is to [read the docs](http://www.djangoproject.com/documentation/newforms/). On the Colddirt demo site, this is how I used newforms. I'll take the index page as an example.  

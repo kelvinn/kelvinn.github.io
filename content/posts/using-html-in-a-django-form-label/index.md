@@ -8,6 +8,7 @@ tags:
 - python
 - howtos
 - web
+- tutorial
 ---
 
 I recently had the need to add some HTML to the label for a form field using Django. The solution is pretty easy, except I didn't see it written explicitly anywhere, and I missed the memo of the function I should be using.  

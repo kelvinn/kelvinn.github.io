@@ -5,6 +5,7 @@ draft: false
 url: /2007/05/postfixdovecot-mysql_1687.html
 tags: 
 - howtos
+- tutorial
 ---
 
 As you can see by [another post](http://www.blogger.com/tech-blog/gentoo-test/), I decided to reinstall the server. This isn't really a problem, I have pretty good backups. I've installed apache and friends a bagillion times. However, Postfix(chroot)+Dovecot authenticating from MySQl, that doesn't install quite so smoothly.  

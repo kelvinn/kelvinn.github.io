@@ -9,6 +9,7 @@ tags:
 - gae
 - python
 - howtos
+- tutorial
 ---
 
 I've started to get into Google's App Engine again, and have started developing a simple product that I had a use for. The initial first draft was a quick 200 lines in webapp, and it worked great. However, I'm starting to find certain things quite cumbersome. I'm a huge fan of Django, and but also about keeping things as simple as possible, which is why I picked webapp to begin with.  

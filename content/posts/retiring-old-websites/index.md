@@ -8,6 +8,7 @@ tags:
 - apache
 - redirect
 - howtos
+- tutorial
 ---
 
 Sometimes all good things [come to an end](http://www.kelvinism.com/tech-blog/rip-old-sites/). There aren't too many links going into either of these sites, but I'd like to redirect all of them to a page on my blog saying the website doesn't exist anymore. I've already created simple screendumps for nostalgic purposes with the Firefox plugin Screengrab!, so the remaining simple server-side steps are:

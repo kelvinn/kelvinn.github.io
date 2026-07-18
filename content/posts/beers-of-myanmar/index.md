@@ -6,6 +6,7 @@ url: /2014/04/beers-of-myanmar.html
 tags: 
 - articles
 - travel
+- outdoors
 ---
 
 [![](IMG_20140423_082522.jpg)](IMG_20140423_082522.jpg)

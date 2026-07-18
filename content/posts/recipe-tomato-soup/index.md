@@ -6,6 +6,7 @@ url: /recipes/tomato-soup.html
 tags:
   - articles
   - recipes
+  - tutorial
 ---
 ### Background
 

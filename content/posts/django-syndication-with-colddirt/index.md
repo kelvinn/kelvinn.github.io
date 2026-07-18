@@ -8,6 +8,7 @@ tags:
 - django
 - articles
 - colddirt
+- tutorial
 ---
 
 Creating feeds in Django is freaking simple. I'll start with an example of just updating a feed with the newest objects (for instace, newest blog posts). Similar to the forms.py way of handling our different forms, I've created a feeds.py to handle the feeds.  

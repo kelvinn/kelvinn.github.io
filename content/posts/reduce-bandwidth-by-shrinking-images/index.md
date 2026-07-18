@@ -8,6 +8,7 @@ tags:
 - traffic
 - bash
 - howtos
+- tutorial
 ---
 
 A friend has a simple WordPress-based website that I set up for him a few year ago - and he likes to post a lot of images. For various reasons I have it hosted on my VPS in Australia, which only comes with 15GB of bandwidth, most likely because I got a crazy good deal on it.

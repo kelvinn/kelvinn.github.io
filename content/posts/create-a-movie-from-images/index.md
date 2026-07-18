@@ -8,6 +8,7 @@ tags:
 - linux
 - monitoring
 - howtos
+- tutorial
 ---
 
 I've started leaving my webcam on as a motion detector to find out who is leaving the shopping cards on our lawn, and ultimately have found it useful to stitch the images together into a movie. There are several ways to do this - and my way maybe isn't the best - but it works for me.

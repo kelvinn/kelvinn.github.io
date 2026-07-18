@@ -6,6 +6,7 @@ url: /2021/04/post-backpacking-trip-clean-up.html
 tags: 
 - articles
 - backpacking
+- outdoors
 ---
 
 I have the privilege of being able to afford all those random little backpacking items, and while I don't baby my gear, I do try to take care of it. Especially things that keep me safe. Here's what I do after every trip with a few of the items.

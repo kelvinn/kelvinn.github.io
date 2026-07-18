@@ -8,6 +8,7 @@ tags:
 - ubuntu
 - vmware
 - howtos
+- tutorial
 ---
 
 I now have successful installation of VMware Server 2 (Beta RC1) on top of Ubuntu 8.04 64-bit. I have been using various virtualization technologies for years, and VMware is usually the easiest to install and configure. So far, VMware Server 2 RC1, has proven to be the exception to the rule.

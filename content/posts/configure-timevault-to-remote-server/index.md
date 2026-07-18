@@ -7,6 +7,7 @@ tags:
 - ubuntu
 - linux
 - howtos
+- tutorial
 ---
 
 Using TimeVault with a shared drive as a backend is actually quite easy, but it does require a few special things setup. Note: this is gonna be a brief summary.

@@ -6,6 +6,7 @@ url: /2009/09/remove-dead-tags_6886.html
 tags: 
 - django
 - howtos
+- tutorial
 ---
 
 I've noticed my django-tagging install has been giving a lot of empty entries when doing a lookup on a tag. Tonight I finally got around to looking at what was causing this. This is surely not the best way to do this, but at 12:00am on a weekday, well, I shouldn't be doing it in the first place... I first wanted to see what type of content was generating the error:

@@ -9,6 +9,7 @@ tags:
 - cisco
 - howtos
 - netflow
+- tutorial
 ---
 
 I've been side-tracked on another little project, and keep coming back to NetFlow. For this project I'll need to access NetFlow data with [Django](http://www.djangoproject.com), but this is a bit tricky. First, I'm sort of lazy when it comes to my own project; maybe not lazy, I just like taking the most direct route. The most up-to-date NetFlow collector I noticed was [flow-tools](http://code.google.com/p/flow-tools/), and there is even a switch to export the information into MySQL. Sweet! However, I wanted to insert the flows into MySQL automatically, or at least on a regular basis. I first started writing a python script that would do the job, but after a few minutes noticed flow-capture had a rotate_program switch, and started investigating. Since I somehow couldn't find anywhere instructions how to insert the data automatically, here's what I came up with:

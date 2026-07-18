@@ -9,6 +9,7 @@ tags:
 - python
 - rest
 - api
+- tutorial
 ---
 
 As some of you may know, I have some projects cooked up. I don't expect to make a million bucks (wish me luck!), but a few extra bills in the pocket wouldn't hurt. Plus, I'm highly considering further education, which will set me back a few-thirty grand. That said, one of my projects will rely heavily on [Amazon Web Services](http://www.amazon.com/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.com%2FAWS-home-page-Money%2Fb%3Fie%3DUTF8%26node%3D3435361&tag=kelvinismcom-20&linkCode=ur2&camp=1789&creative=9325)![](http://www.assoc-amazon.com/e/ir?t=kelvinismcom-20&l=ur2&o=1). Amazon has, for quite some time now, opened up their information via REST and SOAP. I've been trying (virtually the entire day) to get SOAP to work, but seem to get snagged on a few issues. Stay tuned.  

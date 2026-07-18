@@ -8,6 +8,7 @@ tags:
 - taiwan
 - tips and tricks
 - travel
+- outdoors
 ---
 
 This will be my last post from Taiwan, and I'm placing it in my tech section. Shortly I will be flying to Hong Kong, and then traveling into China. I'm not bringing my laptop with me. I'm always a little wary of using public computers, especially in many of the poorly run internet cafes. Often the logged in user is the administrator, and we all know the computers are obviously crawling with worms and keyloggers. What can I do?  

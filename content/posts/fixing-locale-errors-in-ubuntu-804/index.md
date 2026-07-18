@@ -9,6 +9,7 @@ tags:
 - locales
 - tips
 - howtos
+- tutorial
 ---
 
 I've hit this problem a few times, and figured I'd leave a note for myself how to fix it. Ubuntu 8.04 seems to hiccup sometimes (on a VPS) for generating the correct locales. In particular, I get this error, a lot:

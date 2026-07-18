@@ -7,6 +7,7 @@ tags:
 - docker
 - python
 - howtos
+- tutorial
 ---
 
 I have recently had the opportunity to begin exploring [Docker](http://www.docker.com/), the currently hip way to build application containers, and I generally like it. It feels a bit like using Xen back in 2005, when you still had to download it from cl.cam.ac.uk, but there is _huge_ momentum right now. I like the idea of breaking down each component of your application into unique services and bundling them up - it seems clean. The next year is going to be very interesting with Docker, as I am especially looking forward to seeing how Google's App Engine allows Docker usage, or what's in store for the likes of Flynn, Deis, CoreOS, or Stackdock.  

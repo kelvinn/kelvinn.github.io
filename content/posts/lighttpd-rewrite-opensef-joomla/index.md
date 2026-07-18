@@ -5,6 +5,7 @@ draft: false
 url: /2006/10/lighttpdrewriteopensefjoomla_4861.html
 tags: 
 - howtos
+- tutorial
 ---
 
 For those of you not needing Apache and the whole kitchen sink, [insert reason here], Lighttpd is a very attractive contender. For me, it has a small memory footprint, which is highly appealing. However, getting SEO urls to work (i.e. utilizing rewrite), isn't too straightforward.  

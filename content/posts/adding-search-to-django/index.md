@@ -7,6 +7,7 @@ tags:
 - search
 - django
 - articles
+- tutorial
 ---
 
 This is fairly well documented in the Django docs, so I'll be brief. This is the the bit of search code I use in almost all of my Django sites, and it works great:  

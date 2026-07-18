@@ -6,6 +6,7 @@ url: /2011/01/removing-unused-contenttypes_4881.html
 tags: 
 - django
 - howtos
+- tutorial
 ---
 
 I've been cleaning up my personal blog a bit, and I noticed that my tagging system recently broke. I've investigated the cause, and it appears to be because I removed some apps but the contenttypes remained. This meant that whenever I tried calling a tag with a TaggedItem that had been deleted, I was getting this error:  

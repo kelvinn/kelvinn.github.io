@@ -9,6 +9,7 @@ tags:
 - vmware
 - linux
 - howtos
+- tutorial
 ---
 
 I like ESX. I like Linux. It is absurdly easy to configure Linux as an NFS server and mount it in ESXIi).

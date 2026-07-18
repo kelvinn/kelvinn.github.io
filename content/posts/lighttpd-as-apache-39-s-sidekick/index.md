@@ -5,6 +5,7 @@ draft: false
 url: /2006/12/lighttpd-as-apache-sidekick_4400.html
 tags: 
 - howtos
+- tutorial
 ---
 
 So, you have a web server. So, you have PHP. So, you want to make it a little quicker? The following are a few ideas to let you do that. First, let me share my experiences.  

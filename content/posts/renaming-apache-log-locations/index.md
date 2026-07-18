@@ -9,6 +9,7 @@ tags:
 - articles
 - apache
 - bash
+- tutorial
 ---
 
 I realized a few of my log files were growing unusually large, and even worse, logrotate was skipping them. I took a look in logrotate.d and straight away realized why: I had created silly names for the log file. logrotate look for .log files, but I had specified mine as .log -- e.g. kelvinism_access_log. I was as familiar with logrotate when I set up the domains, so set forth to get them in the rotation.

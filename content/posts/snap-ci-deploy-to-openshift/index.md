@@ -7,6 +7,7 @@ tags:
 - openshift
 - howtos
 - ci / cd
+- tutorial
 ---
 
 There are some wonderful [CI](http://www.thoughtworks.com/continuous-integration) / [CD](http://www.thoughtworks.com/continuous-delivery) tools out there right now, and some of them have very usable free tiers. A few good examples include [Shippable](https://www.shippable.com/), [Wercker](http://wercker.com/), [CloudBees,](http://www.cloudbees.com/products/dev) and [Snap-CI](https://www.snap-ci.com/). There are others, of course, but these all allow at least one private project to get started.  

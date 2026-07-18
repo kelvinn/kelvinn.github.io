@@ -7,6 +7,7 @@ tags:
 - articles
 - cisco
 - vpn
+- tutorial
 ---
 
 The following sites might be helpful to configure IPSec again, or on a more complex basis:

@@ -5,6 +5,7 @@ draft: false
 url: /2007/06/alexa-site-thumbnail-with-python_803.html
 tags: 
 - howtos
+- tutorial
 ---
 
 For one of my sites I needed to get thumbnails, yet [Alexa Site Thumbnail](http://developer.amazonwebservices.com/connect/kbcategory.jspa?categoryID=51) didn't have any code snippets for Python. Well, no they/you do.  

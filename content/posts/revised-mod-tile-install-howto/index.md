@@ -7,6 +7,7 @@ tags:
 - OSM
 - apache
 - howtos
+- tutorial
 ---
 
 This is the laundry list of things I did while creating a mod_tile VMware appliance based on Ubuntu Server 8.04. I've kept descriptions limited but left all the commands in. Let's start installing things...

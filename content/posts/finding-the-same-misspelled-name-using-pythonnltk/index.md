@@ -6,6 +6,7 @@ url: /2013/09/finding-same-misspelled-name-using.html
 tags: 
 - python
 - howtos
+- tutorial
 ---
 
 I have been meaning to play around with the [Natural Language Toolkit](http://nltk.org/) for quite some time, but I had been waiting for a time when I could experiment with it and actually create some value (as opposed to just play with it). A suitable use case appeared this week: matching strings. In particular, matching two different lists of many, many thousands of names.  

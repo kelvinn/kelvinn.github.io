@@ -5,6 +5,7 @@ draft: false
 url: /2007/05/solved-no-pubkey_625.html
 tags: 
 - howtos
+- tutorial
 ---
 
 I've received this error more than once, so I'm finally writing my notes how I solve it.  

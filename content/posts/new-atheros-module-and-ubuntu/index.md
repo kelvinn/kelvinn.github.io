@@ -9,6 +9,7 @@ tags:
 - kernel
 - wireless
 - howtos
+- tutorial
 ---
 
 I've been using Atheros for quite some time, and I've always liked the madwifi drivers. They allowed really easy switching into monitor mode, and decent levels of packet injection. However, since I'm mostly in an office now, instead of writing web apps in cafes and trying to score free internet, I don't really need anything fancy. My gentoo stage 1 (3?) days are over. I use Ubuntu, because I'm lazy, and it mostly works.

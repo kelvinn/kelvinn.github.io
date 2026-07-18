@@ -8,6 +8,7 @@ tags:
 - zenoss
 - python
 - howtos
+- tutorial
 ---
 
 I've evaluated Zenoss before, but forgot the default password, and searching for it didn't come up with anything quickly. I tried everything under the sun: password, 1234, admin, God, Sex, but alas, grep to the rescue:

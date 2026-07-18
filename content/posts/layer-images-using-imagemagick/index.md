@@ -7,6 +7,7 @@ tags:
 - imagemagick
 - howtos
 - gimp
+- tutorial
 ---
 
 For one of my [webapp projects](http://www.brokebutnot.com/) I'm needing to layer two images. This isn't a problem on my laptop -- I just fire up GIMP, do some copy 'n pasting, and I'm done. However, since everything needs to be automated (scripted), and on a server -- well, you get the point.  

@@ -5,6 +5,7 @@ draft: false
 url: /2007/06/tunneling-over-ssh_6040.html
 tags: 
 - howtos
+- tutorial
 ---
 
 As a rule, whenever I'm online I'm logged into my server back in the States. I'm also usually wireless, which we all know is beyond insecure -- I've found it _especially_ useful to tunnel firefox over SSH. I try my best to tunnel stuff over SSH back, and if you want to also, this is how.  

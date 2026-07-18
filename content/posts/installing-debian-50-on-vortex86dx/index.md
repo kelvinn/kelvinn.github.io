@@ -10,6 +10,7 @@ tags:
 - howtos
 - compiling
 - ebox
+- tutorial
 ---
 
 After writing about [compiling a new kernel](http://kelvinism.com/tech-blog/compiling-kernel-vortex86dx/) for the Vortex86DX, I've had quite a few people email me asking how I installed Debian in the first place. The installation is actually quite straightforward, but it involved several quirky techniques. After doing another install I decided to keep track of the process of installing Debian 5.0 on my eBox-3300.

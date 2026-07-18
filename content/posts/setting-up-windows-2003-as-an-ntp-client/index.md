@@ -7,6 +7,7 @@ tags:
 - windows
 - ntp
 - howtos
+- tutorial
 ---
 
 I have had to search for the commands to setup a Windows 2003 box as an ntp client a few times now, so have decided to finally write them down here for my own good measure. Funny thing is, I'm pretty sure there are three ways to setup a 2003 box as an ntp client.

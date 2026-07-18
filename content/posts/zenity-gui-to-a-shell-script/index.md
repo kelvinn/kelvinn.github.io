@@ -9,6 +9,7 @@ tags:
 - linux
 - articles
 - python
+- tutorial
 ---
 
   

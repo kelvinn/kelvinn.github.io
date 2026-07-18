@@ -7,6 +7,7 @@ tags:
 - django
 - articles
 - xml
+- tutorial
 ---
 
 Since I've already covered a really simple syndication example, I'll move onto something a little more complex. Let's say you want to offer syndication that is slightly more custom. The Django [syndication docs](http://www.djangoproject.com/documentation/syndication_feeds/) give an example from [Adrian's](http://www.holovaty.com/) [Chicagocrime.org](http://www.chicagocrime.org/) syndication of beats. I had to ponder a minute to get "custom" syndication to work, so here's my example from start to finish.  

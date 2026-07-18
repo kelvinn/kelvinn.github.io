@@ -8,6 +8,7 @@ tags:
 - error
 - howtos
 - postfix
+- tutorial
 ---
 
 One thing I love about open source stuff is that the developers usually take great care to allow awesome debug messages. There's a catch-22, however: how much logging to enable? Today I was creating a Postfix/Dovecot/Postgresql install and I kept getting an error message in mail.log, but it wasn't very helpful.

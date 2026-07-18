@@ -6,6 +6,7 @@ url: /2012/01/lessons-learned-for-lightweight-travel.html
 tags: 
 - tips and tricks
 - travel
+- outdoors
 ---
 
 Now that my Europe trip has ended, I need to leave a note of things I wish I had done better, both travel-wise, and the stuff I brought along.  

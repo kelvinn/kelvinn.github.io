@@ -9,6 +9,7 @@ tags:
 - python
 - howtos
 - iis
+- tutorial
 ---
 
 As you can tell from reading some of the other pages, I like Linux and open source. But I also like to answer the question "what if..." This post is my [brief] run down of answering "what if I could run Django on Server 2003 with SQL Server and IIS." Why, you may ask? To be honest with you, at this point, I don't really know. One of the deciding factors was seeing that the django-mssql project maintains support for inspectdb, which means I could take a stock 2003 server running SQL Server, inspect the DB, and build a web app on top of it. The Django docs offer a lengthy [howto](http://code.djangoproject.com/wiki/DjangoOnWindowsWithIISAndSQLServer) for using Django with IIS and SQL Server, but the website for PyISAPIe seems to have been down for the last month or so. Without further delay, below are my notes on installing Django with SQL Server and IIS.

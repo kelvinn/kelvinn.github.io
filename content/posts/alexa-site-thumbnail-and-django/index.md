@@ -5,6 +5,7 @@ draft: false
 url: /2007/06/alexa-site-thumbnail-and-django_7479.html
 tags: 
 - howtos
+- tutorial
 ---
 
 So, you've seen how to look up thumbnails [via python](/howtos/alexa-site-thumbnail-python/), but wonder how to integrate this with Django? I created a [sample app to demonstrate](/webthumbs/). One thing to note about this app is it is slightly more complex than just using the [previously mentioned](/howtos/alexa-site-thumbnail-python/) ThumbnailUtility. For starters, the thumbnail is downloaded from Alexa onto the server. Another part is first searching if the thumbnail exists already, and if it does, serving that instead of querying Alexa. Let's just start with some code.

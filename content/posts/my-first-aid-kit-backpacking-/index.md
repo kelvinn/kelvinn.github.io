@@ -6,6 +6,7 @@ url: /2019/06/my-first-aid-kit-backpacking.html
 tags: 
 - articles
 - backpacking
+- outdoors
 ---
 
 Background

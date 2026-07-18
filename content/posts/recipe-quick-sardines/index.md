@@ -6,6 +6,7 @@ url: /recipes/quick-sardines.html
 tags:
   - articles
   - recipes
+  - tutorial
 ---
 ### Background
 

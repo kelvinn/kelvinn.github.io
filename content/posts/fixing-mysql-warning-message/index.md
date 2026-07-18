@@ -9,6 +9,7 @@ tags:
 - articles
 - tips
 - debian
+- tutorial
 ---
 
 After restoring databases from one server to another I sometimes get this error on Ubuntu or Debian:

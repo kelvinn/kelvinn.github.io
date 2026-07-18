@@ -6,6 +6,7 @@ url: /2019/05/overland-track-lighter-pack-tips.html
 tags: 
 - articles
 - backpacking
+- outdoors
 ---
 
 Background

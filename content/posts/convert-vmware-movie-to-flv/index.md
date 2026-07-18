@@ -5,6 +5,7 @@ draft: false
 url: /2006/09/convert-vmware-movie-to-flv_2236.html
 tags: 
 - howtos
+- tutorial
 ---
 
 This little process, a total of two lines, took way to long to figure out.

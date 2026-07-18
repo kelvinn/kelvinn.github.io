@@ -8,6 +8,7 @@ tags:
 - dirty
 - disk
 - howtos
+- tutorial
 ---
 
 For various reasons I had the need to open a raw disk inside VMware Server 2. The reports from the field say that this just isn't supported. Although I don't need to actually run a raw disk, I needed to get some data off it -- 400GB worth. It turns out 'not supported' really means 'not in the UI.' I don't know the reason why it isn't in the UI, maybe marketing wants people to use ESX, or maybe the UI guys fell behind with their workload.

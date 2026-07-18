@@ -7,6 +7,7 @@ tags:
   - articles
   - longevity
   - travel
+  - outdoors
 ---
 ### Background
 

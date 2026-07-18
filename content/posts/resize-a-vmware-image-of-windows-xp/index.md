@@ -5,6 +5,7 @@ draft: false
 url: /2007/01/resize-vmware-image-of-windows-xp_4908.html
 tags: 
 - howtos
+- tutorial
 ---
 
 Over the years I have been shrinking the number of computers I own.  At one point my dorm was littered with old P100s, running whatever OS I felt like playing with at the time.    

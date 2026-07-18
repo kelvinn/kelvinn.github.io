@@ -5,6 +5,7 @@ draft: false
 url: /2007/03/simple-chrooted-ssh_6907.html
 tags: 
 - howtos
+- tutorial
 ---
 
 You might be asking: why would you want to chroot ssh? Why use ssh anyways? Here are the quick answers:  

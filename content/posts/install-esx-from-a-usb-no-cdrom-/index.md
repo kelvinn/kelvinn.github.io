@@ -7,6 +7,7 @@ tags:
 - esxi
 - vmware
 - howtos
+- tutorial
 ---
 
 My little server doesn't have a cdrom, but I didn't want to actually run ESX from a USB (i.e. esx-on-a-stick). Here are my notes of configuring a flash disk to boot the ESX installer (so you can install it onto a local disk). For this demo, my USB is /dev/sdb

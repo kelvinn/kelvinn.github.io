@@ -5,6 +5,7 @@ draft: false
 url: /2007/06/alexa-site-thumbnail-with-python-ii_629.html
 tags: 
 - howtos
+- tutorial
 ---
 
 This is how I actually use Alexa Site Thumbnail, and since I'min a sharing mood, I'll extend the code your way. In short, this takes the url and searches in STORELOC first, then any urls not already in STORELOC are retrieved and named via a slug. You need to pass two variables to either of these: blog_site.url and blot_site.slug -- since I'm using Django, this is naturally how sites are returned after I filter a queryset. What I do is place the call to Alexa as high up the page as I can, and because I've threaded this, the page can continue to load without waiting for Alexa's response. For instance, let's say you have some model with cool sites, and you want to return the sites filtered by owner...  

@@ -5,6 +5,7 @@ draft: false
 url: /2006/01/linux-as-tftp-server_570.html
 tags: 
 - howtos
+- tutorial
 ---
 
 So, you need a TFTP server for something? Cool, you must be doing something fun. I need a TFTP server to copy Cisco IOS images onto the routers; hopefully you are doing something cooler.  

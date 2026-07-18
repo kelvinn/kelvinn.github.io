@@ -8,6 +8,7 @@ tags:
 - gis
 - tilemill
 - howtos
+- tutorial
 ---
 
 This quick tutorial will detail how to prepair the ABS Mesh Blocks to be used with MapBox's TileMill. Beyond scope is how to install postgresql, postgis and TileMill. There is a lot of documentation how to do these tasks.  

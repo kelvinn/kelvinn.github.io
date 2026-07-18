@@ -6,6 +6,7 @@ url: /recipes/overnight-oats.html
 tags:
   - articles
   - recipes
+  - tutorial
 ---
 ### Background
 

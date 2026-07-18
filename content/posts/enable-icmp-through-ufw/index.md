@@ -8,6 +8,7 @@ tags:
 - ubuntu
 - ufw
 - howtos
+- tutorial
 ---
 
 I like using Ubuntu's UFW command, but today I needed to allow outgoing ICMP. I received results as so:

@@ -5,6 +5,7 @@ draft: false
 url: /2006/06/an-upgrade-in-china_4087.html
 tags: 
 - projects
+- outdoors
 ---
 
 Status:  ✅ 

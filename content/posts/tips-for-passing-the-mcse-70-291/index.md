@@ -5,6 +5,7 @@ draft: false
 url: /2006/07/tips-for-passing-mcse-70-291_6981.html
 tags: 
 - howtos
+- tutorial
 ---
 
 As you may know, I've been taking a few of the MCSE:Security tests when I have time.  This afternoon I passed the 70-291, which is claimed to be the hardest of all the tests (and of the one's I've taken so far, I would concur).

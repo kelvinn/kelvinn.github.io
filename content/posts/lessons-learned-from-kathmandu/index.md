@@ -8,6 +8,7 @@ tags:
 - articles
 - tips and tricks
 - travel
+- outdoors
 ---
 
 My first trip to Kathmandu is now over, so there are some lessons learned I should scribe. Some of these are obvious, and which I abide by whenever travelling, and some I simply forgot in my (very) impromptu trip to Nepal.

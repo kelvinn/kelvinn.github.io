@@ -6,6 +6,7 @@ url: /2020/08/ultralight-backpacking-food.html
 tags: 
 - articles
 - backpacking
+- outdoors
 ---
 
 In about 2001 or 2002 I read a book called "Beyond Backpacking - Ray Jardine's Guide to Lightweight Hiking", which set me on a path to being as light as possible. It came in very handy when I did my first section hike of the PCT, about 7 days, and I vaguely remember a total pack weight of about 25 lbs - with 4 litres of water. I was a broke college student then, so I guess clipping toothbrushes and straps really paid off. I also used a weird mesh hammock thing and I think a tarp of some kind. I have been "ultralight" ever since, even when renting equipment in Patagonia.

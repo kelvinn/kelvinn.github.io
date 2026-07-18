@@ -6,6 +6,7 @@ url: /2011/06/converting-gtfs-to-graphserver.html
 tags: 
 - howtos
 - gtfs
+- tutorial
 ---
 
 If you want to use Graphserver to do some analysis with GTFS, you will need to convert GTFS into the database. This is how I did it.  

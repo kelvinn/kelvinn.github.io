@@ -5,6 +5,7 @@ draft: false
 url: /2006/08/quick-n-dirty-firewall_8747.html
 tags: 
 - howtos
+- tutorial
 ---
 
 #### Abstract

@@ -8,6 +8,7 @@ tags:
 - embedded
 - howtos
 - ebox
+- tutorial
 ---
 
 Alexandru T. and I have exchanged a few emails, and he sent through a few helpful suggestions that were provided from ICOP. I have included them below. Thanks Alexandru!

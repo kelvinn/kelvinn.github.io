@@ -6,6 +6,7 @@ url: /2013/06/hiking-w-circuit-torres-del-paine.html
 tags: 
 - articles
 - travel
+- outdoors
 ---
 
 [![](IMG_2686.JPG)](IMG_2686.JPG)

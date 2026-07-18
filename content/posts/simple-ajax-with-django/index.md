@@ -9,6 +9,7 @@ tags:
 - json
 - articles
 - colddirt
+- tutorial
 ---
 
 So, the Django developers, in my opinion, are freaking smart. Instead of bundling Django with a particular library, they have added XML and JSON serialization; us humble users can choose whatever AJAX library we want. [Prototype 1.5.1](http://www.prototypejs.org/) has been pretty fun to work with, so I'll kick off this demo with a really simple example.  

@@ -7,6 +7,7 @@ tags:
 - linux
 - tips and tricks
 - howtos
+- tutorial
 ---
 
 I have had this issue before, solved it, and had it again.  

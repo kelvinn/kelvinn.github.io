@@ -7,6 +7,7 @@ tags:
   - articles
   - outdoor
   - exercise
+  - outdoors
 ---
 ### Background
 

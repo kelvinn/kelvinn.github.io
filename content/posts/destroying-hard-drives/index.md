@@ -5,6 +5,7 @@ draft: false
 url: /2011/10/destroying-hard-drives_7046.html
 tags: 
 - howtos
+- tutorial
 ---
 
 If you're like me there is a box of hard drives sitting in a dusty corner somewhere. Some are mine, some are others', but they are all in a failed or semi-failed state. So, why have I lugged them around? I've been a bit paranoid about throwing them away. Some of the hard drives are encrypted, others aren't, and the drives from friends certainly aren't. Although the chances of somebody getting the drive from a landfill and restoring it is minimal, I never wanted to take the chance.  

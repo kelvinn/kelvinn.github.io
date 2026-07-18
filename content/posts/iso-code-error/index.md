@@ -8,6 +8,7 @@ tags:
 - python
 - pytz
 - howtos
+- tutorial
 ---
 
 I've received this error a few times when working with pytz:

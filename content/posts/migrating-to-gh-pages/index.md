@@ -8,6 +8,7 @@ tags:
 - github
 - articles
 - python
+- tutorial
 ---
 
 I started this website 20 years ago as a means to learn Django, which made sense, as at the time I wished to do _everything_ myself: website and hosting, running my own mail server, dns server, and probably something else, too. Over time my desire to spend time on these activities dwindled, and I [move my content](/2013/01/migrate-custom-blog-to-blogger.html) to blogger.

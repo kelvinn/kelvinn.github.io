@@ -10,6 +10,7 @@ tags:
 - tips and tricks
 - bash
 - howtos
+- tutorial
 ---
 
 I'm not impressed too often with much software, especially the closed source kind. I find a leaning preference to all things FOSS. If I had a million dollars, I'd likely spend all day contributing to all the projects I wish I had time to contribute to. Regardless, there are a select few closed-source products that I believe are truly excellent. I mean, the type of software where you aren't asking "I wish this could do this" and start asking "I wonder what else this can do."

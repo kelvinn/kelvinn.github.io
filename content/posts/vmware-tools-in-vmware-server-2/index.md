@@ -6,6 +6,7 @@ url: /2008/08/vmware-tools-in-vmware-server-2_6233.html
 tags: 
 - vmware
 - howtos
+- tutorial
 ---
 
 Installing the tools in VMware Server 2 is a little different than Workstation or the previous versions of VMware Server. Under the Summary tab of your Virtual Machine, look for a link that says "Install VMware Tools" -- click it.

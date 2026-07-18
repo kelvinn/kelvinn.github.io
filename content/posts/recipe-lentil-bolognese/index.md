@@ -6,6 +6,7 @@ url: /recipes/lentil-bolognese.html
 tags:
   - articles
   - recipes
+  - tutorial
 ---
 ### Background
 

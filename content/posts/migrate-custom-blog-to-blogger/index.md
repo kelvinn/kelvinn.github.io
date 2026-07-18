@@ -8,6 +8,7 @@ tags:
 - python
 - google
 - howtos
+- tutorial
 ---
 
 For the last ten years I have run this website from various systems. First it was on Wordpress, then Mambo, then Joomla, and since early 2006 it has been running on custom code written using Django. I used this site as a learning tool for Django, re-wrote it after gaining more knowledge of Django, and then re-wrote it again when Google released App Engine. However, I recently realised that for the last few years I have spent more time writing little features than actually writing. I have entire trips that I never wrote because I was too busy writing code.  

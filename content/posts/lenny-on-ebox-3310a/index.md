@@ -9,6 +9,7 @@ tags:
 - embedded
 - howtos
 - ebox
+- tutorial
 ---
 
 As a preface, I take absolutely no credit for the below instructions. Stefan L kindly sent these through these instructions on installing Debian on the 3310A. I need to send a special thanks to Stefan, as I receive a lot of emails about the 3310 - but I don't have one, so I can't really do much:

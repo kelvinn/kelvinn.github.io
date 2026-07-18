@@ -8,6 +8,7 @@ tags:
 - python
 - howtos
 - saltstack
+- tutorial
 ---
 
 I was trying to install [HALite](https://github.com/saltstack/halite), the WebUI for [SaltStack](http://www.saltstack.com/), using the provided instructions. However, I kept getting the following errors when trying to create the certificates using Salt:  

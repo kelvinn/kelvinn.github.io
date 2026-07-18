@@ -5,6 +5,7 @@ draft: false
 url: /2021/01/katoomba-to-mittagong-131km.html
 tags: 
 - backpacking
+- outdoors
 ---
 
 Where: Katoomba to Mittagong (via Hill Top for reasons below)
