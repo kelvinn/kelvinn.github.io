@@ -4,10 +4,29 @@
   (dict "title" "Travel / Outdoors" "tags" (slice "travel" "outdoor") "all" "/tags/travel/")
   (dict "title" "Projects / Maps" "tags" (slice "projects" "gis" "postgis" "osm" "tilemill") "all" "/tags/projects/")
 -}}
+{{- $isAbout := eq .RelPermalink "/about/" -}}
 
 <aside class="sidebar" aria-label="Related site sections">
   <div class="sidebar-inner">
-    {{- if .IsPage }}
+    {{- if $isAbout }}
+    <section class="sidebar-section">
+      <h4>Contact</h4>
+      <div class="social-icons sidebar-social-icons" aria-label="Contact links">
+        <a href="mailto:kelvin@kelvinism.com" target="_blank" rel="noopener noreferrer me" title="Email Kelvin" aria-label="Email Kelvin">
+          {{ partial "svg.html" (dict "name" "email") }}
+        </a>
+        <a href="https://au.linkedin.com/in/kelvinnicholson" target="_blank" rel="noopener noreferrer me" title="LinkedIn" aria-label="LinkedIn">
+          {{ partial "svg.html" (dict "name" "linkedin") }}
+        </a>
+        <a href="https://github.com/kelvinn" target="_blank" rel="noopener noreferrer me" title="GitHub" aria-label="GitHub">
+          {{ partial "svg.html" (dict "name" "github") }}
+        </a>
+        <a href="https://www.strava.com/athletes/44243417" target="_blank" rel="noopener noreferrer me" title="Strava" aria-label="Strava">
+          {{ partial "svg.html" (dict "name" "strava") }}
+        </a>
+      </div>
+    </section>
+    {{- else if .IsPage }}
     {{- $current := . }}
     {{- $threadTags := slice }}
     {{- range .Params.tags }}
