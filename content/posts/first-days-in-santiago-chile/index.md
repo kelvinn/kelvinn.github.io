@@ -30,15 +30,15 @@ I followed Avenida Libertador Bernardo O'Higgins for a while, walked in circles 
 
 The park was beautifully maintained. It was not quite a botanical garden, but it was clean and felt fresh. I walked counter-clockwise towards the top and climbed into the small castle, getting lost only once. From there, I had panoramic views in every direction.
 
-After visiting Santa Lucia Hill, I walked into Barrio Lastarria, which I initially took to be something of a Turkish neighbourhood, and ended up at the La Rosa ice cream shop. Unlike the rest of the city on that Sunday morning, the shop was exceptionally busy. We ordered spicy chocolate and something beige; I don't think either of us ever figured out what the second flavour was. After five or six hours of walking, the ice cream tasted wonderful.
+After visiting Santa Lucia Hill, I walked into Barrio Lastarria, which I initially took to be something of a Turkish neighbourhood, and ended up at the La Rosa ice cream shop. Unlike the rest of the city on that Sunday morning, the shop was exceptionally busy. I ordered spicy chocolate and something beige; I don't think I ever figured out what the second flavour was. After five or six hours of walking, the ice cream tasted wonderful.
 
 I decided to visit the Museum of Memory and Human Rights, but while returning to Bellas Artes Station I detoured along some back streets and ended up at Universidad Catolica Station. I took the metro to a stop near the museum, but it soon became clear that I was getting too hot. I turned around, returned to the metro, and headed back to my hotel. It was now almost 15:00, and I had been walking steadily for eight hours. I showered and took a few short naps, trying to remain tired enough to sleep later that night.
 
-At about 19:00, I was getting hungry, so I wandered around and found a pizza place. We ordered two pizzas, about $8 each, and shared one large Coke. It turned out to be a 2.5-litre bottle, far more than we had expected.
+At about 19:00, I was getting hungry, so I wandered around and found a pizza place. I ordered two pizzas, about $8 each, and shared one large Coke. It turned out to be a 2.5-litre bottle, far more than I had expected.
 
 I had my pizza and went back to my hotel, watched some TV, and fell asleep.
 
-I woke at about 07:00 the next day planning to visit San Cristobal Hill, but first I needed to speak with a LAN Airlines representative because I had been unable to check in online. She was helpful, and despite the language barrier, I understood the essentials: we had seats together but needed to check in at the airport.
+I woke at about 07:00 the next day planning to visit San Cristobal Hill, but first I needed to speak with a LAN Airlines representative because I had been unable to check in online. She was helpful, and despite the language barrier, I understood the essentials: I needed to check in at the airport.
 
 Down the road, I stopped at a cafe for what I expected to be excellent coffee, but it was below average by Sydney standards. I planned to stop drinking coffee soon, and this might have been my last cup for a while, so it was disappointing.
 
@@ -59,4 +59,3 @@ After almost an hour, the sushi finally arrived, but with a twist I wasn't expec
 Getting our tickets was not a problem, and I was pleased to discover that the airport seats had no armrests between them, meaning someone could stretch out and sleep. Unfortunately, the Samsung televisions were at full volume, their speakers seemingly close to burning out, and every ten minutes they blasted an announcement about Regina Spektor. With three hours to wait, this became tiresome very quickly.
 
 By 1:30am my flight was ready to board, and I got my seats and took off for the south of Chile.
-

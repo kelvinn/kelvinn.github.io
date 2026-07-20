@@ -11,7 +11,7 @@ blogger_status: "LIVE"
 blogger_updated: 2013-01-08T13:34:11.435Z
 ---
 
-After Singapore, a quick flight brought me to Taiwan. The mountains seemed to nestle into the clouds, which blanketed the sky. The view was beautiful until the plane dropped below the clouds and everything became gloomy, dark, and wet. The plane crossed expanses of farmland, a landscape I was not used to. Once again we had taken different flights because of a price difference of about NZD 600, so we met at the airport. After breezing through customs, I got on a bus and started to come &ldquo;home.&rdquo;
+After Singapore, a quick flight brought me to Taiwan. The mountains seemed to nestle into the clouds, which blanketed the sky. The view was beautiful until the plane dropped below the clouds and everything became gloomy, dark, and wet. The plane crossed expanses of farmland, a landscape I was not used to. After breezing through customs, I got on a bus and started to come &ldquo;home.&rdquo;
 
  
 
