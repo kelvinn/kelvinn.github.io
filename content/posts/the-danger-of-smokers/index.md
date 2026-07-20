@@ -4,7 +4,7 @@ date: 2013-12-19T11:15:00.002Z
 draft: false
 url: /2013/12/the-danger-of-smokers.html
 tags:
-  - travel
+  - articles
 blogger_id: tag:blogger.com,1999:blog-1700991654357243752.post-6895109204159747330
 blogger_post_id: "6895109204159747330"
 blogger_status: LIVE
