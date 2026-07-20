@@ -8,6 +8,7 @@ posts = "/:year/:month/:title"
 
 
 [params]
+description = "Kelvin Nicholson's personal site, with writing on travel, outdoor adventures, recipes, health experiments, maps, and software projects."
 disableSpecial1stPost = true
 ShowReadingTime = true
 ShowBreadCrumbs = false
