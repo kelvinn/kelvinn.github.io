@@ -1,6 +1,6 @@
 # Migration From Notebooks
 
-The old analysis pipeline lives in `notebooks/`. Treat it as historical behavior reference only. New Garmin data access must use LifeDB MCP.
+The old analysis pipeline lives in `notebooks/`. Treat it as historical behavior reference only. New Garmin data access must use the LifeDB plugin [@dev-6a3eed984df88191900b4e84b06efa19](plugin://dev-6a3eed984df88191900b4e84b06efa19@created-by-me-remote).
 
 Current wrapper:
 
@@ -32,9 +32,13 @@ Important scripts to preserve or port:
 Migration status:
 
 1. Chart/data rendering has moved into `scripts/generate_health_assets.py`.
-2. Garmin data extraction is defined in `lifedb-mcp-export.md` and must be done through LifeDB MCP.
+2. Garmin data extraction is defined in `lifedb-mcp-export.md` and must be done through the LifeDB plugin.
 3. Direct GarminDB dependencies should not be used by this skill.
 4. `notebooks/` can be deleted for this skill once the MCP export/render path has been verified for the target quarter.
+
+VO2 max migration note:
+
+- The monthly VO2 max asset is a full-history chart. Its visible start date should be the first actual VO2 max month in LifeDB, not `REPORT_QUERY_START_DATE` if that date is earlier.
 
 When changing chart generation, keep output filenames stable so existing markdown image references continue to work.
 

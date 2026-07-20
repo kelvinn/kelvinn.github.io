@@ -36,10 +36,10 @@ Also read:
    - Q3: Jul 1 to Sep 30
    - Q4: Oct 1 to Dec 31
 3. If the target post folder does not exist, create it from `content/posts/20NN-qN-health-review-TEMPLATE/` with `scripts/create_quarter_post.py`.
-4. If generated assets or CSVs are missing or stale, export Garmin data through LifeDB MCP only, following `references/lifedb-mcp-export.md`.
+4. If generated assets or CSVs are missing or stale, export Garmin data through the LifeDB plugin only, following `references/lifedb-mcp-export.md`.
 5. Save the MCP export as `data/lifedb_export.json`, then render assets with `scripts/generate_health_assets.py`.
 6. Summarize generated CSVs with `scripts/summarize_health_data.py`.
-7. Use LifeDB MCP for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, or activity data that is missing, suspicious, or freshness-sensitive.
+7. Use the LifeDB plugin for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, or activity data that is missing, suspicious, or freshness-sensitive. Do not query Garmin databases directly.
 8. Use the Google Sheets connector for biomarker and PhenoAge data.
 9. Edit `index.md` directly.
 10. Validate the result with `scripts/validate_health_post.py`.

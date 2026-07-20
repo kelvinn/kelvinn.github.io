@@ -37,3 +37,4 @@ notebooks/turso_sync.env
 /garmin_files
 garmin_data.db
 *.log
+/Blogger

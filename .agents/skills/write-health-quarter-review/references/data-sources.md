@@ -36,7 +36,7 @@ Use the completed Q1 2026 health review images as the visual baseline for future
 - `sleep_score_per_day.png`: heatmap with one row per quarter from the first quarter with sleep-score data through the target quarter, columns Monday through Sunday plus `Avg`. Use a green-to-amber-to-red scale where higher scores are greener, and scores at or below 60 are clearly red.
 - `stress_level_per_day.png`: same quarter-by-day heatmap structure as sleep, from the first quarter with daily stress data through the target quarter.
 - `stress_level_per_week.png`: 12x7 trailing-week heatmap ending on the last complete Sunday on or before quarter end. For example, Q2 2026 ends on Tuesday, June 30, 2026, so this chart ends on Sunday, June 28, 2026.
-- `monthly_vo2_max.png`: render when `monthly_vo2_max_per_month.csv` has rows. Use actual data months only and never include post-quarter readings.
+- `monthly_vo2_max.png`: render when `monthly_vo2_max_per_month.csv` has rows. Use actual data months only and never include post-quarter readings. Start the plotted x-axis at the first month with VO2 max data, even if `REPORT_QUERY_START_DATE` is earlier than the first reading.
 
 Expected generated CSVs under `data/`:
 
@@ -53,8 +53,14 @@ Expected generated CSVs under `data/`:
 
 ## LifeDB MCP
 
-Use the `lifedb` MCP server at `https://lifedb.fly.dev/mcp` for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, and activity data.
-Use only LifeDB MCP for Garmin data. Do not read GarminDB SQLite files or `~/HealthData/DBs` directly.
+Use the LifeDB plugin [@dev-6a3eed984df88191900b4e84b06efa19](plugin://dev-6a3eed984df88191900b4e84b06efa19@created-by-me-remote) for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, and activity data.
+Use only the LifeDB plugin for Garmin data. Do not read GarminDB SQLite files, `~/HealthData/DBs`, or repo-local `.db` files directly.
+
+VO2 max source notes:
+
+- Build monthly VO2 max from `vo2max_activities` joined to `activities`.
+- Keep the first plotted month equal to the first actual VO2 max month in LifeDB, not the configured historical query start.
+- If the earliest available VO2 max month changes after a fresh sync, regenerate `monthly_vo2_max_per_month.csv` and `monthly_vo2_max.png` together.
 
 Default workflow:
 

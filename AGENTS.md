@@ -80,7 +80,7 @@ cd notebooks && .venv/bin/pytest -q tests/
 
 ## Querying LifeDB MCP for Garmin Data
 
-Use the LifeDB MCP server when the user asks about Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, or activity data. Prefer MCP queries over guessing from memory.
+Use the LifeDB plugin [@dev-6a3eed984df88191900b4e84b06efa19](plugin://dev-6a3eed984df88191900b4e84b06efa19@created-by-me-remote) for all Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, or activity data. Do not query Garmin databases directly; prefer plugin queries over guessing from memory.
 
 The LifeDB MCP server exposes these core tools:
 
@@ -98,7 +98,7 @@ Recommended workflow:
 1. Start with `get_sync_status` and `get_data_freshness` when freshness matters.
 2. Use `list_tables` to confirm table names. Garmin tables may be singular, such as `activity`, not `activities`.
 3. Use `describe_table` before writing SQL against a table you have not queried in this thread.
-4. Use `execute_read_query` for aggregations, trends, date ranges, joins, and report calculations.
+4. Use `execute_read_query` through the LifeDB plugin for aggregations, trends, date ranges, joins, and report calculations.
 5. Include counts in aggregate answers so the user can see coverage, for example number of nights, days, or activities.
 
 Important query rules:

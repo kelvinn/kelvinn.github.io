@@ -5,20 +5,19 @@ draft: true
 url: 
 ---
 
-*   Aim to avoid stress the prior 4 hours before bed time, as measured by my watch.
-*   Avoid exercise in the evening (see stress levels)
-*   Front load my calories as much as possible to earlier in the day. avoid eating after 6pm
-*   In bed by 9:00pm
-*   Bed is only used for sleeping, reading (less than an hour), or cuddling
-*   Lights are dimmed in the evening, and blue-free lights are used as much as possible
-*   Avoid working after 6pm. Avoid reading work-related books.
-*   Hot shower 1-2hr before bed. Avoid baths.
-*   Sleep in separate beds from anyone (people) or anything (animals) else. Three covers to try and help thermoregulate.
-*   Ensure that my daughter knows to not disturb me at light unless she needs to go to the hospital
-*   Ear plugs
-*   No naps
-*   No caffeine
-*   No alcohol
-*   Get sunlight as early as possible
-*   Avoid anything heated that may raise stress levels
-*
+* Aim to avoid stress in the 4 hours before bedtime, as measured by my watch.
+* Avoid exercise in the evening (see stress levels).
+* Front-load my calories earlier in the day and avoid eating after 6:00pm.
+* Be in bed by 9:00pm.
+* Use the bed only for sleeping, reading (less than an hour), or cuddling.
+* Dim the lights in the evening, and use blue-free lights as much as possible.
+* Avoid working after 6pm. Avoid reading work-related books.
+* Have a hot shower one to two hours before bed. Avoid baths.
+* Sleep separately from other people or animals. Use three covers to help thermoregulate.
+* Make sure my daughter knows not to disturb me at night unless there is an emergency.
+* Use earplugs.
+* No naps.
+* No caffeine.
+* No alcohol.
+* Get sunlight as early as possible.
+* Avoid activities that noticeably elevate my stress levels in the evening.

@@ -43,14 +43,14 @@ Correlation notes:
 - Which relationships felt intuitive vs surprising?
 - What should be tested next quarter based on these correlations?
 
-Let us go through how the quarter looked by focus area.
+Let me go through how the quarter looked by focus area.
 
 #### Improve Fitness
 
 ##### Goals
 
 - Average intensity minutes (Garmin) of 800 or above ❓
-- Improve Vo2Max ❓
+- Improve VO2 max ❓
 - Decrease RHR ❓
 
 ##### Analysis
@@ -77,7 +77,7 @@ How did resting heart rate trend?
 
 ##### Goals
 
-- Keep average sleep score about 80 ❓
+- Keep average sleep score above 80 ❓
 
 ##### Analysis
 
@@ -175,8 +175,8 @@ Key interpretation:
 Some principles that I tried to follow:
 
 - Avoid pill burden; prefer food over pills.
-- Wait until a supplement is on the ITP supported interventions page, or has significant evidence behind it.
-- Have a biomarker in mind that a certain supplement will change.
+- Wait until a supplement appears on the ITP-supported interventions page or has significant evidence behind it.
+- Have a specific biomarker in mind that each supplement is intended to change.
 
 Current stack:
 

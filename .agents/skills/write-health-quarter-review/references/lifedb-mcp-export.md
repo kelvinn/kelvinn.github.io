@@ -1,7 +1,7 @@
 # LifeDB MCP Export
 
-Connect to the `lifedb` MCP server at `https://lifedb.fly.dev/mcp`.
-Use only LifeDB MCP for Garmin data. Do not read GarminDB SQLite files, `~/HealthData/DBs`, or repo-local `.db` files for health-review Garmin metrics.
+Use the LifeDB plugin [@dev-6a3eed984df88191900b4e84b06efa19](plugin://dev-6a3eed984df88191900b4e84b06efa19@created-by-me-remote) for Garmin data.
+Do not read GarminDB SQLite files, `~/HealthData/DBs`, or repo-local `.db` files for health-review Garmin metrics.
 
 The local renderer consumes an export JSON because scripts cannot call MCP tools directly. The agent must create this JSON from MCP query results, then run:
 

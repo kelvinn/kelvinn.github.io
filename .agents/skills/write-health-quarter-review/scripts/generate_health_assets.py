@@ -485,10 +485,14 @@ def create_vo2(vo2_rows: list[dict], metadata: dict, image_dir: Path, data_dir: 
         plt.plot(dates, export["vo2_max_95th"], marker="o", label="95th Percentile VO2 Max")
         plt.legend()
         data_start = dates.min()
-        plt.xlim(data_start - pd.Timedelta(days=15), dates.max() + pd.Timedelta(days=15))
+        data_end = dates.max()
+        plt.xlim(data_start - pd.Timedelta(days=15), data_end + pd.Timedelta(days=15))
     else:
         plt.text(0.5, 0.5, "No VO2 Max data available", ha="center", va="center", fontsize=16)
-    plt.title(f"Monthly 95th Percentile VO2 Max ({metadata['query_start_date']} to {metadata['quarter_end_date']})")
+    if not export.empty:
+        plt.title(f"Monthly 95th Percentile VO2 Max ({data_start:%Y-%m-%d} to {data_end:%Y-%m-%d})")
+    else:
+        plt.title("Monthly 95th Percentile VO2 Max")
     plt.xlabel("Date")
     plt.ylabel("VO2 Max")
     plt.xticks(rotation=45)

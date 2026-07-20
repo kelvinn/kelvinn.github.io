@@ -11,29 +11,28 @@ tags:
 ---
 # Background
 
-If you ask most kids how to be healthy, they'll give you a pretty simple answer: eat healthy food, sleep well, and do exercise. Let's focus on the sleeping part.
+If you ask most people how to be healthy, they will usually give you a simple answer: eat well, sleep well, and exercise. This post focuses on sleep.
 
-Ever after reading *Why We Sleep* I've been trying to increase the quality of my sleep. I believe I've made significant progress over the previous few years, and I'm getting better at coping when there are especially strong challenges, for example when travelling.
+Ever since reading *Why We Sleep*, I have been trying to improve the quality of my sleep. I believe I have made meaningful progress over the past few years, and I am better at adapting when circumstances make good sleep more difficult, such as when travelling.
 
-I use my Garmin to track my sleep, so I must admit upfront that I am aware it isn't perfect. Stage tracking in all wearables is reported as being not great, however, I'm hopeful that at least duration and activity are somewhat accurate.
+I use my Garmin to track my sleep, with the understanding that it is not perfect. Sleep-stage estimates from consumer wearables have limitations, although duration and activity still provide useful directional data.
 
-Good news is my duration is pretty spot on (around 7hr on average), and my average time awake is decent (usually under 5 minutes per night). My average sleep score has been increasing over the years, and increased in the last 3 months. Here are some graphs that show the change:
+My sleep duration is close to my target at around seven hours on average, and my reported time awake is usually under five minutes per night. My average sleep score has increased over the years and improved again during the past three months.
 
-(INSERT GRAPHS)
+People frequently ask about improving sleep on r/Garmin, so I thought I would share what has worked for me. Some points below are specifically about improving Garmin's Sleep Score rather than sleep itself, an important distinction when interpreting the results.
 
-When looking on r/Garmin you'll see a number of people asking how to sleep better, so I figured I'll post a few things I've found. Some of the below are about what I've done so far to improve my Sleep Score, and not necessarily my sleep. Hopefully that makes sense.
-
-* First off, follow the NSF suggestions. [list some of them]
-* This might sound basic, but, look at your average time you fall asleep and average time you wake up, and set your schedule as 10 minutes after, and 10 minutes before.
-* Avoid doing a breathwork activity within 30 minutes before bed. I find that I often fall asleep, which is great, *except* the watch is then stuck in Activity mode, and won't move on to Sleep mode. Even if I don't fall asleep and I manage to end the activity, it still sometimes has a delay of a few hours to get to Sleep mode. Feeling like you never woke up but end up wit ha 61 sleep score isn't great. Robbery!
-* The more self-aware I've become, the little things I've started to notice. For example, weight training has a significant impact on my reported stress levels, and that flows on to my Sleep Score. I now no longer do any weight training after 1pm.
-* Pay special attention to what food you consume, how much, and when. I've found that a lot of carbs for dinner causes my Stress levels (according to garmin) to elevate for a long time, and that I believe has a flow-on impact to Sleep Score. Additionally, I've found that if I eat a big carb meal and get startled at some point, then my body wakes up ready go. Perhaps no surprise then that the only time I've received a 100 score I was easing in to a 5 day fast, and had only had 1100 calories that day.
-* Speaking of how much food, I try to eat as many calories as possible before noon, and with dinner I try to aim to eat it around 4pm and have it be under 500 calories.
-* I've found that I don't do well when sharing a bed with anyone or anything, be that a partner, my daughter, or even a puppy dog. I now almost always sleep by myself on a King Single.
-* At 5pm I aim to disassociate from work, so I close any work browsers, and disable any work email/chat profiles on my phone.
+* Start with the fundamentals: keep a consistent schedule, make the bedroom dark, quiet, and cool, and reserve enough time for sleep.
+* Review your average sleep and wake times, then set a schedule that allows roughly 10 minutes to fall asleep and 10 minutes to wake up.
+* Avoid starting a breathwork activity within 30 minutes of bedtime. I sometimes fall asleep before ending the activity, leaving the watch in Activity mode instead of moving into Sleep mode. Even when I end the activity, the watch can take several hours to recognise sleep, producing a score that does not reflect how the night felt.
+* Greater awareness has helped me notice smaller patterns. For example, strength training significantly raises my reported stress levels and appears to affect my Sleep Score, so I no longer schedule it after 1:00pm.
+* Pay close attention to what you eat, how much you eat, and when. I have found that a high-carbohydrate dinner keeps my Garmin-reported stress elevated for longer, which may affect my Sleep Score. I have also noticed that after a large carbohydrate-heavy meal, being startled can leave me unusually alert. My only score of 100 occurred while I was easing into a five-day fast and had consumed only 1,100 calories that day, although that single result does not establish cause and effect. This is a personal observation, not a recommendation to fast or restrict calories.
+* I try to consume most of my calories before noon, eat dinner around 4:00pm, and keep that meal under 500 calories.
+* I do not sleep as well when sharing a bed with a partner, my daughter, or a dog. I now usually sleep alone in a king-single bed.
+* At 5:00pm, I aim to disconnect from work by closing work-related browser windows and disabling work email and chat profiles on my phone.
 * Then there's the 3-2-1 rule:
-	* Starting around 3 hours (i.e. 6:30pm) before my target time to sleep I stop eating and start winding down, which involves me putting one some cheap blue light blocking clip-ons, and making one last chamomile tea with 5-10g of glycine and 1g of NAC. I also take any evening supplements, none of which I think help with sleep. I've been experimenting with Tart Cherry Extract, yet I don't know if it helps in any way. I'll update when they run out.
-	* Starting around 2 hours before bed time I stop doing chores or anything that's potentially stressful.
-	* And 1 hour before bed I try to stop using my phone or watching TV and read a book.
-* Generally eliminated stimulants, so all I have is decaf coffee; no sodas, and I am careful about tea consumption.
-* And 
+	* Starting around three hours before my target bedtime (about 6:30pm), I stop eating and begin winding down. I put on blue-light-blocking clip-ons and make a final chamomile tea with 5-10g of glycine and 1g of NAC. I also take my evening supplements, although I do not attribute any clear sleep benefit to them. I have been experimenting with tart cherry extract but do not yet know whether it helps.
+	* Starting around two hours before bedtime, I stop doing chores or anything potentially stressful.
+	* One hour before bed I try to stop using my phone or watching TV and read a book.
+* I generally avoid stimulants, choosing decaffeinated coffee, avoiding soft drinks, and monitoring my tea consumption.
+
+Consistency matters more than perfection, and these habits have been enough to make a meaningful difference for me.
