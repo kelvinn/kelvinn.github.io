@@ -12,4 +12,4 @@ Today on [Linux.com, Liferea was mentioned](http://community.linux.com/article.p
 
 Well, the Linux.com article does a great job summarizing the reader, so if you are in the market, I'd take a look. For posterities sake, I took a screenshot of the Linux.com feed of Liferea, in Liferea.
 
-[![](screenshot-liferea.jpg)](screenshot-liferea.jpg)
+[![Liferea RSS in Liferea image 1](screenshot-liferea.jpg)](screenshot-liferea.jpg)

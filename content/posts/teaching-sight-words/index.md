@@ -45,7 +45,7 @@ This is pretty easy for her, for example, if I say "give" then she knows only on
 
   
 
-[![](IMG_4892.jpeg)](IMG_4892.jpeg)
+[![Teaching Sight Words image 1](IMG_4892.jpeg)](IMG_4892.jpeg)
 
 Getting Mastery  
 

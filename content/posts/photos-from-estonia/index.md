@@ -13,12 +13,12 @@ blogger_updated: 2021-12-22T10:58:10.246Z
 
  
 
-![](20160715_161819.jpg)
+![20160715 161819](20160715_161819.jpg)
 
-![](DSC05803.jpg)
+![Photos from Estonia (2016) image 2](DSC05803.jpg)
 
-![](DSC05672.jpg)
+![Photos from Estonia (2016) image 3](DSC05672.jpg)
 
-![](DSC05669.jpg)
-![](DSC05666.jpg)
-![](DSC05664.jpg)
+![Photos from Estonia (2016) image 4](DSC05669.jpg)
+![Photos from Estonia (2016) image 5](DSC05666.jpg)
+![Photos from Estonia (2016) image 6](DSC05664.jpg)

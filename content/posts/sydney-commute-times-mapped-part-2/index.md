@@ -20,7 +20,7 @@ I decided to find out.
 Thanks to the release of GTFS data by 131500 it is possible to visualise how long it takes via public transport to commute to the nearest "centre".  
   
 
-[![](CItyOfCities.png)](CItyOfCities.png)
+[![CIty Of Cities](CItyOfCities.png)](CItyOfCities.png)
 
 Cities and Corridors - [Metropolitan Strategy for Sydney to 2031](http://strategies.planning.nsw.gov.au/Portals/0/Documents/MetroCommunityGuide.pdf)
 

@@ -19,9 +19,9 @@ My natural inclination was to get a coffee, and with McDonald's again so near, I
 
 Given only a few hours in a city, I tend to maximise what I can see, which means walking quickly and, to quote Boston Legal, allowing no jibber-jabber. Given its prominence over the city and its usefulness as a landmark, I set off for Bratislavský hrad, a recently rebuilt castle atop a hill with evidence of human settlement dating to the Stone Age. The views of&nbsp;Bratislava&nbsp;were lovely, even with overcast skies.
 
-![](IMG_3426.JPG)
+![Layover in Bratislava image 1](IMG_3426.JPG)
 
-![](IMG_3428.JPG)
+![Layover in Bratislava image 2](IMG_3428.JPG)
 
 It was interesting to look across the horizon and see communist-era, high-density housing arranged neatly in rows. My tour guide in Budapest had commented on the poor quality of the building materials. I&nbsp;marvelled&nbsp;at how each building had been repainted a new colour, perhaps in an attempt to give it some individuality. The sky turned into a bright blue canvas with only a few scattered clouds.
 
@@ -29,12 +29,12 @@ My walk took me down a different route from the castle and into the historic dis
 
 I debated whether to visit the first pub in Slovakia or the Dubliner advertising Guinness on the street where I was walking. The Dubliner won; I ordered one Guinness and one&nbsp;Kilkenny&nbsp;to share, although I think I mainly enjoyed the&nbsp;Kilkenny.
 
-![](IMG_3443.JPG)
+![Layover in Bratislava image 3](IMG_3443.JPG)
 
-![](IMG_3444.JPG)
+![Layover in Bratislava image 4](IMG_3444.JPG)
 
-![](IMG_3445.JPG)
+![Layover in Bratislava image 5](IMG_3445.JPG)
 
-![](IMG_3446.JPG)
+![Layover in Bratislava image 6](IMG_3446.JPG)
 
 I left the pub promptly and made my way back to the train station, picking up a kebab along the way and trying not to get lost. My return was uneventful, despite two strangers nearly coming to blows next to me, and I contacted my friends in Vienna to let them know I was on my way.

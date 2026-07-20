@@ -9,7 +9,7 @@ tags:
 - laptop
 ---
 
-[![](DSC01613.jpg)](DSC01613.jpg)  
+[![A Dying Laptop image 1](DSC01613.jpg)](DSC01613.jpg)  
   
 
 I have the pleasure of owning an old T23 laptop. To show you how old this puppy is, the current T series is at _T60_, and those have been out for over a year. This laptop was made in 2012, and I picked it up somewhat discounted late in 2003. It is now March 2007, and this puppy is still rock solid.

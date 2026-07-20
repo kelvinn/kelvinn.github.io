@@ -17,14 +17,14 @@ The great [ImageMagick](http://www.imagemagick.org/) toolkit comes to the rescue
 
   
   
-[![](world.jpg)](world.jpg)  
+[![World](world.jpg)](world.jpg)  
   
 
 #### And add it to this:
 
   
   
-[![](bg.jpg)](bg.jpg)  
+[![Bg](bg.jpg)](bg.jpg)  
   
 I first tried to use the following technique:  
 ```bash
@@ -52,4 +52,4 @@ This also yielded an acceptable resource usage.
 
   
   
-[![](output.jpg)](output.jpg)
+[![Output](output.jpg)](output.jpg)

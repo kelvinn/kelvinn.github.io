@@ -10,7 +10,7 @@ tags:
 - articles
 ---
 
-[![](SplunkOpenShift.png)](SplunkOpenShift.png)
+[![Splunk Open Shift](SplunkOpenShift.png)](SplunkOpenShift.png)
 
 I first used Splunk about 10 years ago after an old colleague installed it on a computer in the corner, and ever since then I have preached about it. If you have log data, of any kind, I'd recommend you give it a go.  
 

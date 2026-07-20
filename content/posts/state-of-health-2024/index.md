@@ -47,7 +47,7 @@ My main form of cardio is running, so let's start there. You can clearly see whe
 
   
 
-[![](screenshot2025-01-31at8-10-15-am.png)](screenshot2025-01-31at8-10-15-am.png)
+[![State of Health: 2024 image 1](screenshot2025-01-31at8-10-15-am.png)](screenshot2025-01-31at8-10-15-am.png)
 
   
 
@@ -67,7 +67,7 @@ In addition to cardio I've been trying to increase the amount of time I spend re
 
   
 
-[![](screenshot2025-01-31at8-24-37-am.png)](screenshot2025-01-31at8-24-37-am.png)
+[![State of Health: 2024 image 2](screenshot2025-01-31at8-24-37-am.png)](screenshot2025-01-31at8-24-37-am.png)
 
   
 
@@ -79,19 +79,19 @@ My diet continues to be whole foods plant based, but with exceptions when travel
 
   
 
-[![](sv.jpg)](sv.jpg)
+[![Sv](sv.jpg)](sv.jpg)
 
 Super Veggie
 
   
 
-[![](IMG_2799.jpeg)](IMG_2799.jpeg)
+[![State of Health: 2024 image 4](IMG_2799.jpeg)](IMG_2799.jpeg)
 
 Fishbowl (when I need to eat out)
 
   
 
-[![](D780B530-FE23-4591-825A-74B4A58CF7D3.jpeg)](D780B530-FE23-4591-825A-74B4A58CF7D3.jpeg)
+[![D780B530 FE23 4591 825A 74B4A58CF7D3](D780B530-FE23-4591-825A-74B4A58CF7D3.jpeg)](D780B530-FE23-4591-825A-74B4A58CF7D3.jpeg)
 
 Nutty Pudding
 
@@ -101,7 +101,7 @@ How do we track how well nutrition is working? For now, let's just look at my we
 
   
 
-[![](screenshot2025-01-31at8-49-30-pm.png)](screenshot2025-01-31at8-49-30-pm.png)
+[![State of Health: 2024 image 6](screenshot2025-01-31at8-49-30-pm.png)](screenshot2025-01-31at8-49-30-pm.png)
 
   
 
@@ -131,7 +131,7 @@ However, my sleep in in 2024 was less consistent than in 2023, unfortunately. My
 
   
 
-[![](screenshot2025-01-31at9-03-55-am.png)](screenshot2025-01-31at9-03-55-am.png)
+[![State of Health: 2024 image 7](screenshot2025-01-31at9-03-55-am.png)](screenshot2025-01-31at9-03-55-am.png)
 
   
 
@@ -165,7 +165,7 @@ Here is a snapshot of my biomarkers.
 
   
 
-[![](screenshot2025-01-31at9-10-04-pm.png)](screenshot2025-01-31at9-10-04-pm.png)
+[![State of Health: 2024 image 8](screenshot2025-01-31at9-10-04-pm.png)](screenshot2025-01-31at9-10-04-pm.png)
 
   
 
@@ -185,7 +185,7 @@ Let's look at Stress.
 
   
 
-[![](screenshot2025-01-31at9-28-45-pm.png)](screenshot2025-01-31at9-28-45-pm.png)
+[![State of Health: 2024 image 9](screenshot2025-01-31at9-28-45-pm.png)](screenshot2025-01-31at9-28-45-pm.png)
 
   
 
@@ -203,7 +203,7 @@ My resting heart rate hovered around 50-51 for the year, and ultimately I would 
 
   
 
-[![](screenshot2025-01-31at9-33-37-pm.png)](screenshot2025-01-31at9-33-37-pm.png)
+[![State of Health: 2024 image 10](screenshot2025-01-31at9-33-37-pm.png)](screenshot2025-01-31at9-33-37-pm.png)
 
   
 

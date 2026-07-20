@@ -48,13 +48,13 @@ The city had a small tourist market selling manufactured goods, probably from Ch
 
 I wandered along the shore, examining the deteriorating concrete walkway, and watched Big Sista load passengers for the ferry to the surrounding islands. I noticed a sign for a larger supermarket and went inside, where the selection was much better than the day before. I bought four loaves of bread and two beers.
 
-![](PANO_20131227_121615.jpg)
+![Relaxing in Vanuatu image 1](PANO_20131227_121615.jpg)
 
 On my walk home I stopped by one of the local restaurants and ordered two quiches. The road traffic was both noisy and polluted - it reminded me to a certain degree of being in small cities in Bali. After finishing my food I walked back up to the Reserve Bank, cracked open my two beers with my wallet, and drank beer while eating raw peanuts, all with the city sprawled out below me.
 
 I tossed my rubbish into one of the "bins," which appeared to be simply an elevated area for waste, perhaps to keep cats out. Speaking of cats, I could not remember seeing a single stray cat or dog, although I had expected to see many.
 
-![](IMG_20131227_131155.jpg)
+![Relaxing in Vanuatu image 2](IMG_20131227_131155.jpg)
 I walked past the Reserve Bank and down to my hotel. The  rest of the afternoon was spent eating pizza, playing ping pong, and taking a nap. At about 16:00 I started to develop a really bad headache, which was probably from too much sun, so I tried to stay in the cool hotel room until the headache went away. With my legs rather sunburnt, I was sore literally from head to toe, which reminded me why I like mountains over beaches.
 
  Day 4

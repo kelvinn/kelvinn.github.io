@@ -37,9 +37,9 @@ One of the advantages of my hostel was a TV in the kitchen, and while it only ha
 
 The next morning I visited Vintgar Gorge, located in a national park just outside Bled. The same bus driver from the first day took me there, through curvy roads and into the hills, and gave me basic directions on where to turn to get to the gorge.
 
-![](IMG_3048.JPG)
+![Beautiful Bled image 1](IMG_3048.JPG)
 
-![](IMG_3080.JPG)
+![Beautiful Bled image 2](IMG_3080.JPG)
 
 I walked and walked, cold but leisurely, and several kilometres later reached the base of the gorge. While the ticket office was closed, the trail was still accessible, so I started walking through the gorge.
 
@@ -59,4 +59,4 @@ Just prior to 17:00 I left Apropos for the north side of Lake Bled, where I join
 
 My expectations may have been too high, and although the story was cute, I felt like it was invented to create something traditional. Regardless, it was a good time, I took a few photos, and was greeted by fireworks on my walk home.
 
-![](IMG_3182.JPG)
+![Beautiful Bled image 3](IMG_3182.JPG)

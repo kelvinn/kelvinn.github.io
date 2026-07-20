@@ -13,7 +13,7 @@ blogger_updated: 2014-04-30T08:41:51.045Z
 
 I woke up and went downstairs for a simple breakfast of eggs, toast, and coffee. Another traveller from Australia was there, so we chatted for a little while before I packed my things and walked to the bus stop.
 
-![](IMG_3168.JPG)
+![Trip to Myanmar (Day 2 - Yangon) image 1](IMG_3168.JPG)
 The bus arrived quickly. I jumped on and was soon on my way. Although I had some instructions for using the bus, I needed to transfer. Following my map, I got off and crossed the street to wait for the next bus to Inya Lake. It never came, and a local mimed that I was at the wrong stop. After walking around for a while in search of the bus, I eventually gave up and flagged down a taxi. It looked fine from the outside but was barely functioning. Twenty minutes and $3 later, I was at the lake, although at the Inya Lake Hotel rather than my intended destination. I could have been more explicit, but the hotel sufficed.
 
 I walked by the lake for a little while, took some photos, and headed back towards the main street. The sun was out in full force as I walked through the back streets. Just before reaching the main road, I stumbled and the sole of my shoe flew off. The pavement may have been hot enough to melt the glue holding my shoe together, although the shoe might simply have been too old. I made it to the bus  stop, jumped on the next bus, and was soon downtown. As the bus passed the Shwedagon Pagoda, about half the passengers bowed their heads at the same time and began praying.
@@ -24,11 +24,11 @@ I noticed a small place filled with locals eating lunch and realised I was a bit
 
 From there, I stopped at a supermarket, encountered a few very pushy shoppers, bought some biscuits for later in the day, and walked across a bridge to the railway station. I bought a ticket at the bottom of Platform 7, which I had researched thoroughly, and waited for a "circular train." It was supposed to cost $2 USD but ended up costing 20 cents. My transport costs were generally lower than the prices reported online.
 
-![](IMG_3221.JPG)People were spread throughout the station, many of whom appeared to be living there. Some sold ice or, more accurately, the chance to pour water over their ice to cool it. I took a few panoramic photographs, and at 15:30 the train arrived. It stopped for perhaps 20-30 seconds, with people jumping on and off in all directions: impressive dwell time! The train began its clockwise circuit around the city. Although its dwell time was impressive, the track maintenance left something to be desired. The carriage shook violently as we inched along, never exceeding 25 km/h. Every station had people selling something, and people regularly walked between the tracks.
+![Trip to Myanmar (Day 2 - Yangon) image 2](IMG_3221.JPG)People were spread throughout the station, many of whom appeared to be living there. Some sold ice or, more accurately, the chance to pour water over their ice to cool it. I took a few panoramic photographs, and at 15:30 the train arrived. It stopped for perhaps 20-30 seconds, with people jumping on and off in all directions: impressive dwell time! The train began its clockwise circuit around the city. Although its dwell time was impressive, the track maintenance left something to be desired. The carriage shook violently as we inched along, never exceeding 25 km/h. Every station had people selling something, and people regularly walked between the tracks.
 
 I inched my way station-by-station until I stopped somewhere north of the  city, at a larger stabling yard, where I paused for almost 45 minutes. There were mothers everywhere with their newborns, both dressed in colourful clothing.
 
-![](IMG_3220.JPG)
+![Trip to Myanmar (Day 2 - Yangon) image 3](IMG_3220.JPG)
 
 The train whistled and began moving, now entering a more rural part of town. People farmed on both sides of the tracks. I wished I had a camera with a better lens, as this would have been a photographer's dream. The sun  began to set, bathing the houses in intense orange light.
 

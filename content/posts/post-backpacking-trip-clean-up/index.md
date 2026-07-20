@@ -25,38 +25,38 @@ I prefer doing a backflush with the coupling unit vs. the syringe.
 
   
 
-[![](IMG_0451.jpeg)](IMG_0451.jpeg)
+[![Post Backpacking Trip Clean-Up image 1](IMG_0451.jpeg)](IMG_0451.jpeg)
 
 Get supplies ready. Bleach, spare Sawyer bag, and blue coupling thing.
 
   
 
-[![](IMG_0452.jpeg)](IMG_0452.jpeg)
+[![Post Backpacking Trip Clean-Up image 2](IMG_0452.jpeg)](IMG_0452.jpeg)
 
 Fill bag with water, add one cupful of bleach.
 
   
 
-[![](IMG_0453.jpeg)](IMG_0453.jpeg)
+[![Post Backpacking Trip Clean-Up image 3](IMG_0453.jpeg)](IMG_0453.jpeg)
 
 Put on blue coupling thing, but only about 1/2 way
 
   
 
-[![](IMG_0454.jpeg)](IMG_0454.jpeg)
+[![Post Backpacking Trip Clean-Up image 4](IMG_0454.jpeg)](IMG_0454.jpeg)
 
 Put Squeeze on and now make it tight.
 
   
 
-[![](IMG_0456.jpeg)](IMG_0456.jpeg)
+[![Post Backpacking Trip Clean-Up image 5](IMG_0456.jpeg)](IMG_0456.jpeg)
 
 Backflush. I don't do it like this, and use two hands instead, but had to take a photo.
 
   
   
 
-[![](IMG_0459.jpeg)](IMG_0459.jpeg)
+[![Post Backpacking Trip Clean-Up image 6](IMG_0459.jpeg)](IMG_0459.jpeg)
 
 Put cap back on and pour a little of the water in the filter. Let sit for a few hours.
 
@@ -69,19 +69,19 @@ I use this as a dirty bag if needing to filter a lot of water (e.g. group trip).
 
   
 
-[![](IMG_0460.jpeg)](IMG_0460.jpeg)
+[![Post Backpacking Trip Clean-Up image 7](IMG_0460.jpeg)](IMG_0460.jpeg)
 
 Fill bladder with water and a capful of bleach.
 
   
 
-[![](IMG_0461.jpeg)](IMG_0461.jpeg)
+[![Post Backpacking Trip Clean-Up image 8](IMG_0461.jpeg)](IMG_0461.jpeg)
 
 Put on counter and let sit for a few hours. I then put a small cup in the opening and let stand dry.
 
   
 
-[![](IMG_0462.jpeg)](IMG_0462.jpeg)
+[![Post Backpacking Trip Clean-Up image 9](IMG_0462.jpeg)](IMG_0462.jpeg)
 
 20 year old Platypus bladders stay in the freezer. Mainly used for running if I don't take my BeFree.
 
@@ -96,7 +96,7 @@ I use my kitchen scale to weigh and then write down how much gas is left. This o
 
   
 
-[![](IMG_0463.jpeg)](IMG_0463.jpeg)
+[![Post Backpacking Trip Clean-Up image 10](IMG_0463.jpeg)](IMG_0463.jpeg)
 
 Weight on the side (~200g gross weight, 95-100g empty weight)
 

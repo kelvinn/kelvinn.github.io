@@ -13,11 +13,11 @@ blogger_updated: 2021-12-22T10:42:02.999Z
 
 &nbsp;
 
-![](DSC04440.jpg)
+![London: 2016 (Photos) image 1](DSC04440.jpg)
 
-![](blogger-image-3855dc58802e.jpg)
-![](20160310_094330.jpg)
+![Blogger image 3855dc58802e](blogger-image-3855dc58802e.jpg)
+![20160310 094330](20160310_094330.jpg)
 
-![](blogger-image-04ac23053409.jpg)
+![Blogger image 04ac23053409](blogger-image-04ac23053409.jpg)
 
-![](DSC04496.jpg)
+![London: 2016 (Photos) image 5](DSC04496.jpg)

@@ -21,10 +21,10 @@ Tonight (a Saturday) I was bored, and should have been studying, but wanted to c
 The below maps were created using TDX data released from 131500. After converting it to GTFS I imported it into PostGIS using GTFSDB, and then could serve it via GeoServer. Finally, I could access it via WMS in QGIS. I added the stops into a map of Sydney and added some boundaries, and added the Growth Zones. The result was a map with every bus/train/ferry stop. Darker areas have stops that are closer (not necessarily more frequent service).  
   
   
-[![](Screenshot-4.png)](Screenshot-4.png)  
+[![Visualizing Transport image 1](Screenshot-4.png)](Screenshot-4.png)  
   
-[![](growtharea.png)](growtharea.png)  
+[![Growtharea](growtharea.png)](growtharea.png)  
   
-[![](growtharea2.png)](growtharea2.png)  
+[![Growtharea2](growtharea2.png)](growtharea2.png)  
   
 One of the first things I noticed is that there isn't much physical infrastructure in these areas. There also aren't many transit stops; I suppose this is why the [South West Rail Link](http://en.wikipedia.org/wiki/South_West_railway_line,_Sydney) is going to be so important. I don't know all of the political ramifications, but let's hope the [North West Rail Link](http://en.wikipedia.org/wiki/Proposed_railways_in_Sydney#North_West_Rail_Link_.28NWRL.29) is built as well?

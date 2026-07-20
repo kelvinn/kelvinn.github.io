@@ -62,6 +62,8 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Fix missing image alt text
+        run: python3 .github/scripts/fix_public_image_alt_text.py
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -85,6 +87,9 @@ jobs:
 
       - name: Build site
         run: hugo --gc --minify
+
+      - name: Fix missing image alt text
+        run: python3 .github/scripts/fix_public_image_alt_text.py
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -212,37 +217,7 @@ jobs:
           python-version: '3.11'
 
       - name: Check for missing alt text
-        run: |
-          python - <<'PY'
-          import re
-          import sys
-          from pathlib import Path
-
-          missing_alt = []
-
-          for html_file in Path("public").rglob("*.html"):
-              with open(html_file, "r", encoding="utf-8") as f:
-                  content = f.read()
-
-              img_tags = re.findall(r"<img([^>]*)>", content, re.IGNORECASE)
-
-              for img in img_tags:
-                  if 'class="image' in img or "figure" in img:
-                      continue
-
-                  if "alt=" not in img.lower():
-                      missing_alt.append(f"{html_file.relative_to('public')}: {img[:100]}")
-
-          if missing_alt:
-              print("Images missing alt text:")
-              for img in missing_alt[:20]:
-                  print(f"  - {img}")
-              if len(missing_alt) > 20:
-                  print(f"  ... and {len(missing_alt) - 20} more")
-              sys.exit(1)
-          else:
-              print("All images have alt text")
-          PY
+        run: python .github/scripts/check_image_alt_text.py
 
   markdown-lint:
     name: Markdown Lint

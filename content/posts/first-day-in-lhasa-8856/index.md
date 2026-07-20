@@ -16,7 +16,7 @@ blogger_updated: 2013-01-08T13:31:03.807Z
 
 We woke early to the sound of cars, but easily ignored the noise to get a few more minutes of sleep. At 9:00 a.m. we went to a Chinese-style breakfast place around the corner from the hotel. Next, we wandered to the Potala Palace to stand in line and buy our tickets. The sun was intense; every minute without sunscreen felt like another minute closer to a burn. After a short wait, Mei and Kwon returned from buying train tickets. The line was massive, stretching along a wall and out into the open. Luckily, we were able to find some shade.
 
-![](DSC01782.jpg)
+![First Day in Lhasa image 1](DSC01782.jpg)
 
 After buying tickets, we walked all the way to the bus station and inquired about tickets to Shigatse, a small city west of Lhasa. We were told simply to buy them the next day.
 

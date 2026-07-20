@@ -15,7 +15,7 @@ blogger_updated: 2013-01-08T13:31:03.773Z
 
 After waking up and eating breakfast, we checked out of the hotel but left our bags in the lobby. We wandered down the street to the post office, bought some postcards, and entered the Potala Palace. If you intend to visit the palace, make sure to leave enough time to walk up the stairs. Around 30 minutes should do it.
 
-![](DSC01799.jpg)
+![To Shigatse image 1](DSC01799.jpg)
 
 The palace is quite remarkable. On our trip, we had seen more magnificent places, places with more gold, and places with more history. But the Potala Palace gives the visitor an amazing feeling. The spirituality of the pilgrims is fascinating, and the contrast between their humility and the grandeur of the palace cannot be fully expressed in words. One of the rooms reportedly contains the second-largest diamond in the world, yet only one modest guard stood nearby. He looked sleepy.
 

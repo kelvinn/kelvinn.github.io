@@ -26,7 +26,7 @@ The track was likely especially scary for newcomers given the weather we encount
 
   
 
-[![](Overland.png)](Overland.png)
+[![Overland](Overland.png)](Overland.png)
 
 The Overland Track. Plan ahead and say goodbye to mobile reception.
 
@@ -93,7 +93,7 @@ On my first multi-day hike several years ago with this hiking companion my shopp
 
   
 
-[![](Food.png)](Food.png)
+[![Food](Food.png)](Food.png)
 
 Initial food planning for two  
 

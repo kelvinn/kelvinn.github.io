@@ -17,7 +17,7 @@ I will need to get used to writing &#39;2007&#39;, but I think it will be a grea
 
 After waking up, I packed my things, cleaned the room a little, and left the nearly empty guest house. I decided to take one more look at the modern district during the day and take a few more photos. I found the Jin Mao Tower, took my photos, and jumped back on the subway. After a quick ride to the train station, I purchased my tickets.
 
- ![](PDR_2827.jpg)
+ ![PDR 2827](PDR_2827.jpg)
 
 The train stations here, at least the ones I had seen, are among the busiest places in each city. I could also feel people sizing me up to decide whether I would be a good target. By following a few simple practices, I had fortunately never had anything stolen from me (pei pei pei).
 
@@ -37,7 +37,7 @@ There was also an interesting episode involving a pickpocket. While I was playin
 
 The train was crowded, so I first brought out the food. I made peanut butter crackers and ate them like candy. Trying to be a considerate traveller, I offered some to everybody around me. Nobody accepted, but at least I offered. I finally arrived in Suzhou, only about an hour and a half from Shanghai. The difficulty was the time: it was already quite late. I also had no directions to the hostel, only an address. After finding what appeared to be the correct bus stop, I did not know which bus to take. I am generally a little shy about asking strangers for help, but I was the one who could speak enough Chinese to be understood. I approached a friendly-looking couple about my age and asked them. They had not heard of either the hostel or the street, but someone had given them a hostel card as they left the station; dozens of people outside were trying to persuade arriving passengers to stay with them. I took the card, and the couple happened to be waiting for the same bus. I squeezed aboard the packed, unlit bus. Nobody spoke as we travelled across the city. Eventually they said, &quot;Get off here; it should be somewhere over there.&quot; I thanked them and jumped off.
 
-![](PDR_2833.jpg) 
+![PDR 2833](PDR_2833.jpg) 
 
 Crossing the street, I entered what appeared to be student accommodation and somehow chose the correct building. I stepped into a pitch-black elevator, went up to the seventh floor, and found the &quot;hostel.&quot; It was still in its early stages and was used mostly by students from Suzhou University across the street. The owner told me they had no room available just then, but would shortly. Puzzled, I said OK and joined him for dinner. The situation seemed a little odd, but my instincts were not sounding any alarms, and I was hungry. The food was excellent: a large plate of curry rice cost about 75 cents. I then walked to the supermarket across the motorway, bought water and snacks, and returned to the hostel. Sure enough, a room was available.
 

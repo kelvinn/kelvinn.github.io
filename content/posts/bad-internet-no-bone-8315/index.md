@@ -14,6 +14,6 @@ blogger_updated: 2013-01-08T13:33:39.787Z
 
 I am currently working from a Starbucks cafe, I'll admit it. The internet is normally quite good, and I pay about $15 a month to use it. Today, however, it is very unreliable. Don't believe me?
 
-![](crapwifly.jpg)
+![Crapwifly](crapwifly.jpg)
 
 In addition to certain sites failing to load, forcing me to use pattern recognition in Tor to open them, the internet is simply slow today. I can't even connect to AIM. Frustrating.

@@ -20,7 +20,7 @@ Because I wanted to arrive in Nelson as early as possible, I opted to catch a 6:
 
 After an hour of waiting, my dad and Cathy arrived. We had a quick hello before they went to pick up the car. Shortly afterward, I was on my way, crammed into a tiny car with a surprisingly small amount of luggage.
 
-![](IMG_1927.JPG)
+![Day 1 - Nelson image 1](IMG_1927.JPG)
 
 The four of us drove towards Tasman, near where our rental house was. Shortly after leaving the airport, I realised that this was the stretch of road where I had blown a tyre on my first trip to New Zealand, 18 years earlier.
 

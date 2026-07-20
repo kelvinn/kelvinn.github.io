@@ -23,7 +23,7 @@ class AccountForm(forms.Form):
 ```  
   
 However, when I displayed it, the form was autoescaped.  
-[![](accountsform.jpg)](accountsform.jpg)  
+[![Accountsform](accountsform.jpg)](accountsform.jpg)  
   
 This is generally a good thing, except my form obviously didn't display correctly. I tried autoescaping it in the template, but that didn't work. To resolve this you'll need to mark that _individual label_ as safe. Thus:  
 

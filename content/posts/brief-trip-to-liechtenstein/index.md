@@ -13,7 +13,7 @@ blogger_updated: 2021-12-22T02:35:06.021Z
 
 There is not too much to say here, as the trip was very brief. As expected, Liechtenstein was picturesque, almost exactly like the setting of a romance film in which an American meets a European prince who sweeps her off her feet. Unfortunately, I also didn't take many photos.
 
-![](20160519_110004.jpg)
+![20160519 110004](20160519_110004.jpg)
 
 Walking one of the many side streets
 

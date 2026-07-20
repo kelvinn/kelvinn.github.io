@@ -20,14 +20,14 @@ One of our friends gave us some worms from her compost - no idea what kind - and
 
   
 
-[![](IMG_20130818_203929.jpg)](IMG_20130818_203929.jpg)
+[![Continuous Flow Through Worm Bin image 1](IMG_20130818_203929.jpg)](IMG_20130818_203929.jpg)
 
-[![](IMG_20130818_204002.jpg)](IMG_20130818_204002.jpg)
+[![Continuous Flow Through Worm Bin image 2](IMG_20130818_204002.jpg)](IMG_20130818_204002.jpg)
 
-[![](IMG_20130818_210945.jpg)](IMG_20130818_210945.jpg)
+[![Continuous Flow Through Worm Bin image 3](IMG_20130818_210945.jpg)](IMG_20130818_210945.jpg)
 
-[![](IMG_20130831_182837.jpg)](IMG_20130831_182837.jpg)
+[![Continuous Flow Through Worm Bin image 4](IMG_20130831_182837.jpg)](IMG_20130831_182837.jpg)
 
-[![](IMG_20130831_183138.jpg)](IMG_20130831_183138.jpg)
+[![Continuous Flow Through Worm Bin image 5](IMG_20130831_183138.jpg)](IMG_20130831_183138.jpg)
 
-[![](IMG_20130818_203923.jpg)](IMG_20130818_203923.jpg)
+[![Continuous Flow Through Worm Bin image 6](IMG_20130818_203923.jpg)](IMG_20130818_203923.jpg)

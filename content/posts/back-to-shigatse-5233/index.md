@@ -16,7 +16,7 @@ blogger_updated: 2013-01-08T13:31:03.813Z
 
 Once again, we woke up early and ate breakfast. The weather was surprisingly cold. After breakfast we walked up a hidden passageway to the fort and got almost all the way up before being stopped. Eventually, somebody asked us to buy tickets if we wanted to continue, but the price wasn't right, so we took photos of the valley and headed back down the hill. Around the corner we walked to the monastery, but, unimpressed, we left without exploring too deeply.
 
-![](040.jpg)![](DSC01874.jpg)
+![Back to Shigatse image 1](040.jpg)![Back to Shigatse image 2](DSC01874.jpg)
 
 We inquired at the bus station about the next bus back to Shigatse, and when our truck arrived, we haggled a bit and were on our way. Halfway there, the driver asked me to duck down in the back because a checkpoint was ahead. Covered in blankets, I felt the vehicle slow as everyone fell silent, then pull away. I was free. For now.
 

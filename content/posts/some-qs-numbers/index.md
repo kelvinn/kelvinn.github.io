@@ -54,7 +54,7 @@ If I chart the days of the week I like to drink coffee over the last 18 months, 
 
   
 
-[![](coffees-consumed.png)](coffees-consumed.png)
+[![Coffees consumed](coffees-consumed.png)](coffees-consumed.png)
 
   
 
@@ -67,7 +67,7 @@ If I chart the days of the week I like to drink coffee over the last 18 months, 
 
   
 
-[![](DrinksPerMonth.png)](DrinksPerMonth.png)
+[![Drinks Per Month](DrinksPerMonth.png)](DrinksPerMonth.png)
 
   
 
@@ -78,7 +78,7 @@ I track both beer and wine consumption. I have managed to cut back on wine, but 
 
   
 
-[![](WineVsBeer.png)](WineVsBeer.png)
+[![Wine Vs Beer](WineVsBeer.png)](WineVsBeer.png)
 
   
 
@@ -92,7 +92,7 @@ For the last two years I have been wearing a [FitBit](http://www.fitbit.com/), u
 
   
 
-[![](StepsPerWeek.png)](StepsPerWeek.png)
+[![Steps Per Week](StepsPerWeek.png)](StepsPerWeek.png)
 
   
 
@@ -108,7 +108,7 @@ I should also sleep more. It appears as though maybe, just maybe, I am starting 
 
   
 
-[![](MinutesAsleep.png)](MinutesAsleep.png)
+[![Minutes Asleep](MinutesAsleep.png)](MinutesAsleep.png)
 
   
 
@@ -124,7 +124,7 @@ This graph shows my average happiness on a weekly basis for the last ~8 months. 
 
   
 
-[![](HappinessLevels.png)](HappinessLevels.png)
+[![Happiness Levels](HappinessLevels.png)](HappinessLevels.png)
 
   
 
@@ -132,7 +132,7 @@ This graph shows my average happiness on a weekly basis for the last ~8 months. 
 And here we have my happiness levels when grouped by day of the week. We could conclude that I am, on average, the most content on a Sunday. I would like to believe it is just a coincidence that I am most content on a Sunday, and drink the least amount of coffee.  
   
 
-[![](HappinessLevelsByWeekday.png)](HappinessLevelsByWeekday.png)
+[![Happiness Levels By Weekday](HappinessLevelsByWeekday.png)](HappinessLevelsByWeekday.png)
 
   
 
@@ -146,7 +146,7 @@ This is the standard deviation of my happiness tracking on a monthly basis. It l
 
   
 
-[![](StdDevHappiness.png)](StdDevHappiness.png)
+[![Std Dev Happiness](StdDevHappiness.png)](StdDevHappiness.png)
 
   
 
@@ -160,7 +160,7 @@ And finally, weight. Nothing interesting here. I need to get back down to 77KG, 
 
   
 
-[![](Weight.png)](Weight.png)
+[![Weight](Weight.png)](Weight.png)
 
   
 

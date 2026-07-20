@@ -27,7 +27,7 @@ So, what's it in my kit? Let's start with the drugs.
 
   
 
-[![](IMG_4728.jpg)](IMG_4728.jpg)
+[![My First Aid Kit (Backpacking) image 1](IMG_4728.jpg)](IMG_4728.jpg)
 
 Lots of drugs  
 
@@ -57,7 +57,7 @@ Let's move on to the other stuff.
 
   
 
-[![](IMG_4727.jpg)](IMG_4727.jpg)
+[![My First Aid Kit (Backpacking) image 2](IMG_4727.jpg)](IMG_4727.jpg)
 
 All the other stuff  
 

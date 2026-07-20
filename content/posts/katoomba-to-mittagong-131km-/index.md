@@ -58,19 +58,19 @@ Photos: [https://imgur.com/a/Q6Fl4fR](https://imgur.com/a/Q6Fl4fR)
 
   
 
-[![](IMG_0156.jpeg){width="100" height="20"}](IMG_0156.jpeg)
+[![Katoomba to Mittagong (131km) image 1](IMG_0156.jpeg){width="100" height="20"}](IMG_0156.jpeg)
 
 Looking Fresh
 
   
 
-[![](IMG_0157.jpeg)](IMG_0157.jpeg)
+[![Katoomba to Mittagong (131km) image 2](IMG_0157.jpeg)](IMG_0157.jpeg)
 
 View from Narrowneck
 
   
 
-[![](IMG_0159.jpeg)](IMG_0159.jpeg)
+[![Katoomba to Mittagong (131km) image 3](IMG_0159.jpeg)](IMG_0159.jpeg)
 
 More Narrowneck
 
@@ -80,7 +80,7 @@ More Narrowneck
 
   
 
-[![](IMG_0162.jpeg)](IMG_0162.jpeg)
+[![Katoomba to Mittagong (131km) image 4](IMG_0162.jpeg)](IMG_0162.jpeg)
 
 View back towards Katoomba
 
@@ -92,7 +92,7 @@ View back towards Katoomba
 
   
 
-[![](IMG_0168.jpeg)](IMG_0168.jpeg)
+[![Katoomba to Mittagong (131km) image 5](IMG_0168.jpeg)](IMG_0168.jpeg)
 
 Pretty easy climb
 
@@ -132,19 +132,19 @@ Photos: [https://imgur.com/a/rvIcBkX](https://imgur.com/a/rvIcBkX)
 
   
 
-[![](IMG_0169.jpeg)](IMG_0169.jpeg)
+[![Katoomba to Mittagong (131km) image 6](IMG_0169.jpeg)](IMG_0169.jpeg)
 
 Not looking quite as fresh
 
   
 
-[![](IMG_0170.jpeg)](IMG_0170.jpeg)
+[![Katoomba to Mittagong (131km) image 7](IMG_0170.jpeg)](IMG_0170.jpeg)
 
 Too deep to cross, and need to climb up that mountain next
 
   
 
-[![](IMG_0171.jpeg)](IMG_0171.jpeg)
+[![Katoomba to Mittagong (131km) image 8](IMG_0171.jpeg)](IMG_0171.jpeg)
 
 Much easier when out of the bush, but still pretty steep
 
@@ -152,13 +152,13 @@ Much easier when out of the bush, but still pretty steep
 
   
 
-[![](IMG_0175.jpeg)](IMG_0175.jpeg)
+[![Katoomba to Mittagong (131km) image 9](IMG_0175.jpeg)](IMG_0175.jpeg)
 
 That's where I came from
 
   
 
-[![](IMG_0176.jpeg)](IMG_0176.jpeg)
+[![Katoomba to Mittagong (131km) image 10](IMG_0176.jpeg)](IMG_0176.jpeg)
 
 I think that green area is where I camped
 
@@ -174,7 +174,7 @@ I think that green area is where I camped
 
   
 
-[![](IMG_0181.jpeg)](IMG_0181.jpeg)
+[![Katoomba to Mittagong (131km) image 11](IMG_0181.jpeg)](IMG_0181.jpeg)
 
 At least it isn't raining
 
@@ -224,13 +224,13 @@ Photos: [https://imgur.com/a/L2Sf7UJ](https://imgur.com/a/L2Sf7UJ)
 
   
 
-[![](IMG_0185.jpeg)](IMG_0185.jpeg)
+[![Katoomba to Mittagong (131km) image 12](IMG_0185.jpeg)](IMG_0185.jpeg)
 
 That's where I slept
 
   
 
-[![](IMG_0186.jpeg)](IMG_0186.jpeg)
+[![Katoomba to Mittagong (131km) image 13](IMG_0186.jpeg)](IMG_0186.jpeg)
 
 That way!
 
@@ -240,13 +240,13 @@ That way!
 
   
 
-[![](IMG_0188.jpeg)](IMG_0188.jpeg)
+[![Katoomba to Mittagong (131km) image 14](IMG_0188.jpeg)](IMG_0188.jpeg)
 
 Under maintenance
 
   
 
-[![](IMG_0189.jpeg)](IMG_0189.jpeg)
+[![Katoomba to Mittagong (131km) image 15](IMG_0189.jpeg)](IMG_0189.jpeg)
 
 Yerranderie (Under maintenance this week)
 
@@ -255,7 +255,7 @@ Yerranderie (Under maintenance this week)
 
   
 
-[![](IMG_0198.jpeg)](IMG_0198.jpeg)
+[![Katoomba to Mittagong (131km) image 16](IMG_0198.jpeg)](IMG_0198.jpeg)
 
 Nope, not going to go that way
 
@@ -269,37 +269,37 @@ Nope, not going to go that way
 
   
 
-[![](IMG_0201.jpeg)](IMG_0201.jpeg)
+[![Katoomba to Mittagong (131km) image 17](IMG_0201.jpeg)](IMG_0201.jpeg)
 
 Spirits still high
 
   
 
-[![](IMG_0202.jpeg)](IMG_0202.jpeg)
+[![Katoomba to Mittagong (131km) image 18](IMG_0202.jpeg)](IMG_0202.jpeg)
 
 Beautiful remote views. Lots of roos and emus
 
   
 
-[![](IMG_0203.jpeg)](IMG_0203.jpeg)
+[![Katoomba to Mittagong (131km) image 19](IMG_0203.jpeg)](IMG_0203.jpeg)
 
 One of my favourite stretches of road
 
   
 
-[![](IMG_0205.jpeg)](IMG_0205.jpeg)
+[![Katoomba to Mittagong (131km) image 20](IMG_0205.jpeg)](IMG_0205.jpeg)
 
 May be subject to flooding. You don't say.
 
   
 
-[![](IMG_0208.jpeg)](IMG_0208.jpeg)
+[![Katoomba to Mittagong (131km) image 21](IMG_0208.jpeg)](IMG_0208.jpeg)
 
 Survived.
 
   
 
-[![](IMG_0209.jpeg)](IMG_0209.jpeg)
+[![Katoomba to Mittagong (131km) image 22](IMG_0209.jpeg)](IMG_0209.jpeg)
 
 Easy off track
 
@@ -309,15 +309,15 @@ Easy off track
 
   
 
-[![](IMG_0211.jpeg)](IMG_0211.jpeg)
+[![Katoomba to Mittagong (131km) image 23](IMG_0211.jpeg)](IMG_0211.jpeg)
 
 That's a problem
 
-[![](IMG_0212.jpeg)](abc)
+[![Katoomba to Mittagong (131km) image 24](IMG_0212.jpeg)](abc)
 
   
 
-[![](IMG_0213.jpeg)](IMG_0213.jpeg)
+[![Katoomba to Mittagong (131km) image 25](IMG_0213.jpeg)](IMG_0213.jpeg)
 
 Made it
 
@@ -327,19 +327,19 @@ Made it
 
   
 
-[![](IMG_0215.jpeg)](IMG_0215.jpeg)
+[![Katoomba to Mittagong (131km) image 26](IMG_0215.jpeg)](IMG_0215.jpeg)
 
 Only took 90 minutes to get down the gully, but a lot of effort
 
   
 
-[![](IMG_0216.jpeg)](IMG_0216.jpeg)
+[![Katoomba to Mittagong (131km) image 27](IMG_0216.jpeg)](IMG_0216.jpeg)
 
 Nattai river
 
   
 
-[![](IMG_0217.jpeg)](IMG_0217.jpeg)
+[![Katoomba to Mittagong (131km) image 28](IMG_0217.jpeg)](IMG_0217.jpeg)
 
 Bush whacking time
 
@@ -366,25 +366,25 @@ Photos: [https://imgur.com/a/Ul2yLJ7](https://imgur.com/a/Ul2yLJ7)
 
   
 
-[![](IMG_0218.jpeg)](IMG_0218.jpeg)
+[![Katoomba to Mittagong (131km) image 29](IMG_0218.jpeg)](IMG_0218.jpeg)
 
 That's not a real trail - wombat tracks.
 
   
 
-[![](IMG_0219.jpeg)](IMG_0219.jpeg)
+[![Katoomba to Mittagong (131km) image 30](IMG_0219.jpeg)](IMG_0219.jpeg)
 
 CIVILISATION!!!!
 
   
 
-[![](IMG_0220.jpeg)](IMG_0220.jpeg)
+[![Katoomba to Mittagong (131km) image 31](IMG_0220.jpeg)](IMG_0220.jpeg)
 
 MORE CIVILISATION!!!
 
   
 
-[![](IMG_0221.jpeg)](IMG_0221.jpeg)
+[![Katoomba to Mittagong (131km) image 32](IMG_0221.jpeg)](IMG_0221.jpeg)
 
 No longer see through
 
@@ -392,7 +392,7 @@ No longer see through
 
   
 
-[![](IMG_0226.jpeg)](IMG_0226.jpeg)
+[![Katoomba to Mittagong (131km) image 33](IMG_0226.jpeg)](IMG_0226.jpeg)
 
 Gear malfunction
 

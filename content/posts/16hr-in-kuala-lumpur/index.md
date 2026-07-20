@@ -17,7 +17,7 @@ Kuala Lumpur is familiar to me, yet each time I go back I do something unique. M
 
 The LCCT is located an hour from KL Sentral, with frequent buses running between the two. My trip brought me to KL Sentral just after breakfast time, and I was hungry after choosing not to buy food on the AirAsia flight. I walked out of the main train station looking for curry, one of my fondest memories of Kuala Lumpur and something I seek every time I transit through. Just around the corner I found a busy restaurant and ordered roti with curry. Then another. Then a third. And finally another dish too.
 
-![](IMG_2162.JPG)![](IMG_2165.JPG)
+![16 Hours in Kuala Lumpur image 1](IMG_2162.JPG)![16 Hours in Kuala Lumpur image 2](IMG_2165.JPG)
 
 By the end of the meal I was stuffed. I had eaten maybe 118% of what I should have, but I walked contentedly out of the restaurant, having spent only a few dollars in total, and jumped on the monorail to one of the food districts. I walked around in search of water but was too full to eat. The Berlin Bears were on display, although Taiwan was missing, which left me scheming about how to create one.
 
@@ -27,4 +27,4 @@ Without getting off, I took the train back to Sentral, returned to my favourite 
 
 While I didn't see any major sights or visit any major attractions, the curry made my layover worthwhile. Sometimes it is nice simply to experience a culture very different from one's own, which is exactly what Kuala Lumpur gave me.
 
-![](IMG_2167.JPG)![](IMG_2179.JPG)
+![16 Hours in Kuala Lumpur image 3](IMG_2167.JPG)![16 Hours in Kuala Lumpur image 4](IMG_2179.JPG)

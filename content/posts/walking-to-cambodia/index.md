@@ -37,24 +37,24 @@ Over the next week I would wind my way up to Angkor Wat, where I would meet a co
 
 As would be expected, after departing Cambodia and entering Vietnam, the border officials wanted another fee for "a health check". I tried to make light of it, but unfortunately I still think I had to pay.
 
-![](DSC02076.jpg)
-![](DSC02082.jpg)
-![](DSC02085.jpg)
-![](DSC02094.jpg)
-![](DSC02097.jpg)
+![Walking to Cambodia image 1](DSC02076.jpg)
+![Walking to Cambodia image 2](DSC02082.jpg)
+![Walking to Cambodia image 3](DSC02085.jpg)
+![Walking to Cambodia image 4](DSC02094.jpg)
+![Walking to Cambodia image 5](DSC02097.jpg)
 My friends from Chile. I eventually stayed with them in Santiago about 6 years later.
-![](DSC02099.jpg)
-![](DSC02101.jpg)
-![](DSC02102.jpg)
+![Walking to Cambodia image 6](DSC02099.jpg)
+![Walking to Cambodia image 7](DSC02101.jpg)
+![Walking to Cambodia image 8](DSC02102.jpg)
 
-![](DSC02114.jpg)
+![Walking to Cambodia image 9](DSC02114.jpg)
 
-![](DSC02117.jpg)
-![](DSC02139.jpg)
-![](DSC02136.jpg)
-![](DSC02141.jpg)
-![](DSC02146.jpg)
-![](DSC02152.jpg)
-![](DSC02151.jpg)
+![Walking to Cambodia image 10](DSC02117.jpg)
+![Walking to Cambodia image 11](DSC02139.jpg)
+![Walking to Cambodia image 12](DSC02136.jpg)
+![Walking to Cambodia image 13](DSC02141.jpg)
+![Walking to Cambodia image 14](DSC02146.jpg)
+![Walking to Cambodia image 15](DSC02152.jpg)
+![Walking to Cambodia image 16](DSC02151.jpg)
 
-![](DSC02160.jpg)
+![Walking to Cambodia image 17](DSC02160.jpg)

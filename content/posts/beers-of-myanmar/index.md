@@ -9,7 +9,7 @@ tags:
 - outdoors
 ---
 
-[![](IMG_20140423_082522.jpg)](IMG_20140423_082522.jpg)
+[![Beers of Myanmar image 1](IMG_20140423_082522.jpg)](IMG_20140423_082522.jpg)
 
 While in Myanmar on a recent trip I did a brief taste comparison of the three main beers available in most supermarkets.  
   

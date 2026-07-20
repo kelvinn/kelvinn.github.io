@@ -28,7 +28,7 @@ Almost immediately after setting up monitoring I noticed something strange occur
 
 **Find the anomaly:**
 
-[![](wtf_1.png)](wtf_1.png)  
+[![Wtf 1](wtf_1.png)](wtf_1.png)  
 
   
   
@@ -38,7 +38,7 @@ So, let's try to find out what is going on. Indeed, there are some analyzers of 
 
 We can now take a look at what is going on. Let's next just take a look at the statistics offered:
 
-[![](wtf_2.png)](wtf_2.png)  
+[![Wtf 2](wtf_2.png)](wtf_2.png)  
 
   
   
@@ -50,7 +50,7 @@ Now that we know it is UDP related, let's find out more. I've filtered by UDP in
 
   
   
-[![](wtf_3.png)](wtf_3.png)  
+[![Wtf 3](wtf_3.png)](wtf_3.png)  
 
   
   
@@ -61,7 +61,7 @@ Then we select the right side, and we have a pretty green highlighted section.
   
   
   
-[![](wtf_4.png)](wtf_4.png)  
+[![Wtf 4](wtf_4.png)](wtf_4.png)  
 
   
   
@@ -72,7 +72,7 @@ Now it is time to hunt the person down. Using NFSEN's built-in filtering capabil
 
   
   
-[![](wtf_5.png)](wtf_5.png)  
+[![Wtf 5](wtf_5.png)](wtf_5.png)  
 
   
   
@@ -82,7 +82,7 @@ Then could see the obvious place to look next:
 
   
   
-[![](wtf_6.png)](wtf_6.png)  
+[![Wtf 6](wtf_6.png)](wtf_6.png)  
 
   
   

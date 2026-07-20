@@ -16,7 +16,7 @@ Today was not the best of travel days.
 
 I woke after my large dinner needing to pack, shower, and reach Gare de l'Est before 10am. Luckily, my bags were light and easy to pack, with few things that did not have a regular place. M gave me a ride to the Metro after my obligatory coffee and croissant, and I rode Line 7 to catch the TGV.
 
-![](IMG_2305.JPG)![](IMG_2300.JPG)
+![Paris to Strasbourg to... image 1](IMG_2305.JPG)![Paris to Strasbourg to... image 2](IMG_2300.JPG)
 
 Although I arrived at the station a few hours early, I was able to check my email, buy a small meal for the trip, and easily determine which platform the train would use. Boarding was scheduled for 11:05, and sure enough, the platform number appeared precisely on time.
 
@@ -26,7 +26,7 @@ Strasbourg was going to be a daytime-only stop on my intense journey across Euro
 
 I arrived in Strasbourg with certain expectations, or at least images, of what its Christmas market would be like. I had chosen the city because it supposedly has one of the best Christmas markets in Europe. I imagined people singing carols, Santas everywhere, perhaps some snow, and vin chaud. To my disappointment, there were no Santas, carols, or snow. Instead, there were many small stalls, pretty lights, and a little rain. It was not what I had expected, but it was still beautiful to walk around. Strasbourg itself is a beautiful and very walkable city.
 
-![](IMG_2371.JPG)
+![Paris to Strasbourg to... image 3](IMG_2371.JPG)
 
 While walking along the main streets, I visited a winter clothing store because my shoes were not designed for European winters. The shoes were reasonably priced, but none appealed to me, so I left empty-handed. After several hours of walking, I finally tried vin chaud, which tasted a little like hot sangria, and warmed up in one of the small bars dotted around the central district.
 
@@ -40,7 +40,7 @@ I decided to get off at the second-to-last stop, a well-lit area near a major ro
 
 I took a quick stroll through Kehl, then waited at the closed station for my train to Offenburg. It was difficult to decide where to wait: on the cold platform or in the concourse with a few people sheltering there. Most passengers chose the concourse, but I opted to stand on the stairs.
 
-![](IMG_2385.JPG)
+![Paris to Strasbourg to... image 4](IMG_2385.JPG)
 
 The train arrived, and I boarded for Offenburg. It was scheduled to arrive at 10:22. At 10:20, the train slowed and I heard what I thought was the correct station name. Along with many other people, I got off at a station I should have recognised as far too small for my overnight train to Prague.
 

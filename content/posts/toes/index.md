@@ -15,26 +15,26 @@ Toes, aka the Temporary Order Entry System, is a, get this, a temporary ordering
   
   
 
-[![](TOES_1.jpg)](TOES_1.jpg)
+[![TOES 1](TOES_1.jpg)](TOES_1.jpg)
 
 **Adding a new invoice**
 
 [](http://picasaweb.google.com/lh/photo/YjlNXktJ6f1ICMat4R7NWg?feat=embedwebsite)
 
-![](TOES_2.jpg)
+![TOES 2](TOES_2.jpg)
 
 **Auto-fill out feature**
 
   
   
 
-[![](TOES_3.jpg)](TOES_3.jpg)
+[![TOES 3](TOES_3.jpg)](TOES_3.jpg)
 
 **Order in-queue, ready to be transferred**
 
 [](http://picasaweb.google.com/lh/photo/owaBGB8_obl-m08qvsQ6ow?feat=embedwebsite)
 
-![](TOES_4.jpg)
+![TOES 4](TOES_4.jpg)
 
 **Viewing an invoice**  
 
@@ -42,12 +42,12 @@ Toes, aka the Temporary Order Entry System, is a, get this, a temporary ordering
   
   
 
-[![](TOES_5.jpg)](TOES_5.jpg)
+[![TOES 5](TOES_5.jpg)](TOES_5.jpg)
 
 **Orders Taken (already moved)**
 
   
 
-[![](TOES_7.jpg)](TOES_7.jpg)
+[![TOES 7](TOES_7.jpg)](TOES_7.jpg)
 
 **Must have search**

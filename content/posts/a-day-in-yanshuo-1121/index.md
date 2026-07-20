@@ -19,7 +19,7 @@ I awoke at 8:00 and went to breakfast. At 10:00 I rented a bike (a tandem!) and 
 
 Halfway up the road I paused for a break, and an older woman approached me to ask if I wanted to buy postcards. Since they were cheaper than in town (about 70 US cents), I bought a pack. The hunt was on, and all the other vendors surrounded me. Yelling "go away, go away" had no effect, if they understood it at all. I cycled across the bridge and took my rest.
 
-![](DSC01722.jpg)
+![A Day in Yangshuo image 1](DSC01722.jpg)
 
 Within an hour and a half I had reached the hill, which was easy to spot from the number of people trying to sell things and tickets. I decided to pass on purchasing a ticket and continue up the road. Just around the corner was a perfect view of the hill and its huge opening through the rock.
 

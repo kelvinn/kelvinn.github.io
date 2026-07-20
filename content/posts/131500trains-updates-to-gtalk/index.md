@@ -13,6 +13,6 @@ Luckily this is all quick to do using an only service called [ifttt](http://www.
 
 This example could be extended for other purposes, e.g. searching for the word "discount" on some suppliers Twitter stream.
 
-[![](ifttt131500trains.jpg)](ifttt131500trains.jpg)  
+[![Ifttt131500trains](ifttt131500trains.jpg)](ifttt131500trains.jpg)  
   
-[![](screenshot-1336481752845.jpg)](screenshot-1336481752845.jpg)
+[![131500trains Updates to GTalk image 2](screenshot-1336481752845.jpg)](screenshot-1336481752845.jpg)

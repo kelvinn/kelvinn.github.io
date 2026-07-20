@@ -25,4 +25,4 @@ So, why do this? For starters, collecting netflows allows the basic analysis of 
 
 **A week in the life of NFSEN:**
 
-[![](monitorbw.jpg)](monitorbw.jpg)
+[![Monitorbw](monitorbw.jpg)](monitorbw.jpg)

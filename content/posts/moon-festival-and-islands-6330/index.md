@@ -26,7 +26,7 @@ I walk away from the temple and its beautiful sunset, winding through the hills 
 
 I wind my way down the hillside and through the greenery into a small brick house. Looking out across the bay I am reminded of Nice on the French Riviera, or perhaps the Cinque Terre. The tour lasts only a few minutes; the guest house has two large rooms, each accommodating eight people. The walls are strewn with pictures of people sending evidence of their good times back, some old rain coats, and some military artifacts.
 
-![](dsc01259.jpg)
+![Moon Festival and Islands image 1](dsc01259.jpg)
 
 Similar to the island, my guesthouse has a unique history as well. When the tension between China and Taiwan heightened, the majority of Matsu's residents fled to Taiwan. The last to leave, and the first to come back, is the grandmother who owns this guesthouse. With the help of a daughter-in-law, she remodelled the house and opened it to guests. The walls are evidence of her success.
 

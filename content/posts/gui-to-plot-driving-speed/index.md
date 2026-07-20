@@ -14,7 +14,7 @@ I needed another Python fix, and I need one pretty badly. I spent the weekend wo
 
 My goals were simple. I wanted to use Python, wanted something to do with traffic, and wanted to play around with Glade/PyGTK and graphing stuff. My end result was a little app that allows you to specify a GPX file, and it plots the waypoints (and calculates the moving average!). Pretty simple, pretty useless, but pretty fun. I really do like pretty pictures.
 
-[![](SpeedPlotrX.jpg)](SpeedPlotrX.jpg)  
+[![Speed Plotr X](SpeedPlotrX.jpg)](SpeedPlotrX.jpg)  
   
 
 I ended up using matplotlab for the graphing part, but I don't really like how the graphs look. I will likely use Pycha (which dips into Cairo) for my future projects -- but we'll see when that point comes. (If data sensitivity wasn't an issue, I would totally use Google Charts, since I'm a sucker for APIs).

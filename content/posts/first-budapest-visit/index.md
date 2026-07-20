@@ -18,19 +18,19 @@ I woke feeling rested and visited the nearest coffee shop, Coffee Heaven, where 
 
 I had found a highly rated, tip-based tour on TripAdvisor, so I left the coffee shop and set out for the meeting point. With only a few minutes to spare, I located the "lion fountain" and a group of visitors from around the world. Our guide, Emma, was energetic and knowledgeable. Most of her stories included an interesting twist, an effective way to share history while holding everyone's attention.
 
-![](IMG_3298.JPG)
+![First Budapest Visit image 1](IMG_3298.JPG)
 
-![](IMG_3295.JPG)
+![First Budapest Visit image 2](IMG_3295.JPG)
 
 
-![](IMG_3300.JPG)
+![First Budapest Visit image 3](IMG_3300.JPG)
 
 
 Unfortunately, hunger persuaded me to leave shortly before the palace. Following a recommendation, I headed into the Jewish Quarter and ate at a pub. The set menu included a 30-centimetre pizza, a drink, and a small dessert. We also shared a 500-millilitre local beer.
 
 After the late lunch, I returned to my hotel and prepared for an evening at the opera. Although  The Bat was performed in Hungarian without translation, the theatre's acoustics impressed me. The staff were less welcoming than I had expected, which dampened the experience. On the way home, I bought a few more pastries, a beer, and kebabs.
 
-![](IMG_3326.JPG)
+![First Budapest Visit image 4](IMG_3326.JPG)
 
 Watching "The Bat"
 
@@ -44,20 +44,20 @@ When the second round arrived, I realised that I had mixed up the first two and 
 
 We left the restaurant well fed and walked uphill into the old town. Our first stop was Matthias Church, where I took plenty of photographs, followed by a small bakery on the way to the Royal Palace.
 
-![](IMG_3328.JPG)
+![First Budapest Visit image 5](IMG_3328.JPG)
 
-![](IMG_3334.JPG)
+![First Budapest Visit image 6](IMG_3334.JPG)
 
-![](IMG_3338.JPG)
+![First Budapest Visit image 7](IMG_3338.JPG)
 
-![](IMG_3344.JPG)
+![First Budapest Visit image 8](IMG_3344.JPG)
 
-![](IMG_3348.JPG)
+![First Budapest Visit image 9](IMG_3348.JPG)
 
 
-![](IMG_3355.JPG)
+![First Budapest Visit image 10](IMG_3355.JPG)
 
-![](IMG_3396.JPG)
+![First Budapest Visit image 11](IMG_3396.JPG)
 
 0KM Point
 

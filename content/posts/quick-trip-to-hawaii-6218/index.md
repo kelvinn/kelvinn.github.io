@@ -19,7 +19,7 @@ I had just returned from Hawaii for Ian's wedding, and what a fun, fast-paced tr
 
 After arriving in Honolulu, I quickly boarded the shuttle to the other terminal and then a second plane to Maui. A short island hop later, I landed in Kahului. Outside the airport, I caught the Thrifty shuttle to the rental-car depot. As we arrived, I saw a tow truck carrying a totalled car, a sombre reminder to purchase the highest level of insurance available. I arranged an early Friday pickup and took the shuttle back to the airport. After waiting 30 minutes for the next bus, I headed into central Kahului.
 
-![](DSC03059.jpg)
+![Quick Trip to Hawaii image 1](DSC03059.jpg)
 
 A short bus ride later, the shopping centre I wanted was only about four kilometres from the airport, and I checked into the Maui Seaside Hotel. The staff were friendly, and the hotel was about what I expected. I rested briefly, then caught a bus down the Piilani Highway. It meandered along the coast, and when most of the local passengers got off, I followed. I was craving "American food," and Denny's was the best option I could think of. Afterwards, I spent some time on the beach and waited for a bus in the other direction. A few hours later, I was back at the hotel and in bed by 11:30pm.
 

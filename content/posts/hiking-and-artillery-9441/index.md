@@ -31,7 +31,7 @@ After reaching the bottom of the trail, we wandered through the largely empty vi
 
 After another nap and some more reading, we walked to Rita's house. As we followed the winding road along the ocean, we talked about China's proximity and the surrounding politics. After perhaps 30 minutes, we reached the house and immediately knew that we would be eating well. The house was filled with the usual 20 or so people, all enjoying different foods. We were shown to a table and began eating, although we didn't have too much because we knew this was only preparation for the next "course." Meanwhile, the BBQ outside was heating up, and we talked with several people inside. When it was ready, everybody moved to the outside tables and started eating. First course: snails. Well, sort of. I think they were hermit crabs, and they were cooked to perfection.
 
-![](dsc01321.jpg)
+![Hiking and Artillery image 1](dsc01321.jpg)
 
 Some of you might not believe the paragraph above, but I tell no lies. You have to use a toothpick and make a little swivelling manoeuvre to remove the meat. Overall, they didn't taste bad. Just don't eat the last part; it is a little too bitter. Next on the menu was stingray.
 

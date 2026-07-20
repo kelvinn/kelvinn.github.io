@@ -22,7 +22,7 @@ My destination was East Island, an even smaller island than the one I had just v
 
 While the South Island was transforming from a military base into a tourist destination, East Island was only beginning the change. I was quickly struck by the kindness of everyone I met in the Matsu Islands. Immediately after leaving the ferry, I started walking up the mountainside; a local shop owner gave a few fishermen and me a lift. Instead of simply dropping me in town, he drove around the island and gave me a tour. Every half-mile, we stopped to examine something. A semi-active military station sat below the lighthouse, an artillery piece in a deep bunker faced the ocean, and finally I visited a completely deserted village. With a direct view of the Chinese coast, the village had apparently been abandoned during military "exercises" 10 or 15 years earlier. Given that residents could see missiles and weapons pointed in their direction, it was understandable that they wanted to leave.
 
-![](dsc01290.jpg)
+![A Deserted Village image 1](dsc01290.jpg)
 
 In the village, I took my first nap of the day. A charming gazebo-style shelter stood near the coast, and the sound of the ocean combined with the light breeze put me to sleep almost immediately.
 
@@ -38,7 +38,7 @@ Just before the ferry arrived, a large group entered. One person came closer and
 
 I already had a reservation, so I couldn't stay with them. I boarded the ferry, first returning to the South Island and then continuing to the North Island; the ride back was quite bumpy. I talked briefly with Peggy, the daughter, in Chinese, or at least tried to. Everyone eagerly renewed the invitation to dinner and then to an island-sponsored BBQ.
 
-![](dsc01311.jpg)
+![A Deserted Village image 2](dsc01311.jpg)
 
 After arriving, my guesthouse owner picked me up and drove along a winding road to a small village, which again reminded me of the French Riviera. The main difference was that the roofs were grey rather than postcard red. My room was on the third floor of a restored building, with photographs of the renovation covering the walls. Everything creaked, but large mats on the floor helped dampen the sound. After unpacking, I walked back along the road to a village between the guesthouse and the harbour. I soon found my new friends and was escorted into their house, where a seafood banquet awaited me. Some people had already finished, but there was plenty of food to go around. I ate and ate: fish of a variety considered very expensive in Taiwan, shrimp, several soy dishes, including little round pieces I found especially tasty, lots of vegetables, and some old wine, or "lao jiu." The rice wine had a distinctive flavour that was not too alcoholic but soothing. Shortly after the first part of dinner, our group of about 20 departed for the main harbour. My "ten-minute" walk lasted about half an hour, but nobody was in a hurry, so nobody cared. Soon I heard KTV, or karaoke, and saw a dozen small BBQs everywhere.
 

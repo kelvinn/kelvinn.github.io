@@ -17,8 +17,8 @@ During one of our walks, we happened upon a giant wooden playground unlike anyth
 
 It was a brief trip of only two days, but lovely nonetheless.
 
-![](DSC05051.jpg)
+![Brief Trip to Luxembourg image 1](DSC05051.jpg)
 
-![](DSC05056.jpg)
+![Brief Trip to Luxembourg image 2](DSC05056.jpg)
 
 

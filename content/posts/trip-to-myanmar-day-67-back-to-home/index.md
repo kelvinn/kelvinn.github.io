@@ -10,13 +10,13 @@ blogger_post_id: "246761134376022980"
 blogger_status: "LIVE"
 blogger_updated: 2014-04-30T08:33:52.535Z
 ---
-![](PANO_20140423_082047.jpg)With my brief trip coming to an end, I woke up, had breakfast on the roof of Hotel Yadanarbon, and caught my private shuttle to the airport. The airport was a considerable distance outside the city, about twice as far away as U Bein Bridge.
+![Trip to Myanmar (Days 6 & 7 - Back Home) image 1](PANO_20140423_082047.jpg)With my brief trip coming to an end, I woke up, had breakfast on the roof of Hotel Yadanarbon, and caught my private shuttle to the airport. The airport was a considerable distance outside the city, about twice as far away as U Bein Bridge.
 
 I arrived at the airport with plenty of time, before check-in had opened, and waited in the downstairs cafe while a group played audio from an iPad at full volume, seemingly indifferent to those around them. Once check-in opened, people cut into the queue from both sides. I eventually boarded my flight and took off for Bangkok.
 
 In Bangkok, I tried to transfer but was stopped because I had not purchased the "transfer option." It had never actually been offered because I had booked two separate tickets, and there was no way to buy it on arrival. Although I had plenty of time, I therefore needed to obtain a $15 USD landing visa for Thailand simply to walk out and back in.
 
-![](IMG_20140423_233010.jpg)
+![Trip to Myanmar (Days 6 & 7 - Back Home) image 2](IMG_20140423_233010.jpg)
 Once back inside, I had a small Japanese lunch and a large Starbucks coffee. My flight to Singapore was called, and a few hours later I was there.
 
 I often forget how modern Singapore is, and it was a relief to return. Airport customs was efficient, the transport was second to none, and I found my hotel immediately. Despite the humidity, I asked the staff for their favourite curry place, walked a few blocks, and ordered plenty of roti. It was a relief to have familiar food again. I walked back to the hotel feeling tired and realised I was coming down with something.

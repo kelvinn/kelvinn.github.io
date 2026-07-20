@@ -126,21 +126,21 @@ No stress-related experiments for the quarter beyond irregular breathwork before
 - Meet 100% coverage of micronutrients ✅
 
 
-![](pasted-image-20250925075523.png)
+![Pasted image 20250925075523](pasted-image-20250925075523.png)
 
-![](pasted-image-20251018095224.png)
+![Pasted image 20251018095224](pasted-image-20251018095224.png)
 
 So, what can I focus on next? Let's look at areas where I can improve.
 
 **Metabolism Support**
 
-![](pasted-image-20250925080253.png)
+![Pasted image 20250925080253](pasted-image-20250925080253.png)
 
 I'm probably close enough here to not worry about it.
 
 **Antioxidants**
 
-![](pasted-image-20250925080347.png)
+![Pasted image 20250925080347](pasted-image-20250925080347.png)
 
 Midway through the quarter I started adding a single carrot to my Nutty Pudding, so I expect that to slowly increase my beta-carotene levels this next quarter, and I've started eating "Melonballs", basically just small watermelons, so lycopene may increase. Ultimately I need to eat more tomatoes, so will rotate in a chana masala recipe. This is an area of focus. 
 
@@ -148,7 +148,7 @@ For Lutein & Zeaxanthin, I believe my values are actually a little higher than t
 
 **Men's Health**
 
-![](pasted-image-20250925080615.png)
+![Pasted image 20250925080615](pasted-image-20250925080615.png)
 
 I'm OK with 112g. Cronometer does % for targets, so unless I can do a fixed target and combine that with % for fat and carbs, then this will be hard to always meet.
 
@@ -182,9 +182,9 @@ Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leu
 - Decrease hsCRP ✅
 ##### Analysis
 
-![](pasted-image-20251018110157.png)
+![Pasted image 20251018110157](pasted-image-20251018110157.png)
 
-![](pasted-image-20251017200533.png)
+![Pasted image 20251017200533](pasted-image-20251017200533.png)
 
 Several minor improvements here, with the most outstanding one being CRP. Great to see that get low again. Most things slightly improved across the board, but with the exception of my White Blood Cells and Lymphocyte %, which doesn't surprise me as the weeks leading up to my blood draw were fairly stressful, and I wasn't feeling 100%.
 
@@ -192,7 +192,7 @@ IGF-1 remains a mystery as to the increase, especially given my protein consumpt
 
 Leucine is a contributor, so here are my items that contribute to leucine:
 
-![](pasted-image-20251015190217.png)
+![Pasted image 20251015190217](pasted-image-20251015190217.png)
 
 Besides the sardines and yogurt, all leucine is from plant sources; the high amount in Nutty Pudding is due to plant protein. 
 

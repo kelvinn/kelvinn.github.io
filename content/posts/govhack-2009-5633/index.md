@@ -25,7 +25,7 @@ GovHack aimed to encourage the Australian government to make as much information
 
 I arrived at about 1:45 for the 2:00 registration and was a little worried about what I had gotten myself into: there were signs everywhere, but only two people in the room. Over the next 30 minutes, however, people quickly filed in, and soon the room was full. Many teams came from different organisations, but I arrived on my own. I soon began talking with [Christian](http://Twitter.com/frglps), a web developer from Melbourne, and [Doris](http://Twitter.com/DorisSpiel), a network visualiser also from Melbourne. We discussed ideas and began settling on government lobbying. After the kickoff ceremony, I walked to the car to pay for 20 more minutes of parking; we all know parking rangers will catch you in those final 20 minutes. When I came back, a few more people who had arrived alone had joined us: [Michael](http://Twitter.com/mjec) and [Alex](http://Twitter.com/maxious). Another colleague, Tim, stayed for a while but unfortunately had to work the next day.
 
-![](http://farm3.static.flickr.com/2556/4059658704_66a4d8b1f5.jpg)
+![4059658704 66a4d8b1f5](http://farm3.static.flickr.com/2556/4059658704_66a4d8b1f5.jpg)
 
 In retrospect, one observation stood out: over the entire 24 hours, not one member of the team said anything negative about lobbying or lobbyists. We simply wanted to visualise the relationships among the different organisations.
 
@@ -33,7 +33,7 @@ Christian and I mapped out the features we thought would be useful and the range
 
 Alex took responsibility for helping assimilate the data and creating the impressive visualisation, using a library he had never seen or worked with before. Michael assimilated the rest of the data and somehow kept adding tables with more and more information. Christian created the category view and essentially glued everything together.
 
-![](http://farm3.static.flickr.com/2488/4058876335_76e72d67c3.jpg)
+![4058876335 76e72d67c3](http://farm3.static.flickr.com/2488/4058876335_76e72d67c3.jpg)
 
 My primary role was to create the geospatial visualisation. One element I particularly wanted to display was Australia's electoral boundaries on a "slippy map." This proved difficult because the data wasn't in OpenStreetMap, and the 16 MB KML file was far too large for a web browser. I ended up writing a small script that took the ESRI file and created custom tiles for the map, all 70,000 of them. My laptop didn't appreciate the CPU load, so I launched an EC2 instance and eventually uploaded the tiles to S3. If you would like to use them, they are available at http://cdn.kelvinism.com/audivisions/. The code snippet is:
 

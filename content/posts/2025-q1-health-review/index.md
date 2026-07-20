@@ -130,7 +130,7 @@ My [Nutty Pudding](recipe-nutty-pudding-modified/index.md) also has TMG, Creatin
 
 **PhenoAge:** I'm going to start tracking PhenoAge more regularly as part of these quarterly posts, so here is the first one. Lots to improve on! I calculated one using my data from 01-2024 and it was almost 11 years difference, so it seems like I'm going backwards.
 
-![](pasted-image-20250723201530.png)
+![Pasted image 20250723201530](pasted-image-20250723201530.png)
 
 
 ### Focus For Next Quarter

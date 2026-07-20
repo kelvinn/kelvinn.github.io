@@ -19,7 +19,7 @@ You will need to add your private SSH key (i.e. id_rsa) to Snap, and your public
   
 You can create the keys on another machine with the ssh-keygen command, and copy them into them into the corresponding places. In OpenShift, this is under Settings -> Add a new key. Once open, paste in the contents of your id_rsa.pub key  
   
-[![](openshift.tiff)](openshift.tiff)  
+[![Openshift](openshift.tiff)](openshift.tiff)  
   
 
   
@@ -27,7 +27,7 @@ You can create the keys on another machine with the ssh-keygen command, and copy
   
 In Snap, edit your configuration, navigate to your Deploy step, and look for "Secure Files" and "Add new"  
   
-[![](AddFiles.tiff)](AddFiles.tiff)  
+[![Add Files](AddFiles.tiff)](AddFiles.tiff)  
   
 
   
@@ -35,7 +35,7 @@ In Snap, edit your configuration, navigate to your Deploy step, and look for "Se
   
 Get the content of the id_rsa key you generated earlier and post it in the content box. It should look like this, with "/var/go" as the file location, except with a real key:  
   
-[![](AddIdRSA.tiff)](AddIdRSA.tiff)  
+[![Add Id RSA](AddIdRSA.tiff)](AddIdRSA.tiff)  
   
 
   
@@ -81,7 +81,7 @@ git "$@"
 ```  
 Give this script the name "git.sh", set the file permissions to "0755", and update the file location to "/var/go".  
   
-[![](gitsh.tiff)](gitsh.tiff)  
+[![Gitsh](gitsh.tiff)](gitsh.tiff)  
   
 
   

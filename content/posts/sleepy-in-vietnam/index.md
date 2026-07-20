@@ -13,5 +13,5 @@ blogger_updated: 2021-12-22T10:30:50.518Z
 
  This will be short. To be honest, while I really liked Ho Chi Minh City, after several months of quite intense travel I was tired. I visited a few local sites, but overall just ate and rested.
 
-![](DSC02187.jpg)
-![](DSC02184.jpg)
+![Sleepy in Vietnam image 1](DSC02187.jpg)
+![Sleepy in Vietnam image 2](DSC02184.jpg)

@@ -12,6 +12,6 @@ YS and I were recently interviewed about self-tracking and Quantified Self by on
   
 That said, as you would expect, I had to track my heart rate during the interview - see below. My interpretation is that my heart rate jumped at the start of every questions, and went down as I answered the question. It also dropped when the interview finished. I wish I had a more expensive heart rate monitor (e.g. Zephyr BioHarness or Scanadu) that tracked skin temperature and breathing. My hands felt cold by the end.  
 
-[![](HeartRateInterview.png)](HeartRateInterview.png)
+[![Heart Rate Interview](HeartRateInterview.png)](HeartRateInterview.png)
 
 .

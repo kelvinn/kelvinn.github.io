@@ -14,7 +14,8 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
-{{- $attributes := merge .Attributes (dict "alt" .Text "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy" "decoding" "async") -}}
+{{- $alt := .Text | default (printf "%s image" .Page.Title) -}}
+{{- $attributes := merge .Attributes (dict "alt" $alt "src" $src "title" (.Title | transform.HTMLEscape) "loading" "lazy" "decoding" "async") -}}
 {{- with $img -}}
   {{- $attributes = merge $attributes (dict "width" (printf "%d" .Width) "height" (printf "%d" .Height)) -}}
   {{- $processableFormats := slice "jpg" "jpeg" "png" "tif" "bmp" "webp" -}}

@@ -21,18 +21,18 @@ So photos for nostalgic sake.
 
   
   
-[![](blogmozaic_front.jpg)](blogmozaic_front.jpg)  
+[![Blogmozaic front](blogmozaic_front.jpg)](blogmozaic_front.jpg)  
   
-[![](blogmozaic_list.jpg)](blogmozaic_list.jpg)  
-  
-  
+[![Blogmozaic list](blogmozaic_list.jpg)](blogmozaic_list.jpg)  
   
   
   
   
-[![](ducktracker_front.jpg)](ducktracker_front.jpg)  
   
-[![](ducktracker_details.jpg)](ducktracker_details.jpg)  
+  
+[![Ducktracker front](ducktracker_front.jpg)](ducktracker_front.jpg)  
+  
+[![Ducktracker details](ducktracker_details.jpg)](ducktracker_details.jpg)  
 
   
   

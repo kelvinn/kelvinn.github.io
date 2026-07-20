@@ -11,7 +11,7 @@ blogger_status: "LIVE"
 blogger_updated: 2014-04-30T08:42:12.549Z
 ---
 
-![](IMG_3298.JPG)
+![Trip to Myanmar (Day 3 - Mandalay / Monywa) image 1](IMG_3298.JPG)
 The touts in Mandalay were more persistent than those in Yangon, approaching every passenger on the bus.
 
 One driver asked where I was going. When I said the bus station for Monywa, he offered to take me for 5,000 kyat. I countered with 2,000 because it was only about two kilometres away. He lowered his price to 4,000, then offered two motorbikes for 1,000 each. I declined and started walking.
@@ -28,7 +28,7 @@ The hotel was well maintained, with cleaning staff sweeping every corner. My roo
 
 My tuk-tuk arrived, and I climbed aboard for the ride through Monywa. After dropping another passenger at the market and stopping for fuel, we continued to Thanboddhay Paya, said to contain 580,000 Buddha statues. I thoroughly enjoyed the temple's interior, although many niches within easy reach were empty.
 
-![](IMG_3333.JPG)
+![Trip to Myanmar (Day 3 - Mandalay / Monywa) image 2](IMG_3333.JPG)
 My next stop was a few kilometres away: the giant Buddha at Bodhi Tahtaung. By this point I was tiring, so I made a quick visit to the giant golden pagoda, took my photos, and returned to the tuk-tuk. The good-natured driver smiled often. About 45 minutes later, I was back at the hotel, tired from the day's travel but happy with what I had seen.
 
 Back at the hotel, I began asking about bus tickets to Bagan, roughly four hours from Monywa. Buses between Mandalay and Monywa could be booked at the station just before departure, but I did not want to take that risk for Bagan. The hotel staff repeatedly called the bus station, but the line remained busy. I had not seen such persistent redialling in years, perhaps since trying to reach a congested radio hotline. When they finally connected, I learned that every bus to Bagan was full the next day, with only a few seats available on an 11:00 departure the day after. I had planned to spend only one night in Monywa and two in Bagan, so this created a problem. I asked them to reserve a ticket.

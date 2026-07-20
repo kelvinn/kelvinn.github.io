@@ -13,7 +13,7 @@ blogger_updated: 2013-01-08T13:33:39.805Z
 
 Anyone who has spent a long time on a train knows the relief of finally leaving the carriage. After roughly 22 hours, I was certainly glad to step off. Looking back, a few details stand out.
 
-![](DSC01454.jpg)
+![Goodbye 2006 image 1](DSC01454.jpg)
 
 I had chosen a top bunk, and it was genuinely high. For anyone uncomfortable with climbing, I would recommend paying the small difference for a lower bunk. The advantage was that fresh air entered through vents near the top, so although it was cooler, the air seemed cleaner than elsewhere in the carriage. We had prepared ourselves for a particularly dirty train, but the reality was better than expected. There were cleanliness issues, including occasional spitting outside the designated areas, but the ride itself was smooth.
 
@@ -29,13 +29,13 @@ It was 31 December, which meant I would welcome the new year in Shanghai. After 
 
 The area showed a strong historical French influence, and some corners almost felt European. With fog drifting through the alleys, the streets reminded me of Frankfurt and similar cities. I collected my keys, went upstairs, and unpacked.
 
-![](PDR_2787.jpg)![](DSC01472.jpg)
+![PDR 2787](PDR_2787.jpg)![Goodbye 2006 image 3](DSC01472.jpg)
 
 The apartment's main disadvantage was the bathroom. I was not especially particular, but it looked less clean than I would have preferred. Still, I showered, dressed, and went in search of a bar.
 
 After walking for about 45 minutes, I reached the bar district. I found a small bar serving Guinness, sat down, and ordered food. Because it was happy hour, I ordered two beers under a buy-one-get-one-free offer, along with curry and rice. I followed those with a Guinness, which was mediocre but better than some I had tried elsewhere. After wishing a few people a happy new year, I resumed my walk.
 
-![](DSC01460.jpg)
+![Goodbye 2006 image 4](DSC01460.jpg)
 
 I did not know exactly where I should go, but assumed the modern downtown district would have fireworks and started walking in that direction.
 

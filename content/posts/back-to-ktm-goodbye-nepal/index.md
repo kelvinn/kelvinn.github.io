@@ -15,7 +15,7 @@ Sure enough, I did not arrive back at Kathmandu until almost 17:00, maybe later,
 
 I walked away from the bus stop and navigated directly to the Laughing Buddha, where I put down my bags, bought some water, and went out looking for food. After visiting a supermarket, I had dinner and a beer at MoMo Star, dodged a few more scooters, and finally settled back into bed.
 
-![](IMG_20121231_132353.jpg)
+![Back to KTM, Goodbye Nepal image 1](IMG_20121231_132353.jpg)
 
 Defeated
 
@@ -27,7 +27,7 @@ I ordered two coffees, since I had plenty of leftover money, and I waited.
 
 The bathroom in the airport looked like it was being held together with glue, and the glue was starting to fall apart.
 
-![](IMG_20121231_131853.jpg)
+![Back to KTM, Goodbye Nepal image 2](IMG_20121231_131853.jpg)
 
 Mt. Everest, just before the wing tip
 

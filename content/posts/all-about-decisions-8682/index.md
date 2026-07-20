@@ -25,7 +25,7 @@ I contacted two schools about teaching, and both seemed promising. The difficult
 
 Fortunately, both organisations offered part-time work. One role involves designing lesson plans, while the other is a weekend teaching position. Neither would provide an Alien Resident Certificate because I cannot sign a longer contract, and the lesson-planning role is temporary.
 
-![](DSC01365.jpg)
+![All About Decisions image 1](DSC01365.jpg)
 
 The real dilemma arose when the second school offered me a full-time teaching job with a reasonable salary and a contract ending the following July, when I planned to return to the United States. I enjoyed everyone I met, the school had a strong reputation, and the opportunity aligned with my broader goals. The disadvantage was that the working hours covered the only time I could see my partner, meaning we would meet only once a week. That would not be good for our relationship, so after six hours of thought, I declined an excellent opportunity. I have no regrets. There will be other good jobs, but finding a great partner is much harder.
 

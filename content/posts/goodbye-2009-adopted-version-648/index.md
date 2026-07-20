@@ -19,7 +19,7 @@ I had always been very lucky on New Year's Eve here in Sydney. The first year, I
 
 My two friends from Vienna were on a Pacific trip, so they naturally came to Sydney for NYE to visit me. I had always understood that the parks filled up very quickly, so I arrived at North Sydney station by noon, bought food for the day, and set out to reserve a spot at Blues Point Reserve.
 
-![](DSCF7047.jpg)![](DSCF7049.jpg)
+![Goodbye 2009, The Adopted Version image 1](DSCF7047.jpg)![Goodbye 2009, The Adopted Version image 2](DSCF7049.jpg)
 
 ### Blues Point Reserve
 
@@ -33,7 +33,7 @@ Current time: 12:15 p.m.
 
 After perhaps 30 minutes, I heard a door open behind me. The homeowner walked out and asked whether I planned to stay there for the fireworks. I said that I did, and she kindly asked whether I would like to use the loo. Having just realised that I had overlooked this crucial detail in my NYE plan, I accepted the offer. She then showed me the view from her balcony and told me about the Sydney Olympics, when the only clear footage of the closing ceremony was filmed from her roof.
 
-![](DSC03287.jpg)
+![Goodbye 2009, The Adopted Version image 3](DSC03287.jpg)
 
 I thanked her for letting me use the toilet and resumed my wait on the park bench.
 
@@ -51,19 +51,19 @@ Until this point, I had tried to stay out of the way. By then, however, I felt I
 
 The barbecue was scrubbed and covered with meat, and I had a chance to talk with the husband. One thing that immediately struck me was his genuine curiosity about who I was. It wasn't superficial curiosity or the beginning of basic small talk. It felt as though he was adding to his broader understanding of the world. He discussed specific historical events with one of his daughters and responded, "Oh, that's a good company," when Christian mentioned where he worked in Vienna.
 
-![](DSC03295.jpg)
+![Goodbye 2009, The Adopted Version image 4](DSC03295.jpg)
 
 I helped bring the food upstairs, and everyone began eating dinner. I was given a few glasses of wine, and then we were invited to walk around Blues Point. The crowds had already thickened significantly, and the police were out in force. Directly at the entrance was the Riot Squad, with about 30 NSW police officers just below them. Around the corner, hidden from the crowd but visible from my vantage point on the balcony, were two police buses. These were not the small police vehicles that normally drove around; they were full-size buses.
 
 I entered the swarm of teenagers, and my worries about being stuck in a large, rowdy crowd became a reality. Although this was a "no BYO zone," there were cans of beer everywhere and plenty of teenagers in "gladiator shoes" slumped in the fields. I somehow made a circuit around the Point and arrived at the bathrooms. If you're ever going to Blues Point Reserve for NYE, a word of advice: bring a bucket. The queue for the women's bathroom must have been at least 30 minutes; there was no queue for the men's. That observation leads to another piece of advice: I wouldn't lean against any trees at the Point during NYE.
 
-![](DSC03299.jpg)
+![Goodbye 2009, The Adopted Version image 5](DSC03299.jpg)
 
 The final observation, and something I had never seen before in Sydney, was the lack of a line at the beer garden. This surprised not only me but also my gracious tour guides. We quickly concluded that it was because I was standing amid the equivalent of a 15,000-student high school. After again expressing my appreciation for queue-free access to the loo, I escaped through the gates and returned for dessert.
 
 I dutifully retold the story of how Pavlova was named, or at least my version of it. At 9:00 p.m., the "kiddie fireworks" began, and my friends were amazed that Sydney's early fireworks were bigger than Vienna's midnight display. Everyone temporarily retired until just before midnight, when the main fireworks began.
 
-![](DSC03302.jpg)![](DSCF7147.jpg)![](DSCF7151.jpg)![](DSCF7118.jpg)
+![Goodbye 2009, The Adopted Version image 6](DSC03302.jpg)![Goodbye 2009, The Adopted Version image 7](DSCF7147.jpg)![Goodbye 2009, The Adopted Version image 8](DSCF7151.jpg)![Goodbye 2009, The Adopted Version image 9](DSCF7118.jpg)
 
 The fireworks this year appeared bigger, higher, and brighter than those of the previous two years, although that may have been because I could see five of the six barges launching them. After perhaps 15 minutes and many photos, the fireworks ended. Hello, 2010.
 
@@ -73,4 +73,4 @@ Because I was slightly above the rest of the crowd, I was able to leave immediat
 
 ### Blurry Thumbs Up at North Sydney Station
 
-![](DSC03342.jpg)
+![Goodbye 2009, The Adopted Version image 10](DSC03342.jpg)

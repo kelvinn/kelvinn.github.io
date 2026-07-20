@@ -24,7 +24,7 @@ CREATE DATABASE transport WITH TEMPLATE postgis20 OWNER postgres;
 ```  
 It is necessary to first import the Mesh Block spatial file using something like PostGIS Loader.  
   
-![](PostGISLoader2.png)  
+![Post GISLoader2](PostGISLoader2.png)  
   
 We then create a table to import the Mesh Block population data:  
   
@@ -38,7 +38,7 @@ COPY tmp_x FROM '/home/kelvinn/censuscounts_mb_2011_aust_good.csv' DELIMITERS ',
 ```  
 It is possible to import the GIS information and view it in QGIS:  
   
-![](qgis.png)  
+![Qgis](qgis.png)  
   
 Now that we know the shapefile was imported correctly we can merge the population with spatial data. The following query is used to merge the datasets:  
   
@@ -67,9 +67,9 @@ host=127.0.0.1 user=MyUsername password=MyPassword dbname=transport
 
 
 ```  
-![](tilemill_1.png)  
+![Tilemill 1](tilemill_1.png)  
   
-![](tilemill_2.png)  
+![Tilemill 2](tilemill_2.png)  
   
 After generating the MBTiles file I pushed it to my little $15/year VPS and used [TileStache](http://tilestache.org/) to serve the tiles and UTFGrids. The TileStache configuration I am using looks something like this:  
   

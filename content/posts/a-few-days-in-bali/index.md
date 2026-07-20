@@ -44,7 +44,7 @@ I watched a few episodes of Sons of Anarchy, since I brought my laptop, and fell
 
 The next morning began with my regular breakfast at the retreat. I took the moped to a few beaches, but because I am not much of a beach person, I continued to Seminyak, about a 40-minute ride away. I realised that I should have worn a long-sleeved shirt: despite applying plenty of sunscreen, my left arm had received too much sun. I looked for a shirt in the shops, but the prices were similar to Sydney's, so I applied another layer of sunscreen instead.
 
-![](IMG_0664.JPG)
+![A Few Days in Bali image 1](IMG_0664.JPG)
 
 I had a quick lunch and attentive service at Revolver Cafe, just off the main road. A couple from the United States sat nearby planning the next part of their trip. Their tone irritated my companion, especially when they called the waiter over to complain that they had heard the same song three times and ask for the music to be changed. We left soon afterwards.
 
@@ -64,17 +64,17 @@ Within an hour, I will arrive at LCCT, Kuala Lumpur's low-cost terminal, and we 
 
 This trip to Bali was interesting, although its allure has diminished for me with each visit. Many people go for the weather, but I prefer colder climates, and the mosquitoes do not help. I would rather walk through snow at -5°C than sit on a beach in 30°C heat. Nepal is looking very appealing.
 
-![](IMG_0666.JPG)
+![A Few Days in Bali image 2](IMG_0666.JPG)
 
-![](IMG_20121222_133736_1.jpg)
+![A Few Days in Bali image 3](IMG_20121222_133736_1.jpg)
 
-![](IMG_0668.JPG)
+![A Few Days in Bali image 4](IMG_0668.JPG)
 
-![](IMG_0648.JPG)
+![A Few Days in Bali image 5](IMG_0648.JPG)
 
-![](IMG_0676.JPG)
+![A Few Days in Bali image 6](IMG_0676.JPG)
 
-![](IMG_0686.JPG)
+![A Few Days in Bali image 7](IMG_0686.JPG)
 
 
-![](IMG_0631.JPG)
+![A Few Days in Bali image 8](IMG_0631.JPG)

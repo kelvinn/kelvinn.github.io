@@ -14,9 +14,9 @@ I have to admit, to me, editing [OpenStreetMap](http://www.openstreetmap.org/) i
 
 My first major contribution was when I brought my little QStarz GPS unit across Indonesia, by train, sitting against the window.
 
-[![](indorailroad.jpg)](indorailroad.jpg)  
+[![Indorailroad](indorailroad.jpg)](indorailroad.jpg)  
   
-[![](dubbozoo.jpg)](dubbozoo.jpg)  
+[![Dubbozoo](dubbozoo.jpg)](dubbozoo.jpg)  
   
 
 The most recent contribution was our trip to Dubbo, where I helped fill in a few missing roads, and added an initial outlay of Dubbo Zoo.

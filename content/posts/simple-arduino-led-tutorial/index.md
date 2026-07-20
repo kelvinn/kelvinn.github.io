@@ -12,7 +12,7 @@ tags:
 For this you'll need: an Arduino, an LED, a USB cable, and the Arduino software.  
   
   
-[![](arduinowLED.jpg)](arduinowLED.jpg)  
+[![Arduinow LED](arduinowLED.jpg)](arduinowLED.jpg)  
   
 
   
@@ -23,7 +23,7 @@ For this you'll need: an Arduino, an LED, a USB cable, and the Arduino software.
   
   
   
-[![](arduino-LED.png)](arduino-LED.png)  
+[![Arduino LED](arduino-LED.png)](arduino-LED.png)  
   
 4. Hit File->Upload to I/O Board.  
 5. Hit (physically) the little reset button. Voila! a blinking LED!

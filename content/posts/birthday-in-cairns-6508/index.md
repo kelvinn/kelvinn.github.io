@@ -19,11 +19,11 @@ I boarded the 103 bus near where I had eaten breakfast. An hour later, I was buy
 
 The Skyrail dropped me in Kuranda, where I bought postcards and started looking for food. Just before I left the shelter of a souvenir shop, the clouds darkened and released a downpour. This was not mildly inconvenient rain; it was the kind that soaks every layer. People arriving from the village were drenched. I waited for a break, ran towards the village, took a few wrong turns, and eventually stopped for lunch and a Guinness at the hotel. Kuranda was full of visitors, with ice cream, food stalls, and souvenir shops around every corner. Much of the merchandise was made in China, and I found myself wondering what Chinese visitors thought of travelling to Australia and encountering familiar goods.
 
-![](IMG_3893.JPG)
+![Birthday in Cairns image 1](IMG_3893.JPG)
 
 My return train departed at 15:30. My original carriage was full, but I was invited to move to another that was nearly empty. The journey followed the historic railway, which had been built in stages to serve mining communities and settlements beyond the mountains. Along the way were waterfalls, sweeping curves, and cliffs only inches from the track. The most memorable moment came when a small landslide struck the side of the stationary train while passengers were taking photographs from a lookout. Several people opened the windows and leaned out to inspect the damage. My companion and I looked at each other with the same thought: why put your head out where a landslide has just occurred?
 
-![](IMG_4010.JPG)![](IMG_4006.JPG)![](IMG_4030.JPG)
+![Birthday in Cairns image 2](IMG_4010.JPG)![Birthday in Cairns image 3](IMG_4006.JPG)![Birthday in Cairns image 4](IMG_4030.JPG)
 
 The train returned to Cairns, and I formally checked into my hotel. My room on the top floor of the All Seasons was clean and, importantly, free of any smell of smoke. I soon prepared for sleep.
 
@@ -31,7 +31,7 @@ Day two began with a 7:30 pickup for the harbour, where I boarded a Reef Experie
 
 When we reached the reef, I recovered enough to collect my snorkelling gear, climb down the ladder, and enter the water. At first, I could not see the reef and paddled around in confusion. A crew member directed me farther from the boat, and suddenly the reef came into view beneath the rough surface. It was beautiful. After snorkelling for a while, I returned to the boat and prepared for the introductory dive included in my package. I entered the water first, followed by my companion, and the guide began our slow descent. After a while, I realised that my companion was no longer with us, perhaps because of ear pressure or discomfort. I continued down with the guide, concentrating on breathing steadily and avoiding contact with the reef. We moved along its edge and around the rock formations before gradually returning to the boat. My first dive lasted about 20 minutes and remained within the 12-metre limit. Despite generally disliking the water, I enjoyed the experience enough to consider doing it again.
 
-![](IMG_2411.JPG)![](IMG_2413.JPG)![](IMG_2407.JPG)
+![Birthday in Cairns image 5](IMG_2411.JPG)![Birthday in Cairns image 6](IMG_2413.JPG)![Birthday in Cairns image 7](IMG_2407.JPG)
 
 Back on the boat, I was sick again and joined my companion on the upper deck. I remained curled up there while the rest of the group completed their dives. Fortunately, the return journey was less turbulent, or perhaps I simply had nothing left in my stomach. I sat beside a friendly farming couple from South Australia and talked with them about life on the farm and how it had changed over the previous 25 years.
 

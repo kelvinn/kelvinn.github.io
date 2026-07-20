@@ -18,7 +18,7 @@ I headed south with my bags and went directly to the Three Bridges, one of Ljubl
 
 I noticed a few teenagers looking up a small alleyway and, feeling adventurous, walked down it. The alley grew steadily steeper, at which point I realised I was not walking through the park but up to the castle. Since I still had time to explore, I continued, soon out of breath from the steep path and the weight of my bags, until I reached a wooden walkway marking the beginning of the castle grounds.
 
-![](IMG_3211.JPG)
+![Quick Layover in Ljubljana image 1](IMG_3211.JPG)
 
 The castle was pleasant and free, which encouraged me to explore the interior. The area above the information centre offered an excellent view over the city. Mindful of the time needed to walk back to the station, I left by a different path and soon found myself in another Christmas market. Many vendors appeared to be celebrating Christmas with their families, so several stalls were closed. I crossed the Three Bridges again, found a cafe near McDonald's, and ordered two cappuccinos.
 

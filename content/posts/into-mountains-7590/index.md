@@ -14,7 +14,7 @@ The alarms woke me quite early, and I wandered down to breakfast. I ate quickly,
 
 A while later, I managed to escape without making any purchases and walked up to the temple. I had seen it before, having once played cards for several hours in the nearby park. My parents wandered inside while I chatted outside. Once they were ready, I ordered a few more drinks and walked back to the car. I set out to find Anping Fort, near the western side of town. For several reasons, I never found the fort and instead became distracted by another market on Anping Road: the Sword Lion Market. Dad and Cathy enjoyed the little shops and made more purchases while I munched on fried dumplings. For lunch, I visited a packed restaurant, ate several shrimp dumplings, and headed back to the car. Along the way, I bought some water and then continued our journey.
 
-![](DSC01641.jpg)
+![Into the Mountains image 1](DSC01641.jpg)
 
 Taro! I  love taro. Between Tainan and my destination in Jade Mountain National Park was a small city that I'll call Taro Town. As we approached, I made sure everyone understood the city and its special qualities. I found parking and walked into a nearby food shop, where I ordered three bowls of rice-ball soup. I love rice balls; they are one of my weaknesses. I love taro. Everybody was happy. I helped my parents finish their soup, as they apparently didn't like it as much as I did, and bought some cookies and mochi for the road.
 

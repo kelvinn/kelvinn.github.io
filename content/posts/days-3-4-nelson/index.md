@@ -11,7 +11,7 @@ blogger_status: "LIVE"
 blogger_updated: 2015-11-16T10:48:04.841Z
 ---
 Because it was Saturday, the Nelson market was in full swing. I am not usually a market person, but this one was relaxing. Many markets sell whichever gadgets and trinkets are popular at the time; this one felt more authentic. The honey, artwork, jewellery, and food were distinctly local.
-![](IMG_2032.JPG)
+![Days 3 &amp; 4 - Nelson image 1](IMG_2032.JPG)
 
 The sun was also intense. Before arriving in New Zealand, I had read about different sunscreen formulations after learning a difficult lesson at a cricket match. For the market, I applied and reapplied sunscreen containing zinc oxide and other ultraviolet filters. I avoided getting burnt, although many people around me had already developed red necks.
 Nothing at the market particularly tempted me, but I did find a new hat. Made in Vietnam by Columbia, it fit well and was lightweight and breathable. My previous Marmot hat accompanied me on every adventure, so I hoped this one would serve me equally well until it eventually fell into a river somewhere interesting.

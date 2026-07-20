@@ -22,7 +22,7 @@ Day 2 - On Saturday, I woke early and drove to the local supermarket to buy food
 
 Just before bed, I spotted a creature moving in the distance: a wombat. I would have liked to see one closer to my tent, but the distant sighting was still a welcome surprise.
 
-![](ebox3300.jpg)
+![Ebox3300](ebox3300.jpg)
 
 Day 3 - After waking and cooking breakfast on my tiny stove, I headed to the coast, drove some of the tourist routes, and returned to Sydney. Overall, Kangaroo Valley made for an excellent camping trip, and I expected to do more camping in the near future.
 

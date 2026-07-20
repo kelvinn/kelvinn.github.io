@@ -15,7 +15,7 @@ The Palace Museum, ranked as one of the world's five best museums, had just comp
 
 From start to finish, the experience inspired a sense of awe. The Palace Museum building alone was splendid enough to make the bus ride worthwhile, but the true treasures were inside.
 
-![](DSC01544.jpg)
+![The Palace Museum image 1](DSC01544.jpg)
 
 For those unfamiliar with the history, I will offer a short summary. As the Communist Party took power in China, the Kuomintang, or KMT, withdrew to Taiwan. The history still seemed shrouded in propaganda to me, with both sides offering different accounts of who fought and defeated the Japanese and who overthrew the final dynasty. Chiang Kai-shek brought his army to Taiwan, along with many valuable objects. The Palace Museum's collection includes those objects and spans some 5,000 years of Chinese history.
 

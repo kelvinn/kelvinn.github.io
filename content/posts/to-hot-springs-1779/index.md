@@ -15,7 +15,7 @@ blogger_updated: 2013-01-08T13:33:39.827Z
 
 After a mediocre breakfast, we were on our way. Just a five-minute drive up the road, we reached the entrance to the hot spring, but a slow drive and a long hike (or climb!) still lay ahead. We parked and started getting ready. I was wearing sandals when it suddenly hit me: my hiking shoes were back at the hostel!
 
-![](DSC01583.jpg)
+![To the Hot Springs image 1](DSC01583.jpg)
 
 Not wanting to hold up the group, and with no other choice, I borrowed a pair of shoes two sizes too small and started hiking. Or rather, climbing. For much of the trek, we used ropes or climbed on all fours. After an hour or so, our group reached the bottom of the ravine, where a shallow river greeted us. We changed into our swimming gear, forded the river, swung around a large rock, forded the river again, and finally reached the natural hot spring. At one point, one of the women in the group slipped off the rock and into the river, and I jumped in to help. A large group was already at the springs but left just as we arrived. The water was indeed very warm, sometimes too warm, and the twenty of us settled in.
 

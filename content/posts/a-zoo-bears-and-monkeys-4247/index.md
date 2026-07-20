@@ -17,7 +17,7 @@ I walked out of the train station and headed in the general direction of my host
 
 By noon, I had woken up and decided to explore the city. I wandered across the river to Seven Star Park. Beside the river stood large clocks showing different cities, not one of them functioning, which seemed to be something of a pattern throughout China. After buying my ticket to the park, I saw a woman drinking jin jiu nai cha. I asked where she had bought it and got one myself. Too sugary, far too sugary. I entered the park and made a beeline away from the other tourists. I found a small path off to the right, then another leading into the hills. Nobody else was on it, and I eventually reached a small gazebo.
 
-![](DSC01699.jpg)
+![A Zoo, Bears, and Monkeys image 1](DSC01699.jpg)
 
 As I gazed over the city and the surrounding hills, I gasped. I looked behind me and saw a group of monkeys sitting on the bench. I tried to take a photo, but they had already wandered away. Moments later, another monkey lazily jumped onto the bench, sat down, scratched its head, and wandered off. An hour or so later, I wandered off too.
 

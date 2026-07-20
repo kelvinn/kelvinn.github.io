@@ -29,7 +29,7 @@ I continued further into Upper Town and went into the Pivnica Mali Medo restaura
 
 After eating I tried one more local beer, paid with EFTPOS, and walked back to the hostel.
 
-![](IMG_3242.JPG)
+![Surprised in Zagreb image 1](IMG_3242.JPG)
 
 Almost back at the hostel, I crossed Nikola Šubić Zrinski Square, a park that reminded me of the Park Blocks in Portland. A small group was playing jazz-like music on four different string instruments. I was enamoured, quietly enjoying Zagreb far more than expected, and stood listening until the group finished.
 
@@ -38,17 +38,17 @@ Upon arriving back at the hostel, two of the guests, both Japanese, asked whethe
 
 The next morning I started sightseeing as early as possible. I made my way to Zagreb Cathedral, through an open-air market and the Kamenita Vrata tunnel, which was being used for a vigil, then past the old City Hall and on to Lotrščak Tower. I walked down the steps beside the funicular, which were ironically neither long nor steep, and stopped for coffee at The Cup near Bogovićeva Street, in what I understood to be the coffee district. The coffee was great.
 
-![](IMG_3253.JPG)
+![Surprised in Zagreb image 2](IMG_3253.JPG)
 
-![](IMG_3257.JPG)
+![Surprised in Zagreb image 3](IMG_3257.JPG)
 
-![](IMG_3259.JPG)
+![Surprised in Zagreb image 4](IMG_3259.JPG)
 
-![](IMG_3268.JPG)
+![Surprised in Zagreb image 5](IMG_3268.JPG)
 
-![](IMG_3272.JPG)
+![Surprised in Zagreb image 6](IMG_3272.JPG)
 
-![](IMG_3284.JPG)
+![Surprised in Zagreb image 7](IMG_3284.JPG)
 
 My next stop was the train station to buy tickets to Budapest, after which I continued seeing the rest of the sights downtown. A tour guide would have helped explain what everything was, but instead I was left taking photos and reading WikiTravel.
 

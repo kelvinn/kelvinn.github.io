@@ -12,7 +12,7 @@ blogger_updated: 2013-01-31T09:09:56.633Z
 ---
 My first order of business upon arriving in Krakow was to visit Auschwitz, one of the reasons I had come. While it may not be on every traveller's itinerary, I had regretted not visiting these historical sites on my last trip to Europe.
 
-![](IMG_2697.JPG)
+![Cold in Krakow image 1](IMG_2697.JPG)
 
 Entrance to Auschwitz
 
@@ -24,7 +24,7 @@ The bus ride took about 80 minutes and was fairly direct. A few people got off h
 
 Although the comparison may be imperfect, I couldn't help but see some similarities between S-21 in Phnom Penh and Auschwitz. There were significant differences, of course, especially in the scale of the sites.
 
-![](IMG_2723.JPG)
+![Cold in Krakow image 2](IMG_2723.JPG)
 
 Auschwitz-Birkenau
 
@@ -34,7 +34,7 @@ After a short ride back to the museum, I tried to board the bus to Krakow. I was
 
 Back in Krakow, I collected my bags and checked into my hotel. Because I was staying with the same chain as in Prague, the room was unsurprisingly almost identical, although perhaps slightly larger. Rather than trying to see the city at night, I admitted that I was tired from the morning's walking and sightseeing. Instead, I visited a small bar and laundromat that I had located beforehand. Tram #1 took me to Cafe Frania, near Wawel Castle, where one can do laundry and have a few beers in the same establishment. It was a good find, and leaving after a few beers with a bag of clean clothes is a great feeling.
 
-![](IMG_2810.JPG)
+![Cold in Krakow image 3](IMG_2810.JPG)
 
 Back at the hotel, I promptly fell asleep, ready for plenty of walking the next day.
 
@@ -42,20 +42,20 @@ Although I didn't leave the hotel particularly early, my train wasn't until almo
 
 Finally, after having trouble finding a post office and waiting in the main mall for four hours to escape the -6 C cold, I boarded my train back to Prague.
 
-![](IMG_2709.JPG)
+![Cold in Krakow image 4](IMG_2709.JPG)
 
-![](IMG_2711.JPG)
+![Cold in Krakow image 5](IMG_2711.JPG)
 
-![](IMG_2706.JPG)
+![Cold in Krakow image 6](IMG_2706.JPG)
 
-![](IMG_2722.JPG)
+![Cold in Krakow image 7](IMG_2722.JPG)
 
-![](IMG_2726.JPG)
+![Cold in Krakow image 8](IMG_2726.JPG)
 
-![](IMG_2730.JPG)
+![Cold in Krakow image 9](IMG_2730.JPG)
 
-![](IMG_2737.JPG)
+![Cold in Krakow image 10](IMG_2737.JPG)
 
-![](IMG_2773.JPG)
+![Cold in Krakow image 11](IMG_2773.JPG)
 
-![](IMG_2753.JPG)
+![Cold in Krakow image 12](IMG_2753.JPG)

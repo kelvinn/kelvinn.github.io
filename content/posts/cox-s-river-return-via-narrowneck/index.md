@@ -12,7 +12,7 @@ tags:
 
 TL;DR - in winter, after bush fires and floods, this track is a 7/6. Left Katoomba Railway Station at about 10:00am on a Saturday in early August, so I guess technically still winter. I packed quite light and intended to do this in two days, and hopefully even get back to Sydney by 5pm. I had all the topological maps offline in Gaia GPS, and created a route based on the maps in Wildwalks; I couldn’t find a GPS trace. For the record: not a single time did I ever feel lost. It is very simple from a navigation perspective: keep Cox river to right. Walk in Breakfast Creek until it forks to Carlons Creek - go left. Now, go up. And up. Here are my notes and where things got slow. Six Foot Track - beautiful and very, very easy. First 11km (starting at Katoomba station) average pace was around ~10:15/km. The next 7km was a tad bit slower, maybe around 12:00/km.  
 
-[![](IMG_4975.jpeg)](IMG_4975.jpeg)
+[![Cox’s River return via Narrowneck image 1](IMG_4975.jpeg)](IMG_4975.jpeg)
 
 Easy Six Foot Track. Beautiful weather.  
 
@@ -24,7 +24,7 @@ For whatever reason I crossed the bridge. Too enticing, maybe. The river at the 
 
   
 
-[![](IMG_4977.jpeg)](IMG_4977.jpeg)
+[![Cox’s River return via Narrowneck image 2](IMG_4977.jpeg)](IMG_4977.jpeg)
 
 I should have known better  
 
@@ -32,50 +32,50 @@ The track disappeared almost immediately and it was bushwhacking time. What I le
 
   
 
-[![](IMG_4980.jpeg)](IMG_4980.jpeg)
+[![Cox’s River return via Narrowneck image 3](IMG_4980.jpeg)](IMG_4980.jpeg)
 
 Water all the way up to slippery rocks  
 
   
 
-[![](IMG_4982.jpeg)](IMG_4982.jpeg)
+[![Cox’s River return via Narrowneck image 4](IMG_4982.jpeg)](IMG_4982.jpeg)
 
 Yep, just head on in to the bushes  
 
   
 
-[![](IMG_4983.jpeg)](IMG_4983.jpeg)
+[![Cox’s River return via Narrowneck image 5](IMG_4983.jpeg)](IMG_4983.jpeg)
 
 And you end up with pricklies like this  
 
   
 
-[![](IMG_4986.jpeg)](IMG_4986.jpeg)
+[![Cox’s River return via Narrowneck image 6](IMG_4986.jpeg)](IMG_4986.jpeg)
 
 Then you can climb down this little cliff  
 
   
 
-[![](IMG_4987.jpeg)](IMG_4987.jpeg)
+[![Cox’s River return via Narrowneck image 7](IMG_4987.jpeg)](IMG_4987.jpeg)
 
 Or scoot across this one.  
 If you slip off, then you'll float downstream in the river...  
 
 The next morning I set off after the sun came up, so starting at about 6:45am. I guess because of the big floods earlier in the year the track had washed away, as probably 75% of the time I was just rock skipping. Not a big deal, and a little hard on the ankles, but waaaay easier than the day before. Eventually hit Dunphry’s campground, and thought things would be all done. Wrong.  
 
-[![](IMG_4989.jpeg)](IMG_4989.jpeg)
+[![Cox’s River return via Narrowneck image 8](IMG_4989.jpeg)](IMG_4989.jpeg)
 
 Sometimes there was a trail, and it was awesome  
 
   
 
-[![](IMG_4990.jpeg)](IMG_4990.jpeg)
+[![Cox’s River return via Narrowneck image 9](IMG_4990.jpeg)](IMG_4990.jpeg)
 
 But 75% of the time this is what the "trail" looked like  
 
   
 
-[![](IMG_4993.jpeg)](IMG_4993.jpeg)
+[![Cox’s River return via Narrowneck image 10](IMG_4993.jpeg)](IMG_4993.jpeg)
 
 Or this  
 
@@ -83,7 +83,7 @@ Or this
 
 I knew from the topo maps the climb up to Carlon’s Head would be steep, and it was. And no track. Walked too far to the left and missed the little chain going up. Eventually found it, and went up one. Then another. Then another. The old historic bolts seems to have been partially replaced by newer ones. I climbed a fair bit over the last few years, so it wasn’t too big of a deal, but know that if you’ve never done rock climbing, and you have a heavy pack, this would be terrifying. And it is high enough to potentially be deadly if you fall.  
 
-[![](IMG_4999.jpeg)](IMG_4999.jpeg)
+[![Cox’s River return via Narrowneck image 11](IMG_4999.jpeg)](IMG_4999.jpeg)
 
 Go up here. This was the easiest of the climbs.  
 
@@ -91,7 +91,7 @@ Go up here. This was the easiest of the climbs.
 
   
 
-[![](IMG_5004.jpeg)](IMG_5004.jpeg)
+[![Cox’s River return via Narrowneck image 12](IMG_5004.jpeg)](IMG_5004.jpeg)
 
 Progress  
 
@@ -101,7 +101,7 @@ On top of the ridge, sweet! Now everything is all flat and I’m golden! Not qui
 
   
 
-[![](IMG_5005.jpeg)](IMG_5005.jpeg)
+[![Cox’s River return via Narrowneck image 13](IMG_5005.jpeg)](IMG_5005.jpeg)
 
 Just walk through it. No trail. Careful to not kill any new plants growing up.  
 

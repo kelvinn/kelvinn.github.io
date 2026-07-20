@@ -16,10 +16,10 @@ I've been looking for a simple, no-hassles GPS display program for Linux, and I 
 
 TangoGPS was easy to install (apt-get install tangogps), and on my test 'drive' home tonight on the train, worked a treat. See related screenshots.
 
-[![](Screenshot-tangoGPS-1.jpg)](Screenshot-tangoGPS-1.jpg)  
+[![GPS Gem Find - TangoGPS image 1](Screenshot-tangoGPS-1.jpg)](Screenshot-tangoGPS-1.jpg)  
   
-[![](Screenshot-tangoGPS-4.jpg)](Screenshot-tangoGPS-4.jpg)  
+[![GPS Gem Find - TangoGPS image 2](Screenshot-tangoGPS-4.jpg)](Screenshot-tangoGPS-4.jpg)  
   
-[![](Screenshot-tangoGPS-3.jpg)](Screenshot-tangoGPS-3.jpg)  
+[![GPS Gem Find - TangoGPS image 3](Screenshot-tangoGPS-3.jpg)](Screenshot-tangoGPS-3.jpg)  
   
-[![](xgps.jpg)](xgps.jpg)
+[![Xgps](xgps.jpg)](xgps.jpg)

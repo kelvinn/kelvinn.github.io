@@ -17,7 +17,7 @@ Early that morning, I walked the 100 metres from Hostel Merlin to the office, wh
 
 The driver departed promptly, eager to reach Salzburg for his 9:00 pickup, and moved quickly through the frozen countryside. After taking a sharp right, he said, "This is a shortcut over the mountain. My best time is three minutes." I asked how far it was. "About nine kilometres." I replied, "I assume that was on a clear day in summer." He agreed and said that he drove more safely now as we passed another car. Although he drove quickly, I never felt seriously unsafe.
 
-![](IMG_2859.JPG)
+![Hiking and Sightseeing in Salzburg image 1](IMG_2859.JPG)
 Haus Christine, my stay, covered in snow
 
 The train journey to Linz alone would have taken three hours, while the shuttle reached Salzburg in two and a half. The driver offered to drop me at my hotel, a few kilometres north of the city centre, and I eagerly accepted.
@@ -26,10 +26,10 @@ Haus Christine was perched on a slope overlooking Salzburg, directly opposite Ho
 
 My self-guided tour took me through Mirabell Palace, past the fountain featured in  The Sound of Music, across the river near Christuskirche and Maria Himmelfahrt, and along the ridge by the Museum of Modern Art and the Numbers exhibit. It ended at Hohensalzburg Fortress.
 
-![](IMG_2872.JPG)
+![Hiking and Sightseeing in Salzburg image 2](IMG_2872.JPG)
 
 
-![](IMG_2882.JPG)
+![Hiking and Sightseeing in Salzburg image 3](IMG_2882.JPG)
 
 
 I bought a ticket to Hohensalzburg and explored the fortress; it was well worth the cost. Rather than taking the funicular, I followed the steep, muddy path up alongside the wall.
@@ -43,13 +43,13 @@ Several small museums stood at the end of the tour, some quirky and others histo
 
 
 
-![](IMG_2912.JPG)
+![Hiking and Sightseeing in Salzburg image 4](IMG_2912.JPG)
 
-![](IMG_2911.JPG)
+![Hiking and Sightseeing in Salzburg image 5](IMG_2911.JPG)
 
 After the tour, I bought postcards from the gift shop and rode the funicular back to the old town. I walked briefly through St Peter's Cemetery, where many notable historical figures are buried, and continued to the Christmas market by the Petersfriedhof. After a morning of walking and having finished my biscuits, I bought what was described as "bronso": two thin sausages in curry sauce served in a bun. It was exactly what I needed. I also enjoyed another cup of mulled wine. In many ways, I felt at home in Europe during winter. A few stalls later, I saw one of the largest pretzels I had encountered and bought it. It was sweet rather than salty, but still enjoyable. As I neared the end of the market, the weather became slightly warmer and rain began to fall.
 
-![](IMG_2949.JPG)
+![Hiking and Sightseeing in Salzburg image 6](IMG_2949.JPG)
 Near Salzburg University, I found an old-fashioned barometer and thermometer showing about 1°C and 100% humidity, which was unsurprising given the cold rain falling around me.
 
 After a short break in McDonald's to check my email and share a coffee, I tried to visit Mozart's birthplace. I knew the yellow building housed a museum and stood on the same street, but I was unable to locate it. As only a casual listener to classical music, usually while studying, I was content to know that I had at least walked past it.
@@ -62,7 +62,7 @@ Bus 21 took me near the hotel. I walked up the long hill, took the vitamin C, sh
 
 
 
-![](IMG_2959.JPG)
+![Hiking and Sightseeing in Salzburg image 7](IMG_2959.JPG)
 
-![](IMG_2960.JPG)
+![Hiking and Sightseeing in Salzburg image 8](IMG_2960.JPG)
 

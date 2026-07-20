@@ -34,7 +34,7 @@ My main forms of exercise remain running and strength training. There are two to
 
 Both of these tools help warn me of overtraining, but also lets me see the impact of my planned workouts. For example, as of today (7-May-2025), here is my plan for the rest of the quarter and showing the previous two years of training:
 
-![](pasted-image-20250507041747.png)
+![Pasted image 20250507041747](pasted-image-20250507041747.png)
 
 My goal was to get above a 75 fitness score according to intervals.icu without injury, and to average above 800 'intensity minutes' according to Garmin. In Intervals.icu, the "fitness" score, also known as Chronic Training Load (CTL), is ==a measure of your average training load over the past six weeks==.
 ##### Results
@@ -46,13 +46,13 @@ My goal was to get above a 75 fitness score according to intervals.icu without i
 
 So, how'd I do? Let's look at the previous 3 months in intervals.icu. My goal was to get above 75 'fitness':
 
-![](screenshot-2025-07-01-at-3-12-23-pm.png)
+![2025 Q2 Health Review image 2](screenshot-2025-07-01-at-3-12-23-pm.png)
 
 And I only got to a 71. The main setback seemed to be the 3 week trip I took to Europe, as I tried to keep up with my fitness, but in some instances it was just too difficult. Additionally, I think the challenge was as much the jet lag as the trip itself, as it took a while for me to get my circadian rhythm back in sync.
 
 Here is what my 'intensity minutes' look like for the previous 12 months, which also shows my dip in Dec/Jan while I was travelling, and to a lesser extent in April when I was travelling again:
 
-![](pasted-image-20250701172303.png)
+![Pasted image 20250701172303](pasted-image-20250701172303.png)
 
 My fitness routine remains similar to the previous quarter.
 
@@ -67,17 +67,17 @@ My previous DEXA saw body fat % decrease, but also a slight decrease in lean mus
 
 I'm also confused because my weight hovered between 76 and 78kg for the previous 12 months (screenshot from end of April).
 
-![](pasted-image-20250510071012.png)
+![Pasted image 20250510071012](pasted-image-20250510071012.png)
 
 Regardless, to maximise my chances of building muscle I need to be in a calorie surplus, and I suspect that when things get busy, given I try to avoid eating out (as well as how expensive it is!), I sometimes don't get enough calories. 
 
 Enter Cronometer. I had previously used this tool to look at my micronutrient profile, so I could fill those gaps with supplementation, so I resumed using it this quarter. The below image is from early May targeting 80kg by the end of June.
 
-![](pasted-image-20250510075624.png)
+![Pasted image 20250510075624](pasted-image-20250510075624.png)
 
 Early on I was having trouble hitting the calorie target, as can be seen from this random day of food tracking from Cronometer.
 
-![](pasted-image-20250510071520.png)
+![Pasted image 20250510071520](pasted-image-20250510071520.png)
 
 We can see from this that my protein consumption is adequate. I still wished to remain on a whole foods plant based diet wherever possible. Unfortunately, I'm not really driven by food, and I don't believe my mood is negatively impacted by being in a slight calorie deficit; in fact, I generally don't even notice besides perhaps my runs being harder, or potentially not sleeping as well. This means that without tracking my consumption it is difficult for me to be in a surplus.
 
@@ -89,7 +89,7 @@ Towards the end of May I started to dial in meal prepping, and getting in a bett
  
 I gained weight almost exactly as Cronometer predicted, which is exciting. 
 
-![](pasted-image-20250701172852.png)
+![Pasted image 20250701172852](pasted-image-20250701172852.png)
 
 I didn't need to do any major tweaks to my diet, just a few extra calories per day. I have a hypothesis that too many extra calories (e.g. 300+) starts to impact my sleep, so sticking in the 100-200 extra calorie range seems to be the right zone to build muscle, but also still be able to sleep well.
 
@@ -133,7 +133,7 @@ It looks like sleep duration was worse across the board. Note: this is not time 
 
 We can also see this with the Body Battery stats; whatever I was doing in February and March seemed to be helpful.
 
-![](pasted-image-20250702113636.png)
+![Pasted image 20250702113636](pasted-image-20250702113636.png)
 
 It looks like upon returning from my travels to India at the end of January I had two months where I balanced sleep and exercise quite well, but that started to erode in the lead-up to travelling to Europe. I'll need to improve how this graph is presented in the future.
 #### Decrease Stress
@@ -186,9 +186,9 @@ I'm going to start tracking PhenoAge on a quarterly basis, as long as I can keep
 
 
 
-![](pasted-image-20250729150218.png)
+![Pasted image 20250729150218](pasted-image-20250729150218.png)
 
-![](pasted-image-20250730071542.png)
+![Pasted image 20250730071542](pasted-image-20250730071542.png)
 
 Compared to my previous test we can see that:
 
@@ -269,18 +269,18 @@ After waiting 8 days I was able to take my blood test, and discovered that my Ph
 
 While travelling in India I was able to do a blood test that included testing for heavy metals, and the results were generally unremarkable with the exception of Caesium and Beryllium.
 
-![](pasted-image-20250723133743.png)
+![Pasted image 20250723133743](pasted-image-20250723133743.png)
 
 To corroborate these I also did a Hair Tissue Mineral Analysis test via ToxTest, and here are the results:
 
-![](pasted-image-20250723134213.png)
+![Pasted image 20250723134213](pasted-image-20250723134213.png)
 
 From what I could research none of this should actually cause me to lose any sleep, and HTMA isn't really that proven as a diagnostic tool. The Uranium and Thorium level are a worry though, but given my blood results were acceptable I am just assuming I went somewhere hiking that had higher levels radioactive elements.
 ### Focus For Next Quarter
 
 I think the next quarter will remain similar to this one. Cronometer is working really well for me to be able to control my calories, and to force me to eat from a list of known 'good' food. For example, if someone offers me some kind of snack, then I'll probably skip it purely because of the pain of needing to try and keep a record.
 
-![](pasted-image-20250702114349.png)
+![Pasted image 20250702114349](pasted-image-20250702114349.png)
 
 The biomarkers that I will specifically target include, in order of priority:
 

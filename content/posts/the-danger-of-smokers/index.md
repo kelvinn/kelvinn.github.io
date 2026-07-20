@@ -16,7 +16,7 @@ Let me start at the beginning.
 
 At about 17:15, just as I was leaving work, I received a frantic call: "The sprinklers went off and flooded your apartment." I jumped on the train home and asked the caller to record the names of anyone present and take photos. My air-quality sensors did not detect a rise in particulate matter, but the CO level clearly rose at 15:50 and fell again around 17:00.
 
-![](co.png)
+![Co](co.png)
 
 When I returned home, I ran into my neighbour, who is was the president of the body corporate, and he explained some of what had happened. One resident had apparently smoked in the service room and discarded a cigarette butt in a recycling bin. The bin caught fire, filling the hallways with smoke, triggering the sprinklers, and forcing the entire building to evacuate.
 

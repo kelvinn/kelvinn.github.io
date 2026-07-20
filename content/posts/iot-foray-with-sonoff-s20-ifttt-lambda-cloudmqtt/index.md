@@ -15,13 +15,13 @@ Then I stumbled across the [Sonoff](http://sonoff.itead.cc/en/) devices by Itea
 The first bottleneck was discovering that the units I received did not have any headers. A little quick soldering later, and we had headers.  
   
 
-[![](20180502_200103.jpg)](20180502_200103.jpg)
+[![20180502 200103](20180502_200103.jpg)](20180502_200103.jpg)
 
 No headers mom :(
 
   
 
-[![](20180502_163741.jpg)](20180502_163741.jpg)
+[![20180502 163741](20180502_163741.jpg)](20180502_163741.jpg)
 
 Now we have headers!
 

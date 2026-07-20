@@ -25,15 +25,15 @@ ssh -oPort=1234 user@damon.com -D 1080
 Remember ports below 1024 are reserved, and you would need root access. Now it is time to configure the different programs to use the newly created tunnel.  
   
 
-[![](gnome-settings.jpg)](gnome-settings.jpg)
+[![Gnome settings](gnome-settings.jpg)](gnome-settings.jpg)
 
 #### Setting up Gnome (optional)
 
-[![](msn-settings.jpg)](msn-settings.jpg)
+[![Msn settings](msn-settings.jpg)](msn-settings.jpg)
 
 #### Tunneling Pidgen
 
-[![](xchat-settings.jpg)](xchat-settings.jpg)
+[![Xchat settings](xchat-settings.jpg)](xchat-settings.jpg)
 
 #### Tunneling XChat
 
@@ -41,11 +41,11 @@ Remember ports below 1024 are reserved, and you would need root access. Now it i
 _Note_: I'm going to list two examples, one is with FoxyProxy and the other is with the ordinary proxy settings.  
   
 
-[![](foxyproxy-settings.jpg)](foxyproxy-settings.jpg)
+[![Foxyproxy settings](foxyproxy-settings.jpg)](foxyproxy-settings.jpg)
 
 #### FoxyProxy
 
-[![](firefox-settings.jpg)](firefox-settings.jpg)
+[![Firefox settings](firefox-settings.jpg)](firefox-settings.jpg)
 
 #### Normal Proxy
 

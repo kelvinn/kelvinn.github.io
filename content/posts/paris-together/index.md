@@ -22,7 +22,7 @@ Although we had both visited Paris before, this was our first time there togethe
 
 We visited Notre-Dame Cathedral, whose approach looked slightly different from my memory, and strolled through the Latin Quarter. We had lunch at a small corner pub, most likely an overpriced and mediocre choice, then walked directly to the Pantheon. Next came the Senate, Les Deux Magots, and the Jardin du Luxembourg, where I noticed the distinctive work of Yayoi Kusama, whose museum in Matsumoto I had once helped clear of snow. After walking along the Champs-Elysees, we took the Metro back to our hosts' house, where I showered and prepared for bed.
 
-![](IMG_2215.JPG)![](IMG_2216.JPG)
+![Paris, Together image 1](IMG_2215.JPG)![Paris, Together image 2](IMG_2216.JPG)
 
 I had forgotten how walkable Paris was until the previous day, when we visited several sites in only a few hours. Today, we decided to see more while allowing ourselves to get a little lost along the way. We both enjoy wandering through unfamiliar cities and seeing what appears beyond the usual paths.
 

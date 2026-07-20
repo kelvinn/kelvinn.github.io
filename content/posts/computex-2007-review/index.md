@@ -13,15 +13,15 @@ The buzz of Computex is finally wearing off, so I'll finally scribe my account o
 
 The first place we stumbled upon was the SunComm booth, which seemed to have more "traffic" than any of the other VoIP booths. Let me say this: I think VoIP stuff is awesome, that it is going to be the future, and I dig looking at demos. Even though the SunComm website pretty much looks quick ugly, their products are way cool. I was lucky enough to purchase a phone directly from them, and have it mailed directly to my house in Taipei (which was just around the corner from their office). They don't normally do this.
 
-[![](DSC01676.jpg)](DSC01676.jpg)  
+[![Computex 2007 Review image 1](DSC01676.jpg)](DSC01676.jpg)  
   
-[![](DSC01679.jpg)](DSC01679.jpg)  
+[![Computex 2007 Review image 2](DSC01679.jpg)](DSC01679.jpg)  
 
 Next up was one of the main reasons I even wanted to go to Computex: to see the OpenMoko phone. To be honest with you, if I had a million dollars, this would be one of the first things I would buy. The other would be a new ThinkPad X61s. So why is this phone so cool? First off, it is based on Linux, which if you haven't gathered, I like. The _entire stack_ is open, or nearly open. I've always purchased pretty average phones, or been given them for free. The reason I do this is because my requirements have never been met: I want a SIP/IAX client on a wifi tri (or preferably quad) band phone. GPS is a plus, but not necessarily required. So far, I haven't been able to fine anything that has suited my needs -- the HTC Universal _almost_ would work, apparently. The slogan is "Free Your Phone", but I think of this project more to "make your phone never become obsolete." Indeed, the hardware may become obsolete, but the software never will. I keep being reminded that this project could *really* put a dent in the future iPhone sales. I can't wait to get one with WiFi and start hacking on it -- in the meantime, I'll need to refresh my C.
 
-[![](DSC01680.jpg)](DSC01680.jpg)  
+[![Computex 2007 Review image 3](DSC01680.jpg)](DSC01680.jpg)  
   
-[![](DSC01684.jpg)](DSC01684.jpg)  
+[![Computex 2007 Review image 4](DSC01684.jpg)](DSC01684.jpg)  
   
   
   

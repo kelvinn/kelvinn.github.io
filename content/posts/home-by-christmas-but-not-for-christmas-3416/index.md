@@ -15,7 +15,7 @@ blogger_updated: 2013-01-08T13:31:03.805Z
 
 I've recently returned from a short trip home, and I had a wonderful time. I had the opportunity to visit family and friends, eat plenty of delicious food, and generally relax. I reduced the amount of old belongings stored under the house by 80% and gave away all my old books, which are archived on [Goodreads](http://www.goodreads.com/review/list/4742180?shelf=read).
 
-![](IMG_1302.JPG)![](IMG_1303.JPG)
+![Home by Christmas, but Not for Christmas image 1](IMG_1302.JPG)![Home by Christmas, but Not for Christmas image 2](IMG_1303.JPG)
 
  Friday - was picked up at the airport, admired the crisp air of the Rogue Valley, relaxed at home, and had dessert and coffee.
 
@@ -33,7 +33,7 @@ I've recently returned from a short trip home, and I had a wonderful time. I had
 
  Friday - had a relaxing morning, then went to the airport to catch my flight home.
 
-![](IMG_1318.JPG)![](IMG_1325.JPG)
+![Home by Christmas, but Not for Christmas image 3](IMG_1318.JPG)![Home by Christmas, but Not for Christmas image 4](IMG_1325.JPG)
 
 The flight home was pleasant enough, and the sleeping pill I took let me sleep for almost eight hours. I pre-booked a window seat, which turned out great.
 

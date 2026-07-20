@@ -17,7 +17,7 @@ The site uses modified TOES code (although cleaned up significantly) to track re
   
   
 
-[![](RATS_1.jpg)](RATS_1.jpg)
+[![RATS 1](RATS_1.jpg)](RATS_1.jpg)
 
 **Welcome screen**
 
@@ -29,20 +29,20 @@ The site uses modified TOES code (although cleaned up significantly) to track re
   
   
 
-[![](RATS_2.jpg)](RATS_2.jpg)
+[![RATS 2](RATS_2.jpg)](RATS_2.jpg)
 
 **Initiating a new return**  
 
   
 
-[![](RATS_4.jpg)](RATS_4.jpg)
+[![RATS 4](RATS_4.jpg)](RATS_4.jpg)
 
 **Viewing the list of returns**  
 
   
   
   
-[![](RATS_5.jpg)](RATS_5.jpg)
+[![RATS 5](RATS_5.jpg)](RATS_5.jpg)
 
 **Viewing the overall history of returns AND warranties**  
 
@@ -51,13 +51,13 @@ The site uses modified TOES code (although cleaned up significantly) to track re
   
   
 
-[![](RATS_7.jpg)](RATS_7.jpg)
+[![RATS 7](RATS_7.jpg)](RATS_7.jpg)
 
 **The detailed look of an item in history**
 
   
   
 
-[![](RATS_8.jpg)](RATS_8.jpg)
+[![RATS 8](RATS_8.jpg)](RATS_8.jpg)
 
 **The detailed look of a return item**

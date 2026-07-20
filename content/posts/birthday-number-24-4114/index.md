@@ -13,4 +13,4 @@ blogger_updated: 2013-01-08T13:33:39.830Z
 
 My brother owns a coffee shop and a restaurant, which means there is plenty of coffee equipment around the house. One item is a waffle maker, which, as you know, I love. The main thing I did for my birthday was have waffles for dinner. They weren't ordinary waffles, either, but waffles with Nutella. Now that's a birthday dinner I can appreciate.
 
-![](DSC01562.jpg)
+![Birthday Number 24 image 1](DSC01562.jpg)

@@ -13,7 +13,7 @@ tags:
 ---
 
   
-[![](zenityss.jpg)](zenityss.jpg)  
+[![Zenityss](zenityss.jpg)](zenityss.jpg)  
   
 
 I have to admit, I'm pretty lazy. I don't (ironically) like to type, and I really don't like typing the same command over and over. I found myself switching between my external monitor and laptop quite frequently, and decided to somewhat automate the task. Although I know there are other programs out there that allow this, they either had too many features, or crashed. Xrandr works just fine, but like I said, I'm lazy...

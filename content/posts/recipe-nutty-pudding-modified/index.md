@@ -91,7 +91,7 @@ I prepare about 15 days worth of dry powders ahead of time. I typically add some
 
 I make mine rather liquid-y, and use a metal boba straw to drink it. These are large peanut butter jars that I've stocked up on and re-use.
 
-![](0867C9DA-7505-4231-A9DF-6F53505297B1_1_201_a.jpeg)
+![0867C9DA 7505 4231 A9DF 6F53505297B1 1 201 a](0867C9DA-7505-4231-A9DF-6F53505297B1_1_201_a.jpeg)
 
 
 

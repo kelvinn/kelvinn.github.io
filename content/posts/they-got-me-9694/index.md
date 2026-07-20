@@ -17,10 +17,10 @@ What I really meant to say is that my time in this flat is finally nearing its e
  ADSL-modems/auction-46922291.htm). Wish me luck!
 I could not have been more fortunate with the group of flatmates I ended up living with. I genuinely intend to visit Hayden and Tanya in Melbourne and travel with Kate and Owen to Moscow via the Trans-Siberian Railway. I hope to see Dylan again too, although I have no idea where. He is one of the most amusing people I have ever met; I can listen to his ramblings all night without becoming bored. He can be outrageous, but he is a genuinely great person.
 Tonight I helped the woman moving into my room learn Excel. It was an odd feeling to help the person replacing me. She is staying here until I move out. Not long now, and then the adventure begins!
-![](dsc00277.jpg)
+![They Got Me! image 1](dsc00277.jpg)
 
-![](dsc00276.jpg)
+![They Got Me! image 2](dsc00276.jpg)
 
-![](dsc00270.jpg)
+![They Got Me! image 3](dsc00270.jpg)
 
-![](dsc00304.jpg)
+![They Got Me! image 4](dsc00304.jpg)

@@ -13,6 +13,6 @@ blogger_updated: 2021-12-22T10:46:16.664Z
 
  
 
-![](DSC05641.jpg)
+![Photos from Finland (2016) image 1](DSC05641.jpg)
 
-![](DSC05634.jpg)
+![Photos from Finland (2016) image 2](DSC05634.jpg)

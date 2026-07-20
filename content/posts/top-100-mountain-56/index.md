@@ -19,7 +19,7 @@ I should mention that the mountain was not "hiking," as I had been told, but mor
 
 Somebody yelled, "No shirts!" or something like that. All the men subsequently took off their shirts and stood at the top, which was blisteringly cold; it had been hailing moments before. After a few photos, I hiked back down the mountain. Thoroughly tired, I jumped into the car and continued to our next destination.
 
-![](DSC01575.jpg)
+![Climbing a Mountain in Taiwan image 1](DSC01575.jpg)
 
 My intention was to stay at a small campsite near the hot spring we were visiting, but poor weather led the group to choose a hostel instead. That was where the trouble started. The hostel advertised a particular rate, both publicly and on its premises. When I started to check in, however, the owner quoted a price for each room that was double the advertised rate. I did not understand the discussion, but I paid what they asked and went to our rooms. The owners did not know that two people in our group were reporters for an organisation in southern Taiwan, so the matter was already being followed up. In any case, the sudden price change left a poor impression.
 

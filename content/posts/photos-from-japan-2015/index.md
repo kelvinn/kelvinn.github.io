@@ -13,15 +13,15 @@ blogger_updated: 2021-12-22T11:35:27.268Z
 
  
 
-![](20151231_203347.jpg)
+![20151231 203347](20151231_203347.jpg)
 
-![](blogger-image-c3ecd1106fc2.jpg)
-![](blogger-image-6acd3b85d374.jpg)
+![Blogger image c3ecd1106fc2](blogger-image-c3ecd1106fc2.jpg)
+![Blogger image 6acd3b85d374](blogger-image-6acd3b85d374.jpg)
 
-![](DSC03876.jpg)
+![Photos from Japan (2015) image 4](DSC03876.jpg)
 
-![](DSC03884.jpg)
-![](DSC03889.jpg)
+![Photos from Japan (2015) image 5](DSC03884.jpg)
+![Photos from Japan (2015) image 6](DSC03889.jpg)
 
 
-![](DSC03942.jpg)
+![Photos from Japan (2015) image 7](DSC03942.jpg)

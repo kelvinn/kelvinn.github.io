@@ -15,7 +15,7 @@ Other methods I have heard are to use a hammer and nails - which I unfortunately
 **Step 1:** Remove Torx screws  
 
   
-[![](IMG_20111014_185852.jpg)](IMG_20111014_185852.jpg)  
+[![Destroying Hard Drives image 1](IMG_20111014_185852.jpg)](IMG_20111014_185852.jpg)  
   
 
   
@@ -25,7 +25,7 @@ _Hint: Don't forget the screw covered under the paper._
 
   
   
-[![](IMG_20111014_185947.jpg)](IMG_20111014_185947.jpg)  
+[![Destroying Hard Drives image 2](IMG_20111014_185947.jpg)](IMG_20111014_185947.jpg)  
   
 
   
@@ -33,7 +33,7 @@ _Hint: Don't forget the screw covered under the paper._
 **Step 3:** Stare at the shiny platters  
 
   
-[![](IMG_20111014_190003.jpg)](IMG_20111014_190003.jpg)  
+[![Destroying Hard Drives image 3](IMG_20111014_190003.jpg)](IMG_20111014_190003.jpg)  
   
 
   
@@ -42,7 +42,7 @@ _Hint: Don't forget the screw covered under the paper._
 
   
   
-[![](IMG_20111014_190303.jpg)](IMG_20111014_190303.jpg)  
+[![Destroying Hard Drives image 4](IMG_20111014_190303.jpg)](IMG_20111014_190303.jpg)  
   
 
   
@@ -51,7 +51,7 @@ _Hint: Don't forget the screw covered under the paper._
 
   
   
-[![](IMG_20111014_192607.jpg)](IMG_20111014_192607.jpg)  
+[![Destroying Hard Drives image 5](IMG_20111014_192607.jpg)](IMG_20111014_192607.jpg)  
   
 
   

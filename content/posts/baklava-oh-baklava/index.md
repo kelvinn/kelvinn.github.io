@@ -18,15 +18,15 @@ Day 0 - I ate.
 
 Despite the late hour, I still managed to sample some of the delicacies available on every corner.
 
-![](IMG_3553.JPG)
+![Baklava, Oh Baklava image 1](IMG_3553.JPG)
 
 Tempting baklava on every corner.
 
-![](IMG_3557.JPG)
+![Baklava, Oh Baklava image 2](IMG_3557.JPG)
 
 I checked into my hotel and went straight out for baklava.
 
-![](IMG_3558.JPG)
+![Baklava, Oh Baklava image 3](IMG_3558.JPG)
 
 Yum
 
@@ -37,29 +37,29 @@ One of the beautiful things about Istanbul is how much there is to see within a 
 The best part was that I saw this happen on multiple occasions. I suppose they didn't bother with me, since there was no hope of cleaning my duct-taped boots.
 
 
-![](IMG_3620.JPG)
+![Baklava, Oh Baklava image 4](IMG_3620.JPG)
 
 Hagia Sophia (the free part)
 
-![](IMG_3618.JPG)
+![Baklava, Oh Baklava image 5](IMG_3618.JPG)
 
 Hagia Sophia (the free part)
 
-![](IMG_3560.JPG)
+![Baklava, Oh Baklava image 6](IMG_3560.JPG)
 
 The entrance to Istanbul's underground tunnels
 
-![](IMG_3632.JPG)
+![Baklava, Oh Baklava image 7](IMG_3632.JPG)
 
 Under Istanbul
 
 Under Istanbul
 
-![](IMG_3639.JPG)
+![Baklava, Oh Baklava image 8](IMG_3639.JPG)
 
 Blue Mosque
 
-![](IMG_3656.JPG)
+![Baklava, Oh Baklava image 9](IMG_3656.JPG)
 
 Hagia Sophia from afar
 
@@ -71,7 +71,7 @@ Galata Tower
 
 Taksim Square, where there's shopping everywhere you look
 
-![](IMG_3677.JPG)
+![Baklava, Oh Baklava image 10](IMG_3677.JPG)
 
 Walking from Taksim Square back to the city
 
@@ -81,19 +81,19 @@ The Hagia Sophia is absolutely amazing, and I can't wait to take my future child
 
 After spending much of the day in the Hagia Sophia, I took a ferry to Adalar Island, which was apparently excellent for hiking. It was also a good excuse to collect some additional GPS tracks and escape the hustle and bustle of the city. Although the island was much quieter, there was rubbish everywhere. Donkeys and dogs roamed loose, eating much of it, and there appeared to be little effort to manage it. I walked to what I think was the top of the island, completed a loop, and returned in time to catch my ferry home. I had one last giant box of baklava, enough to eat far too much, and prepared for my flight home.
 
-![](IMG_3732.JPG)
+![Baklava, Oh Baklava image 11](IMG_3732.JPG)
 
 Hagia Sophia
 
-![](IMG_3779.JPG)
+![Baklava, Oh Baklava image 12](IMG_3779.JPG)
 
 Hagia Sophia
 
-![](IMG_3829.JPG)
+![Baklava, Oh Baklava image 13](IMG_3829.JPG)
 
 Hiking into the hills in Adalar
 
-![](IMG_3815.JPG)
+![Baklava, Oh Baklava image 14](IMG_3815.JPG)
 
 Lots of horses in the hills, with lots of trash.
 
