@@ -1,0 +1,12 @@
+---
+title: "Photos from Scotland (2016)"
+date: 2016-03-08T00:00:00Z
+draft: false
+url: /2016/03/photos-from-scotland-2016.html
+tags:
+  - travel
+  - scotland
+---
+A few photos from Scotland in 2016.
+
+![](0E36E513-231B-47DE-943F-4D8734333BD5_1_102_o.jpeg)![](49E0733B-8128-48F0-BE28-608ABD31F143_1_105_c.jpeg)![](1AE5B375-C9A5-49E6-AB72-B5B6B2714377_1_105_c.jpeg)![](592D7016-D468-4921-9F12-C4A6B1F18B52_1_102_o.jpeg)![](7CF0C5C0-0E53-4D3B-9144-10F31A6F7B32_1_102_o.jpeg)![](F94B792D-B607-4526-91E6-54562FF5D95C_1_102_o.jpeg)
