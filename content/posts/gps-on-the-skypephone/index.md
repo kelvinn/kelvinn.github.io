@@ -18,4 +18,4 @@ The recipe to get maps on your Skypephone is pretty darn easy. You'll need one d
 
 My process is as follows (on Linux): plug in your Skypephone and select "usb storage" on your phone. Drag the TrekBuddy.jar file onto your new mounted drive (mine comes up as KINGSTON). Drag a relevent map downloaded from bandnet.org onto your phone as well. Unplug your phone from the USB, and it will scan for new media. Hit Menu -> My Stuff -> Others and scroll down to treckbuddy.jar -- hit Run. Go to your Connectivity settings and turn on bluetooth. Next go to Games and Apps and downloaded apps, start TrekBuddy. Press the key above MENU and select Load Map, and choose the map you uploaded to your phone. Now hit Start. Select the GPS device, and you're in business!
 
-There are more instructions [here](http://linuxtechs.net/kruch/tb/forum/viewtopic.php?t=91) and also [here](http://linuxtechs.net/kruch/tb/forum/viewtopic.php?t=22).
+There are more instructions in the [TrekBuddy forum thread about map setup](http://linuxtechs.net/kruch/tb/forum/viewtopic.php?t=91) and also in the [TrekBuddy forum thread about GPS devices](http://linuxtechs.net/kruch/tb/forum/viewtopic.php?t=22).

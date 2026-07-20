@@ -14,4 +14,4 @@ I realized at the end of the 2005 school year that I was going to be two busines
 
   
 
-The paper was a joy to research, write and edit. I explored many faucets I didn't think I would, and realized that I mostly enjoy semi-technical writing. Through this paper I realized that technology in emerging countries is an interest to me, and I look forward to what this interest has in store for my future. You can download my paper (PDF) [here](https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B03XfQfX87ELMTM4Nzg1MmEtYWZiMC00NjdlLTg2ZTYtY2E5YTA3Y2JiNjhm&hl=en&authkey=CJ3DqdAF).
+The paper was a joy to research, write and edit. I explored many faucets I didn't think I would, and realized that I mostly enjoy semi-technical writing. Through this paper I realized that technology in emerging countries is an interest to me, and I look forward to what this interest has in store for my future. You can download my paper (PDF) from the [Google Docs viewer](https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0B03XfQfX87ELMTM4Nzg1MmEtYWZiMC00NjdlLTg2ZTYtY2E5YTA3Y2JiNjhm&hl=en&authkey=CJ3DqdAF).

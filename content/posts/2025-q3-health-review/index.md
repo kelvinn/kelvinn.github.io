@@ -153,6 +153,7 @@ For Lutein & Zeaxanthin, I believe my values are actually a little higher than t
 I'm OK with 112g. Cronometer does % for targets, so unless I can do a fixed target and combine that with % for fat and carbs, then this will be hard to always meet.
 
 That's it. Everything else is where I want it to be.
+
 ##### Macronutrients
 
 Let's see some other trends from Cronometer. We can see my energy consumption decreased in Q3, as I was doing less exercise, so my weight has remained stable. Saturated fats have decreased which is good, but that could just be due to eating less.
@@ -161,6 +162,7 @@ Let's see some other trends from Cronometer. We can see my energy consumption de
 | ---- | ------- | ------------- | --------- | ----------- | --------- | ------- | ------------- |
 | 2025 | 2       | 3279.5        | 444.4     | 142.0       | 84.7      | 124.2   | 21.5          |
 | 2025 | 3       | 2881.2        | 381.1     | 112.1       | 76.0      | 114.8   | 19.9          |
+
 ##### Vitamins and Minerals
 
 Not many surprises here; B6, B12, and Vitamin D all increased. Interestingly Leucine and Methionine also increased despite fewer calories, which could be because I am eating more sardines and travelled more.

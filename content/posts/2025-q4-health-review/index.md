@@ -123,7 +123,7 @@ Garmin's method of displaying stress has a delineation between low (blue, <25), 
 Comparing my Q4 biomarkers to Q3, here's how things changed:
 
 | Biomarker | July 2025 (Q3) | Oct 2025 | Jan 2026 | Trend | Status |
-|-----------|---------------|----------|----------|-------|--------|
+| --------- | ------------- | -------- | -------- | ----- | ------ |
 | **IGF-1** | 30.9 nmol/L | 35 nmol/L | - | Increased | Above range |
 | **MCV** | 95 fL | 94 fL | 101 fL | Now HIGH | Above range |
 | **RDW** | 12.8% | 12.6% | 12.5% | Decreased | In range |

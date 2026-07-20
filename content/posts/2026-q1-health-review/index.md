@@ -202,6 +202,7 @@ Some principles that I tried to follow:
 |                             |                    |                   |
 |                             |                    |                   |
 |                             |                    |                   |
+
 ##### Experiments
 
 * I dropped Niacin in the previous quarter, and I'll keep that out for now. Although my sleep score decreased, I had fewer nights of waking up at 2am wide awake.
@@ -238,4 +239,3 @@ Based on Q1 2026 data, key priorities for Q2 2026 are:
 * Dropping Astaxanthin, as evidence seems to indicate it is most beneficial for skin health, and I'd rather use the money to buy sunscreen. I may change if my inflammation levels rise, but they have historically been low.
 * I'm combining my B-vitamins into a single pill to reduce burden. The combined pill I've found does have some niacin in it, so I'll be keeping an eye on my sleep scores after starting to take it.
 * Dropping Tart Cherry and Melatonin from my night time ritual - I don't think they're significantly helping with sleep quality.
-
