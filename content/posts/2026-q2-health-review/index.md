@@ -142,70 +142,7 @@ The highest-stress days were Thursday (**27.2**) and Friday (**26.9**). Monday w
 ##### Experiments
 
 I do not want to over-explain the cause from Garmin data alone. The measured result is clear: stress came down and recovery improved. The useful Q3 question is what made April work better, and how to avoid the May dip turning into a default pattern.
-
-#### Improve Biomarkers
-
-##### Goals
-
-- Decrease IGF-1 ❓
-- Keep MCV in range ✅
-- Decrease fasting glucose ❌
-- Keep RDW stable ⚠️
-- Increase or maintain albumin ❓
-- Maintain hsCRP ✅
-- Follow up free testosterone / SHBG / FSH ⚠️
-
-##### Analysis
-
-The latest biomarker follow-up in the `Biomarkers` sheet is from April 22, 2026, which sits inside Q2. I also checked the `PhenoAge History` sheet for the April 23, 2026 PhenoAge update.
-
-| Biomarker | Prior | Latest | Trend | Status |
-| --- | --- | --- | --- | --- |
-| **IGF-1** | 35 nmol/L (2025-10-10) | Not retested in Apr 2026 | No update | Previously above range |
-| **MCV** | 101 fL (2026-01-17) | 95 fL (2026-04-22) | Decreased | Back in range |
-| **Glucose** | 5.1 mmol/L (2025-10-10) | 5.4 mmol/L (2026-04-22) | Increased | Borderline / worse |
-| **RDW** | 12.5% (2026-01-17) | 12.8% (2026-04-22) | Increased slightly | In range |
-| **Albumin** | 45 g/L (2026-01-17) | Not retested in Apr 2026 | No update | Previously in range |
-| **hsCRP** | <4.0 mg/L (2026-01-17) | <0.2 mg/L (2026-04-22) | Improved / clearer low result | Excellent |
-| **Free Testosterone** | 260 pmol/L (2025-03-28) | 183 pmol/L (2026-04-22) | Decreased | Below range |
-| **SHBG** | 68 nmol/L (2025-03-28) | 57 nmol/L (2026-04-22) | Decreased | Still above range |
-| **FSH** | 7.7 IU/L (2025-03-28) | 10 IU/L (2026-04-22) | Increased | Slightly above range |
-
-Key interpretation:
-
-- The clearest win is **MCV**, which moved from out of range back into range.
-- **hsCRP** is excellent at **<0.2 mg/L**.
-- **Glucose** is now the main metabolic marker to watch, sitting at the top edge of the reference threshold.
-- **Free testosterone / SHBG / FSH** still need follow-up. SHBG improved but remains high; free testosterone is below range; FSH is slightly above range.
-- **IGF-1** and **albumin** still need retesting because they were not included in the April follow-up.
-
-PhenoAge also updated on April 23, 2026:
-
-- Chronological age: **43.2**
-- Phenotypic age: **32.34**
-- Difference: **10.84 years younger**
-
-That is a tiny improvement in phenotypic age from **32.41** on January 17, 2026, though the overall difference only widened because chronological age also moved forward.
-
-##### Experiments
-
-The improved MCV result still points in the right direction for the B12/folate work from previous quarters.
-
-The glucose experiment was the main nutrition-linked biomarker experiment this quarter. The CGM made it much easier to see which meals were uneventful and which meals caused a large spike. The laksa example was the clearest warning shot: the spike was obvious, and even walking afterward did not fully blunt it.
-
 #### Improve Nutrition
-
-##### Goals
-
-- Improve glucose control.
-- Keep meal prep consistent enough that eating out does not become the default.
-- Use nutrition changes to support sleep, stress, and biomarker follow-up.
-
-##### Analysis
-
-The April glucose value of **5.4 mmol/L** makes glucose the obvious nutrition focus. It is not catastrophic, but it moved in the wrong direction and sits right at the top of the listed range.
-
-The CGM experiment made this less abstract. Some regular meals looked fine, including toast with peanut butter and fig jam, the Nutty Pudding-inspired smoothie, and pasta with vegetables. The standout exception was laksa, which caused a large glucose spike.
 
 ##### Experiments
 
@@ -251,7 +188,6 @@ Current stack:
 
 ##### Experiments
 
-- The B-vitamin simplification is the supplement change most tied to a measurable result, because MCV stayed back in range.
 - Fish oil remains in the stack for now because sardines were not frequent enough to make food-only omega-3 intake reliable.
 - Dropping tart cherry and melatonin still looks reasonable unless the Q3 sleep data clearly worsens.
 
@@ -261,27 +197,19 @@ Based on the completed Q2 data, key priorities for Q3 2026 are:
 
 ##### General
 
-- Keep pressure on the mid-week recovery pattern, especially Wednesday through Friday.
+- Keep pressure on building back healthy habits after a rough Q1.
 - Bring average sleep score back above 80 consistently.
-- Treat May as the cautionary month: lower sleep, lower body battery, and lower activity are all visible there.
+- Treat May as the cautionary month: lower sleep, lower body battery, and lower activity are all visible there. Don't get dismayed and focus on what you can control.
 
 ##### Exercise
 
 - Rebuild weekly training volume toward the 800-minute target.
-- Use the 13 Q2 VO2 max readings as a baseline and push the trend back above 48.
-- Keep the ordinary training weeks repeatable before optimizing the ambitious ones.
-
-##### Biomarkers
-
-- Re-test IGF-1 and albumin.
-- Confirm that MCV stays in range.
-- Follow up glucose with either fasting glucose, HbA1c, fasting insulin, or a structured CGM review.
-- Follow up free testosterone, SHBG, and FSH.
+- Get VO2Max back to above 50.
+- Increase strength training substantially
 
 ##### Nutrition
 
-- Keep using CGM feedback to identify meals that produce outsized spikes.
+- Leverage the CGM feedback to identify meals that produce outsized spikes. Consider bringing Metamucil and consume before high-risk meals. 
 - Treat high-spike restaurant meals as experiments rather than defaults.
-- Keep meal prep boring enough to be reliable.
 
 Wish me luck!

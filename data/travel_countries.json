@@ -114,6 +114,12 @@
     "url": "/tags/hungary/"
   },
   {
+    "tag": "india",
+    "label": "India",
+    "count": 6,
+    "url": "/tags/india/"
+  },
+  {
     "tag": "indonesia",
     "label": "Indonesia",
     "count": 1,
@@ -158,7 +164,7 @@
   {
     "tag": "malaysia",
     "label": "Malaysia",
-    "count": 4,
+    "count": 5,
     "url": "/tags/malaysia/"
   },
   {
@@ -176,7 +182,7 @@
   {
     "tag": "nepal",
     "label": "Nepal",
-    "count": 4,
+    "count": 6,
     "url": "/tags/nepal/"
   },
   {
@@ -188,7 +194,7 @@
   {
     "tag": "new-zealand",
     "label": "New Zealand",
-    "count": 12,
+    "count": 16,
     "url": "/tags/new-zealand/"
   },
   {
