@@ -19,8 +19,9 @@
 {{- with $img -}}
   {{- $attributes = merge $attributes (dict "width" (printf "%d" .Width) "height" (printf "%d" .Height)) -}}
   {{- $processableFormats := slice "jpg" "jpeg" "png" "tif" "bmp" "webp" -}}
-  {{- $sizes := slice "360" "540" "720" "960" "1200" -}}
-  {{- if and hugo.IsExtended (in $processableFormats .MediaType.SubType) -}}
+  {{- $sizes := slice "540" "960" "1200" -}}
+  {{- $minResizeWidth := 540 -}}
+  {{- if and hugo.IsExtended (in $processableFormats .MediaType.SubType) (ge $img.Width $minResizeWidth) -}}
     {{- $srcset := slice -}}
     {{- range $size := $sizes -}}
       {{- if ge $img.Width (int $size) -}}

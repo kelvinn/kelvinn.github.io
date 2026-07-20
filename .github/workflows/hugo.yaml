@@ -38,6 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.164.0
+      HUGO_CACHEDIR: ${{ github.workspace }}/.hugo_cache
     steps:
       - name: Install Hugo CLI
         run: |
@@ -48,6 +49,15 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Restore Hugo caches
+        uses: actions/cache@v4
+        with:
+          path: |
+            .hugo_cache
+            resources/_gen
+          key: hugo-${{ runner.os }}-${{ hashFiles('hugo.toml', 'layouts/**', 'assets/**', 'content/**', 'static/**') }}
+          restore-keys: |
+            hugo-${{ runner.os }}-
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -55,7 +65,6 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
         env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
           TZ: America/Los_Angeles
         run: |
