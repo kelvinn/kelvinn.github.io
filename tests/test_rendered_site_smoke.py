@@ -15,6 +15,8 @@ class TagCounter(HTMLParser):
         super().__init__()
         self.description_values: list[str] = []
         self.generic_heading_links = 0
+        self.link_stack: list[list[str]] = []
+        self.link_texts: list[str] = []
         self.h1_count = 0
         self.skip_links = 0
         self.sidebars = 0
@@ -25,6 +27,8 @@ class TagCounter(HTMLParser):
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         attr = dict(attrs)
         classes = set((attr.get("class") or "").split())
+        if tag == "a":
+            self.link_stack.append([])
         if tag == "h1":
             self.h1_count += 1
         if tag == "meta" and attr.get("name") == "description":
@@ -41,6 +45,15 @@ class TagCounter(HTMLParser):
             self.post_tags += 1
         if tag == "table":
             self.tables += 1
+
+    def handle_data(self, data: str) -> None:
+        if self.link_stack:
+            self.link_stack[-1].append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag == "a" and self.link_stack:
+            text = " ".join("".join(self.link_stack.pop()).split())
+            self.link_texts.append(text)
 
 
 def parse_html(path: Path) -> TagCounter:
@@ -64,6 +77,7 @@ def test_rendered_site_shared_ui_smoke() -> None:
     home_parsed = parse_html(ROOT / "public/index.html")
     assert home_parsed.description_values
     assert all(value.strip() for value in home_parsed.description_values)
+    assert "Read more" not in home_parsed.link_texts
     assert "<meta name=author content>" not in home_html
     assert "kelvinism.css" not in home_html
     assert "post-summary" in home_html

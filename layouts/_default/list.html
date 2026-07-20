@@ -71,7 +71,7 @@
   <div class="entry-content post-summary">
     {{ .Summary | replaceRE "(?s)<h[1-6][^>]*>.*?</h[1-6]>" "" | plainify | strings.TrimSpace | truncate 720 }}
   </div>
-  <a class="read-more" href="{{ .RelPermalink }}" aria-label="Read more about {{ .Title | plainify }}">Read more</a>
+  <a class="read-more" href="{{ .RelPermalink }}">Read {{ .Title | plainify }}</a>
 
   {{- end }}
 
