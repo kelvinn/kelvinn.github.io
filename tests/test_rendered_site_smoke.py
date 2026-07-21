@@ -79,8 +79,9 @@ def test_rendered_site_shared_ui_smoke() -> None:
     assert all(value.strip() for value in home_parsed.description_values)
     assert "Read more" not in home_parsed.link_texts
     assert "<meta name=author content>" not in home_html
-    assert "rel=preload as=style" in home_html
-    assert "this.rel=\"stylesheet\"" in home_html
+    assert "rel=stylesheet" in home_html
+    assert "rel=preload as=style" not in home_html
+    assert "this.rel=\"stylesheet\"" not in home_html
     assert "https://www.googletagmanager.com/gtag/js?id=G-81J08BMTJ0" in home_html
     assert "<script async src=\"https://www.googletagmanager.com/gtag/js" not in home_html
     assert "localStorage.getItem(\"pref-theme\")" not in home_html
