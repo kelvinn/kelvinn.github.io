@@ -54,11 +54,13 @@ PRIMARY KEY (FLOW_ID)
 4) Setup your router so it sends netflow packets to your linux box (see README/INSTALL)
 5) Create a "rotate program" that will actually enter in the information into mysql.
 
+The database username and password below are fictional placeholders.
+
 ```bash
-kelvin@monitor:/usr/bin$ cat flow-mysql-export 
+user@example-monitor:/usr/bin$ cat flow-mysql-export 
 #!/bin/bash
 
-flow-export -f3 -u "username:password:localhost:3306:netflow:flows" < /flows/router/$1
+flow-export -f3 -u "EXAMPLE_DB_USER:YOUR_PASSWORD_HERE:localhost:3306:netflow:flows" < /flows/router/$1
 
 ```
 

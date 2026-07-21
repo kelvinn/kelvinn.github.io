@@ -21,7 +21,7 @@ The LCCT is located an hour from KL Sentral, with frequent buses running between
 
 By the end of the meal I was stuffed. I had eaten maybe 118% of what I should have, but I walked contentedly out of the restaurant, having spent only a few dollars in total, and jumped on the monorail to one of the food districts. I walked around in search of water but was too full to eat. The Berlin Bears were on display, although Taiwan was missing, which left me scheming about how to create one.
 
-Back at the main station, I decided to beat the heat and take a train to the end of one of the lines, without knowing what was there, simply to explore. As the train approached the end of the Green Line, I observed the neighbourhoods, which looked somewhat rougher, with no food stalls in sight (I was getting hungry again).
+Back at the main station, I decided to beat the heat and take a train to the end of one of the lines, without knowing what was there, simply to explore. As the train approached the end of the Green Line, the areas I could see from the carriage looked more residential and less set up for wandering visitors, with no food stalls in sight (I was getting hungry again).
 
 Without getting off, I took the train back to Sentral, returned to my favourite curry place, and ate one final meal before my next departure.
 

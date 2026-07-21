@@ -12,6 +12,8 @@ So, you've seen how to look up thumbnails [via python](/howtos/alexa-site-thumbn
 
 #### getAST.py
 
+The access key values below are fictional placeholders.
+
   
   
 ```python
@@ -29,8 +31,8 @@ import xml.dom.minidom
 import os
 from urlparse import urlsplit
 
-AWS_ACCESS_KEY_ID = 'your-access-key-id'
-AWS_SECRET_ACCESS_KEY = 'your-secret-key'
+AWS_ACCESS_KEY_ID = 'EXAMPLE_AWS_ACCESS_KEY_ID'
+AWS_SECRET_ACCESS_KEY = 'EXAMPLE_AWS_SECRET_ACCESS_KEY'
 STORELOC = "/path/to/store/webthumbs/"
 
 def create_thumbnail(site_url):

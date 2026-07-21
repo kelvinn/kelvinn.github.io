@@ -62,7 +62,7 @@ And we get 6916971, which is about right (ABS has the 2011 official NSW populati
 Finally, using TileMill, we can connect to the PostgGIS database and apply some themes to the map.  
   
 ```bash
-host=127.0.0.1 user=MyUsername password=MyPassword dbname=transport
+host=127.0.0.1 user=EXAMPLE_DB_USER password=YOUR_PASSWORD_HERE dbname=transport
 (SELECT * from mb_2011_nsw JOIN westmead_health on mb_2011_nsw.mb_code11 = westmead_health.label) as mb
 
 

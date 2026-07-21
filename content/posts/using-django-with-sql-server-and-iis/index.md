@@ -40,14 +40,14 @@ c:\Python25\scripts\django-admin.py startproject test
 ```  
 8a) Create a database using SQL Management Studio, create a user. (First, go to the Security dropdown. Right click Logins, add a new user. Next, right click Databases, New Database. Enter in the name, and change the owner to the user you just created).  
   
-8b) Edit the settings.py and add 'sqlserver_ado' and add database credentials. Use the below example if your database comes up in the Studio as COMPUTERNAME\\SQLEXPRESS (you are using SQLExpress).  
+8b) Edit the settings.py and add 'sqlserver_ado' and add database credentials. Use the below example if your database comes up in the Studio as COMPUTERNAME\\SQLEXPRESS (you are using SQLExpress). The database name, username, and password below are fictional placeholders.  
   
 ```python
 import os
 DATABASE_ENGINE = 'sqlserver_ado'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'crmtest'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'crmtest'             # Not used with sqlite3.
-DATABASE_PASSWORD = 'password'         # Not used with sqlite3.
+DATABASE_NAME = 'EXAMPLE_DATABASE_NAME'             # Or path to database file if using sqlite3.
+DATABASE_USER = 'EXAMPLE_DATABASE_USER'             # Not used with sqlite3.
+DATABASE_PASSWORD = 'YOUR_PASSWORD_HERE'         # Not used with sqlite3.
 DATABASE_MSSQL_REGEX = True
 DATABASE_HOST =  os.environ['COMPUTERNAME'] + r'\SQLEXPRESS' # I use SQLEXPRESS
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
@@ -91,6 +91,6 @@ python setup.py install
 python manage.py runfcgi method=threaded protocol=scgi port=3033 host=127.0.0.1
 
 ```  
-14) Test your django page, http://192.168.12.34:8080  
+14) Test your django page, http://192.0.2.10:8080  
   
 (No resource/photo)

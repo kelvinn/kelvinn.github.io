@@ -19,6 +19,8 @@ However, in my quest to read every RTFM I stumbled upon a post regarding Python+
 
 #### websearch.py
 
+The access key values below are fictional placeholders.
+
   
 ```bash
 
@@ -39,8 +41,8 @@ import sys
 import urllib
 import urllib2
 
-AWS_ACCESS_KEY_ID = 'your-access-key'
-AWS_SECRET_ACCESS_KEY = 'your-super-secret-key'
+AWS_ACCESS_KEY_ID = 'EXAMPLE_AWS_ACCESS_KEY_ID'
+AWS_SECRET_ACCESS_KEY = 'EXAMPLE_AWS_SECRET_ACCESS_KEY'
 
 def get_websearch(searchterm):
     def generate_timestamp(dtime):

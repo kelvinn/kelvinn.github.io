@@ -10,7 +10,7 @@ tags:
 - arduino
 ---
 
-For one of my projects I'm testing an SMS gateway, and decided it would be fun to build a useful alarm clock out of it. For those of you who know Python, you may find this funny. /dev/ttyUSB0 is my Arduino with a temperature sensor.
+For one of my projects I'm testing an SMS gateway, and decided it would be fun to build a useful alarm clock out of it. For those of you who know Python, you may find this funny. /dev/ttyUSB0 is my Arduino with a temperature sensor. The gateway credentials and phone numbers below are fictional placeholders.
 
 ```python
 import serial
@@ -23,10 +23,10 @@ def check_temp():
  
     t = check_temp()
     if int(t) < 8:
-        message = "It+is+now+%f+degrees;+chuck+a+sicky." % t
-        f = urllib2.urlopen('http://api.clickatell.com/http/sendmsg?user=johnd&password=p@55w0rd&api_id=2132867&from=61433735555&to=61433735555&text=%s' % message)
+        message = "It+is+now+%f+degrees;+time+to+get+moving." % t
+        f = urllib2.urlopen('http://api.clickatell.com/http/sendmsg?user=EXAMPLE_USER&password=YOUR_PASSWORD_HERE&api_id=EXAMPLE_API_ID&from=+61400000000&to=+61400000000&text=%s' % message)
 
-```bash
+```
 
 And in crontab:
 

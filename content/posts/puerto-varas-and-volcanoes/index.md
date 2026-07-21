@@ -19,7 +19,7 @@ The minibus cruised through Puerto Montt, picking up passengers. I saw the unmis
 
 The hostel, which had decent recommendations, was situated just a five-minute walk from the city, nestled in a quiet street near two schools. I checked in, slightly delayed from when I said I would, and went exploring the city.
 
-Puerto Varas is almost a suburb of Puerto Montt, where some wealthier residents live and send their children to school while commuting into the city. It is a clean, pleasant tourist area with several things to see and do.
+Puerto Varas felt almost like a satellite town of Puerto Montt, with schools, commuter traffic, and a more tourism-oriented centre than I had seen at the port. It was pleasant to walk around and had several things to see and do.
 
 After spending the afternoon walking around and climbing one of the main hills, I returned to the hostel, cooked paella, and watched some of The Hobbit with tea.
 
