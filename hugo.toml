@@ -13,6 +13,8 @@ disableSpecial1stPost = true
 ShowReadingTime = true
 ShowBreadCrumbs = false
 defaultTheme = "light"
+disableThemeToggle = true
+disableScrollToTop = true
 ShowPostNavLinks = false
 
 [markup.goldmark.renderHooks.image]
