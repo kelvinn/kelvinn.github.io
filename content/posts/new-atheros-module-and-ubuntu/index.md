@@ -14,11 +14,11 @@ tags:
 
 I've been using Atheros for quite some time, and I've always liked the madwifi drivers. They allowed really easy switching into monitor mode, and decent levels of packet injection. However, since I'm mostly in an office now, instead of writing web apps in cafes and trying to score free internet, I don't really need anything fancy. My gentoo stage 1 (3?) days are over. I use Ubuntu, because I'm lazy, and it mostly works.
 
-My new laptop (well, 1.5 year old laptop now, but still new in my eyes) gave me the option between an Intel card and a Atheros wifi card. I chose the Atheros card; then the ath5k module came out, and life has been turbulent ever since.
+My new laptop (well, 1.5-year-old laptop now, but still new in my eyes) gave me the option between an Intel card and an Atheros wifi card. I chose the Atheros card; then the ath5k module came out, and life has been turbulent ever since.
 
 In summary: the ath5k driver in the 2.6.28 kernel, which is what Ubuntu 9.04 uses, isn't as up-to-date as the drivers in compat-wireless. _Fancy that..._ This presents me with the option of compiling a new kernel specifically with it, or just installing compat-wireless. I'm lazy, so...
 
-I'll get a few basic troubleshooting commands out of the way first. After updating the kernel I kept getting disconnected - it appeared I was associate/disassociating frequently.
+I'll get a few basic troubleshooting commands out of the way first. After updating the kernel I kept getting disconnected. It appeared I was associating/disassociating frequently.
 
 ```bash
 # dmesg
@@ -57,7 +57,7 @@ The steps to resolve are as follows:
   
   
 
-So, first, use Synapitc to get the latest kernel headers and the 'build-essential' packages.
+So, first, use Synaptic to get the latest kernel headers and the 'build-essential' packages.
 
 Next, download the compat-wireless package. I needed to use one from a few weeks ago because I received the following error:
 
