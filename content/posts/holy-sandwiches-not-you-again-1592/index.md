@@ -35,4 +35,4 @@ Eilian eventually came over and sat down, and the three of us talked. We particu
 
 We finally made it home, debriefed on the night, and have been talking, mostly Ben and me, ever since. He is petting what we unanimously voted the coolest cat ever. Well, bedtime calls, since I am getting up in five hours. I am trying to be as quiet as possible because Ahyan and his housemate have graciously let me stay in their apartment, and she, Malin, is asleep and wakes early.
 
-That concludes the evening! Tonight is my night on the couch. Tomorrow promises moose hunting, attempts to kiss under a bridge, and, hopefully, another meeting with this group. Until next time, adios.
+That concludes the evening! Tonight is my night on the couch. Tomorrow promises moose hunting and, hopefully, another meeting with this group. Until next time, adios.

@@ -27,6 +27,6 @@ I met a woman from Malta, and we talked for a while. She spoke some Maltese to m
 
 After the Pantheon, I wandered back to the hostel and arrived around 6:30pm, just as food was being served. Pizza for everyone, and plenty of people to meet. This was where I started making friends.
 
-I met several people in my room and organised all but one of them to join a pub crawl. Two English women and then two English men also came along. I was the only American. The crawl included a tour, drinks, and a late-night stumble home. George and Louis were there, and I snogged George (the word still sounds funny). She was very cool, so all was well.
+I met several people in my room and organised all but one of them to join a pub crawl. Two English women and then two English men also came along. I was the only American. The crawl included a tour, drinks, and a late-night stumble home. George and Louis were there, and they were very cool, so all was well.
 
 I woke, ate breakfast, met two Mexican women and another Australian, and went to the Colosseum with BJ. It is extraordinary here, but I am only halfway through exploring. For now, I bid farewell. Adios!

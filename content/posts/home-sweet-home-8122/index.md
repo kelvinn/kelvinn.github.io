@@ -101,7 +101,7 @@ A slight misjudgement caused some problems after Christmas, but I won&rsquo;t ge
 
  
 
-New Year&rsquo;s Eve was like any other. I went to a bar with a few flatmates, sent a virtual kiss by text at midnight, and went home shortly afterward. My flatmates and I woke with minimal hangovers; I simply didn&rsquo;t have one.
+New Year&rsquo;s Eve was like any other. I went to a bar with a few flatmates, sent a text at midnight, and went home shortly afterward. My flatmates and I woke with minimal hangovers; I simply didn&rsquo;t have one.
 
  
 
@@ -119,4 +119,3 @@ It is getting rather late, which means bedtime. More will come as more stories a
 
 Until then,
  Happy New Year.
-

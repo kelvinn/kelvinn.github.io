@@ -12,6 +12,6 @@ blogger_status: "LIVE"
 blogger_updated: 2013-01-08T13:31:03.806Z
 ---
 
-My partner's laptop has 1 GB of memory and runs Windows Vista. I heard a memorable quote from her today: "I think Vista plus Office equals Monster."
+The laptop had 1 GB of memory and ran Windows Vista. I heard a memorable quote today: "I think Vista plus Office equals Monster."
 
 That was followed by: "I just clicked the exsomething.exe with the somethingelse.exe and hit end task. Now my desktop went black."

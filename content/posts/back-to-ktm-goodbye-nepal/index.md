@@ -31,9 +31,9 @@ The bathroom in the airport looked like it was being held together with glue, an
 
 Mt. Everest, just before the wing tip
 
-Eventually, my gate changed, and I walked around the corner to board. Near the front of the line, my partner was pulled aside just before another screening, and I followed her. What I did not notice quickly enough was that men and women were being separated into two lines, which is probably why the security officer sharply redirected me when I said, "She's my partner; I want to accompany her," and tried to follow. "Same bus, you go." I was patted down quickly and put on a bus to the plane. The bus filled up while I watched her remain in the security line.
+Eventually, my gate changed, and I walked around the corner to board. Near the front of the line, my travelling companion was pulled aside just before another screening, and I followed her. What I did not notice quickly enough was that men and women were being separated into two lines, which is probably why the security officer sharply redirected me when I tried to follow. "Same bus, you go." I was patted down quickly and put on a bus to the plane. The bus filled up while I watched her remain in the security line.
 
-At the plane I waited a few minutes with some other loyal partners. The airport staff clearly wanted to get us on the plane but ultimately relented, and she arrived on the next bus. She thought it was cute that I had made such a scene to stay with her, which was good because it meant she didn't make a big deal out of it.
+At the plane I waited a few minutes with some other people whose companions were still in the security line. The airport staff clearly wanted to get us on the plane but ultimately relented, and she arrived on the next bus. She did not make a big deal out of it, which was a relief.
 
 I boarded the plane, navigated around passengers trying to photograph every part of it, and manoeuvred past airline staff attempting to get everyone seated.
 

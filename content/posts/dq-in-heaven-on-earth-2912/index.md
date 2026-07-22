@@ -24,4 +24,3 @@ Globalisation has carried familiar American brands to cities around the world, a
  
 
 As the sun began to set, I collected dinner and settled in for the evening. We watched a DVD and played more rummy. Afterwards, I packed, read for a while, and went to sleep. Goodbye, Hangzhou; hello, Guangzhou.
-

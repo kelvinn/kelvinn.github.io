@@ -27,6 +27,6 @@ Fortunately, both organisations offered part-time work. One role involves design
 
 ![All About Decisions image 1](DSC01365.jpg)
 
-The real dilemma arose when the second school offered me a full-time teaching job with a reasonable salary and a contract ending the following July, when I planned to return to the United States. I enjoyed everyone I met, the school had a strong reputation, and the opportunity aligned with my broader goals. The disadvantage was that the working hours covered the only time I could see my partner, meaning we would meet only once a week. That would not be good for our relationship, so after six hours of thought, I declined an excellent opportunity. I have no regrets. There will be other good jobs, but finding a great partner is much harder.
+The real dilemma arose when the second school offered me a full-time teaching job with a reasonable salary and a contract ending the following July, when I planned to return to the United States. I enjoyed everyone I met, the school had a strong reputation, and the opportunity aligned with my broader goals. The disadvantage was that the working hours conflicted with important parts of my life outside work, so after six hours of thought, I declined an excellent opportunity. I have no regrets. There will be other good jobs, and some trade-offs are not worth making.
 
 To the right is a picture taken from my "stove": a single burner. Needless to say, I do not cook many elaborate dinners.

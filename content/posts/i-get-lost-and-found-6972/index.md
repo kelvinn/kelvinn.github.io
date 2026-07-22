@@ -25,7 +25,7 @@ Afterward, we went to the beach while Sibyl and Ashley tried to find two Irish m
 
 Throughout the day, we had invited several people to join us on the beach. Jolien and I met even more while getting additional wine and invited them too. In all, 20 people came, which was not bad considering I had known only two of them a few weeks earlier. We drank wine, played games, jumped into the sea, and went home.
 
-I won't go into detail, but Jenn and I kissed that night. It was unexpected and became one of the highlights of my trip. I hoped I would see her again.
+I won't go into detail, but that night became one of the highlights of my trip. I hoped I would see Jenn again.
 
 We fell asleep and woke at about 07:30 or 08:00 because two of our companions needed to catch an early train.
 

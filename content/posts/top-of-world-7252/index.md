@@ -17,7 +17,7 @@ Let's start with leaving Prague, a beautiful city. After spending a wonderful fe
 
 The next morning, we wandered around and found an interesting tour company. Our roommates arrived later, another couple from Seattle. On our second day, we again woke rather late despite going to bed earlier. Ana had kicked me out of bed while having a bad dream, but at about 2:30 we joined a tour called Insider. It was excellent, one of the best tours I have ever taken.
 
-We returned to the hostel at about 8:00 and went out for a few drinks: only one and a half each, but they were large. We bought them from a small place around the corner and talked about all kinds of things. We really were falling in love. That night, we fell asleep with our roommates in the room again.
+We returned to the hostel at about 8:00 and went out for a few drinks: only one and a half each, but they were large. We bought them from a small place around the corner and talked about all kinds of things. That night, we fell asleep with our roommates in the room again.
 
 The next day, we wandered around the city, found Ana a new bag for the things she wanted to send home, and mailed them. Unfortunately, on one of our train journeys, we accidentally bought discounted short-term tickets that we were not eligible to use. We did not understand the mistake because everything was in German, but the inspectors caught it and fined us 40 euros each. I had 65 euros; Ana had none. That was not much fun, but there was little we could do.
 

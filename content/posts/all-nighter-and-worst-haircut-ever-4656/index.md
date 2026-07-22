@@ -23,7 +23,7 @@ That night, we spent about two hours shaving my head because the clippers were n
 
 A French guy tidied the back a little, but it still needed more work. I told Sarah about the time Molly had trimmed the back of my hair almost up to my ears, and Sarah said she could not possibly do that. I handed her the clippers and, zzzzz, she cut a line all the way to the top of my head. I could hardly believe it.
 
-I had joked that Molly&#39;s earlier effort had ruined my dating prospects for a month, so when I felt this new line, I said, &quot;There go my dating prospects for another month.&quot; Hilary laughed from inside the shower, while Pat came out, saw it, and started laughing too. We simply buzzed my head with a No. 1 guard, which is very close. Good times. Lizz would love my hair.
+I had joked that Molly&#39;s earlier effort had ruined my haircut for a month, so when I felt this new line, I said, &quot;There goes my hair for another month.&quot; Hilary laughed from inside the shower, while Pat came out, saw it, and started laughing too. We simply buzzed my head with a No. 1 guard, which is very close. Good times. Lizz would love my hair.
 
 I wrote a few emails that night, returned to the hostel, played cards with the three of them for a while, and went to bed. I woke at noon the next day and, after eating and taking a shower, went to the internet cafe and played games for a while. I looked around town a little more, then went to bed.
 

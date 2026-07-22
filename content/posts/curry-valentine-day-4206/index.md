@@ -1,7 +1,7 @@
 ---
-title: "Curry Valentine&#39;s Day"
+title: "Curry Dinner"
 date: 2007-02-14T10:30:00.003Z
-url: /2007/02/curry-valentine-day_4206.html
+url: /2007/02/curry-dinner_4206.html
 tags:
 - travel
 - taiwan
@@ -13,5 +13,4 @@ blogger_updated: 2013-01-08T13:33:39.791Z
 
 I love curry; there is no denying it. I prefer a hot, spicy Indian curry to the milder varieties often found in Thailand and Japan, although Thai curry can certainly be fiery.
 
-For Valentine's Day, we went to a pleasant little curry restaurant, had a beer each, and thoroughly enjoyed ourselves. Because our Valentine's Day plans usually centred on her preferences, this one felt especially well balanced.
-
+I went to a pleasant little curry restaurant, had a beer, and thoroughly enjoyed myself. This one felt especially well balanced.
