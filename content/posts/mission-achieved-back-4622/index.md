@@ -1,5 +1,5 @@
 ---
-title: "Mission Achieved, Back &quot;Home&quot;"
+title: 'Mission Achieved, Back "Home"'
 date: 2007-01-10T10:30:00.003Z
 url: /2007/01/mission-achieved-back_4622.html
 tags:
@@ -50,4 +50,3 @@ At the same time, I always felt the need to keep my belongings safe. In Taipei, 
  
 
 Overall impression? A positive exploration.
-

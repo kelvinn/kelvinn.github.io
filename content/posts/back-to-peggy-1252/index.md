@@ -1,5 +1,5 @@
 ---
-title: "Back to Peggy&#39;s"
+title: "Back to Peggy's"
 date: 2007-02-23T10:30:00.003Z
 url: /2007/02/back-to-peggy_1252.html
 tags:

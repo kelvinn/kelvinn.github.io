@@ -17,7 +17,7 @@ The highlight of the day may have been when she asked me to get her an orange an
 
 At the supermarket I was disappointed to find that the only oranges came in a 3 kg bag. Luckily, there was a sale, so I returned with 5 kg of fruit and four boxes of cookies. At 15:00 I walked to the port and picked up my tickets, probably as the first person in line, then wandered back to the Erratic Rock for more rest.
 
-By 20:00 I had decided it was time to start walking to the port with all&#160;my things. Also staying at the Erratic Rock were two Australian women, perhaps in their mid-20s, with huge backpacks and about nine shopping bags of food. Their supplies also included "one litre of wine for each of us, for each night."&#160;They asked how I was getting to the port. "Walking. How are you getting there?" I replied. "Taxi!"
+By 20:00 I had decided it was time to start walking to the port with all my things. Also staying at the Erratic Rock were two Australian women, perhaps in their mid-20s, with huge backpacks and about nine shopping bags of food. Their supplies also included "one litre of wine for each of us, for each night." They asked how I was getting to the port. "Walking. How are you getting there?" I replied. "Taxi!"
 
 I arrived at the port within 30 minutes, walking at a slow pace, and prepared for the short welcome presentation. When it ended, I met up with some fellow travellers and started walking to the ferry. Only then did the two women from earlier arrive, frantically unloading their bags from the taxi.
 
@@ -45,7 +45,7 @@ It was on this day that I took out my cards and tried to play, although I soon r
 
 I had lunch, and after lunch taught the two tour guides from London (Roxanne and Jason) how to play hearts. After only a few games I moved upstairs for more sightseeing.
 
-After dinner I learned another card game, one that relies on fewer tactics and&#160;more luck, then went to&#160;bed. Some people stayed up drinking, but I decided not to because the boat would be heading into the open sea. Since my last experience on open water had been so unpleasant, I sat in bed hoping not to get sick.
+After dinner I learned another card game, one that relies on fewer tactics and more luck, then went to bed. Some people stayed up drinking, but I decided not to because the boat would be heading into the open sea. Since my last experience on open water had been so unpleasant, I sat in bed hoping not to get sick.
 
 By the third day, all the days had started to blend together. We saw the "English Channel," which was really just the boat making a sharp right turn beside an island, as well as a vessel shipwrecked in the 1960s. At dinner, the crew announced that we would be entering the open ocean again, perhaps to make up time, and that the winds were quite strong. At that point, I decided to take a seasickness tablet in preparation for the evening.
 

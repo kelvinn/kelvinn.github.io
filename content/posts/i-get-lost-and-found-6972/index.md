@@ -13,7 +13,7 @@ blogger_updated: 2013-01-08T13:34:57.381Z
 
 I have a couple of days to cover, and they have been quite adventurous. Two days ago, I eventually arrived in Monterosso after a few detours and losing track of my friends. The first thing on my list was food; I was very hungry. After eating and practising a little Italian with the waitress, I headed down to see the beach.
 
-I met a few women nearby and mentioned that I planned to camp there. They told me that several American women were planning to do the same. Good luck! I walked onto the beach in high spirits and saw one of them sitting in a chair while three others were in the water. I asked, &quot;Are you the Americans I heard were going to camp on the beach?&quot; She replied, &quot;I don&#39;t know about either of those. Who is asking? Oh, wait, are you Kelvin?&quot;
+I met a few women nearby and mentioned that I planned to camp there. They told me that several American women were planning to do the same. Good luck! I walked onto the beach in high spirits and saw one of them sitting in a chair while three others were in the water. I asked, "Are you the Americans I heard were going to camp on the beach?" She replied, "I don't know about either of those. Who is asking? Oh, wait, are you Kelvin?"
 
 At first, I assumed Sibyl and Ash had told these women about me. Then I realised that the woman was Laura, whom I had met in Barcelona. After we talked for a while, she offered me a place to sleep in the apartment they were renting. Could I complain? No. I also met Michelle from the United States and two Canadians, Jolien and Jenn. Both were very funny. We swam for a while, then eventually returned to the apartment and fell asleep.
 

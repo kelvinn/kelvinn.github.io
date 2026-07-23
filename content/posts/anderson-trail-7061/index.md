@@ -1,5 +1,5 @@
 ---
-title: "Anderson&#39;s Trail"
+title: "Anderson's Trail"
 date: 2011-12-05T10:30:00.003Z
 url: /2011/12/anderson-trail_7061.html
 tags:

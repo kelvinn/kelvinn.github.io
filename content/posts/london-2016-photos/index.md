@@ -11,7 +11,7 @@ blogger_status: "LIVE"
 blogger_updated: 2021-12-22T10:42:02.999Z
 ---
 
-&nbsp;
+
 
 ![London: 2016 (Photos) image 1](DSC04440.jpg)
 

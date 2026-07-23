@@ -52,7 +52,7 @@ Just before arriving at the water there was another set of park blocks, so I wal
 
 It would have been fun to explore the hills, but my time was limited, and I would have felt safer as part of a group. Neruda had a home here, apparently with a wonderful view, so perhaps I will return and see it someday.
 
-The bus departed for Santiago on time and dropped me at Pajaritos. I took the metro back to Manuel Montt, collected my bags, and looked for something to eat. My neighbourhood was apparently a great place for food and nightlife, which had not been evident on Sunday, but on Monday evening it was buzzing with activity.&#160; I sat down at SushiCity, expecting good seafood, and ordered a 26-piece sushi platter.
+The bus departed for Santiago on time and dropped me at Pajaritos. I took the metro back to Manuel Montt, collected my bags, and looked for something to eat. My neighbourhood was apparently a great place for food and nightlife, which had not been evident on Sunday, but on Monday evening it was buzzing with activity.  I sat down at SushiCity, expecting good seafood, and ordered a 26-piece sushi platter.
 
 After almost an hour, the sushi finally arrived, but with a twist I wasn't expecting. Nearly every roll was filled with mayonnaise. I wasn't entirely surprised, given the huge selection at the supermarket, but in sushi? I scraped some off, finished my meal, paid, and caught the metro back to Pajaritos. From there, I took the Centropuerto bus and was soon at the airport.
 

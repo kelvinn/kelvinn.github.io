@@ -10,4 +10,4 @@ blogger_post_id: "2085349855403175765"
 blogger_status: "LIVE"
 blogger_updated: 2013-01-08T13:34:11.408Z
 ---
-I&rsquo;m in the middle of purchasing an IP phone from a distributor here in Taiwan. My Asterisk server is quite solid, but most of the softphones for Linux are disappointing. When I get my phone, please call and say hello. I have a long list of people I need to catch up with. The first is my grandma, whom I&rsquo;ll call today because it is her birthday.
+I'm in the middle of purchasing an IP phone from a distributor here in Taiwan. My Asterisk server is quite solid, but most of the softphones for Linux are disappointing. When I get my phone, please call and say hello. I have a long list of people I need to catch up with. The first is my grandma, whom I'll call today because it is her birthday.

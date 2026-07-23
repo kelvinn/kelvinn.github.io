@@ -13,5 +13,5 @@ blogger_status: "LIVE"
 blogger_updated: 2013-01-08T13:31:03.785Z
 ---
 
-I&#39;m about to make some major database changes. Afterwards, you&#39;ll see a few useful new features and one ambitious blog post.
+I'm about to make some major database changes. Afterwards, you'll see a few useful new features and one ambitious blog post.
 

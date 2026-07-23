@@ -1,5 +1,5 @@
 ---
-title: "Days 3 &amp; 4 - Nelson"
+title: "Days 3 & 4 - Nelson"
 date: 2011-12-11T10:30:00Z
 url: /2011/12/days-3-4-nelson.html
 tags:
@@ -12,7 +12,7 @@ blogger_updated: 2015-11-16T10:48:04.841Z
 ---
 Because it was Saturday, the Nelson market was in full swing. I am not usually a market person, but this one was relaxing. Many markets sell whichever gadgets and trinkets are popular at the time; this one felt more authentic. The honey, artwork, jewellery, and food were distinctly local.
 
-![Days 3 &amp; 4 - Nelson image 1](IMG_2032.JPG)
+![Days 3 & 4 - Nelson image 1](IMG_2032.JPG)
 
 The sun was also intense. Before arriving in New Zealand, I had read about different sunscreen formulations after learning a difficult lesson at a cricket match. For the market, I applied and reapplied sunscreen containing zinc oxide and other ultraviolet filters. I avoided getting burnt, although many people around me had already developed red necks.
 

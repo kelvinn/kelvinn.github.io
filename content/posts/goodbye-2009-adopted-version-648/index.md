@@ -23,7 +23,7 @@ My two friends from Vienna were on a Pacific trip, so they naturally came to Syd
 
 ### Blues Point Reserve
 
-[View Larger Map](http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=&amp;sll=-33.849332,151.203954&amp;sspn=0.003021,0.004839&amp;ie=UTF8&amp;t=h&amp;ll=-33.849408,151.204104&amp;spn=0.003119,0.005901&amp;z=17)
+[View Larger Map](http://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=&sll=-33.849332,151.203954&sspn=0.003021,0.004839&ie=UTF8&t=h&ll=-33.849408,151.204104&spn=0.003119,0.005901&z=17)
 
 I had to concede one point: I had encouraged myself to arrive a little too early. I followed a group of people who looked as though they knew what they were doing. I joked that they were either going to the Point or going home. Right on cue, they turned the corner into their apartment and left me without a guide. I reached the end of the road, but a problem presented itself: there was no path down.
 

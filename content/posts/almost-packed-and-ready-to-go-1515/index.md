@@ -11,4 +11,4 @@ blogger_status: "LIVE"
 blogger_updated: 2013-01-08T13:34:57.367Z
 ---
 
-It is 11:00 p.m., and my flight leaves tomorrow morning at 10:00 a.m. I finished packing, though. Hurrah! I made copies of my passport, I am eating my last meal, and I am ready to go. I just have to call my parents in the morning to say one last goodbye and send a few emails. Give me a mission, simple or hard, and write in the guestbook! I don&#39;t plan on being homesick (sorry, y&#39;all), but every hello will make my day better. Talk to you from Europe.
+It is 11:00 p.m., and my flight leaves tomorrow morning at 10:00 a.m. I finished packing, though. Hurrah! I made copies of my passport, I am eating my last meal, and I am ready to go. I just have to call my parents in the morning to say one last goodbye and send a few emails. Give me a mission, simple or hard, and write in the guestbook! I don't plan on being homesick (sorry, y'all), but every hello will make my day better. Talk to you from Europe.

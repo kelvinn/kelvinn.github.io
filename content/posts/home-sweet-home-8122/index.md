@@ -11,7 +11,7 @@ blogger_status: "LIVE"
 blogger_updated: 2013-01-08T13:34:11.402Z
 ---
 
-I&rsquo;ve had several requests to confirm that I&rsquo;m alive.
+I've had several requests to confirm that I'm alive.
 
  
 
@@ -21,15 +21,15 @@ Are you alive?
 
  
 
-For those of you who want more information, read on. Please forgive any rough edges; it is past 3:00 a.m., and I&rsquo;m rather tired.
+For those of you who want more information, read on. Please forgive any rough edges; it is past 3:00 a.m., and I'm rather tired.
 
  
 
-I have now joined the JAFA ranks, i.e., Just Another Very Aucklander. What can I say? I&rsquo;m worse than a statistic. While I love the countryside, I prefer city life, and Gisborne was very rural. As you can tell from this belated entry, my journey back was several months ago, so I&rsquo;ll recap only a few stories.
+I have now joined the JAFA ranks, i.e., Just Another Very Aucklander. What can I say? I'm worse than a statistic. While I love the countryside, I prefer city life, and Gisborne was very rural. As you can tell from this belated entry, my journey back was several months ago, so I'll recap only a few stories.
 
  
 
-Before returning to Auckland, I believed I had a place to stay. Upon arriving, I checked my email and discovered that the arrangement had unfortunately fallen through. I dragged myself to the Surf n&rsquo; Snow, even though it snows nowhere near Auckland, and checked in. The woman at reception was very kind. The rates were reasonable, and I was placed in a room with only one other guest. He was a gentleman from South Africa. We talked for a few minutes, and because he was leaving, he gave me his towel. Score!
+Before returning to Auckland, I believed I had a place to stay. Upon arriving, I checked my email and discovered that the arrangement had unfortunately fallen through. I dragged myself to the Surf n' Snow, even though it snows nowhere near Auckland, and checked in. The woman at reception was very kind. The rates were reasonable, and I was placed in a room with only one other guest. He was a gentleman from South Africa. We talked for a few minutes, and because he was leaving, he gave me his towel. Score!
 
  
 
@@ -49,7 +49,7 @@ Since then, I have become quite immersed in Kiwi culture. The past two months ha
 
  
 
-I started playing Ultimate Frisbee again by joining a spring league. I play every Thursday night, and as fit as I may look, my out-of-shape body huffs and puffs while no houses fall down. Even more riveting is Thursday Night Curry. This isn&rsquo;t ordinary curry; this is IT curry. A group of 15 to 20 IT professionals, with &ldquo;professional&rdquo; defined however you like, gather for good curry every other Thursday. I look forward to it all week. Then again, Thursday is also rent day. Such a bittersweet occasion.
+I started playing Ultimate Frisbee again by joining a spring league. I play every Thursday night, and as fit as I may look, my out-of-shape body huffs and puffs while no houses fall down. Even more riveting is Thursday Night Curry. This isn't ordinary curry; this is IT curry. A group of 15 to 20 IT professionals, with "professional" defined however you like, gather for good curry every other Thursday. I look forward to it all week. Then again, Thursday is also rent day. Such a bittersweet occasion.
 
  
 
@@ -57,7 +57,7 @@ One weekend, I joined what we technology enthusiasts call an Installfest. More t
 
  
 
-My flatmates are worth mentioning as well. I don&rsquo;t know whether I could have picked a better group of people in Auckland. Two of them were a testament to the old saying that &ldquo;opposites attract.&rdquo; Scorched into my memory will always be one flatmate chanting &ldquo;wwesssiiieeedddee&rdquo; when I first moved in; my family lives on Auckland&rsquo;s west side, where she is from. Another couple were usually quiet but jovial, and two friends were in Thailand at the time, each on a different adventure. Using Thailand as a segue, I have a vehicle.
+My flatmates are worth mentioning as well. I don't know whether I could have picked a better group of people in Auckland. Two of them were a testament to the old saying that "opposites attract." Scorched into my memory will always be one flatmate chanting "wwesssiiieeedddee" when I first moved in; my family lives on Auckland's west side, where she is from. Another couple were usually quiet but jovial, and two friends were in Thailand at the time, each on a different adventure. Using Thailand as a segue, I have a vehicle.
 
  
 
@@ -65,15 +65,15 @@ A manual.
 
  
 
-Those of you who know me know that I drove a manual in high school. But this isn&rsquo;t high school, this isn&rsquo;t a modern Honda, and this isn&rsquo;t the same side of the road. That&rsquo;s right, ladies and gentlemen: I drive an old manual on the opposite side of the road.
+Those of you who know me know that I drove a manual in high school. But this isn't high school, this isn't a modern Honda, and this isn't the same side of the road. That's right, ladies and gentlemen: I drive an old manual on the opposite side of the road.
 
  
 
-I&rsquo;m a fast learner.
+I'm a fast learner.
 
  
 
-During December, I visited my mom in Wellington, where two of her friends said that &ldquo;he drives like he was born in NZed.&rdquo; Flying to Wellington presented a new problem: fog. The plane was unable to land, so it dropped me in Palmerston North, and the airline then took me two hours south by bus. Despite this, my trip to Wellington was spiritual and revitalising. I met two childhood friends and came to understand how my mom became friends with their family when she was my age. Both were smart, attractive, humorous, and kind. Their children were quieter but equally lovely to know. One was reportedly an excellent young football player. The others were quiet but clearly athletic. Seeing five children under one roof highlighted two different families, both grounded in goodness.
+During December, I visited my mom in Wellington, where two of her friends said that "he drives like he was born in NZed." Flying to Wellington presented a new problem: fog. The plane was unable to land, so it dropped me in Palmerston North, and the airline then took me two hours south by bus. Despite this, my trip to Wellington was spiritual and revitalising. I met two childhood friends and came to understand how my mom became friends with their family when she was my age. Both were smart, attractive, humorous, and kind. Their children were quieter but equally lovely to know. One was reportedly an excellent young football player. The others were quiet but clearly athletic. Seeing five children under one roof highlighted two different families, both grounded in goodness.
 
  
 
@@ -93,15 +93,15 @@ I arrived in Auckland, and they dropped me at my flat. I did a little work and p
 
  
 
-Christmas passed without any problems. I became much closer to one of my father&rsquo;s brothers. It quickly became apparent how special that side of the family is. There are so many similarities that they are almost striking.
+Christmas passed without any problems. I became much closer to one of my father's brothers. It quickly became apparent how special that side of the family is. There are so many similarities that they are almost striking.
 
  
 
-A slight misjudgement caused some problems after Christmas, but I won&rsquo;t get into that now. The verdict is still out.
+A slight misjudgement caused some problems after Christmas, but I won't get into that now. The verdict is still out.
 
  
 
-New Year&rsquo;s Eve was like any other. I went to a bar with a few flatmates, sent a text at midnight, and went home shortly afterward. My flatmates and I woke with minimal hangovers; I simply didn&rsquo;t have one.
+New Year's Eve was like any other. I went to a bar with a few flatmates, sent a text at midnight, and went home shortly afterward. My flatmates and I woke with minimal hangovers; I simply didn't have one.
 
  
 
@@ -109,7 +109,7 @@ And now it is 2006.
 
  
 
-There is so much for which I am grateful from the past year. I can&rsquo;t wait to see what the new one brings.
+There is so much for which I am grateful from the past year. I can't wait to see what the new one brings.
 
  
 

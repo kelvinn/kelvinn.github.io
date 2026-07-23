@@ -15,5 +15,5 @@ So many promises, so little done. Well, it is time to get through that list. Sho
 
  
 
-As you know, I&rsquo;m something of a techie. The historical phone numbers have since been removed for privacy.
+As you know, I'm something of a techie. The historical phone numbers have since been removed for privacy.
 

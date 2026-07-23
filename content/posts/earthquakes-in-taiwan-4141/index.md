@@ -27,7 +27,7 @@ I immediately searched for food and ate some curry. I love curry. Sadly, the cur
 
  
 
-Afterward, I went to a little square where what appeared to be "China Idol" was being performed. They even made the &ldquo;T&rdquo; gesture for &ldquo;timeout.&rdquo; Feeling a little sleepy, I went into one of the buildings, found a chair upstairs, and took a short nap.
+Afterward, I went to a little square where what appeared to be "China Idol" was being performed. They even made the "T" gesture for "timeout." Feeling a little sleepy, I went into one of the buildings, found a chair upstairs, and took a short nap.
 
  
 

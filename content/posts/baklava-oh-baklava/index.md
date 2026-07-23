@@ -103,4 +103,4 @@ I wasn't even certain what this was.
 
 I had a lovely time in Istanbul. The pollution and crowds got to me eventually, but overall it was a memorable experience. Here's a map of where I went.
 
-[Embedded map](https://www.google.com/fusiontables/embedviz?q=select+col2+from+1RFDybcyTiZ_M_VoDJdx9sjuqeMKU1cx-RnRxMg&amp;viz=MAP&amp;h=false&amp;lat=41.00642676870445&amp;lng=28.99107547709673&amp;t=1&amp;z=12&amp;l=col2&amp;y=2&amp;tmplt=2&amp;hml=KML)
+[Embedded map](https://www.google.com/fusiontables/embedviz?q=select+col2+from+1RFDybcyTiZ_M_VoDJdx9sjuqeMKU1cx-RnRxMg&viz=MAP&h=false&lat=41.00642676870445&lng=28.99107547709673&t=1&z=12&l=col2&y=2&tmplt=2&hml=KML)
