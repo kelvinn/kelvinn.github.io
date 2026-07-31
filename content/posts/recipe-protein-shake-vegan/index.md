@@ -1,6 +1,6 @@
 ---
 title: Protein Shake (vegan)
-date: 2026-07-31T21:30:00.002+10:00
+date: 2026-07-31T13:30:00.002+10:00
 draft: false
 url: /recipes/protein-shake-vegan.html
 tags:
