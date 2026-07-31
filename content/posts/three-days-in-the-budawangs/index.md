@@ -1,6 +1,6 @@
 ---
 title: Three Days in the Budawangs
-date: 2026-08-01T09:00:00+10:00
+date: 2026-07-26T09:00:00+10:00
 draft: false
 url: /2026/08/three-days-in-the-budawangs.html
 tags:
