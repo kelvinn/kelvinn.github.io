@@ -2,9 +2,10 @@
 title: Three Days in the Budawangs
 date: 2026-07-26T09:00:00+10:00
 draft: false
-url: /2026/08/three-days-in-the-budawangs.html
+url: /2026/07/three-days-in-the-budawangs.html
 tags:
   - outdoors
+  - articles
 ---
 
 I just got back from a three-day trip to the Budawangs with Sydney Bushwalkers, and thought I would write down what each of the days looked like while it is still fresh. I am going to keep the exact location vague, both because that was the intention of the trip leaders and because part of what made the area special was how untouched it felt. No GPS points, no detailed directions, and hopefully no accidental breadcrumb trail.
