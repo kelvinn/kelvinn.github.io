@@ -4,11 +4,9 @@ date: 2026-07-31T21:30:00.002+10:00
 draft: false
 url: /recipes/protein-shake-vegan.html
 tags:
-  - health
   - articles
   - recipes
   - tutorial
-  - longevity
 ---
 ### Background
 
