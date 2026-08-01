@@ -172,19 +172,19 @@ Some principles that I tried to follow:
 
 Current stack:
 
-| Morning | Evening | Ad Hoc |
-| --- | --- | --- |
-| Vitamin D (5000 IU) | Glycine (10g) | Iron (20mg) |
-| Vitamin K2 mk7 (100mcg) | NAC (1g) | Vitamin C (500mg) |
-| B-complex / methylated B vitamins | Magnesium | B5 P-5-P (50mg) |
-| Zinc (15mg) | | |
-| Hyaluronic Acid (200mg) | | |
-| Iodine (150mcg) | | |
-| Creatine (5g - in smoothie) | | |
-| TMG (1.5g - in smoothie) | | |
-| Boron (1mg - in smoothie) | | |
-| Taurine (3g - in smoothie) | | |
-| Fish Oil (6g) | | |
+| Morning                           | Evening       | Ad Hoc            |
+| --------------------------------- | ------------- | ----------------- |
+| Vitamin D (5000 IU)               | Glycine (10g) | Iron (20mg)       |
+| Vitamin K2 mk7 (100mcg)           | NAC (1g)      | Vitamin C (500mg) |
+| B-complex / methylated B vitamins | Magnesium     | B5 P-5-P (50mg)   |
+| Zinc (15mg)                       |               |                   |
+| Hyaluronic Acid (200mg)           |               |                   |
+| Iodine (150mcg)                   |               |                   |
+| Creatine (5g - in smoothie)       |               |                   |
+| TMG (1.5g - in smoothie)          |               |                   |
+| Boron (1mg - in smoothie)         |               |                   |
+| Taurine (3g - in smoothie)        |               |                   |
+| Omega-3 (1g EPA, 750mg DHA)       |               |                   |
 
 ##### Experiments
 
