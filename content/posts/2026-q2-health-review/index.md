@@ -176,7 +176,7 @@ Current stack:
 | --------------------------------- | ------------- | ----------------- |
 | Vitamin D (5000 IU)               | Glycine (10g) | Iron (20mg)       |
 | Vitamin K2 mk7 (100mcg)           | NAC (1g)      | Vitamin C (500mg) |
-| B-complex / methylated B vitamins | Magnesium     | B5 P-5-P (50mg)   |
+| B-complex / methylated B vitamins | Magnesium     |                   |
 | Zinc (15mg)                       |               |                   |
 | Hyaluronic Acid (200mg)           |               |                   |
 | Iodine (150mcg)                   |               |                   |
