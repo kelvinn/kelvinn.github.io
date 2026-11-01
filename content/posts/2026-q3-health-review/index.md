@@ -252,7 +252,7 @@ Current stack (carried forward from Q2, TODO: confirm it is still accurate):
 
 ### Focus For Next Quarter
 
-General
+**General**
 
 * Keep increasing my iron intake
 * Keep late night work to a minimum. I'm also contemplating a light bar under my monitor.
