@@ -98,7 +98,7 @@ def main() -> int:
             warnings.append(f"Possible template placeholder remains: {pattern}")
 
     for image_ref in re.findall(r"!\[[^\]]*\]\(([^)]+)\)", text):
-        if image_ref.startswith(("http://", "https://")):
+        if image_ref.startswith(("http://", "https://", "data:")):
             continue
         local_ref = image_ref.replace("%20", " ")
         if not (post_dir / local_ref).exists():

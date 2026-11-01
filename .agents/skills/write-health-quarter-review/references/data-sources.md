@@ -20,7 +20,6 @@ Expected generated images:
 - `stress_level_per_week.png`
 - `average_resting_hr_per_month.png`
 - `average_sleep_score_per_month.png`
-- `average_active_calories_per_month.png`
 
 Optional image when VO2 max data exists:
 
@@ -51,14 +50,18 @@ Expected generated CSVs under `data/`:
 - `summary_quartet_per_month.csv`
 - `monthly_vo2_max_per_month.csv`
 
-## LifeDB MCP
+## Local Garmin databases
+
+Garmin metrics come from the local Garmin databases in `~/HealthData/DBs`. Use `scripts/export_garmin.py`; see `garmin-local.md` for sources and checks.
+
+## LifeDB MCP (cross-check only)
 
 Use the LifeDB plugin [@dev-6a3eed984df88191900b4e84b06efa19](plugin://dev-6a3eed984df88191900b4e84b06efa19@created-by-me-remote) for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, and activity data.
-Use only the LifeDB plugin for Garmin data. Do not read GarminDB SQLite files, `~/HealthData/DBs`, or repo-local `.db` files directly.
+The LifeDB plugin reads a different database (garmin-health-data) that can disagree slightly with local Garmin data; do not mix the two in one post.
 
 VO2 max source notes:
 
-- Build monthly VO2 max from `vo2max_activities` joined to `activities`.
+- Build monthly VO2 max from `steps_activities.vo2_max` joined to `activities` in `garmin_activities.db`.
 - Keep the first plotted month equal to the first actual VO2 max month in LifeDB, not the configured historical query start.
 - If the earliest available VO2 max month changes after a fresh sync, regenerate `monthly_vo2_max_per_month.csv` and `monthly_vo2_max.png` together.
 
@@ -77,7 +80,7 @@ where calendar_date >= '2026-04-01'
 
 Include row counts in aggregate answers.
 
-For chart and CSV generation, follow `lifedb-mcp-export.md`: query LifeDB MCP, save `data/lifedb_export.json`, then render local assets from that export.
+For chart and CSV generation, run `scripts/export_garmin.py` (see `garmin-local.md`), then render with `generate_health_assets.py`.
 
 ## Biomarker Google Sheet
 

@@ -1,6 +1,6 @@
 # Migration From Notebooks
 
-The old analysis pipeline lives in `notebooks/`. Treat it as historical behavior reference only. New Garmin data access must use the LifeDB plugin [@dev-6a3eed984df88191900b4e84b06efa19](plugin://dev-6a3eed984df88191900b4e84b06efa19@created-by-me-remote).
+The old analysis pipeline lives in `notebooks/`. Treat it as historical behavior reference only. Garmin data access now goes through `scripts/export_garmin.py`.
 
 Current wrapper:
 
@@ -32,8 +32,8 @@ Important scripts to preserve or port:
 Migration status:
 
 1. Chart/data rendering has moved into `scripts/generate_health_assets.py`.
-2. Garmin data extraction is defined in `lifedb-mcp-export.md` and must be done through the LifeDB plugin.
-3. Direct GarminDB dependencies should not be used by this skill.
+2. Garmin data extraction is done by `scripts/export_garmin.py` against the local Garmin files (plain sqlite3, no `garmindb` Python package needed).
+3. The deleted notebooks read `GarminSummaryDb`/`DaysSummary`; the exporter reads the same `days_summary` table.
 4. `notebooks/` can be deleted for this skill once the MCP export/render path has been verified for the target quarter.
 
 VO2 max migration note:

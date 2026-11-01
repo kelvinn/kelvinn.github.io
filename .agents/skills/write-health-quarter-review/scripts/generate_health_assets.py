@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Render health-review assets from a LifeDB MCP export JSON file.
+"""Render health-review assets from an export JSON file.
 
-This script intentionally does not connect to GarminDB, SQLite, or LifeDB.
-Garmin data must be exported by Codex through the LifeDB MCP server first,
-then saved as JSON with the shape documented in references/lifedb-mcp-export.md.
+This script does not read any database. Create the JSON first with
+export_garmin.py (local Garmin files) or by hand from LifeDB MCP
+results; the shape is documented in references/lifedb-mcp-export.md.
 """
 
 from __future__ import annotations
@@ -191,7 +191,8 @@ def create_monthly_charts(df: pd.DataFrame, metadata: dict, image_dir: Path, dat
         export = month_export(df, metric, value_col)
         export.to_csv(data_dir / f"{stem}.csv", index=False)
         if export.empty:
-            start = metadata["query_start_date"]
+            # No data for this metric (for example active calories when no daily calorie data is exported).
+            continue
         else:
             start = f"{int(export.iloc[0]['year']):04d}-{int(export.iloc[0]['month']):02d}-01"
         plot_monthly_line(
@@ -206,6 +207,7 @@ def create_monthly_charts(df: pd.DataFrame, metadata: dict, image_dir: Path, dat
 
 def create_summary_chart(df: pd.DataFrame, metadata: dict, image_dir: Path, data_dir: Path) -> None:
     end = parse_day(metadata["quarter_end_date"])
+    history = {(row["year"], row["month"]): row for row in metadata.get("monthly_history", [])}
     end_month = date(end.year, end.month, 1)
     start = (pd.Timestamp(end_month) - pd.DateOffset(months=11)).date()
     recent = df[(df["date"].dt.date >= start) & (df["date"].dt.date <= end)].copy()
@@ -213,14 +215,23 @@ def create_summary_chart(df: pd.DataFrame, metadata: dict, image_dir: Path, data
     if not recent.empty:
         monthly = recent.groupby([recent["date"].dt.year, recent["date"].dt.month])
         for (year, month), group in monthly:
+            bb_max = group["bb_max"].mean()
+            steps = group["steps"].mean()
+            # Months already published in an earlier post keep their published values, so the
+            # 12-month chart stays consistent even where the local database has been rebuilt.
+            carried = history.get((year, month), {})
+            if carried.get("bb_max") is not None:
+                bb_max = carried["bb_max"]
+            if carried.get("steps") is not None:
+                steps = carried["steps"]
             rows.append(
                 {
                     "year": year,
                     "month": month,
                     "rhr_avg": group["rhr_min"].mean(),
                     "stress_avg": group["stress_avg"].mean(),
-                    "steps": group["steps"].mean(),
-                    "bb_max": group["bb_max"].mean(),
+                    "steps": steps,
+                    "bb_max": bb_max,
                 }
             )
     export = pd.DataFrame(rows, columns=["year", "month", "rhr_avg", "stress_avg", "steps", "bb_max"])
@@ -512,6 +523,7 @@ def main() -> int:
     sns.set_theme(style="whitegrid")
     payload = load_export(args.input_json)
     metadata = payload["metadata"]
+    metadata["monthly_history"] = payload.get("monthly_history", [])
     image_dir, data_dir = ensure_dirs(args.post_dir)
     df = to_daily_frame(payload["daily_metrics"])
     if df.empty:

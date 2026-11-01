@@ -1,13 +1,10 @@
 # LifeDB MCP Export
 
-Use the LifeDB plugin [@dev-6a3eed984df88191900b4e84b06efa19](plugin://dev-6a3eed984df88191900b4e84b06efa19@created-by-me-remote) for Garmin data.
-Do not read GarminDB SQLite files, `~/HealthData/DBs`, or repo-local `.db` files for health-review Garmin metrics.
-
-The local renderer consumes an export JSON because scripts cannot call MCP tools directly. The agent must create this JSON from MCP query results, then run:
+**Default path:** `scripts/export_garmin.py` builds this JSON from the local Garmin files (see `garmin-local.md`). The rest of this file documents the JSON shape and a manual LifeDB MCP fallback. Render with:
 
 ```bash
 python .agents/skills/write-health-quarter-review/scripts/generate_health_assets.py \
-  --input-json content/posts/YYYY-qN-health-review/data/lifedb_export.json \
+  --input-json content/posts/YYYY-qN-health-review/data/garmin_export.json \
   --post-dir content/posts/YYYY-qN-health-review
 ```
 
@@ -43,6 +40,9 @@ python .agents/skills/write-health-quarter-review/scripts/generate_health_assets
       "weight_avg": null
     }
   ],
+  "monthly_history": [
+    {"year": 2026, "month": 4, "bb_max": 85.3, "steps": 10793.6}
+  ],
   "vo2_max": [
     {
       "date": "2026-04-01",
@@ -62,7 +62,7 @@ LifeDB `TIME` fields such as `moderate_activity_time`, `vigorous_activity_time`,
 3. Call `list_tables`.
 4. Call `describe_table` for any table not already described in the current thread.
 5. Run read-only `WITH` / `SELECT` queries with `execute_read_query`.
-6. Save rows into `data/lifedb_export.json`.
+6. Save rows into `data/garmin_export.json`.
 7. Render assets from that JSON.
 
 If freshness ends before `quarter_end_date`, still render available data, but mention the latest available date in the post and keep the quarter provisional.

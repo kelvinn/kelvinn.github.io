@@ -1,6 +1,6 @@
 ---
 name: write-health-quarter-review
-description: Create, update, or complete quarterly personal health review blog posts in this repo. Use when asked to write a quarterly health post, fill a health-review template, generate Garmin health analysis from the `lifedb` MCP server, update health-review charts or CSVs, or compare quarterly biomarkers from the Life Planning Google Sheet.
+description: Create, update, or complete quarterly personal health review blog posts in this repo. Use when asked to write a quarterly health post, fill a health-review template, generate Garmin health analysis from local Garmin files in `~/HealthData`, update health-review charts or CSVs, or compare quarterly biomarkers from the Life Planning Google Sheet.
 ---
 
 # Write Health Quarter Review
@@ -15,10 +15,10 @@ It combines repo-local post templates, generated chart/CSV assets, LifeDB Garmin
 Read these before editing a post:
 
 1. `AGENTS.md` in the repo root for the health runbook and LifeDB query rules.
-2. `references/post-style.md` for the expected post structure and voice.
+2. `references/post-style.md` for the expected post structure and voice. The post is in the author's own voice: observations and first-person intent only, never tips or advice.
 3. `references/data-sources.md` for asset, CSV, LifeDB, and Google Sheet sources.
 4. `references/biomarker-rules.md` before writing the biomarkers section.
-5. `references/lifedb-mcp-export.md` before generating Garmin-derived assets from the `lifedb` MCP server.
+5. `references/garmin-local.md` before exporting Garmin metrics, and `references/lifedb-mcp-export.md` for the export JSON shape.
 6. `references/migration-from-notebooks.md` before changing chart or analysis generation.
 
 Also read:
@@ -36,10 +36,10 @@ Also read:
    - Q3: Jul 1 to Sep 30
    - Q4: Oct 1 to Dec 31
 3. If the target post folder does not exist, create it from `content/posts/20NN-qN-health-review-TEMPLATE/` with `scripts/create_quarter_post.py`.
-4. If generated assets or CSVs are missing or stale, export Garmin data through the LifeDB plugin only, following `references/lifedb-mcp-export.md`.
-5. Save the MCP export as `data/lifedb_export.json`, then render assets with `scripts/generate_health_assets.py`.
+4. If generated assets or CSVs are missing or stale, export Garmin data with `scripts/export_garmin.py`, which reads the local Garmin databases in `~/HealthData/DBs` read-only (see `references/garmin-local.md`).
+5. The export is saved as `data/garmin_export.json`; render assets from it with `scripts/generate_health_assets.py`.
 6. Summarize generated CSVs with `scripts/summarize_health_data.py`.
-7. Use the LifeDB plugin for Garmin health, fitness, sleep, stress, body battery, HRV, steps, VO2 max, or activity data that is missing, suspicious, or freshness-sensitive. Do not query Garmin databases directly.
+7. Check coverage before writing (see `references/garmin-local.md`). State any gaps in the post rather than filling them with guesses. The LifeDB plugin can be used as a cross-check only.
 8. Use the Google Sheets connector for biomarker and PhenoAge data.
 9. Edit `index.md` directly.
 10. Validate the result with `scripts/validate_health_post.py`.
@@ -65,11 +65,19 @@ Create a new post from the template:
 python .agents/skills/write-health-quarter-review/scripts/create_quarter_post.py --year 2026 --quarter 3
 ```
 
-Render assets from a LifeDB MCP export:
+Export Garmin metrics from the local Garmin databases:
+
+```bash
+python .agents/skills/write-health-quarter-review/scripts/export_garmin.py \
+  --year 2026 --quarter 3 \
+  --output content/posts/2026-q3-health-review/data/garmin_export.json
+```
+
+Render assets from the export:
 
 ```bash
 python .agents/skills/write-health-quarter-review/scripts/generate_health_assets.py \
-  --input-json content/posts/2026-q2-health-review/data/lifedb_export.json \
+  --input-json content/posts/2026-q2-health-review/data/garmin_export.json \
   --post-dir content/posts/2026-q2-health-review
 ```
 
