@@ -42,10 +42,8 @@ Some of these items are a little hard to get in Australia, or have (in my opinio
 - 1 tbsp cacao powder (that's CACAO, not COCOA)
 - 1 tbsp soy lecithin granules
 - 1/2 tsp ceylon cinnamon
-- 1/2 tsp mustard seeds
+- 1/4 tsp mustard seeds
 - 1.5g TMG powder
-- 1mg Boron
-- 1 tsp matcha powder
 - 1 tsp taurine
 - 1 tbsp wheat germ
 - 1 tsp turmeric
