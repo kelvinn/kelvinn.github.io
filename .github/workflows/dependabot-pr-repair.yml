@@ -127,7 +127,7 @@ jobs:
       # Check out the exact commit that failed. If Dependabot has since pushed, the
       # final push is rejected as non-fast-forward instead of clobbering it.
       - name: Checkout Dependabot PR
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ needs.find.outputs.head_sha }}
           token: ${{ secrets.DEPENDABOT_REPAIR_TOKEN }}
