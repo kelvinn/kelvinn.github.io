@@ -4,7 +4,6 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-
 IMG_TAG_RE = re.compile(r"<img(?P<attrs>[^>]*?)>", re.IGNORECASE)
 TITLE_RE = re.compile(r"<title>(?P<title>.*?)\s*\|\s*[^<]+</title>", re.IGNORECASE | re.DOTALL)
 SRC_RE = re.compile(r"""src=(?:"(?P<dq>[^"]*)"|'(?P<sq>[^']*)'|(?P<bare>[^ >]+))""", re.IGNORECASE)
