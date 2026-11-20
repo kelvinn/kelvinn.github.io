@@ -4,9 +4,8 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-
 EMPTY_IMAGE_RE = re.compile(r"!\[\]\(([^)]+)\)")
-FRONT_MATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.S)
+FRONT_MATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.DOTALL)
 
 GENERIC_PREFIXES = (
     "img",
@@ -48,7 +47,7 @@ def get_page_title(markdown: str, fallback: str) -> str:
         return fallback
 
     front_matter = match.group(1)
-    title_match = re.search(r"^title:\s*['\"]?(.*?)['\"]?$", front_matter, re.M)
+    title_match = re.search(r"^title:\s*['\"]?(.*?)['\"]?$", front_matter, re.MULTILINE)
     if title_match:
         return title_match.group(1).strip()
     return fallback
