@@ -140,3 +140,17 @@ where start_ts >= '2026-01-01'
 group by week
 order by week;
 ```
+
+# Agent Notes
+
+## Dependabot Automation
+
+Dependency updates are handled by three pieces under `.github/`:
+
+- `dependabot.yml`: weekly `github-actions` and `pip` updates. Minor and patch updates are grouped per ecosystem; majors arrive as individual PRs.
+- `workflows/dependabot-automerge.yml`: squash-merges a Dependabot PR once `CI (Non-Main Branches)` and `Deploy Hugo site to Pages` have both passed on its head commit, then dispatches `hugo.yaml` (a `GITHUB_TOKEN` merge does not trigger the push deploy). Major bumps, PRs with no Dependabot update metadata, and PRs carrying a repair commit get the `needs-review` label instead of being merged.
+- `workflows/dependabot-pr-repair.yml`: every 4 hours, finds a failing non-major `pip` Dependabot PR and runs `anthropics/claude-code-action` to fix it. The workflow re-verifies the fix, then pushes a `fix: repair Dependabot PR checks` commit using `DEPENDABOT_REPAIR_TOKEN`. It gives up after 2 attempts, or when nothing changes, and labels the PR `needs-review`. It never edits `.github/`.
+
+Secrets: `CLAUDE_CODE_OAUTH_TOKEN` and `DEPENDABOT_REPAIR_TOKEN`. Optional repo variable `CLAUDE_MODEL` pins the repair model.
+
+The workflows refer to the CI workflows by name and `hugo.yaml` by filename. Update both automation workflows if you rename them. `HUGO_VERSION` is duplicated in `hugo.yaml`, `ci.yaml` and `dependabot-pr-repair.yml`; keep them in sync.

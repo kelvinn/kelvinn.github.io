@@ -1,9 +1,13 @@
 name: CI (Non-Main Branches)
 
+# The Dependabot auto-merge and repair workflows reference this workflow by name.
+# Rename it there too if you change it here.
 on:
   push:
     branches-ignore:
       - main
+      # Dependabot branches are covered by the pull_request run; skip the duplicate.
+      - "dependabot/**"
   pull_request:
 
 permissions:
@@ -20,12 +24,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          # garmindb in requirements.txt needs Python 3.12 or newer.
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install ruff
+          python -m pip install -r requirements.txt ruff
 
       - name: Run linter
         run: |
@@ -34,26 +39,30 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    env:
+      # Keep in sync with HUGO_VERSION in hugo.yaml; the smoke test runs `hugo --minify`.
+      HUGO_VERSION: 0.164.0
     steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O "${{ runner.temp }}/hugo.deb" "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb" \
+          && sudo dpkg -i "${{ runner.temp }}/hugo.deb"
+
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pytest
-
-      - name: Install Hugo CLI
-        env:
-          HUGO_VERSION: 0.164.0
-        run: |
-          wget -O "${{ runner.temp }}/hugo.deb" https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i "${{ runner.temp }}/hugo.deb"
+          python -m pip install -r requirements.txt
 
       - name: Run tests
         run: |
