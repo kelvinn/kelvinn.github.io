@@ -3,7 +3,7 @@ snakemd==2.4.1
 ipykernel
 ipywidgets
 ipyleaflet
-pandas==2.2.3
+pandas==3.1.1
 numpy==2.5.5
 garmin_fit_sdk
 pytest
