@@ -143,14 +143,17 @@ order by week;
 
 # Agent Notes
 
-## Dependabot Automation
+## Auto-Merge and Dependabot Automation
 
-Dependency updates are handled by three pieces under `.github/`:
+PR merging and dependency updates are handled by these pieces under `.github/`:
 
 - `dependabot.yml`: weekly `github-actions` and `pip` updates. Minor and patch updates are grouped per ecosystem; majors arrive as individual PRs.
-- `workflows/dependabot-automerge.yml`: squash-merges a Dependabot PR once `CI (Non-Main Branches)` and `Deploy Hugo site to Pages` have both passed on its head commit, then dispatches `hugo.yaml` (a `GITHUB_TOKEN` merge does not trigger the push deploy). Major bumps, PRs with no Dependabot update metadata, and PRs carrying a repair commit get the `needs-review` label instead of being merged.
+- `workflows/auto-merge.yml`: squash-merges a PR once `CI (Non-Main Branches)` and `Deploy Hugo site to Pages` have both passed on its head commit, then dispatches `hugo.yaml` (a `GITHUB_TOKEN` merge does not trigger the push deploy). It only acts on PRs from the repo owner (same-repo branch, every commit authored by the owner) and from Dependabot; everyone else's PRs are ignored. Withheld PRs get the `needs-review` label and a comment listing why:
+  - Owner PRs: `claude/issue-N` factory PRs; PRs touching protected paths (`.github/`, `.claude/`, `CLAUDE.md`, `AGENTS.md`, `hugo.toml`, `requirements.txt`, `CNAME`, `.well-known/`); and PRs whose added text is over ~200k characters or that the content scan flags. The scan is a read-only `claude-code-action` run over the added lines of text files (skipping lockfiles, `data/*.csv`, binaries and images, so images are never scanned), looking for spam, sexual content, hate, harassment and extreme swearing. Any scan error counts as a flag.
+  - Dependabot PRs: major bumps, PRs with no update metadata, and PRs carrying a repair commit. These skip the content scan.
+  - The logic lives in `scripts/pr_policy.py` (tested in `tests/test_pr_policy.py`); the workflow only runs the default-branch copy and never checks out PR code.
 - `workflows/dependabot-pr-repair.yml`: every 4 hours, finds a failing non-major `pip` Dependabot PR and runs `anthropics/claude-code-action` to fix it. The workflow re-verifies the fix, then pushes a `fix: repair Dependabot PR checks` commit using `DEPENDABOT_REPAIR_TOKEN`. It gives up after 2 attempts, or when nothing changes, and labels the PR `needs-review`. It never edits `.github/`.
 
 Secrets: `CLAUDE_CODE_OAUTH_TOKEN` and `DEPENDABOT_REPAIR_TOKEN`. Optional repo variable `CLAUDE_MODEL` pins the repair model.
 
-The workflows refer to the CI workflows by name and `hugo.yaml` by filename. Update both automation workflows if you rename them. `HUGO_VERSION` is duplicated in `hugo.yaml`, `ci.yaml` and `dependabot-pr-repair.yml`; keep them in sync.
+The workflows refer to the CI workflows by name and `hugo.yaml` by filename. Update the automation workflows if you rename them. `HUGO_VERSION` is duplicated in `hugo.yaml`, `ci.yaml` and `dependabot-pr-repair.yml`; keep them in sync.
