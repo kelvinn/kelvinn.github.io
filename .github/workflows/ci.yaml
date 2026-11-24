@@ -1,6 +1,6 @@
 name: CI (Non-Main Branches)
 
-# The Dependabot auto-merge and repair workflows reference this workflow by name.
+# The auto-merge and Dependabot repair workflows reference this workflow by name.
 # Rename it there too if you change it here.
 on:
   push:

@@ -1,7 +1,7 @@
 # Dependabot version updates.
 #
 # Minor and patch updates are grouped into one PR per ecosystem and are merged
-# automatically once CI passes (see workflows/dependabot-automerge.yml).
+# automatically once CI passes (see workflows/auto-merge.yml).
 # Major updates are intentionally NOT grouped, so each arrives as its own PR
 # that is labelled `needs-review` instead of being merged automatically.
 # Failing PRs are handed to workflows/dependabot-pr-repair.yml.
