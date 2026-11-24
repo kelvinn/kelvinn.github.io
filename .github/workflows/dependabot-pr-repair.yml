@@ -50,7 +50,7 @@ jobs:
           echo "found=false" >> "$GITHUB_OUTPUT"
 
           prs="$(gh pr list --state open --author app/dependabot \
-            --json number,headRefName,headRefOid,baseRefName,isDraft,commits,labels --limit 100)"
+            --json number,headRefName,headRefOid,baseRefName,isDraft,labels --limit 100)"
 
           while read -r pr; do
             [ -n "$pr" ] || continue
@@ -75,6 +75,11 @@ jobs:
                 continue
                 ;;
             esac
+
+            # Commits are fetched per PR: requesting them in the list query exceeds
+            # GraphQL's 500k node limit (100 PRs x commits x authors).
+            commits="$(gh pr view "$number" --json commits --jq '.commits')"
+            pr="$(jq -c --argjson commits "$commits" '. + {commits: $commits}' <<<"$pr")"
 
             # Majors (and PRs without Dependabot update metadata) need a human review,
             # not an unattended agent pushing to the branch.
