@@ -1,7 +1,7 @@
 // Click-to-enlarge lightbox for images inside post content.
 (function () {
   var imgs = Array.prototype.filter.call(
-    document.querySelectorAll('.post-content img'),
+    document.querySelectorAll('.entry-content img'),
     function (img) {
       return !img.classList.contains('in-text') && !img.closest('a');
     }

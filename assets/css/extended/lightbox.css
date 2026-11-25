@@ -1,4 +1,4 @@
-.post-content img.zoomable {
+.entry-content img.zoomable {
     cursor: zoom-in;
 }
 
@@ -8,7 +8,7 @@
     z-index: 1000;
     overflow-y: auto;
     overflow-x: hidden;
-    background: rgba(0, 0, 0, 0.88);
+    background: rgba(0, 0, 0, 0.95);
     display: flex;
     justify-content: center;
     align-items: flex-start;
