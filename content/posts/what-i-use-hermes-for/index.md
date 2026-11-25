@@ -1,7 +1,7 @@
 ---
 title: What I use Hermes for
 date: 2026-11-25T14:00:00+11:00
-draft: true
+draft: false
 url: /2026/11/what-i-use-hermes-for.html
 tags:
   - automation
