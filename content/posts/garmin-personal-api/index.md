@@ -23,44 +23,6 @@ Some things I learned the hard way, so you don't have to:
 - **There is no VO2 max field.** This is the big one. The API exposes a rounded integer at best. The precise per-activity value lives in the FIT file: download the activity ZIP, parse the FIT message (`unknown_140`, field `unknown_7`, × 3.5 / 65536), and treat sub-10 values as noise from non-cardio activities. I recovered seven years of VO2 max history this way.
 - Keep a `raw` JSON column next to your parsed columns. Every time Garmin's payload shape surprised me, I repaired the database from stored raw payloads without re-downloading anything.
 
-### Getting started: one prompt
-
-Create your key in Garmin Connect (web, not mobile), put it in an environment variable, then paste this into Claude Code and walk away:
-
-```text
-Build me a Python sync script for the Garmin Personal API.
-
-Auth: POST https://personal.connectapi.garmin.com/personalapitoken-service/personal-api/personal-api-key/token
-with header "Authorization: ApiKey <GARMIN_PERSONAL_API_KEY>". The response is the JWT
-as PLAIN TEXT (starts with "eyJ", content-type text/plain) — do not json.loads it. Tokens last
-24h; fetch a fresh one every run. Read the key from the
-GARMIN_PERSONAL_API_KEY environment variable; never print it.
-
-API base: https://personal.connectapi.garmin.com with "Authorization: Bearer <token>".
-Pull these, in 30-day windows with a 1-second pause between calls:
-- /usersummary-service/v2/dailysummaries (steps, calories, resting HR,
-  intensity minutes, stress, body battery, hydration — nested under
-  movement./calories./heartRate./stress./bodyBattery./hydration.)
-- /sleep-service/sleep/dailySleepSummariesByDate (stages in seconds,
-  score at sleepScores.overall.value)
-- /hrv-service/hrv/daily/{from}/{to}
-- /usersummary-service/stats/stress/daily/{from}/{to} — CAPS AT 28 DAYS,
-  use 7-day chunks
-- /weight-service/weight/all/{from}/{to} — values are GRAMS
-- /wellness-service/wellness/bodyBattery/reports/daily
-- /activitylist-service/activities/search/activities
-
-Storage: SQLite database with one table per data type, an upsert keyed on
-date, and a raw JSON column storing the full API payload for every row.
-Support incremental sync (track last synced date) and a full backfill via
-env var. Support a backfill window far enough to cover my entire history.
-
-Daily summary 2019-01-01 to today. Print per-table row counts when done.
-Handle HTTP 429/401 with backoff and a clear error message.
-```
-
-That gets you a working local database in one shot. The FIT/VO2 parsing is worth adding as a follow-up prompt once the base sync works.
-
 ### What it unlocked for me
 
 The point of the API was never the dashboard. I have an agent that plans my training week, and the Personal API is its ground truth. The consideration list I actually use:
@@ -100,4 +62,45 @@ The fun part is what the API makes possible beyond my list, and I'd love to hear
 - **Daylight and heat curves** — shift run windows by sunrise/sunset through the seasons
 - **Training partners** — someone to run with beats an optimal plan
 
-As mentioned on Reddit, this is one of the best product releases from Garmin in a long time. Finally!
+As mentioned on Reddit, this is one of the best product releases from Garmin in a long time. 
+
+### Getting started: one prompt
+
+Create your key in Garmin Connect (web, not mobile), put it in an environment variable, then paste something like this into Claude Code and walk away:
+
+```text
+
+I want a local version of my Garmin data so I can query it using Claude Code.
+
+Build me a Python sync script for the Garmin Personal API.
+
+Auth: POST https://personal.connectapi.garmin.com/personalapitoken-service/personal-api/personal-api-key/token
+with header "Authorization: ApiKey <GARMIN_PERSONAL_API_KEY>". The response is the JWT
+as PLAIN TEXT (starts with "eyJ", content-type text/plain) — do not json.loads it. Tokens last
+24h; fetch a fresh one every run. Read the key from the
+GARMIN_PERSONAL_API_KEY environment variable; never print it.
+
+API base: https://personal.connectapi.garmin.com with "Authorization: Bearer <token>".
+Pull these, in 30-day windows with a 1-second pause between calls:
+- /usersummary-service/v2/dailysummaries (steps, calories, resting HR,
+  intensity minutes, stress, body battery, hydration — nested under
+  movement./calories./heartRate./stress./bodyBattery./hydration.)
+- /sleep-service/sleep/dailySleepSummariesByDate (stages in seconds,
+  score at sleepScores.overall.value)
+- /hrv-service/hrv/daily/{from}/{to}
+- /usersummary-service/stats/stress/daily/{from}/{to} — CAPS AT 28 DAYS,
+  use 7-day chunks
+- /weight-service/weight/all/{from}/{to} — values are GRAMS
+- /wellness-service/wellness/bodyBattery/reports/daily
+- /activitylist-service/activities/search/activities
+
+Storage: SQLite database with one table per data type, an upsert keyed on
+date, and a raw JSON column storing the full API payload for every row.
+Support incremental sync (track last synced date) and a full backfill via
+env var. Support a backfill window far enough to cover my entire history.
+
+Daily summary 2019-01-01 to today. Print per-table row counts when done.
+Handle HTTP 429/401 with backoff and a clear error message.
+```
+
+That gets you a working local database in one shot. The FIT/VO2 parsing is worth adding as a follow-up prompt once the base sync works.
