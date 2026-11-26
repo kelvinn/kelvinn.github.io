@@ -1,3 +1,7 @@
 {{- /* Footer custom content area start */ -}}
 {{- /*     Insert any custom code web-analytics, resources, etc. here */ -}}
+{{- if and (eq .Kind "page") (eq .Type "posts") }}
+{{- $lightbox := resources.Get "js/lightbox.js" | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ $lightbox.RelPermalink }}" integrity="{{ $lightbox.Data.Integrity }}"></script>
+{{- end }}
 {{- /* Footer custom content area end */ -}}
