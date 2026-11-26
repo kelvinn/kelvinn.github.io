@@ -1,7 +1,7 @@
 ---
 title: Garmin's Personal API is worth your weekend
 date: 2026-11-26T09:00:00+11:00
-draft: true
+draft: false
 url: /2026/11/garmin-personal-api.html
 tags:
   - quantified-self
@@ -100,4 +100,4 @@ The fun part is what the API makes possible beyond my list, and I'd love to hear
 - **Daylight and heat curves** — shift run windows by sunrise/sunset through the seasons
 - **Training partners** — someone to run with beats an optimal plan
 
-The API turned my health data from something I looked at into something software reasons about. That's the whole trick, and it's yours now.
+As mentioned on Reddit, this is one of the best product releases from Garmin in a long time. Finally!
