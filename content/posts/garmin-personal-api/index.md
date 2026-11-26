@@ -1,5 +1,5 @@
 ---
-title: Garmin's Personal API is worth your weekend
+title: "Product of the year: Garmin's Personal API"
 date: 2026-11-26T09:00:00+11:00
 draft: false
 url: /2026/11/garmin-personal-api.html
