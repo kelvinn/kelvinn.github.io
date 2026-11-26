@@ -1,4 +1,17 @@
 {{- /* Head custom content area start */ -}}
 {{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
 {{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
+{{- /* Better Stack JS tag: frontend errors, web vitals and traffic analytics. Production builds only. */ -}}
+{{- if hugo.IsProduction }}
+<script>
+  !function(b,e,t,r){
+    b[t]=b[t]||function(...args){(b[t].q=b[t].q||[]).push(args)};
+    b[t].l=+new Date;
+    var s=e.createElement('script'); s.async=1; s.crossOrigin='anonymous';
+    s.src='https://betterstack.net/b.js?t='+r;
+    (e.head||e.getElementsByTagName('head')[0]).appendChild(s);
+  }(window,document,'betterstack','7P3ib6vUkhcv2LzqtRtxscdL');
+  betterstack('init', { environment: 'production' });
+</script>
+{{- end }}
 {{- /* Head custom content area end */ -}}
